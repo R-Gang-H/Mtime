@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="isUser"
+            type="Boolean" />
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.filmlist.FilmListBasicInfoEntity" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.app.data.entity.filmlist.FilmListPageMoviesEntity" />
+    </data>
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.details.FilmListDetailsActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/iv_coverUrl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_400px"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/rl_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:layout_marginTop="@dimen/offset_32dp"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_userAvatarUrl"
+                    load_image="@{bean.userAvatarUrl}"
+                    load_image_circle_crop="@{true}"
+                    load_image_default_img="@{@drawable/default_user_head}"
+                    load_image_height="@{20}"
+                    load_image_width="@{20}"
+                    android:layout_width="@dimen/offset_20dp"
+                    android:layout_height="@dimen/offset_20dp"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/tv_userNickName"
+                    android:layout_width="@dimen/offset_140px"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/iv_userAvatarUrl"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{bean.userNickName}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/offset_12sp"
+                    android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
+                    tools:text="时光策划" />
+
+                <TextView
+                    android:id="@+id/tv_userNick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/iv_userAvatarUrl"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{bean.userNickName}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/offset_12sp"
+                    android:visibility="@{isUser ? View.GONE : View.VISIBLE}"
+                    tools:text="时光策划" />
+
+                <TextView
+                    android:id="@+id/tv_lastModifyTimeStr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/offset_10dp"
+                    android:layout_toEndOf="@id/tv_userNickName"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/offset_10sp"
+                    android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
+                    tools:text="更新于2021年12月16日" />
+
+                <TextView
+                    android:id="@+id/tv_collection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/offset_200px"
+                    android:background="@drawable/corner_4_20a0da_bg"
+                    android:paddingStart="@dimen/offset_26px"
+                    android:paddingTop="@dimen/offset_3dp"
+                    android:paddingEnd="@dimen/offset_26px"
+                    android:paddingBottom="@dimen/offset_3dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/offset_13sp"
+                    android:visibility="@{isUser ? View.GONE : View.VISIBLE}" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_approvalStatusStr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/offset_26px"
+                android:paddingTop="@dimen/offset_3dp"
+                android:paddingEnd="@dimen/offset_26px"
+                android:paddingBottom="@dimen/offset_3dp"
+                android:text="@{bean.approvalStatusStr}"
+                android:textColor="@color/color_ff5a36"
+                android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rl_title"
+                tools:text="审核通过" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:layout_marginEnd="@dimen/offset_14dp"
+                android:text="@{bean.title}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/offset_22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/rl_title"
+                app:layout_constraintTop_toBottomOf="@+id/rl_title"
+                tools:text="漫威进阶影片推荐的描述描述描述" />
+
+            <TextView
+                android:id="@+id/tv_synopsis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:layout_marginEnd="@dimen/offset_14dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{bean.synopsis}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/rl_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:text="精心挑选的近期热门漫威高分科幻电影，一共" />
+
+            <TextView
+                android:id="@+id/tv_numMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:layout_marginTop="@dimen/offset_26px"
+                android:textColor="@color/white"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_coverUrl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_synopsis"
+                tools:text="已看1部/共9部" />
+
+            <TextView
+                android:id="@+id/tv_numFavorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_26px"
+                android:layout_marginEnd="@dimen/offset_28px"
+                android:textColor="@color/white"
+                android:textSize="@dimen/offset_12sp"
+                android:visibility="@{bean.numFavorites == 0 ? View.GONE : View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="@id/iv_coverUrl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_synopsis"
+                tools:text="300人收藏" />
+
+
+            <LinearLayout
+                android:id="@+id/mCheckLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_100px"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_coverUrl">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/tv_numPlayable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_15dp"
+                    android:background="@drawable/select_text_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_label_playabletag"
+                    android:drawablePadding="@dimen/offset_4dp"
+                    android:paddingStart="@dimen/offset_15dp"
+                    android:paddingTop="@dimen/offset_5dp"
+                    android:paddingEnd="@dimen/offset_15dp"
+                    android:paddingBottom="@dimen/offset_5dp"
+                    android:textColor="@drawable/check_textcolor_bg"
+                    android:textSize="@dimen/offset_13sp"
+                    android:visibility="@{data.numPlayable == 0 ? View.GONE : View.VISIBLE}"
+                    tools:text="可观看" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/tv_numUnread"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_10dp"
+                    android:background="@drawable/select_text_bg"
+                    android:button="@null"
+                    android:paddingStart="@dimen/offset_15dp"
+                    android:paddingTop="@dimen/offset_5dp"
+                    android:paddingEnd="@dimen/offset_15dp"
+                    android:paddingBottom="@dimen/offset_5dp"
+                    android:textColor="@drawable/check_textcolor_bg"
+                    android:textSize="@dimen/offset_13sp"
+                    android:visibility="@{data.numUnread == 0 ? View.GONE : View.VISIBLE}"
+                    tools:text="未看过" />
+            </LinearLayout>
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:srlEnableFooterFollowWhenNoMoreData="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mCheckLayout">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRecycleView"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_film_details_layout" />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+</layout>

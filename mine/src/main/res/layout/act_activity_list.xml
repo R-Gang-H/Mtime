@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kotlin.android.widget.multistate.MultiStateView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mMultiStateView"
+    style="@style/MatchMatch"
+    tools:ignore="ResourceName"
+    >
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/mRefreshLayout"
+        style="@style/MatchMatch"
+        app:srlEnableFooterFollowWhenNoMoreData="false"
+        >
+
+        <!-- 活动列表 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activityRv"
+            style="@style/MatchMatch"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_activity"
+            />
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</com.kotlin.android.widget.multistate.MultiStateView>

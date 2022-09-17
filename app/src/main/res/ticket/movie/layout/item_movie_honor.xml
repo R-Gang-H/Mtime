@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <!-- 电影节 -->
+    <RelativeLayout
+        android:id="@+id/item_movie_honor_festival_rl"
+        android:layout_width="@dimen/offset_0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/offset_15dp"
+        android:background="@color/white"
+        >
+
+        <!-- 电影节封面图 -->
+        <com.mtime.mtmovie.widgets.RoundAngleImageView
+            android:id="@+id/item_movie_honor_festival_img_iv"
+            android:layout_width="65dp"
+            android:layout_height="97dp"
+            android:foregroundGravity="center"
+            android:scaleType="centerCrop"
+            app:roundWidth="4dp"
+            app:roundHeight="4dp"
+            android:src="@drawable/default_image"
+            />
+
+        <!-- 电影节文字内容 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/item_movie_honor_festival_img_iv"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_centerVertical="true"
+            >
+
+            <!-- 电影节中文名 -->
+            <TextView
+                android:id="@+id/item_movie_honor_festival_name_cn_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/color_303A47"
+                android:textSize="17sp"
+                tools:text="中文名中文名中文名中文名中文名中文名中文名"
+                />
+
+            <!-- 电影节英文名 -->
+            <TextView
+                android:id="@+id/item_movie_honor_festival_name_en_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_movie_honor_festival_name_cn_tv"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/color_8798AF"
+                android:textSize="@dimen/font_size_14sp"
+                tools:text="英文名英文名英文名英文名英文名英文名英文名"
+                android:visibility="visible"
+                />
+
+            <!-- 电影节获奖总数 -->
+            <TextView
+                android:id="@+id/item_movie_honor_festival_award_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_movie_honor_festival_name_en_tv"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/color_4E5E73"
+                android:textSize="@dimen/font_size_14sp"
+                tools:text="获奖X次，提名X次"
+                android:visibility="visible"
+                />
+
+        </RelativeLayout>
+
+        <!-- 箭头 -->
+        <ImageView
+            android:id="@+id/item_movie_honor_festival_arrow_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/actor_honors_arrow_down"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/item_movie_honor_festival_img_iv"
+            android:layout_marginBottom="@dimen/offset_12dp"
+            />
+
+    </RelativeLayout>
+
+    <!-- 展开内容 -->
+    <RelativeLayout
+        android:id="@+id/item_movie_honor_expand_rl"
+        android:layout_width="@dimen/offset_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/item_movie_honor_festival_rl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="visible"
+        >
+
+        <!-- 渐变分隔条 -->
+        <View
+            android:id="@+id/item_movie_honor_expand_line_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_30dp"
+            android:background="@drawable/movie_honor_expand_line_top"
+            />
+
+        <!-- 获奖label -->
+        <TextView
+            android:id="@+id/item_movie_honor_win_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_movie_honor_expand_line_top_view"
+            android:layout_marginLeft="@dimen/offset_52dp"
+            android:textColor="@color/color_4E5E73"
+            android:textSize="@dimen/font_size_14sp"
+            android:text="获奖"
+            android:visibility="visible"
+            />
+
+        <!-- 获奖列表 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_movie_honor_win_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_movie_honor_expand_line_top_view"
+            android:layout_toRightOf="@+id/item_movie_honor_win_label_tv"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:layout_marginBottom="@dimen/offset_30dp"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_movie_honor_award"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:visibility="visible"
+            />
+
+        <!-- 提名label -->
+        <TextView
+            android:id="@+id/item_movie_honor_nominate_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_movie_honor_win_recyclerview"
+            android:layout_marginLeft="@dimen/offset_52dp"
+            android:textColor="@color/color_4E5E73"
+            android:textSize="@dimen/font_size_14sp"
+            android:text="提名"
+            android:visibility="visible"
+            />
+
+        <!-- 提名列表 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_movie_honor_nominate_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_movie_honor_win_recyclerview"
+            android:layout_toRightOf="@+id/item_movie_honor_nominate_label_tv"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_movie_honor_award"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:visibility="visible"
+            />
+
+        <!-- 渐变分隔条 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_30dp"
+            android:layout_below="@+id/item_movie_honor_nominate_recyclerview"
+            android:background="@drawable/movie_honor_expand_line_bottom"
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

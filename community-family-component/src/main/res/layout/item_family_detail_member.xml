@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.family.component.ui.details.bean.FamilyDetailMember" />
+    </data>
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/mFamilyDetailMemberIv"
+        android:layout_marginStart="15dp"
+        tools:background="@drawable/default_user_head"
+        load_image="@{data.pic}"
+        load_image_circle_crop="@{true}"
+        load_image_width="@{30}"
+        load_image_height="@{30}"
+        load_image_default_img="@{@drawable/default_user_head}"
+        />
+</layout>

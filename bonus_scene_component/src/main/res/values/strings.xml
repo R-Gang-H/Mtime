@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bonus_scene_bag_tips">奖品请至“我的钱包”或“会员中心”查看</string>
+    <string name="bonus_scene_close_btn">关闭</string>
+    <string name="bonus_scene_losing_lottery">您与大奖擦肩而过，多来社区逛逛，没准下一个中奖的就是你呢～</string>
+    <string name="bonus_scene_losing_lottery_title">很遗憾</string>
+    <string name="bonus_scene_lottery_title">宇宙无敌幸运礼包</string>
+</resources>

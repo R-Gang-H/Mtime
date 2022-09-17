@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="84dp">
+
+    <FrameLayout
+        android:id="@+id/taWishLayout"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="88dp"
+        android:paddingStart="65dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="10dp">
+
+        <com.kotlin.android.card.monopoly.widget.card.image.CardImageView
+            android:id="@+id/cardImageView"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="幽灵公主"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="25dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:lines="2"
+            android:text="Mtime发行 2021 03 24 共5张"
+            android:textColor="@color/color_8798af"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/taWishView"
+        android:layout_width="58dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_label_ta_wish"
+        android:gravity="center_vertical"
+        android:paddingStart="2dp"
+        android:text="@string/ta_wish"
+        android:textColor="@color/color_c5aa1f"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/actionView"
+        android:layout_width="58dp"
+        android:layout_height="84dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/ic_wish_help"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:text="@string/help_ta_realize"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+</FrameLayout>

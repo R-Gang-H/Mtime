@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:id="@+id/rootView"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--    兑换商品名称-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_1d2736"
+        android:textSize="@dimen/offset_17sp"
+        app:layout_constraintHorizontal_weight="1"
+        tools:text = "时光5元观影券"
+        android:layout_marginLeft="@dimen/offset_40px"
+        android:layout_marginTop="@dimen/offset_28px"
+        android:layout_marginRight="@dimen/offset_40px"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+<!--    兑换数量-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/goodsNumTitleTv"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        app:layout_constraintLeft_toLeftOf="@id/titleTv"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_13sp"
+        android:text="@string/mine_goods_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+<!--    兑换数量-->
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintBaseline_toBaselineOf="@id/goodsNumTitleTv"
+        android:id="@+id/goodsNumTv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/offset_40px"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_18sp"
+        tools:text="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+<!--    消耗金币-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mBeanNumTitleTv"
+        app:layout_constraintTop_toBottomOf="@id/goodsNumTitleTv"
+        app:layout_constraintLeft_toLeftOf="@id/goodsNumTitleTv"
+        android:layout_marginTop="@dimen/offset_22px"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_13sp"
+        android:text="@string/mine_consume_coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+<!--    消耗m豆-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mBeanNumTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/mBeanNumTitleTv"
+        android:layout_marginRight="@dimen/offset_40px"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_13sp"
+        android:textStyle="bold"
+        tools:text="8000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+<!--    取消、确认按钮-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/mBeanNumTitleTv"
+        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/offset_48px"
+        android:layout_marginTop="@dimen/offset_36px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content">
+
+<!--        取消-->
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/cancelTv"
+            android:text="@string/cancel"
+            app:layout_constraintRight_toLeftOf="@id/sureTv"
+            android:textColor="@color/color_20a0da"
+            android:textSize="@dimen/offset_14sp"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:textStyle="bold"
+            android:layout_width="@dimen/offset_218px"
+            android:layout_height="@dimen/offset_50px"/>
+
+<!--        确认-->
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintLeft_toRightOf="@id/cancelTv"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/sureTv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:text="@string/ok"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_width="@dimen/offset_218px"
+            android:layout_height="@dimen/offset_50px"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

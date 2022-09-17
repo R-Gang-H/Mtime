@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/controller_cover_top_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/player_head_title_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="3dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/player_back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/player_sdk_icon_back" />
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/player_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/player_text_size_big" />
+
+        <LinearLayout
+            android:id="@+id/video_layout_player_top_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- 弹幕开关 -->
+            <ToggleButton
+                android:id="@+id/video_layout_player_top_barrage_open_state_tb"
+                android:layout_width="43dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/player_controller_danmu_toggle_button"
+                android:checked="true"
+                android:textOff=""
+                android:textOn=""
+                android:visibility="gone" />
+
+            <!--share-->
+            <ImageView
+                android:id="@+id/video_layout_player_top_share_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/player_sdk_icon_player_share"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--写弹幕按钮-->
+        <RelativeLayout
+            android:id="@+id/layout_controller_cover_edit_rl"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/player_bg_edit_btn"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <!--按钮(图片本身外围有1px透明)-->
+            <ImageView
+                android:id="@+id/layout_controller_cover_edit_barrage_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/player_sdk_edit_barrage" />
+
+        </RelativeLayout>
+
+        <!-- 播放/暂停按钮-->
+        <RelativeLayout
+            android:id="@+id/layout_controller_cover_play_pause_rl"
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="55dp"
+            android:background="@drawable/player_bg_edit_btn"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/layout_controller_cover_play_pause_tb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_play_state_big_icon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_controller_cover_replay_iv"
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="55dp"
+            android:background="@drawable/player_bg_edit_btn"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/video_layout_player_control_review_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/player_sdk_review_hor"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/layout_player_controller_play_next_tip_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#000000"
+            android:padding="5dp"
+            android:text="即将播出"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layout_player_controller_bottom_dark_bg_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/video_layout_player_screen_switch_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/player_sdk_icon_full_screen"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/rl_bottom_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/video_layout_player_screen_switch_iv"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingRight="@dimen/player_padding_30"
+                    android:visibility="gone">
+
+                    <!-- 播放按钮 -->
+                    <ImageView
+                        android:id="@+id/player_state_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/selector_play_state_icon"
+                        android:visibility="gone" />
+
+                    <!-- 播放下一个按钮 -->
+                    <ImageView
+                        android:id="@+id/player_next_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/play_sdk_control_next"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/cover_player_controller_text_view_curr_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:gravity="right|center"
+                        android:text="00:00:00"
+                        android:textColor="@color/player_sdk_white"
+                        android:textSize="@dimen/player_text_size_small" />
+
+                    <SeekBar
+                        android:id="@+id/cover_player_controller_seek_bar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:maxHeight="2dp"
+                        android:minHeight="2dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/player_sdk_seekbar_progress_drawable_new_new"
+                        android:thumb="@drawable/player_sdk_seekbar_thumb"
+                        android:thumbOffset="10dp" />
+
+                    <TextView
+                        android:id="@+id/cover_player_controller_text_view_total_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00:00"
+                        android:textColor="@color/player_sdk_white"
+                        android:textSize="@dimen/player_text_size_small" />
+
+                    <TextView
+                        android:id="@+id/view_player_bottom_section_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center"
+                        android:text="相关视频"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/view_player_bottom_definition_tv"
+                        style="@style/player_text_white_high"
+                        android:layout_marginLeft="20dp"
+                        android:text="高清"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/cover_player_controller_bottom_progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:progressDrawable="@drawable/player_sdk_seekbar_progress_drawable_new_new"
+        android:visibility="gone" />
+
+</RelativeLayout>

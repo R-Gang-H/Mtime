@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.authentication.reviewer.ReviewerAuthenticationActivity">
+
+<!--是否同意-->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:id="@+id/argeeCB"
+            android:text="@string/mine_authen_submit_tips"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_4e5e73"
+            android:layout_marginBottom="@dimen/offset_44px"
+            android:button="@drawable/ic_auth_submit"
+            android:paddingLeft="@dimen/offset_7px"
+            android:textSize="@dimen/offset_12sp"
+            android:checked="true"
+            android:layout_height="wrap_content"/>
+
+        <!--        提交认证按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:id="@+id/submitBtn"
+            app:layout_constraintBottom_toTopOf="@id/argeeCB"
+            android:layout_marginLeft="@dimen/offset_60px"
+            android:layout_marginRight="@dimen/offset_60px"
+            android:textSize="@dimen/offset_17sp"
+            android:gravity="center"
+            android:enabled="false"
+            android:textColor="@color/color_ffffff"
+            android:text="@string/mine_authen_submit"
+            android:layout_marginBottom="@dimen/offset_42px"
+            android:layout_height="@dimen/offset_82px"/>
+
+        <com.kotlin.android.mine.ui.widgets.LockableNestedScrollView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:orientation="vertical"
+            android:id="@+id/scrollView"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginBottom="@dimen/offset_42px"
+            app:layout_constraintBottom_toTopOf="@id/submitBtn"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+<!--                影评人认证输入布局输入布局-->
+                <com.kotlin.android.mine.ui.widgets.AuthenInputView
+                    android:layout_width="match_parent"
+                    android:id="@+id/inputView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_height="wrap_content"/>
+
+<!--                证件布局-->
+
+                <com.kotlin.android.mine.ui.widgets.AuthenTakePhotoView
+                    android:layout_width="match_parent"
+                    android:id="@+id/photoView"
+                    app:layout_constraintTop_toBottomOf="@id/inputView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_height="wrap_content"/>
+
+
+<!--                长影评列表-->
+                <com.kotlin.android.mine.ui.widgets.AuthenReviewerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/reviewView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/photoView"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.kotlin.android.mine.ui.widgets.LockableNestedScrollView>
+
+
+<!--        展开全部按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="@id/submitBtn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center_horizontal|bottom"
+            android:textColor="@color/color_8798af"
+            android:background="@color/color_ffffff"
+            android:textSize="@dimen/offset_12sp"
+            android:layout_marginBottom="@dimen/offset_40px"
+            android:id="@+id/expandAllTv"
+            android:text="@string/mine_authen_expand_all"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/expandView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/expandAllTv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_60px"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

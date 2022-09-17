@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_ffffff"
+    tools:ignore="ResourceName">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/MatchMatch">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/mSaveBottomLay"
+            android:overScrollMode="never"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/MatchMatch">
+                <LinearLayout
+                    android:id="@+id/mNameLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/mFilmListTitleEt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/offset_30px"
+                        android:layout_marginTop="@dimen/offset_14px"
+                        android:layout_marginEnd="@dimen/offset_28px"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:background="@null"
+                        android:hint="@string/tablet_film_list_title"
+                        android:maxLength="20"
+                        android:textColorHint="@color/color_cbd0d7"
+                        android:textSize="@dimen/offset_18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mFilmListTitleLimitTv"
+                        style="@style/WrapWrap"
+                        android:layout_marginStart="@dimen/offset_10px"
+                        android:layout_marginEnd="@dimen/offset_28px"
+                        android:textColor="@color/color_cbd0d7"
+                        android:textSize="@dimen/offset_12sp"
+                        android:layout_gravity="center_vertical"
+                         />
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/mFilmListLine1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_1px"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_28px"
+                    android:layout_marginEnd="@dimen/offset_28px"
+                    android:background="@color/color_f3f3f4"
+                    app:layout_constraintTop_toBottomOf="@id/mNameLay" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mFilmListContentEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_230px"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_36px"
+                    android:layout_marginEnd="@dimen/offset_28px"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:hint="@string/tablet_film_list_content"
+                    android:maxLength="60"
+                    android:textColorHint="@color/color_cbd0d7"
+                    android:textSize="@dimen/offset_15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mFilmListLine1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mFilmListContentLimitTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginStart="@dimen/offset_10px"
+                    android:layout_marginEnd="@dimen/offset_28px"
+                    android:textColor="@color/color_cbd0d7"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mFilmListContentEt" />
+
+                <View
+                    android:id="@+id/mFilmListLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_1px"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_44px"
+                    android:layout_marginEnd="@dimen/offset_28px"
+                    android:background="@color/color_f3f3f4"
+                    app:layout_constraintTop_toBottomOf="@id/mFilmListContentLimitTv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mFilmListBgTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_44px"
+                    android:text="@string/tablet_film_list_bg"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/offset_15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mFilmListLine2" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/mCoverCv"
+                    android:layout_width="@dimen/offset_370px"
+                    android:layout_height="@dimen/offset_200px"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_24px"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mFilmListBgTv"
+                    app:cardCornerRadius="@dimen/offset_16px"
+                    app:cardElevation="0dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mFilmListCoverIv"
+                    style="@style/MatchMatch"
+                    android:scaleType="centerCrop"
+                    />
+                </androidx.cardview.widget.CardView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mFilmListAddTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_44px"
+                    android:text="@string/tablet_film_list_bg"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/offset_15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mFilmListLine2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mContainsTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_44px"
+                    android:text="@string/tablet_film_list_contains"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/offset_15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mCoverCv" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mContainsIv"
+                    android:layout_width="@dimen/offset_213px"
+                    android:layout_height="@dimen/offset_248px"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_24px"
+                    android:background="@drawable/icon_film_list_constains_bg"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mContainsTv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mContainsNumTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginEnd="@dimen/offset_34px"
+                    android:layout_marginBottom="@dimen/offset_2px"
+                    android:lines="1"
+                    android:maxLength="10"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/mContainsIv"
+                    app:layout_constraintEnd_toEndOf="@id/mContainsIv"
+                    tools:text="等26步" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/mOpenFilmListCb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/offset_32px"
+                    android:layout_marginTop="@dimen/offset_88px"
+                    android:layout_marginBottom="@dimen/offset_44px"
+                    android:button="@drawable/selector_circle_15_agree"
+                    android:checked="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/tablet_film_list_open_text"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mContainsIv" />
+
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/mContainsGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:constraint_referenced_ids="mContainsTv,mContainsIv,mContainsNumTv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mSaveBottomLay"
+            android:background="@drawable/laylist_bottom_shadow_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_140px"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/mFilmListSaveBtn"
+                color="@{@color/color_1cacde}"
+                cornerRadius="@{21}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_70px"
+                android:layout_marginLeft="@dimen/offset_14px"
+                android:layout_marginRight="@dimen/offset_14px"
+                android:elevation="@dimen/offset_30px"
+                android:padding="@dimen/offset_16px"
+                android:text="@string/tablet_film_list_save"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">影评组件</string>
+    <string name="film_review_mtime_score">时光评分:</string>
+    <string name="film_review_movie_name"><![CDATA[评《%1$s》<i><strong>%2$s</strong></i>]]></string>
+    <string name="file_review_delete_content">将同时删除评分和影评</string>
+    <string name="film_review_share_score">时光评分</string>
+    <string name="film_review_ping">评</string>
+    <string name="film_review_join_days_and_movie_format">加入时光网%1$d天\n共标记了%2$d部电影</string>
+    <string name="film_review_movies_format">共标记了%1$d部电影</string>
+    <string name="film_review_join_days_format">加入时光网%1$d天</string>
+    <string name="film_review_share_change_pic">更换剧照</string>
+    <string name="film_review_select_pic">选择图片</string>
+    <string name="film_review_share_anonymity">匿名</string>
+    <string name="film_review_share_save_local">保存本地</string>
+    <string name="film_review_share_edit">编辑</string>
+    <string name="film_review_is_checking">影评正在审核中</string>
+    <string name="film_review_go_to_comment">快来发表你的影评</string>
+    <string name="film_review_share_tips_0_2">很差，完全是浪费时间</string>
+    <string name="film_review_share_tips_3_5">平庸之作，不看也罢</string>
+    <string name="film_review_share_tips_6_7">一般，不妨一看</string>
+    <string name="film_review_share_tips_8">很好，公认佳作</string>
+    <string name="film_review_share_tips_9_10">很完美，绝对不容错过</string>
+
+    <string name="movie_review_user_ticket">已购票</string>
+    <string name="movie_review_user_relation_friend">好友</string>
+    <string name="movie_review_user_relation_fans">粉丝</string>
+    <string name="movie_review_user_relation_follow">已关注</string>
+</resources>

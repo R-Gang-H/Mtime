@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.person.binder.CommunityPersonPhotoCreateBinder" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/photoCreateRootView"
+        android:layout_width="@dimen/offset_330px"
+        android:layout_height="@dimen/offset_330px"
+        android:layout_margin="@dimen/offset_15px"
+        app:cardCornerRadius="@dimen/offset_10px"
+        android:onClick="@{view->data.onClick(view)}"
+        android:elevation="@dimen/offset_2px"
+        app:cardElevation="0dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_add_album"
+            android:drawablePadding="@dimen/offset_18px"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/community_create_photo"
+            android:layout_gravity="center"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/iv_icon"
+            app:layout_constraintStart_toStartOf="@+id/iv_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

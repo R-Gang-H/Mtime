@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api files('libs/hyphenatechat_3.9.1.1.jar')
+    api project(':app-api')
+    api project(':ktx')
+    api project(':resource')
+    api project(':user')
+    api project(':image-component')
+
+    api Support.swiperefreshlayout
+    api Dependencies.glide
+    implementation project(path: ':app-router')
+}

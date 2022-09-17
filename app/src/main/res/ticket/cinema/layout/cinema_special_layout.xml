@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:id="@+id/cinema_special_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+</merge>

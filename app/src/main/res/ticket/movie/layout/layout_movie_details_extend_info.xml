@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="30dp">
+
+    <!--经典台词-->
+
+    <com.mtime.bussiness.common.widget.CommonItemTitleView
+        android:id="@+id/movie_details_extend_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:itv_title_text="@string/movie_details_extend_info_title"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/movie_details_extend_title_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/shape_movie_details_seen_score_review_bg"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="5dp"
+        >
+
+        <FrameLayout
+            android:id="@+id/movie_details_extend_media_comment_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/movie_details_extend_media_comment_title"
+                android:drawableLeft="@drawable/movie_details_ic_write"
+                style="@style/movie_details_extend_left_text_style" />
+
+            <TextView
+                android:id="@+id/movie_details_extend_media_comment_all_tv"
+                style="@style/common_item_title_view_all_tv_style"
+                android:layout_gravity="center_vertical|right"
+                android:text="@string/movie_details_extend_media_comment_all"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/movie_details_extend_behind_make_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/movie_details_extend_behind_make_title"
+                android:drawableLeft="@drawable/movie_details_ic_editor"
+                style="@style/movie_details_extend_left_text_style" />
+
+            <TextView
+                android:id="@+id/movie_details_extend_behind_make_all_tv"
+                style="@style/common_item_title_view_all_tv_style"
+                android:layout_gravity="center_vertical|right"
+                android:text="@string/movie_details_extend_behind_make_all"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/movie_details_extend_make_release_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/movie_details_extend_make_release_title"
+                android:drawableLeft="@drawable/movie_details_ic_suitcase"
+                style="@style/movie_details_extend_left_text_style" />
+
+            <TextView
+                android:id="@+id/movie_details_extend_make_release_all_tv"
+                style="@style/common_item_title_view_all_tv_style"
+                android:layout_gravity="center_vertical|right"
+                android:text="@string/movie_details_extend_make_release_all"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/movie_details_extend_more_info_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/movie_details_extend_more_info_title"
+                android:drawableLeft="@drawable/movie_details_ic_other"
+                style="@style/movie_details_extend_left_text_style" />
+
+            <TextView
+                android:id="@+id/movie_details_extend_more_info_all_tv"
+                style="@style/common_item_title_view_all_tv_style"
+                android:layout_gravity="center_vertical|right"
+                android:text="@string/movie_details_extend_more_info_all"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

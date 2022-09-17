@@ -1,0 +1,31 @@
+<vector android:height="30dp" android:viewportHeight="60"
+    android:viewportWidth="60" android:width="30dp"
+    xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <clip-path android:pathData="M0,0h60v60h-60z"/>
+        <path android:fillType="evenOdd"
+            android:pathData="M46,12L14,12C10.6863,12 8,14.6863 8,18L8,23C8,23.8243 8.5057,24.5642 9.2738,24.8635L9.539,24.9668C10.9151,25.5339 12.0198,26.6807 12.5476,28.1151C13.5885,30.9445 12.1388,34.082 9.3094,35.123C8.5227,35.4124 8,36.1618 8,37L8,42C8,45.3137 10.6863,48 14,48L46,48C49.3137,48 52,45.3137 52,42L52,37C52,36.1769 51.4958,35.4379 50.7294,35.1378L50.4654,35.0343C49.0948,34.4669 47.9941,33.3245 47.4656,31.8959C46.4185,29.0658 47.8639,25.9228 50.694,24.8757C51.4789,24.5853 52,23.8369 52,23L52,18C52,14.6863 49.3137,12 46,12Z"
+            android:strokeColor="#00000000" android:strokeWidth="1">
+            <aapt:attr name="android:fillColor">
+                <gradient android:endX="57.13844"
+                    android:endY="34.508045"
+                    android:startX="-0.085585594" android:startY="30" android:type="linear">
+                    <item android:color="#FF20A0DA" android:offset="0"/>
+                    <item android:color="#FF05D8EC" android:offset="1"/>
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+    <group>
+        <clip-path android:pathData="M0,0h60v60h-60z"/>
+        <path android:fillColor="#FFFFFF" android:fillType="nonZero"
+            android:pathData="M25,24L35,24A2,2 0,0 1,37 26L37,26A2,2 0,0 1,35 28L25,28A2,2 0,0 1,23 26L23,26A2,2 0,0 1,25 24z"
+            android:strokeColor="#00000000" android:strokeWidth="1"/>
+    </group>
+    <group>
+        <clip-path android:pathData="M0,0h60v60h-60z"/>
+        <path android:fillColor="#FFFFFF" android:fillType="nonZero"
+            android:pathData="M25,32L35,32A2,2 0,0 1,37 34L37,34A2,2 0,0 1,35 36L25,36A2,2 0,0 1,23 34L23,34A2,2 0,0 1,25 32z"
+            android:strokeColor="#00000000" android:strokeWidth="1"/>
+    </group>
+</vector>

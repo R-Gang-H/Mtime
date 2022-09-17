@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical"
+    tools:context="com.mtime.bussiness.ticket.movie.activity.OrderPayCheckBankCardActivity">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/check_bank_card_note_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/offset_20px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:paddingTop="@dimen/offset_30px"
+        android:text="需要先验证您的银行卡是否满足活动要求。参与本次活动的银行卡有："
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_pxtosp_26" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingBottom="@dimen/offset_28px"
+            android:paddingRight="@dimen/offset_30px"
+            android:paddingTop="@dimen/offset_28px"
+            android:text="卡号"
+            android:textColor="@color/color_555555"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+
+        <!--android:text="6216261000000000018"-->
+        <EditText
+            android:id="@+id/check_bank_card_cardnumber_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/transparent"
+            android:hint="请输入您的银行卡号"
+            android:inputType="number"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_6px"
+        android:background="@drawable/line_bottom" />
+
+    <TextView
+        android:id="@+id/check_bank_card_tip_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/offset_0dp"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:paddingTop="@dimen/offset_20px"
+        android:text="您输入的银行卡号仅用于验证是否满足参加优惠活动的需求"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_pxtosp_26" />
+
+    <TextView
+        android:id="@+id/check_bank_card_ok_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/login_btn_margin_top"
+        android:background="@drawable/bt_solid_gray_w660_h80"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="@string/ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_pxtosp_36" />
+
+</LinearLayout>

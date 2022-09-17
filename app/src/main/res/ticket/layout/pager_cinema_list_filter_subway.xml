@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <!-- 地铁线列表 -->
+    <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pager_cinema_list_filter_subway_list_irecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/color_f5f5f5"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@color/color_999999"
+        android:scrollbarSize="@dimen/offset_4dp"
+        />
+
+    <!-- 车站列表 -->
+    <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pager_cinema_list_filter_subway_station_irecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@color/color_999999"
+        android:scrollbarSize="@dimen/offset_4dp"
+        />
+
+</LinearLayout>

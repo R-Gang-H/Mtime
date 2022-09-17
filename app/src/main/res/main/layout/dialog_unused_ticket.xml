@@ -1,0 +1,62 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerVertical="true"
+    android:orientation="vertical"
+    >
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_14dp"
+        android:paddingBottom="@dimen/offset_14dp"
+        android:background="@drawable/dialog_unused_ticket_title_bg"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="您有影票未使用"
+        />
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1px"
+        android:background="@color/color_d8d8d8"
+        />
+
+    <!-- 列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dialog_unused_ticket_rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        />
+
+    <!-- 虚线 半圆 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_unused_ticket_half_circle_bg" />
+
+    <!-- 关闭 -->
+    <TextView
+        android:id="@+id/dialog_unused_ticket_btn_close_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/offset_4dp"
+        android:paddingBottom="@dimen/offset_12dp"
+        android:background="@drawable/dialog_unused_ticket_btn_close_bg"
+        android:text="@string/st_iknow"
+        android:textColor="@color/color_ff8600"
+        android:textSize="@dimen/font_size_normal_more" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cinema_map_region"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/offset_48dp"
+    android:clickable="true"
+    >
+
+    <TextView
+        android:id="@+id/map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:drawableTop="@drawable/icon_direction"
+        android:text="@string/actor_detail_map_label"
+        android:textColor="@color/color_ff8600"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/address_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/icon_map_pin"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/actor_detail_like_btn_margin_left"
+        android:layout_marginRight="@dimen/actor_honors_listview_item_address_margin_right"
+        android:layout_toLeftOf="@id/map"
+        android:layout_toRightOf="@id/address_icon"
+        android:gravity="left|center_vertical"
+        android:lineSpacingExtra="3dp"
+        android:singleLine="false"
+        android:textColor="@color/color_333333"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/map"
+        android:layout_alignTop="@id/map"
+        android:layout_marginRight="@dimen/actor_honors_listview_item_arrow_margin_right"
+        android:layout_toLeftOf="@id/map"
+        android:background="@drawable/huise"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignLeft="@id/address_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/color_d8d8d8"
+        android:contentDescription="@string/app_name" />
+</RelativeLayout>
+

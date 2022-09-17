@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="com.kotlin.android.ktx.ext.core.Direction" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.findmovie.adapter.TimeListBinder.TimeListContainBinder.TimeListContainItemBinder" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item"
+        android:layout_width="@dimen/offset_350px"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_10dp"
+            android:layout_marginBottom="@dimen/offset_10dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="@dimen/offset_8dp"
+            app:cardElevation="@dimen/offset_6dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                load_image="@{data.bean.coverImg}"
+                load_image_height="@{60}"
+                load_image_width="@{44}"
+                android:layout_width="@dimen/offset_44dp"
+                android:layout_height="@dimen/offset_60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--                direction="@{Direction.LEFT_TOP|Direction.RIGHT_TOP}" -->
+            <View
+                color="@{@color/color_00000000}"
+                endColor="@{@color/color_CC000000}"
+                android:layout_width="@dimen/offset_44dp"
+                android:layout_height="@dimen/offset_24dp"
+                android:layout_gravity="bottom"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv"
+                color="@{@color/color_ff9848}"
+                cornerRadius="@{5}"
+                endColor="@{@color/color_f54104}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3.5dp"
+                android:paddingTop="@dimen/offset_2dp"
+                android:paddingRight="3.5dp"
+                android:paddingBottom="@dimen/offset_2dp"
+                android:text="@{@string/home_time_no(data.bean.rank)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/offset_7_5sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{TextUtils.isEmpty(data.bean.movieInfo.movieName)?data.bean.movieInfo.movieNameEn:data.bean.movieInfo.movieName}"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_13sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mCardView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="用户姓名ssssssssssssssss" />
+
+        <TextView
+            android:id="@+id/tv_score_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:text="@{TextUtils.isEmpty(data.bean.movieInfo.score)?@string/home_mtime_score_tip_no:@string/home_mtime_score_tip}"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_10sp"
+            app:layout_constraintLeft_toRightOf="@+id/mCardView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:text="@{data.bean.movieInfo.score}"
+            android:textColor="@color/color_20a0da"
+            android:textSize="@dimen/offset_10sp"
+            android:textStyle="bold"
+            android:visibility="@{TextUtils.isEmpty(data.bean.movieInfo.score)?View.GONE:View.VISIBLE}"
+            app:layout_constraintLeft_toRightOf="@+id/tv_score_tip"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="8.0"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

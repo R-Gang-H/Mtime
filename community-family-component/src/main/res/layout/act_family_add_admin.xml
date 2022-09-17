@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <!-- 空提示 -->
+            <TextView
+                android:id="@+id/mActFamilyAddAdminEmptyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="@dimen/offset_160px"
+                android:drawableTop="@drawable/icon_topic_comment_draft_empty"
+                android:drawablePadding="@dimen/offset_20px"
+                android:text="@string/family_member_manage_member_empty"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_14sp"
+                android:visibility="gone"
+                />
+
+            <!-- 搜索框 -->
+            <include
+                android:id="@+id/mActFamilyAddAdminSearchBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_30px"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                layout="@layout/layout_family_search"
+                />
+
+            <!-- 刷新组件 -->
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_0px"
+                android:paddingTop="@dimen/offset_10px"
+                app:layout_constraintTop_toBottomOf="@id/mActFamilyAddAdminSearchBar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srlEnableFooterFollowWhenNoMoreData="false"
+                app:srlEnableRefresh="false"
+                android:visibility="visible"
+                >
+
+                <!-- 成员列表 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mActFamilyAddAdminRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/item_family_member"
+                    />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+            <!-- 搜索列表 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mActFamilyAddAdminSearchRv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/offset_10px"
+                app:layout_constraintTop_toBottomOf="@id/mActFamilyAddAdminSearchBar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_family_member"
+                android:visibility="gone"
+                />
+
+            <!-- 阴影条 -->
+            <View
+                android:id="@+id/mActFamilyAddAdminBottomShadowView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_60px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/offset_100px"
+                android:background="@drawable/bg_group_bottom_shadow"
+                android:visibility="visible"
+                />
+
+            <!-- 底部按钮 -->
+            <TextView
+                android:id="@+id/mActFamilyAddAdminBottomBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_100px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/white_92_alpha"
+                android:gravity="center"
+                android:clickable="false"
+                android:textColor="@color/color_aab7c7_20_alpha"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold"
+                android:text="@string/community_add"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

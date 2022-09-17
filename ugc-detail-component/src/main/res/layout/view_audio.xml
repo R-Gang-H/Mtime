@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    音频背景图片 需要进行高斯模糊处理-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bgImg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1" />
+
+        <!--  中间封面图  -->
+        <FrameLayout
+            android:layout_width="@dimen/offset_440px"
+            android:layout_height="@dimen/offset_440px"
+            android:layout_marginTop="@dimen/offset_40px"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--        封面图-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/coverIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="@dimen/offset_2px"
+                android:scaleType="centerCrop" />
+
+            <!--        播放按钮-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playIv"
+                android:layout_width="@dimen/offset_120px"
+                android:layout_height="@dimen/offset_120px"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_selector_play_state_big_icon" />
+
+
+        </FrameLayout>
+
+        <!--    音频播放器进度条-->
+
+        <!--    播放时长-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/startDurationTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_50px"
+            android:layout_marginBottom="@dimen/offset_40px"
+            app:layout_constraintRight_toLeftOf="@id/audioSeekBar"
+            android:textColor="@color/white"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="00:00" />
+
+        <!--    播放进度条-->
+        <androidx.appcompat.widget.AppCompatSeekBar
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/offset_40px"
+            app:layout_constraintLeft_toRightOf="@id/startDurationTv"
+            app:layout_constraintRight_toLeftOf="@id/totalDurationTv"
+            android:id="@+id/audioSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:paddingLeft="@dimen/offset_24px"
+            android:paddingRight="@dimen/offset_24px"
+            android:progress="0"
+            android:progressDrawable="@drawable/ic_player_sdk_seekbar_progress_drawable_new_new"
+            android:thumb="@drawable/ic_player_sdk_seekbar_thumb"
+            android:thumbOffset="@dimen/offset_20px" />
+
+        <!--    播放结束时间-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalDurationTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_50px"
+            app:layout_constraintLeft_toRightOf="@id/audioSeekBar"
+            android:layout_marginBottom="@dimen/offset_40px"
+            android:textColor="@color/white"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="00:00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

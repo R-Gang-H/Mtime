@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+
+    /**
+     * 资源同名问题处理
+     * 每个子模块给资源名添加前缀，具体做法是在每个子模块的build.gradle文件的android块内添加一行代码：resourcePrefix “资源名前缀”：
+     */
+    // resourcePrefix "charts_"
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Support.appcompat
+    implementation Support.kotlin_stdlib_jdk8
+    implementation Dependencies.gson
+    implementation project(path: ':ktx')
+    implementation project(path: ':core')
+    implementation project(path: ':widget')
+    implementation project(path: ':app-data')
+    implementation project(path: ':resource')
+    implementation project(path: ':mtime-ktx')
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.post.component.item.adapter.PkCommentBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--                pk评论-->
+        <com.kotlin.android.community.post.component.item.widget.PkCommentListView
+            android:id="@+id/pkCommentListView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_fdfdfd"
+            android:paddingLeft="@dimen/offset_30px"
+            android:paddingTop="@dimen/offset_40px"
+            android:paddingRight="@dimen/offset_30px" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

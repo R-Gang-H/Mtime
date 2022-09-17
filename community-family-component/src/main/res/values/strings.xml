@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">社区家族组件</string>
+
+    <string name="community_family_class_title">家族分类</string>
+    <string name="community_hot_family_title">本周热门家族</string>
+    <string name="community_join_btn">加入</string>
+    <string name="community_joining_btn">加入中</string>
+    <string name="community_family_number">%1$s成员</string>
+    <string name="community_manage_btn">管理</string>
+    <string name="community_create_btn">创建</string>
+    <string name="community_ok_btn">确定</string>
+    <string name="community_save_btn">保存</string>
+    <string name="community_remove">移除</string>
+    <string name="community_restore">恢复</string>
+    <string name="community_add">添加</string>
+    <string name="community_cancel">取消</string>
+    <string name="community_detail_creator">族长 %1$s</string>
+    <string name="community_detail_post_number">帖子数 %1$s</string>
+    <string name="community_detail_member_number">共%1$s名%2$s成员</string>
+    <string name="community_detail_family_des_title">家族简介</string>
+    <string name="community_detail_family_deleted">来晚了，家族已删除</string>
+    <string name="community_detail_family_no">家族不存在</string>
+    <string name="community_detail_family_post_empty">发布一个内容吧\n内容都会在这里显示</string>
+    <string name="community_detail_family_hot_tab">最热</string>
+    <string name="community_detail_family_new_tab">最新</string>
+    <string name="community_detail_family_essence_tab">精华</string>
+    <string name="community_exit_family_hint">是否要退出家族？</string>
+    <string name="community_join_family_hint">发布内容需要加入家族</string>
+    <string name="community_joining_family_hint">已加入 等待管理员审核</string>
+    <string name="community_blacklist_family_hint">黑名单用户不允许发布</string>
+    <string name="community_not_manager_family_hint">此家族只允许管理员发布</string>
+
+    <string name="family_create_title">创建家族</string>
+    <string name="family_create_max_count">当前你能创建%d个家族</string>
+    <string name="family_create_cover">封面</string>
+    <string name="family_name">家族名称</string>
+    <string name="family_create_name_tip">填写家族名称</string>
+    <string name="family_des">家族简介</string>
+    <string name="family_create_des_tip">填写家族简介</string>
+    <string name="family_edit_name_hint">名称最多%d个字</string>
+    <string name="family_edit_des_hint">简介最多%d个字</string>
+    <string name="family_join_permission">加入权限</string>
+    <string name="family_publish_permission">发布管理</string>
+    <string name="family_join_permission_free">任何人均可自由加入</string>
+    <string name="family_join_permission_review">需要管理员审核</string>
+    <string name="family_publish_join_permission_review">需要成员加入才可以发帖及评论</string>
+    <string name="family_publish_manager_permission_review">管理员任意发帖及评论</string>
+    <string name="family_publish_no_permission_review">所有成员任意发帖及评论</string>
+    <string name="family_category">家族分类</string>
+    <string name="family_category_tip">创建后不可修改</string>
+    <string name="family_administrator">家族管理员</string>
+    <string name="family_administrator_count">%d/30</string>
+    <string name="family_admin_list">管理员列表</string>
+    <string name="family_admin_list_tip">管理员可管理成员、黑名单、进组申请和帖子</string>
+    <string name="family_member">家族成员</string>
+    <string name="family_section_manager">分区管理</string>
+    <string name="family_publish_manager">发布管理</string>
+    <string name="family_member_title_creator_admin">族长/管理员</string>
+    <string name="family_member_title_active">最近活跃</string>
+    <string name="family_member_title_new">最新成员</string>
+    <string name="family_member_list">成员列表</string>
+    <string name="family_member_manage_member_empty">还没有成员</string>
+    <string name="family_member_manage_black_list_empty">还没有黑名单</string>
+    <string name="family_member_manage_apply_empty">还没有申请</string>
+    <string name="family_member_manage_pass">通过</string>
+    <string name="family_member_manage_refuse">拒绝</string>
+    <string name="family_create_rule">遵守《时光网》社区公约</string>
+    <string name="family_search_hint">搜索</string>
+    <string name="family_creator">族长</string>
+    <string name="family_follow">关注</string>
+    <string name="family_follow_success">关注成功</string>
+    <string name="privacy_policy_h5">http://general.mtime.cn/help/policy/index.html</string>
+
+    <string name="family_find">找家族</string>
+    <string name="family_find_category">家族分类</string>
+    <string name="family_find_recommend_group_member_info">成员 %s个族人</string>
+    <string name="family_find_recommend_group_post_info">帖子数 %s </string>
+    <string name="family_editor_dialog_title_add">添加分类</string>
+    <string name="family_editor_dialog_title_modify">编辑分类</string>
+    <string name="family_editor_dialog_add">添加</string>
+    <string name="family_editor_dialog_modify">修改</string>
+    <string name="family_editor_dialog_content_hint">请输入分类名称</string>
+    <string name="family_editor_dialog_content">最多添加5个字</string>
+    <string name="family_delete_dialog_title">确认删除</string>
+    <string name="family_delete_dialog_content">确定要删除该分区?</string>
+
+
+</resources>

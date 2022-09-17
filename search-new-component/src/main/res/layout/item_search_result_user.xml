@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultUserItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:onClick="@{() -> data.mCommunityPersonProvider.startPerson(data.bean.userId, 0L)}"
+        >
+
+        <!-- 用户信息 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemSearchResultUserInfoLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginEnd="@dimen/offset_10px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/mItemSearchResultUserFollowLayout"
+            >
+
+            <!-- 头像 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mItemSearchResultUserHeadCard"
+                android:layout_width="@dimen/offset_82px"
+                android:layout_height="@dimen/offset_82px"
+                app:cardCornerRadius="@dimen/offset_41px"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintTop_toTopOf="@+id/mItemSearchResultUserNicknameTv"
+                app:layout_constraintBottom_toBottomOf="@+id/mItemSearchResultUserFansCountTv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/mItemSearchResultUserHeadIv"
+                    style="@style/MatchMatch"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_user_head"
+                    android:contentDescription="@string/app_name"
+                    load_image="@{data.bean.headImage}"
+                    load_image_default_img="@{@drawable/default_user_head}"
+                    load_image_width="@{41}"
+                    load_image_height="@{41}"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 认证类型 -->
+            <ImageView
+                android:id="@+id/mItemSearchResultUserAuthTypeIv"
+                android:layout_width="@dimen/offset_30px"
+                android:layout_height="@dimen/offset_30px"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintRight_toRightOf="@+id/mItemSearchResultUserHeadCard"
+                app:layout_constraintBottom_toBottomOf="@+id/mItemSearchResultUserHeadCard"
+                tools:src="@drawable/ic_yingrenrenzheng"
+                />
+
+            <!-- 昵称 -->
+            <TextView
+                android:id="@+id/mItemSearchResultUserNicknameTv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/offset_17sp"
+                android:textColor="@color/color_303a47"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemSearchResultUserHeadCard"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="昵称123昵称123昵称123昵称123昵称123昵称123昵称123昵称123"
+                />
+
+            <!-- 签名 -->
+            <TextView
+                android:id="@+id/mItemSearchResultUserSignTv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/offset_12sp"
+                android:textColor="@color/color_8798af"
+                android:text="@{data.bean.sign}"
+                app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultUserNicknameTv"
+                app:layout_constraintLeft_toLeftOf="@+id/mItemSearchResultUserNicknameTv"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名"
+                />
+
+            <!-- 粉丝数 -->
+            <TextView
+                android:id="@+id/mItemSearchResultUserFansCountTv"
+                style="@style/WrapWrap"
+                android:layout_marginTop="@dimen/offset_3px"
+                android:textSize="@dimen/offset_11sp"
+                android:textColor="@color/color_8798af"
+                app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultUserSignTv"
+                app:layout_constraintLeft_toLeftOf="@+id/mItemSearchResultUserNicknameTv"
+                tools:text="粉丝 999+"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 关注 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemSearchResultUserFollowLayout"
+            android:layout_width="@dimen/offset_116px"
+            android:layout_height="@dimen/offset_50px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="@{(view) -> data.onClick(view)}"
+            tools:background="@color/color_20a0da"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mItemSearchResultUserFollowTv"
+                style="@style/WrapWrap"
+                android:gravity="center"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                app:drawableTint="@color/color_20a0da"
+                android:text="@string/search_result_user_follow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:textColor="@color/color_ffffff"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mItemSearchResultUserLineView"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:background="@color/color_0f303a47"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultUserInfoLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb" >
+
+    <include
+        android:id="@+id/navigationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar_normal" />
+
+    <LinearLayout
+        android:id="@+id/layout_again_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/navigationbar"
+        android:layout_marginLeft="@dimen/offset_56px"
+        android:layout_marginRight="@dimen/offset_56px"
+        android:layout_marginTop="@dimen/offset_80px"
+        android:background="@drawable/orderpay_dialog_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/offset_20px"
+        android:paddingRight="@dimen/offset_20px" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="付款状态确认中，请稍候..."
+            android:textColor="@color/color_ff8600"
+            android:textSize="@dimen/font_size_large_high" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_again_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/offset_44px"
+        android:background="@drawable/btn_solid_orange_w540_h80"
+        android:text="我已完成付款"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large" />
+
+    <TextView
+        android:id="@+id/btn_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_ok"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/offset_32px"
+        android:background="@drawable/btn_line_orange_w540_h80"
+        android:text="更换支付方式"
+        android:gravity="center"
+        android:textColor="@color/color_ff8600"
+        android:textSize="@dimen/font_size_large" />
+
+    <!-- 客服热线电话 -->
+
+    <com.mtime.mtmovie.widgets.HotlinePhoneView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/offset_40px"
+        app:action="ACTION_CALL"
+        app:phoneNumber="4006059500"
+        app:showDialog="true" />
+
+</RelativeLayout>

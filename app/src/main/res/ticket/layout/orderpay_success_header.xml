@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/order_detail_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_f2f2f2"
+    android:orientation="vertical"
+    >
+
+    <!-- 立即支付 -->
+    <include
+        android:id="@+id/timer_view"
+        layout="@layout/order_detail_timer_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <!-- 兑换码 -->
+    <include
+        android:id="@+id/exchange_view"
+        layout="@layout/order_detail_exchangecode_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- 购票送自提商品活动 -->
+    <include
+        android:id="@+id/after_buy_ticket_promotion"
+        layout="@layout/after_buy_ticket_promotion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
+
+    <!-- 会员奖励模块 -->
+    <include
+        android:id="@+id/vip_reward"
+        layout="@layout/vip_reward"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <!-- 购票后购物 -->
+    <include
+        android:id="@+id/shopping_after_buyticket"
+        layout="@layout/order_detail_shop_after_buyticket_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       />
+
+    <!-- 订单详情和影院详情 -->
+    <include
+        layout="@layout/order_detail_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       />
+
+    <LinearLayout
+        android:id="@+id/paysuccess_voucherimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/offset_10dp">
+
+    </LinearLayout>
+
+    <!-- 电影周边title -->
+    <LinearLayout
+        android:id="@+id/paysuccess_goods_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="@dimen/offset_20dp"
+        android:paddingBottom="@dimen/offset_10dp"
+       >
+
+        <View
+            android:layout_width="@dimen/offset_30dp"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:background="@color/color_d7d7d7"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" • 热卖电影周边 • "
+            android:textColor="@color/color_bbbbbb"
+            android:textSize="@dimen/font_size_13sp" />
+        <View
+            android:layout_width="@dimen/offset_30dp"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:background="@color/color_d7d7d7" />
+    </LinearLayout>
+
+</LinearLayout>

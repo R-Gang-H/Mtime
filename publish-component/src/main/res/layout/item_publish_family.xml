@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/publish"
+        android:scaleType="centerCrop"
+        android:src="@color/color_12c7e9"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="1dp"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/publish"
+            android:scaleType="centerCrop"
+            android:src="@color/color_12c7e9" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="@string/publish"
+        android:src="@drawable/icon_publish_content_del"
+        android:translationZ="1dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:background="@color/color_6620a0da"
+        android:gravity="center"
+        android:text="@string/publish_cover_text"
+        android:textColor="@color/color_ffffff"
+        android:textSize="12sp"
+        android:translationZ="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

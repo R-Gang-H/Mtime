@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="com.kotlin.android.home.ui.toplist.constant.TopListConstant" />
+        <import type="com.kotlin.android.mtime.ktx.HtmlExtKt" />
+        <variable
+            name="data"
+            type="com.kotlin.android.app.data.entity.toplist.TopListInfo" />
+    </data>
+
+    <!-- 榜单详情页通用 标题 头部信息 -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/mToplistDetailAppBarLayout"
+        style="@style/MatchWrap"
+        android:background="@android:color/transparent"
+        app:elevation="0dp"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            >
+
+            <!-- 头部信息 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mToplistDetailHeadInfoCl"
+                style="@style/MatchWrap"
+                >
+
+                <!-- 海报模糊背景 -->
+                <ImageView
+                    android:id="@+id/mToplistDetailHeadBgIv"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="@dimen/offset_0px"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_toplist_detail_head_blur_bg"
+                    />
+
+                <!-- 海报渐变蒙层 -->
+                <View
+                    android:id="@+id/mToplistDetailHeadCoverView"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="@dimen/offset_0px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@color/color_4e6382"
+                    tools:alpha="0.2"
+                    />
+
+                <!-- 标题 -->
+                <TextView
+                    android:id="@+id/mToplistDetailHeadInfoTitleTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_30px"
+                    android:layout_marginTop="@dimen/offset_196px"
+                    android:layout_marginRight="@dimen/offset_30px"
+                    android:text="@{data.title}"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="哥斯拉2：怪兽之王哥斯拉2：怪兽之王哥斯拉2：怪兽之王"
+                    />
+
+                <!-- item数 -->
+                <TextView
+                    android:id="@+id/mToplistDetailHeadInfoCountTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mToplistDetailHeadInfoTitleTv"
+                    tools:text="10个内容" />
+
+                <!-- 关注数 -->
+                <TextView
+                    android:id="@+id/mToplistDetailHeadInfoFollowCountTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_15px"
+                    android:layout_marginTop="@dimen/offset_27px"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/mToplistDetailHeadInfoCountTv"
+                    app:layout_constraintLeft_toRightOf="@+id/mToplistDetailHeadInfoCountTv"
+                    tools:text="1.3万人关注" />
+
+                <!-- 描述 -->
+                <TextView
+                    android:id="@+id/mToplistDetailHeadInfoIntroTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_35px"
+                    android:layout_marginTop="@dimen/offset_30px"
+                    android:layout_marginEnd="@dimen/offset_35px"
+                    android:layout_marginBottom="@dimen/offset_40px"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:text='@{data.description == null ? "" : HtmlExtKt.getTextFromHtml(data.description)}'
+                    android:textColor="@color/color_cbd0d7"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mToplistDetailHeadInfoCountTv"
+                    tools:text="描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述" />
+
+                <!-- 关注按钮 本期没有 -->
+                <TextView
+                    android:id="@+id/mToplistMovieDetailHeadFollowBtn"
+                    android:layout_width="@dimen/offset_116px"
+                    android:layout_height="@dimen/offset_50px"
+                    android:layout_marginTop="@dimen/offset_161px"
+                    android:layout_marginEnd="@dimen/offset_30px"
+                    android:gravity="center"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/mToplistDetailHeadInfoCountTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@color/color_20a0da"
+                    tools:text="已关注"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 标题栏 -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/mToplistDetailToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                >
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:id="@+id/mToplistDetailTitleBgCl"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    >-->
+
+                    <!-- marginTop=stateBar高度 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mToplistDetailTitleCl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="54dp"
+                        >
+
+                        <!-- 返回箭头 -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/mToplistDetailHeadBackCl"
+                            android:layout_width="@dimen/offset_90px"
+                            android:layout_height="@dimen/offset_0px"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            >
+
+                            <ImageView
+                                android:id="@+id/mToplistDetailHeadBackIv"
+                                android:layout_width="@dimen/offset_27px"
+                                android:layout_height="@dimen/offset_40px"
+                                android:layout_marginStart="@dimen/offset_30px"
+                                android:contentDescription="@string/loading"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:srcCompat="@drawable/ic_back_light"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- 标题 -->
+                        <TextView
+                            android:id="@+id/mToplistDetailHeadTitleTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/offset_30px"
+                            android:lines="1"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/offset_17sp"
+                            android:textColor="@color/color_1d2736"
+                            android:textStyle="bold"
+                            android:text="@{data.title}"
+                            android:alpha="1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/mToplistDetailHeadBackCl"
+                            app:layout_constraintRight_toLeftOf="@+id/mToplistDetailHeadShareIv"
+                            tools:text="哥斯拉2：怪兽之王"
+                            />
+
+                        <!-- 分享 灰色ic_ver_more -->
+                        <ImageView
+                            android:id="@+id/mToplistDetailHeadShareIv"
+                            android:layout_width="@dimen/offset_40px"
+                            android:layout_height="@dimen/offset_40px"
+                            android:layout_marginEnd="@dimen/offset_30px"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:contentDescription="@string/loading"
+                            app:srcCompat="@drawable/ic_more_light"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</layout>

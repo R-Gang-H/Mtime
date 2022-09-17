@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListSelectItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/offset_40px"
+        >
+
+        <!-- 片单名称栏 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemToplistSelectTitleCl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 片单名称 -->
+            <TextView
+                android:id="@+id/mItemToplistSelectTitleTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_10px"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/offset_14sp"
+                android:textColor="@color/color_4e5e73"
+                android:textStyle="bold"
+                android:text="@{data.bean.title}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/mItemToplistSelectAllTv"
+                tools:text="爱情片TOP20爱情片TOP20爱情片TOP20爱情片TOP20爱情片TOP20爱情片TOP20爱情片TOP20"
+                />
+
+            <!-- 全部 -->
+            <TextView
+                android:id="@+id/mItemToplistSelectAllTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_toplist_movie_right_arrow"
+                android:drawablePadding="@dimen/offset_10px"
+                android:textSize="@dimen/offset_14sp"
+                android:textColor="@color/color_8798af"
+                android:text="@string/all"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:onClick="@{ () -> data.homeProvider.startToplistDetailActivity(data.bean.id)}"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 影片 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mItemToplistSelectRv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/offset_15px"
+            android:paddingRight="@dimen/offset_15px"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistSelectTitleCl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_toplist_select_movie"
+            tools:itemCount="3"
+            tools:spanCount="3"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

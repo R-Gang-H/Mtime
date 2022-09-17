@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingTop="@dimen/offset_5dp">
+
+    <com.mtime.widgets.NetworkImageView
+        android:id="@+id/niv_promotion"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_20px"
+        android:layout_marginTop="@dimen/offset_5dp"
+        android:background="@color/color_f2f2f2"/>
+
+</LinearLayout>

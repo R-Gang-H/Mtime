@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListCategoryOtherItemBinder" />
+</data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_110px"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginLeft="@dimen/offset_10px"
+        android:layout_marginRight="@dimen/offset_10px"
+        app:cardCornerRadius="@dimen/offset_10px"
+        app:cardElevation="0px"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="@{ () -> data.homeProvider.startToplistDetailActivity(data.bean.id) }"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <!-- 背景图片  -->
+            <ImageView
+                android:id="@+id/mItemToplistCategoryOtherBgIv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_0px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:scaleType="fitXY"
+                />
+
+            <!-- 海报渐变蒙层 -->
+            <View
+                android:id="@+id/mItemToplistCategoryOtherCoverView"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_0px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:background="@color/color_4e6382"
+                />
+
+            <!-- 第1行 -->
+            <TextView
+                android:id="@+id/mItemToplistCategoryOtherTitleTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_13sp"
+                android:textStyle="bold"
+                android:text="@{data.bean.title}"
+                tools:text="华语电影"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/mFragToplistCategoryOtherSubTitleTv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+            <!-- 第2行 -->
+            <TextView
+                android:id="@+id/mFragToplistCategoryOtherSubTitleTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_11sp"
+                android:text="@{data.bean.subTitle}"
+                app:layout_constraintTop_toBottomOf="@+id/mItemToplistCategoryOtherTitleTv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="TOP100"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

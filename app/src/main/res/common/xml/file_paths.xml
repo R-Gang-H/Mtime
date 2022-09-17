@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <external-path
+        name="mtime_pic"
+        path="时光网/camera_pic/"/>
+    <external-path
+        name="external_files"
+        path="."/>
+
+    <external-path
+        name="external_11_files"
+        path="Android/data/com.mtime/"/>
+
+    <files-path
+        name="apk_file"
+        path="."/>
+
+
+</paths>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/btn_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/offset_8dp"
+        android:paddingTop="@dimen/offset_8dp"
+        android:src="@drawable/mall_home_cart_icon"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:layout_below="@+id/btn_msg"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/btn_msg_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/btn_msg"
+        android:layout_alignTop="@id/btn_msg"
+        android:background="@drawable/find_news_detail_comment_num_icon"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_10sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/btn_msg_img_onlynotify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/btn_msg"
+        android:layout_alignTop="@id/btn_msg"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:src="@drawable/circle_red_sold_h18"
+        android:visibility="gone" />
+
+</RelativeLayout>

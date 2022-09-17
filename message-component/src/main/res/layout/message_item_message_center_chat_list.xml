@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.message.ui.center.binder.MessageCenterChatListItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/offset_12dp"
+            android:layout_height="@dimen/offset_12dp"
+            android:layout_marginStart="@dimen/offset_13dp"
+            android:layout_marginTop="@dimen/offset_18dp"
+            android:background="@drawable/message_ic_center_title_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_chat_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_16dp"
+            android:layout_marginTop="@dimen/offset_18dp"
+            android:text="@string/message_chat_list"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_chat_list"
+            android:layout_width="@dimen/offset_30dp"
+            android:layout_height="@dimen/offset_30dp"
+            android:layout_marginEnd="@dimen/offset_6dp"
+            android:padding="@dimen/offset_5dp"
+            android:src="@drawable/message_ic_chat_list"
+            app:layout_constraintBottom_toBottomOf="@id/tv_chat_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_chat_list" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_empty"
+            android:layout_width="@dimen/offset_80dp"
+            android:layout_height="@dimen/offset_60dp"
+            android:layout_marginTop="@dimen/offset_90dp"
+            android:contentDescription="@string/content_description"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_exception"
+            android:visibility="@{data.bean.hasChatList() ? View.GONE : View.VISIBLE }"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_chat_list" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_10dp"
+            android:text="@string/message_no_chat_record"
+            android:textColor="@color/color_cbd0d7"
+            android:textSize="@dimen/offset_12sp"
+            android:visibility="@{data.bean.hasChatList() ? View.GONE : View.VISIBLE }"
+            app:layout_constraintEnd_toEndOf="@id/iv_empty"
+            app:layout_constraintStart_toStartOf="@id/iv_empty"
+            app:layout_constraintTop_toBottomOf="@id/iv_empty" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_chat_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{data.bean.hasChatList() ? View.VISIBLE : View.GONE }"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_chat_list" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

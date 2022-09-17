@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.capture.CaptureActivity">
+        <com.kotlin.android.qrcode.component.journeyapps.barcodescanner.BarcodeView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="match_parent"
+            android:id="@+id/zxing_barcode_surface"/>
+
+        <com.kotlin.android.qrcode.component.ui.widgets.MViewfinderView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/zxing_viewfinder_view"/>
+
+        <androidx.appcompat.widget.AppCompatTextView android:id="@+id/zxing_status_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="@dimen/offset_20px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/zxing_transparent"
+            android:text="@string/zxing_msg_default_status"
+            android:textColor="@color/zxing_status_text"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

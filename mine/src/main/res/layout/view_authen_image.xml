@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--    手持身份证照-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/idCardTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_id_card_image"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--手持身份证必选提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/idCardTipsTv"
+        style="@style/AuthenMustFillInTips"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/idCardTitleTv"
+        android:text="*"
+         />
+
+
+    <!--    手持身份证照拍照控件-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/takePhotoCV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_190px"
+        android:layout_marginLeft="@dimen/offset_60px"
+        android:layout_marginTop="@dimen/offset_40px"
+        android:layout_marginRight="@dimen/offset_30px"
+        app:cardCornerRadius="@dimen/offset_10px"
+        app:cardElevation="@dimen/offset_10px"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/simpleCV"
+        app:layout_constraintTop_toBottomOf="@id/idCardTitleTv">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/offset_50px"
+            android:layout_height="@dimen/offset_45px"
+            android:layout_gravity="center"
+            app:tint="@color/color_cbd0d7"
+            app:srcCompat="@drawable/ic_camera"
+            />
+        <!--      从系统相册取出  -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/takePhotoIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    示例-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/simpleCV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_190px"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_40px"
+        android:layout_marginRight="@dimen/offset_60px"
+        app:cardCornerRadius="@dimen/offset_10px"
+        app:cardElevation="@dimen/offset_10px"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/takePhotoCV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idCardTitleTv">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/simpleIV"
+            android:layout_width="match_parent"
+            android:src="@drawable/ic_idcard"
+            android:layout_height="match_parent"
+             />
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    拍照提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/takePhotoTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_take_photo_tips"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_11sp"
+        app:layout_constraintLeft_toLeftOf="@id/takePhotoCV"
+        app:layout_constraintRight_toRightOf="@id/takePhotoCV"
+        app:layout_constraintTop_toBottomOf="@id/takePhotoCV" />
+
+    <!--    示例提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/simpleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_simple"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_11sp"
+        app:layout_constraintLeft_toLeftOf="@id/simpleCV"
+        app:layout_constraintRight_toRightOf="@id/simpleCV"
+        app:layout_constraintTop_toBottomOf="@id/simpleCV" />
+
+
+    <!--    名片或工作证-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/visitingCardTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_visiting_card"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/takePhotoTv" />
+
+    <!--真实姓名必选提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/visitingCardTipsTv"
+        style="@style/AuthenMustFillInTips"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintLeft_toRightOf="@id/visitingCardTv"
+        app:layout_constraintTop_toBottomOf="@id/takePhotoTv"
+        android:text="*"
+        />
+
+    <!--    认证公函下载-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/officalLetterDownBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_20px"
+        app:layout_constraintLeft_toLeftOf="@id/visitingCardTakePhotoCV"
+        app:layout_constraintRight_toRightOf="@id/visitingCardTakePhotoCV"
+        app:layout_constraintTop_toBottomOf="@id/visitingCardTv">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/officalLetterDownTv"
+            android:paddingLeft="@dimen/offset_20px"
+            android:paddingTop="@dimen/offset_5px"
+            android:paddingRight="@dimen/offset_20px"
+            android:drawablePadding="@dimen/offset_7px"
+            android:paddingBottom="@dimen/offset_5px"
+            android:text="@string/mine_authen_offical_letter_down"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_20a0da"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    名片或工作证-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/visitingCardTakePhotoCV"
+        android:layout_width="@dimen/offset_285px"
+        android:layout_height="@dimen/offset_190px"
+        android:layout_marginLeft="@dimen/offset_60px"
+        android:layout_marginTop="@dimen/offset_40px"
+        app:cardCornerRadius="@dimen/offset_10px"
+        android:layout_marginBottom="@dimen/offset_6px"
+        app:cardElevation="@dimen/offset_10px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/officalLetterDownBtn">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/offset_50px"
+            android:layout_height="@dimen/offset_45px"
+            android:layout_gravity="center"
+            app:tint="@color/color_cbd0d7"
+            app:srcCompat="@drawable/ic_camera"
+            />
+        <!--      从系统相册取出  -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/visitingCardTakePhotoIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop" />
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

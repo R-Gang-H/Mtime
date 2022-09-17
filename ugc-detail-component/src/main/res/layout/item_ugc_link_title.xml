@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.binder.UgcLinkTitleBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/offset_24px"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:layout_marginBottom="@dimen/offset_20px"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/color_1d2736"
+        android:textStyle="bold"
+        android:text="@{data.title}"
+        android:textSize="@dimen/offset_18sp"
+        tools:text="相关推荐"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

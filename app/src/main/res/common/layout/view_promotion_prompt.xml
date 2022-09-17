@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/offset_15dp"
+    android:layout_marginRight="@dimen/offset_15dp"
+    android:background="@drawable/bg_promotion_prompt"
+    android:paddingLeft="@dimen/offset_15dp"
+    android:paddingRight="@dimen/offset_15dp">
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="购票用户周边特惠"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_pxtosp_26" />
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/offset_25dp"
+        android:layout_toLeftOf="@+id/iv_close"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_8dp"
+            android:text="@string/str_home_mall_before_end"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_26" />
+
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/offset_2dp"
+            android:text="00"
+            android:textColor="@color/color_fe6767"
+            android:textSize="@dimen/font_size_11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_2dp"
+            android:layout_marginRight="@dimen/offset_2dp"
+            android:text=":"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_28" />
+
+        <TextView
+            android:id="@+id/tv_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/offset_2dp"
+            android:text="00"
+            android:textColor="@color/color_fe6767"
+            android:textSize="@dimen/font_size_11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_2dp"
+            android:layout_marginRight="@dimen/offset_2dp"
+            android:text=":"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_28" />
+
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/offset_2dp"
+            android:text="00"
+            android:textColor="@color/color_fe6767"
+            android:textSize="@dimen/font_size_11sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/offset_14dp"
+        android:layout_height="@dimen/offset_14dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/icon_close_white" />
+</RelativeLayout>

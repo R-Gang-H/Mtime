@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchMatch"
+        >
+
+        <!-- 营业执照 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mActLicenseBusinessLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_100px"
+            android:layout_marginTop="@dimen/offset_50px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LicenseTextView"
+                android:text="@string/mine_license_business"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <ImageView
+                style="@style/LicenseArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/mActLicenseBusinessLineView"
+            style="@style/LicenseLine"
+            app:layout_constraintTop_toBottomOf="@+id/mActLicenseBusinessLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <!-- 网络视听许可证 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mActLicenseNetworkAudioVisualLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_100px"
+            app:layout_constraintTop_toBottomOf="@+id/mActLicenseBusinessLineView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LicenseTextView"
+                android:text="@string/mine_license_network_audio_visual"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <ImageView
+                style="@style/LicenseArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/mActLicenseNetworkAudioVisualsLineView"
+            style="@style/LicenseLine"
+            app:layout_constraintTop_toBottomOf="@+id/mActLicenseNetworkAudioVisualLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <!-- 广播电视节目制作经营许可证 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mActLicenseProgramProductionLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_100px"
+            app:layout_constraintTop_toBottomOf="@+id/mActLicenseNetworkAudioVisualsLineView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LicenseTextView"
+                android:text="@string/mine_license_program_production"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <ImageView
+                style="@style/LicenseArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            style="@style/LicenseLine"
+            app:layout_constraintTop_toBottomOf="@+id/mActLicenseProgramProductionLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

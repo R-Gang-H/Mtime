@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    /**
+     * 资源同名问题处理
+     * 每个子模块给资源名添加前缀，具体做法是在每个子模块的build.gradle文件的android块内添加一行代码：resourcePrefix “资源名前缀”：
+     */
+    resourcePrefix "core_"
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Support.kotlin_stdlib_jdk8
+    testImplementation Support.junit
+    androidTestImplementation Support.junit_ext
+    androidTestImplementation Support.espresso_core
+    // add lib
+    implementation project(path: ':ktx')
+//    implementation project(path: ':router')
+    implementation Dependencies.arouter_api
+    api project(':statistics')
+    // databinding
+    api Support.databinding_runtime
+    kapt Support.databinding_compiler
+    implementation Dependencies.gson
+//    Facebook/Stetho——Android开发调试神器  可以进行抓包和db/sp查看及修改  https://www.jianshu.com/p/804a2f9c8897
+//    api 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+//    implementation 'com.facebook.stetho:stetho-js-rhino:1.5.0'
+    implementation project(path: ':audio-floatview-component')
+
+
+}

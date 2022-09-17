@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+//apply from: '../nexus.gradle'
+
+
+android {
+    /**
+     * 资源同名问题处理
+     * 每个子模块给资源名添加前缀，具体做法是在每个子模块的build.gradle文件的android块内添加一行代码：resourcePrefix “资源名前缀”：
+     */
+    resourcePrefix "imageloader_"
+    compileSdkVersion rootProject.ext.compileSdk
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'proguard-rules.pro'//把混淆文件打入aar
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.appcompat:appcompat:1.2.0'
+
+    implementation project(path: ':app-data')
+    implementation project(path: ':ktx')
+    implementation project(path: ':image')
+}

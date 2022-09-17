@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kotlin.android.widget.titlebar.TitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:translationZ="0dp" />
+
+    <com.kotlin.android.publish.component.widget.PublishScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="65dp"
+        android:fillViewport="true"
+        android:visibility="visible">
+
+        <com.kotlin.android.publish.component.widget.PublishLayout
+            android:id="@+id/publishLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.kotlin.android.publish.component.widget.PublishScrollView>
+
+    <com.kotlin.android.comment.component.bar.BarButton
+        android:id="@+id/barButton"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom" />
+
+    <FrameLayout
+        android:id="@+id/familyBubble"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="70dp"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="8dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/ic_triangle_bottom_20a0da" />
+
+        <TextView
+            android:id="@+id/familyBubbleView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@color/color_20a0da"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/publish_add_family_get_more"
+            android:textColor="@color/color_ffffff" />
+
+    </FrameLayout>
+</FrameLayout>

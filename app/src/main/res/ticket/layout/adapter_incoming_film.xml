@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+    <View
+        android:id="@+id/splite_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_pxtodx_1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/offset_pxtodx_20"
+        android:background="@color/color_d8d8d8"/>
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_pxtodx_40"
+        android:background="@color/color_f6f6f6"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/offset_pxtodx_20"
+        android:textColor="@color/color_777777"
+        android:textSize="@dimen/font_size_11sp"
+        tools:text="4月5日"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_pxtodx_220">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/film_img_card"
+            style="@style/WrapWrap"
+            android:layout_marginLeft="@dimen/offset_pxtodx_20"
+            android:layout_marginTop="@dimen/offset_pxtodx_20"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            >
+
+        <RelativeLayout
+            android:id="@+id/film_img_layout"
+            android:layout_width="@dimen/offset_pxtodx_120"
+            android:layout_height="@dimen/offset_pxtodx_180"
+            >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_dddddd"/>
+
+            <!-- 海报 -->
+            <com.mtime.widgets.NetworkImageView
+                android:id="@+id/film_img"
+                android:layout_width="@dimen/offset_pxtodx_118"
+                android:layout_height="@dimen/offset_pxtodx_178"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/default_image"
+                />
+
+            <!-- 屏蔽海报高斯模糊 -->
+            <View
+                android:id="@+id/v_filter_photo"
+                android:layout_width="@dimen/offset_pxtodx_118"
+                android:layout_height="@dimen/offset_pxtodx_178"
+                android:background="@drawable/image_border"
+                android:padding="@dimen/offset_pxtodx_1"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                />
+
+            <!-- 海报过滤Icon和文字 -->
+            <LinearLayout
+                android:id="@+id/ll_filter_cover"
+                android:layout_width="@dimen/offset_44dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shield_poster"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/color_bbbbbb"
+                    android:textSize="@dimen/font_size_pxtosp_22"
+                    android:text="@string/movie_cover_filter"
+                    />
+
+            </LinearLayout>
+
+            <!-- 视频图标 -->
+            <ImageView
+                android:id="@+id/video_btn"
+                android:layout_width="@dimen/offset_pxtodx_40"
+                android:layout_height="@dimen/offset_pxtodx_40"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/incoming_play"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/film_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginTop="@dimen/offset_pxtodx_36"
+            android:layout_toRightOf="@id/film_img_card"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_pxtosp_32"
+            tools:text="铁道飞虎"/>
+
+        <LinearLayout
+            android:id="@+id/want_see_and_film_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/film_title"
+            android:layout_below="@id/film_title"
+            android:layout_marginTop="@dimen/offset_pxtodx_14"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/want_see_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/color_f97d3f"
+                android:textSize="@dimen/font_size_pxtosp_26"
+                tools:text="2,890"/>
+
+            <TextView
+                android:id="@+id/film_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_pxtosp_26"
+                tools:text="人想看-动作"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/actors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/want_see_and_film_type"
+            android:layout_below="@id/want_see_and_film_type"
+            android:layout_marginTop="@dimen/offset_pxtodx_14"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="@dimen/offset_pxtodx_400"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_pxtosp_26"
+            tools:text="王津 / 亓昊楠 / 屈峰 / 王五胜"/>
+
+        <RelativeLayout
+            android:id="@+id/want_btn_layout"
+            android:layout_width="@dimen/offset_pxtodx_110"
+            android:layout_height="@dimen/offset_pxtodx_58"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/offset_pxtodx_37"
+            android:layout_marginRight="@dimen/offset_pxtodx_20"
+            android:background="@drawable/bg_stroke_f97d3f_frame">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/offset_pxtodx_10">
+
+                <ImageView
+                    android:id="@+id/want_see_icon"
+                    android:layout_width="@dimen/offset_pxtodx_30"
+                    android:layout_height="@dimen/offset_pxtodx_26"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_want_see"/>
+
+                <TextView
+                    android:id="@+id/want_see_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_pxtodx_5"
+                    android:textColor="@color/color_f97d3f"
+                    android:textSize="@dimen/font_size_pxtosp_26"
+                    tools:text="想看"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

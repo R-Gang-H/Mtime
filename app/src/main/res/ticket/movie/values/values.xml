@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_47505c">#47505c</color>
+
+    <string name="movie_details_tab_intro">简介</string>
+    <string name="movie_details_tab_review">影评</string>
+    <string name="movie_details_tab_more">更多</string>
+    <string name="movie_details_score_title">时光评分</string>
+    <string name="movie_details_no_score">暂无评分</string>
+    <!--movie_details_score_count 废弃-->
+    <string name="movie_details_want">想看</string>
+    <string name="movie_details_seen">看过</string>
+    <string name="movie_details_my_review_seen">已看过</string>
+    <string name="movie_details_online_title">在线观影</string>
+    <string name="movie_details_intro_expand"><u>展开</u></string>
+    <string name="common_title_all_text">全部</string>
+    <string name="movie_details_actor_list_title">演职人员</string>
+    <string name="movie_details_mtime_dialogue_title">时光对话</string>
+    <string name="movie_details_trailer_title">预告片与花絮</string>
+    <string name="movie_details_pictures_title">剧照</string>
+    <string name="movie_details_short_review_title">短评</string>
+    <string name="movie_details_short_review_all">查看全部%1$d条短评</string>
+    <string name="movie_details_long_review_title">影评</string>
+    <string name="movie_details_long_review_all">查看全部%1$d条影评</string>
+    <string name="movie_details_mtime_original_title">时光原创</string>
+    <string name="movie_details_events_title"><![CDATA[该片你该了解的<font color="#36c096"><i><big> %1$d </big></i></font>件事]]></string>
+    <string name="movie_details_classics_lines_title">经典台词</string>
+    <string name="movie_details_box_office_title">票房</string>
+    <string name="movie_details_box_office_title_total"><![CDATA[%1$s<font color="#feb12a"><i><big> %2$s </big></i></font>]]></string>
+    <string name="movie_details_box_office_title_all">查看票房榜</string>
+    <string name="movie_details_box_office_title2">今日票房排名</string>
+    <string name="movie_details_awards_title"><![CDATA[共计获奖<font color="#feb12a"><i><big> %1$d </big></i></font>次 · 提名<font color="#feb12a"><i><big> %2$d </big></i></font>次]]></string>
+    <string name="movie_details_awards_title2"><![CDATA[共计获奖<font color="#feb12a"><i><big> %1$d </big></i></font>次]]></string>
+    <string name="movie_details_awards_title3"><![CDATA[共计提名<font color="#feb12a"><i><big> %1$d </big></i></font>次]]></string>
+    <string name="movie_details_extend_info_title">扩展资料</string>
+    <string name="movie_details_extend_media_comment_title">媒体评论</string>
+    <string name="movie_details_extend_media_comment_all">%1$d家媒体相关报道</string>
+    <string name="movie_details_extend_behind_make_title">幕后制作</string>
+    <string name="movie_details_extend_behind_make_all">媒体相关报道</string>
+    <string name="movie_details_extend_make_release_title">制作发行</string>
+    <string name="movie_details_extend_make_release_all">%1$d家公司参与制作</string>
+    <string name="movie_details_extend_more_info_title">更多资料</string>
+    <string name="movie_details_extend_more_info_all">其他更多内容</string>
+    <string name="movie_details_associated_movie_title">关联电影</string>
+    <string name="movie_details_score_format">时光评分</string>
+    <string name="movie_details_goods_list_title">正版周边</string>
+
+
+    <style name="common_item_title_view_all_tv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8798af</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawableRight">@drawable/common_icon_arrows_right</item>
+        <item name="android:drawablePadding">4dp</item>
+    </style>
+    <style name="movie_details_extend_left_text_style" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#4e5e73</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+
+    <declare-styleable name="CommonItemTitleView">
+        <attr name="itv_title_text" format="string" />
+        <attr name="itv_all_text" format="string" />
+    </declare-styleable>
+
+
+    <string name="movie_honor_list_title">获奖记录</string>
+    <string name="movie_honor_list_award_count_unit"> 次</string>
+    <string name="movie_global_boxoffice_title">全球票房榜</string>
+
+    <string name="movie_comment_share_change_movie_still">更换剧照</string>
+
+</resources>

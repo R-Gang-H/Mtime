@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/offset_335dp"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_325dp"
+        android:layout_marginTop="@dimen/offset_127dp"
+        android:paddingLeft="@dimen/offset_25dp"
+        android:paddingRight="@dimen/offset_25dp"
+        android:background="@drawable/dialog_member_center_gift_bg"
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_139dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_normal_more"
+            android:textStyle="bold"
+            tools:text="亲爱的XXXXXXXX："
+            />
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="@dimen/offset_10dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_normal_more"
+            tools:text="X月是你的生日月，时光网送你一份生日大礼包，祝你生日快乐！快拆开看看吧！快拆开看看吧！"
+            />
+
+        <TextView
+            android:id="@+id/tv_dismantle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_45dp"
+            android:layout_below="@+id/tv_tip"
+            android:layout_marginTop="@dimen/offset_30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_36"
+            android:background="@drawable/dialog_member_center_gift_dismantle_bg"
+            android:text="@string/dismantle_gift"
+            />
+
+    </RelativeLayout>
+
+    <!-- 礼包图片 -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/dialog_member_center_gift_icon"
+        />
+
+    <!-- 关闭图片 -->
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rl_content"
+        android:layout_alignRight="@+id/rl_content"
+        android:padding="@dimen/offset_20dp"
+        android:src="@drawable/dialog_member_center_close"
+        />
+
+</RelativeLayout>

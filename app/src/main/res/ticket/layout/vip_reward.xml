@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/offset_28px"
+    android:paddingBottom="@dimen/offset_28px"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/vip_reward_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginRight="@dimen/offset_10dp"
+        >
+
+        <ImageView
+            android:id="@+id/vip_image"
+            android:layout_width="@dimen/offset_30dp"
+            android:layout_height="@dimen/offset_28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/vip_coin" />
+
+        <TextView
+            android:id="@+id/vip_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/offset_10dp"
+            android:layout_toRightOf="@+id/vip_image"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_f97d3f"
+            android:textSize="@dimen/font_size_15sp"
+            tools:text="会员奖励：120时光币+80经验值" />
+
+        <TextView
+            android:id="@+id/vip_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vip_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/offset_6px"
+            android:layout_toRightOf="@+id/vip_image"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_11sp"
+            tools:text="奖励确认收货后发放，评价/晒单还可获得额外经验值" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_right_arrow" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_10dp"
+        android:layout_below="@+id/vip_reward_content"
+        android:layout_marginTop="@dimen/offset_17dp"
+        android:background="@color/color_f2f2f2" />
+
+</LinearLayout>

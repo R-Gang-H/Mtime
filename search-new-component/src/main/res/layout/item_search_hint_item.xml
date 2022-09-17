@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.adapter.binder.SearchHintBinder" />
+    </data>
+    <TextView
+        android:id="@+id/mItemSearchHintTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/offset_16sp"
+        android:textColor="@color/color_4E5E73"
+        tools:text="北京通州复仇者联盟广场店"
+        android:paddingTop="@dimen/offset_12px"
+        android:paddingBottom="@dimen/offset_12px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:onClick="@{view -> data.onClick(view)}"
+        />
+</layout>

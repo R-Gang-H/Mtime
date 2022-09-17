@@ -1,0 +1,82 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    /**
+     * 资源同名问题处理
+     * 每个子模块给资源名添加前缀，具体做法是在每个子模块的build.gradle文件的android块内添加一行代码：resourcePrefix “资源名前缀”：
+     */
+    resourcePrefix "js_sdk_"
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+
+        // Specifies the ABI configurations of your native
+        // libraries Gradle should build and package with your APK.
+        ndk {
+            abiFilters "armeabi", 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation Support.kotlin_stdlib_jdk8
+    implementation project(path: ':widget')
+    testImplementation Support.junit
+    androidTestImplementation Support.junit_ext
+    androidTestImplementation Support.espresso_core
+    implementation project(path: ':mtime-ktx')
+    implementation project(path: ':resource')
+    implementation project(path: ':app-router')
+    implementation project(path: ':app-data')
+    implementation project(path: ':user')
+    implementation project(path: ':share')
+    implementation project(path: ':app-api')
+    kapt Dependencies.arouter_compiler
+    api Dependencies.x5_webview
+
+}

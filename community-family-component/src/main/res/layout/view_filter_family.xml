@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="筛选分类"
+        android:textColor="@color/color_1d2736"
+        android:layout_marginLeft="@dimen/offset_15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="12sp"
+        android:gravity="center"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_4dp"
+        android:layout_marginBottom="@dimen/offset_4dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvBest"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingLeft="@dimen/offset_10dp"
+            android:paddingRight="@dimen/offset_10dp"
+            android:textColor="@color/color_8798af"
+            android:text="精华"/>
+
+        <TextView
+            android:id="@+id/tvHot"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:text="最热"
+            android:layout_marginRight="5dp"
+            app:layout_constraintRight_toLeftOf="@+id/tvBest"
+            android:paddingLeft="@dimen/offset_10dp"
+            android:paddingRight="@dimen/offset_10dp"
+            android:textColor="@color/color_8798af"/>
+        <TextView
+            android:id="@+id/tvNew"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:text="最新"
+            android:layout_marginRight="5dp"
+            app:layout_constraintRight_toLeftOf="@+id/tvHot"
+            android:paddingLeft="@dimen/offset_10dp"
+            android:paddingRight="@dimen/offset_10dp"
+            android:textColor="@color/color_8798af"/>
+
+        <TextView
+            android:id="@+id/tvReply"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:text="最新回复"
+            android:layout_marginRight="5dp"
+            app:layout_constraintRight_toLeftOf="@+id/tvNew"
+            android:paddingLeft="@dimen/offset_10dp"
+            android:paddingRight="@dimen/offset_10dp"
+            android:textColor="@color/color_8798af"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

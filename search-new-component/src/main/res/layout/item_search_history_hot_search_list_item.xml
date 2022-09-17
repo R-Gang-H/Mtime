@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.adapter.binder.SearchHotSearchListItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mHotSearchListItemRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_15px"
+        android:paddingBottom="@dimen/offset_15px"
+        android:onClick="@{(view) -> data.onClick(view)}">
+
+        <TextView
+            android:id="@+id/mHotSearchListItemIconTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/ic_hot_search_ranking_1"
+            android:textColor="@color/color_ffffff"
+            android:paddingEnd="2dp"
+            android:textSize="@dimen/offset_12sp"
+            android:textStyle="bold|italic"
+            android:gravity="center"
+            tools:text="1"
+            />
+
+        <TextView
+            android:id="@+id/mHotSearchListItemTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mHotSearchListItemIconTv"
+            app:layout_constraintBottom_toBottomOf="@id/mHotSearchListItemIconTv"
+            app:layout_constraintLeft_toRightOf="@id/mHotSearchListItemIconTv"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_12sp"
+            android:maxWidth="@dimen/offset_240px"
+            android:lines="1"
+            android:ellipsize="end"
+            android:text="@{data.item.title}"
+            tools:text="寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说寻龙传说"
+            />
+
+        <com.kotlin.android.widget.textview.SpacingTextView
+            android:id="@+id/mHotSearchListItemScoreTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mHotSearchListItemIconTv"
+            app:layout_constraintBottom_toBottomOf="@id/mHotSearchListItemIconTv"
+            app:layout_constraintLeft_toRightOf="@id/mHotSearchListItemTitleTv"
+            android:layout_marginLeft="10px"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_12sp"
+            android:textStyle="bold|italic"
+            android:text="@{data.item.score}"
+            tools:text="9.8"
+            />
+
+        <ImageView
+            android:id="@+id/mHotSearchListItemArrowIv"
+            android:layout_width="@dimen/offset_24px"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mHotSearchListItemIconTv"
+            app:layout_constraintBottom_toBottomOf="@id/mHotSearchListItemIconTv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/ic_hot_search_ranking_line"
+            android:scaleType="center"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.Html"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.family.component.ui.clazz.adapter.FamilyItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mCommunityFamilyItemRoot"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{view -> data.onClick(view)}"
+        >
+
+        <View
+            android:id="@+id/mCommunityFamilyTopLineView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/color_0f303a47"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mCommunityFamilyImgCardView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityFamilyTopLineView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_goneMarginTop="15dp"
+            >
+
+            <ImageView
+                android:id="@+id/mCommunityFamilyImgIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                load_image="@{data.item.pic}"
+                load_image_width="@{80}"
+                load_image_height="@{80}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/mCommunityFamilyBtnFl"
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            app:layout_constraintTop_toTopOf="@id/mCommunityFamilyImgCardView"
+            app:layout_constraintBottom_toBottomOf="@id/mCommunityFamilyImgCardView"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="@{view -> data.onClick(view)}">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mCommunityFamilyBtnTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:drawableTint="@color/color_20a0da"
+                android:textColor="@color/color_ffffff"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/mCommunityFamilyNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mCommunityFamilyImgCardView"
+            app:layout_constraintLeft_toRightOf="@id/mCommunityFamilyImgCardView"
+            app:layout_constraintRight_toLeftOf="@id/mCommunityFamilyBtnFl"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="17sp"
+            android:textColor="@color/color_303a47"
+            android:lines="1"
+            android:ellipsize="end"
+            tools:text="欧美娱乐临时广播"
+            android:text="@{data.item.name}"
+            />
+
+        <TextView
+            android:id="@+id/mCommunityFamilyNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityFamilyNameTv"
+            app:layout_constraintLeft_toLeftOf="@id/mCommunityFamilyNameTv"
+            android:textSize="12sp"
+            android:textColor="@color/color_8798af"
+            tools:text="987成员"
+            />
+
+        <TextView
+            android:id="@+id/mCommunityFamilyIntroTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/mCommunityFamilyImgCardView"
+            app:layout_constraintLeft_toLeftOf="@id/mCommunityFamilyNameTv"
+            app:layout_constraintRight_toRightOf="@id/mCommunityFamilyNameTv"
+            android:textSize="12sp"
+            android:textColor="@color/color_8798af"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="欢迎讨论所有关于漫威的话题。 本组不允许： 1. 灌水、闲聊、征友、约伴、二手闲置或其他"
+            android:text="@{Html.fromHtml(data.item.intro)}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

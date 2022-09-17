@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/offset_17px"
+    android:paddingRight="@dimen/offset_17px"
+    android:paddingTop="@dimen/offset_34px"
+    android:paddingBottom="@dimen/offset_34px" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/offset_184px"
+        android:layout_height="@dimen/offset_277px" >
+
+        <ImageView
+            android:id="@+id/news_img"
+            android:layout_width="@dimen/offset_184px"
+            android:layout_height="@dimen/offset_277px"
+            android:background="@drawable/default_image"
+            android:scaleType="centerCrop" />
+
+        <com.mtime.mtmovie.widgets.ScoreView
+            android:id="@+id/news_score"
+            android:layout_width="@dimen/offset_22_5dp"
+            android:layout_height="@dimen/offset_20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/offset_5px"
+            android:background="@color/score_color"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_12sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/news_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_16px"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/font_size_normal_more" />
+    
+    <TextView
+        android:id="@+id/news_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/font_size_normal_more" />
+    
+
+</LinearLayout>

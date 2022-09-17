@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/MatchMatch"
+                    >
+
+                    <!-- 提示语-->
+                    <TextView
+                        android:id="@+id/mActFamilyAdminTopTipTv"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/offset_60px"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:gravity="center"
+                        android:background="@color/color_f2f3f6_alpha_92"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="@dimen/offset_12sp"
+                        android:text="@string/family_admin_list_tip"
+                        android:visibility="visible"
+                        />
+
+                    <!-- 管理员列表 -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mActFamilyAdminRv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/mActFamilyAdminTopTipTv"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="vertical"
+                        tools:listitem="@layout/item_family_member"
+                        />
+
+                    <!-- 列表底部空白间隔 -->
+                    <View
+                        android:layout_width="@dimen/offset_0px"
+                        android:layout_height="@dimen/offset_100px"
+                        app:layout_constraintTop_toBottomOf="@+id/mActFamilyAdminRv"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:background="@color/white"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!-- 阴影条 -->
+            <View
+                android:id="@+id/mActFamilyAdminBottomShadowView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_60px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/offset_100px"
+                android:background="@drawable/bg_group_bottom_shadow"
+                android:visibility="visible"
+                />
+
+            <!-- 底部按钮 -->
+            <TextView
+                android:id="@+id/mActFamilyAdminBottomBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_100px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/white_92_alpha"
+                android:gravity="center"
+                android:clickable="false"
+                android:textColor="@color/color_aab7c7_20_alpha"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold"
+                android:text="@string/community_remove"
+                android:visibility="visible"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.kotlin.android.ugc.detail.component.ui.album.UgcAlbumViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.album.UgcAlbumActivity">
+
+        <com.kotlin.android.ugc.detail.component.ui.widget.UgcTitleView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/titleView"
+            ugcTitleBarData="@{viewModel.titleBar}"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="@dimen/offset_88px"/>
+
+        <com.kotlin.android.comment.component.widget.PublishCommentView
+            android:id="@+id/barButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/titleView"
+            android:id="@+id/stateView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/barButton"
+            app:layout_constraintVertical_weight="1"
+            android:layout_height="0dp">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:layout_width="match_parent"
+                android:id="@+id/smartRefreshLayout"
+                android:layout_height="match_parent">
+                <com.kotlin.android.widget.recycler.ScrollRecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/albumRv"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_height="match_parent"/>
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+        <!--        显示要上传的图片-->
+        <com.kotlin.android.comment.component.widget.CommentImageLayout
+            android:layout_width="@dimen/offset_248px"
+            android:id="@+id/commentImgLayout"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/barButton"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_188px"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,297 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+apply plugin: 'com.sensorsdata.analytics.android'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../buildSrc/exportedFix.gradle'
+
+configurations {
+    all*.exclude group: "com.mtime.android-common", module: "imageloader"
+}
+
+android {
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        applicationId App.applicationId
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        multiDexEnabled true
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY  : Push.jiguang_appkey, //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+
+                XIAOMI_APPKEY : Push.xiaomi_appkey,//小米平台注册的appkey
+                XIAOMI_APPID  : Push.xiaomi_appid,//小米平台注册的appid
+
+                HUAWEI_APPID  : Push.huawei_appid,//华为平台注册的appid
+
+                MEIZU_APPKEY  : Push.meizu_appkey,//魅族平台注册的appkey
+                MEIZU_APPID   : Push.meizu_appid,//魅族平台注册的appid
+
+                OPPO_APPKEY   : Push.oppo_appkey, // OPPO平台注册的appkey
+                OPPO_APPID    : Push.oppo_appid, // OPPO平台注册的appid
+                OPPO_APPSECRET: Push.oppo_appsecret,//OPPO平台注册的appsecret
+
+                VIVO_APPKEY   : Push.vivo_appkey, // VIVO平台注册的appkey
+                VIVO_APPID    : Push.vivo_appid, // VIVO平台注册的appid
+
+                BAIDU_LBS_KEY: Location.baidu_lbs_key //百度定位
+        ]
+
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    sourceSets {
+        main {
+            java.srcDirs = [
+                    'src/main/java'
+            ]
+            res.srcDirs = [
+                    'src/main/res/common', //公共资源
+                    'src/main/res/daily',//每日推荐相关
+                    'src/main/res/home',//首页
+                    'src/main/res/ticket',//票务
+                    'src/main/res/ticket/movie',//票务-影片
+                    'src/main/res/ticket/cinema',//票务-影院
+                    'src/main/res/mine',//我的
+                    'src/main/res/payment',//支付
+                    'src/main/res/video',//视频播放
+                    'src/main/res/main',//主页面
+                    'src/main/res/information', //文章、榜单、新闻详情
+                    'src/main/res/splash',//启动
+                    'src/main/res/location'//定位相关资源
+            ]
+        }
+    }
+
+    //这个是解决lint报错的代码
+    lintOptions {
+        abortOnError false
+        disable 'InvalidPackage'
+        checkReleaseBuilds false
+    }
+
+    //重复dex问题，可以加这个
+    dexOptions {
+        //DexIndexOverflowException: Cannot merge new index 65572 into a non-jumbo instruction!w
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+        /**
+         * DSL element 'DexOptions.incremental' is obsolete.
+         * It will be removed in version 5.0 of the Android Gradle plugin
+         */
+//        incremental true
+    }
+
+    // 打包配置
+    packagingOptions {// 排除一些文件
+        merge 'META-INF/services'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'src/main/deprecated'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("mtime.keystore")
+            storePassword "roiding-mtime"
+            keyAlias "mtime"
+            keyPassword "roiding-mtime"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+        debug {
+            storeFile file("mtime.keystore")
+            storePassword "roiding-mtime"
+            keyAlias "mtime"
+            keyPassword "roiding-mtime"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        release {
+            /**
+             * 本地自测时打开，提交代码时注释掉，否则jenkins签名报错
+             */
+//            signingConfig signingConfigs.release
+//            minifyEnabled true
+//            zipAlignEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro',
+//                    'obfuscate-helper-rules.pro'
+
+            ndk {
+                abiFilters "armeabi-v7a", "armeabi",'arm64-v8a'//暂时先注释掉
+            }
+        }
+        debug {
+            signingConfig signingConfigs.debug
+
+            ndk {
+                abiFilters "armeabi-v7a", "armeabi",'arm64-v8a'//暂时先注释掉
+            }
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs', '../uiframe/libs', '../share/libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation Support.kotlin_stdlib_jdk8
+    //集成业务组件
+    if (!isBuildModule.toBoolean()) {
+        //runtimeOnly project(path: ':home')
+        implementation project(path: ':home')
+        implementation project(path: ':film')
+        implementation project(path: ':community')
+        implementation project(path: ':mine')
+        implementation project(path: ':card-monopoly')
+        implementation project(path: ':share')
+        implementation project(path: ':app-api')
+        implementation project(path: ':user')
+        implementation project(path: ':app-data')
+        implementation project(path: ':push')
+        //路由
+        implementation project(path: ':app-router')
+        implementation project(path: ':mtime-ktx')
+        implementation project(path: ':js-sdk')
+        implementation project(path: ':image-component')
+        implementation project(path: ':tablet-component')
+        implementation project(path: ':message-component')
+    }
+    implementation project(path: ':splash-component')
+    implementation project(path: ':tablet-component')
+    //组件中依赖阿里路由编译框架
+    annotationProcessor Dependencies.arouter_compiler
+
+    implementation Support.appcompat
+    implementation Support.recyclerview
+    implementation Support.cardview
+    implementation Support.material
+    implementation Support.legacy_support_v4
+    implementation Support.constraintlayout
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.2'
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+
+    implementation project(':jssdk')
+    implementation project(':location2')
+    implementation project(':utils')
+    implementation project(':views')
+    implementation project(':network')
+    implementation project(':youzan')
+    implementation project(':user')
+
+    implementation project(':imageloader')
+
+    //播放器框架
+    implementation Dependencies.playerbase
+    implementation project(':ijkplayer')
+
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.21'
+    //https://github.com/KingJA/LoadSir
+    implementation 'com.kingja.loadsir:loadsir:1.3.6'
+
+
+    /**
+     * 旧框架组件，不再维护，改成aar依赖
+     */
+    implementation(name: 'statistic-debug', ext: 'aar')
+    implementation(name: 'framework-debug', ext: 'aar')
+    implementation(name: 'photoview-debug', ext: 'aar')
+    implementation(name: 'dachshundtablayout-debug', ext: 'aar')
+    implementation(name: 'framelibrary-debug', ext: 'aar')
+    implementation(name: 'uiframe-debug', ext: 'aar')
+    implementation(name: 'spinnerwheel-debug', ext: 'aar')
+
+    implementation Dependencies.flexbox
+    implementation Dependencies.smarttablayout
+    implementation Dependencies.smarttablayout_utils
+
+    //butterknife
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+    //支付宝
+    implementation(name: 'alipaySdk-15.6.5-20190718211159-noUtdid', ext: 'aar')
+    /**
+     * 现阶段没时间搞内存问题，待功能完成后再单独处理
+     */
+    //leakcanary  泄露
+//    debugImplementation Dependencies.leakcanary_android
+
+    //查看数据库及sp，电脑浏览器输入手机IP:8080 (https://github.com/amitshekhariitbhu/Android-Debug-Database)
+//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+
+    implementation project(':bonus_scene_component')
+
+    //错误ANR统计bugly
+    implementation Bugly.bugly
+
+    implementation 'com.github.woxthebox:draglistview:1.7.2'
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+
+    //混淆助手（https://github.com/helen-x/obfuscator）
+    implementation 'com.github.helen-x:obfuscator:1.0'
+    //RecyclerView多类型适配
+    implementation"me.drakeet.multitype:multitype:${multitypeVersion}"
+    //litepal数据库(https://github.com/LitePalFramework/LitePal)
+    implementation 'org.litepal.android:java:3.0.0'
+    //权限
+    implementation 'com.github.mylhyl:AndroidAcp:1.2.2'
+    //新手引导层的库(https://github.com/huburt-Hu/NewbieGuide)
+    implementation 'com.github.huburt-Hu:NewbieGuide:2.4.4'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0'
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$baseRecyclerViewAdapterHelperVersion"
+
+    //SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:' + rootProject.ext.smartRefreshLayoutVersion
+    //聊天室
+    implementation project(path: ':chat-component')
+    implementation project(path: ':audio-floatview-component')
+    implementation project(path: ':publish-component')
+
+
+}

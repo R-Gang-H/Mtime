@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.ugc.detail.component">
+
+    <application>
+        <activity
+            android:name=".ui.mediadetail.UgcMediaDetailActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.album.UgcAlbumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.detail.UgcDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+    </application>
+
+</manifest>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mDialogLayout"
+    android:layout_marginStart="@dimen/offset_44px"
+    android:layout_marginEnd="@dimen/offset_44px"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/offset_66px"
+        android:background="@drawable/icon_dialog_delete" />
+
+    <TextView
+        android:textColor="@color/color_404c57"
+        android:textStyle="bold"
+        android:textSize="@dimen/offset_18sp"
+        android:layout_marginTop="@dimen/offset_12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tablet_film_dialog_msg" />
+    <LinearLayout
+        android:layout_marginBottom="@dimen/offset_52px"
+        android:layout_marginEnd="@dimen/offset_30dp"
+        android:layout_marginStart="@dimen/offset_30dp"
+        android:layout_marginTop="@dimen/offset_58px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingBottom="@dimen/offset_10dp"
+            android:paddingTop="@dimen/offset_10dp"
+            android:id="@+id/tv_ok"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/color_3d4955"
+            android:textSize="@dimen/offset_16sp"
+            android:layout_width="0dp"
+            android:text="@string/tablet_film_dialog_ok"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:paddingBottom="@dimen/offset_10dp"
+            android:paddingTop="@dimen/offset_10dp"
+            android:id="@+id/tv_cancel"
+            android:layout_marginStart="@dimen/offset_7dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/offset_16sp"
+            android:layout_width="0dp"
+            android:text="@string/tablet_film_dialog_cancel"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

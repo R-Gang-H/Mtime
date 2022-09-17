@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/offset_50px"
+    >
+
+    <DatePicker
+        android:id="@+id/mDialogToplistYearSelectDatePicker"
+        android:layout_width="@dimen/offset_500px"
+        android:layout_height="@dimen/offset_400px"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!-- 底部按钮 -->
+    <TextView
+        android:id="@+id/mDialogToplistYearSelectCancelBtnTv"
+        android:layout_width="@dimen/offset_0px"
+        android:layout_height="@dimen/offset_60px"
+        android:layout_marginTop="@dimen/offset_40px"
+        android:layout_marginStart="30px"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:gravity="center"
+        android:textSize="@dimen/offset_15sp"
+        android:textColor="@color/color_20a0da"
+        android:textStyle="bold"
+        android:text="@string/widget_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/mDialogToplistYearSelectDatePicker"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/mDialogToplistYearSelectConfirmBtnTv"
+        />
+
+    <TextView
+        android:id="@+id/mDialogToplistYearSelectConfirmBtnTv"
+        android:layout_width="@dimen/offset_0px"
+        android:layout_height="@dimen/offset_60px"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:gravity="center"
+        android:textSize="@dimen/offset_15sp"
+        android:textColor="@color/color_20a0da"
+        android:textStyle="bold"
+        android:text="@string/community_ok_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/mDialogToplistYearSelectCancelBtnTv"
+        app:layout_constraintLeft_toRightOf="@id/mDialogToplistYearSelectCancelBtnTv"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

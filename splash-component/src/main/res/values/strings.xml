@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_jump_ad_hint"><![CDATA[<font color=\'#FFFFFF\'> 跳过 </font><font color=\'red\'>%1$d</font>]]></string>
+</resources>

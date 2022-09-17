@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchMatch"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <!-- Tab -->
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/mTabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_10px"
+        android:paddingBottom="@dimen/offset_10px"
+        android:layout_marginEnd="@dimen/offset_20px"
+        android:background="@color/color_ffffff"
+        app:stl_customTabTextLayoutId="@layout/view_movie_short_comment_list_tab_item"
+        app:stl_customTabTextViewId="@id/mTabTextView"
+        app:stl_defaultTabTextAllCaps="false"
+        app:stl_distributeEvenly="true"
+        app:stl_dividerThickness="0dp"
+        app:stl_indicatorColor="@color/color_00000000"
+        app:stl_indicatorCornerRadius="0dp"
+        app:stl_indicatorInterpolation="smart"
+        app:stl_indicatorThickness="0dp"
+        app:stl_indicatorWidth="0dp"
+        app:stl_indicatorWithoutPadding="true"
+        app:stl_titleOffset="auto_center"
+        app:stl_underlineThickness="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints"
+        />
+
+    <!-- ViewPager -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mActMovieShortCommentListViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/mTabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kotlin.android.home">
+
+    <application
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".ui.toplist.TopListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:name=".ui.toplist.TopListDetailActivity"
+            />
+        <activity
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:name=".ui.toplist.TopListGameDetailActivity"
+            />
+        <activity
+            android:name=".ui.toplist.TopListGameActivity"
+            />
+        <activity
+            android:name=".ui.RcmdTrailerListActivity"
+            />
+        <activity
+            android:name=".ui.findmovie.FindMovieActivity"
+            />
+    </application>
+
+</manifest>

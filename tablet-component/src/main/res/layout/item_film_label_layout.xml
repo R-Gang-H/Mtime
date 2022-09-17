@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="binder"
+            type="com.kotlin.tablet.adapter.FilmListLabelBinder" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_categoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_9dp"
+            android:layout_marginTop="@dimen/offset_28px"
+            android:layout_marginBottom="@dimen/offset_26px"
+            android:background="@drawable/select_label_bg"
+            android:onClick="@{view -> binder.onClick(view)}"
+            android:paddingStart="@dimen/offset_9dp"
+            android:paddingTop="@dimen/offset_5dp"
+            android:paddingEnd="@dimen/offset_9dp"
+            android:paddingBottom="@dimen/offset_5dp"
+            android:textColor="@drawable/select_lable_text_bg"
+            android:textSize="@dimen/offset_13sp"
+            tools:text="分类" />
+    </LinearLayout>
+</layout>

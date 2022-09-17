@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="30dp">
+
+    <!--经典台词-->
+
+    <com.mtime.bussiness.common.widget.CommonItemTitleView
+        android:id="@+id/movie_details_classics_lines_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:itv_title_text="@string/movie_details_classics_lines_title"
+        app:itv_all_text="@string/common_title_all_text"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/movie_details_classics_lines_title_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/shape_movie_details_seen_score_review_bg"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="15dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/movie_details_ic_quote"
+            />
+
+        <TextView
+            android:id="@+id/movie_details_classics_lines_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:textSize="16sp"
+            android:textColor="#4e5e73"
+            tools:text="人类轻视大自然的力量，必将遭到惩罚。人类总自以为是地认为控制了大自然，但其实恰好相反人类轻视大自然的力量，必将遭到惩罚。人类总自以为是地认为控制了大自然，但其实恰好相反"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

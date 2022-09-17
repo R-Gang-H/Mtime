@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/mRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableFooterFollowWhenNoMoreData="false">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mCommunityFamilyListRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_community_person_family"
+                />
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

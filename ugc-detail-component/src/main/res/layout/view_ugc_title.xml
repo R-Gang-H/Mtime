@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/offset_88px"
+    >
+
+    <!--    返回按钮-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backIv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:padding="@dimen/offset_8px"
+        android:src="@drawable/icon_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    用户人头像-->
+    <com.kotlin.android.widget.image.RoundImageView
+        android:id="@+id/userHeadIv"
+        app:is_circle="true"
+        android:layout_width="@dimen/offset_58px"
+        android:layout_height="@dimen/offset_58px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/backIv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    认证图片-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/offset_30px"
+        android:layout_height="@dimen/offset_30px"
+        app:layout_constraintCircle="@id/userHeadIv"
+        app:layout_constraintCircleAngle="120"
+        app:layout_constraintCircleRadius="@dimen/offset_30px"
+        app:layout_constraintBottom_toBottomOf="@id/userHeadIv"
+        app:layout_constraintRight_toRightOf="@id/userHeadIv"
+        android:id="@+id/authIv"
+        android:visibility="gone"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    用户人名称-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userNameTv"
+        style="@style/WrapWrap"
+        android:layout_marginLeft="@dimen/offset_13px"
+        android:ellipsize="middle"
+        android:maxWidth="@dimen/offset_280px"
+        android:singleLine="true"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/font_size_sp_12"
+        app:layout_constraintBottom_toTopOf="@id/guideLine"
+        app:layout_constraintLeft_toRightOf="@id/userHeadIv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="离人心上秋000发布的日志" />
+
+    <!--    评分-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/scoreTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:textColor="@color/color_343434"
+        android:textSize="@dimen/offset_12sp"
+        android:textStyle="bold|italic"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/guideLine"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/userNameTv"
+        app:layout_constraintRight_toLeftOf="@id/attentionFL"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginRight="@dimen/offset_20px"
+        tools:text="8.9" />
+
+    <!--    发布时间-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/publishDateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_13px"
+        android:textColor="@color/color_8798af"
+        android:textSize="@dimen/offset_11sp"
+        app:layout_constraintLeft_toRightOf="@id/userHeadIv"
+        app:layout_constraintTop_toBottomOf="@id/guideLine"
+        tools:text="10分钟" />
+
+
+    <!--    更多-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moreIv"
+        android:layout_width="@dimen/offset_40px"
+        android:layout_height="0dp"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:src="@drawable/ic_ver_more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+
+    <FrameLayout
+        android:id="@+id/attentionFL"
+        android:layout_width="@dimen/offset_116px"
+        android:layout_height="@dimen/offset_58px"
+        android:layout_marginRight="@dimen/offset_8px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/moreIv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginRight="@dimen/offset_30px">
+        <!--    关注-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/attentionBtn"
+            style="@style/WrapWrap"
+            android:layout_gravity="center"
+            android:drawablePadding="@dimen/offset_3px"
+            android:gravity="center"
+            android:text="@string/ugc_title_attention"
+            app:drawableTint="@color/color_20a0da"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginRight="@dimen/offset_30px" />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

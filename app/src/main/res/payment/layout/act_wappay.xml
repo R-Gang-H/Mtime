@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/navigationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar_normal" />
+
+    <WebView
+        android:id="@+id/wv_share_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/navigationbar"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip" />
+
+    <!-- 进度条 -->
+
+    <ProgressBar
+        android:id="@+id/pb_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">UGC组件</string>
+    <string name="ugc_mtime_score">时光评分</string>
+    <string name="ugc_title_attention">关注</string>
+    <string name="ugc_detail_album_page_view_total_format">%1$d张</string>
+    <string name="ugc_detail_load_more">加载更多</string>
+    <string name="ugc_detail_upload_pic">+ 上传照片</string>
+    <string name="ugc_detail_family_join">加入</string>
+    <string name="ugc_movie_buy_ticket">购票</string>
+    <string name="ugc_movie_presell">预售</string>
+    <string name="ugc_movie_wanna">想看</string>
+    <string name="ugc_family_member_count_format">%1$s个成员</string>
+    <string name="ugc_group_joining">加入中</string>
+    <string name="ugc_album_update_failed">修改失败</string>
+    <string name="ugc_album_cant_empty">相册名不可为空哦</string>
+    <string name="ugc_album_update_title">修改相册</string>
+    <string name="ugc_follow_success">关注成功</string>
+
+    <string name="ugc_exit_family_confirm">是否要退出家族</string>
+    <string name="ugc_detail_is_checking">日志正在审核中</string>
+
+    <string name="ugc_detail_common_is_checking">正在审核中</string>
+    <string name="ugc_detail_component_copyright_format">© 本文版权归作者  %1$s 所有，任何形式转载请联系作者</string>
+    <string name="ugc_detail_component_album_detail_is_publishing">相册正在审核中</string>
+    <string name="ugc_detail_component_link_content">关联内容</string>
+    <string name="ugc_detail_movie_duration_format">%1$d分钟</string>
+    <string name="ugc_detail_movie_release_format">%1$s上映</string>
+    <string name="ugc_detail_movie_score_format">时光评分 %1$s</string>
+    <string name="ugc_detail_actor_score_format">影人评分 %1$s</string>
+    <string name="ugc_detail_movie">关联影片</string>
+    <string name="ugc_detail_actor">关联影人</string>
+    <string name="ugc_detail_recommend">相关推荐</string>
+    <string name="ugc_detail_component_fans_format">粉丝数：%1$s</string>
+    <string name="ugc_detail_component_more">更多</string>
+    <string name="ugc_detail_component_pack_up">收起</string>
+    <string name="ugc_detail_component_play">播放</string>
+    <string name="ugc_detail_component_video_is_checking">视频正在审核中</string>
+    <string name="ugc_detail_component_audio_is_checking">音频正在审核中</string>
+    <string name="ugc_detail_component_play_audio_error">音频播放失败，请重试</string>
+    <string name="ugc_detail_component_cancel_attention_success">取消关注成功</string>
+    <string name="ugc_detail_component_cancel_attention_failed">取消关注失败</string>
+    <string name="ugc_detail_component_attention_failed">关注失败</string>
+    <string name="ugc_detail_component_confirm_cancel_attention">确定要取消该用户的关注？</string>
+</resources>

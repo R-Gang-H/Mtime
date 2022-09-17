@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/err_load"
+        layout="@layout/err_load_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.mtime.bussiness.common.widget.BrowserImpl
+        android:id="@+id/common_base_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" />
+
+    <ProgressBar
+        android:id="@+id/common_base_web_view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_3dp"
+        android:indeterminateOnly="false"
+        android:max="100"
+        android:progressDrawable="@drawable/common_base_web_view_progress"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/common_base_web_view_ad_tag_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_9sp"
+        android:padding="@dimen/offset_6px"
+        android:background="@drawable/adcover"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/offset_6px"
+        android:layout_marginLeft="@dimen/offset_6px"
+        android:shadowColor="@color/black_color"
+        android:shadowRadius="5"
+        tools:text="广告"
+        />
+</RelativeLayout>

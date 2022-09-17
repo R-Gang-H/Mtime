@@ -1,0 +1,55 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="330dp"
+    android:height="140dp"
+    android:viewportWidth="660"
+    android:viewportHeight="280">
+  <path
+      android:pathData="M24,0L636,0A24,24 0,0 1,660 24L660,256A24,24 0,0 1,636 280L24,280A24,24 0,0 1,0 256L0,24A24,24 0,0 1,24 0z"
+      android:strokeWidth="1"
+      android:fillColor="#36C096"
+      android:fillType="evenOdd"
+      android:strokeColor="#00000000"/>
+  <group>
+    <clip-path
+        android:pathData="M24,0L636,0A24,24 0,0 1,660 24L660,256A24,24 0,0 1,636 280L24,280A24,24 0,0 1,0 256L0,24A24,24 0,0 1,24 0z"/>
+    <path
+        android:pathData="M346,-48l92.358,0l158.829,352l-92.358,0z"
+        android:strokeAlpha="0.1328125"
+        android:strokeWidth="1"
+        android:fillType="evenOdd"
+        android:strokeColor="#00000000"
+        android:fillAlpha="0.1328125">
+      <aapt:attr name="android:fillColor">
+        <gradient 
+            android:startY="274.01224"
+            android:startX="509.43542"
+            android:endY="-36.093475"
+            android:endX="430.57333"
+            android:type="linear">
+          <item android:offset="0" android:color="#FFFFFFFF"/>
+          <item android:offset="1" android:color="#FFFFFFFF"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+    <path
+        android:pathData="M766,-48l-92.358,0l-158.829,352l92.358,0z"
+        android:strokeAlpha="0.4"
+        android:strokeWidth="1"
+        android:fillType="evenOdd"
+        android:strokeColor="#00000000"
+        android:fillAlpha="0.4">
+      <aapt:attr name="android:fillColor">
+        <gradient 
+            android:startY="-36.093475"
+            android:startX="599.3863"
+            android:endY="274.01224"
+            android:endX="678.2484"
+            android:type="linear">
+          <item android:offset="0" android:color="#FF62D9B5"/>
+          <item android:offset="1" android:color="#FF72D2B5"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+  </group>
+</vector>

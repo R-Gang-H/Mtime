@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.kotlin.android.home.ui.toplist.constant.TopListConstant" />
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListSelectMovieItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_14px"
+        android:paddingLeft="@dimen/offset_15px"
+        android:paddingRight="@dimen/offset_15px"
+        android:onClick="@{() -> data.bean.itemType == TopListConstant.TOPLIST_TYPE_PERSON ? data.mainProvider.startActorViewActivity(data.bean.personInfo.personId, data.bean.personInfo.personName) : data.ticketProvider.startMovieDetailsActivity(data.bean.movieInfo.movieId)}"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemToplistSelectMovieCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintDimensionRatio="h, 1:1.49"
+            >
+
+            <ImageView
+                android:id="@+id/mItemToplistSelectMovieImgIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                load_image="@{ data.bean.itemType == TopListConstant.TOPLIST_TYPE_PERSON ? data.bean.personInfo.img : data.bean.movieInfo.img}"
+                load_image_width="@{105}"
+                load_image_height="@{156}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 名称 -->
+        <TextView
+            android:id="@+id/mItemToplistSelectMovieTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_14sp"
+            android:textColor="@color/color_303a47"
+            android:text="@{  data.bean.itemType == TopListConstant.TOPLIST_TYPE_PERSON ? data.bean.personInfo.personName : data.bean.movieInfo.movieName }"
+            tools:text="电影名"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistSelectMovieCardView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_12px"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistSelectMovieTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 评分提示 -->
+            <TextView
+                android:id="@+id/mItemToplistSelectMovieScoreTipTv"
+                style="@style/WrapWrap"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="@string/home_toplist_select_score_tip"
+                />
+
+            <!-- 评分 -->
+            <com.kotlin.android.widget.textview.SpacingTextView
+                android:id="@+id/mItemToplistSelectMovieScoreTv"
+                style="@style/WrapWrap"
+                android:layout_marginStart="@dimen/offset_14px"
+                android:textSize="@dimen/offset_16sp"
+                android:textColor="@color/color_20a0da"
+                android:textStyle="bold|italic"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemToplistSelectMovieScoreTipTv"
+                app:layout_constraintBaseline_toBaselineOf="@+id/mItemToplistSelectMovieScoreTipTv"
+                tools:text="7.6"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

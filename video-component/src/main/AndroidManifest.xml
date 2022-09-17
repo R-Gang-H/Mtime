@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.video.component">
+
+    <application>
+        <activity
+            android:name=".ui.detail.VideoDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensor"
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+
+
+    </application>
+
+</manifest>

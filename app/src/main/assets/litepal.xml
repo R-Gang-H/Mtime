@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--数据库名称-->
+    <dbname value="mtime" />
+    <!--数据库版本号-->
+    <version value="11" />
+    <!--具体表与实体的映射-->
+    <list>
+        <mapping class="com.mtime.bussiness.mine.history.dao.HistoryDao" />
+    </list>
+</litepal>

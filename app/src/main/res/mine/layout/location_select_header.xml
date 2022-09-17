@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical">
+
+    <!-- 自动定位提示语 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_18dp"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingBottom="@dimen/offset_9dp"
+        android:text="@string/location_select_auto_label"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_small_high"
+        />
+
+    <!-- 自动定位 -->
+    <LinearLayout
+        android:id="@+id/ll_auto_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/offset_11dp"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingBottom="@dimen/offset_11dp"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:id="@+id/iv_auto_location_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_location_select"
+            />
+
+        <TextView
+            android:id="@+id/tv_auto_location_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/offset_5dp"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_normal_more"
+            tools:text="中国 北京"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1px"
+        android:background="@drawable/line_bottom" />
+
+    <!-- 定位设置提示语 -->
+    <TextView
+        android:id="@+id/tv_auto_location_set_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_8dp"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingRight="@dimen/offset_15dp"
+        android:paddingBottom="@dimen/offset_10dp"
+        android:text="@string/location_select_set_tip"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_small_high"
+        />
+
+    <!-- 全部 -->
+    <TextView
+        android:id="@+id/tv_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_18dp"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingBottom="@dimen/offset_8dp"
+        android:text="@string/location_select_all"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_small_high"
+        />
+
+</LinearLayout>

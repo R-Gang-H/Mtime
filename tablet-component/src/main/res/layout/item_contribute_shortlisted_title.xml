@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.ContributeShortlistParentBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mCurrentSubjectTv"
+            style="@style/WrapWrap"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:paddingTop="@dimen/offset_24px"
+            android:paddingBottom="@dimen/offset_24px"
+            android:text="@string/tablet_film_list_shortlisted"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mInfoIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:onClick="@{(view) -> data.onClick(view)}"
+            android:src="@drawable/ic_title_bar_36_info"
+            app:layout_constraintBottom_toBottomOf="@id/mCurrentSubjectTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mCurrentSubjectTv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

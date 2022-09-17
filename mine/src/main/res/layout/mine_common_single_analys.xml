@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.kotlin.android.ktx.ext.time.TimeExt" />
+
+        <variable
+            name="analysisBinder"
+            type="com.kotlin.android.mine.binder.AnalysisBinder" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/frCoverIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/copyWritingPic"
+                android:layout_width="@dimen/offset_260px"
+                android:layout_height="@dimen/offset_150px"
+                android:background="@color/color_1a91d959"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/articleIma"
+                    load_image="@{analysisBinder.imageUrl}"
+                    load_image_default_img="@{@drawable/collections_default}"
+                    load_image_height="@{75}"
+                    load_image_width="@{120}"
+                    viewRadius="@{6}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/collections_default" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tipsTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/offset_8dp"
+                    android:layout_marginBottom="@dimen/offset_5dp"
+                    android:includeFontPadding="false"
+                    android:text='@{TimeExt.INSTANCE.getVideoFormat(analysisBinder.bean.video.videoSec)}'
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_11sp"
+                    tools:text="02:32"
+                    tools:textColor="@color/color_ff7570" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/longCommentIma"
+                load_image='@{analysisBinder.imageUrl}'
+                load_image_circle_crop="@{true}"
+                load_image_default_img="@{@drawable/collections_default}"
+                load_image_height="@{80}"
+                load_image_width="@{60}"
+                viewRadius="@{6}"
+                android:layout_width="@dimen/offset_60dp"
+                android:layout_height="@dimen/offset_80dp"
+                android:background="@color/color_1a91d959"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                tools:src="@drawable/collections_default"
+                tools:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/audioIma"
+                load_image='@{analysisBinder.imageUrl}'
+                load_image_circle_crop="@{true}"
+                load_image_default_img="@{@drawable/collections_default}"
+                load_image_height="@{75}"
+                load_image_width="@{75}"
+                android:layout_width="@dimen/offset_150px"
+                android:layout_height="@dimen/offset_150px"
+                android:background="@color/color_1a91d959"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                tools:src="@drawable/collections_default"
+                tools:visibility="gone" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlItemCon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_150px"
+            android:layout_marginStart="@dimen/offset_24px"
+            android:layout_toEndOf="@id/frCoverIv">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:text="@{analysisBinder.bean.title}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                tools:text="电影《雄狮少年》首爆概念海" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/offset_28px">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/releaseTimeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:includeFontPadding="false"
+                    android:text="@{analysisBinder.bean.userCreateTime.show}"
+                    android:textColor="@color/color_cbd0d7"
+                    android:textSize="@dimen/offset_12sp"
+                    tools:text="2021-12-14 11:00:32" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

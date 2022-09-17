@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--    评论用户头像-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/userHeadIv"
+        android:layout_width="@dimen/offset_48px"
+        android:layout_height="@dimen/offset_48px"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    认证图片-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/offset_24px"
+        android:layout_height="@dimen/offset_24px"
+        app:layout_constraintCircle="@id/userHeadIv"
+        app:layout_constraintCircleAngle="120"
+        app:layout_constraintCircleRadius="@dimen/offset_24px"
+        app:layout_constraintBottom_toBottomOf="@id/userHeadIv"
+        app:layout_constraintRight_toRightOf="@id/userHeadIv"
+        android:id="@+id/authIv"
+        android:visibility="gone"
+        />
+
+    <!--    用户名-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userNameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_16px"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="@dimen/offset_14sp"
+        app:layout_constraintBottom_toBottomOf="@id/userHeadIv"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/userHeadIv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/userHeadIv"
+        tools:text="离人心上秋" />
+
+    <!--评论内容-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/commentContentTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:textColor="@color/color_4e5e73"
+        android:maxLines="5"
+        android:ellipsize="end"
+        tools:text="特效画面在华语电影里算是不错，但还是差点意思，不要骄傲哟"
+        android:textSize="@dimen/font_size_sp_14"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userHeadIv" />
+<!--    赞-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/font_size_sp_12"
+        android:textColor="@color/color_8798af"
+        app:layout_constraintTop_toBottomOf="@id/commentContentTv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:drawablePadding="@dimen/offset_10px"
+        tools:text="100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/offset_40px"
+        android:gravity="center_vertical"
+        android:id="@+id/praiseTv"
+        android:drawableLeft="@drawable/ic_like"
+        android:layout_height="wrap_content"/>
+
+<!--    踩-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/unPraiseTv"
+        app:layout_constraintLeft_toRightOf="@id/praiseTv"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintTop_toBottomOf="@id/commentContentTv"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:textSize="@dimen/font_size_sp_12"
+        android:textColor="@color/color_8798af"
+        android:drawableLeft="@drawable/ic_dislike"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/offset_40px"
+        tools:text="100"
+        android:drawablePadding="@dimen/offset_10px"
+        style="@style/WrapWrap"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

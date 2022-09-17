@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/map_tips"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <RelativeLayout
+       android:layout_width="@dimen/offset_pxtodx_410"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_pxtodx_23"
+        android:layout_marginRight="@dimen/offset_pxtodx_23"
+        android:layout_marginLeft="@dimen/offset_pxtodx_23"
+        >
+
+        <ImageView
+            android:id="@+id/right_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_arrow_map"
+            android:contentDescription="@string/app_name" />
+        
+        <LinearLayout
+           android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/right_icon"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/overlay_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_size_pxtosp_32" />
+
+            <TextView
+                android:id="@+id/overlay_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_pxtosp_28" />
+        </LinearLayout>
+        
+   </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/offset_pxtodx_400"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_pxtodx_31"
+        android:layout_marginBottom="@dimen/offset_pxtodx_49"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/search_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_solid_orange_66"
+            android:gravity="center"
+            android:text="@string/st_search_path"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_32"
+             />
+    </LinearLayout>
+</LinearLayout>

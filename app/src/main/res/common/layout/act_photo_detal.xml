@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mtime.mtmovie.widgets.UnTouchViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_color" />
+
+<!--    <include-->
+<!--        android:id="@+id/navigationbar"-->
+<!--        layout="@layout/title_bar_photodetail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+    <!--     bottom_bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:paddingTop="@dimen/offset_18px"
+        android:paddingBottom="@dimen/offset_40px">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_size_15sp"
+            android:textColor="@color/color_ffffff"
+            android:id="@+id/titleTv"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+<!--            删除按钮-->
+            <ImageView
+                android:id="@+id/deleteIv"
+                android:layout_width="@dimen/offset_40px"
+                android:layout_height="@dimen/offset_40px"
+                android:src="@drawable/icon_delete"
+                android:visibility="gone" />
+            <!--        下载按钮-->
+            <ImageView
+                android:id="@+id/downloadIv"
+                android:layout_width="@dimen/offset_40px"
+                android:layout_height="@dimen/offset_40px"
+                android:layout_marginLeft="@dimen/offset_50px"
+                android:src="@drawable/icon_download" />
+            <!--        分享按钮-->
+            <ImageView
+                android:id="@+id/shareIv"
+                android:layout_width="@dimen/offset_40px"
+                android:layout_height="@dimen/offset_40px"
+                android:layout_marginLeft="@dimen/offset_30px"
+                android:src="@drawable/icon_sharel"
+                android:visibility="gone" />
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

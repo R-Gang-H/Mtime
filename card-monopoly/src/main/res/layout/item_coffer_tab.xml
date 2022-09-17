@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="58dp"
+    android:layout_height="95dp">
+
+    <TextView
+        android:id="@+id/labelView"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/color_ffd22d"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <ImageView
+        android:id="@+id/iconView"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:padding="1dp"
+        android:src="@drawable/ic_coffer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelView"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/lockView"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/iconView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/openNowView"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:background="@color/color_feb12a"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="@string/right_now"
+        android:textColor="@color/color_ffffff"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconView" />
+
+    <ImageView
+        android:id="@+id/indicatorView"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconView"
+        tools:ignore="ContentDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

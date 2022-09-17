@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchMatch"
+        >
+
+        <!-- banner -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bannerLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/offset_10px"
+            android:paddingBottom="@dimen/offset_19px"
+            android:paddingStart="@dimen/offset_30px"
+            android:paddingEnd="@dimen/offset_30px"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:visibility="visible"
+            >
+
+            <com.kotlin.android.widget.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_0px"
+                android:clipToPadding="false"
+                app:layout_constraintDimensionRatio="h,1:0.319"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_2px"
+            android:background="@color/color_f3f3f4"
+            app:layout_constraintBottom_toBottomOf="@id/navLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            />
+
+        <!-- 城市 tab 搜索 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/navLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_88px"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/bannerLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 城市 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cityTv"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_0px"
+                android:paddingStart="@dimen/offset_30px"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold"
+                android:drawableRight="@drawable/common_icon_down_arrow"
+                android:drawablePadding="@dimen/offset_10px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="北京"
+                />
+
+            <!-- Tab -->
+            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_0px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/cityTv"
+                app:layout_constraintRight_toLeftOf="@+id/searchIv"
+                app:stl_defaultTabTextAllCaps="false"
+                app:stl_dividerThickness="0dp"
+                app:stl_indicatorColor="@color/color_1d2736"
+                app:stl_indicatorThickness="@dimen/offset_3px"
+                app:stl_indicatorCornerRadius="0dp"
+                app:stl_indicatorInterpolation="smart"
+                app:stl_indicatorWidth="@dimen/offset_58px"
+                app:stl_indicatorWithoutPadding="true"
+                app:stl_customTabTextLayoutId="@layout/view_tab_ticket_item"
+                app:stl_customTabTextViewId="@id/mTabTextView"
+                app:stl_titleOffset="auto_center"
+                app:stl_underlineThickness="0dp"
+                />
+
+            <!-- 搜索Icon -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/searchIv"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_0px"
+                android:paddingStart="@dimen/offset_30px"
+                android:paddingEnd="@dimen/offset_30px"
+                android:src="@drawable/ic_home_search"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 影院搜索组件 -->
+        <include
+            android:id="@+id/searchCinemaView"
+            layout="@layout/title_bar_search_new"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_88px"
+            app:layout_constraintTop_toTopOf="@+id/navLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:visibility="gone"
+            />
+
+        <!-- ViewPager -->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_0px"
+            app:layout_constraintTop_toBottomOf="@+id/navLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+        <!--列表展示-->
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/mRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableRefresh="false">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAuction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

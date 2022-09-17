@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mHostView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="ResourceName">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mContentLay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_880px"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:id="@+id/FlBg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_200px"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvRankCorrelator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_48px"
+                android:gravity="center"
+                android:text="@string/rank_problem"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_600px"
+                android:layout_marginStart="@dimen/offset_50px"
+                android:layout_marginEnd="@dimen/offset_50px"
+                android:paddingBottom="@dimen/offset_12px"
+                app:layout_constraintBottom_toTopOf="@id/btnGotit"
+                app:layout_constraintTop_toBottomOf="@id/tvRankCorrelator">
+
+                <LinearLayout
+                    android:id="@+id/llProblems"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/dialog_item_problem" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGotit"
+                viewRadius="@{20}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_80px"
+                android:layout_marginStart="@dimen/offset_69px"
+                android:layout_marginTop="@dimen/offset_40px"
+                android:layout_marginEnd="@dimen/offset_96px"
+                android:layout_marginBottom="@dimen/offset_52px"
+                android:background="@color/color_20a0da"
+                android:gravity="center"
+                android:text="@string/string_got_it"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_15sp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mInfoClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/offset_33px"
+            android:src="@drawable/ic_title_bar_close" />
+    </LinearLayout>
+</layout>

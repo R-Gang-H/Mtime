@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/shape_movie_details_seen_score_review_bg">
+
+    <ImageView
+        android:id="@+id/item_movie_details_long_review_profile_iv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/profile_default_head_h90"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_movie_details_long_review_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:maxWidth="@dimen/offset_350px"
+        android:textColor="#4e5e73"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/item_movie_details_long_review_profile_iv"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_long_review_profile_iv"
+        app:layout_constraintTop_toTopOf="@id/item_movie_details_long_review_profile_iv"
+        tools:text="一二三四五六七八九十一二三四五六七八九十" />
+
+    <TextView
+        android:id="@+id/item_movie_details_long_review_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="#8798af"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/item_movie_details_long_review_profile_iv"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_long_review_name_tv"
+        app:layout_constraintTop_toTopOf="@id/item_movie_details_long_review_profile_iv"
+        tools:text="· 40分钟前" />
+
+    <com.mtime.mtmovie.widgets.ScoreView
+        android:id="@+id/item_movie_details_long_review_score_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:textColor="@color/color_score"
+        android:textSize="21sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="7.5" />
+
+    <View
+        android:id="@+id/item_movie_details_long_review_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E6E7EB"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_long_review_profile_iv"
+        android:layout_marginTop="14dp"
+        />
+
+    <TextView
+        android:id="@+id/item_movie_details_long_review_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_long_review_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="#1d2736"
+        android:textSize="17sp"
+        tools:text="怪兽经济学"
+        />
+
+    <TextView
+        android:id="@+id/item_movie_details_long_review_content_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_long_review_title_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:lineSpacingMultiplier="1.2"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textColor="#4e5e73"
+        android:textSize="15sp"
+        tools:text="暑期档电影，历来是商业大片的天下。单是今年，就有《美国队长2》《变形金刚4》《X战警：逆转未来》《沉睡魔咒》等十多部好莱坞就有《美国队长2》《变形金刚4》《X战警：逆转未来》《沉睡魔咒》等十多部好莱坞"
+        />
+
+    <TextView
+        android:id="@+id/item_movie_details_long_review_reply_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_long_review_content_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/common_icon_reply"
+        android:drawablePadding="5dp"
+        android:textColor="#8798af"
+        android:textSize="12sp"
+        tools:text="3223"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

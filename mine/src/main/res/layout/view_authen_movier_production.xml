@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/productionUpLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_1px"
+        android:background="@color/color_f3f3f4"
+        android:layout_marginRight="@dimen/offset_30px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    我的作品-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/myProductionTv"
+        style="@style/AuthenInputTitleTextView"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_my_production"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productionUpLine" />
+
+    <!--我的作品必选提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/myProductionTipsTv"
+        style="@style/AuthenMustFillInTips"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="*"
+        app:layout_constraintLeft_toRightOf="@id/myProductionTv"
+        app:layout_constraintTop_toBottomOf="@id/productionUpLine" />
+
+    <!--    我的作品输入框-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/myProductionET"
+        style="@style/AuthenInputValueTextView"
+        android:layout_marginTop="@dimen/offset_38px"
+        android:background="@null"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:hint="@string/mine_authen_please_input_my_production"
+        android:singleLine="true"
+        app:layout_constraintLeft_toRightOf="@id/myProductionTipsTv"
+        app:layout_constraintTop_toBottomOf="@id/productionUpLine" />
+
+    <View
+        android:id="@+id/productionDownLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_1px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:background="@color/color_f3f3f4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="@dimen/offset_30px"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myProductionTv" />
+
+
+<!--    作品角色-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:id="@+id/productionRuleRv"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="@dimen/offset_10px"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_64px"
+        app:layout_constraintTop_toBottomOf="@id/productionDownLine" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

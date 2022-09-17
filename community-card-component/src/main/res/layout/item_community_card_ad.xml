@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.card.component.item.adapter.CommunityCardAdBinder" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/mCommunityCardRoot"
+        android:onClick="@{view -> data.onClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_community_card_shadow_bg"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:layout_margin="2dp"
+        android:padding="5dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mCommunityCardCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="7dp">
+
+                <ImageView
+                    android:id="@+id/mCommunityCardImgIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="h,1:1.5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@color/color_3a93ae"
+                    load_image="@{data.item.pic}"
+                    load_image_width="@{165}"
+                    load_image_height="@{248}"
+                    />
+
+                <TextView
+                    android:id="@+id/mCommunityCardTitleTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mCommunityCardImgIv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginEnd="9dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textSize="11sp"
+                    android:textColor="@color/color_4e5e73"
+                    tools:text="无论是在口碑还是票房上创造了日影史上难得的观碑。"
+                    android:text="@{data.item.title}"
+                    android:visibility="@{TextUtils.isEmpty(data.item.title) ? View.GONE : View.VISIBLE}"
+                    />
+
+                <TextView
+                    android:id="@+id/mCommunityCardContentTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mCommunityCardTitleTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="2dp"
+                    app:layout_goneMarginTop="9dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginEnd="9dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="11sp"
+                    android:textColor="@color/color_8798af"
+                    tools:text="无论是在口碑还是票房上创造了日影史上难得的观碑。"
+                    android:text="@{data.item.content}"
+                    android:visibility="@{TextUtils.isEmpty(data.item.content) ? View.GONE : View.VISIBLE}"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+</layout>

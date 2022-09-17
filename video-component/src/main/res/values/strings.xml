@@ -1,0 +1,7 @@
+<resources>
+    <string name="video_release_format">%1$s%2$s上映</string>
+    <string name="video_mtime_score_format">时光评分%1$s</string>
+    <string name="video_publish_time_format">发布时间 %1$s</string>
+    <string name="video_had_seen">看过</string>
+
+</resources>

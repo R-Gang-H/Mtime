@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="provider"
+            type="com.kotlin.android.review.component.item.provider.ReviewProvider" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="debug.main.ReviewDebugActivity">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="影评"
+            android:onClick="@{(view)->provider.startReviewDetail(111,111,0L,true)}"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

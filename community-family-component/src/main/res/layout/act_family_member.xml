@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <!-- 刷新组件 -->
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <!-- 管理员列表 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mActFamilyMemberRv"
+                    style="@style/MatchWrap"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/item_family_member"
+                    />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/MatchMatch">
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srlEnableFooterFollowWhenNoMoreData="false">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/mFilmListCountTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/offset_33px"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:layout_marginEnd="@dimen/offset_33px"
+                        android:layout_marginBottom="@dimen/offset_34px"
+                        android:lines="1"
+                        android:textColor="@color/color_cbd0d7"
+                        android:textSize="@dimen/offset_12sp"
+                        tools:text="共5个" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mCreateRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AboutTextView">
+        <item name="android:textSize">@dimen/offset_16sp</item>
+        <item name="android:textColor">@color/color_4e5e73</item>
+        <item name="android:paddingBottom">@dimen/offset_30px</item>
+        <item name="android:paddingTop">@dimen/offset_30px</item>
+        <item name="android:paddingRight">@dimen/offset_30px</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawableRight">@drawable/ic_right_arrow</item>
+        <item name="android:drawableTint">@color/color_c9cedc</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AboutLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/offset_2px</item>
+        <item name="android:background">@color/color_f3f3f4</item>
+        <item name="android:layout_marginRight">@dimen/offset_30px</item>
+    </style>
+</resources>

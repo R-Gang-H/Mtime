@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.ContributeBottomBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mBottomHostLay"
+        android:layout_width="match_parent"
+        android:onClick="@{view->data.onClick(view)}"
+        android:layout_height="@dimen/offset_105px">
+
+        <TextView
+            android:id="@+id/mBottomTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="@dimen/offset_15sp"
+            android:textColor="@color/color_404c57"
+            android:text="@{data.text}"
+            tools:text="xxx"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

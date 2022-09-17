@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_d8d8d8"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/offset_pxtodx_30"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/act_license_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_pxtodx_6"
+            android:layout_marginRight="@dimen/offset_pxtodx_6"
+            android:src="@drawable/icon_license_left" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_d8d8d8"
+            android:lineSpacingExtra="@dimen/offset_5dp"
+            android:layout_toRightOf="@id/act_license_iv"
+            android:text="@string/actor_detail_license_content"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_pxtosp_24" />
+
+
+    </RelativeLayout>
+
+    <com.mtime.widgets.photoview.PhotoView
+        android:id="@+id/act_license_icon_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        tool:src="@drawable/default_image" />
+
+</LinearLayout>

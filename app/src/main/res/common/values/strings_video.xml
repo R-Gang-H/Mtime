@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="video_string_retry">重试</string>
+    <string name="video_string_network_no_wifi_tips">您当前正在使用流量观看，建议您切换到wifi环境下</string>
+    <string name="video_string_go_on_play">继续观看</string>
+    <string name="video_string_go_on_play_size">[%1$s] %2$s 流量</string>
+    <string name="video_string_no_network_connected">目前没有联网，请检查网络后重新刷新界面</string>
+
+    <string name="video_string_error_other">其他错误</string>
+    <string name="video_string_error_feed_back">立即反馈</string>
+    <string name="video_string_error_license_tip">视频播放地址获取失败，请稍后再试</string>
+</resources>

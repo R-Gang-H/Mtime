@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f3f6"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:ignore="ResourceName">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/mineHeadPortraitRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:includeFontPadding="false"
+                android:text="@string/mine_head_portrait"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mineHeadPortraitIma"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="@dimen/offset_4dp"
+                    android:src="@drawable/default_circle_image" />
+
+                <ImageView
+                    android:layout_width="@dimen/offset_16dp"
+                    android:layout_height="@dimen/offset_16dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_label_12_arrow_right"
+                    app:tint="@color/color_283748" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f6" />
+
+        <RelativeLayout
+            android:id="@+id/nameRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_nickname"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/offset_10dp"
+                android:layout_toRightOf="@+id/nameTv">
+
+                <TextView
+                    android:id="@+id/nickNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_4dp"
+                    android:layout_toLeftOf="@id/nameIma"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:textColor="@color/color_283748"
+                    android:textSize="14sp"
+                    tools:text="梦游的鱼" />
+
+                <ImageView
+                    android:id="@+id/nameIma"
+                    android:layout_width="@dimen/offset_16dp"
+                    android:layout_height="@dimen/offset_16dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_label_12_arrow_right"
+                    app:tint="@color/color_283748" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/signRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:id="@+id/signTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_sign"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/offset_10dp"
+                android:layout_toRightOf="@id/signTv">
+
+                <TextView
+                    android:id="@+id/signStrTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_4dp"
+                    android:layout_toLeftOf="@+id/signIma"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:textColor="@color/color_283748"
+                    android:textSize="14sp"
+                    tools:text="向阳" />
+
+                <ImageView
+                    android:id="@+id/signIma"
+                    android:layout_width="@dimen/offset_16dp"
+                    android:layout_height="@dimen/offset_16dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_label_12_arrow_right"
+                    app:tint="@color/color_283748" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f6" />
+
+        <RelativeLayout
+            android:id="@+id/sexRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_sex"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sexTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_4dp"
+                    android:includeFontPadding="false"
+                    android:text="保密"
+                    android:textColor="@color/color_283748"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/offset_16dp"
+                    android:layout_height="@dimen/offset_16dp"
+                    android:src="@drawable/ic_label_12_arrow_right"
+                    app:tint="@color/color_283748" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/birthDateRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_date_of_birth"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dateTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_4dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_283748"
+                    android:textSize="14sp"
+                    tools:text="2000-01-01" />
+
+                <ImageView
+                    android:layout_width="@dimen/offset_16dp"
+                    android:layout_height="@dimen/offset_16dp"
+                    android:src="@drawable/ic_label_12_arrow_right"
+                    app:tint="@color/color_283748" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f6" />
+
+        <RelativeLayout
+            android:id="@+id/liveAddressRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_live_address"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/addressTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_4dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_283748"
+                    android:textSize="14sp"
+                    tools:text="北京" />
+
+                <ImageView
+                    android:layout_width="@dimen/offset_16dp"
+                    android:layout_height="@dimen/offset_16dp"
+                    android:src="@drawable/ic_label_12_arrow_right"
+                    app:tint="@color/color_283748" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

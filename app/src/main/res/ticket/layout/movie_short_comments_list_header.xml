@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <com.mtime.mtmovie.widgets.CircleImageView
+        android:id="@+id/header"
+        android:layout_width="@dimen/offset_pxtodx_90"
+        android:layout_height="@dimen/offset_pxtodx_90"
+        android:layout_marginLeft="@dimen/actor_detail_listview_item_header_margin_left"
+        android:layout_marginTop="@dimen/actor_detail_listview_item_header_margin_top"
+        android:contentDescription="@string/app_name"
+        android:background="@drawable/profile_default_head_h90"
+        app:border_color="@color/circle_image_boder"
+        app:border_width="1px" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/header"
+        android:layout_marginLeft="@dimen/actor_detail_listview_item_name_margin_left"
+        android:layout_marginTop="@dimen/actor_detail_listview_item_name_margin_top"
+        android:layout_toLeftOf="@+id/timeandrate"
+        android:layout_toRightOf="@id/header"
+        android:gravity="left|center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/color_999999"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:id="@id/timeandrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/name"
+        android:layout_marginRight="@dimen/actor_detail_listview_item_time_margin_right"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/movie_short_comments_rate_margin_left"
+            android:background="@drawable/long_comments_user_rate_icon"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/name"
+        android:layout_marginRight="@dimen/actor_detail_listview_item_time_margin_right"
+        android:layout_marginTop="@dimen/actor_detail_listview_item_content_margin_top"
+        android:gravity="left|center_vertical"
+        android:lineSpacingExtra="2dp"
+        android:singleLine="false"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/comment_img"
+        android:layout_width="@dimen/offset_pxtodx_460"
+        android:layout_height="@dimen/offset_pxtodx_270"
+        android:layout_below="@id/content"
+        android:layout_alignLeft="@id/name"
+        android:adjustViewBounds="true"
+        android:src="@drawable/default_image"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/praise_region"
+        android:layout_width="@dimen/movie_short_comments_praise_view_width"
+        android:layout_height="@dimen/movie_short_comments_praise_view_height"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/comment_img"
+        android:clickable="true" >
+
+        <ImageView
+            android:id="@+id/praise_icon_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/assist1" />
+
+        <ImageView
+            android:id="@+id/praise_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/assist1" />
+
+        <TextView
+            android:id="@+id/praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@id/praise_icon"
+            android:gravity="center"
+            android:textColor="@color/color_777777"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reply_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/movie_short_comments_praise_view_height"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/comment_img"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/actor_detail_listview_item_reply_margin_right" >
+
+        <TextView
+            android:id="@+id/reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:drawableLeft="@drawable/reply"
+            android:gravity="center"
+            android:text="@string/st_reply"
+            android:textColor="@color/color_777777"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/seperate_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/reply_view"
+        android:background="@color/color_d8d8d8"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/seperate_line"
+        android:layout_marginLeft="@dimen/movie_short_comments_bottom_arrow_margin_left"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/grey_tri_arraow" />
+
+</RelativeLayout>

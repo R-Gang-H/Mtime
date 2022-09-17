@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.MineMyCollectionBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mMyCollectionHostLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view) -> data.onClick(view)}"
+        android:paddingStart="@dimen/offset_30px"
+        android:paddingEnd="@dimen/offset_30px"
+        android:paddingBottom="@dimen/offset_46px">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mMoviePicIv"
+            android:layout_width="@dimen/offset_120px"
+            android:layout_height="@dimen/offset_160px"
+            android:layout_marginTop="@dimen/offset_18px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/color_1d2736" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mMovieBgIv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_140px"
+            android:layout_marginTop="@dimen/offset_23px"
+            android:src="@drawable/bg_film_list_film"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mMoviePicIv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/mStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_23px"
+            android:padding="@dimen/offset_2px"
+            android:text="@string/tablet_film_list_failured"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_10sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/mFilmListTitleTv"
+            app:layout_constraintEnd_toStartOf="@id/mFilmListTitleTv"
+            app:layout_constraintStart_toEndOf="@id/mMovieBgIv"
+            app:layout_constraintTop_toTopOf="@id/mFilmListTitleTv" />
+
+        <TextView
+            android:id="@+id/mFilmListTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:layout_marginTop="@dimen/offset_38px"
+            android:layout_marginEnd="@dimen/offset_5px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{data.bean.title}"
+            android:textColor="@color/color_3d4955"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/mCollectionMoreIv"
+            app:layout_constraintStart_toEndOf="@id/mStatus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="@dimen/offset_23px"
+            tools:text="孤岛少年电影" />
+
+        <TextView
+            android:id="@+id/mWatchedTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_23px"
+            android:layout_marginTop="@dimen/offset_2px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{@string/tablet_film_list_watch_num(data.bean.numRead,data.bean.numMovie)}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mMovieBgIv"
+            app:layout_constraintTop_toBottomOf="@id/mFilmListTitleTv"
+            tools:text="看过 1/10 部" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mUserAvatarIv"
+            android:layout_width="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_30px"
+            android:layout_marginStart="@dimen/offset_23px"
+            android:layout_marginTop="@dimen/offset_10px"
+            app:layout_constraintStart_toEndOf="@id/mMovieBgIv"
+            app:layout_constraintTop_toBottomOf="@id/mWatchedTv"
+            app:load_image="@{data.bean.userAvatarUrl}"
+            app:load_image_circle_crop="@{true}"
+            app:load_image_default_img="@{@drawable/default_circle_image}"
+            app:load_image_height="@{15}"
+            app:load_image_width="@{15}"
+            tools:background="@color/color_cbd0d7" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mUserCert"
+            android:layout_width="@dimen/offset_15px"
+            android:layout_height="@dimen/offset_15px"
+            app:layout_constraintCircle="@+id/mUserAvatarIv"
+            app:layout_constraintCircleAngle="120"
+            app:layout_constraintCircleRadius="@dimen/offset_15px"
+            android:visibility="@{data.bean.cert ? View.VISIBLE : View.GONE}"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mUserNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_6px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:text="@{data.bean.userNickName}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_10sp"
+            app:layout_constraintStart_toEndOf="@id/mUserAvatarIv"
+            app:layout_constraintTop_toBottomOf="@id/mWatchedTv"
+            tools:text="发布人" />
+
+        <TextView
+            android:id="@+id/mModifyTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_23px"
+            android:layout_marginTop="@dimen/offset_2px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_cbd0d7"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mMovieBgIv"
+            app:layout_constraintTop_toBottomOf="@id/mUserAvatarIv"
+            tools:text="2021-12-30更新" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mCollectionMoreIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> data.onClick(view)}"
+            android:src="@drawable/ic_collection_36_more_v"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mFilmListTitleTv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

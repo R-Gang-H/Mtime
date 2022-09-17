@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.live.component.ui.adapter.LiveDetailVideoItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mItemLiveDetailVideoCl"
+        style="@style/WrapWrap"
+        android:paddingStart="@dimen/offset_10px"
+        android:paddingEnd="@dimen/offset_10px"
+        android:paddingBottom="@dimen/offset_24px"
+        android:onClick="@{view -> data.onClick(view)}"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemLiveDetailVideoCv"
+            android:layout_width="@dimen/offset_334px"
+            android:layout_height="@dimen/offset_216px"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <!-- 视频图片 -->
+            <ImageView
+                android:id="@+id/mItemLiveDetailVideoImgIv"
+                style="@style/MatchMatch"
+                android:src="@drawable/default_image"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.bean.img}"
+                load_image_width="@{167}"
+                load_image_height="@{108}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 选中外边框 -->
+        <View
+            android:id="@+id/mItemLiveDetailVideoBorderView"
+            android:layout_width="@dimen/offset_334px"
+            android:layout_height="@dimen/offset_216px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/color_feb12a"
+            android:visibility="visible"
+            />
+
+        <!-- 播放按钮 -->
+        <ImageView
+            android:id="@+id/mItemLiveDetailVideoPlayIconIv"
+            android:layout_width="@dimen/offset_32px"
+            android:layout_height="@dimen/offset_35px"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:layout_marginBottom="@dimen/offset_14px"
+            android:src="@drawable/ic_live_play_triangle"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemLiveDetailVideoCv"
+            app:layout_constraintBottom_toBottomOf="@+id/mItemLiveDetailVideoCv"
+            />
+
+        <!-- 时长 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mItemLiveDetailVideoLengthTv"
+            style="@style/WrapWrap"
+            android:layout_marginStart="@dimen/offset_8px"
+            android:layout_marginBottom="@dimen/offset_12px"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/mItemLiveDetailVideoPlayIconIv"
+            app:layout_constraintBottom_toBottomOf="@+id/mItemLiveDetailVideoCv"
+            tools:text="3:10"
+            />
+
+        <!-- 视频名称 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mItemLiveDetailVideoTitleTv"
+            android:layout_width="@dimen/offset_334px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_12sp"
+            android:textStyle="bold"
+            android:text="@{data.bean.title}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemLiveDetailVideoCv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemLiveDetailVideoCv"
+            app:layout_constraintRight_toRightOf="@+id/mItemLiveDetailVideoCv"
+            tools:text="预告片标题预告片标题预告片标题预告片标题"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

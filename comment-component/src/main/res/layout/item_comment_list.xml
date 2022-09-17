@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <import type="com.kotlin.android.user.UserManager" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.comment.component.binder.CommentListBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/commentRootCL"
+        style="@style/MatchWrap"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_25px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:onClick="@{(view)->data.onClick(view)}">
+
+        <!--        用户头像-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userPicIv"
+            load_image="@{data.bean.userPic}"
+            load_image_circle_crop="@{true}"
+            load_image_width="@{24}"
+            load_image_height="@{24}"
+            load_image_default_img="@{@drawable/default_user_head}"
+            android:layout_width="@dimen/offset_48px"
+            android:layout_height="@dimen/offset_48px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    认证图片-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/offset_24px"
+            android:layout_height="@dimen/offset_24px"
+            app:layout_constraintCircle="@id/userPicIv"
+            app:layout_constraintCircleAngle="120"
+            app:layout_constraintCircleRadius="@dimen/offset_24px"
+            app:layout_constraintBottom_toBottomOf="@id/userPicIv"
+            app:layout_constraintRight_toRightOf="@id/userPicIv"
+            android:id="@+id/authIv"
+            android:src="@{data.bean.institutionAuthUser ? @drawable/ic_jigourenzheng : @drawable/ic_yingrenrenzheng}"
+            android:visibility="@{data.bean.authUser ? View.VISIBLE : View.GONE}"
+            />
+
+        <!--        用户名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userNameTv"
+            style="@style/WrapWrap"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:text="@{data.bean.userName}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/font_size_sp_14"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constrainedWidth="true"
+            android:onClick="@{view->data.onClick(view)}"
+            app:layout_constraintBottom_toBottomOf="@id/userPicIv"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toLeftOf="@id/publishDateTv"
+            app:layout_constraintLeft_toRightOf="@id/userPicIv"
+            app:layout_constraintTop_toTopOf="@id/userPicIv" />
+        <!--发布时间-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/publishDateTv"
+            style="@style/WrapWrap"
+            app:layout_constrainedWidth="true"
+            android:layout_marginLeft="@dimen/offset_4px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:text="@{data.bean.publishDate}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBaseline_toBaselineOf="@id/userNameTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/userNameTv" />
+
+        <!--        评论内容-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/contentTv"
+            style="@style/MatchWrap"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/font_size_sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userPicIv"
+            tools:text="片尾旁白的时候，我不禁想到国内有个叫张小北的影评人很久前在影评节目里说，“只有中国人拍的电影才能触动身为中国人最深的内心”，我认为流浪…" />
+        <!--        展开按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/expandTv"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_10px"
+            app:layout_constraintTop_toBottomOf="@id/contentTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="@string/comment_list_expand"
+            android:textSize="@dimen/font_size_sp_14"
+            android:textColor="@color/color_8798af"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/commentIvCV"
+            android:layout_width="@dimen/offset_334px"
+            android:layout_height="@dimen/offset_216px"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:visibility="@{TextUtils.isEmpty(data.bean.commentPic)?View.GONE:View.VISIBLE}"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expandTv">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/commentIv"
+                style="@style/MatchMatch"
+                load_image_width="@{167}"
+                load_image_height="@{108}"
+                load_image="@{data.bean.commentPic}"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!--        android:drawableTint="@{data.bean.like?@color/color_20a0da:@color/color_8798af}"-->
+
+        <!--        点赞按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/likeTv"
+            style="@style/WrapWrap"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:drawableLeft="@drawable/ic_like"
+            android:drawablePadding="@dimen/offset_10px"
+            android:onClick="@{(view)->data.onClick(view)}"
+            android:text="@{data.bean.likeCountStr}"
+            android:textColor="@{data.bean.like?@color/color_20a0da:@color/color_8798af}"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentIvCV" />
+
+        <!--        回复数-->
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintLeft_toRightOf="@id/likeTv"
+            android:id="@+id/comentCountTv"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:textColor="@color/color_8798af"
+            app:drawableTint="@color/color_8798af"
+            android:text="@{data.bean.replyCountStr}"
+            app:layout_constraintTop_toBottomOf="@id/commentIvCV"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:drawablePadding="@dimen/offset_10px"
+            android:textSize="@dimen/font_size_sp_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <!--        删除按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deleteTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:onClick="@{(view)->data.onClick(view)}"
+            android:text="@string/comment_delete"
+            android:visibility="@{data.bean.myComment?View.VISIBLE:View.GONE}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentIvCV" />
+
+
+        <RelativeLayout
+            android:id="@+id/replyRL"
+            style="@style/MatchWrap"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_20px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/likeTv">
+
+            <!--        第一行评论回复-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/firstItemLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginTop="@dimen/offset_30px"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:layout_marginBottom="@dimen/offset_30px"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/firstUserNameTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/font_size_sp_13"
+                    android:textStyle="bold"
+                    tools:text="离人心上秋：" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/firstReplyConentTv"
+                    style="@style/WrapWrap"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/font_size_sp_13"
+                    tools:text="有新的电影记得通知我哦~" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--第二行评论回复-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/secondItemLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/firstItemLL"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginTop="-5dp"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:layout_marginBottom="@dimen/offset_30px"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/secondUserNameTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/font_size_sp_13"
+                    android:textStyle="bold"
+                    tools:text="离人心上秋：" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/secondReplyConentTv"
+                    style="@style/WrapWrap"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/font_size_sp_13"
+                    tools:text="有新的电影记得通知我哦~" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:id="@+id/spliteLineView"
+                style="@style/MatchOne303a47"
+                android:layout_below="@id/secondItemLL"
+                android:layout_marginLeft="@dimen/offset_20px"
+
+                android:layout_marginRight="@dimen/offset_20px" />
+
+            <!--        评论回复按钮-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/replyBtn"
+                style="@style/WrapWrap"
+                android:layout_below="@id/spliteLineView"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/offset_30px"
+                android:layout_marginRight="@dimen/offset_20px"
+                android:drawableRight="@drawable/ic_right_arrows"
+                android:drawablePadding="@dimen/offset_10px"
+                android:paddingBottom="@dimen/offset_30px"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="查看剩余100条回复"
+                />
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

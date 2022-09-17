@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.FilmListSelectedBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/offset_30px">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mFilmCoverIv"
+            android:layout_width="@dimen/offset_116px"
+            android:layout_height="@dimen/offset_155px"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/color_8798af" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mFilmTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_28px"
+            android:layout_marginTop="@dimen/offset_23px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_16sp"
+            app:layout_constraintEnd_toStartOf="@+id/mDelBtn"
+            app:layout_constraintStart_toEndOf="@+id/mFilmCoverIv"
+            app:layout_constraintTop_toTopOf="@id/mFilmCoverIv"
+            tools:text="复仇者联盟（2012）" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mFilmYearTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_8px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintStart_toStartOf="@+id/mFilmTitleTv"
+            app:layout_constraintTop_toBottomOf="@id/mFilmTitleTv"
+            tools:text="(2012)" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mDelBtn"
+            color="@{@color/color_f2f2f2}"
+            cornerRadius="@{4}"
+            android:layout_width="@dimen/offset_110px"
+            android:layout_height="@dimen/offset_48px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/tablet_film_list_del"
+            android:textColor="@color/color_8a9199"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintBottom_toBottomOf="@id/mFilmCoverIv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mFilmCoverIv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

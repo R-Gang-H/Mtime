@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.recommend.bean.TrailerItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_f3f5f6"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintDimensionRatio="h,1:0.56"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                load_image="@{data.bigPic}"
+                load_image_width="@{330}"
+                load_image_height="@{185}"
+                tools:src="@color/color_1fcaea" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_article_plays" />
+
+            <TextView
+                color="@{@color/color_00000000}"
+                endColor="@{@color/color_80000000}"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_gravity="bottom"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:lines="1"
+                android:padding="10dp"
+                android:textColor="@color/color_ffffff"
+                android:textSize="14sp"
+                android:text="@{data.title}"
+                tools:text="《梅艳芳》时隔20多年搬上荧幕文字描述文《梅艳芳》时隔20多年搬上荧幕文字描述文" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="@color/color_ffffff"
+                tools:text="2010/21/12"
+                android:text="@{data.releaseDate}"
+                color="@{@color/color_30000000}"
+                cornerRadius="@{4}"
+                android:paddingStart="3.5dp"
+                android:paddingEnd="3.5dp"
+                android:paddingTop="1.5dp"
+                android:paddingBottom="1.5dp"
+                android:layout_gravity="right"
+                android:layout_margin="9dp"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

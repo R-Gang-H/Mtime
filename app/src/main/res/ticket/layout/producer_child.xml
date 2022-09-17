@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/offset_15dp"
+    android:paddingRight="@dimen/offset_15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_15dp"
+        android:layout_marginBottom="@dimen/offset_15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/color_4E5E73"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_right_arrows" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/gray_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1dp"
+        android:background="@color/color_F3F3F4"
+        android:visibility="visible" />
+
+</LinearLayout>

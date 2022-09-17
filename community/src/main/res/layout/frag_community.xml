@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/communityRootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/fragment_home_mian_app_bar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:elevation="0dp">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:contentScrim="@android:color/transparent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <include
+                        android:layout_marginTop="44dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/view_community_header" />
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@color/color_ffffff"
+                        app:layout_collapseMode="pin">
+
+                        <com.kotlin.android.widget.titlebar.TitleBar
+                            android:id="@+id/titleBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <com.ogaclejapan.smarttablayout.SmartTabLayout
+                    android:id="@+id/mCommunityTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:bg_gradient_start_color="@{@color/color_f2f3f6}"
+                    android:bg_gradient_end_color="@{@color/color_ffffff}"
+                    app:stl_defaultTabTextAllCaps="false"
+                    app:stl_dividerThickness="0dp"
+                    app:stl_indicatorColor="@color/color_47505c"
+                    app:stl_indicatorCornerRadius="0dp"
+                    app:stl_indicatorInterpolation="smart"
+                    app:stl_indicatorThickness="2dp"
+                    app:stl_indicatorWidth="32dp"
+                    app:stl_indicatorWithoutPadding="true"
+                    app:stl_customTabTextLayoutId="@layout/view_tab_item"
+                    app:stl_customTabTextViewId="@id/mTabTextView"
+                    app:stl_titleOffset="auto_center"
+                    app:stl_distributeEvenly="true"
+                    app:stl_underlineThickness="0dp" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/mCommunityViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <ImageView
+            android:id="@+id/mCommunityPublishBtnIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_community_publish"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            />
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_share_dialog_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@drawable/player_sdk_share_bg">
+
+    <LinearLayout
+        android:id="@+id/ll_share_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/player_sdk_share_weixin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_45dp"
+                android:src="@drawable/icon_share_weixin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:gravity="center_horizontal"
+                android:text="微信"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/font_size_12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/player_sdk_share_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/offset_50dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_45dp"
+                android:src="@drawable/icon_share_quan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:gravity="center_horizontal"
+                android:text="朋友圈"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/font_size_12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/player_sdk_share_sina"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/offset_50dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_45dp"
+                android:src="@drawable/icon_share_sina" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:gravity="center_horizontal"
+                android:text="微博"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/font_size_12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/player_sdk_share_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/offset_50dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_45dp"
+                android:src="@drawable/icon_share_qq" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:gravity="center_horizontal"
+                android:text="QQ好友"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/font_size_12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

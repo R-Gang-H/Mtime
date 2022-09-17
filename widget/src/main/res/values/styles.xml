@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="common_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+
+    <style name="bottom_out_dialog" parent="common_dialog">
+        <item name="android:windowAnimationStyle">@style/BottomDialog.AnimationStyle</item>
+    </style>
+
+    <style name="BottomDialog.AnimationStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/anim_slide_out_to_bottom</item>
+    </style>
+
+
+    <declare-styleable name="MultiStateView">
+        <attr name="netView" format="reference" />
+        <attr name="emptyView" format="reference" />
+        <attr name="errorView" format="reference" />
+        <attr name="viewState" format="enum">
+            <enum name="content" value="0" />
+            <enum name="error" value="1" />
+            <enum name="empty" value="2" />
+            <enum name="neterror" value="3" />
+        </attr>
+        <attr name="animateViewChanges" format="boolean" />
+    </declare-styleable>
+
+    <style name="title_bar_style">
+        <item name="android:background">@color/color_ffffff</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/offset_88px</item>
+    </style>
+
+    <style name="title_bar_button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_30333b</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingLeft">@dimen/offset_10px</item>
+        <item name="android:paddingRight">@dimen/offset_10px</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">0dip</item>
+        <item name="android:layout_marginRight">@dimen/offset_20px</item>
+    </style>
+</resources>

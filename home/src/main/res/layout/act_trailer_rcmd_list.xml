@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kotlin.android.widget.multistate.MultiStateView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mMultiStateView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        />
+
+</com.kotlin.android.widget.multistate.MultiStateView>

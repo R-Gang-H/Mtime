@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activityRootLayout"
+        style="@style/MatchWrap"
+        android:visibility="gone"
+        shadowRadius="@{5}"
+        shadowWidth="@{5}"
+        shadowAlphaSpacing="@{0.05f}"
+        shadowColor="@{@color/color_f3f4f6}"
+        tools:visibility="visible"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:cardCornerRadius="@dimen/offset_10px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/MatchWrap"
+                android:paddingBottom="@dimen/offset_15px"
+                >
+
+                <!-- title -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/activityTitleTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginTop="@dimen/offset_28px"
+                    android:layout_marginStart="@dimen/offset_26px"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_18sp"
+                    android:textStyle="bold"
+                    android:text="@string/mine_activity_title"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <!-- 活动列表 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/activityRv"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_5px"
+                    app:layout_constraintTop_toBottomOf="@+id/activityTitleTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_activity"
+                    tools:itemCount="5"
+                    />
+
+                <!-- 查看更多 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/activityMoreTv"
+                    style="@style/WrapWrap"
+                    android:paddingTop="@dimen/offset_18px"
+                    android:paddingBottom="@dimen/offset_15px"
+                    android:drawableRight="@drawable/ic_mine_activity_right"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_more"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/activityRv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:visibility="visible"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--    返回按钮-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_10px"
+        android:layout_marginTop="@dimen/offset_75px"
+        android:padding="@dimen/offset_10px"
+        android:src="@drawable/icon_back"
+        android:tint="@color/color_e3e5ed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--分享按钮-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/shareIv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/offset_75px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:layout_width="@dimen/offset_40px"
+        android:src="@drawable/ic_ver_more"
+        android:tint="@color/color_ffffff"
+        android:layout_height="wrap_content"/>
+
+    <!--    直播时间或直播结束提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/liveStartTimeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_24px"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:layout_marginRight="@dimen/offset_24px"
+        android:textColor="@color/color_ffffff"
+        android:visibility="gone"
+        android:textSize="@dimen/font_size_sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backBtn"
+        tools:text="直播时间：3月3日19:00" />
+
+    <!--    预约按钮布局-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/liveAppointCL"
+        android:layout_width="@dimen/offset_300px"
+        android:layout_height="@dimen/offset_60px"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/offset_20px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/liveStartTimeTv">
+
+        <!--        预约按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/liveAppointTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_sp_15"
+            android:drawablePadding="@dimen/offset_9px"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="立即预约" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    预约人数或直播结束提示语-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appointNumTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:visibility="gone"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/font_size_sp_12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/liveAppointCL"
+        tools:text="已有5.3万人预约" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

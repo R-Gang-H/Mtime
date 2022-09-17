@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="75dp"
+    android:layout_height="118dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.kotlin.android.card.monopoly.widget.DrawableTextView
+        android:id="@+id/countdownView"
+        android:layout_width="75dp"
+        android:layout_height="29dp"
+        android:background="@color/color_ffe6bb"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:textColor="@color/color_de8e01"
+        android:textSize="10sp"
+        tools:text="剩5分钟" />
+
+
+    <FrameLayout
+        android:id="@+id/boxBgLayout"
+        android:layout_width="75dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/ic_dig_box_bg_loading">
+
+        <ImageView
+            android:id="@+id/boxView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_activity_box" />
+
+        <TextView
+            android:id="@+id/emptyBoxView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="@string/box_position_null"
+            android:textColor="@color/color_8bb1b8"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/boxCoverView"
+            android:layout_width="75dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="5dp"
+            android:paddingBottom="10dp"
+            android:visibility="visible"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/gifView"
+            android:layout_width="75dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="5dp"
+            tools:ignore="ContentDescription" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="75dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="5dp"
+            app:lottie_fileName="scan_box.json" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/actionView"
+        android:layout_width="61dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="82dp"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:textColor="@color/color_1d2736"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:text="@string/open_now" />
+</FrameLayout>

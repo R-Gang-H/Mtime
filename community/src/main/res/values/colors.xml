@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_4b5f76">#4B5F76</color>
+    <!--    10%-->
+    <color name="color_1A040404">#1A040404</color>
+    <color name="color_b2b5b0">#B2B5B0</color>
+    <!--    10%-->
+    <color name="color_1A070606">#1A070606</color>
+    <color name="color_d9dadc">#D9DADC</color>
+    <color name="color_1a2737">#1A2737</color>
+</resources>

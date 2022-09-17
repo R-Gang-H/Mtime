@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="homeProvider"
+            type="com.kotlin.android.app.router.provider.home.IHomeProvider" />
+        <variable
+            name="topListTypeViewModel"
+            type="com.kotlin.android.home.ui.toplist.TopListTypeViewModel" />
+    </data>
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <!-- 刷新组件 -->
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/mRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableFooterFollowWhenNoMoreData="false"
+            >
+
+            <androidx.core.widget.NestedScrollView
+                style="@style/MatchMatch"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/MatchMatch">
+
+                    <!-- 分类榜单_1 -->
+                    <include
+                        android:id="@+id/mFragTopListTypeCategoryFirstLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/offset_185px"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:layout_marginLeft="@dimen/offset_30px"
+                        android:layout_marginRight="@dimen/offset_30px"
+                        android:visibility="@{topListTypeViewModel.topListUIModel.cateogryVisible ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:homeProvider="@{homeProvider}"
+                        app:data="@{topListTypeViewModel.topListUIModel.firstCategoryTopList}"
+                        layout="@layout/item_toplist_category_first"
+                        />
+
+                    <!-- 分类榜单_2~7 -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mFragTopListTypeCategoryOtherRv"
+                        android:layout_width="@dimen/offset_0px"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_20px"
+                        android:layout_marginRight="@dimen/offset_20px"
+                        android:visibility="@{topListTypeViewModel.topListUIModel.cateogryVisible ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toBottomOf="@+id/mFragTopListTypeCategoryFirstLayout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:spanCount="3"
+                        tools:listitem="@layout/item_toplist_category_other"
+                        tools:itemCount="6"
+                        />
+
+                    <!-- 实时票房 一期没有 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mFragTopListTypeTicketBoxCl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:layout_marginLeft="@dimen/offset_30px"
+                        android:layout_marginRight="@dimen/offset_30px"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/mFragTopListTypeCategoryOtherRv"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        tools:background="#12C7E9"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/offset_8px"
+                            android:layout_marginBottom="@dimen/offset_8px"
+                            android:layout_marginStart="@dimen/offset_30px"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:textSize="@dimen/offset_15sp"
+                            android:textColor="@color/color_ffffff"
+                            android:textStyle="bold"
+                            android:text="@string/toplist_movie_ticketbox_title"
+                            />
+
+                        <TextView
+                            android:id="@+id/mFragTopListTypeTicketBoxTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/offset_30px"
+                            android:textSize="@dimen/offset_12sp"
+                            android:textColor="@color/color_ffffff"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:text="今日内地票房：XX亿"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 年度榜单_标题栏 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mFragTopListTypeYearTitleCl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_60px"
+                        android:layout_marginLeft="@dimen/offset_30px"
+                        android:layout_marginRight="@dimen/offset_30px"
+                        android:visibility="@{topListTypeViewModel.topListUIModel.yearlyVisible ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toBottomOf="@+id/mFragTopListTypeTicketBoxCl"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        >
+
+                        <TextView
+                            android:id="@+id/mFragTopListTypeYearTitleTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/offset_17sp"
+                            android:textColor="@color/color_1d2736"
+                            android:textStyle="bold"
+                            android:text="@string/toplist_movie_year_title"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            />
+
+                        <TextView
+                            android:id="@+id/mFragTopListTypeYearSelectTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/offset_10px"
+                            android:textSize="@dimen/offset_14sp"
+                            android:textColor="@color/color_8798af"
+                            android:text="@{String.valueOf(topListTypeViewModel.topListUIModel.year)}"
+                            tools:text="2019"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/mFragTopListTypeYearArrowIv"
+                            />
+
+                        <ImageView
+                            android:id="@+id/mFragTopListTypeYearArrowIv"
+                            android:layout_width="@dimen/offset_16px"
+                            android:layout_height="@dimen/offset_24px"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:srcCompat="@drawable/ic_toplist_movie_right_arrow"
+                            android:contentDescription="@string/loading"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- 年度榜单_列表 -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mFragTopListTypeYearRv"
+                        android:layout_width="@dimen/offset_0px"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_20px"
+                        android:layout_marginRight="@dimen/offset_20px"
+                        android:visibility="@{topListTypeViewModel.topListUIModel.yearlyVisible ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintTop_toBottomOf="@+id/mFragTopListTypeYearTitleCl"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2"
+                        tools:listitem="@layout/item_toplist_category_other"
+                        tools:itemCount="4"
+                        />
+
+                    <!-- 精选片单_标题栏 -->
+                    <TextView
+                        android:id="@+id/mFragTopListTypeSelectTitleTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_60px"
+                        android:layout_marginLeft="@dimen/offset_30px"
+                        android:layout_marginRight="@dimen/offset_30px"
+                        android:textSize="@dimen/offset_17sp"
+                        android:textColor="@color/color_1d2736"
+                        android:textStyle="bold"
+                        android:text="@string/home_toplist_select_title"
+                        app:layout_constraintTop_toBottomOf="@+id/mFragTopListTypeYearRv"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        />
+
+                    <!-- 精选片单_列表 -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mFragTopListTypeSelectRv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        app:layout_constraintTop_toBottomOf="@+id/mFragTopListTypeSelectTitleTv"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_toplist_select"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

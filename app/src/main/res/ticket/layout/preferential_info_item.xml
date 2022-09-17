@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:background="@drawable/order_remind_seperated_region_background"
+        android:contentDescription="@string/app_name"
+         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/preferential_list_item_label_height"
+        android:layout_marginLeft="@dimen/title_bar_search_back_margin_left" >
+
+        <TextView
+            android:id="@+id/item_preferential_validity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_0075c4"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/item_preferential_send_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/title_bar_search_back_margin_left"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/preferential_share" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/title_bar_search_back_margin_left"
+        android:background="@color/color_ebebeb" />
+
+    <TextView
+        android:id="@+id/item_preferential_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/title_bar_search_back_margin_left"
+        android:lineSpacingExtra="5dp"
+        android:singleLine="false"
+        android:textColor="@color/color_333333"
+        android:textSize="17sp" />
+
+</LinearLayout>

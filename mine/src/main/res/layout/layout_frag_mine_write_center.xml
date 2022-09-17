@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        shadowRadius="@{5}"
+        shadowWidth="@{5}"
+        shadowAlphaSpacing="@{0.05f}"
+        shadowColor="@{@color/color_f3f4f6}"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            app:cardElevation="0px"
+            app:cardCornerRadius="@dimen/offset_10px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/MatchWrap"
+                android:paddingTop="@dimen/offset_24px"
+                android:paddingLeft="@dimen/offset_30px"
+                android:paddingRight="@dimen/offset_30px"
+                android:paddingBottom="@dimen/offset_32px"
+                >
+
+                <!-- title -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/writeCenterTitleTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_18sp"
+                    android:textStyle="bold"
+                    android:text="@string/mine_write_center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <!-- 未登录提示 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/writeCenterTipTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginStart="@dimen/offset_9px"
+                    android:textColor="@color/color_bbbbbb"
+                    android:textSize="@dimen/offset_10sp"
+                    android:text="@string/mine_write_center_un_login"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@+id/writeCenterTitleTv"
+                    app:layout_constraintBottom_toBottomOf="@+id/writeCenterTitleTv"
+                    app:layout_constraintLeft_toRightOf="@+id/writeCenterTitleTv"
+                    tools:visibility="visible"
+                    />
+
+                <!-- 等级图标 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/writeCenterLevelIv"
+                    android:layout_width="@dimen/offset_38px"
+                    android:layout_height="@dimen/offset_38px"
+                    android:layout_marginStart="@dimen/offset_5px"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@+id/writeCenterTitleTv"
+                    app:layout_constraintBottom_toBottomOf="@+id/writeCenterTitleTv"
+                    app:layout_constraintLeft_toRightOf="@+id/writeCenterTitleTv"
+                    tools:visibility="visible"
+                    />
+
+                <!-- 创作者首页 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/writeCenterHomeTv"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="@dimen/offset_166px"
+                    android:layout_marginTop="@dimen/offset_24px"
+                    android:paddingTop="@dimen/offset_18px"
+                    android:drawableTop="@drawable/ic_mine_write_center_home"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_write_center_user_home"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/writeCenterTitleTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/writeCenterContentTv"
+                    tools:background="@color/color_f3f5f9"
+                    />
+
+                <!-- 内容管理 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/writeCenterContentTv"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="@dimen/offset_166px"
+                    android:layout_marginStart="@dimen/offset_18px"
+                    android:paddingTop="@dimen/offset_18px"
+                    android:drawableTop="@drawable/ic_mine_write_center_content"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_write_center_content"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="@+id/writeCenterHomeTv"
+                    app:layout_constraintLeft_toRightOf="@+id/writeCenterHomeTv"
+                    app:layout_constraintRight_toLeftOf="@+id/writeCenterTaskTv"
+                    tools:background="@color/color_f3f5f9"
+                    />
+
+                <!-- 任务中心 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/writeCenterTaskTv"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="@dimen/offset_166px"
+                    android:layout_marginStart="@dimen/offset_18px"
+                    android:paddingTop="@dimen/offset_18px"
+                    android:drawableTop="@drawable/ic_mine_write_center_task"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_write_center_task"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="@+id/writeCenterHomeTv"
+                    app:layout_constraintLeft_toRightOf="@+id/writeCenterContentTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:background="@color/color_f3f5f9"
+                    />
+
+                <!-- 统计、未读勋章 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/writeCenterStatisticCard"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="@dimen/offset_75px"
+                    android:layout_marginTop="@dimen/offset_27px"
+                    app:cardCornerRadius="@dimen/offset_16px"
+                    app:cardElevation="0px"
+                    app:cardUseCompatPadding="false"
+                    app:cardBackgroundColor="@color/color_f3f5f9_alpha_60"
+                    app:layout_constraintTop_toBottomOf="@+id/writeCenterHomeTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    >
+
+                    <!-- 轮播组件 -->
+                    <ViewFlipper
+                        android:id="@+id/writeCenterFlipper"
+                        style="@style/MatchMatch"
+                        android:autoStart="true"
+                        android:flipInterval="5000"
+                        android:inAnimation="@anim/dialog_bottom_enter"
+                        android:outAnimation="@anim/dialog_top_exit"
+                        >
+
+                        <!-- 统计 -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/writeCenterStatisticCl"
+                            style="@style/MatchMatch"
+                            >
+
+                            <!-- 已创作内容 -->
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/writeCenterContentCountTipTv"
+                                style="@style/WrapWrap"
+                                android:layout_marginStart="@dimen/offset_18px"
+                                android:textColor="@color/color_bbbbbb"
+                                android:textSize="@dimen/offset_10sp"
+                                android:text="@string/mine_write_center_content_count_tip"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/writeCenterContentCountTv"
+                                style="@style/WrapWrap"
+                                android:layout_marginLeft="@dimen/offset_5px"
+                                android:textColor="@color/color_1d2736"
+                                android:textSize="@dimen/offset_11sp"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/writeCenterContentCountTipTv"
+                                tools:text="1000"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/WrapWrap"
+                                android:layout_marginLeft="@dimen/offset_5px"
+                                android:textColor="@color/color_bbbbbb"
+                                android:textSize="@dimen/offset_10sp"
+                                android:text="@string/mine_write_center_content_count_unit"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/writeCenterContentCountTv"
+                                />
+
+                            <!-- 竖线 -->
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/writeCenterLineIv"
+                                android:layout_width="@dimen/offset_2px"
+                                android:layout_height="@dimen/offset_0px"
+                                android:layout_marginTop="@dimen/offset_19px"
+                                android:layout_marginBottom="@dimen/offset_19px"
+                                android:src="@mipmap/ic_mine_movie_line"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                />
+
+                            <!-- 近7日浏览量 -->
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/writeCenterBrowseCountTipTv"
+                                style="@style/WrapWrap"
+                                android:layout_marginStart="@dimen/offset_18px"
+                                android:textColor="@color/color_bbbbbb"
+                                android:textSize="@dimen/offset_10sp"
+                                android:text="@string/mine_write_center_browse_count_tip"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/writeCenterLineIv"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/writeCenterBrowseCountTv"
+                                style="@style/WrapWrap"
+                                android:layout_marginStart="@dimen/offset_5px"
+                                android:textColor="@color/color_1d2736"
+                                android:textSize="@dimen/offset_11sp"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/writeCenterBrowseCountTipTv"
+                                tools:text="100"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/WrapWrap"
+                                android:layout_marginStart="@dimen/offset_5px"
+                                android:textColor="@color/color_bbbbbb"
+                                android:textSize="@dimen/offset_10sp"
+                                android:text="@string/mine_write_center_browse_count_unit"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/writeCenterBrowseCountTv"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!-- 未读勋章 -->
+
+                    </ViewFlipper>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

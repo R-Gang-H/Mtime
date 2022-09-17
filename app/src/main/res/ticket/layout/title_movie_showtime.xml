@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white"
+        android:contentDescription="@string/app_name" />
+
+    <!-- back ImageButton part -->
+
+    <RelativeLayout
+        android:id="@+id/title_bar_movie_showtime_back_rl"
+        android:layout_width="@dimen/title_bar_normal_back_view_width"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_alignParentLeft="true"
+        android:clickable="true" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/title_bar_normal_back_margin_left"
+            android:background="@drawable/common_icon_title_back"
+            android:contentDescription="@string/app_name" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/title_bar_movie_showtime_search_icon_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/title_bar_search_search_margin_right"
+        android:background="@drawable/common_icon_title_search"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/title_bar_movie_showtime_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:maxEms="12"
+        android:textColor="@color/color_1D2736"
+        android:textSize="@dimen/title_bar_search_search_text_size"
+        tools:text="标题"
+        />
+
+</RelativeLayout>

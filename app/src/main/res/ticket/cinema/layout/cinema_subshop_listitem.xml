@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- name -->
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/cinema_detail_comment_btn_margin_top"
+        android:maxWidth="@dimen/cinema_subshops_name_max_width"
+        android:textColor="@color/color_333333"
+        android:textSize="17sp" />
+
+    <!-- address -->
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_below="@id/name"
+        android:layout_marginTop="@dimen/cinema_subshop_item_address_margin_top"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/cinema_detail_comment_btn_margin_top"
+        android:textColor="@color/color_777777"
+        android:textSize="13sp" />
+
+    <!-- like reate -->
+
+    <TextView
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/cinema_detail_comment_btn_margin_top"
+        android:layout_marginTop="@dimen/cinema_detail_comment_btn_margin_top"
+        android:drawableLeft="@drawable/cinema_subshop_heart"
+        android:drawablePadding="2dp"
+        android:textColor="@color/color_f13900"
+        android:textSize="13.5sp" />
+
+    <!-- features -->
+
+    <LinearLayout
+        android:id="@+id/features"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_below="@id/address"
+        android:layout_marginTop="@dimen/cinema_showing_listitem_features_margin_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <!-- TODO use scroll list view to show the 7(max number) icons. -->
+
+        <ImageView
+            android:id="@+id/ticket_machine_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_kiosk_cinema_list_item"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/parks_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/parks_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_parking_cinema_list_item"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/facility_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/facility_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_s_facility"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/imax_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/icon_imax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_imax_cinema_list_item"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/i3d_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/icon_3d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_3d_cinema_list_item"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/vip_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/icon_vip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_small_vip"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/creditcard_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/icon_creditcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_s_creditcard"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/wififree_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/icon_wififree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_s_wififree"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/gamezone_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/icon_gamezone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_s_gamezone"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/coupleseat_icon_left"
+            android:layout_width="@dimen/cinema_subshop_item_features_margin_left"
+            android:layout_height="1px"
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/icon_coupleseat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_s_coupleseat"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cinema_detail_comment_btn_margin_top"
+        android:layout_below="@id/features"
+        android:background="@null"
+        android:contentDescription="@string/app_name" />
+    <!-- like rate -->
+
+</RelativeLayout>

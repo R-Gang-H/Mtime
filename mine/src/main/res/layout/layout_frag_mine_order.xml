@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        >
+
+        <!-- 订单 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/orderCl"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/walletCl"
+            shadowRadius="@{5}"
+            shadowWidth="@{5}"
+            shadowAlphaSpacing="@{0.05f}"
+            shadowColor="@{@color/color_f3f4f6}"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_116px"
+                android:background="@color/color_ffffff"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:cardCornerRadius="@dimen/offset_10px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/WrapWrap"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_gravity="left|center_vertical"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_14sp"
+                    android:textStyle="bold"
+                    android:text="@string/mine_order_info"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/offset_103px"
+                    android:layout_height="@dimen/offset_100px"
+                    android:layout_marginEnd="@dimen/offset_16px"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/ic_mine_order"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 钱包 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/walletCl"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/orderCl"
+            app:layout_constraintRight_toRightOf="parent"
+            shadowRadius="@{5}"
+            shadowWidth="@{5}"
+            shadowAlphaSpacing="@{0.05f}"
+            shadowColor="@{@color/color_f3f4f6}"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_116px"
+                android:background="@color/color_ffffff"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:cardCornerRadius="@dimen/offset_10px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/WrapWrap"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_gravity="left|center_vertical"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_14sp"
+                    android:textStyle="bold"
+                    android:text="@string/mine_card_coupon_wallet"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/offset_103px"
+                    android:layout_height="@dimen/offset_100px"
+                    android:layout_marginEnd="@dimen/offset_16px"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/ic_mine_wallet"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

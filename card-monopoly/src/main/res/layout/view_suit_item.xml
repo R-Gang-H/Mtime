@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/suitItemView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_suit_item_bg">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h, 1:1.55"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.kotlin.android.card.monopoly.widget.card.image.SuitImageView
+            android:id="@+id/suitImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="6dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColor="@color/color_0084ef"
+            android:textSize="12sp"
+            tools:text="@string/card_monopoly" />
+
+        <TextView
+            android:id="@+id/labelView"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/color_ffffff"
+            android:textSize="10sp"
+            tools:ignore="SmallSp"
+            tools:text="@string/card_monopoly" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

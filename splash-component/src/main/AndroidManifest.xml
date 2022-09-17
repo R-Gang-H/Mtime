@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kotlin.android.splash">
+
+    <application
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:theme="@style/AppThemeNoFitsSystemWindows" />
+    </application>
+</manifest>

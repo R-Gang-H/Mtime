@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ViewsBaseDialogFragment" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+
+        <!-- 额外支持设置 dialog 停靠方式 -->
+        <!--<item name="android:gravity">bottom</item>-->
+    </style>
+
+    <style name="BaseMDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="MDialogDefaultBottomAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_base_dialog_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_base_dialog_bottom_exit</item>
+    </style>
+
+    <!-- 底部fragment-->
+    <style name="ViewsBottomDialog" parent="ViewsBaseDialogFragment">
+        <!-- 宽度全屏 ↓ -->
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <!-- 宽度全屏 ↑ -->
+        <item name="android:windowAnimationStyle">@style/ViewsBottomDialog.AnimationStyle</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="ViewsBottomDialog.AnimationStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+    </style>
+
+    <!--底部弹出对话框-->
+    <style name="MBottomDlg" parent="android:Theme.Dialog">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <!-- 页面从底部出现来，从底部消失动画 -->
+    <style name="MBottomDlgAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/tx_in_bottom_to_up</item>
+        <item name="android:windowExitAnimation">@anim/tx_out_up_to_bottom</item>
+    </style>
+
+</resources>

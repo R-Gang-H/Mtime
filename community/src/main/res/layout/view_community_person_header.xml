@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.person.bean.UserHomeViewBean" />
+        <variable
+            name="time"
+            type="com.kotlin.android.mtime.ktx.KtxMtimeKt" />
+
+    </data>
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/rl"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_00000000">
+
+        <TextView
+            android:id="@+id/tv_wantsee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_8px"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_wantsee_des"
+            app:layout_constraintRight_toLeftOf="@+id/tv_wantsee_des"
+            app:limit="@{data.wantSeeCount}" />
+
+        <TextView
+            android:id="@+id/tv_wantsee_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_24px"
+            android:layout_marginBottom="@dimen/offset_16px"
+            android:text="想看"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_10sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_saw_des"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_saw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_8px"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_saw_des"
+            app:layout_constraintRight_toLeftOf="@+id/tv_saw_des"
+            app:limit="@{data.hasSeenCount}" />
+
+        <TextView
+            android:id="@+id/tv_saw_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_108px"
+            android:layout_marginRight="@dimen/offset_24px"
+            android:text="看过"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_10sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_160px"
+            android:background="@color/color_ffffff"
+            android:paddingTop="@dimen/offset_120px"
+            android:paddingBottom="@dimen/offset_15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/offset_60dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_15dp"
+                    android:ellipsize="end"
+                    android:maxEms="10"
+                    android:maxLines="1"
+                    android:text="@{data.nikeName}"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:textStyle="bold"
+                    app:layout_collapseMode="parallax"
+                    app:layout_constraintLeft_toLeftOf="@+id/top"
+                    app:layout_constraintTop_toBottomOf="@+id/top"
+                    tools:text="叫我大东设计规划师叫我大东设计规划师sssssssssssssss" />
+
+                <!--tag-->
+                <TextView
+                    android:id="@+id/tv_tag_fan"
+                    android:layout_width="@dimen/offset_150px"
+                    android:layout_height="@dimen/offset_40px"
+                    android:layout_marginLeft="@dimen/offset_6dp"
+                    android:bg_shape_color="@{data.levelBg}"
+                    android:bg_shape_corner="@{40}"
+                    android:drawableStart="@{data.levelIcon}"
+                    android:drawablePadding="0dp"
+                    android:gravity="center|center_vertical"
+                    android:text="@{data.levelContext}"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_10sp"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_name" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--  右边的游戏模块  -->
+            <ImageView
+                android:id="@+id/iv_big_boss"
+                android:layout_width="@dimen/offset_84px"
+                android:layout_height="@dimen/offset_86px"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:baselineAlignBottom="@+id/center"
+                android:src="@drawable/ic_big_boss"
+                app:layout_constraintBottom_toBottomOf="@id/center"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <com.kotlin.android.community.ui.person.center.view.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/text_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_15dp"
+                android:background="@color/color_0aFFFFFF"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/center"
+                expandableTextView:animDuration="200"
+                expandableTextView:maxCollapsedLines="3"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/expandable_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_30px"
+                    android:ellipsize="end"
+                    android:gravity="left|center"
+                    android:maxLines="3"
+                    android:paddingRight="@dimen/offset_30px"
+                    android:paddingBottom="@dimen/offset_20px"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_12sp"
+                    android:visibility="@{data.infoStatus}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:text="afdsfsadfs\nafdsfsadfs\nafdsfsadfs\nafdsfsadfs\nafdsfsadfs\nafdsfsadfs\nafdsfsadfs\nafdsfsadfs\n " />
+
+                <RelativeLayout
+                    android:id="@+id/expand_footer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/expand_collapse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right|bottom"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/offset_10dp"
+                        android:paddingTop="@dimen/offset_5dp"
+                        android:paddingRight="@dimen/offset_15dp"
+                        android:text="更多"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="@dimen/offset_10sp"
+                        app:layout_constraintRight_toRightOf="parent" />
+                </RelativeLayout>
+                <!--                android:visibility="@{data.infoStatus}"-->
+
+            </com.kotlin.android.community.ui.person.center.view.ExpandableTextView>
+
+
+            <!--相关认证-->
+<!--            android:visibility="@{data.creator?View.VISIBLE:View.GONE}"-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_auth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_15dp"
+                android:layout_marginTop="@dimen/offset_4dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/text_info"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_auth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_auth"
+                    android:drawablePadding="@dimen/offset_5dp"
+                    android:text="@{data.authRoleContent}"
+                    android:textSize="@dimen/offset_12sp"
+                    android:visibility="@{data.authRoleContentStatus}" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:visibility="@{data.creator?View.VISIBLE:View.GONE}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_create_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_creator"
+                        android:drawablePadding="@dimen/offset_5dp"
+                        android:text="创作者等级"
+                        android:textSize="@dimen/offset_12sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_create_level"
+                        load_image="@{data.creatorAppLogoUrl}"
+                        load_image_height="@{15}"
+                        load_image_width="@{15}"
+                        android:layout_width="@dimen/offset_15dp"
+                        android:layout_height="@dimen/offset_15dp"
+                        android:layout_marginLeft="@dimen/offset_5dp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_create_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_10dp"
+                    android:layout_marginRight="@dimen/offset_15dp"
+                    android:visibility="@{data.ongoingMedalInfos.size()==0?View.GONE:View.VISIBLE}">
+
+                    <TextView
+                        android:id="@+id/tv_create_get"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_creat_result"
+                        android:drawablePadding="@dimen/offset_5dp"
+                        android:text="@string/community_create_get"
+                        android:textSize="@dimen/offset_12sp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/ll_creator_icons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/offset_15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/offset_3dp"
+                        android:layout_toLeftOf="@+id/iv_back"
+                        android:gravity="right|center"
+                        android:orientation="horizontal">
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="@dimen/offset_12dp"
+                        android:layout_height="@dimen/offset_12dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_creator_right_arrow" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_15px"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="@{data.praiseCount==0&amp;data.collectCount==0&amp;data.commentCount==0?View.GONE:View.VISIBLE}">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_prise_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_3dp"
+                        android:layout_marginRight="@dimen/offset_5dp"
+                        android:src="@drawable/ic_get_priase" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:visibility="@{data.praiseCount==0?View.GONE:View.VISIBLE}"
+                        tools:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="收到"
+                            android:textSize="@dimen/offset_12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_prise_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{' ' + data.praiseCountDes+' '}"
+                            android:textColor="@color/color_1cacde"
+                            android:textSize="@dimen/offset_12sp"
+                            tools:text="21.3万" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="个赞"
+                            android:textSize="@dimen/offset_12sp" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:visibility="@{data.commentCount==0?View.GONE:View.VISIBLE}"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/line_one"
+                            android:layout_width="@dimen/offset_1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/offset_5dp"
+                            android:layout_marginRight="@dimen/offset_5dp"
+                            android:gravity="center"
+                            android:text="|"
+                            tools:visibility="gone"
+                            android:textColor="@color/color_cbd0d7"
+                            android:visibility="@{data.praiseCount==0?View.GONE:View.VISIBLE}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="被"
+                            android:textSize="@dimen/offset_12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_comment_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{' '+data.commentCountDes+' '}"
+                            android:textColor="@color/color_1cacde"
+                            android:textSize="@dimen/offset_12sp"
+                            tools:text="28.5万" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="人评论"
+                            android:textSize="@dimen/offset_12sp" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:visibility="@{data.collectCount==0?View.GONE:View.VISIBLE}"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/line_two"
+                            android:layout_width="@dimen/offset_1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/offset_5dp"
+                            android:layout_marginRight="@dimen/offset_5dp"
+                            android:gravity="center"
+                            android:text="|"
+                            android:visibility="@{data.praiseCount==0&amp;data.commentCount==0?View.GONE:View.VISIBLE}"
+                            android:textColor="@color/color_cbd0d7"
+                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="被"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/offset_12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_collect_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{' '+data.collectCountDes+' '}"
+                            android:textColor="@color/color_1cacde"
+                            android:textSize="@dimen/offset_12sp"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            tools:text="55.1万" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="人收藏"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/offset_12sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_140px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.kotlin.android.widget.views.CircleImageView
+                android:id="@+id/iv_icon"
+                load_image="@{data.avatarUrl}"
+                load_image_default_img="@{@drawable/default_user_head}"
+                load_image_height="@{70}"
+                load_image_width="@{70}"
+                android:layout_width="@dimen/offset_140px"
+                android:layout_height="@dimen/offset_140px"
+                android:layout_marginStart="@dimen/offset_30px"
+                app:civ_border_color="@color/color_ffffff"
+                app:civ_border_overlay="true"
+                app:civ_border_width="@dimen/offset_2px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--            android:text="@{@string/community_day_des(data.registDuration)}"-->
+            <TextView
+                android:id="@+id/tv_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_28px"
+                android:textColor="@color/color_4b5f76"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+                app:layout_constraintLeft_toRightOf="@id/iv_icon"
+                tools:text="时光龄" />
+            <!--tag-->
+
+            <!--                            attendBg="@{data.followed}"
+            -->
+            <TextView
+                android:id="@+id/tv_attend"
+                android:layout_width="@dimen/offset_116px"
+                android:layout_height="@dimen/offset_50px"
+                android:layout_marginLeft="@dimen/offset_5dp"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:gravity="center|center_vertical"
+                android:text="@{data.followContext}"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_14sp"
+                android:visibility="@{data.isSelf?View.INVISIBLE:View.VISIBLE}"
+                app:attendBg="@{data.followed}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/tv_im"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_44px"
+                android:gravity="center|center_vertical"
+                android:paddingLeft="@dimen/offset_12px"
+                android:paddingRight="@dimen/offset_14px"
+                android:text="@string/community_edit"
+                android:textColor="@color/color_b2b5b0"
+                android:textSize="@dimen/offset_12sp"
+                android:visibility="@{data.isSelf?View.VISIBLE:View.INVISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_im"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_50px"
+                android:layout_marginRight="@dimen/offset_15dp"
+                android:gravity="center|center_vertical"
+                android:paddingLeft="@dimen/offset_12px"
+                android:paddingRight="@dimen/offset_14px"
+                android:text="@string/community_im"
+                android:textColor="@color/color_1d2736"
+                android:textSize="@dimen/offset_12sp"
+                android:visibility="@{data.isSelf?View.INVISIBLE:View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!-- 粉丝|关注-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_attend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_15dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/community_attend"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_12sp" />
+
+                <TextView
+                    android:id="@+id/tv_fan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{data.followCountDes}"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="143万" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:id="@+id/divider"
+                color="@{@color/color_cbd0d7}"
+                endColor="@{@color/color_ffffff}"
+                android:layout_width="@dimen/offset_1dp"
+                android:layout_height="@dimen/offset_36px"
+                android:layout_marginLeft="@dimen/offset_10dp"
+                android:layout_marginTop="@dimen/offset_12px"
+                android:layout_marginBottom="@dimen/offset_16px"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/ll_attend"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!-- 粉丝|关注-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_fan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/divider"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/community_fans"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_attention"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{data.fansCountDes}"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_17sp"
+                    android:textStyle="bold"
+                    tools:text="30.4万" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ImageView
+                android:id="@+id/iv_sex"
+                android:layout_width="@dimen/offset_40px"
+                android:layout_height="@dimen/offset_40px"
+                android:layout_marginLeft="@dimen/offset_14px"
+                android:layout_marginRight="@dimen/offset_5dp"
+                android:src="@{data.authIcon}"
+                android:visibility="@{data.authStatus}"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+                app:layout_constraintRight_toRightOf="@id/iv_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_5dp"
+            android:background="@color/color_f5f7f9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--        <View-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="@dimen/offset_5dp"-->
+    <!--            android:layout_below="@+id/cl"-->
+    <!--            android:background="@color/color_f5f7f9" />-->
+    <!--    </RelativeLayout>-->
+
+
+</layout>

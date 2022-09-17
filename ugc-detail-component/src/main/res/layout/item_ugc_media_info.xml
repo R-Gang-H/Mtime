@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.binder.UgcMediaInfoBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:layout_height="wrap_content">
+
+        <!--        用户信息-->
+        <FrameLayout
+            android:id="@+id/userCardView"
+            android:layout_width="0dp"
+            android:onClick="@{view->data.onClick(view)}"
+            android:layout_height="wrap_content"
+            shadowRadius="@{8}"
+            shadowWidth="@{5}"
+            shadowAlphaSpacing="@{0.05f}"
+            shadowColor="@{@color/color_f3f4f6}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:background="@color/color_ffffff"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:cardCornerRadius="@dimen/offset_10px"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.kotlin.android.widget.image.RoundImageView
+                        android:id="@+id/userHeadIv"
+                        load_image="@{data.bean.userImg}"
+                        load_image_circle_crop="@{true}"
+                        load_image_default_img="@{@drawable/default_user_head}"
+                        load_image_height="@{50}"
+                        load_image_width="@{50}"
+                        android:layout_width="@dimen/offset_100px"
+                        android:layout_height="@dimen/offset_100px"
+                        android:layout_marginLeft="@dimen/offset_20px"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:layout_marginBottom="@dimen/offset_20px"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--    认证图片-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/offset_50px"
+                        android:layout_height="@dimen/offset_50px"
+                        app:layout_constraintCircle="@id/userHeadIv"
+                        app:layout_constraintCircleAngle="120"
+                        android:src="@{data.bean.authDrawable}"
+                        app:layout_constraintCircleRadius="@dimen/offset_50px"
+                        app:layout_constraintBottom_toBottomOf="@id/userHeadIv"
+                        app:layout_constraintRight_toRightOf="@id/userHeadIv"
+                        android:id="@+id/authIv"
+                        android:visibility="@{data.bean.auth?View.VISIBLE:View.GONE}"
+                        />
+
+
+                    <!--                关注-->
+                    <FrameLayout
+                        android:id="@+id/attentionFL"
+                        android:layout_width="@dimen/offset_120px"
+                        android:layout_height="@dimen/offset_56px"
+                        android:layout_marginRight="@dimen/offset_20px"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:onClick="@{view->data.onClick(view)}"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <!--    关注-->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/attentionBtn"
+                            style="@style/WrapWrap"
+                            android:layout_gravity="center"
+                            android:drawablePadding="@dimen/offset_3px"
+                            android:gravity="center"
+                            android:text="@string/ugc_title_attention"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </FrameLayout>
+
+                    <!--                用户名称-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/userNameTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_24px"
+                        android:layout_marginRight="@dimen/offset_24px"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{data.bean.userName}"
+                        android:textColor="@color/color_303a47"
+                        android:textSize="@dimen/offset_14sp"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toRightOf="@id/userHeadIv"
+                        app:layout_constraintRight_toLeftOf="@id/attentionFL"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:text="时光小助手" />
+<!--                    &lt;!&ndash;                粉丝数&ndash;&gt;-->
+<!--                    <androidx.appcompat.widget.AppCompatTextView-->
+<!--                        android:id="@+id/fansNumTv"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="@dimen/offset_24px"-->
+<!--                        android:layout_marginTop="@dimen/offset_8px"-->
+<!--                        android:layout_marginRight="@dimen/offset_24px"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@{data.bean.fansNumStr}"-->
+<!--                        android:textColor="@color/color_8798af"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:textSize="@dimen/offset_12sp"-->
+<!--                        app:layout_constraintHorizontal_weight="1"-->
+<!--                        app:layout_constraintLeft_toRightOf="@id/userHeadIv"-->
+<!--                        app:layout_constraintRight_toLeftOf="@id/attentionFL"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/userNameTv"-->
+<!--                        tools:text="粉丝数：177" />-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_36px"
+            android:text="@{data.bean.title}"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_18sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userCardView"
+            tools:text="#雄狮少年 片尾曲最新发布" />
+
+        <!--        内容-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/contentTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:ellipsize="end"
+            android:text="@{data.bean.content}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTv"
+            tools:text="雄狮少年的片尾曲，终于发布啦～～～ 快来感受下毛不易是如何诠释这首歌的吧，一首听了忍不住循环播放的歌，快听起来！最多展示3行，超过展示…" />
+
+        <!--        更多、收起-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/moreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_4px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/ugc_detail_component_more"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contentTv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/publishDateTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_8px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:text="@{data.bean.publishDateStr}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/moreTv"
+            tools:text="2021-21-26 18:36 · 1500播放 · 12评论" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

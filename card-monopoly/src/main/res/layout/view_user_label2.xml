@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <FrameLayout
+        android:id="@+id/avatarLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.kotlin.android.card.monopoly.widget.CircleImageView
+            android:id="@+id/avatarView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/default_user_head"
+            app:civ_border_color="@color/color_48d6ea"
+            app:civ_border_overlay="true"
+            app:civ_border_width="1dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <View
+            android:id="@+id/onlineView"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="bottom|end"
+            tools:background="@color/color_91ff3b" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userLabelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/coinView"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:background="@color/color_19b3c2"
+            android:drawablePadding="1dp"
+            android:gravity="center_vertical"
+            android:paddingStart="1dp"
+            android:paddingEnd="2dp"
+            android:textColor="@color/color_ffffff"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:drawableEnd="@drawable/ic_label_user_add"
+            tools:drawableStart="@drawable/ic_label_user_coin"
+            tools:text="888888888888" />
+
+        <TextView
+            android:id="@+id/suitView"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="3dp"
+            android:background="@color/color_19b3c2"
+            android:drawablePadding="1dp"
+            android:gravity="center_vertical"
+            android:paddingStart="1dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/color_ffffff"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/coinView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:drawableStart="@drawable/ic_label_user_suit"
+            tools:text="7,777,777" />
+
+        <TextView
+            android:id="@+id/friendView"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="3dp"
+            android:background="@color/color_19b3c2"
+            android:drawablePadding="1dp"
+            android:gravity="center_vertical"
+            android:paddingStart="1dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/color_ffffff"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/suitView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:drawableStart="@drawable/ic_label_user_friend"
+            tools:text="12/123位"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/addFriendView"
+            android:layout_width="66dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_action_add_friend_bg"
+            android:gravity="center"
+            android:text="@string/_add_friend"
+            android:textColor="@color/color_ffffff"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/addFriendView"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        android:layout_marginEnd="80dp"-->
+<!--        android:background="@drawable/ic_action_add_friend_bg"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/_add_friend"-->
+<!--        android:textColor="@color/color_ffffff"-->
+<!--        android:textSize="12sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:paddingBottom="3dp"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:visibility="visible" />-->
+
+    <TextView
+        android:id="@+id/propsView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:drawablePadding="2dp"
+        android:gravity="center_vertical"
+        android:paddingStart="2dp"
+        android:paddingEnd="6dp"
+        android:textColor="@color/color_1d2736"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:drawableStart="@drawable/ic_label_user_props"
+        tools:text="@string/use_props" />
+
+    <LinearLayout
+        android:id="@+id/bufferView"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="40dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_bounce_card" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_guard_card" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_hacker_card" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_hide_card" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_robbery_card" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_rogue_card" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_slave_card" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:src="@drawable/ic_buff_wealth_card" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/signatureView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="50dp"
+        android:drawablePadding="2dp"
+        android:gravity="center_vertical"
+        android:paddingStart="2dp"
+        android:paddingEnd="6dp"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="2000W收大话西游。" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

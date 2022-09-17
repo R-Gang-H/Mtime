@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.kotlin.android.app.data.entity.community.group.GroupUser" />
+        <variable
+            name="data"
+            type="com.kotlin.android.community.family.component.ui.manage.adapter.FamilyMemberItemBinder" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingRight="@dimen/offset_15dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemFamilyMemberUserCl"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 选择钮 -->
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/mItemFamilyMemberCb"
+                android:layout_width="@dimen/offset_40px"
+                android:layout_height="@dimen/offset_40px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:button="@drawable/selector_family_member_check_box"
+                android:clickable="false"
+                android:visibility="visible"
+                />
+
+            <!-- 头像 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mItemFamilyMemberHeadCardView"
+                style="@style/WrapWrap"
+                android:layout_marginTop="@dimen/offset_30px"
+                android:layout_marginBottom="@dimen/offset_30px"
+                android:layout_marginLeft="@dimen/offset_30px"
+                app:cardCornerRadius="@dimen/offset_41px"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemFamilyMemberCb"
+                >
+
+                <ImageView
+                    android:id="@+id/mItemFamilyMemberHeadIv"
+                    android:layout_width="@dimen/offset_82px"
+                    android:layout_height="@dimen/offset_82px"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    load_image="@{data.bean.userImg}"
+                    load_image_height="@{82}"
+                    load_image_width="@{82}"
+                    load_image_circle_crop="@{true}"
+                    load_image_default_img="@{@drawable/default_user_head}"
+                    tools:src="@drawable/default_user_head"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 头像右侧区域 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemFamilyMemberHeadCardView"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="@dimen/offset_30px"
+                >
+
+                <!-- 昵称 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mItemFamilyMemberNicknameCreatorCl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    >
+
+                    <!-- 昵称 -->
+                    <TextView
+                        android:id="@+id/mItemFamilyMemberNicknameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:maxWidth="@dimen/offset_340px"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/offset_17sp"
+                        android:textColor="@color/color_303a47"
+                        android:text="@{data.bean.userName}"
+                        tools:text="一二三四五六七八九十一二三四五六七八九十"
+                        />
+
+                    <!-- 群主Icon -->
+                    <TextView
+                        android:id="@+id/mItemFamilyMemberCreatorIconTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/offset_12px"
+                        android:paddingRight="@dimen/offset_12px"
+                        android:layout_marginLeft="@dimen/offset_10px"
+                        android:gravity="center"
+                        android:textSize="@dimen/offset_10sp"
+                        android:textColor="@color/color_ffffff"
+                        android:text="@string/family_creator"
+                        android:background="@color/color_20a0da"
+                        android:visibility="@{ data.bean.userType == GroupUser.USER_TYPE_CREATOR ? View.VISIBLE : View.GONE }"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/mItemFamilyMemberNicknameTv"
+                        />
+
+                    <!-- 关注 -->
+                    <TextView
+                        android:id="@+id/mItemFamilyMemberFollowTv"
+                        android:layout_width="@dimen/offset_116px"
+                        android:layout_height="@dimen/offset_50px"
+                        android:layout_marginLeft="@dimen/offset_10px"
+                        android:gravity="center"
+                        android:textSize="@dimen/offset_14sp"
+                        android:textColor="@color/color_ffffff"
+                        android:textStyle="bold"
+                        android:text="@string/family_follow"
+                        android:visibility="@{ data.showFollow ? View.VISIBLE : View.GONE}"
+                        android:background="@color/color_20a0da"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 近期发帖 -->
+                <TextView
+                    android:id="@+id/mItemFamilyMemberPostTipTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/mItemFamilyMemberNicknameCreatorCl"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="12sp"
+                    android:textColor="@color/color_8798af"
+                    android:text="近期发帖"
+                    android:visibility="gone"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mItemFamilyMemberLineView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            app:layout_constraintTop_toBottomOf="@+id/mItemFamilyMemberUserCl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/color_f3f3f4"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

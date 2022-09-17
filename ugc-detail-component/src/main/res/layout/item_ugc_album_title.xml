@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.binder.UgcAlbumTitleBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:onClick="@{(view)->data.onClick(view)}"
+            app:layout_constraintRight_toRightOf="@id/addPicLL"
+            app:layout_constraintHorizontal_weight="1"
+            android:id="@+id/albumFl"
+            android:layout_marginRight="@dimen/offset_188px"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/albumNameTv"
+                android:textColor="@color/color_1d2736"
+                android:textSize="@dimen/font_size_sp_19"
+                android:drawableRight="@{data.bean.editDrawable}"
+                android:drawablePadding="@dimen/offset_10px"
+                android:text="@{data.bean.album}"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text = "相册名称相册名称相册名称相册名称相册名称相册名称"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+
+
+        <FrameLayout
+            android:layout_width="@dimen/offset_166px"
+            android:id="@+id/addPicLL"
+            android:onClick="@{(view)->data.onClick(view)}"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{data.bean.myAlbum?View.VISIBLE:View.GONE}"
+            app:layout_constraintRight_toRightOf="parent"
+            android:orientation="horizontal"
+            android:layout_height="@dimen/offset_50px">
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/WrapWrap"
+                android:textStyle="bold"
+                android:textColor="@color/color_20a0da"
+                android:text="@string/ugc_detail_upload_pic"
+                android:textSize="@dimen/font_size_sp_14"
+                android:drawablePadding="@dimen/offset_4px"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:alpha="0.06"
+            app:layout_constraintTop_toBottomOf="@id/albumFl"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:background="@color/color_303a47"
+            android:layout_height="@dimen/offset_2px"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

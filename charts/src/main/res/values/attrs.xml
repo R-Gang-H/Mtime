@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Chart">
+        <attr name="animation" format="boolean" />
+        <attr name="animationDuration" format="integer" />
+    </declare-styleable>
+</resources>

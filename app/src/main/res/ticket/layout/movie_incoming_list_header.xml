@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- 预告片推荐_title -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/video_recommend_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_28px"
+        android:layout_marginBottom="@dimen/offset_24px"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:textSize="@dimen/offset_16sp"
+        android:textColor="@color/color_1d2736"
+        android:textStyle="bold"
+        android:text="@string/ticket_tab_video_title"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <!-- 预告片推荐_列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/video_recommend_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_tab_ticket_video"
+        />
+
+    <!-- 最受关注_title -->
+    <LinearLayout
+        android:id="@+id/attention_num_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/offset_pxtodx_24"
+        android:layout_marginLeft="@dimen/offset_pxtodx_20"
+        android:layout_marginRight="@dimen/offset_pxtodx_20"
+        android:layout_marginTop="@dimen/offset_pxtodx_38"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recommend_title_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <!-- 最受关注_列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/attentions_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/offset_pxtodx_40"
+        android:scrollbars="none" />
+
+    <com.mtime.mtmovie.widgets.ADWebView
+        android:id="@+id/ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</LinearLayout>

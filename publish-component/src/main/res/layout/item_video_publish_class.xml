@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.publish.component.ui.binder.RelateMovieClassBinder" />
+    </data>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/classTv"
+        color="@{data.bean.selected?@color/color_20a0da:@color/color_f2f3f6}"
+        cornerRadius="@{15}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:layout_marginBottom="@dimen/offset_20px"
+        android:gravity="center"
+        android:onClick="@{view->data.onClick(view)}"
+        android:paddingLeft="@dimen/offset_24px"
+        android:paddingTop="@dimen/offset_14px"
+        android:paddingRight="@dimen/offset_24px"
+        android:paddingBottom="@dimen/offset_14px"
+        android:text="@{data.bean.name}"
+        android:textColor="@{data.bean.selected?@color/white:@color/color_8798af}"
+        android:textSize="@dimen/offset_12sp">
+
+
+    </androidx.appcompat.widget.AppCompatTextView>
+</layout>

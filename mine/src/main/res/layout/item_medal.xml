@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.MedalBinder" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/containerLl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/offset_36px"
+        android:paddingRight="@dimen/offset_36px"
+        android:paddingBottom="@dimen/offset_44px"
+        android:onClick="@{(view)->data.onClick(view)}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/medalIv"
+            load_image="@{data.bean.appLogoUrl}"
+            load_image_width="@{74}"
+            load_image_height="@{79}"
+            android:layout_width="@dimen/offset_74dp"
+            android:layout_height="@dimen/offset_158px"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_medal_awarded_default" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/medalTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/offset_8dp"
+            android:includeFontPadding="false"
+            android:text="@{data.bean.medalName}"
+            android:textColor="@color/color_404c57"
+            android:textSize="14sp"
+            tools:text="劳动最光荣" />
+
+    </LinearLayout>
+
+</layout>

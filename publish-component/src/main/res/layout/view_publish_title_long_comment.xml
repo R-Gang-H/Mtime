@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="30dp">
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="@color/color_20a0da"
+        android:textSize="36sp"
+        android:textStyle="bold|italic"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/scoreDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_20a0da"
+        android:textSize="14sp"
+        tools:text="很完美，绝对不容错过" />
+
+    <com.kotlin.android.widget.rating.RatingView
+        android:id="@+id/ratingView"
+        android:layout_width="315dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/ratingSwitchTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        android:drawableEnd="@drawable/ic_arrow_down"
+        android:drawablePadding="4dp"
+        android:text="@string/publish_rating_changed_to_sub_rating"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_14sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subRatingRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_publish_sub_rating" />
+
+    <FrameLayout
+        android:id="@+id/titleFooter"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.kotlin.android.publish.component.widget.tick.TickView
+            android:id="@+id/statementTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/publish_original_statement_tips"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="14sp" />
+
+        <com.kotlin.android.publish.component.widget.tick.TickView
+            android:id="@+id/spoilerTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/publish_including_spoiler_tips"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="14sp" />
+
+    </FrameLayout>
+
+</LinearLayout>

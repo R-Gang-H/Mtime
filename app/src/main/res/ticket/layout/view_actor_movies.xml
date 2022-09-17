@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.bussiness.ticket.movie.widget.ActorMoviesView xmlns:android="http://schemas.android.com/apk/res/android"
+                                                         android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/actor_movies_seperate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+    <!-- movies -->
+
+    <RelativeLayout
+        android:id="@+id/movies_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actor_movies_seperate"
+        android:layout_marginTop="@dimen/offset_12dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:text="@string/actor_detail_movies_label"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/offset_10dp"
+            android:background="@drawable/img_right_arrow"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:layout_toLeftOf="@id/arrow"
+            android:text="@string/movie_buybtn_all"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+    <!-- all movies -->
+    <!-- horizonal view -->
+
+    <HorizontalScrollView
+        android:id="@+id/movies_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movies_title"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginTop="@dimen/offset_12dp"
+        android:fadeScrollbars="false"
+        android:scrollbarFadeDuration="0"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/movies_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/offset_pxtodx_100"
+            android:orientation="horizontal"
+            android:visibility="gone">
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_12dp"
+        android:layout_below="@id/movies_scrollview"
+        android:background="#00000000"
+        android:contentDescription="@string/app_name" />
+</com.mtime.bussiness.ticket.movie.widget.ActorMoviesView>

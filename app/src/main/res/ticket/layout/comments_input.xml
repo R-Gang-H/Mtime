@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/comments_background"
+    >
+
+    <!-- 评论输入框 -->
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/comments_input_background"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/offset_10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:scrollbars="vertical"
+        android:maxEms="200"
+        android:gravity="left|top"
+        android:hint="@string/str_comment_hit_tips"
+        android:textSize="@dimen/font_size_pxtosp_30"/>
+
+    <!-- 评论icon, 暂且隐藏-->
+    <ImageView
+        android:id="@+id/comments_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_below="@id/input"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:background="@drawable/comments_icons"
+        android:visibility="invisible"/>
+
+    <!-- 评论发表按钮-->
+    <TextView
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/comments_send"
+        android:text="@string/str_bottom_bar_movie_comments_send_label"
+        android:gravity="center"
+        android:layout_below="@id/input"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/offset_10dp"
+        android:textSize="@dimen/font_size_pxtosp_26"
+        android:textColor="@color/color_bbbbbb"/>
+
+</RelativeLayout>

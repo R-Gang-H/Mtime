@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.MemberDesBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <!--        大标题-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bigTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:text="@string/mine_member_get_m_bean"
+            android:textColor="@color/color_1d2736"
+            android:layout_marginBottom="@dimen/offset_10px"
+            app:layout_constraintBottom_toTopOf="@id/itemFL"
+            android:textSize="@dimen/font_size_sp_17"
+            android:visibility="@{data.bean.showBigTitle?View.VISIBLE:View.GONE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        更多方法-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/moreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_more"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/font_size_sp_11"
+            android:textStyle="bold"
+            android:visibility="@{data.bean.showBigTitle?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/bigTitleTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bigTitleTv" />
+
+        <FrameLayout
+            android:id="@+id/itemFL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:background="@drawable/shape_card_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bigTitleTv">
+            <!--        获取M豆方法布局-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/beanDesCL"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_145px"
+                >
+
+                <!--            获取方法标题-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_20px"
+                    android:layout_marginTop="@dimen/offset_24px"
+                    android:text="@{data.bean.title}"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_17sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="购买电影票" />
+
+                <!--            获取方法说明-->
+                <LinearLayout
+                    android:id="@+id/desLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_20px"
+                    android:layout_marginTop="@dimen/offset_15px"
+                    android:layout_marginRight="@dimen/offset_30px"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/titleTv" />
+
+                <!--            跳转按钮-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gotoBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_10px"
+                    android:onClick="@{view->data.onClick(view)}"
+                    android:paddingLeft="@dimen/offset_20px"
+                    android:paddingTop="@dimen/offset_5px"
+                    android:paddingRight="@dimen/offset_20px"
+                    android:paddingBottom="@dimen/offset_5px"
+                    android:text="@{data.bean.gotoContent}"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/offset_14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

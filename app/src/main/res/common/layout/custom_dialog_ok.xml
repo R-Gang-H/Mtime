@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/offset_80px"
+    android:background="@drawable/dialog_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dlg_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/offset_10dp"
+        android:textColor="@color/black_color"
+        android:textSize="@dimen/font_size_large"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/offset_10dp"
+        android:paddingRight="@dimen/offset_10dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/offset_8dp"
+            android:layout_marginTop="@dimen/offset_16dp"
+            android:src="@drawable/alert_dlg_image"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/dlg_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black_color"
+            android:textSize="@dimen/offset_16sp" />
+
+        <TextView
+            android:id="@+id/dlg_small_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black_color"
+            android:textSize="@dimen/font_size_normal"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1px"
+        android:background="@color/color_bbbbbb" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_btn_selector"
+            android:paddingBottom="@dimen/offset_26px"
+            android:paddingTop="@dimen/offset_26px"
+            android:text="@string/str_cancel"
+            android:textColor="@color/color_888482"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:layout_width="@dimen/offset_1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_bbbbbb" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_btn_selector"
+            android:paddingBottom="@dimen/offset_26px"
+            android:paddingTop="@dimen/offset_26px"
+            android:text="@string/ok"
+            android:textColor="@color/color_F97D3F"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dlg_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/light_green"
+        android:textSize="@dimen/font_size_large"
+        android:visibility="gone" />
+
+</LinearLayout>

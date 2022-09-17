@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/offset_75dp"
+    android:layout_height="@dimen/offset_60dp"
+    android:layout_marginLeft="@dimen/offset_10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/shape_movie_showtime_cinema_showtime_bg"
+    >
+
+    <TextView
+        android:id="@+id/adapter_movie_showtime_cinema_showtime_item_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_6dp"
+        android:textSize="@dimen/font_size_12sp"
+        android:textColor="@color/color_333333"
+        tools:text="16:10次日"
+        />
+
+    <TextView
+        android:id="@+id/adapter_movie_showtime_cinema_showtime_item_version_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_4dp"
+        android:layout_marginRight="@dimen/offset_4dp"
+        android:textSize="@dimen/font_size_11sp"
+        android:textColor="@color/color_999999"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="英文 中国巨幕4D"
+        />
+
+    <TextView
+        android:id="@+id/adapter_movie_showtime_cinema_showtime_item_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_11sp"
+        android:textColor="@color/color_f97d3f"
+        tools:text="39"
+        />
+
+</LinearLayout>

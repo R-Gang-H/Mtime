@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/item_movie_media_review_summary_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_20dp"
+        android:layout_marginLeft="@dimen/offset_15dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:layout_marginBottom="@dimen/offset_20dp"
+        android:lineSpacingMultiplier="1.3"
+        android:textSize="16sp"
+        android:textColor="@color/color_1D2736"
+        tools:text="媒体评论内容媒体评论内容媒体评论内容媒体评论内容媒体评论内容媒体评论内容媒体评论内容媒体评论内容媒体评论内容媒体评论内容媒体评论内容"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

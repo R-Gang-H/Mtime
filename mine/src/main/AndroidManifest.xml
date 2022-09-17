@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.mine">
+
+    <application>
+        <activity
+            android:name=".ui.creatcenter.CreatCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.reward.RewardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.singleanalys.SingleAnalysActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.creator.CreatorTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.datacenter.DataCenterBeanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.member.MemberCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.collection.MyCollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.authentication.organization.OrganizationAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.authentication.movier.MovierAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.authentication.reviewer.ReviewerAuthenticationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.authentication.home.AuthenticationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wallet.MyWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wallet.CouponUsedRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.license.LicenseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.content.MyContentsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.drafts.MyDraftsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.medal.MyMedalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.ActivityListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.PersonalDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.NickNameInputActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.EditSignInputActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.AccountSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.ThirdAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.PushSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.ShieldingSettingActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

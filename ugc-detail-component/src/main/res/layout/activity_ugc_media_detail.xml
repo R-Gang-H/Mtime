@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mediadetail.UgcMediaDetailActivity">
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            style="@style/MatchMatch"
+            android:layout_marginBottom="@dimen/offset_122px"
+            android:id="@+id/stateView"
+            >
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appBarLayout"
+                    android:layout_width="match_parent"
+                    android:background="@color/common_black"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/collapTL"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <FrameLayout
+                                android:id="@+id/videoFl"
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <com.kotlin.android.ugc.detail.component.ui.widget.AudioView
+                                android:id="@+id/audioView"
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/offset_754px"/>
+                        </FrameLayout>
+
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+                </com.google.android.material.appbar.AppBarLayout>
+                <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                    android:layout_width="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:id="@+id/smartRefreshLayout"
+                    android:layout_height="match_parent">
+                    <com.kotlin.android.widget.recycler.ScrollRecyclerView
+                        android:layout_width="match_parent"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        android:id="@+id/articleRv"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:layout_height="match_parent"/>
+                </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <com.kotlin.android.comment.component.widget.PublishCommentView
+            android:id="@+id/barButton"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
+
+        <!--        显示要上传的图片-->
+        <com.kotlin.android.comment.component.widget.CommentImageLayout
+            android:layout_width="@dimen/offset_248px"
+            android:id="@+id/commentImgLayout"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/barButton"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_188px"/>
+
+
+
+        <!--        UGC标题-->
+        <com.kotlin.android.ugc.detail.component.ui.widget.UgcTitleView
+            android:id="@+id/albumTitleView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_88px"
+            />
+
+        <com.kotlin.android.ugc.detail.component.ui.widget.UgcLinkView
+            android:id="@+id/linkView"
+            android:layout_above="@id/barButton"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/offset_40px"
+            android:layout_width="@dimen/offset_212px"
+            android:layout_height="@dimen/offset_80px"/>
+    </RelativeLayout>
+
+
+</layout>

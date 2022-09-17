@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/offset_15dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/offset_15dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_location_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_11dp"
+            android:layout_marginBottom="@dimen/offset_11dp"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_normal_more"
+            tools:text="地区"
+            />
+
+        <ImageView
+            android:id="@+id/iv_right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/profile_right_arrow"
+            tools:ignore="ContentDescription"
+            />
+
+        <TextView
+            android:id="@+id/tv_select_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/offset_11dp"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_small_high"
+            android:text="已选地区"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_d8d8d8"
+        />
+
+</RelativeLayout>

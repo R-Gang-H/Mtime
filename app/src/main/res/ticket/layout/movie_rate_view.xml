@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginRight="@dimen/title_bar_home_search_margin_right"
+        android:background="@drawable/btn_close"
+        android:contentDescription="@string/app_name" />
+
+    <RelativeLayout
+        android:id="@+id/rate_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_title_height"
+        android:layout_below="@id/close"
+        android:layout_marginBottom="@dimen/my_order_remind_photo_margin_top">
+
+        <TextView
+            android:id="@+id/rate_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/title_bar_normal_back_margin_left"
+            android:text="@string/str_user_score"
+            android:textColor="@color/color_333333"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rate_score"
+            android:layout_width="@dimen/offset_30dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/offset_14px"
+            android:layout_toRightOf="@id/rate_label"
+            android:background="@color/color_659d0e"
+            android:gravity="center"
+            android:padding="@dimen/offset_pxtodx_6"
+            android:singleLine="true"
+            android:text="0.0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+
+        <TextView
+            android:id="@+id/rate_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/offset_14px"
+            android:layout_toRightOf="@id/rate_score"
+            android:text=""
+            android:textColor="@color/color_659d0e"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+            android:layout_marginRight="@dimen/title_bar_home_search_margin_right"
+            android:background="@color/color_d8d8d8"
+            android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/rate_deploy_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/rate_title_view"
+        android:drawableRight="@drawable/rate_up"
+        android:gravity="start"
+        android:paddingBottom="@dimen/my_order_remind_photo_margin_top"
+        android:layout_marginRight="@dimen/title_bar_home_search_margin_right"
+        android:text="@string/st_rate_deploy_subitem_close"
+        android:textColor="@color/color_333333"
+        android:textSize="15sp" />
+    <ImageView
+        android:id="@+id/scroll_shadow_line"
+        android:layout_above="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+        android:layout_marginRight="@dimen/title_bar_home_search_margin_right"
+        android:src="@drawable/rate_line"
+        android:visibility="invisible"
+        android:contentDescription="@string/app_name" />
+    <com.mtime.mtmovie.widgets.ListenerScrollView
+        android:id="@id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rate_deploy_top">
+        <!-- rate view -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rate_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.mtime.bussiness.ticket.widget.RateView
+                    android:id="@+id/all_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/actor_detail_poster_name_margin_left" />
+
+                <RelativeLayout
+                    android:id="@+id/rate_subitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/rate_music"
+                        android:gravity="start"
+                        android:textSize="15sp" />
+                    <!-- music -->
+
+                    <RelativeLayout
+                        android:id="@id/rate_music"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/cinema_rate_item_height">
+
+                        <TextView
+                            android:id="@+id/rate_music_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                            android:text="@string/str_rate_music"
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp" />
+
+                        <com.mtime.bussiness.ticket.widget.RateView
+                            android:id="@+id/music_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/rate_music_label" />
+
+                        <TextView
+                            android:id="@+id/rate_music_result"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/music_rate"
+                            android:text=""
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp"
+                            android:visibility="visible" />
+                        <!-- android:layout_marginLeft="@dimen/offset_pxtodx_10" -->
+                    </RelativeLayout>
+
+                    <!-- general -->
+
+                    <RelativeLayout
+                        android:id="@+id/rate_general"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cinema_rate_item_height"
+                        android:layout_below="@id/rate_music"
+                        android:layout_marginTop="@dimen/my_order_remind_photo_margin_top">
+
+                        <!--  -->
+
+                        <TextView
+                            android:id="@+id/rate_general_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                            android:text="@string/str_rate_general"
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp" />
+
+                        <com.mtime.bussiness.ticket.widget.RateView
+                            android:id="@+id/general_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/rate_general_label" />
+
+                        <TextView
+                            android:id="@+id/rate_general_result"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/general_rate"
+                            android:text=""
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                    <!-- director -->
+
+                    <RelativeLayout
+                        android:id="@+id/rate_director"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cinema_rate_item_height"
+                        android:layout_below="@id/rate_general"
+                        android:layout_marginTop="@dimen/my_order_remind_photo_margin_top">
+
+                        <!--  -->
+
+                        <TextView
+                            android:id="@+id/rate_director_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                            android:text="@string/str_rate_director"
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp" />
+
+                        <com.mtime.bussiness.ticket.widget.RateView
+                            android:id="@+id/director_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/rate_director_label" />
+
+                        <TextView
+                            android:id="@+id/rate_director_result"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/director_rate"
+                            android:text=""
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                    <!-- story -->
+
+                    <RelativeLayout
+                        android:id="@+id/rate_story"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cinema_rate_item_height"
+                        android:layout_below="@id/rate_director"
+                        android:layout_marginTop="@dimen/my_order_remind_photo_margin_top">
+
+                        <!--  -->
+
+                        <TextView
+                            android:id="@+id/rate_story_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                            android:text="@string/str_rate_story"
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp" />
+
+                        <com.mtime.bussiness.ticket.widget.RateView
+                            android:id="@+id/story_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/rate_story_label" />
+
+                        <TextView
+                            android:id="@+id/rate_story_result"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/story_rate"
+                            android:text=""
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                    <!-- rate_perform -->
+
+                    <RelativeLayout
+                        android:id="@+id/rate_perform"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cinema_rate_item_height"
+                        android:layout_below="@id/rate_story"
+                        android:layout_marginTop="@dimen/my_order_remind_photo_margin_top">
+
+                        <!--  -->
+
+                        <TextView
+                            android:id="@+id/rate_perform_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                            android:text="@string/str_rate_perform"
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp" />
+
+                        <com.mtime.bussiness.ticket.widget.RateView
+                            android:id="@+id/perform_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/rate_perform_label" />
+
+                        <TextView
+                            android:id="@+id/rate_perform_result"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/perform_rate"
+                            android:text=""
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                    <!-- rate_impressions -->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cinema_rate_item_height"
+                        android:layout_below="@id/rate_perform"
+                        android:layout_marginTop="@dimen/my_order_remind_photo_margin_top">
+
+                        <!--  -->
+
+                        <TextView
+                            android:id="@+id/rate_impressions_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                            android:text="@string/str_rate_impressions"
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp" />
+
+                        <com.mtime.bussiness.ticket.widget.RateView
+                            android:id="@+id/impressions_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/rate_impressions_label" />
+
+                        <TextView
+                            android:id="@+id/rate_impressions_result"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/offset_pxtodx_10"
+                            android:layout_toRightOf="@id/impressions_rate"
+                            android:text=""
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/rate_view_end_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/rate_view"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/rate_deploy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rate_view"
+                android:layout_marginTop="@dimen/my_order_remind_photo_margin_top"
+                android:layout_toLeftOf="@id/rate_view_end_position"
+                android:drawableRight="@drawable/rate_down"
+                android:text="@string/st_rate_deploy_subitem"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/rate_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_pxtodx_146"
+                android:layout_below="@id/rate_deploy"
+                android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                android:layout_marginRight="@dimen/title_bar_home_search_margin_right"
+                android:layout_marginTop="@dimen/bottom_bar_movie_comments_text_view_margin_top"
+                android:background="@drawable/comment_edit"
+                android:gravity="top"
+                android:hint="@string/st_comments_tips"
+                android:paddingLeft="@dimen/bottom_bar_comments_padding_left"
+                android:paddingTop="5sp"
+                android:scrollbars="vertical"
+                android:text=""
+                android:textColorHint="@color/color_999999" />
+            <com.mtime.mtmovie.widgets.ScrollGridview
+                android:id="@+id/rate_imgs"
+                android:layout_marginLeft="@dimen/title_bar_home_search_margin_right"
+                android:layout_marginRight="@dimen/title_bar_home_search_margin_right"
+                android:layout_marginTop="@dimen/bottom_bar_movie_comments_text_view_margin_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rate_edit"
+                android:cacheColorHint="@android:color/transparent"
+                android:columnWidth="@dimen/offset_pxtodx_100"
+                android:gravity="center"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="auto_fit"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                android:horizontalSpacing="@dimen/offset_pxtodx_10"
+                android:verticalSpacing="@dimen/offset_pxtodx_10" />
+            <!--
+            <TextView
+                android:id="@+id/rate_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rate_imgs"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/title_bar_normal_back_margin_left"
+                android:layout_marginTop="@dimen/my_order_remind_photo_margin_top"
+                android:background="@drawable/rate_ok"
+                android:clickable="false"
+                android:text="@string/ok"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        -->
+            <TextView
+                android:id="@+id/rate_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rate_imgs"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/offset_16dp"
+                android:layout_marginTop="@dimen/my_order_remind_photo_margin_top"
+                android:background="@drawable/rate_cancel"
+                android:clickable="false"
+                android:text="@string/st_rate_share"
+                android:gravity="center"
+                android:textColor="@color/color_777777"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/offset_pxtodx_40"
+                android:layout_below="@id/rate_share"
+                android:layout_centerVertical="true"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </com.mtime.mtmovie.widgets.ListenerScrollView>
+    <TextView
+        android:id="@+id/rate_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="@dimen/offset_pxtodx_25"
+        android:paddingBottom="@dimen/offset_pxtodx_25"
+        android:background="@color/color_ff8600"
+        android:clickable="false"
+        android:text="@string/post"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_pxtosp_36" />
+</RelativeLayout>

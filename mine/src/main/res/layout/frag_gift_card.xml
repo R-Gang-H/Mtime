@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        数量-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/countTv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_60px"
+            android:background="@color/color_f2f3f6_alpha_92"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/offset_30px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/stateView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countTv"
+            app:layout_constraintVertical_weight="1">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/collectRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_collection_movie" />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+
+        <TextView
+            android:id="@+id/tv_add_card"
+            android:layout_width="@dimen/offset_330px"
+            android:layout_height="@dimen/offset_82px"
+            android:layout_marginBottom="@dimen/offset_30px"
+            android:bg_gradient_end_color="@{@color/color_1ab2e1}"
+            android:bg_gradient_start_color="@{@color/color_20a0da}"
+            android:bg_gradient_corner="@{20}"
+            android:text="@string/add_card"
+            android:gravity="center"
+            android:textColor="@color/color_ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

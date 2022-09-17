@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="@dimen/offset_30px"
+    android:paddingRight="@dimen/offset_30px"
+    android:paddingTop="@dimen/offset_20px"
+    android:paddingBottom="@dimen/offset_20px"
+    android:background="@color/color_ffffff"
+    >
+
+    <!-- 文本框 -->
+    <TextView
+        android:id="@+id/mContentTv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_82px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mCommentIv"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/offset_30px"
+        android:textColor="@color/color_8798af"
+        android:textSize="@dimen/offset_16sp"
+        android:text="@string/view_comment_tip"
+        android:visibility="visible"
+        />
+
+    <!-- 文本框 -->
+    <TextView
+        android:id="@+id/mDisableCommentTipTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/offset_60px"
+        android:textColor="@color/color_c9cedc"
+        android:textSize="@dimen/offset_16sp"
+        android:text="@string/view_disable_comment_tip"
+        android:visibility="gone"
+        />
+
+    <!-- 评论Icon -->
+    <ImageView
+        android:id="@+id/mCommentIv"
+        android:layout_width="@dimen/offset_82px"
+        android:layout_height="@dimen/offset_82px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mDislikeIv"
+        android:layout_marginRight="@dimen/offset_20px"
+        app:srcCompat="@drawable/icon_comment"
+        android:visibility="visible"
+        />
+
+    <!-- 评论数 -->
+    <TextView
+        android:id="@+id/mCommentCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_30px"
+        app:layout_constraintTop_toTopOf="@+id/mCommentIv"
+        app:layout_constraintRight_toLeftOf="@+id/mDislikeIv"
+        android:layout_marginRight="@dimen/offset_14px"
+        android:paddingLeft="@dimen/offset_9px"
+        android:paddingRight="@dimen/offset_9px"
+        android:textSize="@dimen/offset_10sp"
+        android:textColor="@color/color_f9f9f9"
+        tools:text="999+"
+        android:visibility="visible"
+        />
+
+    <!-- 踩Icon -->
+    <ImageView
+        android:id="@+id/mDislikeIv"
+        android:layout_width="@dimen/offset_82px"
+        android:layout_height="@dimen/offset_82px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mPraiseIv"
+        android:layout_marginRight="@dimen/offset_20px"
+        app:srcCompat="@drawable/icon_comment_dislike"
+        android:visibility="visible"
+        />
+
+    <!-- 踩数 -->
+    <TextView
+        android:id="@+id/mDislikeCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_30px"
+        app:layout_constraintTop_toTopOf="@+id/mDislikeIv"
+        app:layout_constraintRight_toLeftOf="@+id/mPraiseIv"
+        android:layout_marginRight="@dimen/offset_14px"
+        android:paddingLeft="@dimen/offset_9px"
+        android:paddingRight="@dimen/offset_9px"
+        android:textSize="@dimen/offset_10sp"
+        android:textColor="@color/color_f9f9f9"
+        tools:text="999"
+        android:visibility="visible"
+        />
+
+    <!-- 赞Icon -->
+    <ImageView
+        android:id="@+id/mPraiseIv"
+        android:layout_width="@dimen/offset_82px"
+        android:layout_height="@dimen/offset_82px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mCollectIv"
+        android:layout_marginRight="@dimen/offset_20px"
+        app:layout_goneMarginRight="6px"
+        app:srcCompat="@drawable/icon_comment_praise"
+        android:visibility="visible"
+        />
+
+    <!-- 赞数 -->
+    <TextView
+        android:id="@+id/mPraiseCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_30px"
+        app:layout_constraintTop_toTopOf="@+id/mPraiseIv"
+        app:layout_constraintRight_toLeftOf="@+id/mCollectIv"
+        android:layout_marginRight="@dimen/offset_14px"
+        app:layout_goneMarginRight="0dp"
+        android:paddingLeft="@dimen/offset_9px"
+        android:paddingRight="@dimen/offset_9px"
+        android:textSize="@dimen/offset_10sp"
+        android:textColor="@color/color_f9f9f9"
+        tools:text="99"
+        android:visibility="visible"
+        />
+
+    <!-- 收藏Icon -->
+    <ImageView
+        android:id="@+id/mCollectIv"
+        android:layout_width="@dimen/offset_82px"
+        android:layout_height="@dimen/offset_82px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/icon_comment_collect"
+        android:visibility="visible"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

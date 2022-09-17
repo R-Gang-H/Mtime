@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pay_balance_false_reason_tip">查看不可用原因</string>
+    <string name="pay_balance_false_reason">朋友们，由于公司支付系统升级，后期不再支持余额支付，请大家拨打客服电话申请退款。</string>
+    <string name="pay_balance_false_reason_service">客服电话：4006059500</string>
+
+    <string name="dialog_real_name_titile">购票实名信息登记</string>
+    <string name="dialog_real_name_content">&#160;&#160;感谢您信任并使用时光网电影票服务，依据国家电影局《关于在疫情防控常态化条件下有序推进电影院恢复开放的通知》（国家发【2020】1号）中《中国电影发行放映协会电影放映场所恢复开放疫情防控指南》的要求，我们将增加收集每张电影票对应观影人的实名信息，主要包括姓名、证件号。您提供的上述信息，我们将可能会向影院、电影发行业主管部门、防疫监管部门分享，以便符合疫情防控管理要求。\n&#160;&#160;其他与个人信息收集、使用、保护和共享相关内容，请您仔细阅读《Mtime服务条款》和《隐私政策》。</string>
+    <string name="dialog_real_name_service">Mtime服务条款</string>
+    <string name="dialog_real_name_privacy">隐私政策</string>
+    <string name="dialog_real_name_and">&#160;和&#160;</string>
+    <string name="dialog_real_name_btn_text">同意，去登记</string>
+
+</resources>

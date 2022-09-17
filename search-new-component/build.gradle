@@ -1,0 +1,133 @@
+if (isBuildModuleSearch.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    /**
+     * 资源同名问题处理
+     * 每个子模块给资源名添加前缀，具体做法是在每个子模块的build.gradle文件的android块内添加一行代码：resourcePrefix “资源名前缀”：
+     */
+    resourcePrefix "search_newcomponent_"
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        if (isBuildModuleSearch.toBoolean()) {
+            applicationId "com.kotlin.android.search.newcomponent"
+
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME : applicationId,
+                    JPUSH_APPKEY  : Push.jiguang_appkey, //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+
+                    XIAOMI_APPKEY : Push.xiaomi_appkey,//小米平台注册的appkey
+                    XIAOMI_APPID  : Push.xiaomi_appid,//小米平台注册的appid
+
+                    HUAWEI_APPID  : Push.huawei_appid,//华为平台注册的appid
+
+                    MEIZU_APPKEY  : Push.meizu_appkey,//魅族平台注册的appkey
+                    MEIZU_APPID   : Push.meizu_appid,//魅族平台注册的appid
+
+                    OPPO_APPKEY   : Push.oppo_appkey, // OPPO平台注册的appkey
+                    OPPO_APPID    : Push.oppo_appid, // OPPO平台注册的appid
+                    OPPO_APPSECRET: Push.oppo_appsecret,//OPPO平台注册的appsecret
+
+                    VIVO_APPKEY   : Push.vivo_appkey, // VIVO平台注册的appkey
+                    VIVO_APPID    : Push.vivo_appid, // VIVO平台注册的appid
+
+                    BAIDU_LBS_KEY: Location.baidu_lbs_key //百度定位
+            ]
+        }
+
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            if (isBuildModuleSearch.toBoolean()) {
+                manifest.srcFile 'src/main/java/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //release模式下排查debug文件夹中的所有文件
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
+    repositories {
+        flatDir {
+            dirs  'libs'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Support.kotlin_stdlib_jdk8
+    testImplementation Support.junit
+    androidTestImplementation Support.junit_ext
+    androidTestImplementation Support.espresso_core
+    // add lib
+    implementation project(path: ':ktx')
+    implementation project(path: ':core')
+    implementation project(path: ':resource')
+    implementation project(path: ':mtime-ktx')
+    implementation project(path: ':widget')
+    implementation project(path: ':app-router')
+    implementation project(path: ':app-data')
+    implementation project(path: ':app-api')
+    implementation project(path: ':image-component')
+    implementation project(path: ':review-component')
+    implementation project(path: ':bonus_scene_component')
+    implementation project(path: ':user')
+
+    kapt Dependencies.arouter_compiler
+    implementation Dependencies.flexbox
+}

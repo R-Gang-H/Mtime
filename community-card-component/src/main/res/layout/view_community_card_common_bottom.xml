@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.card.component.item.adapter.CommunityCardBaseBinder" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mCommunityCardUserLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:paddingStart="5dp"
+            android:paddingBottom="5dp"
+            android:onClick="@{view -> data.onClick(view)}">
+
+            <ImageView
+                android:id="@+id/mCommunityCardUserProfileIv"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:src="@color/color_3a93ae"
+                load_image="@{data.item.userProfile}"
+                load_image_circle_crop="@{true}"
+                load_image_width="@{18}"
+                load_image_height="@{18}"
+                load_image_default_img="@{@drawable/default_user_head}"
+                />
+
+            <Space
+                android:id="@+id/userTagSpace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/mCommunityCardUserProfileIv"
+                app:layout_constraintLeft_toRightOf="@id/mCommunityCardUserProfileIv"
+                android:layout_marginLeft="2dp"
+                />
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/userTagSpace"
+                app:layout_constraintRight_toRightOf="@id/userTagSpace"
+                android:src="@{data.item.institutionAuthUser ? @drawable/ic_jigourenzheng : @drawable/ic_yingrenrenzheng}"
+                android:visibility="@{data.item.authUser ? View.VISIBLE : View.GONE}"
+                />
+
+            <TextView
+                android:id="@+id/mCommunityCardUserNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/mCommunityCardUserProfileIv"
+                app:layout_constraintBottom_toBottomOf="@id/mCommunityCardUserProfileIv"
+                app:layout_constraintLeft_toRightOf="@id/mCommunityCardUserProfileIv"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="5dp"
+                android:textSize="11sp"
+                android:textColor="@color/color_4e5e73"
+                tools:text="格兰芬多斯内格兰芬多斯内格兰芬多斯内格兰芬多斯内格兰芬多斯内格兰芬多斯内"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="@{data.item.userName}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/mCommunityCardLikeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:drawableStart="@{data.item.like ? @drawable/ic_likeb : @drawable/ic_like}"
+            android:drawablePadding="4dp"
+            android:textSize="10sp"
+            android:textColor="@color/color_8798af"
+            tools:text="9999+"
+            android:visibility="@{data.item.publish ? View.VISIBLE : View.INVISIBLE}"
+            android:text="@{data.item.formatLikeCount()}"
+            android:onClick="@{view -> data.onClick(view)}"/>
+
+    </LinearLayout>
+</layout>

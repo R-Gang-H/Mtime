@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+    <string name="qrcode_component_scan">扫一扫</string>
+    <string name="qrcode_component_album">相册</string>
+    <string name="qrcode_component_scan_tips">将二维码放入框内，即可自动扫描</string>
+    <string name="qrcode_component_select_qrcode_pic">选择二维码图片</string>
+    <string name="qrcode_component_scan_decode">识别中...</string>
+    <string name="qrcode_login_hint">时光网网页版登录确认</string>
+    <string name="qrcode_login_btn_cancel">取消</string>
+    <string name="qrcode_login_btn_confirm">确认登录</string>
+    <string name="qrcode_login_title">登录时光网</string>
+    <string name="qrcode_component_decode_error">识别错误</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_feed_item_ad_text">广告</string>
+    <string name="home_feed_item_stick_text">置顶</string>
+    <string name="home_feed_top_hint_count_text">成功更新了%1$d条内容，请继续浏览</string>
+    <string name="home_feed_top_hint_zero_text">今天的更新都被浏览啦，换个频道试试</string>
+    <string name="home_feed_top_hint_failure_text">没有获取到新内容，是不是网断了？</string>
+    <string name="home_film_score_format">时光评分</string>
+
+</resources>

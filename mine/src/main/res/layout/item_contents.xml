@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.ContentsBinder" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/itemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view)->data.onClick(view)}"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingTop="@dimen/offset_10dp"
+        android:paddingRight="@dimen/offset_10dp"
+        android:paddingBottom="@dimen/offset_10dp">
+
+        <RelativeLayout
+            android:id="@+id/copyWritingPicCV"
+            android:layout_width="@dimen/offset_260px"
+            android:layout_height="@dimen/offset_150px"
+            android:layout_gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/articleIma"
+                load_image="@{data.bean.picUrl}"
+                load_image_default_img="@{@drawable/collections_default}"
+                load_image_height="@{75}"
+                load_image_width="@{120}"
+                viewRadius="@{6}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bottomShadow"
+                android:layout_width="@dimen/offset_260px"
+                android:layout_height="@dimen/offset_25dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_content_pic_bottom_shadow"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tipsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/offset_8dp"
+                android:layout_marginBottom="@dimen/offset_5dp"
+                android:includeFontPadding="false"
+                android:text="@{data.bean.videoDuration}"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_11sp"
+                tools:text="02:32"
+                tools:textColor="@color/color_ff7570" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/groupName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/offset_4dp"
+                android:layout_marginRight="@dimen/offset_4dp"
+                android:layout_marginBottom="@dimen/offset_4.5dp"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp"
+                android:visibility="gone"
+                tools:text="家族：编辑时光家族"
+                tools:textColor="@color/color_ff1cacde" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/longFilmReviewPicCV"
+            android:layout_width="@dimen/offset_60dp"
+            android:layout_height="@dimen/offset_80dp"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/longCommentIma"
+                load_image="@{data.bean.picUrl}"
+                load_image_default_img="@{@drawable/collections_default}"
+                load_image_height="@{80}"
+                load_image_width="@{60}"
+                viewRadius="@{6}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/offset_60dp"
+                android:layout_height="@dimen/offset_21dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_content_movie_shadow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/longNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/offset_2dp"
+                android:layout_marginRight="@dimen/offset_2dp"
+                android:layout_marginBottom="@dimen/offset_4dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_9sp"
+                tools:text="速度与激情" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/audioPicCV"
+            android:layout_width="@dimen/offset_150px"
+            android:layout_height="@dimen/offset_150px"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/audioIma"
+                load_image="@{data.bean.picUrl}"
+                load_image_default_img="@{@drawable/collections_default}"
+                load_image_height="@{75}"
+                load_image_width="@{75}"
+                viewRadius="@{6}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_24px">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:text="@{data.bean.name}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                tools:text="电影《雄狮少年》首爆概念海" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTv"
+                android:layout_marginTop="@dimen/offset_6dp"
+                android:layout_marginRight="@dimen/offset_10dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_cbd0d7"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="已通过" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/likeCommentsCountTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTv"
+                android:layout_marginTop="@dimen/offset_6dp"
+                android:layout_toRightOf="@id/stateTv"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="点赞 128  ·  评论 60" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/stateTv"
+                android:layout_marginTop="@dimen/offset_16dp"
+                android:paddingRight="@dimen/offset_10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/releaseTimeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/moreRl"
+                    android:layout_marginRight="@dimen/offset_20dp"
+                    android:includeFontPadding="false"
+                    android:text="@{data.bean.userCreateTime}"
+                    android:textColor="@color/color_cbd0d7"
+                    android:textSize="@dimen/offset_12sp"
+                    tools:text="2021-12-14 11:00:32" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/moreRl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{(view)->data.onClick(view)}"
+                    android:src="@drawable/ic_ver_more" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

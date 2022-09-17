@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 沉浸式 Dialog -->
+    <style name="ImmersiveDialog" parent="AlertDialog.AppCompat">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="LeftDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_left_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_left_exit</item>
+    </style>
+
+    <style name="TopDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_top_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_top_exit</item>
+    </style>
+
+    <style name="RightDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_right_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_right_exit</item>
+    </style>
+
+    <style name="BottomDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_exit</item>
+    </style>
+
+    <style name="CommunityPersonCollectionContentTv">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/offset_24px</item>
+        <item name="android:layout_marginRight">@dimen/offset_1px</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+    </style>
+
+</resources>

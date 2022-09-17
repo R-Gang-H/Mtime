@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hint_leave_what_i_want_to_say">留下我想说的...</string>
+    <string name="hint_text_not_comment">本文不可评论</string>
+    <string name="comment_reply_format">查看剩余%1$d条回复</string>
+    <string name="comment_delete">删除</string>
+    <string name="comment_all_list">全部评论</string>
+    <string name="comment_newest">最新</string>
+    <string name="comment_hot">最热</string>
+    <string name="comment_is_delete_comment">是否删除评论</string>
+    <string name="comment_detail">评论详情</string>
+    <string name="comment_reply">回复</string>
+    <string name="comment_scan_image">查看图片</string>
+    <string name="comment_scan">看</string>
+    <string name="comment_reply_to_user_format">\@ %1$s:</string>
+    <string name="comment_no_comment">还没有评论，快来表态发言</string>
+    <string name="comment_list_expand">展开</string>
+    <string name="comment_detail_cannt_send_comment">不能发送空评论</string>
+    <string name="comment_size">评论不要超过%d字哦</string>
+    <string name="comment_reply_has_pic_only">【图片】</string>
+    <string name="community_post_join">加入</string>
+    <string name="community_post_join_cancel">否</string>
+    <string name="community_post_join_family">黑名单用户，无法发布</string>
+    <string name="ugc_is_join_family">发布时需要加入家族</string>
+    <string name="ugc_join_success">加入成功</string>
+    <string name="comment_please_join_faimly_to_comment">请加入家族才能评论</string>
+    <string name="comment_component_publish_success">发布成功</string>
+
+</resources>

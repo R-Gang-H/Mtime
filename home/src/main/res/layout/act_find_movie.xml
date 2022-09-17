@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/mRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableFooterFollowWhenNoMoreData="false">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/person_app_bar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:elevation="0dp">
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:contentScrim="@color/color_ffffff"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                        app:scrimAnimationDuration="200"
+                        app:scrimVisibleHeightTrigger="100dp"
+                        app:statusBarScrim="@color/color_00000000">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/mRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipToPadding="false"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                            app:spanCount="4"
+                            tools:listitem="@layout/item_community_card_short_review" />
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/filterConditionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/offset_50dp"
+                        android:visibility="gone">
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/tv_type"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:text="类型"-->
+                        <!--                            android:textColor="@color/color_3d4955"-->
+                        <!--                            android:textSize="@dimen/offset_13sp"-->
+                        <!--                            android:textStyle="bold"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+                        <!--                            app:layout_constraintHorizontal_weight="1"-->
+                        <!--                            app:layout_constraintLeft_toLeftOf="parent"-->
+                        <!--                            app:layout_constraintRight_toLeftOf="@+id/tv_area"-->
+                        <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/tv_area"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:text="地区"-->
+                        <!--                            android:textColor="@color/color_3d4955"-->
+                        <!--                            android:textSize="@dimen/offset_13sp"-->
+                        <!--                            android:textStyle="bold"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+                        <!--                            app:layout_constraintHorizontal_weight="1"-->
+                        <!--                            app:layout_constraintLeft_toRightOf="@+id/tv_type"-->
+                        <!--                            app:layout_constraintRight_toLeftOf="@+id/tv_sort"-->
+                        <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/tv_sort"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:text="排序"-->
+                        <!--                            android:textColor="@color/color_3d4955"-->
+                        <!--                            android:textSize="@dimen/offset_13sp"-->
+                        <!--                            android:textStyle="bold"-->
+                        <!--                            app:layout_constraintHorizontal_weight="1"-->
+                        <!--                            app:layout_constraintLeft_toRightOf="@+id/tv_area"-->
+                        <!--                            app:layout_constraintRight_toLeftOf="@+id/tv_year"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+                        <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/tv_year"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:text="年代"-->
+                        <!--                            android:textColor="@color/color_3d4955"-->
+                        <!--                            android:textSize="@dimen/offset_13sp"-->
+                        <!--                            android:textStyle="bold"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+                        <!--                            app:layout_constraintHorizontal_weight="1"-->
+                        <!--                            app:layout_constraintLeft_toRightOf="@+id/tv_sort"-->
+                        <!--                            app:layout_constraintRight_toRightOf="parent"-->
+                        <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+                        <com.kotlin.android.widget.filter.DropDownMenu
+                            android:id="@+id/dropDownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </com.kotlin.android.widget.filter.DropDownMenu>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.kotlin.android.widget.multistate.MultiStateView
+                    android:id="@+id/mResultMultiStateView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/filterResultRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_ffffff"
+                        android:paddingLeft="@dimen/offset_15dp"
+                        android:paddingRight="@dimen/offset_15dp"
+                        android:visibility="visible"
+                        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+                </com.kotlin.android.widget.multistate.MultiStateView>
+
+
+                <FrameLayout
+                    android:visibility="gone"
+                    android:id="@+id/frameLayoutContainerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_99000000"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                    />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

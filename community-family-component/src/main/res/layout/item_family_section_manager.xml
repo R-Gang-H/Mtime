@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_60dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_3d4955"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="国产的ip" />
+
+        <TextView
+            android:id="@+id/tvDel"
+            android:layout_width="58dp"
+            android:layout_height="@dimen/offset_24dp"
+            android:gravity="center"
+            android:text="@string/delete"
+            android:textColor="@color/color_9b9b9b"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvEditor"
+            android:layout_width="58dp"
+            android:layout_height="@dimen/offset_24dp"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:gravity="center"
+            android:text="编辑"
+            android:textColor="@color/color_1cacde"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tvDel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_1f9dafb4"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

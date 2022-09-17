@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/order_pay_online_tip_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_36px"
+        android:layout_marginRight="@dimen/offset_10px"
+        android:src="@drawable/order_pay_tip_item_tag" />
+
+    <TextView
+        android:id="@+id/order_pay_online_tip_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_24px"
+        android:textColor="@color/color_9f4400"
+        android:layout_marginRight="@dimen/offset_5dp"
+        android:textSize="@dimen/font_size_normal_more"/>
+
+</LinearLayout>

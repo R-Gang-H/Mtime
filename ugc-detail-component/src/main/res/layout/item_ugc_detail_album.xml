@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.binder.UgcAlbumBinder" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="@dimen/offset_40px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:background="@color/color_ffffff"
+        style="@style/MatchWrap">
+<!--        浏览量-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pageViewTv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:textColor="@color/color_8798af"
+            android:text="@{@string/ugc_detail_album_page_view_total_format(data.bean.totalCount)}"
+            android:textSize="@dimen/font_size_sp_12"
+            style="@style/WrapWrap"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            app:layout_constraintTop_toBottomOf="@id/pageViewTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            android:layout_marginLeft="@dimen/offset_15px"
+            android:layout_marginRight="@dimen/offset_15px"
+            style="@style/MatchWrap"/>
+
+<!--        加载更多-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:id="@+id/loadMoreTv"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center"
+            android:enabled="@{data.bean.canClickLoadMore}"
+            android:text="@{data.bean.moreContent}"
+            android:onClick="@{(view)->data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView"
+            android:layout_height="wrap_content"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:id="@+id/friendView1"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        android:paddingStart="10dp"
+        android:paddingEnd="1dp">
+
+        <com.kotlin.android.card.monopoly.widget.CircleImageView
+            android:id="@+id/avatarView1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/default_user_head"
+            app:civ_border_color="@color/color_e3e5ed"
+            app:civ_border_width="1dp" />
+
+        <com.kotlin.android.card.monopoly.widget.nickname.NickNameView
+            android:id="@+id/nickNameView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/avatarView1"
+            android:layout_toEndOf="@+id/avatarView1"
+            android:text="@string/card_monopoly"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/avatarView1"
+            android:layout_toEndOf="@+id/avatarView1"
+            android:text="@string/check_out_ta_pocket"
+            android:textColor="@color/color_8798af"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/friendView2"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        android:paddingStart="10dp"
+        android:paddingEnd="1dp"
+        android:visibility="visible">
+
+        <com.kotlin.android.card.monopoly.widget.CircleImageView
+            android:id="@+id/avatarView2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/default_user_head"
+            app:civ_border_color="@color/color_e3e5ed"
+            app:civ_border_width="1dp" />
+
+        <com.kotlin.android.card.monopoly.widget.nickname.NickNameView
+            android:id="@+id/nickNameView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/avatarView2"
+            android:layout_toEndOf="@+id/avatarView2"
+            tools:text="@string/card_monopoly"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/avatarView2"
+            android:layout_toEndOf="@+id/avatarView2"
+            android:text="@string/check_out_ta_pocket"
+            android:textColor="@color/color_8798af"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

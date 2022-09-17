@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+        <import type="com.kotlin.android.mtime.ktx.HtmlExtKt" />
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListDetailPersonItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_60px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:onClick="@{() -> data.mainProvider.startActorViewActivity(data.bean.personInfo.personId, data.bean.personInfo.personName)}"
+        >
+
+        <!-- 封面图 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemToplistDetailPersonImgCardView"
+            style="@style/WrapWrap"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/mItemToplistDetailPersonImgIv"
+                android:layout_width="@dimen/offset_130px"
+                android:layout_height="@dimen/offset_194px"
+                android:background="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                load_image="@{data.bean.personInfo.img}"
+                load_image_width="@{65}"
+                load_image_height="@{97}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 排名 -->
+        <com.kotlin.android.widget.textview.SpacingTextView
+            android:id="@+id/mItemToplistDetailPersonRankTv"
+            android:layout_width="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_30px"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:paddingLeft="@dimen/offset_2px"
+            android:gravity="center"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_10sp"
+            android:textStyle="bold|italic"
+            android:text="@{String.valueOf(data.bean.rank)}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:background="@drawable/ic_toplist_movie_first"
+            tools:text="1"
+            />
+
+        <!-- 中文名 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailPersonNameCnTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:text="@{data.bean.personInfo.personName}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mItemToplistDetailPersonImgCardView"
+            app:layout_constraintRight_toLeftOf="@+id/mItemToplistDetailPersonLikeTv"
+            tools:text="斯嘉丽斯嘉丽斯嘉丽斯嘉丽斯嘉丽斯嘉丽斯嘉丽斯嘉丽"
+            />
+
+        <!-- 喜爱度 -->
+        <com.kotlin.android.widget.textview.SpacingTextView
+            android:id="@+id/mItemToplistDetailPersonLikeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_20a0da"
+            android:textSize="@dimen/offset_15sp"
+            android:textStyle="bold|italic"
+            android:text="@{data.bean.personInfo.score}"
+            android:visibility="@{data.bean.personInfo.hasScore() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="89%"
+            />
+
+        <!-- 英文名 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailPersonNameEnTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:text="@{data.bean.personInfo.personNameEn}"
+            android:visibility="@{TextUtils.isEmpty(data.bean.personInfo.personNameEn) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailPersonNameCnTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailPersonNameCnTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Peter Chan"
+            />
+
+        <!-- 职业 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailPersonProfessionTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_1px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_11sp"
+            android:text='@{data.bean.personInfo.profession == null ? "" :HtmlExtKt.getTextFromHtml(data.bean.personInfo.profession)}'
+            android:visibility="@{TextUtils.isEmpty(data.bean.personInfo.profession.trim()) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailPersonNameEnTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailPersonNameCnTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="导演 | 制作人 | 演员 | 制作人 | 演员 | 制作人 | 演员 | 制作人 | 演员 | 制作人 | 演员"
+            />
+
+        <!-- 代表作 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailPersonWorkTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_1px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_11sp"
+            android:text='@{@string/home_toplist_related_movie(TextUtils.isEmpty(data.bean.personInfo.relatedMovie) ? "" :data.bean.personInfo.relatedMovie)}'
+            android:visibility="@{TextUtils.isEmpty(data.bean.personInfo.relatedMovie) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailPersonProfessionTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailPersonNameCnTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="代表作《甜蜜蜜》"
+            />
+
+        <!-- 获奖记录 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailPersonAwardTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_17px"
+            android:drawableLeft="@drawable/ic_toplist_movie_award"
+            android:drawablePadding="@dimen/offset_2px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_feb12a"
+            android:textSize="@dimen/offset_12sp"
+            android:textStyle="bold"
+            android:text="@{data.bean.personInfo.award}"
+            android:visibility="@{TextUtils.isEmpty(data.bean.personInfo.award) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailPersonWorkTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailPersonNameCnTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="获奖情况获奖情况获奖情况获奖情况获奖情况获奖情况获奖情况获奖情况"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

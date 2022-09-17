@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+    <!-- poster info -->
+
+    <include
+        android:id="@+id/actor_basic"
+        layout="@layout/view_actor_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <!-- 我猜游戏 -->
+    <include
+        android:id="@+id/quiz_game"
+        layout="@layout/view_quiz_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- playing..... -->
+    <include
+        android:id="@+id/actor_hot_playing"
+        layout="@layout/view_actor_hot_playing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+        <!-- AD -->
+
+    <LinearLayout
+        android:id="@+id/ad1_seperate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+
+    <com.mtime.mtmovie.widgets.ADWebView
+        android:id="@+id/ad1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    <!-- movies..... -->
+    <include
+        android:id="@+id/actor_movies"
+        layout="@layout/view_actor_movies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <include
+        android:id="@+id/actor_news"
+        layout="@layout/view_actor_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- honors -->
+    <include
+        android:id="@+id/actor_honors"
+        layout="@layout/view_actor_honors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <!-- images -->
+    <include
+        android:id="@+id/actor_images"
+        layout="@layout/view_actor_images"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <include
+        android:id="@+id/actor_experiences"
+        layout="@layout/view_actor_experiences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <include
+        android:id="@+id/actor_relations"
+        layout="@layout/view_actor_relations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <!-- AD -->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/ad2_seperate"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/order_remind_seperated_region_background"-->
+        <!--android:contentDescription="@string/app_name"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:visibility="gone" />-->
+
+    <LinearLayout
+        android:id="@+id/ad2_seperate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+
+
+    <com.mtime.mtmovie.widgets.ADWebView
+        android:id="@+id/ad2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    <!-- seperate regin with gray -->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/actor_msgs_seperate"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/order_remind_seperated_region_background"-->
+        <!--android:contentDescription="@string/app_name"-->
+        <!--android:scaleType="fitXY" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+    <!-- users -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_12dp"
+            android:text="@string/actor_detail_message_label"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

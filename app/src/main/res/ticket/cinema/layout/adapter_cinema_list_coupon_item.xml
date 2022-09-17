@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/offset_10dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    >
+
+    <!-- 文字都显示为惠，暂时没有券 -->
+    <TextView
+        android:id="@+id/adapter_cinema_list_coupon_item_icon_tv"
+        android:layout_width="@dimen/offset_15dp"
+        android:layout_height="@dimen/offset_15dp"
+        android:gravity="center"
+        android:textSize="@dimen/font_size_9sp"
+        android:textColor="@color/white"
+        tools:text="惠"
+        tools:background="@color/color_f15353"
+        />
+
+    <TextView
+        android:id="@+id/adapter_cinema_list_coupon_item_tag_tv"
+        android:layout_width="@dimen/offset_300dp"
+        android:layout_height="@dimen/offset_15dp"
+        android:layout_marginLeft="@dimen/offset_4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_12sp"
+        tools:text="优惠标签优惠标签优惠标签优惠标签优惠标签优惠标签优惠标签优惠标签优惠标签优惠标签优惠标签"
+        />
+
+</LinearLayout>

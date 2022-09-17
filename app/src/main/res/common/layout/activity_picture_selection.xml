@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <RelativeLayout
+        android:id="@+id/buttombanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_f6f6f6">
+
+        <TextView
+            android:id="@+id/num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/complete"
+            android:background="@drawable/orange_point_background"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@id/complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/offset_pxtodx_32"
+            android:padding="@dimen/offset_pxtodx_16"
+            android:text="@string/st_picture_selection_ok"
+            android:textColor="@color/color_FF8600" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/buttombanner"
+        android:layout_below="@id/navigationbar"
+        android:padding="3dp" />
+
+</RelativeLayout>

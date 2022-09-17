@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.ContributeMyCreateBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:layout_marginBottom="@dimen/offset_20px">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mCreateCoverIv"
+            android:layout_width="@dimen/offset_277px"
+            android:layout_height="@dimen/offset_146px"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/color_1d2736" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mCreateTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{data.bean.title}"
+            android:textColor="@color/color_1d2736"
+            android:layout_marginEnd="14px"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintEnd_toStartOf="@id/mContributeCreateTv"
+            app:layout_constraintStart_toEndOf="@id/mCreateCoverIv"
+            app:layout_constraintTop_toTopOf="@id/mCreateCoverIv"
+            tools:text="未来家园系列描述描述描述..." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mFilmNumTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/offset_5px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{@string/tablet_film_list_film_num(data.bean.numMovie)}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintBottom_toBottomOf="@id/mCreateCoverIv"
+            app:layout_constraintStart_toStartOf="@+id/mCreateTitleTv"
+            tools:text="10部影片" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mContributeCreateTv"
+            android:layout_width="@dimen/offset_104px"
+            android:layout_height="@dimen/offset_46px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/tablet_main_right_title"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/color_8798af" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

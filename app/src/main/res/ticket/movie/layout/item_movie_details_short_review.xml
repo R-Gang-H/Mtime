@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_movie_details_short_review_profile_iv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/profile_default_head_h90"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_movie_details_short_review_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:maxWidth="@dimen/offset_350px"
+        android:textColor="#4e5e73"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/item_movie_details_short_review_profile_iv"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_short_review_profile_iv"
+        app:layout_constraintTop_toTopOf="@id/item_movie_details_short_review_profile_iv"
+        tools:text="一二三四五六七八九十一二三四五六七八九十" />
+
+    <TextView
+        android:id="@+id/item_movie_details_short_review_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="#8798af"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/item_movie_details_short_review_profile_iv"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_short_review_name_tv"
+        app:layout_constraintTop_toTopOf="@id/item_movie_details_short_review_profile_iv"
+        tools:text="· 40分钟前" />
+
+    <com.mtime.mtmovie.widgets.ScoreView
+        android:id="@+id/item_movie_details_short_review_score_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_score"
+        android:textSize="21sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="7.5" />
+
+    <TextView
+        android:id="@+id/item_movie_details_short_review_content_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="#4e5e73"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/item_movie_details_short_review_name_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_short_review_profile_iv"
+        tools:text="如果仅从该导演的前作《怪兽》出发，加里斯绝对难以驾驭这部片子，但是摄影和编剧又是业界巨擘，不好说成片出来会是个什么样子。" />
+
+    <TextView
+        android:id="@+id/item_movie_details_short_review_thumb_up_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:drawableLeft="@drawable/selector_common_thumb_up"
+        android:drawablePadding="6dp"
+        android:textColor="#8798af"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@id/item_movie_details_short_review_content_tv"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_short_review_content_tv"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/item_movie_details_short_review_reply_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="11dp"
+        android:drawableLeft="@drawable/common_icon_reply"
+        android:drawablePadding="6dp"
+        android:textColor="#8798af"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_short_review_thumb_up_tv"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_short_review_content_tv"
+        tools:text="0" />
+
+    <View
+        android:id="@+id/item_movie_details_short_review_line_view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="15dp"
+        android:background="#f2f3f6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_movie_details_short_review_thumb_up_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

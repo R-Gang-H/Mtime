@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultCinemaFeatureItemBinder"
+            />
+    </data>
+
+    <!-- 特色设施 -->
+    <TextView
+        android:id="@+id/mItemSearchResultCinemaFeatureTv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_30px"
+        android:layout_marginStart="@dimen/offset_10px"
+        android:layout_marginEnd="@dimen/offset_10px"
+        android:paddingLeft="@dimen/offset_20px"
+        android:paddingRight="@dimen/offset_20px"
+        android:gravity="center"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_10sp"
+        android:text="@{data.bean}"
+        tools:text="3D"
+        tools:background="@color/color_edf0f3"
+        />
+
+</layout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.live.component.ui.adapter.CameraStandBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        item_width_height_margin_left="@{data.portrait}"
+        android:layout_width="wrap_content"
+        android:onClick="@{(view)->data.onClick(view)}"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/cameraCv"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="@{data.bean.getItemCardCorner(data.portrait)}"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cameraIv"
+                load_image="@{data.bean.img}"
+                load_image_height="@{data.portrait? 39 :61}"
+                android:scaleType="centerCrop"
+                load_image_width="@{data.portrait? 66 :103}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:id="@+id/cameraBgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:id="@+id/titleTv"
+                android:text="@{data.bean.title}"
+                android:textColor="@color/color_f2f3f6"
+                android:textSize="@{data.bean.getItemTextSize(data.portrait)}"
+                android:layout_marginLeft="@dimen/offset_10px"
+                android:layout_marginRight="@dimen/offset_4px"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/offset_4px"
+                android:drawablePadding="@dimen/offset_4px"
+                android:ellipsize="end"
+                cameraStandTitle="@{data.bean.selected}"
+                portrait="@{data.portrait}"
+                android:layout_height="wrap_content"/>
+
+
+        </androidx.cardview.widget.CardView>
+        <View
+            android:elevation="@dimen/offset_4px"
+            camerastandbg="@{data.bean.selected}"
+            portrait="@{data.portrait}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 字体定义 -->
+    <dimen name="font_size_9sp">9sp</dimen>
+    <dimen name="font_size_10sp">10sp</dimen>
+    <dimen name="font_size_11sp">11sp</dimen>
+    <dimen name="font_size_12sp">12sp</dimen>
+    <dimen name="font_size_small_high">13sp</dimen>
+    <dimen name="font_size_small_more">13.5sp</dimen>
+    <dimen name="font_size_normal">14sp</dimen>
+    <dimen name="font_size_normal_more">15sp</dimen>
+    <dimen name="font_size_normal_high">16sp</dimen>
+    <dimen name="font_size_normal_high_more">17sp</dimen>
+    <dimen name="font_size_large">18sp</dimen>
+    <dimen name="font_size_large_high">20sp</dimen>
+    <dimen name="font_size_xlarge">22sp</dimen>
+    <dimen name="font_size_25sp">25sp</dimen>
+
+    <!-- margin left -->
+    <dimen name="offset_2dp">2dp</dimen>
+    <dimen name="offset_4dp">4dp</dimen>
+
+
+    <!-- city part -->
+    <dimen name="title_bar_home_city_height">30dp</dimen>
+    <dimen name="title_bar_home_city_drawable_padding">6dp</dimen>
+    <dimen name="title_bar_home_city_padding_right">8dp</dimen>
+
+    <!-- mov/cinema switched -->
+    <!-- search part -->
+    <dimen name="title_bar_home_search_margin_right">17dp</dimen>
+    <!-- **********title bar of home END ************* -->
+
+
+    <!-- ********* title bar of search *************** -->
+
+    <!-- back button -->
+    <dimen name="title_bar_search_back_margin_left">17dp</dimen>
+    <!-- search button -->
+    <dimen name="title_bar_search_search_margin_right">8dp</dimen>
+    <dimen name="title_bar_search_search_text_size">18sp</dimen>
+    <!-- search region -->
+    <dimen name="title_bar_search_region_height">38.5dp</dimen>
+    <dimen name="title_bar_search_region_margin_right">17.5dp</dimen>
+    <dimen name="title_bar_search_region_margin_left">17dp</dimen>
+    <dimen name="title_bar_search_scan_margin_right">10dp</dimen>
+    <!-- search conent -->
+    <dimen name="title_bar_search_content_view_height">26dp</dimen>
+    <dimen name="title_bar_search_content_margin_left">6dp</dimen>
+    <dimen name="title_bar_search_content_margin_right">3dp</dimen>
+    <dimen name="title_bar_search_content_text_size">16sp</dimen>
+    <dimen name="title_bar_search_content_drawing_padding">2dp</dimen>
+
+    <!-- *********** title bar of search END ********** -->
+
+
+    <!-- *********** title bar of normal ************** -->
+    <dimen name="title_bar_normal_back_margin_left">17dp</dimen>
+    <dimen name="title_bar_normal_title_max_width">250dp</dimen>
+
+    <!--  -->
+    <dimen name="title_bar_normal_share_margin_right">17dp</dimen>
+    <dimen name="title_bar_normal_message_margin_right">8dp</dimen>
+    <dimen name="title_bar_normal_favorite_margin_right">30dp</dimen>
+
+    <!-- **********title bar of normal END ********* -->
+
+
+    <!-- ********** bottom bar of movie comments ******************** -->
+    <!-- send button -->
+    <dimen name="bottom_bar_movie_comments_view_height">57dp</dimen>
+    <dimen name="bottom_bar_movie_commnets_send_margin_right">15dp</dimen>
+    <dimen name="bottom_bar_movie_commnets_number_send_margin_right">9dp</dimen>
+
+    <!-- comments edit view -->
+    <dimen name="bottom_bar_movie_comments_text_view_height">40dp</dimen>
+    <dimen name="bottom_bar_movie_comments_text_view_margin_top">20dp</dimen>
+    <dimen name="bottom_bar_movie_comments_text_view_margin_right">10dp</dimen>
+    <dimen name="bottom_bar_movie_comments_text_view_margin_left">10dp</dimen>
+
+    <!-- ********** bottom bar of movie comments ******************** -->
+    <dimen name="offset_0dp">0dp</dimen>
+    <dimen name="offset_0_5dp">0.5dp</dimen>
+    <dimen name="offset_1dp">1dp</dimen>
+    <dimen name="offset_5dp">5dp</dimen>
+    <dimen name="offset_9dp">9dp</dimen>
+    <dimen name="offset_10dp">10dp</dimen>
+    <dimen name="offset_11dp">11dp</dimen>
+    <dimen name="offset_12dp">12dp</dimen>
+    <dimen name="offset_14dp">14dp</dimen>
+    <dimen name="offset_15dp">15dp</dimen>
+    <dimen name="offset_16dp">16dp</dimen>
+    <dimen name="offset_17dp">17dp</dimen>
+    <dimen name="offset_18dp">18dp</dimen>
+    <dimen name="offset_20dp">20dp</dimen>
+    <dimen name="offset_22dp">22dp</dimen>
+    <dimen name="offset_22_5dp">22.5dp</dimen>
+    <dimen name="offset_23dp">23dp</dimen>
+    <dimen name="offset_24dp">24dp</dimen>
+    <dimen name="offset_25dp">25dp</dimen>
+    <dimen name="offset_26dp">26dp</dimen>
+    <dimen name="offset_28dp">28dp</dimen>
+    <dimen name="offset_29dp">29dp</dimen>
+    <dimen name="offset_30dp">30dp</dimen>
+    <dimen name="offset_33dp">33dp</dimen>
+    <dimen name="offset_39dp">39dp</dimen>
+    <dimen name="offset_40dp">40dp</dimen>
+    <dimen name="offset_45dp">45dp</dimen>
+    <dimen name="offset_49dp">49dp</dimen>
+    <dimen name="offset_50dp">50dp</dimen>
+    <dimen name="offset_52dp">52dp</dimen>
+    <dimen name="offset_60dp">60dp</dimen>
+    <dimen name="offset_65dp">65dp</dimen>
+    <dimen name="offset_140px">70dp</dimen>
+    <dimen name="offset_71dp">71dp</dimen>
+    <dimen name="offset_72dp">72dp</dimen>
+    <dimen name="offset_82dp">82dp</dimen>
+    <dimen name="offset_84dp">84dp</dimen>
+    <dimen name="offset_85_5dp">85.5dp</dimen>
+    <dimen name="offset_105dp">105dp</dimen>
+    <dimen name="offset_107dp">107dp</dimen>
+    <dimen name="offset_109dp">109dp</dimen>
+    <dimen name="offset_120dp">120dp</dimen>
+    <dimen name="offset_123_5dp">123.5dp</dimen>
+    <dimen name="offset_124dp">124dp</dimen>
+    <dimen name="offset_5px">2.5dp</dimen>
+    <dimen name="offset_1px">0.5dp</dimen>
+    <dimen name="offset_4px">2dp</dimen>
+    <dimen name="offset_6px">3dp</dimen>
+    <dimen name="offset_7px">3.5dp</dimen>
+    <dimen name="offset_10px">5dp</dimen>
+    <dimen name="offset_11px">5.5dp</dimen>
+    <dimen name="offset_12px">6dp</dimen>
+    <dimen name="offset_14px">7dp</dimen>
+    <dimen name="offset_15px">7.5dp</dimen>
+    <dimen name="offset_16px">8dp</dimen>
+    <dimen name="offset_17px">8.5dp</dimen>
+    <dimen name="offset_18px">9dp</dimen>
+    <dimen name="offset_20px">10dp</dimen>
+    <dimen name="offset_21px">10.5dp</dimen>
+    <dimen name="offset_22px">11dp</dimen>
+    <dimen name="offset_24px">12dp</dimen>
+    <dimen name="offset_26px">13dp</dimen>
+    <dimen name="offset_27px">13.5dp</dimen>
+    <dimen name="offset_28px">14dp</dimen>
+    <dimen name="offset_30px">15dp</dimen>
+    <dimen name="offset_32px">16dp</dimen>
+    <dimen name="offset_34px">17dp</dimen>
+    <dimen name="offset_36px">18dp</dimen>
+    <dimen name="offset_40px">20dp</dimen>
+    <dimen name="offset_44px">22dp</dimen>
+    <dimen name="offset_46px">23dp</dimen>
+    <dimen name="offset_50px">25dp</dimen>
+    <dimen name="offset_54px">27dp</dimen>
+    <dimen name="offset_56px">28dp</dimen>
+    <dimen name="offset_64px">32dp</dimen>
+    <dimen name="offset_70px">35dp</dimen>
+    <dimen name="offset_80px">40dp</dimen>
+    <dimen name="offset_95px">47.5dp</dimen>
+    <dimen name="offset_168px">84dp</dimen>
+    <dimen name="offset_184px">92dp</dimen>
+    <dimen name="offset_277px">138.5dp</dimen>
+    <dimen name="offset_482px">241dp</dimen>
+    <dimen name="line_height">0.5dp</dimen>
+    <!-- 支付 -->
+    <dimen name="orderpay_paddingleft">34dp</dimen>
+    <dimen name="orderpay_securitydlg_item_height">55dp</dimen>
+
+    <!-- 主页电影名称最大长度 -->
+    <dimen name="item_max_170dp">170dp</dimen>
+    <dimen name="item_max_200dp">200dp</dimen>
+
+    <!-- my order remind -->
+    <!--  -->
+
+    <!--  -->
+
+    <!--  -->
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <!--  -->
+    <dimen name="my_order_remind_photo_width">85dp</dimen>
+    <dimen name="my_order_remind_photo_margin_top">17dp</dimen>
+    <!--  -->
+    <dimen name="my_order_remind_movie_grade_width">23dp</dimen>
+    <dimen name="my_order_remind_movie_grade_height">20dp</dimen>
+    <!--  -->
+    <dimen name="my_order_remind_movie_actors_lines_space">8dp</dimen>
+    <!--  -->
+    <!--  -->
+
+    <!-- share part -->
+    <dimen name="act_share_close_margin_right">25dp</dimen>
+    <dimen name="act_share_line_margin_top">58dp</dimen>
+    <dimen name="act_share_part_margin_top">31dp</dimen>
+
+    <!-- v2 将美工的px像素转换成dp -->
+    <dimen name="offset_pxtodx_1">0.5dp</dimen>
+    <dimen name="offset_pxtodx_2">0.5dp</dimen>
+    <dimen name="offset_pxtodx_3">1.5dp</dimen>
+    <dimen name="offset_pxtodx_4">2.0dp</dimen>
+    <dimen name="offset_pxtodx_5">2.5dp</dimen>
+    <dimen name="offset_pxtodx_6">3.0dp</dimen>
+    <dimen name="offset_pxtodx_8">4.0dp</dimen>
+    <dimen name="offset_pxtodx_9">4.5dp</dimen>
+    <dimen name="offset_pxtodx_10">5.0dp</dimen>
+    <dimen name="offset_pxtodx_12">6.0dp</dimen>
+    <dimen name="offset_pxtodx_13">6.5dp</dimen>
+    <dimen name="offset_pxtodx_14">7.0dp</dimen>
+    <dimen name="offset_pxtodx_15">7.5dp</dimen>
+    <dimen name="offset_pxtodx_16">8.0dp</dimen>
+    <dimen name="offset_pxtodx_17">8.5dp</dimen>
+    <dimen name="offset_pxtodx_18">9.0dp</dimen>
+    <dimen name="offset_pxtodx_20">10.0dp</dimen>
+    <dimen name="offset_pxtodx_23">11.5dp</dimen>
+    <dimen name="offset_pxtodx_167">83.5dp</dimen>
+    <dimen name="offset_pxtodx_118">59dp</dimen>
+    <dimen name="offset_pxtodx_178">89dp</dimen>
+    <dimen name="offset_pxtodx_198">99dp</dimen>
+    <dimen name="offset_pxtodx_200">100dp</dimen>
+    <dimen name="offset_pxtodx_298">149dp</dimen>
+    <dimen name="offset_pxtodx_300">150dp</dimen>
+    <dimen name="offset_pxtodx_210">105dp</dimen>
+    <dimen name="offset_pxtodx_34">17.0dp</dimen>
+    <dimen name="offset_pxtodx_270">135dp</dimen>
+    <dimen name="offset_pxtodx_33">16.5dp</dimen>
+    <dimen name="offset_pxtodx_39">18.5dp</dimen>
+    <dimen name="offset_pxtodx_71">35.5dp</dimen>
+    <dimen name="offset_pxtodx_356">178dp</dimen>
+    <dimen name="offset_pxtodx_347">173.5dp</dimen>
+    <dimen name="offset_pxtodx_31">15.5dp</dimen>
+    <dimen name="offset_pxtodx_32">16dp</dimen>
+    <dimen name="offset_pxtodx_26">13dp</dimen>
+    <dimen name="offset_pxtodx_24">12dp</dimen>
+    <dimen name="offset_pxtodx_292">146dp</dimen>
+    <dimen name="offset_pxtodx_268">134dp</dimen>
+    <dimen name="offset_pxtodx_50">25dp</dimen>
+    <dimen name="offset_pxtodx_64">32dp</dimen>
+    <dimen name="offset_pxtodx_400">200dp</dimen>
+    <dimen name="offset_pxtodx_410">210dp</dimen>
+    <dimen name="offset_pxtodx_500">250dp</dimen>
+    <dimen name="offset_pxtodx_460">230dp</dimen>
+    <dimen name="offset_pxtodx_505">252.5dp</dimen>
+    <dimen name="offset_pxtodx_44">22dp</dimen>
+    <dimen name="offset_pxtodx_42">21dp</dimen>
+    <dimen name="offset_pxtodx_100">50dp</dimen>
+    <dimen name="offset_pxtodx_80">40dp</dimen>
+    <dimen name="offset_pxtodx_146">73dp</dimen>
+    <dimen name="offset_pxtodx_214">107dp</dimen>
+    <dimen name="offset_pxtodx_25">12.5dp</dimen>
+    <dimen name="offset_pxtodx_38">19dp</dimen>
+    <dimen name="offset_pxtodx_40">20dp</dimen>
+    <dimen name="offset_pxtodx_22">11dp</dimen>
+    <dimen name="offset_pxtodx_90">45dp</dimen>
+    <dimen name="offset_pxtodx_29">14.5dp</dimen>
+    <dimen name="offset_pxtodx_110">55dp</dimen>
+    <dimen name="offset_pxtodx_35">17.5dp</dimen>
+    <dimen name="offset_pxtodx_219">109.5dp</dimen>
+    <dimen name="offset_pxtodx_169">84.5dp</dimen>
+    <dimen name="offset_pxtodx_36">18dp</dimen>
+    <dimen name="offset_pxtodx_66">33dp</dimen>
+    <dimen name="offset_pxtodx_69">34.5dp</dimen>
+    <dimen name="offset_pxtodx_135">67.5dp</dimen>
+    <dimen name="offset_pxtodx_27">13.5dp</dimen>
+    <dimen name="offset_pxtodx_54">27dp</dimen>
+    <dimen name="offset_pxtodx_45">22.5dp</dimen>
+    <dimen name="offset_pxtodx_37">18.5dp</dimen>
+    <dimen name="offset_pxtodx_41">20.5dp</dimen>
+    <dimen name="offset_pxtodx_120">60dp</dimen>
+    <dimen name="offset_pxtodx_203">101.5dp</dimen>
+    <dimen name="offset_pxtodx_242">121dp</dimen>
+    <dimen name="offset_280px">140dp</dimen>
+    <dimen name="offset_290px">145dp</dimen>
+    <dimen name="offset_pxtodx_326">163dp</dimen>
+    <dimen name="offset_pxtodx_450">225dp</dimen>
+    <dimen name="offset_pxtodx_30">15dp</dimen>
+    <dimen name="offset_pxtodx_225">112.5dp</dimen>
+    <dimen name="offset_pxtodx_144">72dp</dimen>
+    <dimen name="offset_pxtodx_113">56.5dp</dimen>
+    <dimen name="offset_pxtodx_147">73.5dp</dimen>
+    <dimen name="offset_pxtodx_246">123dp</dimen>
+    <dimen name="offset_pxtodx_49">24.5dp</dimen>
+    <dimen name="offset_pxtodx_160">80.0dp</dimen>
+    <dimen name="offset_pxtodx_81">40.5dp</dimen>
+    <dimen name="offset_pxtodx_136">68.0dp</dimen>
+    <dimen name="offset_pxtodx_133">66.5dp</dimen>
+    <dimen name="offset_pxtodx_180">90dp</dimen>
+    <!-- v2 字体  将美工的px字体转换成sp -->
+    <dimen name="font_size_pxtosp_10">5.0sp</dimen>
+    <dimen name="font_size_pxtosp_13">6.5sp</dimen>
+    <dimen name="font_size_pxtosp_20">10.0sp</dimen>
+    <dimen name="font_size_pxtosp_40">20sp</dimen>
+    <dimen name="font_size_pxtosp_31">15.5sp</dimen>
+    <dimen name="font_size_pxtosp_32">16.0sp</dimen>
+    <dimen name="font_size_pxtosp_33">16.5sp</dimen>
+    <dimen name="font_size_pxtosp_34">17.0sp</dimen>
+    <dimen name="font_size_pxtosp_26">13.0sp</dimen>
+    <dimen name="font_size_pxtosp_30">15.0sp</dimen>
+    <dimen name="font_size_pxtosp_36">18.0sp</dimen>
+    <dimen name="font_size_pxtosp_38">19.0sp</dimen>
+    <dimen name="font_size_pxtosp_22">11.0sp</dimen>
+    <dimen name="font_size_pxtosp_24">12.0sp</dimen>
+    <dimen name="font_size_pxtosp_60">30.0sp</dimen>
+    <dimen name="font_size_pxtosp_27">13.5sp</dimen>
+    <dimen name="font_size_pxtosp_28">14sp</dimen>
+    <dimen name="font_size_pxtosp_42">21sp</dimen>
+
+    <!-- actor detail information -->
+    <dimen name="actor_detail_item_margin_right">16.5dp</dimen>
+    <dimen name="actor_detail_hot_playing_ticket_value_margin_bottom">-5dp</dimen>
+    <dimen name="actor_detail_poster_ratemark_margin_right">6dp</dimen>
+    <dimen name="actor_detail_poster_name_margin_left">15dp</dimen>
+    <!-- birthday -->
+    <dimen name="actor_detail_like_btn_margin_left">10dp</dimen>
+    <!-- hot playing -->
+    <dimen name="actor_detail_hot_playing_header_width">88dp</dimen>
+    <dimen name="actor_detail_hot_playing_header_height">132dp</dimen>
+    <dimen name="actor_detail_hot_playing_movie_title_margin_left">12dp</dimen>
+    <dimen name="actor_detail_hot_playing_grade_margin_left">5.5dp</dimen>
+    <dimen name="actor_detail_hot_playing_movie_type_margin_top">2.5dp</dimen>
+    <dimen name="actor_detail_hot_playing_movie_play_margin_top">6dp</dimen>
+    <!-- honors -->
+    <!-- resume -->
+    <dimen name="actor_detail_item_album_margin_bottom">25.5dp</dimen>
+
+    <!-- item value -->
+    <dimen name="actor_detail_movies_item_header_height">133dp</dimen>
+    <dimen name="actor_detail_movies_item_name_margin_top">9dp</dimen>
+    <dimen name="actor_detail_movies_item_year_margin_top">5dp</dimen>
+    <!-- comments -->
+    <dimen name="actor_detail_listview_item_header_margin_left">17dp</dimen>
+    <dimen name="actor_detail_listview_item_header_margin_top">17dp</dimen>
+    <dimen name="actor_detail_listview_item_name_margin_left">14.5dp</dimen>
+    <dimen name="actor_detail_listview_item_name_margin_top">2.5dp</dimen>
+    <dimen name="actor_detail_listview_item_time_margin_right">17dp</dimen>
+    <dimen name="actor_detail_listview_item_content_margin_top">16.5dp</dimen>
+    <dimen name="actor_detail_listview_item_reply_margin_right">100dp</dimen>
+
+    <!--  -->
+    <dimen name="margin_top_14_5dp">14.5dp</dimen>
+    <dimen name="margin_left_15_5dp">15.5dp</dimen>
+    <dimen name="margin_top_5">5dp</dimen>
+    <dimen name="margin_top_13_5">13.5dp</dimen>
+    <dimen name="margin_top_3_5">3.5dp</dimen>
+    <dimen name="actor_detail_guide_skip_margin_top">20dp</dimen>
+    <dimen name="actor_detail_guide_skip_margin_right">20dp</dimen>
+    <!-- actor honors UI -->
+    <dimen name="actor_honors_header_height">50dp</dimen>
+    <dimen name="actor_honors_listview_item_info_height">124dp</dimen>
+    <dimen name="actor_honors_listview_item_header_width">56dp</dimen>
+    <dimen name="actor_honors_listview_item_header_height">84dp</dimen>
+    <dimen name="actor_honors_listview_item_header_margin_left">19dp</dimen>
+    <dimen name="actor_honors_listview_item_header_margin_top">19dp</dimen>
+    <dimen name="actor_honors_listview_item_name_margin_left">16.5dp</dimen>
+    <dimen name="actor_honors_listview_item_namecn_margin_top">27.5dp</dimen>
+    <dimen name="actor_honors_listview_item_nameen_margin_top">7.5dp</dimen>
+    <dimen name="actor_honors_listview_item_summary_margin_top">7dp</dimen>
+    <dimen name="actor_honors_sublist_header_margin_left">28dp</dimen>
+    <dimen name="actor_honors_sublist_header_margin_top">16.5dp</dimen>
+    <dimen name="actor_honors_listview_item_arrow_margin_right">17dp</dimen>
+    <dimen name="actor_honors_listview_item_address_margin_right">20dp</dimen>
+    <!-- sub item -->
+    <dimen name="actor_honors_sublist_item_label_margin_top">16.5dp</dimen>
+    <dimen name="actor_honors_sublist_item_header_width">45dp</dimen>
+    <dimen name="actor_honors_sublist_item_header_height">67.5dp</dimen>
+    <dimen name="actor_honors_sublist_item_header_margin_top">12dp</dimen>
+    <dimen name="actor_honors_sublist_item_content_margin_left">16.5dp</dimen>
+
+    <!-- cinema info -->
+    <dimen name="cinema_detail_comment_btn_margin_top">17dp</dimen>
+    <!-- special installations -->
+    <dimen name="cinema_detail_special_installations_margin_top">12dp</dimen>
+    <dimen name="cinema_detail_info_ticket_height">63dp</dimen>
+    <dimen name="cinema_detail_info_item_height">58dp</dimen>
+    <dimen name="cinema_detail_install_icon_margin_left">14dp</dimen>
+    <!-- cinema sub shops -->
+    <dimen name="cinema_subshop_item_address_margin_top">6dp</dimen>
+    <dimen name="cinema_subshop_item_features_margin_left">6dp</dimen>
+    <dimen name="cinema_showing_listitem_features_margin_top">8dp</dimen>
+    <dimen name="cinema_subshops_name_max_width">230dp</dimen>
+    <!--  -->
+    <!-- filter -->
+    <dimen name="filter_title_height">56dp</dimen>
+    <dimen name="filter_subway_map_margin_top">13dp</dimen>
+
+    <!--  -->
+
+    <!-- rate view used margins -->
+    <dimen name="rate_view_margin_left">5dp</dimen>
+    <dimen name="rate_view_margin_top">1dp</dimen>
+    <dimen name="rate_view_margin_right">5dp</dimen>
+    <dimen name="rate_view_margin_bottom">1dp</dimen>
+    <dimen name="cinema_rate_item_height">40dp</dimen>
+    <dimen name="cinema_rate_view_width">190dp</dimen>
+    <dimen name="cinema_rate_button_margin_bottom">24dp</dimen>
+
+    <!-- navigation bar -->
+
+    <!-- show whole name -->
+    <dimen name="show_whole_name_label1_margin_top">80dp</dimen>
+    <dimen name="show_whole_name_label2_margin_top">5dp</dimen>
+
+    <!-- select seats value -->
+    <dimen name="sealect_seat_view_margin_width">15dp</dimen>
+    <dimen name="sealect_seat_view_margin_height">15dp</dimen>
+
+    <!--  -->
+    <dimen name="actor_detail_picture_item_height">74dp</dimen>
+    <!-- long comments -->
+    <dimen name="long_comments_header_width">68dp</dimen>
+    <dimen name="long_comments_header_height">102dp</dimen>
+    <dimen name="long_comments_user_header_width">45dp</dimen>
+    <dimen name="long_comments_user_header_height">45dp</dimen>
+    <dimen name="long_comments_user_header_margin_top">18dp</dimen>
+    <dimen name="long_comments_user_name_margin_left">10dp</dimen>
+    <dimen name="long_comments_user_name_margin_top">2dp</dimen>
+    <dimen name="long_comments_info_margin_top">7dp</dimen>
+    <dimen name="long_comments_user_comments_max_width">163dp</dimen>
+
+    <!-- lgoin -->
+    <dimen name="login_account_height">56dp</dimen>
+    <dimen name="login_account_margin_top">35dp</dimen>
+    <dimen name="login_account_icon_margin_left">22dp</dimen>
+    <dimen name="login_account_input_margin_left">19dp</dimen>
+    <dimen name="login_account_input_margin_right">5dp</dimen>
+    <dimen name="login_btn_margin_top">20dp</dimen>
+    <dimen name="login_register_margin_top">22dp</dimen>
+    <dimen name="login_third_part_line_height">15dp</dimen>
+    <dimen name="login_third_part_line_margin_top">30dp</dimen>
+    <dimen name="login_third_part_tips_width">100dp</dimen>
+    <dimen name="login_third_btn_margin_top">23dp</dimen>
+    <dimen name="login_third_btn_margin_hor">13dp</dimen>
+    <dimen name="login_nonaccount_tips_margin_bottom">19dp</dimen>
+    <dimen name="login_nonaccount_btn_margin_bottom">10dp</dimen>
+    <!-- register -->
+    <dimen name="register_agree_view_margin_top">13dp</dimen>
+    <dimen name="register_email_btn_margin_top">22dp</dimen>
+
+    <!--  -->
+    <dimen name="about_mtime_url_margin_top">5dp</dimen>
+    <!--  -->
+
+    <dimen name="actor_detail_picture_item_margin_left">7dp</dimen>
+    <dimen name="hot_playing_mvoie_title_region_height">23dp</dimen>
+
+    <!--  -->
+    <dimen name="bottom_bar_comments_padding_left">10dp</dimen>
+    <dimen name="cinema_detail_info_item_padding">15dp</dimen>
+
+    <!-- unbind mobile -->
+    <dimen name="unbind_mobile_tips_margin_top">32dp</dimen>
+    <dimen name="unbind_btn_margin_top">25dp</dimen>
+    <!-- ticket_cinema list -->
+    <dimen name="ticket_price_icon_margin_left">6dp</dimen>
+    <!--  -->
+
+    <!-- hot comment -->
+    <dimen name="comment_hotlong_nickname_margin_top">6dp</dimen>
+    <dimen name="long_comments_user_comments_view_margin_right">8dp</dimen>
+
+    <!--  -->
+    <dimen name="bottom_bar_movie_commnets_number_send_margin_top">8dp</dimen>
+    <dimen name="bottom_bar_movie_commnets_number_send_margin_bottom">8dp</dimen>
+    <dimen name="movie_short_comments_rate_margin_left">3dp</dimen>
+    <dimen name="movie_short_comments_praise_view_margin_top">17dp</dimen>
+    <dimen name="movie_short_comments_praise_view_width">80dp</dimen>
+    <dimen name="movie_short_comments_bottom_arrow_margin_left">25dp</dimen>
+    <dimen name="cinema_rate_view_watch_view_margint_left">23dp</dimen>
+
+    <!--  -->
+    <dimen name="act_login_register_margin_left">20dp</dimen>
+    <dimen name="act_login_reget_password_margin_right">20dp</dimen>
+
+    <!-- ad dimensions -->
+    <!-- msg view -->
+    <dimen name="msg_filter_view_height">46dp</dimen>
+    <dimen name="messaget_broadcast_img_width">68dp</dimen>
+    <dimen name="messaget_broadcast_img_height">68dp</dimen>
+
+    <!--  -->
+    <!--  -->
+    <dimen name="actor_film_portfoilo_label_max_width">170dp</dimen>
+    <!--  -->
+    <dimen name="seat_select_wiew_margin_left">15dp</dimen>
+    <dimen name="seat_select_thumb_wiew_margin_left">40dp</dimen>
+    <!--  -->
+    <!--  -->
+    <dimen name="preferential_list_item_label_height">49dp</dimen>
+    <dimen name="cinema_detail_map_region_margin_top">5dp</dimen>
+    <dimen name="city_item_group_view_height">33dp</dimen>
+
+</resources>

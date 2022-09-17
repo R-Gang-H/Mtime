@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/offset_15dp">
+
+    <ImageView
+        android:id="@+id/img_poster"
+        android:layout_width="@dimen/offset_100dp"
+        android:layout_height="@dimen/offset_150dp"
+        android:scaleType="fitXY" />
+    <!-- 海报过滤文字-->
+    <TextView
+        android:id="@+id/tv_filter"
+        android:layout_width="@dimen/offset_110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_poster"
+        android:layout_alignLeft="@id/img_poster"
+        android:layout_alignRight="@id/img_poster"
+        android:layout_marginBottom="@dimen/offset_pxtodx_56"
+        android:gravity="center_horizontal"
+        android:text="@string/str_movie_cover_filter"
+        android:textColor="@color/color_777777"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_last"
+        android:layout_width="@dimen/offset_100dp"
+        android:layout_height="@dimen/offset_150dp"
+        android:background="@drawable/bg_rank_render_item"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_count"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:text="查看全部"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_12sp" />
+    </RelativeLayout>
+</RelativeLayout>

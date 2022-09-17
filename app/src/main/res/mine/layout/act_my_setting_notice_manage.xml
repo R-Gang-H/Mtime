@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/offset_pxtodx_40">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/offset_pxtodx_30"
+                android:layout_marginLeft="@dimen/my_order_remind_movie_grade_width"
+                android:layout_marginRight="@dimen/offset_pxtodx_34"
+                android:layout_marginTop="@dimen/offset_pxtodx_34"
+                android:text="@string/str_notice_remind"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_pxtosp_30" />
+
+            <LinearLayout
+                android:id="@+id/push_check_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_pxtodx_34">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_pxtodx_34"
+                    android:paddingRight="@dimen/offset_pxtodx_34"
+                    android:paddingTop="@dimen/offset_pxtodx_34">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_pxtodx_16"
+                        android:layout_weight="0.1"
+                        android:text="@string/str_push_set"
+                        android:textColor="@color/black_color"
+                        android:textSize="@dimen/font_size_pxtosp_34" />
+
+                    <CheckBox
+                        android:id="@+id/push_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/check_on"
+                        android:button="@null"
+                        android:checked="true"
+                        android:paddingRight="@dimen/offset_pxtodx_16" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_pxtodx_34">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_pxtodx_34"
+                    android:paddingRight="@dimen/offset_pxtodx_34"
+                    android:paddingTop="@dimen/offset_pxtodx_34">
+
+                    <TextView
+                        android:id="@+id/comment_set"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_pxtodx_16"
+                        android:layout_weight="0.1"
+                        android:text="@string/str_comment_set"
+                        android:textColor="@color/black_color"
+                        android:textSize="@dimen/font_size_pxtosp_34" />
+
+                    <CheckBox
+                        android:id="@+id/comment_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/check_on"
+                        android:button="@null"
+                        android:checked="true"
+                        android:paddingRight="@dimen/offset_pxtodx_16" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/offset_pxtodx_30"
+                android:layout_marginLeft="@dimen/my_order_remind_movie_grade_width"
+                android:layout_marginRight="@dimen/offset_pxtodx_34"
+                android:layout_marginTop="@dimen/offset_pxtodx_34"
+                android:text="@string/str_broadcast_type"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_pxtosp_30" />
+
+            &lt;!&ndash; 广播推送 &ndash;&gt;
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/offset_17dp"
+                android:paddingRight="@dimen/offset_17dp"
+                android:background="@color/white"
+                >
+
+                <TextView
+                    android:id="@+id/tv_broadcast_push"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/offset_8dp"
+                    android:paddingTop="@dimen/offset_17dp"
+                    android:paddingBottom="@dimen/offset_17dp"
+                    android:layout_weight="0.1"
+                    android:textColor="@color/black_color"
+                    android:textSize="@dimen/font_size_normal_high_more"
+                    android:text="@string/broadcast_push"
+                    />
+
+                <CheckBox
+                    android:id="@+id/broadcast_push_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/check_on"
+                    android:button="@null"
+                    android:checked="true"
+                    android:paddingRight="@dimen/offset_8dp" />
+
+            </LinearLayout>-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/offset_pxtodx_30"
+                android:layout_marginLeft="@dimen/my_order_remind_movie_grade_width"
+                android:layout_marginRight="@dimen/offset_pxtodx_34"
+                android:layout_marginTop="@dimen/offset_pxtodx_34"
+                android:text="@string/str_system_notice"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_pxtosp_30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_pxtodx_34">
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_pxtodx_34"
+                    android:paddingRight="@dimen/offset_pxtodx_34"
+                    android:paddingTop="@dimen/offset_pxtodx_34">
+
+                    <TextView
+                        android:id="@+id/new_moive"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_pxtodx_16"
+                        android:layout_weight="0.1"
+                        android:text="@string/str_new_remind"
+                        android:textColor="@color/black_color"
+                        android:textSize="@dimen/font_size_pxtosp_34" />
+
+                    <CheckBox
+                        android:id="@+id/remind_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/check_on"
+                        android:button="@null"
+                        android:checked="true"
+                        android:paddingRight="@dimen/offset_pxtodx_16" />
+                </LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_1px"
+                    android:background="@color/color_d8d8d8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_pxtodx_34"
+                    android:paddingRight="@dimen/offset_pxtodx_34"
+                    android:paddingTop="@dimen/offset_pxtodx_34">
+
+                    <TextView
+                        android:id="@+id/version"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_pxtodx_16"
+                        android:layout_weight="0.1"
+                        android:text="@string/str_update_version"
+                        android:textColor="@color/black_color"
+                        android:textSize="@dimen/font_size_pxtosp_34" />
+
+                    <CheckBox
+                        android:id="@+id/update_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/check_off"
+                        android:button="@null"
+                        android:checked="false"
+                        android:paddingRight="@dimen/offset_pxtodx_16" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_1px"
+                    android:background="@color/color_d8d8d8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_pxtodx_34"
+                    android:paddingRight="@dimen/offset_pxtodx_34"
+                    android:paddingTop="@dimen/offset_pxtodx_34">
+
+                    <TextView
+                        android:id="@+id/city_change"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_pxtodx_16"
+                        android:layout_weight="0.1"
+                        android:text="@string/str_city_change_set"
+                        android:textColor="@color/black_color"
+                        android:textSize="@dimen/font_size_pxtosp_34" />
+
+                    <CheckBox
+                        android:id="@+id/city_change_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/check_off"
+                        android:button="@null"
+                        android:checked="false"
+                        android:paddingRight="@dimen/offset_pxtodx_16" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_1px"
+                    android:background="@color/color_d8d8d8" />
+
+                <LinearLayout
+                    android:id="@+id/personality_recommend_check_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/offset_pxtodx_34"
+                    android:paddingRight="@dimen/offset_pxtodx_34"
+                    android:paddingTop="@dimen/offset_pxtodx_34">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_pxtodx_16"
+                        android:layout_weight="0.1"
+                        android:text="@string/str_personality_recommend_set"
+                        android:textColor="@color/black_color"
+                        android:textSize="@dimen/font_size_pxtosp_34" />
+
+                    <CheckBox
+                        android:id="@+id/personality_recommend_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/check_off"
+                        android:button="@null"
+                        android:checked="true"
+                        android:paddingRight="@dimen/offset_pxtodx_16" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_6px"
+                android:background="@drawable/line_bottom" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

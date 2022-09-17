@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <!--    <data>-->
+
+    <!--        <import type="com.kotlin.android.ktx.ext.core.Direction" />-->
+
+    <!--        <variable-->
+    <!--            name="data"-->
+    <!--            type="com.kotlin.android.home.ui.findmovie.adapter.FilmListBinder.FilmListItemBinder" />-->
+
+    <!--        <import type="android.view.View" />-->
+    <!--    </data>-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_99000000">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff" />
+    </FrameLayout>
+</layout>

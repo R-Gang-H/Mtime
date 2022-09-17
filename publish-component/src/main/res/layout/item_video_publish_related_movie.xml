@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.publish.component.ui.binder.RelateMovieBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginRight="@dimen/offset_20px"
+        android:layout_marginBottom="@dimen/offset_20px"
+        android:id="@+id/relateRootCL"
+        color="@{@color/color_e9f6fc}"
+        cornerRadius="@{15}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:drawableLeft="@drawable/ic_relate_movie"
+            android:drawablePadding="@dimen/offset_12px"
+            android:layout_marginLeft="@dimen/offset_16px"
+            android:textColor="@color/color_20a0da"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="@dimen/offset_12sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:id="@+id/movieNameTv"
+            android:text="@{data.bean.name}"
+            tools:text = "胭脂扣"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:layout_marginBottom="@dimen/offset_10px"
+            app:layout_constraintRight_toLeftOf="@id/deleteIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        
+        <androidx.appcompat.widget.AppCompatImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/movieNameTv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/offset_16px"
+            android:id="@+id/deleteIv"
+            android:onClick="@{view->data.onClick(view)}"
+            android:layout_marginRight="@dimen/offset_16px"
+            android:src="@drawable/ic_relate_movie_delete"
+            android:layout_width="@dimen/offset_32px"
+            android:layout_height="@dimen/offset_32px"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

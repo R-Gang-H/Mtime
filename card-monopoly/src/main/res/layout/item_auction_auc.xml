@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.kotlin.android.card.monopoly.adapter.AuctionBinder" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/itemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <LinearLayout
+            android:id="@+id/llHeaderInfo"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="卖家名称是我" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="@dimen/offset_10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="倒计时:" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_2px"
+            android:background="@color/color_e1e1e1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/flImageContainer"
+                android:layout_width="67dp"
+                android:layout_height="wrap_content">
+
+                <com.kotlin.android.card.monopoly.widget.card.image.CardImageView
+                    android:id="@+id/cardImageView"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content" />
+
+                <com.kotlin.android.card.monopoly.widget.card.image.SuitImageView
+                    android:id="@+id/suitImageView"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llPriceArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/flImageContainer"
+                android:layout_alignBottom="@+id/flImageContainer"
+                android:layout_toEndOf="@+id/flImageContainer"
+                android:orientation="vertical"
+                android:paddingStart="5dp">
+
+                <com.kotlin.android.card.monopoly.widget.DesTextView
+                    android:id="@+id/desNameView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_20dp" />
+
+                <com.kotlin.android.card.monopoly.widget.DesTextView
+                    android:id="@+id/desStartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_20dp" />
+
+                <com.kotlin.android.card.monopoly.widget.DesTextView
+                    android:id="@+id/desFixView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_20dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_12px">
+
+                    <TextView
+                        android:id="@+id/btnCancel"
+                        android:layout_width="@dimen/offset_160px"
+                        android:layout_height="@dimen/offset_60px"
+                        android:layout_gravity="end|center_vertical"
+                        android:gravity="center"
+                        android:text="@string/str_cancel_auction"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@dimen/offset_15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/llPickCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tipsView"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:textColor="@color/color_feb12a"
+                            android:textSize="@dimen/offset_10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/btnPickCard"
+                            android:layout_width="@dimen/offset_160px"
+                            android:layout_height="@dimen/offset_60px"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginStart="@dimen/offset_20px"
+                            android:gravity="center"
+                            android:textColor="@color/color_ffffff"
+                            android:textSize="@dimen/offset_15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

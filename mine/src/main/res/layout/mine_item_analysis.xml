@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.kotlin.android.mine.ui.datacenter.fragment.EarthViewModelKt" />
+
+        <variable
+            name="analysisBinder"
+            type="com.kotlin.android.mine.binder.AnalysisBinder" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlItemAnalysis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/offset_15dp"
+        android:paddingTop="@dimen/offset_10dp"
+        android:paddingEnd="@dimen/offset_10dp"
+        android:paddingBottom="@dimen/offset_10dp">
+
+        <include
+            android:id="@+id/singleAnalys"
+            layout="@layout/mine_common_single_analys"
+            bind:analysisBinder="@{analysisBinder}" />
+
+        <LinearLayout
+            android:id="@+id/amountBox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_66px"
+            android:layout_below="@id/singleAnalys"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:background="@color/color_20a0da_alpha_5"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPlayback"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text='@{"阅读：" +EarthViewModelKt.formatNumber(analysisBinder.bean.interactive.viewCount)}'
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="阅读量：36" />
+
+            <View
+                android:id="@+id/v_line"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/offset_10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/color_e9e5dd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvComment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text='@{"评论："+EarthViewModelKt.formatNumber(analysisBinder.bean.interactive.commentCount)}'
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="评论量：6" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/offset_10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/color_e9e5dd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPraise"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text='@{"点赞："+EarthViewModelKt.formatNumber(analysisBinder.bean.interactive.praiseUpCount)}'
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="点赞量：18" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/offset_10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/color_e9e5dd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCollect"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text='@{"收藏："+EarthViewModelKt.formatNumber(analysisBinder.bean.interactive.collectCount)}'
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="收藏量：2" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.person.bean.UserHomeViewBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:background="@color/transparent"
+        android:layout_height="@dimen/offset_88px">
+
+        <ImageView
+            android:id="@+id/mTitleBackIv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_title_bar_36_back_reversed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.widget.views.CircleImageView
+            android:id="@+id/iv_toolbar_pic"
+            load_image="@{data.avatarUrl}"
+            load_image_height="@{30}"
+            load_image_width="@{30}"
+            load_image_default_img="@{@drawable/default_user_head}"
+            android:layout_width="@dimen/offset_60px"
+            android:layout_height="@dimen/offset_60px"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:src="@drawable/icon_exception"
+            android:visibility="invisible"
+            app:civ_border_color="@color/color_ffffff"
+            app:civ_border_overlay="true"
+            app:civ_border_width="@dimen/offset_2px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mTitleBackIv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.widget.marquee.MarqueeTextView
+            android:id="@+id/tv_toolbar_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:text="@{data.nikeName}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_18sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="ssssxxxxxxxxxxxxxxxxxxxxxxxxxxxxsssssssssssss"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv_toolbar_pic"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--        android:src="@drawable/ic_write"-->
+<!--        android:visibility="@{data.isSelf?View.VISIBLE:View.INVISIBLE}"-->
+        <ImageView
+            android:id="@+id/mTitleWriteIv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/offset_8px"
+            android:src="@drawable/ic_write"
+            android:paddingTop="@dimen/offset_15px"
+            android:paddingRight="@dimen/offset_20px"
+            android:paddingLeft="@dimen/offset_20px"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        观影时间轴-->
+<!--        android:visibility="@{data.isSelf?View.VISIBLE:View.INVISIBLE}"-->
+        <TextView
+            android:id="@+id/timeZone"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_25dp"
+            android:paddingRight="@dimen/offset_24px"
+            android:paddingLeft="@dimen/offset_24px"
+            android:text="@string/community_time_zone"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{data.isSelf?View.VISIBLE:View.INVISIBLE}"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/community_title"
+            android:textColor="@color/color_1e2737"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

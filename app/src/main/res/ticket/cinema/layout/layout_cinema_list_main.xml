@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_cinema_list_main_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- 定位失败+影院列表 -->
+    <com.aspsine.irecyclerview.IRecyclerView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout_cinema_list_irecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/offset_40dp"
+        android:background="@color/white"
+        app:loadMoreEnabled="false"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        app:refreshEnabled="true"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"
+        />
+
+    <!-- 空提示 -->
+    <include
+        layout="@layout/layout_cinema_list_empty"
+        android:visibility="gone"
+        />
+
+    <!-- 排序和筛选 -->
+    <include
+        layout="@layout/layout_cinema_list_filter"
+        />
+
+</RelativeLayout>

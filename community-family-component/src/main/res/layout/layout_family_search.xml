@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/offset_88px"
+    android:paddingTop="@dimen/offset_10px"
+    android:paddingBottom="@dimen/offset_10px"
+    android:background="@color/color_ffffff"
+    >
+
+    <EditText
+        android:id="@+id/mFamilySearchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_62px"
+        android:paddingTop="@dimen/offset_12px"
+        android:paddingLeft="@dimen/offset_32px"
+        android:paddingRight="@dimen/offset_80px"
+        android:paddingBottom="@dimen/offset_12px"
+        android:drawableLeft="@drawable/ic_family_search"
+        android:drawablePadding="@dimen/offset_12px"
+        android:hint="@string/family_search_hint"
+        android:textSize="@dimen/offset_13sp"
+        android:textColor="@color/color_303a47"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:imeOptions="actionSearch"
+        android:textCursorDrawable="@drawable/common_shape_edit_text_cursor"
+        android:background="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:background="@color/color_1a8798af"
+        tools:text="昵称"
+        />
+
+    <ImageView
+        android:id="@+id/mFamilySearchDeleteIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_family_del"
+        android:layout_gravity="center|right"
+        android:paddingRight="@dimen/offset_30px"
+        android:paddingLeft="@dimen/offset_20px"
+        android:paddingTop="@dimen/offset_20px"
+        android:paddingBottom="@dimen/offset_20px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

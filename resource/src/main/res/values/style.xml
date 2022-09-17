@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主题样式 -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textSize">@dimen/text_middle_size</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/color_20a0da</item>
+        <item name="colorPrimaryDark">@color/color_20a0da</item>
+        <item name="colorAccent">@color/color_20a0da</item>
+        <item name="android:windowBackground">@color/color_ffffff</item>
+        <item name="android:statusBarColor">@color/color_ffffff</item>
+    </style>
+
+    <!-- 主题样式(状态栏完全沉浸式) -->
+    <style name="AppThemeNoFitsSystemWindows" parent="AppTheme">
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- 沉浸式 -->
+    <style name="ImmersiveTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/color_ffffff</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:textSize">@dimen/text_middle_size</item>
+        <item name="colorPrimary">@color/color_20a0da</item>
+        <item name="colorPrimaryDark">@color/color_20a0da</item>
+        <item name="colorAccent">@color/color_20a0da</item>
+    </style>
+
+    <!-- 沉浸式 Dialog -->
+    <style name="ImmersiveDialog" parent="AlertDialog.AppCompat">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
+    <style name="ImmersiveDialogKeep" parent="ImmersiveDialog">
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="popWindowAnimStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_popup_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_popup_exit</item>
+    </style>
+
+    <style name="progressBarStyle" parent="@android:style/Theme.Dialog">
+        <!-- 去黑边 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置是否可滑动 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 设置是否透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景 -->
+        <item name="android:background">@null</item>
+        <!-- 窗口背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否变暗 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 点击空白部分activity不消失 代码里实现 -->
+<!--        <item name="android:windowCloseOnTouchOutside">false</item>-->
+    </style>
+
+    <!-- 自定义仿IOS的ActionSheet底部Dialog的样式 ，有模糊效果 -->
+    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/common_comment_anim_style</item>
+    </style>
+    <style name="common_comment_anim_style">
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定消失的动画xml -->
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+    </style>
+
+    <style name="LeftDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_left_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_left_exit</item>
+    </style>
+
+    <style name="TopDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_top_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_top_exit</item>
+    </style>
+
+    <style name="RightDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_right_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_right_exit</item>
+    </style>
+
+    <style name="BottomDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_exit</item>
+    </style>
+
+</resources>

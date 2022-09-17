@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.family.component.ui.manage.adapter.FamilyCategoryItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        >
+
+        <!-- 一级分类 -->
+        <TextView
+            android:id="@+id/mItemFamilyCategoryPrimaryNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/offset_40px"
+            android:paddingLeft="@dimen/offset_30px"
+            android:paddingRight="@dimen/offset_30px"
+            android:paddingBottom="@dimen/offset_30px"
+            android:drawableRight="@drawable/ic_family_permisson_check"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:text="@{data.bean.primaryCategoryName}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="主分类名称"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            app:layout_constraintTop_toBottomOf="@+id/mItemFamilyCategoryPrimaryNameTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:background="@color/color_f3f3f4"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

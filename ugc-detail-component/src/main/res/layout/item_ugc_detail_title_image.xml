@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.bean.UgcImageViewBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchMatch"
+        android:background="@color/color_000000"
+        >
+
+<!--        图片-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:scaleType="fitCenter"
+            android:id="@+id/ugcIv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            load_image="@{data.ugcPic}"
+            load_image_height="@{575}"
+            load_image_width="@{360}"
+
+            style="@style/MatchMatch"/>
+
+<!--&lt;!&ndash;        图片对应文案 待UI设计稿改动&ndash;&gt;-->
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            android:text="@{data.ugcContent}"-->
+<!--            style="@style/MatchWrap"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

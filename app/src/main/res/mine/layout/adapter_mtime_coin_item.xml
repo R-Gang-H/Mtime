@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hole_layout"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginRight="@dimen/offset_10dp"
+        android:layout_marginTop="@dimen/offset_15dp"
+        android:background="@drawable/coin_bg"
+        android:orientation="horizontal">
+
+        <com.mtime.widgets.NetworkImageView
+            android:id="@+id/coin_imv"
+            android:layout_width="@dimen/offset_70dp"
+            android:layout_height="@dimen/offset_70dp"
+            android:layout_marginLeft="@dimen/offset_5dp"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:layout_marginTop="@dimen/offset_5dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/offset_16dp"
+            android:paddingTop="@dimen/offset_9dp">
+
+            <TextView
+                android:id="@+id/coin_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="《时光旅客》观影券"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_size_normal_more"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/offset_10dp"
+                        android:paddingRight="@dimen/offset_2dp"
+                        android:src="@drawable/money_sign_red"/>
+
+                    <TextView
+                        android:id="@+id/money_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxEms="3"
+                        android:maxLines="1"
+                        android:text="20.5"
+                        android:textColor="@color/color_f15353"
+                        android:textSize="@dimen/font_size_30sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/money_off_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/offset_4dp"
+                        android:text="满999元可用"
+                        android:textColor="@color/color_movie_main_999999"
+                        android:textSize="@dimen/font_size_11sp"/>
+
+                    <TextView
+                        android:id="@+id/coin_num_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxEms="8"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/offset_4dp"
+                        android:text="200000时光币兑换"
+                        android:textColor="@color/color_f15353"
+                        android:textSize="@dimen/font_size_11sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/exchange_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coin_red_bg">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/offset_9dp"
+                android:src="@drawable/coin_divider_line"/>
+
+            <TextView
+                android:id="@+id/exchange_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/exchange_imediate_str"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_13sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 分隔线 -->
+    <ImageView
+        android:id="@+id/iv_end"
+        android:layout_marginTop="@dimen/offset_15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/offset_15dp"
+        android:src="@drawable/end_of_item"/>
+
+</LinearLayout>

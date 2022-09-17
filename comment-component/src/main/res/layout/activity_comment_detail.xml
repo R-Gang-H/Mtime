@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail.CommentDetailActivity">
+
+        <com.kotlin.android.comment.component.widget.PublishCommentView
+            android:id="@+id/barButton"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="@id/barButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/stateView"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1">
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/smartRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentDetailRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <!--        显示要上传的图片-->
+        <com.kotlin.android.comment.component.widget.CommentImageLayout
+            android:layout_width="@dimen/offset_248px"
+            android:id="@+id/commentImgLayout"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/barButton"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_188px"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

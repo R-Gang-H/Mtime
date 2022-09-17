@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movieRootView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv"
+            android:layout_width="@dimen/offset_10dp"
+            android:layout_height="@dimen/offset_14dp"
+            android:layout_marginLeft="@dimen/offset_9px"
+            android:layout_marginRight="@dimen/offset_9px"
+            android:scaleType="centerCrop" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

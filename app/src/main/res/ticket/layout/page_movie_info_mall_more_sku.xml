@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/offset_pxtodx_24"
+    android:paddingLeft="@dimen/offset_pxtodx_20"
+    android:paddingRight="@dimen/offset_pxtodx_20">
+
+    <RelativeLayout
+        android:id="@+id/sku_more_layout1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/sku_icon1"
+            android:layout_width="@dimen/offset_pxtodx_180"
+            android:layout_height="@dimen/offset_pxtodx_180"
+            android:background="@drawable/image_border"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/offset_pxtodx_2"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/default_image" />
+
+        <TextView
+            android:id="@+id/sku_icon_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#28C8DC"
+            android:paddingLeft="@dimen/offset_pxtodx_5"
+            android:paddingRight="@dimen/offset_pxtodx_5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_24"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sku_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_icon1"
+            android:ellipsize="end"
+            android:lines="2"
+            android:paddingBottom="@dimen/offset_pxtodx_6"
+            android:paddingTop="@dimen/offset_pxtodx_18"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+
+        <TextView
+            android:id="@+id/sku_mtime_price1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_name1"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/offset_pxtodx_10"
+            android:singleLine="true"
+            android:textColor="@color/color_ff8600"
+            android:textSize="@dimen/font_size_pxtosp_34" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_name1"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/sku_mtime_price1"
+            android:singleLine="true"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_pxtosp_34"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sku_more_layout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_pxtodx_20"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/sku_icon2"
+            android:layout_width="@dimen/offset_pxtodx_180"
+            android:layout_height="@dimen/offset_pxtodx_180"
+            android:background="@drawable/image_border"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/offset_pxtodx_2"
+             android:scaleType="centerCrop"
+            app:srcCompat="@drawable/default_image" />
+
+        <TextView
+            android:id="@+id/sku_icon_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#28C8DC"
+            android:paddingLeft="@dimen/offset_pxtodx_5"
+            android:paddingRight="@dimen/offset_pxtodx_5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_24"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sku_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_icon2"
+            android:ellipsize="end"
+            android:lines="2"
+            android:paddingBottom="@dimen/offset_pxtodx_6"
+            android:paddingTop="@dimen/offset_pxtodx_18"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+
+        <TextView
+            android:id="@+id/sku_mtime_price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_name2"
+            android:paddingRight="@dimen/offset_pxtodx_10"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@color/color_ff8600"
+            android:textSize="@dimen/font_size_pxtosp_34" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_name2"
+            android:layout_toRightOf="@id/sku_mtime_price2"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_pxtosp_34"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/sku_more_layout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_pxtodx_20"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/sku_icon3"
+            android:layout_width="@dimen/offset_pxtodx_180"
+            android:layout_height="@dimen/offset_pxtodx_180"
+            android:background="@drawable/image_border"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/offset_pxtodx_2"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/default_image" />
+
+        <TextView
+            android:id="@+id/sku_icon_txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#28C8DC"
+            android:paddingLeft="@dimen/offset_pxtodx_5"
+            android:paddingRight="@dimen/offset_pxtodx_5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_24"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sku_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_icon3"
+            android:ellipsize="end"
+            android:lines="2"
+            android:paddingBottom="@dimen/offset_pxtodx_6"
+            android:paddingTop="@dimen/offset_pxtodx_18"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+
+        <TextView
+            android:id="@+id/sku_mtime_price3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_name3"
+            android:paddingRight="@dimen/offset_pxtodx_10"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@color/color_ff8600"
+            android:textSize="@dimen/font_size_pxtosp_34" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sku_name3"
+            android:layout_toRightOf="@id/sku_mtime_price3"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_pxtosp_34"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

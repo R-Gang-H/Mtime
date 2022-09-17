@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    返回按钮、标题、在线观看人数、直播标识、分享-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/upControllerCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_player_head_title_bg"
+        android:paddingLeft="@dimen/offset_10px"
+        android:paddingTop="@dimen/offset_6px"
+        android:paddingRight="@dimen/offset_10px"
+        android:paddingBottom="@dimen/offset_6px"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!--    返回按钮-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/offset_64px"
+            android:layout_height="@dimen/offset_64px"
+            android:layout_marginTop="@dimen/offset_60px"
+            android:paddingLeft="@dimen/offset_24px"
+            android:paddingTop="@dimen/offset_10px"
+            android:paddingRight="@dimen/offset_20px"
+            android:paddingBottom="@dimen/offset_10px"
+            android:src="@drawable/icon_back"
+            android:tint="@color/color_e3e5ed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        直播标志-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/liveLabelCL"
+            android:layout_width="@dimen/offset_140px"
+            android:layout_height="@dimen/offset_44px"
+            android:layout_marginTop="@dimen/offset_60px"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/backBtn"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/liveLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/offset_10px"
+                android:gravity="center"
+                android:textColor="@color/color_f2f3f6"
+                android:textSize="@dimen/font_size_sp_13"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        在线观看人数-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/onLineNumTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_12px"
+            android:layout_marginTop="@dimen/offset_65px"
+            android:drawableLeft="@drawable/ic_online_person_num"
+            android:drawablePadding="@dimen/offset_6px"
+            android:gravity="center"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/font_size_sp_12"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/liveLabelCL"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        视频标题-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            android:layout_width="0dp"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/offset_60px"
+            android:ellipsize="end"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/font_size_sp_15"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/offset_20px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/liveLabelCL"
+            app:layout_constraintRight_toLeftOf="@id/shareIv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--分享按钮-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/shareIv"
+            android:layout_width="@dimen/offset_40px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_70px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:src="@drawable/ic_ver_more"
+            android:tint="@color/color_ffffff"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    下方控制位-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <!--        切换机位-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/changeCameraStandCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_b3000000"
+            android:paddingLeft="@dimen/offset_20px"
+            android:paddingBottom="@dimen/offset_10px"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/changeCameraStandTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1"
+                android:text="@string/live_component_change_camera_stand"
+                android:textColor="@color/color_f2f3f6"
+                android:textSize="@dimen/font_size_sp_11"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            机位列表-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cameraStandRv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_10px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/changeCameraStandTv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonsCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/changeCameraStandCL">
+            <!--        播放按钮-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playerIv"
+                android:layout_width="@dimen/offset_44px"
+                android:layout_height="@dimen/offset_40px"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginBottom="@dimen/offset_24px"
+                android:background="@drawable/ic_selector_live_play_state_icon"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/playerNextIv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--        下一个按钮-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playerNextIv"
+                android:layout_width="@dimen/offset_36px"
+                android:layout_height="@dimen/offset_26px"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginBottom="@dimen/offset_24px"
+                android:background="@drawable/ic_play_next"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/playerIv"
+                app:layout_constraintRight_toLeftOf="@id/startDurationTv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--        开始播放进度-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/startDurationTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginBottom="@dimen/offset_24px"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_size_sp_10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/playerNextIv"
+                app:layout_constraintRight_toLeftOf="@id/seekBar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_14px"
+                android:layout_marginBottom="@dimen/offset_24px"
+                android:max="100"
+                android:maxHeight="@dimen/offset_2px"
+                android:minHeight="@dimen/offset_2px"
+                android:progressDrawable="@drawable/ic_live_player_sdk_seekbar_progress_drawable"
+                android:thumb="@drawable/ic_player_seek_thumb"
+                android:thumbOffset="@dimen/offset_20px"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/startDurationTv"
+                app:layout_constraintRight_toLeftOf="@id/remainDurationTv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--        剩余播放进度-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/remainDurationTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/offset_24px"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_size_sp_10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/seekBar"
+                app:layout_constraintRight_toLeftOf="@id/rightControllerCl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--        全屏状态下聊天-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/chatTv"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_50px"
+                android:layout_marginLeft="@dimen/offset_70px"
+                android:layout_marginBottom="@dimen/offset_24px"
+                android:background="@color/color_a86e6e6e"
+                android:gravity="center_vertical"
+                android:hint="@string/live_component_full_screen_chat"
+                android:imeOptions="actionDone"
+                android:includeFontPadding="false"
+                android:maxEms="20"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/offset_43px"
+                android:paddingRight="@dimen/offset_43px"
+                android:textColor="@color/color_5ef2f3f6"
+                android:textSize="@dimen/font_size_sp_17"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintLeft_toRightOf="@id/startDurationTv"
+                app:layout_constraintRight_toLeftOf="@id/rightControllerCl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--        弹幕开关、切换机位、清晰度、全屏按钮-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rightControllerCl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginBottom="@dimen/offset_24px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/remainDurationTv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--            全屏按钮-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/screenToggleIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_30px"
+                    android:gravity="center"
+                    android:src="@mipmap/ic_screen_toggle_expand"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--            切换机位开关-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cameraStandToggleIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/offset_10px"
+                    android:layout_marginRight="@dimen/offset_50px"
+                    android:gravity="center"
+                    android:src="@mipmap/ic_camera_stand_toggle"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/screenToggleIv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--            弹幕开关-->
+                <androidx.appcompat.widget.AppCompatToggleButton
+                    android:id="@+id/danmuToggleIv"
+                    android:layout_width="@dimen/offset_58px"
+                    android:layout_height="@dimen/offset_32px"
+                    android:layout_marginRight="@dimen/offset_60px"
+                    android:background="@drawable/ic_danmu_selector"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:textOff=""
+                    android:textOn=""
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/cameraStandToggleIv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--            清晰度-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/definitionTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/offset_60px"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/offset_18px"
+                    android:paddingTop="@dimen/offset_4px"
+                    android:paddingRight="@dimen/offset_18px"
+                    android:paddingBottom="@dimen/offset_4px"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/font_size_sp_11"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/danmuToggleIv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    点击收起机位-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/changeCameraStandTipsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/offset_70px"
+        android:layout_marginBottom="@dimen/offset_10px"
+        android:text="@string/live_component_expand_change_camera_stand_list"
+        android:textColor="@color/color_cbd0d7"
+        android:textSize="@dimen/offset_12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottomCL"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

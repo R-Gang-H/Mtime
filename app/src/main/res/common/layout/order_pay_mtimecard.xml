@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/order_pay_mtimecard_item"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/listview_item_bg_selector"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingLeft="@dimen/offset_34px"
+              android:paddingTop="@dimen/offset_22px"
+              android:paddingRight="@dimen/offset_34px"
+              android:paddingBottom="@dimen/offset_22px">
+
+    <CheckBox
+        android:id="@+id/order_pay_mtimecard_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:button="@drawable/checkbox_orange_h50_selector"
+        android:paddingLeft="@dimen/offset_10dp"/>
+
+    <TextView
+        android:id="@+id/order_pay_mtimecard_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/font_size_normal_high"/>
+
+    <TextView
+        android:id="@+id/order_pay_mtimecard_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bt_solid_orange_w138_h66"
+        android:gravity="center"
+        android:text="@string/str_add"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_normal_more"/>
+</LinearLayout>

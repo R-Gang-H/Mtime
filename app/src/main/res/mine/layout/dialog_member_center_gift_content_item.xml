@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/offset_15dp"
+    android:gravity="center_vertical"
+    >
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/dialog_member_center_gift_content_ticket"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_15dp"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/font_size_pxtosp_30"
+        android:maxWidth="@dimen/offset_160dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="M2黄金会员生日礼包等级礼包购物券购票券什么的"
+        />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_5dp"
+        android:textColor="@color/color_ff5043"
+        android:textSize="@dimen/font_size_pxtosp_30"
+        tools:text="x10"
+        />
+
+</LinearLayout>

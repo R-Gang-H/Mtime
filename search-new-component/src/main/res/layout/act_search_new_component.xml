@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.kotlin.android.widget.autohintlayout.AutoHintLayout
+            android:id="@+id/mAutoHintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_32px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_15px"
+            android:orientation="horizontal"
+            >
+
+            <com.kotlin.android.widget.search.SearchEditText
+                android:id="@+id/searchView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_64px"
+                android:layout_weight="1"
+                android:maxLength="100" />
+
+            <TextView
+                android:id="@+id/mSearchCancelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="@dimen/offset_12px"
+                android:textSize="@dimen/offset_17sp"
+                android:textColor="@color/color_20a0da"
+                android:text="@string/search_newcomponent_search_cancel"
+                />
+
+        </com.kotlin.android.widget.autohintlayout.AutoHintLayout>
+
+        <FrameLayout
+            android:id="@+id/mFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>

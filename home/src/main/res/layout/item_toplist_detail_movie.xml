@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListDetailMovieItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_60px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:onClick="@{() -> data.ticketProvider.startMovieDetailsActivity(data.bean.movieInfo.movieId) }"
+        >
+
+        <!-- 封面图 排名 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemToplistDetailMovieImgCl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <!-- 封面图 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mItemToplistDetailMovieImgCardView"
+                style="@style/WrapWrap"
+                app:cardCornerRadius="@dimen/offset_8px"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/mItemToplistDetailMovieImgIv"
+                    android:layout_width="@dimen/offset_130px"
+                    android:layout_height="@dimen/offset_194px"
+                    android:background="@drawable/default_image"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    load_image="@{data.bean.movieInfo.img}"
+                    load_image_width="@{65}"
+                    load_image_height="@{97}"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 排名 -->
+            <com.kotlin.android.widget.textview.SpacingTextView
+                android:id="@+id/mItemToplistDetailMovieRankTv"
+                android:layout_width="@dimen/offset_30px"
+                android:layout_height="@dimen/offset_30px"
+                android:layout_marginStart="@dimen/offset_10px"
+                android:paddingLeft="@dimen/offset_2px"
+                android:gravity="center"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_10sp"
+                android:textStyle="bold|italic"
+                android:text="@{String.valueOf(data.bean.rank)}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="1"
+                tools:background="@drawable/ic_toplist_movie_first"
+                />
+
+            <!-- 想看 -->
+            <TextView
+                android:id="@+id/mItemToplistDetailMovieWantSeeBtn"
+                android:layout_width="@dimen/offset_116px"
+                android:layout_height="@dimen/offset_50px"
+                android:layout_marginTop="@dimen/offset_38px"
+                android:gravity="center"
+                android:background="@color/color_20a0da"
+                android:textSize="@dimen/offset_14sp"
+                android:textColor="@color/color_ffffff"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailMovieImgCardView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="@string/home_want_see_btn_text"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 播放按钮 名称 评分 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemToplistDetailMovieNameCl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_20px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mItemToplistDetailMovieImgCl"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 播放按钮 -->
+            <ImageView
+                android:id="@+id/mItemToplistDetailMoviePlayIv"
+                android:layout_width="@dimen/offset_36px"
+                android:layout_height="@dimen/offset_36px"
+                android:layout_marginEnd="@dimen/offset_10px"
+                android:contentDescription="@string/app_name"
+                android:visibility="@{ data.bean.movieInfo.playState == 1 ? View.VISIBLE : View.GONE }"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/mItemToplistDetailMovieNameTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_toplist_movie_play"
+                />
+
+            <!-- 名称 -->
+            <TextView
+                android:id="@+id/mItemToplistDetailMovieNameTv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_17sp"
+                android:text="@{data.bean.movieInfo.movieName}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemToplistDetailMoviePlayIv"
+                app:layout_constraintRight_toLeftOf="@+id/mItemToplistDetailMovieRatingTv"
+                tools:text="复仇者联盟复仇者联盟复仇者联盟复仇者联盟复仇者联盟复仇者联盟"
+                />
+
+            <!-- 评分 -->
+            <com.kotlin.android.widget.textview.SpacingTextView
+                android:id="@+id/mItemToplistDetailMovieRatingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@{data.bean.movieInfo.showScore}"
+                tools:text="8.7"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 导演 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailMovieDirectorTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_11sp"
+            android:text='@{@string/toplist_director(data.bean.movieInfo.director)}'
+            android:visibility="@{data.bean.movieInfo.hasDirector() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailMovieNameCl"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailMovieNameCl"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="导演：XXX"
+            />
+
+        <!-- 主演 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailMovieActorTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text='@{@string/toplist_actor(data.bean.movieInfo.actors)}'
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_11sp"
+            android:visibility="@{data.bean.movieInfo.hasActor() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailMovieDirectorTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailMovieNameCl"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="主演：XXX"
+            />
+
+        <!-- 上映日期 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailMovieReleaseDateTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_20px"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_11sp"
+            android:text='@{@string/toplist_release_date(data.bean.movieInfo.releaseDate)}'
+            android:visibility="@{data.bean.movieInfo.hasReleaseDate() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailMovieActorTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailMovieNameCl"
+            tools:text="上映日期：2020年05月"
+            tools:visibility="visible"
+            />
+
+        <!-- 上映国家 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailMovieLocationTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_6px"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_11sp"
+            android:text="@{data.bean.movieInfo.releaseLocation}"
+            android:visibility="@{data.bean.movieInfo.showReleaseLocation() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailMovieActorTv"
+            app:layout_constraintLeft_toRightOf="@+id/mItemToplistDetailMovieReleaseDateTv"
+            tools:text="法国"
+            />
+
+        <!-- 获奖记录 -->
+        <TextView
+            android:id="@+id/mItemToplistDetailMovieAwardTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_11px"
+            android:drawableLeft="@drawable/ic_toplist_movie_award"
+            android:drawablePadding="@dimen/offset_2px"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_feb12a"
+            android:textSize="@dimen/offset_12sp"
+            android:textStyle="bold"
+            android:text="@{data.bean.movieInfo.award}"
+            android:visibility="@{data.bean.movieInfo.hasAward() ? View.VISIBLE : View.GONE}"
+            tools:text="获奖情况获奖情况获奖情况获奖情况获奖情况获奖情况获奖情况获奖情况"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailMovieReleaseDateTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailMovieNameCl"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <!-- 评语 api控制默认内容 -->
+        <!-- todo 用ExpandableTextView -->
+        <TextView
+            android:id="@+id/mItemToplistDetailMovieDesTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:paddingTop="@dimen/offset_12px"
+            android:paddingBottom="@dimen/offset_12px"
+            android:paddingLeft="@dimen/offset_15px"
+            android:paddingRight="@dimen/offset_15px"
+            android:background="@color/color_f2f3f6"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:text='@{@string/toplist_des(data.bean.description != null ? data.bean.description : "")}'
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistDetailMovieAwardTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistDetailMovieNameCl"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="评语：不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.live.component.ui.adapter.LiveSharePosterItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mItemLiveSharePostLayout"
+        style="@style/MatchWrap"
+        android:onClick="@{view -> data.onClick(view)}"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mItemLiveSharePostPlatIv"
+            android:layout_width="@dimen/offset_94px"
+            android:layout_height="@dimen/offset_94px"
+            android:src="@{data.bean.platformDrawable}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:src="@mipmap/ic_wechat"
+            tools:ignore="MissingConstraints"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mItemLiveSharePostPlatTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/font_size_sp_11"
+            android:text="@{data.bean.platformName}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemLiveSharePostPlatIv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="微信"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

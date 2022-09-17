@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="binder"
+            type="com.kotlin.android.mine.binder.CreatorTaskItemBinder" />
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.mine.NoviceTaskInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_url"
+                load_image="@{bean.appLogoUrl}"
+                load_image_default_img="@{@drawable/icon_article}"
+                load_image_height="@{44}"
+                load_image_width="@{44}"
+                android:layout_width="@dimen/offset_44dp"
+                android:layout_height="@dimen/offset_44dp"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:layout_marginTop="@dimen/offset_13dp"
+                tools:src="@drawable/icon_article" />
+
+            <TextView
+                android:id="@+id/tv_taskName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_12dp"
+                android:layout_marginTop="@dimen/offset_16dp"
+                android:layout_toStartOf="@+id/tv_status"
+                android:layout_toEndOf="@id/iv_url"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="20"
+                android:text="@{bean.taskName}"
+                android:textSize="@dimen/offset_14sp"
+                tools:text="发布一个视频发布一个视频发布一个视频" />
+
+            <LinearLayout
+                android:id="@+id/mLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_15dp"
+                android:layout_below="@id/tv_taskName"
+                android:layout_marginStart="@dimen/offset_12dp"
+                android:layout_marginTop="@dimen/offset_3dp"
+                android:layout_marginBottom="@dimen/offset_5dp"
+                android:layout_toEndOf="@id/iv_url"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_factor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"完成" + bean.factor}'
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_11sp"
+                    tools:text="完成0/1" />
+
+                <TextView
+                    android:id="@+id/tv_create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_12dp"
+                    android:text="@string/mine_creat_num"
+                    android:textSize="@dimen/offset_11sp"
+                    android:visibility="@{bean.points==null ? View.GONE : View.VISIBLE}"
+                    tools:text="创作分" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_3dp"
+                    android:text='@{"+"+bean.points.toString()}'
+                    android:textColor="@color/color_1cacde"
+                    android:textSize="@dimen/offset_11sp"
+                    android:visibility="@{bean.points==null ? View.GONE : View.VISIBLE}"
+                    tools:text="+50" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mLinear"
+                android:layout_marginStart="@dimen/offset_12dp"
+                android:layout_marginBottom="@dimen/offset_10dp"
+                android:layout_toStartOf="@id/tv_status"
+                android:layout_toEndOf="@id/iv_url"
+                android:text="@{bean.details}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                tools:text="这是一段任务描述，宽固定，高自定义。这是111111111111111111111111111111111" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/offset_44px"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:clickable="@{bean.status == 4 || bean.status == 3 ? false : true}"
+                android:onClick="@{view -> binder.onClick(view)}"
+                android:paddingStart="@dimen/offset_12dp"
+                android:paddingTop="@dimen/offset_3dp"
+                android:paddingEnd="@dimen/offset_12dp"
+                android:paddingBottom="@dimen/offset_3dp"
+                android:textSize="@dimen/offset_14sp"
+                tools:text="去完成" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_status"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/offset_3dp"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:layout_marginBottom="@dimen/offset_15dp"
+                android:textColor="@color/color_ff5a36"
+                android:textSize="@dimen/offset_9sp"
+                tools:text="距结束:20:32:46" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1dp"
+            android:layout_marginStart="@dimen/offset_15dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:background="@color/color_f3f3f4" />
+
+    </LinearLayout>
+</layout>

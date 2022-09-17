@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+        <variable
+            name="homeProvider"
+            type="com.kotlin.android.app.router.provider.home.IHomeProvider" />
+        <variable
+            name="data"
+            type="com.kotlin.android.app.data.entity.toplist.TopListInfo" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_185px"
+        app:cardCornerRadius="@dimen/offset_10px"
+        app:cardElevation="0px"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="@{() -> homeProvider.startToplistDetailActivity(data.id)}"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <!-- 背景图片 -->
+            <ImageView
+                android:id="@+id/mItemToplistCategoryFirstBgIv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_0px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:scaleType="fitXY"
+                />
+
+            <!-- 海报渐变蒙层 -->
+            <View
+                android:id="@+id/mItemToplistCategoryFirstCoverView"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_0px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:background="@color/color_4e6382"
+                />
+
+            <!-- 榜单名第1行 -->
+            <TextView
+                android:id="@+id/mItemToplistCategoryFirstTitleOneTv"
+                android:layout_width="@dimen/offset_240px"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold"
+                android:text="@{data.title}"
+                tools:text="@string/toplist_movie_mtime_movie"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/mItemToplistCategoryFirstTitleTwoTv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+            <!-- 榜单名第2行 -->
+            <TextView
+                android:id="@+id/mItemToplistCategoryFirstTitleTwoTv"
+                android:layout_width="@dimen/offset_240px"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp"
+                android:textStyle="bold"
+                android:text="@{data.subTitle}"
+                tools:text="TOP100"
+                app:layout_constraintTop_toBottomOf="@+id/mItemToplistCategoryFirstTitleOneTv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <!-- 电影1 -->
+            <TextView
+                android:id="@+id/mItemToplistCategoryFirstOneTitleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_22px"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:maxWidth="@dimen/offset_300px"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_14sp"
+                android:text="@{data.itemNameByIndex(0)}"
+                tools:text="1.一二三四五六七八九十"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/mItemToplistCategoryFirstTwoTitleTv"
+                app:layout_constraintLeft_toRightOf="@+id/mItemToplistCategoryFirstTitleOneTv"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+            <com.kotlin.android.widget.textview.SpacingTextView
+                android:id="@+id/mItemToplistCategoryFirstOneScoreTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginRight="@dimen/offset_20px"
+                app:layout_constraintBaseline_toBaselineOf="@+id/mItemToplistCategoryFirstOneTitleTv"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold|italic"
+                android:text="@{data.itemShowScoreByIndex(0)}"
+                tools:text="9.8"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemToplistCategoryFirstOneTitleTv"
+                app:layout_constraintBottom_toBottomOf="@+id/mItemToplistCategoryFirstOneTitleTv"
+                />
+
+            <!-- 电影2 -->
+            <TextView
+                android:id="@+id/mItemToplistCategoryFirstTwoTitleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:maxWidth="@dimen/offset_300px"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_14sp"
+                android:text="@{data.itemNameByIndex(1)}"
+                tools:text="2.电影名电影名电影名电影名电影名电影名电影名电影名电影名"
+                app:layout_constraintTop_toBottomOf="@+id/mItemToplistCategoryFirstOneTitleTv"
+                app:layout_constraintBottom_toTopOf="@+id/mItemToplistCategoryFirstThreeTitleTv"
+                app:layout_constraintLeft_toLeftOf="@+id/mItemToplistCategoryFirstOneTitleTv"
+                />
+
+            <com.kotlin.android.widget.textview.SpacingTextView
+                android:id="@+id/mItemToplistCategoryFirstTwoScoreTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginRight="@dimen/offset_20px"
+                app:layout_constraintBaseline_toBaselineOf="@+id/mItemToplistCategoryFirstTwoTitleTv"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold|italic"
+                android:text="@{data.itemShowScoreByIndex(1)}"
+                tools:text="9.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemToplistCategoryFirstTwoTitleTv"
+                app:layout_constraintBottom_toBottomOf="@+id/mItemToplistCategoryFirstTwoTitleTv"
+                />
+
+            <!-- 电影3 -->
+            <TextView
+                android:id="@+id/mItemToplistCategoryFirstThreeTitleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:maxWidth="@dimen/offset_300px"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_14sp"
+                android:text="@{data.itemNameByIndex(2)}"
+                tools:text="3.电影名"
+                app:layout_constraintTop_toBottomOf="@+id/mItemToplistCategoryFirstTwoTitleTv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/mItemToplistCategoryFirstOneTitleTv"
+                />
+
+            <com.kotlin.android.widget.textview.SpacingTextView
+                android:id="@+id/mItemToplistCategoryFirstThreeScoreTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginRight="@dimen/offset_20px"
+                app:layout_constraintBaseline_toBaselineOf="@+id/mItemToplistCategoryFirstThreeTitleTv"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold|italic"
+                android:text="@{data.itemShowScoreByIndex(2)}"
+                tools:text="9.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mItemToplistCategoryFirstThreeTitleTv"
+                app:layout_constraintBottom_toBottomOf="@+id/mItemToplistCategoryFirstThreeTitleTv"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

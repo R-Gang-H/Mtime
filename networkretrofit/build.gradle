@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+//apply from: './nexus.gradle'
+
+android {
+    /**
+     * 资源同名问题处理
+     * 每个子模块给资源名添加前缀，具体做法是在每个子模块的build.gradle文件的android块内添加一行代码：resourcePrefix “资源名前缀”：
+     */
+    resourcePrefix "networkretrofit_"
+    compileSdkVersion rootProject.ext.compileSdk
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.okhttp3:okhttp:4.9.0'
+    api 'com.github.bumptech.glide:glide:4.11.0'
+    api 'androidx.appcompat:appcompat:1.2.0'
+
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
+    implementation project(path: ':retrofit')
+}

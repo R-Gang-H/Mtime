@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListGameItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <!-- 榜单类型 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemToplistGameTypeCl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_30px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 榜单类型名 -->
+            <TextView
+                android:id="@+id/mItemToplistGameTypeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:textSize="@dimen/offset_17sp"
+                android:textColor="@color/color_1d2736"
+                android:textStyle="bold"
+                android:text="@{data.bean.rankName}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="昨日道具狂人"
+                />
+
+            <!-- 全部 -->
+            <TextView
+                android:id="@+id/mItemToplistGameAllTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/offset_30px"
+                android:paddingRight="@dimen/offset_30px"
+                android:drawablePadding="@dimen/offset_10px"
+                android:drawableRight="@drawable/ic_toplist_movie_right_arrow"
+                android:textSize="@dimen/offset_14sp"
+                android:textColor="@color/color_8798af"
+                android:text="@string/all"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:onClick="@{ () -> data.mHomeProvider.startToplistGameDetailActivity(data.bean.rankType)}"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemToplistGameContentCV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/offset_10px"
+            app:cardElevation="@dimen/offset_30px"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistGameTypeCl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <!-- 第一名 -->
+                <include
+                    android:id="@+id/mItemToplistGameTopInc"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    layout="@layout/item_toplist_game_top"
+                    />
+
+                <!-- 分隔语 2~4名用户 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/offset_43px"
+                    android:paddingLeft="@dimen/offset_17px"
+                    android:paddingRight="@dimen/offset_17px"
+                    app:layout_constraintTop_toBottomOf="@+id/mItemToplistGameTopInc"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    >
+
+                    <!-- 分隔语 -->
+                    <TextView
+                        android:id="@+id/mItemToplistGameSeperateTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_12px"
+                        android:layout_marginStart="@dimen/offset_17px"
+                        android:layout_marginEnd="@dimen/offset_17px"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/offset_12sp"
+                        android:textColor="@color/color_8798af"
+                        android:text='@{TextUtils.isEmpty(data.bean.rankDesc) ? "": data.bean.rankDesc}'
+                        tools:text="再接再厉榜，冠军差的也没有那么多啦，再努力咯有那么多啦，再努力咯~~"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+
+                    <!-- 2~4名 -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mItemToplistGameUserRv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_35px"
+                        app:layout_constraintTop_toBottomOf="@+id/mItemToplistGameSeperateTv"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:listitem="@layout/item_toplist_game_user"
+                        tools:itemCount="3"
+                        tools:spanCount="3"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

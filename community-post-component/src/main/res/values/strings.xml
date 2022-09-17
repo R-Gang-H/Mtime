@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="community_mtime_score">时光评分</string>
+    <string name="community_family_tag">来自</string>
+    <string name="community_yes">是</string>
+    <string name="community_no">不是</string>
+    <string name="community_join_count_format">%1$d人 已参与</string>
+    <string name="community_post_vote_count_format">%1$s人 参与投票</string>
+    <string name="community_post_has_vote">已经投过票了</string>
+    <string name="community_please_select_option_to_vote">请先选择投票</string>
+    <string name="community_post_is_checking">帖子正在审核中</string>
+    <string name="community_post_is_checking2">正在审核中</string>
+    <string name="community_family_tip">在 %1$s </string>
+    <string name="community_film_comment_tip">对《%1$s》</string>
+    <string name="community_film_comment_tip2">的影评</string>
+    <string name="community_film_comment_count_des">%1$s赞 · %2$s评论</string>
+
+</resources>

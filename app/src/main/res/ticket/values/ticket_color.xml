@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ticket_light_dark">#333333</color>
+    <color name="ticket_light_gray">#999999</color>
+    <color name="alpha_ticket_light_gray">#78999999</color>
+    <color name="ticket_dark_gray">#777777</color>
+    <color name="ticket_dark_red">#F97D3F</color>
+    <color name="color_F2F3F6_alpha_92">#EBF2F3F6</color>
+
+</resources>

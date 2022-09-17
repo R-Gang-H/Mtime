@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/offset_15dp"
+    android:paddingRight="@dimen/offset_15dp"
+    android:paddingBottom="@dimen/offset_30dp"
+    >
+
+    <TextView
+        android:id="@+id/item_movie_event_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_36C096"
+        android:textSize="@dimen/font_size_21sp"
+        android:textStyle="bold|italic"
+        tools:text="11."
+        />
+
+    <TextView
+        android:id="@+id/item_movie_event_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_4dp"
+        android:layout_marginLeft="@dimen/offset_35dp"
+        android:lineSpacingMultiplier="1.3"
+        android:textColor="@color/color_4E5E73"
+        android:textSize="16sp"
+        tools:text="复仇者联盟：奥创时代这个名字和漫威2013年新出的一套10卷本漫画同名，但是，电影故事不会根据漫画改编，导演乔斯·韦登和编剧们早就已经按他们的规划写剧本了。"
+        />
+
+</RelativeLayout>

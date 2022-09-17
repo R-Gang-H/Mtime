@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kotlin.android.widget.multistate.MultiStateView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stateView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ResourceName">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_mine_medal"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/containerRl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="15dp"
+            android:visibility="gone"
+            tools:ignore="ResourceName"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/medalNumTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_17dp"
+                android:layout_marginTop="100dp"
+                android:includeFontPadding="false"
+                android:text="@string/mine_medal_number_of_awarded"
+                android:textColor="@color/color_303a47"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/medalNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/medalNumTv"
+                android:layout_marginStart="@dimen/offset_17dp"
+                android:layout_marginTop="@dimen/offset_6dp"
+                android:layout_marginBottom="@dimen/offset_10dp"
+                android:text="@string/mine_medal_cumulative_awarded"
+                android:textColor="@color/color_8798af"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/awardedLl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/medalNum"
+                android:layout_marginLeft="@dimen/offset_15dp"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:layout_marginRight="@dimen/offset_15dp"
+                android:background="@color/color_ffffff"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/offset_36px">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:text="@string/mine_medal_awarded"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/awardedGv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_20dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    tools:layout_height="@dimen/offset_600px"
+                    tools:listitem="@layout/item_medal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lossLl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/awardedLl"
+                android:layout_marginLeft="@dimen/offset_15dp"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:layout_marginRight="@dimen/offset_15dp"
+                android:background="@color/color_ffffff"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/offset_36px">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:text="@string/mine_medal_loss"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lossGv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_20dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    tools:layout_height="@dimen/offset_600px"
+                    tools:listitem="@layout/item_medal" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</com.kotlin.android.widget.multistate.MultiStateView>

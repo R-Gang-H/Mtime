@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="@dimen/offset_5dp"
+        android:layout_marginBottom="@dimen/offset_5dp"
+        app:cardBackgroundColor="@color/color_ffffff"
+        app:cardCornerRadius="@dimen/offset_8dp"
+        app:cardElevation="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctlContainer"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <ImageView
+                android:id="@+id/ivImg"
+                android:layout_width="47dp"
+                android:layout_height="47dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@color/color_8798af" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="@dimen/offset_80dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/color_1d2736"
+                android:textSize="@dimen/offset_16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/ivImg"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="天堂电影校长天堂电影校长" />
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintLeft_toRightOf="@id/ivImg"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                tools:text="成员喝点成员喝点成员喝点 成员喝点" />
+
+            <com.kotlin.android.community.family.component.ui.manage.widget.JoinBtnView
+                android:id="@+id/tvState"
+                android:layout_width="58dp"
+                android:layout_height="@dimen/offset_25dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="@dimen/offset_15dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="加入" />
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/offset_15dp"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/color_f3f3f4"
+                app:layout_constraintTop_toBottomOf="@id/ivImg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="@dimen/offset_15dp"
+                android:minHeight="40dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/line">
+
+                <LinearLayout
+                    android:id="@+id/llNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvNew"
+                        color="@{@color/color_FDAA11}"
+                        cornerRadius="@{4}"
+                        android:layout_width="24dp"
+                        android:layout_height="13dp"
+                        android:gravity="center"
+                        android:text="NEW"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@dimen/offset_8sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvNewContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/color_3d4955"
+                        android:textSize="@dimen/offset_12sp"
+                        tools:text="偶尔我哦士大夫士大夫阿斯顿发送到偶尔我哦士大夫士大夫阿斯顿发送到打发大水打发斯蒂芬打发大水打发斯蒂芬" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llHot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvHot"
+                        color="@{@color/color_ff5a36}"
+                        cornerRadius="@{4}"
+                        android:layout_width="24dp"
+                        android:layout_height="13dp"
+                        android:gravity="center"
+                        android:text="HOT"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@dimen/offset_8sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvHotContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/color_3d4955"
+                        android:textSize="@dimen/offset_12sp"
+                        tools:text="偶尔我哦士大夫士大夫阿斯顿发送到偶尔我哦士大夫士大夫阿斯顿发送到打发大水打发斯蒂芬打发大水打发斯蒂芬" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

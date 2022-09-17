@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.CollectionMovieBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movieRootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:onClick="@{view->data.onClick(view)}">
+
+        <View
+            android:id="@+id/dividerView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            android:background="@color/color_f3f3f4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--        电影海报-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/moviePicCV"
+            android:layout_width="@dimen/offset_120px"
+            android:layout_height="@dimen/offset_160px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_30px"
+            android:elevation="0dp"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                load_image="@{data.bean.moviePic}"
+                load_image_height="@{80}"
+                load_image_width="@{60}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!--评分-->
+        <com.kotlin.android.widget.textview.SpacingTextView
+            android:id="@+id/scoreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:text="@{data.bean.score}"
+            android:textColor="@color/color_1cacde"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            android:visibility="@{data.bean.isScoreEmpty?View.GONE:View.VISIBLE}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="9.8" />
+        <!--        影片名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_24px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_55px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{data.bean.movieName}"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+            app:layout_constraintRight_toLeftOf="@id/scoreTv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="嗜血五人组嗜血五人组嗜血五人组嗜血五人组嗜血五人组" />
+
+        <!--        影人英文名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_en"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_24px"
+            android:layout_marginTop="@dimen/offset_3px"
+            android:layout_marginRight="@dimen/offset_57px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{data.bean.movieName}"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_11sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movieNameTv"
+            tools:text="David Lynch" />
+        <!--导演-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/directorTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_24px"
+            android:layout_marginTop="@dimen/offset_13px"
+            android:layout_marginRight="@dimen/offset_100px"
+            android:layout_marginBottom="@dimen/offset_4px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            android:visibility="visible"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+            app:layout_constraintRight_toLeftOf="@id/scoreTv"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_en"
+            tools:text="爱情|动画"
+            tools:visibility="visible" />
+        <!--演员-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/actorTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_24px"
+            android:layout_marginRight="@dimen/offset_100px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+            app:layout_constraintRight_toLeftOf="@id/scoreTv"
+            app:layout_constraintTop_toBottomOf="@+id/directorTv"
+            tools:text="主演: 周冬雨 / 易烊千玺 / 尹昉 …"
+            tools:visibility="visible" />
+
+        <!--上映时间信息-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/releaseTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_24px"
+            android:layout_marginRight="@dimen/offset_100px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{data.bean.releaseContent}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+            app:layout_constraintRight_toLeftOf="@id/scoreTv"
+            app:layout_constraintTop_toBottomOf="@id/actorTv"
+            tools:text="上映日期：2017年5月05日 中国" />
+
+        <!--想看icon-->
+        <TextView
+            android:id="@+id/tv_want_see"
+            android:layout_width="@dimen/offset_116px"
+            android:layout_height="@dimen/offset_52px"
+            android:layout_marginRight="@dimen/offset_19px"
+            android:layout_marginBottom="@dimen/offset_19px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

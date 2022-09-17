@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.chat_component">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+        <!--展示大图界面-->
+        <activity
+            android:name=".inner.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1102211027083487#mtime-qas" /> <!-- 声明SDK所需的service SDK核心功能 -->
+        <!--            android:value="1102211027083487#mtime-qas" />  QAS key-->
+        <!--            android:value="1102211027083487#mtime-dev" />  DEV key-->
+        <!--            android:value="1102211027083487#shiguangwang" />  PRD key-->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- 声明SDK所需的receiver -->
+
+        <receiver
+            android:name="com.hyphenate.chat.EMMonitorReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".inner.ui.EaseShowVideoActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".inner.ui.EaseShowLocalVideoActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+</manifest>

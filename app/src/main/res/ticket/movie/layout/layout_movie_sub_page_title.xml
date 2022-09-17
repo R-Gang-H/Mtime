@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/offset_44dp"
+    android:background="@color/white"
+    >
+
+    <!-- 返回 -->
+    <ImageView
+        android:id="@+id/layout_movie_sub_page_back_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingRight="@dimen/offset_15dp"
+        android:src="@drawable/common_icon_title_back"
+        />
+
+    <!-- 标题 -->
+    <TextView
+        android:id="@+id/layout_movie_sub_page_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxWidth="@dimen/offset_250dp"
+        android:textColor="@color/color_1D2736"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        tools:text="标题标题标题标题标题标题标题标题标题标题标题标题"
+        />
+
+
+    <!-- 分享 -->
+    <ImageView
+        android:id="@+id/layout_movie_sub_page_share_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:paddingRight="@dimen/offset_15dp"
+        android:src="@drawable/common_title_bar_share"
+        android:visibility="invisible"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

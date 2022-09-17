@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 字体定义 -->
+    <dimen name="font_size_10sp">10sp</dimen>
+    <dimen name="font_size_12sp">12sp</dimen>
+    <dimen name="font_size_13sp">13sp</dimen>
+    <dimen name="font_size_14sp">14sp</dimen>
+    <dimen name="font_size_normal">14sp</dimen>
+    <dimen name="font_size_15sp">15sp</dimen>
+    <dimen name="font_size_normal_high">16sp</dimen>
+    <dimen name="font_size_large">18sp</dimen>
+    <dimen name="font_size_large_high">20sp</dimen>
+    <dimen name="font_size_21sp">21sp</dimen>
+    <dimen name="font_size_xlarge">22sp</dimen>
+    <dimen name="font_size_24sp">24sp</dimen>
+    <dimen name="font_size_25sp">25sp</dimen>
+    <dimen name="font_size_30sp">30sp</dimen>
+
+    <!-- margin left -->
+    <dimen name="offset_2dp">2dp</dimen>
+    <dimen name="offset_3dp">3dp</dimen>
+    <dimen name="offset_4dp">4dp</dimen>
+    <dimen name="offset_6dp">6dp</dimen>
+    <dimen name="offset_7dp">7dp</dimen>
+    <dimen name="offset_8dp">8dp</dimen>
+    <dimen name="offset_10dp">10dp</dimen>
+    <dimen name="offset_12dp">12dp</dimen>
+    <dimen name="offset_14dp">14dp</dimen>
+    <dimen name="offset_16dp">16dp</dimen>
+    <dimen name="offset_18dp">18dp</dimen>
+    <dimen name="offset_20dp">20dp</dimen>
+    <dimen name="offset_22dp">22dp</dimen>
+    <dimen name="offset_24dp">24dp</dimen>
+    <dimen name="offset_26dp">26dp</dimen>
+    <dimen name="offset_28dp">28dp</dimen>
+    <dimen name="offset_fu30dp">-32dp</dimen>
+    <dimen name="offset_30dp">30dp</dimen>
+
+    <dimen name="offset_40dp">40dp</dimen>
+    <dimen name="offset_88dp">88dp</dimen>
+    <dimen name="offset_89dp">89dp</dimen>
+    <dimen name="offset_192dp">192dp</dimen>
+    <!-- 主页电影名称最大长度 -->
+    <dimen name="item_max_170dp">170dp</dimen>
+
+    <dimen name="home_pop_ad_height">220dp</dimen>
+
+    <!-- TODO 系统专用,不要删除-->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="title_bar_height">44dp</dimen>
+    <dimen name="common_list_left_or_right_margin">15dp</dimen>
+</resources>

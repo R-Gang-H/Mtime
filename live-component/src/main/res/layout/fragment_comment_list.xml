@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <!-- 渐变分隔条 -->
+            <View
+                android:id="@+id/mLiveDetailCommentShadowView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_88px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:background="@color/color_f9f9fb"
+                />
+
+            <!-- 刷新组件 -->
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_0px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/publishCommentView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srlEnableFooterFollowWhenNoMoreData="false"
+                >
+
+                <!-- 评论列表 -->
+                <com.kotlin.android.widget.recycler.ScrollRecyclerView
+                    android:id="@+id/mLiveDetailCommentRv"
+                    style="@style/MatchMatch"
+                    android:layout_marginTop="@dimen/offset_15px"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+            <!--  评论控件-->
+            <com.kotlin.android.comment.component.widget.PublishCommentView
+                android:id="@+id/publishCommentView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <!--  显示要上传的图片-->
+            <com.kotlin.android.comment.component.widget.CommentImageLayout
+                android:id="@+id/commentImgLayout"
+                android:layout_width="@dimen/offset_248px"
+                android:layout_height="@dimen/offset_188px"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/publishCommentView"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+</layout>

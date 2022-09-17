@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:id="@+id/layout"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_f6f6f6_conner"
+    android:layout_marginRight="@dimen/offset_pxtodx_20"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/offset_pxtodx_10"
+        android:layout_marginLeft="@dimen/offset_pxtodx_20"
+        android:layout_marginRight="@dimen/offset_pxtodx_20"
+        android:layout_marginTop="@dimen/offset_pxtodx_10"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_small_high"
+        tools:text="最受关注" />
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.person.center.CommunityPersonViewModel" />
+    </data>
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                android:id="@+id/mTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_88px"
+                android:background="@color/color_ffffff"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:stl_customTabTextLayoutId="@layout/view_tab_item_community_person_collection"
+                app:stl_customTabTextViewId="@id/mTabTextView"
+                app:stl_defaultTabTextAllCaps="false"
+                app:stl_distributeEvenly="true"
+                app:stl_dividerThickness="0dp"
+                app:stl_indicatorColor="@color/color_20a0da"
+                app:stl_indicatorCornerRadius="15dp"
+                app:stl_indicatorInterpolation="smart"
+                app:stl_indicatorThickness="4dp"
+                app:stl_indicatorWidth="16dp"
+                app:stl_indicatorWithoutPadding="true"
+                app:stl_titleOffset="auto_center"
+                app:stl_underlineThickness="0dp" />
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/mViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/color_ffffff"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTabLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+</layout>

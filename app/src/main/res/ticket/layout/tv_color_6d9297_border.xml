@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_color_6d8297"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/offset_2px"
+    android:paddingBottom="@dimen/offset_3px"
+    android:paddingLeft="@dimen/offset_10px"
+    android:paddingRight="@dimen/offset_10px"
+    android:background="@drawable/shape_act_cinema_showtime_feature_bg"
+    android:gravity="center_vertical"
+    android:singleLine="true"
+    android:textColor="@color/color_4e5e73"
+    android:textSize="@dimen/offset_10sp"
+    tools:text="VIP厅"
+    />

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchMatch"
+        >
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_0px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="visible"
+            >
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                style="@style/MatchMatch"
+                app:srlEnableFooterFollowWhenNoMoreData="false"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mSearchResultTypeRv"
+                    style="@style/MatchMatch"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_search_result_movie"
+                    />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <!-- 空提示 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mFragSearchResultTypeEmptyLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_0px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/color_ffffff"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/mFragSearchResultTypeEmptyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_search_result_empty"
+                android:drawablePadding="@dimen/offset_24px"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_14sp"
+                android:text="@string/search_result_empty_tip"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

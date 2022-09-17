@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--    发送按钮-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:paddingLeft="@dimen/offset_20px"
+        android:paddingTop="@dimen/offset_2px"
+        android:paddingRight="@dimen/offset_20px"
+        android:paddingBottom="@dimen/offset_2px"
+        android:text="发送"
+        android:textColor="@color/color_5ef2f3f6"
+        android:textSize="@dimen/font_size_sp_15"
+        app:layout_constraintLeft_toRightOf="@id/chatTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--        全屏状态下聊天-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/chatTv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_50px"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:layout_marginBottom="@dimen/offset_24px"
+        android:background="@color/color_a86e6e6e"
+        android:gravity="center_vertical"
+        android:hint="@string/live_component_full_screen_chat"
+        android:imeOptions="flagNoExtractUi"
+        android:includeFontPadding="false"
+        android:maxEms="20"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/offset_43px"
+        android:paddingRight="@dimen/offset_43px"
+        android:textColor="@color/color_5ef2f3f6"
+        android:textSize="@dimen/font_size_sp_17"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sendBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

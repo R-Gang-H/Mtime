@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DailyRecmdDialog" parent="ViewsBaseDialogFragment">
+        <item name="android:windowAnimationStyle">@style/DailyRecmdDialog.AnimationStyle</item>
+        <item name="dialogFixedWidthMinor">80%</item>
+    </style>
+
+    <style name="DailyRecmdDialog.AnimationStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_daily_recmd_dlg_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_daily_recmd_dlg_out</item>
+    </style>
+</resources>

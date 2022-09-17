@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.mine.binder.DataLableBinder" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlFrameBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/color_1afeb12a"
+        tools:layout_height="@dimen/offset_128px"
+        tools:layout_width="@dimen/offset_124px">
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/offset_11dp"
+            android:lines="1"
+            android:text="@{String.valueOf(bean.data.amount)}"
+            android:textColor="@{bean.data.fontColor}"
+            android:textSize="@dimen/offset_16sp"
+            android:textStyle="bold"
+            tools:text="1,666.6万"
+            tools:textColor="@color/color_feb12a" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAmount"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/offset_8px"
+            android:layout_marginBottom="@dimen/offset_20px"
+            android:text="@{bean.data.desText}"
+            android:textColor="@{bean.data.fontColor}"
+            android:textSize="@dimen/offset_10sp"
+            tools:text="总阅读/播放量"
+            tools:textColor="@color/color_feb12a" />
+
+    </RelativeLayout>
+
+</layout>

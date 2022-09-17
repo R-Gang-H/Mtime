@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/multiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_f2f3f6"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/color_ffffff"
+                android:orientation="vertical"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="10dp"
+                android:translationZ="1dp">
+
+                <TextView
+                    android:id="@+id/titleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/color_333333"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:text="碟中谍6：全面瓦解" />
+
+                <TextView
+                    android:id="@+id/subTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/color_666666"
+                    android:textSize="13sp"
+                    tools:text="今天 09-06 11:15-14:03 (英语3D)" />
+            </FrameLayout>
+
+            <!-- 座位图 -->
+            <com.kotlin.android.film.widget.seat.SeatView
+                android:id="@+id/seatView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/color_f2f3f6">
+
+            </com.kotlin.android.film.widget.seat.SeatView>
+
+            <!-- 选座 -->
+            <LinearLayout
+                android:id="@+id/footerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/color_ffffff"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:translationZ="0.5dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/seatTipsView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tips_label_select_seat"
+                        android:textColor="@color/color_1d2736"
+                        android:textSize="14sp"
+                        android:visibility="visible" />
+
+                    <!--                推荐座位-->
+                    <TextView
+                        android:id="@+id/seatLabelView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tips_label_selected_seat"
+                        android:textColor="@color/color_1d2736"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/seatLimitView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:text="@string/tips_label_select_seat_max"
+                        android:textColor="@color/color_999999"
+                        android:textSize="10sp" />
+                </FrameLayout>
+
+                <com.kotlin.android.film.widget.seat.view.SeatSelectView
+                    android:id="@+id/seatSelectView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="26dp"
+                    app:columnCount="4" />
+
+            </LinearLayout>
+
+            <!-- 价格 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:translationZ="1dp"
+                tools:ignore="RtlSymmetry">
+
+                <!--                &lt;!&ndash; 总价 &ndash;&gt;-->
+                <!--                <RelativeLayout-->
+                <!--                    android:id="@+id/priceLayout"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center_vertical"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    android:visibility="gone">-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/priceLabelView"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginTop="8dp"-->
+                <!--                        android:text="总价 "-->
+                <!--                        android:textColor="@color/color_999999"-->
+                <!--                        android:textSize="12sp" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/priceView"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_toEndOf="@+id/priceLabelView"-->
+                <!--                        android:lines="1"-->
+                <!--                        android:textColor="@color/color_f97d3f"-->
+                <!--                        android:textSize="21sp" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/priceDescView"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_below="@+id/priceView"-->
+                <!--                        android:layout_alignStart="@+id/priceView"-->
+                <!--                        android:layout_marginStart="5dp"-->
+                <!--                        android:lines="1"-->
+                <!--                        android:textColor="@color/color_999999"-->
+                <!--                        android:textSize="10sp" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/serviceFeeView"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginTop="8dp"-->
+                <!--                        android:layout_toEndOf="@+id/priceView"-->
+                <!--                        android:textColor="@color/color_999999"-->
+                <!--                        android:textSize="12sp" />-->
+                <!--                </RelativeLayout>-->
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/seatLimitView"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    android:text="@string/tips_label_select_seat_max"-->
+                <!--                    android:textColor="@color/color_999999"-->
+                <!--                    android:textSize="12sp" />-->
+
+                <TextView
+                    android:id="@+id/nextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@color/color_20a0da"
+                    android:gravity="center"
+                    android:text="@string/confirm_place_select_seat"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.kotlin.android.widget.multistate.MultiStateView>
+</FrameLayout>

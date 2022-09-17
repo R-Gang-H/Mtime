@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
+
+    <LinearLayout
+        android:id="@+id/panelView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_dialog_panel_suit_upgrade"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="70dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.kotlin.android.card.monopoly.widget.card.image.SuitImageView
+                android:id="@+id/suitImageView"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="1dp">
+
+                <TextView
+                    android:id="@+id/labelView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/congratulations_your_already"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/titleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/color_feb12a"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    tools:text="蜘蛛侠：平行宇宙" />
+
+                <TextView
+                    android:id="@+id/subTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lines="1"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="升级成终极收藏版套装" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.kotlin.android.card.monopoly.widget.dialog.view.RewardView
+            android:id="@+id/rewardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/closeView"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/card_monopoly"
+        android:src="@drawable/ic_dialog_close" />
+</LinearLayout>

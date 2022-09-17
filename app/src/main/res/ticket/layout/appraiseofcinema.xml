@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appraisebottombackground">
+
+    <!-- appraise -->
+    <TextView
+        android:id="@+id/appraise"
+        android:layout_marginTop="@dimen/offset_2dp"
+        android:layout_marginBottom="@dimen/offset_2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:singleLine="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/offset_18dp"
+        android:text="我评"
+        android:textSize="10sp"
+        android:textColor="@color/color_777777"
+        android:drawablePadding="@dimen/offset_3dp"
+        android:drawableTop="@drawable/appraise" />
+
+    <!-- 提示框-->
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/comment_background"
+        android:hint="@string/str_comment_hit_tips"
+        android:textColorHint="@color/color_bbbbbb"
+        android:gravity="center_vertical|left"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:paddingLeft="@dimen/offset_10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/appraise"
+        android:layout_marginRight="@dimen/offset_18dp"/>
+
+</RelativeLayout>

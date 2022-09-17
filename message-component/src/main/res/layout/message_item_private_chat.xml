@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.message.ui.privateChat.binder.ItemPrivateChatBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_chat_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_74dp"
+        android:onClick="@{() -> data.jumpToChatFragment(data.bean.imId)}">
+
+        <com.kotlin.android.message.widget.AuthHeaderView
+            android:id="@+id/iv_fans_head"
+            authHeader="@{data.bean.authHeader}"
+            android:layout_width="@dimen/offset_50dp"
+            android:layout_height="@dimen/offset_50dp"
+            android:layout_marginStart="@dimen/offset_9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_fans_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_11dp"
+            android:layout_marginTop="@dimen/offset_4.5dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.bean.name}"
+            android:textColor="@color/color_3d4049"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_fans_head"
+            app:layout_constraintTop_toTopOf="@id/iv_fans_head"
+            tools:text="霸波奔和蹦波霸" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_fans_signature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_2dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.bean.signature}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_fans_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_fans_name"
+            tools:text="哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_width_1px"
+            android:layout_marginStart="@dimen/offset_16dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:background="@color/color_1f9dafb4"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

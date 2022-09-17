@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp">
+
+    <com.mtime.bussiness.common.widget.CommonItemTitleView
+        android:id="@+id/movie_details_associated_movie_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itv_title_text="@string/movie_details_associated_movie_title"
+        app:itv_all_text="@string/common_title_all_text"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movie_details_associated_movie_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/common_list_left_or_right_margin"
+        tools:listitem="@layout/item_movie_details_associated_movie"
+        />
+
+</LinearLayout>

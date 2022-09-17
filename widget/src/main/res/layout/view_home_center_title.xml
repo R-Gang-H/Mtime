@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="6dp"
+    >
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="找影片/影院/影人/文章/用户/影评/帖子/日志/影评"
+        android:textColor="@color/color_8798af"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_title_bar_label_search"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/scanView"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_title_bar_label_scan"
+        tools:ignore="ContentDescription" />
+</FrameLayout>

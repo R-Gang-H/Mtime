@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <import type="com.kotlin.android.app.data.constant.CommConstant" />
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultArticleItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:padding="@dimen/offset_30px"
+        android:onClick="@{() -> data.mProvider.launchDetail(data.bean.articleId, CommConstant.PRAISE_OBJ_TYPE_ARTICLE, 0L, false)}"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemSearchResultArticleLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 标题 -->
+            <TextView
+                android:id="@+id/mItemSearchResultArticleTitleTv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_30px"
+                app:layout_goneMarginEnd="@dimen/offset_0px"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textSize="@dimen/offset_17sp"
+                android:textColor="@color/color_303a47"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/mItemSearchResultArticleCard"
+                tools:text="内容列表：匹配文章标题，命中的关键词高亮显示，同等条件下按照发布时间倒序排列，查询结果最相关的5条数据，不足5个显示全部"
+                />
+
+            <!-- 封面图 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mItemSearchResultArticleCard"
+                android:layout_width="@dimen/offset_218px"
+                android:layout_height="@dimen/offset_140px"
+                app:cardCornerRadius="@dimen/offset_8px"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:visibility="visible"
+                >
+
+                <ImageView
+                    android:id="@+id/mItemSearchResultArticleImgIv"
+                    style="@style/MatchMatch"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_image"
+                    android:contentDescription="@string/app_name"
+                    load_image="@{data.bean.image}"
+                    load_image_width="@{109}"
+                    load_image_height="@{70}"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 发布者 -->
+        <TextView
+            android:id="@+id/mItemSearchResultArticlePublisherTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:text="@{data.bean.authorNickName}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultArticleLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="时光电影"
+            />
+
+        <!-- 发布时间 -->
+        <TextView
+            android:id="@+id/mItemSearchResultArticleCreateTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/mItemSearchResultArticlePublisherTv"
+            tools:text="1小时前"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

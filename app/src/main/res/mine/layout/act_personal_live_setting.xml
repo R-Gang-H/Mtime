@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/about_title"
+        layout="@layout/title_bar_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <EditText
+        android:id="@+id/act_personal_live_setting_ed1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/title_bar_search_region_background"
+        android:drawablePadding="@dimen/offset_4dp"
+        android:imeOptions="actionSearch"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:singleLine="true"
+        android:hint="@string/personal_game_id_please"
+        android:textColor="@color/black_normal"
+        android:textColorHint="#80000000"
+        android:textSize="@dimen/offset_13sp" />
+
+    <Button
+        android:id="@+id/act_personal_live_jump_bt1"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:onClick="jump"
+        android:text="跳转" />
+
+    <EditText
+        android:id="@+id/act_personal_live_setting_ed2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/title_bar_search_region_background"
+        android:drawablePadding="@dimen/offset_4dp"
+        android:imeOptions="actionSearch"
+        android:paddingLeft="@dimen/offset_15dp"
+        android:singleLine="true"
+        android:hint="@string/personal_live_id_please"
+        android:textColor="@color/black_normal"
+        android:textColorHint="#80000000"
+        android:textSize="@dimen/offset_13sp" />
+
+    <Button
+        android:id="@+id/act_personal_live_jump_bt2"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:onClick="jump"
+        android:text="跳转" />
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kotlin.android.community.family.component">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
+
+        <activity android:name=".ui.clazz.FamilyClassListActivity"/>
+        <activity
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:name=".ui.details.FamilyDetailActivity"/>
+        <activity
+            android:name=".ui.manage.FamilyCreateActivity" />
+        <activity
+            android:name=".ui.manage.FamilyEditInfoActivity" />
+        <activity
+            android:name=".ui.manage.FamilyPermissionActivity" />
+        <activity
+            android:name=".ui.manage.FamilyCategoryActivity" />
+        <activity
+            android:name=".ui.manage.FamilyAdminActivity" />
+        <activity
+            android:name=".ui.manage.FamilyAddAdminActivity" />
+        <activity
+            android:name=".ui.manage.FamilyMemberActivity" />
+        <activity
+            android:name=".ui.manage.FamilyMemberManageActivity" />
+        <activity
+            android:name=".ui.find.FindFamilyActivity" />
+        <activity android:name=".ui.manage.FamilySectionManagerActivity"/>
+    </application>
+
+</manifest>

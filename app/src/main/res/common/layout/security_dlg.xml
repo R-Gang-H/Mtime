@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/navigationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar_normal" />
+
+    <TextView
+        android:id="@+id/security_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/offset_24px"
+        android:paddingLeft="@dimen/offset_34px"
+        android:paddingRight="@dimen/offset_34px"
+        android:paddingTop="@dimen/offset_24px"
+        android:textColor="@color/color_ff8600"
+        android:textSize="@dimen/font_size_normal_more" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/offset_34px"
+        android:paddingRight="@dimen/offset_34px" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/orderpay_securitydlg_item_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="手机号"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_normal_high" />
+
+            <TextView
+                android:id="@+id/security_dlg_tel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/offset_34px"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_size_normal_high" />
+
+            <TextView
+                android:id="@+id/send_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:background="@drawable/register_get_signcode_icon"
+                android:contentDescription="@string/app_name"
+                android:text="@string/str_get_identifying"
+                android:gravity="center"
+                android:textColor="@color/color_0075c4"
+                android:textSize="@dimen/font_size_normal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@drawable/line_bottom" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/orderpay_securitydlg_item_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="验证码"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_normal_high" />
+
+            <EditText
+                android:id="@+id/security_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:hint="@string/st_please_input_security_code"
+                android:paddingLeft="@dimen/offset_34px"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_bbbbbb"
+                android:textSize="@dimen/font_size_normal_high" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_6px"
+        android:background="@drawable/line_bottom" />
+
+    <TextView
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/offset_34px"
+        android:layout_marginRight="@dimen/offset_34px"
+        android:layout_marginTop="@dimen/offset_44px"
+        android:background="@drawable/btn_solid_blue_h90"
+        android:text="@string/btn_payment"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large_high" />
+
+</LinearLayout>

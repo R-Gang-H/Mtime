@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingRight="10dp">
+    
+    <ImageView
+        android:id="@+id/item_movie_details_trailer_img_iv"
+        android:layout_width="167dp"
+        android:layout_height="108dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/default_image"
+        android:scaleType="centerCrop"
+        />
+    
+    <View
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/item_movie_details_trailer_img_iv"
+        android:background="@drawable/shape_movie_details_trailer_bottom_bg"
+        />
+
+    <ImageView
+        android:id="@+id/item_movie_details_trailer_play_icon_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/movie_details_ic_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="2dp"
+        />
+
+    <TextView
+        android:id="@+id/item_movie_details_trailer_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_trailer_play_icon_iv"
+        android:layout_marginBottom="5dp"
+        android:textSize="9sp"
+        android:textColor="@color/white"
+        tools:text="02:06"
+        />
+
+    <TextView
+        android:id="@+id/item_movie_details_trailer_name_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/item_movie_details_trailer_time_tv"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_trailer_play_icon_iv"
+        app:layout_constraintRight_toRightOf="@id/item_movie_details_trailer_img_iv"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        tools:text="中国内地定档预告片中国内地定档预告片中国内地定档预告片"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

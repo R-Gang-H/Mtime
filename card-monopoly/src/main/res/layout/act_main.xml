@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.kotlin.android.card.monopoly.widget.dialog.view.BuffDetailView
+            android:id="@+id/buffDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="2dp"
+            android:visibility="gone" />
+
+        <com.kotlin.android.card.monopoly.widget.dialog.view.CardUserDetailView
+            android:id="@+id/cardUserDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="2dp"
+            android:visibility="gone" />
+
+        <com.kotlin.android.card.monopoly.widget.dialog.view.CurrentIssueView
+            android:id="@+id/currentIssuedView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="2dp"
+            android:visibility="gone" />
+
+        <com.kotlin.android.card.monopoly.widget.dialog.view.DigLimitBoxView
+            android:id="@+id/digLimitBoxView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="2dp"
+            android:visibility="gone"/>
+
+        <com.kotlin.android.card.monopoly.widget.dialog.view.OpenBoxView
+            android:id="@+id/openBoxView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="2dp"
+            android:visibility="gone" />
+
+        <com.kotlin.android.card.monopoly.widget.dialog.view.OpenBoxAnimView
+            android:id="@+id/openBoxAnimaView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="2dp"
+            android:visibility="gone"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/mainLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="35dp">
+
+                    <TextView
+                        android:id="@+id/titleLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="7dp"
+                        android:gravity="center"
+                        android:text="@string/card_monopoly"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <com.kotlin.android.card.monopoly.widget.user.UserView
+                        android:id="@+id/userView"
+                        android:layout_width="match_parent"
+                        android:layout_height="82dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp" />
+
+                    <com.kotlin.android.card.monopoly.widget.wish.HelpWishView
+                        android:id="@+id/helpWishView"
+                        android:layout_width="match_parent"
+                        android:layout_height="84dp" />
+
+                    <com.kotlin.android.card.monopoly.widget.box.BoxView
+                        android:id="@+id/boxView"
+                        android:layout_width="match_parent"
+                        android:layout_height="118dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="0dp" />
+
+                    <LinearLayout
+                        android:id="@+id/selfLabelLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp">
+
+                        <com.kotlin.android.card.monopoly.widget.DrawableTextView
+                            android:id="@+id/cardStoreLabelView"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@color/color_ffffff"
+                            android:gravity="center"
+                            android:text="@string/card_store"
+                            android:textColor="@color/color_4E5E73"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:translationZ="1dp" />
+
+                        <com.kotlin.android.card.monopoly.widget.DrawableTextView
+                            android:id="@+id/auctionLabelView"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_weight="1"
+                            android:background="@color/color_ffffff"
+                            android:gravity="center"
+                            android:text="@string/auction"
+                            android:textColor="@color/color_4E5E73"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:translationZ="1dp" />
+
+                        <com.kotlin.android.card.monopoly.widget.DrawableTextView
+                            android:id="@+id/wishTreeLabelView"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@color/color_ffffff"
+                            android:gravity="center"
+                            android:text="@string/wishing_tree"
+                            android:textColor="@color/color_4E5E73"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:translationZ="1dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="350dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                    <FrameLayout
+                        android:id="@+id/cardStoreLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.kotlin.android.card.monopoly.widget.nav.NavView
+                            android:id="@+id/cardNavView"
+                            android:layout_width="match_parent"
+                            android:layout_height="37dp" />
+
+                        <com.kotlin.android.card.monopoly.widget.card.CardView
+                            android:id="@+id/cardView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="37dp" />
+
+                        <com.kotlin.android.card.monopoly.widget.coffer.CofferView
+                            android:id="@+id/cofferView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="37dp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/cardTALayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <com.kotlin.android.card.monopoly.widget.nav.NavView
+                            android:id="@+id/cardTANavView"
+                            android:layout_width="match_parent"
+                            android:layout_height="37dp" />
+
+                        <com.kotlin.android.card.monopoly.widget.card.CardTAView
+                            android:id="@+id/cardTAView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="37dp" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:background="@color/color_f2f3f6" />
+
+                    <com.kotlin.android.card.monopoly.widget.card.OpenCardView
+                        android:id="@+id/openCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/color_f2f3f6" />
+
+                    <com.kotlin.android.comment.component.bind.CommentView
+                        android:id="@+id/commentView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.kotlin.android.widget.titlebar.TitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="68dp" />
+
+    </FrameLayout>
+</layout>

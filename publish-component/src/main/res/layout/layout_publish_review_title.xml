@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/offset_40px"
+    android:paddingLeft="@dimen/offset_30px"
+    android:paddingRight="@dimen/offset_30px"
+    android:paddingBottom="@dimen/offset_30px"
+    >
+
+    <!-- 标题输入框 -->
+    <EditText
+        android:id="@+id/mTitleEt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="@string/publish_review_title_hint"
+        android:lineSpacingExtra="@dimen/offset_4px"
+        android:textColor="@color/color_4e5e73"
+        android:textColorHint="@color/color_aab7c7"
+        android:textCursorDrawable="@drawable/shape_publish_review_title_cursor"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <!-- 分隔线 -->
+    <View
+        android:id="@+id/mTitleDividerView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_2px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:background="@color/color_f3f3f4"
+        app:layout_constraintTop_toBottomOf="@+id/mTitleEt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

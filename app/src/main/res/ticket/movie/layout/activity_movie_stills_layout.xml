@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/title_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/title_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:scaleType="center"
+        android:src="@drawable/common_icon_title_back"
+        app:layout_constraintBottom_toBottomOf="@id/title_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_bar" />
+
+    <TextView
+        android:id="@+id/movie_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_1D2736"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/title_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_bar" />
+
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/pager_tab"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_bar"
+        app:stl_dividerThickness="0dp"
+        app:stl_indicatorColor="@color/color_47505c"
+        app:stl_indicatorCornerRadius="0dp"
+        app:stl_indicatorInterpolation="linear"
+        app:stl_indicatorThickness="1.5dp"
+        app:stl_indicatorWidth="32dp"
+        app:stl_indicatorWithoutPadding="true"
+        app:stl_overlineThickness="0dp"
+        app:stl_underlineThickness="0dp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pager_tab" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

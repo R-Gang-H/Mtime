@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.card.monopoly.adapter.StoreBoxItemBinder" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/boxItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_70px"
+            android:layout_marginTop="@dimen/offset_4px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/str_activity"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/color_ff5a36"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="@string/count_down_time" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_1dp"
+                android:alpha="0.2"
+                android:background="@color/color_20a0da"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/offset_6dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/boxContentArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp">
+
+            <com.kotlin.android.card.monopoly.widget.card.image.BoxImageView
+                android:id="@+id/boxImageView"
+                android:layout_width="@dimen/offset_140px"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/font_size_sp_19"
+                app:layout_constraintLeft_toRightOf="@+id/boxImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="熊猫山西" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_50px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginTop="@dimen/offset_18px"
+                android:drawablePadding="@dimen/offset_10px"
+                android:gravity="center"
+                android:textColor="@color/color_ff5a36"
+                android:textSize="@dimen/offset_16sp"
+                app:drawableStartCompat="@drawable/ic_coin_icon"
+                app:layout_constraintLeft_toRightOf="@+id/boxImageView"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:text="10000"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/offset_50px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginTop="@dimen/offset_18px"
+                android:drawablePadding="@dimen/offset_10px"
+                android:gravity="center"
+                android:text="@string/str_refuse_buy"
+                android:textColor="@color/color_ff5a36"
+                android:textSize="@dimen/offset_16sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@+id/boxImageView"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:text="10000" />
+
+            <TextView
+                android:id="@+id/tvBuy"
+                android:layout_width="@dimen/offset_160px"
+                android:layout_height="@dimen/offset_60px"
+                android:gravity="center"
+                android:textColor="@color/color_ffffff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/boxImageView"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="购买" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvDesption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:text="@{data.data.description}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_14sp"
+            tools:text="阿斯兰加快递费杀上路机房的阿萨德浪父控件啊啥都大楼附近啊第三方拉伸拉倒手机开发大方两节课" />
+
+        <View
+            android:id="@+id/bottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1dp"
+            android:background="@color/color_e1e1e1" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/layout_cinema_list_item_feature_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adapter_cinema_list_item_address_tv"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_3d_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="3D"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_imax_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="IMAX"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_vip_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="VIP"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_4d_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="4D"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_huge_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="巨幕"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_4k_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="4K"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_dolby_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="杜比"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_spherex_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="SphereX"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_screenx_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="ScreenX"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_loveseat_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="情侣座"
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_parking_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_feature_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="可停车 "
+            android:textColor="@color/color_6D8297"
+            android:textSize="@dimen/font_size_9sp" />
+
+
+        <!-- 上次去过Icon -->
+        <TextView
+            android:id="@+id/layout_cinema_list_item_feature_been_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:background="@drawable/shape_cinema_list_been_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/offset_2dp"
+            android:paddingLeft="@dimen/offset_4dp"
+            android:paddingRight="@dimen/offset_4dp"
+            android:paddingTop="@dimen/offset_2dp"
+            android:text="@string/cinema_list_been"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_9sp" />
+
+    </LinearLayout>
+
+</merge>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/adapter_cinema_list_filter_feature_item_name_tv"
+        android:layout_width="@dimen/offset_81dp"
+        android:layout_height="@dimen/offset_30dp"
+        android:background="@drawable/shape_cinema_list_filter_feature_bg"
+        android:gravity="center"
+        android:textSize="@dimen/font_size_12sp"
+        android:textColor="@color/color_777777"
+        tools:text="全部"
+        />
+
+</LinearLayout>

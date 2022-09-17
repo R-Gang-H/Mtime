@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:paddingStart="15dp"
+    android:paddingTop="7dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="7dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:adjustViewBounds="true"
+        android:background="@color/color_f2f3f6"
+        android:contentDescription="@string/photo_album"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="50dp"
+        android:contentDescription="@string/photo_album"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="15sp"
+        tools:text="最近项目" />
+
+    <ImageView
+        android:id="@+id/action"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_gravity="center_vertical|end"
+        android:contentDescription="@string/photo_album"
+        android:src="@drawable/ic_check_26_selected"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</FrameLayout>

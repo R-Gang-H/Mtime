@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_f2f3f6"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="15dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:contentDescription="@string/hint_leave_what_i_want_to_say"
+            android:src="@color/color_f4c534" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="end"
+            android:contentDescription="@string/hint_leave_what_i_want_to_say"
+            android:src="@color/color_4e5e73" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <EditText
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/color_dbb177"
+            android:gravity="center_vertical"
+            android:hint="@string/hint_leave_what_i_want_to_say"
+            android:minHeight="40dp"
+            android:paddingStart="10dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="10dp"
+            android:textSize="16sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/limit"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="#F44336"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="-10"
+                android:textColor="@color/color_ffffff" />
+
+            <com.kotlin.android.comment.component.bar.BarButton
+                android:id="@+id/barButton"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:background="#99739204" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.kotlin.android.comment.component.bar.item.BarButtonItem
+        android:id="@+id/bottomBarButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/color_ffffff"
+        android:visibility="visible" />
+
+</LinearLayout>

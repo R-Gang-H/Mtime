@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f3f6"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <RelativeLayout
+        android:id="@+id/changeMobileRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_6dp"
+        android:background="@color/color_ffffff"
+        android:padding="@dimen/offset_15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/mine_change_mobile_phone_number"
+            android:textColor="@color/color_1d2736"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/phoneNumTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:layout_toLeftOf="@id/changeMobileIma"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_20a0da"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="135****1234" />
+
+        <ImageView
+            android:id="@+id/changeMobileIma"
+            android:layout_width="@dimen/offset_16dp"
+            android:layout_height="@dimen/offset_16dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_label_12_arrow_right"
+            app:tint="@color/color_283748" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1px"
+        android:layout_marginLeft="@dimen/offset_15dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:background="@color/color_f3f5f6" />
+
+    <RelativeLayout
+        android:id="@+id/modifyPwdRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:padding="@dimen/offset_15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/mine_modify_password"
+            android:textColor="@color/color_1d2736"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/offset_16dp"
+            android:layout_height="@dimen/offset_16dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_label_12_arrow_right"
+            app:tint="@color/color_283748" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/thirdAccountBindRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_5dp"
+        android:background="@color/color_ffffff"
+        android:padding="@dimen/offset_15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/mine_third_account_bind"
+            android:textColor="@color/color_1d2736"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/offset_16dp"
+            android:layout_height="@dimen/offset_16dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_label_12_arrow_right"
+            app:tint="@color/color_283748" />
+
+    </RelativeLayout>
+
+</LinearLayout>

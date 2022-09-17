@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentCL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail.LiveDetailActivity">
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/stateView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--        直播播放器布局-->
+                <com.kotlin.android.live.component.ui.widget.LivingView
+                    android:id="@+id/livingView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_425px"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--tab导航栏-->
+                <com.ogaclejapan.smarttablayout.SmartTabLayout
+                    android:id="@+id/livingTab"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/offset_100px"
+                    android:paddingTop="@dimen/offset_20px"
+                    android:paddingBottom="@dimen/offset_30px"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/livingView"
+                    app:stl_customTabTextLayoutId="@layout/view_live_tab_item"
+                    app:stl_customTabTextViewId="@id/mTabTextView"
+                    app:stl_defaultTabTextAllCaps="false"
+                    app:stl_distributeEvenly="true"
+                    app:stl_dividerThickness="0dp"
+                    app:stl_indicatorColor="@color/color_47505c"
+                    app:stl_indicatorCornerRadius="0dp"
+                    app:stl_indicatorInterpolation="smart"
+                    app:stl_indicatorThickness="@dimen/offset_4px"
+                    app:stl_indicatorWidth="@dimen/offset_64px"
+                    app:stl_indicatorWithoutPadding="true"
+                    app:stl_titleOffset="auto_center"
+                    app:stl_underlineThickness="0dp" />
+
+                <!--        聊天、评论、直播详情viewPager-->
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/livingVP"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintVertical_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/livingTab" />
+
+                <!--                购票按钮-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ticketBtn"
+                    android:layout_width="@dimen/offset_165px"
+                    android:layout_height="@dimen/offset_118px"
+                    android:layout_marginTop="@dimen/offset_38px"
+                    android:src="@mipmap/ic_live_ticket"
+                    android:visibility="gone"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/livingView" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

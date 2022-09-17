@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/company_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:loadMoreEnabled="true"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        app:refreshEnabled="false"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
+
+    <TextView
+        android:id="@+id/empty_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="@dimen/font_size_large"
+        android:visibility="gone"
+        android:text="暂无影片" />
+
+</RelativeLayout>

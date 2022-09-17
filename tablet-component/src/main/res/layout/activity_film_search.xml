@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.kotlin.tablet.ui.add.FilmSearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/MatchMatch">
+
+        <com.kotlin.android.widget.search.SearchEditText
+            android:id="@+id/mSearchLay"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_60px"
+            android:layout_marginTop="@dimen/offset_16px"
+            android:hint="@string/tablet_film_list_input_film_name"
+            app:layout_constraintEnd_toEndOf="@id/mFilmListRightGuide"
+            app:layout_constraintStart_toStartOf="@id/mFilmListLeftGuide"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/mSureLay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mSearchLay">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srlEnableFooterFollowWhenNoMoreData="false">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mSearchRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <com.kotlin.tablet.view.FilmCartView
+            android:id="@+id/mSureLay"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_140px"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mFilmListRightGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/offset_30px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mFilmListLeftGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/offset_30px" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

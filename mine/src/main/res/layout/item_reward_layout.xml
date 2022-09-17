@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.mine.CreatorRewardInfo" />
+
+        <variable
+            name="isShow"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/mLinear"
+            android:layout_width="@dimen/offset_80px"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_levelName"
+                android:layout_width="@dimen/offset_80px"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{bean.levelName}"
+                android:textColor="@{bean.status == 2 ? @color/color_20a0da : @color/color_cbd0d7}"
+                android:textSize="@dimen/offset_14sp"
+                android:visibility="@{isShow == true ? View.VISIBLE : View.GONE}"
+                tools:text="Lv1" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_1dp"
+                android:paddingStart="@dimen/offset_5dp"
+                android:paddingTop="@dimen/offset_1dp"
+                android:paddingEnd="@dimen/offset_5dp"
+                android:paddingBottom="@dimen/offset_1dp"
+                android:text="@{bean.status == 1 ? @string/mine_creator_reward_noStatus : @string/mine_creator_reward_status}"
+                android:textColor="@{bean.status == 2 ? @color/color_20a0da : @color/color_cbd0d7}"
+                android:textSize="@dimen/offset_10sp"
+                android:visibility="@{isShow == true ? View.VISIBLE : View.GONE}"
+                tools:text="已开通" />
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:id="@+id/mView_two"
+            android:layout_width="@dimen/offset_1dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/mReward"
+            android:layout_below="@id/mLinear"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/offset_20dp"
+            android:background="@{bean.status == 2 ? @color/color_20a0da : @color/color_cbd0d7}"/>
+
+        <View
+            android:id="@+id/mView"
+            android:layout_width="@dimen/offset_1dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mLinear"
+            android:layout_alignBottom="@id/mReward"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/offset_20dp"
+            android:background="@{bean.status == 2 ? @color/color_20a0da : @color/color_cbd0d7}"
+            android:visibility="@{isShow == false ? View.VISIBLE : View.GONE}" />
+
+        <LinearLayout
+            android:id="@+id/mReward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_24dp"
+            android:layout_toEndOf="@id/mLinear"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_rewardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{bean.rewardName}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold"
+                tools:text="数据中心" />
+
+            <TextView
+                android:id="@+id/tv_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/offset_12dp"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="可在数据中心中查看投稿内容的基础数据" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

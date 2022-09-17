@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <import type="com.kotlin.android.app.data.constant.CommConstant" />
+        <import type="com.kotlin.android.mtime.ktx.KtxMtimeKt" />
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultPostItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingTop="@dimen/offset_30px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:onClick="@{() -> data.mProvider.launchDetail(data.bean.objId, data.bean.objType, 0L, false)}"
+        >
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPostTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_16sp"
+            android:textColor="@color/color_4e5e73"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="速度与激情9速度与激情9速度与激情9速度与激情9速度与激情9速度与激情9速度与激情9速度与激情9速度与激情9"
+            />
+
+        <!-- 赞 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPostLikeTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:drawableLeft="@{data.bean.isLikeUp ? @drawable/ic_likeb : @drawable/ic_like}"
+            android:drawablePadding="@dimen/offset_10px"
+            android:text="@{KtxMtimeKt.formatCount(data.bean.likeUp, false)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultPostTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="999+"
+            />
+
+        <!-- 评论 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPostCommentTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_marginStart="@dimen/offset_33px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:drawableLeft="@drawable/ic_comment"
+            android:drawablePadding="@dimen/offset_10px"
+            android:text="@{KtxMtimeKt.formatCount(data.bean.commentCount, false)}"
+            app:layout_constraintLeft_toRightOf="@+id/mItemSearchResultPostLikeTv"
+            app:layout_constraintBaseline_toBaselineOf="@+id/mItemSearchResultPostLikeTv"
+            tools:text="999+"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mItemSearchResultPostLineView"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginTop="@dimen/offset_22px"
+            android:background="@color/color_0f303a47"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultPostLikeTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

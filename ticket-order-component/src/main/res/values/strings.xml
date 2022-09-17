@@ -1,0 +1,32 @@
+<resources>
+    <string name="ticket_order_title">我的订单</string>
+    <string name="ticket_order_complete">交易成功</string>
+    <string name="ticket_order_cancel">已取消</string>
+    <string name="ticket_order_no_pay">待支付</string>
+    <string name="ticket_order_refunded">已退款</string>
+    <string name="ticket_order_refunding">退款中</string>
+    <string name="ticket_order_ticketing">出票中</string>
+    <string name="ticket_order_ticketing_failed">出票失败</string>
+    <string name="ticket_order_rating_format">我评 %1$s</string>
+    <string name="ticket_order_goto_rate">评分</string>
+    <string name="ticket_order_to_pay">付款</string>
+    <string name="ticket_order_total_price_format">总价: %1$s元</string>
+    <string name="ticket_order_tips">提示</string>
+    <string name="ticket_order_cant_cancel_no_pay">未支付订单不可删除</string>
+    <string name="ticket_order_do_sure">确定</string>
+    <string name="ticket_order_do_sure_delete">确认删除</string>
+    <string name="ticket_order_do_cancel">取消</string>
+    <string name="ticket_order_delete_order_not_recovery">删除后无法恢复，确定要删除吗?</string>
+    <string name="ticket_order_ticket_num_format">数量：%1$d张</string>
+    <string name="ticket_contains_goods">含卖品套餐</string>
+    <string name="ticket_scan_three_month_ago_orders">查看三个月前订单</string>
+    <string name="ticket_ticket_order">电影票</string>
+    <string name="ticket_ticket_electronic_coupons">电子券</string>
+
+    <string name="ticket_mtime_order">时光网订单</string>
+    <string name="ticket_cinema_order">影院直销订单</string>
+    <string name="ticket_order_count_down_finished">倒计时结束</string>
+    <string name="ticket_iknow">我知道了</string>
+    <string name="ticket_order_logo_name">时光网</string>
+    <string name="ticket_order_component_reselect_seat">重新选座</string>
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:orientation="vertical">
+            <!--success-->
+            <include
+                android:id="@+id/act_ticket_direct_sale_order_detail_state_success_rl"
+                layout="@layout/layout_ticket_direct_sale_order_top_state_success"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <!--error-->
+            <include
+                android:id="@+id/act_ticket_direct_sale_order_detail_state_error_rl"
+                layout="@layout/layout_ticket_direct_sale_order_top_state_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                />
+
+            <!--platform indicator-->
+            <include
+                layout="@layout/layout_ticket_direct_sale_platform_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <!--ticket info-->
+            <include
+                layout="@layout/layout_ticket_direct_sale_ticket_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                />
+            <!--cinema info-->
+            <include
+                layout="@layout/layout_ticket_direct_sale_cinema_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                />
+            <!--notice info-->
+            <include
+                layout="@layout/layout_ticket_direct_sale_notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--bottom button-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_50dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/act_ticket_direct_sale_order_detail_save_to_album_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/ticket_dark_red"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:text="@string/str_save_to_pic"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.bean.TopicFamilyViewBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/shape_card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:layout_marginBottom="@dimen/offset_20px"
+        android:elevation="@dimen/card_elevation">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/offset_160px"
+            android:layout_height="@dimen/offset_160px"
+            android:layout_marginLeft="@dimen/offset_20px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/headCV"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_marginBottom="@dimen/offset_20px">
+            <!--        家族头像-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/familyHeadIv"
+                load_image="@{data.familyPic}"
+                load_image_height="@{80}"
+                load_image_width="@{80}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                 />
+        </androidx.cardview.widget.CardView>
+
+
+        <!--        加入-->
+        <FrameLayout
+            android:id="@+id/joinFL"
+            familyJoinBackground="@{data.familyStatus}"
+            android:layout_width="@dimen/offset_116px"
+            android:layout_height="@dimen/offset_58px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_30px"
+            android:visibility="@{data.black?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_goneMarginRight="@dimen/offset_30px">
+            <!--    加入-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/joinBtn"
+                style="@style/WrapWrap"
+                familyJoinDrawable="@{data.familyStatus}"
+                android:layout_gravity="center"
+                android:drawablePadding="@dimen/offset_3px"
+                android:gravity="center"
+                android:text="@{data.joinContent}"
+                android:textColor="@{data.familyStatus==0 ?@color/color_ffffff:@color/color_20a0da}"
+                android:textSize="@dimen/font_size_sp_14"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginRight="@dimen/offset_30px" />
+
+        </FrameLayout>
+
+
+        <!--家族名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/familyNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_6px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{data.familyName}"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/headCV"
+            app:layout_constraintRight_toLeftOf="@id/joinFL"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="日漫小组日漫小组日漫小组日漫小组日漫小组" />
+
+        <!--        家族公告-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/familyRuleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginTop="@dimen/offset_6px"
+            android:layout_marginRight="@dimen/offset_6px"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{data.familyRule}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintLeft_toRightOf="@id/headCV"
+            app:layout_constraintRight_toLeftOf="@id/joinFL"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/familyNameTv"
+            tools:text="欢迎讨论所有关于漫威的话题。 本组不允许： 1. 灌水闲聊…欢迎讨论所有关于漫威的话题。 本组不允许： 1. 灌水闲聊…" />
+
+        <!--        家族成员数-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/familyCountTv"
+            style="@style/WrapWrap"
+            familyCount="@{data.familyCountContent}"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginBottom="@dimen/offset_20px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/headCV"
+            tools:text="6.8W" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

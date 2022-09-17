@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layout_gravity="center"
+    >
+
+    <com.mtime.mtmovie.widgets.RoundAngleImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="9720dp"
+        android:maxHeight="9920dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/default_image"
+        android:clickable="true"
+        app:roundHeight="5dp"
+        app:roundWidth="5dp"
+        />
+
+    <!-- 关闭按钮 -->
+    <RelativeLayout
+        android:id="@+id/close_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:layout_marginTop="18dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        >
+
+        <!-- 白边 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/shape_home_register_gift_close_bg"
+            />
+
+        <!-- X -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/btn_close"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

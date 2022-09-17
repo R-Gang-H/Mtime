@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f6f6f6">
+
+    <include
+        android:id="@+id/navigationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar_normal" />
+
+    <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/comments_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_comment_view"
+        android:layout_below="@id/navigationbar"
+        android:background="@color/white"
+        app:loadMoreEnabled="true"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        app:refreshEnabled="false"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
+
+    <include
+        android:id="@id/bottom_comment_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/bottom_bar_movie_comments" />
+
+</RelativeLayout>

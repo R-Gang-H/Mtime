@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--具体可以参考https://mp.weixin.qq.com/s/pkUhf98hLjZCqFju1aIr7w-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+
+<!--    <domain-config cleartextTrafficPermitted="true">-->
+<!--        <domain includeSubdomains="true">mtime.cn</domain>-->
+<!--        <trust-anchors>-->
+<!--            <certificates src="system" />-->
+<!--            <certificates src="user" />-->
+<!--        </trust-anchors>-->
+<!--    </domain-config>-->
+
+<!--    <domain-config cleartextTrafficPermitted="true">-->
+<!--        <domain includeSubdomains="true">mtime.com</domain>-->
+<!--        <trust-anchors>-->
+<!--            <certificates src="system" />-->
+<!--            <certificates src="user" />-->
+<!--        </trust-anchors>-->
+<!--    </domain-config>-->
+
+<!--    <debug-overrides>-->
+<!--        <trust-anchors>-->
+<!--            <certificates src="system" />-->
+<!--            <certificates src="user" />-->
+<!--        </trust-anchors>-->
+<!--    </debug-overrides>-->
+</network-security-config>

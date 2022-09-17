@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_cinema_list_location_bar_rr"
+    android:layout_width="match_parent"
+    android:layout_height="27dp"
+    android:layout_alignParentBottom="true"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@drawable/shape_cinema_list_location_bottom_bar_bg"
+    >
+
+    <ImageView
+        android:id="@+id/layout_cinema_list_location_bar_refresh_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_cinema_list_refresh"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:id="@+id/layout_cinema_list_location_bar_tip_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/layout_cinema_list_location_bar_refresh_iv"
+        android:layout_marginRight="10dp"
+        android:lines="1"
+        android:textSize="12sp"
+        android:textColor="#4e5e73"
+        android:text="@string/cinema_list_location_bar_fail"
+        />
+
+</RelativeLayout>

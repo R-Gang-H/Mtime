@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingRight="15dp">
+
+    <TextView
+        android:id="@+id/item_movie_details_associated_movie_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:lines="1"
+        android:textSize="14sp"
+        android:textColor="#8798af"
+        tools:text="前传"
+        />
+
+    <include
+        layout="@layout/item_movie_details_movie" />
+
+</LinearLayout>

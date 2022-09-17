@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.kotlin.android.card.monopoly.widget.CircleImageView
+            android:id="@+id/avatarView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="75dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_robot_avatar"
+            app:civ_border_color="@color/color_48d6ea"
+            app:civ_border_overlay="true"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/avatarView"
+            android:layout_alignBottom="@+id/avatarView"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/avatarView"
+            android:gravity="center_vertical"
+            android:text="@string/card_monopoly"
+            android:textColor="@color/color_ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/cardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/avatarView"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_ffffff">
+
+            <com.kotlin.android.card.monopoly.widget.card.OpenCardView
+                android:id="@+id/openCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+        <com.kotlin.android.widget.titlebar.TitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="68dp" />
+    </RelativeLayout>
+</layout>

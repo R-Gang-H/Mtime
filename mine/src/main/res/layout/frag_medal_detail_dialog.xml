@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialogView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/offset_17dp"
+    android:paddingTop="@dimen/offset_36px"
+    android:paddingRight="@dimen/offset_17dp"
+    android:paddingBottom="@dimen/offset_62px"
+    tools:ignore="ResourceName">
+
+    <ImageView
+        android:id="@+id/closeIv"
+        android:layout_width="@dimen/offset_20dp"
+        android:layout_height="@dimen/offset_20dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_close"
+        app:tint="@color/color_1d2736" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/medalIv"
+        android:layout_width="@dimen/offset_260px"
+        android:layout_height="@dimen/offset_270px"
+        android:layout_below="@+id/closeIv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/offset_15dp"
+        android:src="@mipmap/ic_medal_awarded_default" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medalIv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/offset_46px"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/medalName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_303a47"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="劳动最光荣" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/awardedTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_404c57"
+            android:textSize="14sp"
+            tools:text="——  2021.12.14获得  ——" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/explainTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:layout_marginRight="@dimen/offset_10dp"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:paddingLeft="@dimen/offset_20dp"
+            android:paddingRight="@dimen/offset_20dp"
+            android:textColor="@color/color_404c57"
+            android:textSize="14sp"
+            tools:text="累计点赞100次累计点赞100次累计点赞100次累计点赞100次" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/limitAmountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/offset_6dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_8798af"
+            android:textSize="14sp"
+            tools:text="限量100个" />
+
+    </LinearLayout>
+
+</RelativeLayout>

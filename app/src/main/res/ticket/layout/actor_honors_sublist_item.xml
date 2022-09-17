@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/only_honor_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/actor_honors_sublist_item_label_margin_top"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/only_honor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333333"
+            android:textSize="16.5sp" />
+
+        <TextView
+            android:id="@+id/only_honor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333333"
+            android:textSize="16.5sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="1px"
+        android:layout_height="@dimen/actor_honors_sublist_item_label_margin_top"
+        android:layout_below="@id/only_honor_layout"
+        android:background="@color/transparent"
+        android:contentDescription="@string/app_name" />
+
+    <!--<TextView-->-->
+
+    <LinearLayout
+        android:id="@+id/subitem_label_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/actor_honors_sublist_item_label_margin_top"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/actor_honors_sublist_item_header_margin_top">
+
+        <TextView
+            android:id="@+id/subitem_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333333"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="16.5sp" />
+
+        <TextView
+            android:id="@+id/subitem_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333333"
+            android:textSize="16.5sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/subitem_header"
+        android:layout_width="@dimen/actor_honors_sublist_item_header_width"
+        android:layout_height="@dimen/actor_honors_sublist_item_header_height"
+        android:layout_below="@id/subitem_label_layout"
+        android:background="@drawable/image_border"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/offset_pxtodx_1"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/subitem_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/subitem_header"
+        android:layout_marginLeft="@dimen/actor_honors_sublist_item_content_margin_left"
+        android:layout_toRightOf="@id/subitem_header"
+        android:gravity="left|center_vertical"
+        android:lineSpacingExtra="5dp"
+        android:singleLine="false"
+        android:textColor="@color/color_333333"
+        android:textSize="14.5sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actor_honors_sublist_item_label_margin_top"
+        android:layout_below="@id/subitem_header"
+        android:background="@color/transparent"
+        android:contentDescription="@string/app_name" />
+
+</RelativeLayout>

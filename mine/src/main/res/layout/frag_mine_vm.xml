@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/MatchMatch"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rootCL"
+            style="@style/MatchMatch"
+            >
+
+            <!-- 背景图 -->
+            <View
+                android:id="@+id/headBgView"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_540px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- titleBar -->
+            <com.kotlin.android.widget.titlebar.TitleBar
+                android:id="@+id/titleBar"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:background="@color/color_e0e0e0"
+                />
+
+            <!-- 个人信息 -->
+            <include
+                layout="@layout/layout_frag_mine_user_info"
+                android:id="@+id/userInfoInc"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_38px"
+                android:layout_marginStart="@dimen/offset_30px"
+                app:layout_constraintTop_toBottomOf="@id/titleBar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 想看 看过 收藏 -->
+            <include
+                layout="@layout/layout_frag_mine_movie"
+                android:id="@+id/movieInc"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_30px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginEnd="@dimen/offset_20px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userInfoInc"
+                />
+
+            <!-- 订单 钱包 -->
+            <include
+                layout="@layout/layout_frag_mine_order"
+                android:id="@+id/orderInc"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_8px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginEnd="@dimen/offset_20px"
+                app:layout_constraintTop_toBottomOf="@+id/movieInc"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 创作中心 -->
+            <include
+                android:id="@+id/writeCenterInc"
+                layout="@layout/layout_frag_mine_write_center"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_8px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginEnd="@dimen/offset_20px"
+                app:layout_constraintTop_toBottomOf="@+id/orderInc"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 服务 -->
+            <include
+                layout="@layout/layout_frag_mine_service"
+                android:id="@+id/serviceInc"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_8px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginEnd="@dimen/offset_20px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/writeCenterInc"
+                />
+
+            <!-- 活动 -->
+            <include
+                layout="@layout/layout_frag_mine_activity"
+                android:id="@+id/activityInc"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_8px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginEnd="@dimen/offset_20px"
+                android:layout_marginBottom="@dimen/offset_18px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/serviceInc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <!--列表-->
+    <com.aspsine.irecyclerview.IRecyclerView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/act_my_read_history_irecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:background="@color/white"
+        app:refreshEnabled="true"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"
+        app:loadMoreEnabled="false"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        tools:listitem="@layout/item_my_read_history"
+        />
+
+    <!--底部分隔条-->
+    <View
+        android:id="@+id/act_my_read_history_bottom_split_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_5dp"
+        android:layout_above="@+id/act_my_read_history_bottom_ll"
+        android:background="@drawable/shape_my_read_history_bottom_bg"
+        />
+
+    <!--底部操作-->
+    <LinearLayout
+        android:id="@+id/act_my_read_history_bottom_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/act_my_read_history_select_all_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="@dimen/font_size_15sp"
+            android:textColor="@color/color_333333"
+            android:text="@string/my_read_history_select_all"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/act_my_read_history_del_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:drawableLeft="@drawable/shape_my_read_history_bottom_btn_spit_line"
+            android:textSize="@dimen/font_size_15sp"
+            android:textColor="@color/color_f15353_alpha_40"
+            android:text="@string/my_read_history_del"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <!--空提示-->
+    <LinearLayout
+        android:id="@+id/act_my_read_history_empty_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_read_history_empty_icon"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_15dp"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_15sp"
+            android:text="@string/my_read_history_empty"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical">
+
+    <!-- title -->
+    <include
+        android:id="@+id/about_title"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- 图标 -->
+            <ImageView
+                android:id="@+id/about_icon"
+                android:layout_width="@dimen/offset_192px"
+                android:layout_height="@dimen/offset_60px"
+                android:layout_marginTop="@dimen/offset_112px"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_mtime_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/offset_48px"
+                android:text="@string/str_about_for_movielovers"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold" />
+
+            <!-- 网址 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/offset_10px"
+                android:text="@string/mtime_url"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp" />
+
+            <!-- 版本号 -->
+            <TextView
+                android:id="@+id/about_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/about_mtime_url_margin_top"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="当前版本 x.x.x" />
+
+            <!-- 购票帮助中心 -->
+            <LinearLayout
+                android:id="@+id/act_about_ticket_help_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_60px"
+                android:background="@drawable/listview_item_bg_selector"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_15dp">
+
+
+                <TextView
+                    style="@style/AboutTextView"
+                    android:text="@string/str_ticket_help" />
+
+
+            </LinearLayout>
+
+            <!-- 条款 -->
+            <LinearLayout
+                android:id="@+id/act_about_mtime_rule1_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/listview_item_bg_selector"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_30px">
+
+                <View style="@style/AboutLine" />
+
+                <TextView
+                    style="@style/AboutTextView"
+                    android:text="@string/str_register_phone_tip1_2" />
+
+            </LinearLayout>
+
+            <!-- 营业执照 -->
+            <LinearLayout
+                android:id="@+id/act_about_mtime_rule2_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/listview_item_bg_selector"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_30px">
+
+                <View style="@style/AboutLine" />
+
+                <TextView
+                    style="@style/AboutTextView"
+                    android:text="@string/str_register_phone_tip2_2" />
+
+
+            </LinearLayout>
+
+            <View
+                style="@style/AboutLine"
+                android:layout_marginLeft="@dimen/offset_30px" />
+
+            <!-- 版权 -->
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_134px"
+                android:layout_marginBottom="@dimen/offset_80px"
+                android:clickable="true"
+                android:gravity="center"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="@string/copyright" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

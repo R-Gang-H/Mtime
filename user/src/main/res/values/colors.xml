@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    标题，其他登录方式按钮，设置手机号码字体颜色，设置登录按钮文字颜色-->
+    <color name="one_key_login_title_text_color">#484848</color>
+    <color name="other_login_btn_text_color">#484848</color>
+    <color name="phone_number_color">#484848</color>
+    <color name="login_btn_text_color">#FFFFFF</color>
+
+<!--    设置隐私条款名称颜色(基础文字颜色，协议文字颜色)-->
+    <color name="app_privacy_color1">#8B8B8B</color>
+    <color name="app_privacy_color2">#20A0DA</color>
+
+<!--    设置协议展示web页面导航栏背景、标题文字颜色-->
+    <color name="privacy_nav_color">#FFFFFF</color>
+    <color name="privacy_nav_title_text_color">#30333B</color>
+
+    <!--    设置移动slogan文字颜色-->
+    <color name="slogan_text_color">#484848</color>
+
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.kotlin.tablet.ui.add.FilmSearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/MatchMatch">
+
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/mSureLay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mSearchRv"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mSureLay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_140px"
+            android:background="@drawable/laylist_bottom_shadow_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/mSaveBtn"
+                color="@{@color/color_ff1cacde}"
+                cornerRadius="@{21}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_80px"
+                android:layout_marginLeft="@dimen/offset_60px"
+                android:layout_marginRight="@dimen/offset_60px"
+                android:text="@string/tablet_film_list_save"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

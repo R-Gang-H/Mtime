@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kotlin.android.widget.marquee.MarqueeTextView
+        android:id="@+id/tipsView"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/color_fef7e9"
+        android:drawableStart="@drawable/ic_publish_tips_label"
+        android:drawableEnd="@drawable/ic_publish_tips_x"
+        android:drawablePadding="8dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/publish_component_tips"
+        android:textColor="@color/color_feb12a"
+        android:textSize="13sp"
+        android:translationZ="1dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="600dp"
+                android:orientation="vertical">
+
+                <com.kotlin.android.publish.component.widget.editor.FilmRatingView
+                    android:id="@+id/filmRatingView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/titleLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/titleView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/publish_input_title_hint"
+                        android:minHeight="50dp"
+                        android:paddingStart="15dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="50dp"
+                        android:paddingBottom="15dp"
+                        android:textColorHint="@color/color_cbd0d7"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/titleCountView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="0/50"
+                        android:textColor="@color/color_cbd0d7"
+                        android:textSize="12sp" />
+                </FrameLayout>
+
+                <View
+                    android:id="@+id/divideView1"
+                    style="@style/EditorDivide"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp" />
+
+                <com.kotlin.android.publish.component.widget.article.view.EditorLayout
+                    android:id="@+id/editorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="400dp" />
+
+                <View
+                    android:id="@+id/divideView2"
+                    style="@style/EditorDivide" />
+
+                <FrameLayout
+                    android:id="@+id/footerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.kotlin.android.publish.component.widget.article.footer.EditorFooterArticleView
+                        android:id="@+id/footerArticleView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <com.kotlin.android.publish.component.widget.article.footer.EditorFooterPostView
+                        android:id="@+id/footerPostView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <com.kotlin.android.publish.component.widget.article.label.AddImagesView
+                        android:id="@+id/footerImagesView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/deleteCommentView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/icon_publish_reset"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/footerShadowView"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom" />
+    </FrameLayout>
+
+    <com.kotlin.android.publish.component.widget.editor.EditorMenuView
+        android:id="@+id/editorMenuView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

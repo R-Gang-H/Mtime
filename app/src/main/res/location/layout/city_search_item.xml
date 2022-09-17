@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listview_item_bg_selector"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:layout_marginBottom="@dimen/offset_30px"
+        android:textSize="@dimen/offset_16sp"
+        android:textColor="@color/color_4e5e73"
+        tools:text="北京"
+        />
+
+    <View
+        android:id="@+id/city_search_item_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_2px"
+        android:background="@color/color_f3f3f4"
+        />
+
+</LinearLayout>

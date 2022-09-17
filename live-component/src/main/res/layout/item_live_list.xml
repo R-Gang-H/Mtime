@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.live.component.ui.fragment.list.adapter.LiveListItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mItemRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view) -> data.onClick(view)}"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mImgCardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintDimensionRatio="h,1:0.57"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/mImgIv"
+                load_image="@{data.itemData.image}"
+                load_image_height="@{195}"
+                load_image_width="@{345}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:layout_width="@dimen/offset_140px"
+            android:layout_height="@dimen/offset_44px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_20px"
+            app:layout_constraintRight_toRightOf="@id/mImgCardView"
+            app:layout_constraintTop_toTopOf="@id/mImgCardView"
+            android:bg_shape_color="@{data.itemData.liveStatus == 2 ? @color/color_ff5a36 : @color/color_8798af}"
+            android:bg_shape_corner="@{2}"
+            android:visibility="@{data.itemData.liveStatus == 1 ? View.GONE : View.VISIBLE}"
+            >
+
+            <TextView
+                android:id="@+id/mLiveTagTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableRight="@{data.itemData.liveStatus == 2 ? @drawable/ic_live : @drawable/ic_live_replay}"
+                android:drawablePadding="@dimen/offset_11px"
+                android:textColor="@color/color_f2f3f6"
+                android:textSize="@dimen/offset_13sp" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/mTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{data.itemData.title}"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:visibility="@{TextUtils.isEmpty(data.itemData.title) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mImgCardView"
+            tools:text="沙赞 新预告来袭！Eminem老歌作BGM" />
+
+        <TextView
+            android:id="@+id/mLiveTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/live_component_live_list_time_format(data.itemData.startTime)}"
+            android:textColor="@color/color_feb12a"
+            android:textSize="@dimen/offset_12sp"
+            android:visibility="@{data.itemData.liveStatus == 1 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/mLiveNumberTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mLiveNumberTv"
+            tools:text="9月7日 14:19 直播" />
+
+        <TextView
+            android:id="@+id/mLiveNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:layout_marginBottom="@dimen/offset_30px"
+            android:textColor="@color/color_8798af"
+            android:textSize="12sp"
+            app:layout_goneMarginTop="@dimen/offset_10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/mLiveTimeTv"
+            app:layout_constraintTop_toBottomOf="@id/mTitleTv"
+            app:layout_goneMarginStart="0dp"
+            tools:text="403,983人已预约" />
+
+        <TextView
+            android:id="@+id/mLiveAppointBtnTv"
+            android:layout_width="@dimen/offset_110px"
+            android:layout_height="@dimen/offset_50px"
+            android:gravity="center"
+            android:onClick="@{(view) -> data.onClick(view)}"
+            android:text="预约"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"
+            android:visibility="@{data.itemData.liveStatus == 1 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/mLiveNumberTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mLiveNumberTv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

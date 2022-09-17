@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <!-- 可创建群组数 -->
+            <TextView
+                android:id="@+id/mActFamilyCreateMaxCountTv"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_30dp"
+                android:gravity="center"
+                android:background="@color/color_f2f3f6_alpha_92"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="@string/family_create_max_count"
+                />
+
+            <!-- 封面 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mActFamilyCreateImgCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateMaxCountTv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="@dimen/offset_30px"
+                >
+
+                <!-- 封面label -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateImgLabelTv"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_create_cover"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <!-- 封面图 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/mActFamilyCreateImgCardView"
+                    android:layout_width="@dimen/offset_160px"
+                    android:layout_height="@dimen/offset_160px"
+                    android:layout_marginEnd="@dimen/offset_8px"
+                    app:cardCornerRadius="@dimen/offset_8px"
+                    app:cardElevation="0px"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/mActFamilyCreateImgArrowIv"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mActFamilyCreateImgShowCl"
+                        style="@style/MatchMatch"
+                        >
+
+                        <!-- 封面图 -->
+                        <ImageView
+                            android:id="@+id/mActFamilyCreateImgIv"
+                            android:layout_width="@dimen/offset_80dp"
+                            android:layout_height="@dimen/offset_80dp"
+                            android:background="@color/color_f2f3f6"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:scaleType="centerCrop"
+                            />
+
+                        <!-- 透明蒙层 -->
+                        <ImageView
+                            android:id="@+id/mActFamilyCreateImgCoverIv"
+                            android:layout_width="@dimen/offset_0px"
+                            android:layout_height="@dimen/offset_0px"
+                            android:background="@color/color_1e000000"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            />
+
+                        <!-- 相机 -->
+                        <ImageView
+                            android:id="@+id/mActFamilyCreateCameraIv"
+                            android:layout_width="@dimen/offset_50px"
+                            android:layout_height="@dimen/offset_50px"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:srcCompat="@drawable/ic_family_create_camera_dark"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- 右箭头 -->
+                <ImageView
+                    android:id="@+id/mActFamilyCreateImgArrowIv"
+                    android:layout_width="@dimen/offset_16px"
+                    android:layout_height="@dimen/offset_24px"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:srcCompat="@drawable/ic_right_arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilyCreateNameLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                android:layout_marginLeft="@dimen/offset_30px"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:background="@color/color_f2f3f6"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateImgCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 家族名称 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mActFamilyCreateNameCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateNameLineView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="@dimen/offset_30px"
+                >
+
+                <!-- 群组名称label -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateNameLabelTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_name"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <!-- 群组名称 -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateNameTv"
+                    style="@style/WrapWrap"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:gravity="right"
+                    android:textSize="@dimen/offset_14sp"
+                    android:textColor="@color/color_8798af"
+                    android:hint="@string/family_create_name_tip"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilyCreateDesLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateNameCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:background="@color/color_f2f3f6"
+                />
+
+            <!-- 群组简介 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mActFamilyCreateDesCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/offset_30px"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateDesLineView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <!-- 群组简介label -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateDesLabelTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_des"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <!-- 群组简介提示与左侧label必须有47dp间距 -->
+
+                <!-- 群组简介 -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateDesTv"
+                    style="@style/WrapWrap"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:maxWidth="@dimen/offset_400px"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_14sp"
+                    android:hint="@string/family_create_des_tip"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="漫画的活动漫画的活动漫画的活动漫画的活动漫画的活动漫画的活动漫漫画的活动漫画的活动漫画的活动漫画的活动漫画的活动漫"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilyCreatePermissionLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:background="@color/color_f2f3f6"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateDesCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 加入权限 -->
+            mActFamilyCreatePermissionCl<androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mActFamilyCreatePermissionCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/offset_30px"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreatePermissionLineView"
+                >
+
+                <!-- 加入权限label -->
+                <TextView
+                    android:id="@+id/mActFamilyCreatePermissionLabelTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_join_permission"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <!-- 权限 -->
+                <TextView
+                    android:id="@+id/mActFamilyCreatePermissionTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilyCreateCategoryLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreatePermissionCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:background="@color/color_f2f3f6"
+                />
+
+            <!-- 群组分类 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mActFamilyCreateCategoryCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/offset_30px"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateCategoryLineView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <!-- 群组分类label -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateCategoryLabelTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_category"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <!-- 群组分类 -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateCategoryTv"
+                    style="@style/WrapWrap"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:gravity="right"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_14sp"
+                    android:hint="@string/family_category_tip"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilyCreateAdministratorLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateCategoryCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:background="@color/color_f2f3f6"
+                />
+
+            <!-- 群组管理员 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mActFamilyCreateAdministratorCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/offset_30px"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateAdministratorLineView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <!-- label -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateAdministratorLabelTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_administrator"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <!-- 数量 -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateAdministratorCountTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_8798af"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:textSize="@dimen/offset_14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="1/30"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilyCreateMemberLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                android:layout_marginLeft="@dimen/offset_30px"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:background="@color/color_f2f3f6"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateAdministratorCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 群组成员 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mActFamilyCreateMemberCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateMemberLineView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="@dimen/offset_30px"
+                android:visibility="visible"
+                >
+
+                <!-- label -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateMemberLabelTv"
+                    style="@style/WrapWrap"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_member"
+                    />
+
+                <!-- 成员数 -->
+                <TextView
+                    android:id="@+id/mActFamilyCreateMemberCountTv"
+                    style="@style/WrapWrap"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="5000"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilySectionLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                android:layout_marginLeft="@dimen/offset_30px"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:background="@color/color_f2f3f6"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateMemberCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 分区管理 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mSectionManagerCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mActFamilyCreateMemberCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="@dimen/offset_30px"
+                android:visibility="visible"
+                >
+
+                <!-- label -->
+                <TextView
+                    android:id="@+id/mSectionManagerTv"
+                    style="@style/WrapWrap"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_section_manager"
+                    />
+
+                <!-- 成员数 -->
+                <TextView
+                    android:id="@+id/mSectionManagerCountTv"
+                    style="@style/WrapWrap"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="5000"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 分隔线 -->
+            <View
+                android:id="@+id/mActFamilyPublishLineView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_2px"
+                android:layout_marginLeft="@dimen/offset_30px"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:background="@color/color_f2f3f6"
+                app:layout_constraintTop_toBottomOf="@+id/mSectionManagerCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!-- 发布管理 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mPublishManagerCl"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mSectionManagerCl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="@dimen/offset_30px"
+                android:visibility="visible"
+                >
+
+                <!-- label -->
+                <TextView
+                    android:id="@+id/mPublishManagerTv"
+                    style="@style/WrapWrap"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_17sp"
+                    android:text="@string/family_publish_manager"
+                    />
+
+                <!-- 成员数 -->
+                <TextView
+                    android:id="@+id/mPublishManagerCountTv"
+                    style="@style/WrapWrap"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="@dimen/offset_8px"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="5000"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 创建按钮 -->
+            <TextView
+                android:id="@+id/mActFamilyCreateBtn"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="@dimen/offset_82px"
+                android:layout_marginStart="@dimen/offset_60px"
+                android:layout_marginEnd="@dimen/offset_60px"
+                android:layout_marginBottom="@dimen/offset_156px"
+                android:gravity="center"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_17sp"
+                android:textStyle="bold"
+                android:text="@string/community_create_btn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/color_e3e5ed"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

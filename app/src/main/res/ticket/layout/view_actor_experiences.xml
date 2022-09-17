@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.bussiness.ticket.movie.widget.ActorExperiencesView xmlns:android="http://schemas.android.com/apk/res/android"
+                                                              android:layout_width="match_parent"
+                                                              android:layout_height="wrap_content"
+    >
+    <!-- seperate regin with gray -->
+
+    <LinearLayout
+        android:id="@+id/actor_experiences_seperate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+    <!-- had done -->
+
+    <RelativeLayout
+        android:id="@+id/experiences_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actor_experiences_seperate"
+        android:layout_marginTop="@dimen/offset_12dp"
+        android:layout_marginLeft="@dimen/offset_10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/actor_detail_resume_label"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/offset_10dp"
+            android:background="@drawable/img_right_arrow"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/offset_5dp"
+            android:layout_toLeftOf="@id/arrow"
+            android:text="@string/movie_buybtn_all"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+    <!-- image -->
+
+    <ImageView
+        android:id="@+id/experiences_header"
+        android:layout_width="@dimen/offset_150dp"
+        android:layout_height="@dimen/offset_100dp"
+        android:layout_alignLeft="@id/experiences_title"
+        android:layout_below="@id/experiences_title"
+        android:layout_marginTop="@dimen/offset_12dp"
+        android:background="@color/color_d8d8d8"
+        android:contentDescription="@string/app_name"
+        android:padding="1px" />
+
+    <TextView
+        android:id="@+id/experiences_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/experiences_header"
+        android:layout_toRightOf="@id/experiences_header"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/offset_10dp"
+        android:maxLines="2"
+        android:lineSpacingExtra="2.5dp"
+        android:singleLine="false"
+        android:gravity="left"
+        android:ellipsize="end"
+        android:textColor="@color/color_333333"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/experiences_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/experiences_header"
+        android:layout_below="@id/experiences_label"
+        android:layout_marginTop="@dimen/offset_1dp"
+        android:layout_alignLeft="@id/experiences_label"
+        android:layout_alignRight="@id/experiences_label"
+        android:ellipsize="end"
+        android:gravity="left|center_vertical"
+        android:lineSpacingExtra="3dp"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:textColor="@color/color_777777"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_12dp"
+        android:layout_below="@id/experiences_header"
+        android:background="#00000000"
+        android:contentDescription="@string/app_name" />
+</com.mtime.bussiness.ticket.movie.widget.ActorExperiencesView>

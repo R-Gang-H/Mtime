@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail.VideoDetailActivity">
+
+
+
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/offset_420px"
+            android:id="@+id/stateView"
+            android:layout_marginBottom="@dimen/offset_122px"
+            android:layout_height="match_parent">
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:layout_width="match_parent"
+                android:id="@+id/smartRefreshLayout"
+                android:layout_height="match_parent">
+
+                <com.kotlin.android.widget.recycler.ScrollRecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/commentRv"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_height="match_parent"/>
+
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <!--        评论控件-->
+        <com.kotlin.android.comment.component.widget.PublishCommentView
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/publishCommentView"
+            android:visibility="gone"
+            android:layout_height="wrap_content"/>
+
+        <!--        显示要上传的图片-->
+        <com.kotlin.android.comment.component.widget.CommentImageLayout
+            android:layout_width="@dimen/offset_248px"
+            android:id="@+id/commentImgLayout"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/publishCommentView"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_188px"/>
+<!--        视频控件容器-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/playerContainer"
+            android:background="@color/color_000000"
+            android:layout_height="@dimen/offset_420px"/>
+
+
+    </RelativeLayout>
+</layout>

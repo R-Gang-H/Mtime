@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.person.binder.CommunityWantSeeBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wantSeeRootView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:onClick="@{view->data.onClick(view)}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--        电影海报-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/moviePicCV"
+                android:layout_width="@dimen/offset_120px"
+                android:layout_height="@dimen/offset_160px"
+                android:layout_marginTop="@dimen/offset_15dp"
+                android:layout_marginBottom="@dimen/offset_15dp"
+                app:cardCornerRadius="@dimen/offset_8px"
+                app:cardElevation="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    load_image="@{data.bean.moviePic}"
+                    load_image_height="@{80}"
+                    load_image_width="@{60}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+            <!--评分-->
+            <com.kotlin.android.widget.textview.SpacingTextView
+                android:id="@+id/scoreStv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:text="@{String.valueOf(data.bean.rating)}"
+                android:textColor="@color/color_1cacde"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                android:visibility="@{data.bean.showScore?View.VISIBLE:View.GONE}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="9.8" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/enLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/moviePicCV"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movieNameTv">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nameEn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_20px"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxWidth="200dp"
+                    android:maxLines="1"
+                    android:text="@{data.bean.movieNameEn}"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@{'('+data.bean.year+')'}"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_11sp"
+                    android:textStyle="bold"
+                    android:visibility="@{TextUtils.isEmpty(data.bean.year)?View.GONE:View.VISIBLE}"
+                    app:layout_constraintLeft_toRightOf="@+id/nameEn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="(2018)"
+                    tools:visibility="visible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/scoreTv"
+                android:layout_width="@dimen/offset_116px"
+                android:layout_height="@dimen/offset_50px"
+                android:layout_marginBottom="@dimen/offset_15dp"
+                android:bg_shape_color="@{@color/color_20a0da}"
+                android:bg_shape_corner="@{13}"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:onClick="@{view->data.onClick(view)}"
+                android:text="@string/score"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/releaseTv"
+                app:layout_constraintRight_toRightOf="parent" />
+            <!--        play video icon-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/videoIcon"
+                android:layout_width="@dimen/offset_10dp"
+                android:layout_height="@dimen/offset_10dp"
+                android:layout_marginLeft="@dimen/offset_24px"
+                android:layout_marginRight="@dimen/offset_2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_collection_movie_play"
+                android:visibility="@{data.bean.canPlay?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@+id/movieNameTv"
+                app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+                app:layout_constraintTop_toTopOf="@+id/movieNameTv"
+                tools:visibility="visible" />
+            <!--        影片名称-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movieNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_5px"
+                android:layout_marginTop="@dimen/offset_25px"
+                android:layout_marginRight="@dimen/offset_55px"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{TextUtils.isEmpty(data.bean.movieName)?data.bean.movieNameEn:data.bean.movieName}"
+                android:textColor="@color/color_1d2736"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/videoIcon"
+                app:layout_constraintRight_toLeftOf="@id/scoreTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginLeft="@dimen/offset_20px"
+                tools:text="嗜血五人组嗜血五人组嗜血五人组嗜血五人组嗜血五人组" />
+
+            <!--        导演信息-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/directorTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginTop="@dimen/offset_13px"
+                android:layout_marginRight="@dimen/offset_85px"
+                android:layout_marginBottom="@dimen/offset_4px"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{data.bean.director}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+                app:layout_constraintRight_toLeftOf="@id/scoreTv"
+                app:layout_constraintTop_toBottomOf="@id/enLayout"
+                tools:text="导演: 曾国祥" />
+            <!--        演员信息-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actorTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginRight="@dimen/offset_85px"
+                android:layout_marginBottom="@dimen/offset_4px"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{data.bean.actors}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+                app:layout_constraintRight_toLeftOf="@id/scoreTv"
+                app:layout_constraintTop_toBottomOf="@id/directorTv"
+                tools:text="主演: 周冬雨 / 易烊千玺 / 尹昉 …" />
+
+            <!--        上映信息-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/releaseTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_20px"
+                android:layout_marginRight="@dimen/offset_55px"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{data.bean.releaseContent}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                android:visibility="@{TextUtils.isEmpty(data.bean.earliestReleaseDate)?View.GONE:View.VISIBLE}"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/moviePicCV"
+                app:layout_constraintRight_toLeftOf="@id/scoreTv"
+                app:layout_constraintTop_toBottomOf="@+id/actorTv"
+                tools:text="上映日期：2017年5月05日 中国" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/movieComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_15dp"
+                android:layout_marginBottom="@dimen/offset_15dp"
+                android:background="@color/color_f2f3f6"
+                android:visibility="@{data.bean.hasScored()?View.VISIBLE:View.GONE}"
+                app:cardCornerRadius="@dimen/offset_18px"
+                app:cardElevation="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviePicCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    color="@{@color/color_f2f3f6}"
+                    cornerRadius="@{9}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/offset_14dp"
+                    android:paddingTop="@dimen/offset_13px"
+                    android:paddingRight="@dimen/offset_14dp"
+                    android:paddingBottom="@dimen/offset_13px">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/des"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/offset_85px"
+                        android:layout_marginBottom="@dimen/offset_4px"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="我评"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="@dimen/offset_11sp"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_score_comment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_22px"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{data.bean.ratingFinal+' '+data.bean.getRatingHintText()}"
+                        android:textColor="@color/color_1cacde"
+                        android:textSize="@dimen/offset_11sp"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toRightOf="@+id/des"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="9.0 很完美，绝对不容错过" />
+                    <!--短影评-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_film_des"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_5px"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:onClick="@{view->data.onClick(view)}"
+                        android:text="@{data.bean.shortInteractiveObj.mixWord}"
+                        android:textColor="@color/color_1d2736"
+                        android:textSize="@dimen/offset_11sp"
+                        android:visibility="@{TextUtils.isEmpty(data.bean.shortInteractiveObj.mixWord)?View.GONE:View.VISIBLE}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_score_comment"
+                        tools:text="9.0 很完美，绝对不容错过。。。。。。。。。。。。。。。。。。" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/line_width_1px"
+                        android:layout_marginTop="@dimen/offset_13px"
+                        android:background="@color/color_d9dadc"
+                        android:visibility="@{TextUtils.isEmpty(data.bean.longInteractiveObj.title)|TextUtils.isEmpty(data.bean.shortInteractiveObj.mixWord)?View.GONE:View.VISIBLE}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_film_des" />
+                    <!--长影评-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_film_comment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_12px"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:onClick="@{view->data.onClick(view)}"
+                        android:text="@{@string/community_long_comment(data.bean.longInteractiveObj.title)}"
+                        android:textColor="@color/color_1a2737"
+                        android:textSize="@dimen/offset_11sp"
+                        android:textStyle="bold"
+                        android:visibility="@{TextUtils.isEmpty(data.bean.longInteractiveObj.title)?View.GONE:View.VISIBLE}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                        tools:text="写了影评《复仇者联盟》" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_width_1px"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginTop="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f4f5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wantSeeRootView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

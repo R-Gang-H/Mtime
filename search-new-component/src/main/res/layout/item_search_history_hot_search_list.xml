@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/offset_468px"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/shape_search_hot_search_shadow_bg"
+            android:padding="@dimen/offset_12px">
+
+            <View
+                android:id="@+id/mSearchHotSearchListTopBgView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_70px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="@id/mSearchHotSearchListRankingRv"
+                />
+
+            <TextView
+                android:id="@+id/mSearchHotSearchListTitleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/mSearchHotSearchListTopBgView"
+                app:layout_constraintBottom_toBottomOf="@id/mSearchHotSearchListTopBgView"
+                app:layout_constraintLeft_toLeftOf="@id/mSearchHotSearchListTopBgView"
+                android:textSize="@dimen/offset_17sp"
+                android:textColor="@color/color_1d2736"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/offset_26px"
+                tools:text="热门电影"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mSearchHotSearchListRankingRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/mSearchHotSearchListTopBgView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:paddingLeft="@dimen/offset_20px"
+                android:paddingRight="@dimen/offset_30px"
+                android:layout_marginTop="@dimen/offset_4px"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_search_history_hot_search_list_item"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/mSearchHotSearchItemIconIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/offset_32px"
+            android:src="@drawable/ic_film"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

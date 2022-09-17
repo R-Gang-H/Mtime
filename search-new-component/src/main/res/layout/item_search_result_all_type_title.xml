@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <!-- 搜索类型名称 -->
+    <TextView
+        android:id="@+id/mItemSearchResultAllTypeTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_60px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:gravity="center_vertical"
+        android:background="@color/color_f2f3f6_alpha_92"
+        android:textSize="@dimen/offset_12sp"
+        android:textColor="@color/color_8798af"
+        android:textStyle="bold"
+        tools:text="影视"
+        />
+
+</layout>

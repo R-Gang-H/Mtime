@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/offset_70dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/layout_ticket_direct_sale_cinema_info_cinema_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/ticket_light_dark"
+            android:text=""/>
+        <TextView
+            android:id="@+id/layout_ticket_direct_sale_cinema_info_cinema_address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_ticket_direct_sale_cinema_info_cinema_name_tv"
+            android:textSize="13sp"
+            android:textColor="@color/ticket_light_gray"
+            android:text=""/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
+        <View
+            android:layout_width="1px"
+            android:layout_height="36dp"
+            android:background="@color/alpha_ticket_light_gray"/>
+        <ImageView
+            android:id="@+id/layout_ticket_direct_sale_cinema_info_map_navigation_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/goto_map" />
+    </RelativeLayout>
+
+</RelativeLayout>

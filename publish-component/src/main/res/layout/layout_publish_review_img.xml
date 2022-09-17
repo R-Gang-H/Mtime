@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="@dimen/offset_15px"
+    android:paddingBottom="@dimen/offset_15px"
+    >
+
+    <!-- 图片 -->
+    <ImageView
+        android:id="@+id/mContentImgIv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_60px"
+        android:layout_marginRight="@dimen/offset_60px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:src="@drawable/icon_publish_rating_default"
+        />
+
+    <!-- 删除 -->
+    <ImageView
+        android:id="@+id/mContentImgDelIv"
+        android:layout_width="@dimen/offset_40px"
+        android:layout_height="@dimen/offset_40px"
+        android:layout_marginRight="@dimen/offset_40px"
+        android:visibility="visible"
+        app:srcCompat="@drawable/icon_publish_content_del"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!-- 移动 -->
+    <ImageView
+        android:id="@+id/mContentImgMoveIv"
+        android:layout_width="@dimen/offset_40px"
+        android:layout_height="@dimen/offset_40px"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:layout_marginBottom="@dimen/offset_20px"
+        app:srcCompat="@drawable/icon_publish_content_move"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="@+id/mContentImgIv"
+        app:layout_constraintBottom_toBottomOf="@+id/mContentImgIv"
+        />
+
+    <!-- 添加图片描述 -->
+    <ImageView
+        android:id="@+id/mContentAddImgDesIv"
+        android:layout_width="@dimen/offset_165px"
+        android:layout_height="@dimen/offset_40px"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:layout_marginBottom="@dimen/offset_20px"
+        app:srcCompat="@drawable/icon_publish_img_des"
+        android:visibility="visible"
+        app:layout_constraintRight_toLeftOf="@+id/mContentImgMoveIv"
+        app:layout_constraintBottom_toBottomOf="@+id/mContentImgIv"
+        />
+
+    <!-- 图片描述 -->
+    <TextView
+        android:id="@+id/mContentImgDesTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:textColor="@color/color_8798af"
+        android:textSize="@dimen/offset_12sp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/mContentImgIv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:Text="图片描述"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

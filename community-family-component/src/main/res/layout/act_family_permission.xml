@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mCtlJoinPermission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- 自由 -->
+        <TextView
+            android:id="@+id/mActFamilyPermissonFreeTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/offset_40px"
+            android:paddingLeft="@dimen/offset_30px"
+            android:paddingRight="@dimen/offset_30px"
+            android:paddingBottom="@dimen/offset_30px"
+            android:drawableRight="@drawable/ic_family_permisson_check"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:text="@string/family_join_permission_free"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mActFamilyPermissonLineView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            app:layout_constraintTop_toBottomOf="@+id/mActFamilyPermissonFreeTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:background="@color/color_f2f3f6"
+            />
+
+        <!-- 审核 -->
+        <TextView
+            android:id="@+id/mActFamilyPermissonReviewTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/mActFamilyPermissonLineView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="@dimen/offset_30px"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:text="@string/family_join_permission_review"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mCtlPublish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
+        <!-- 需要成员加入才可以发帖及评论 -->
+        <TextView
+            android:id="@+id/mActFamilyNeedJoinTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/offset_40px"
+            android:paddingLeft="@dimen/offset_30px"
+            android:paddingRight="@dimen/offset_30px"
+            android:paddingBottom="@dimen/offset_30px"
+            android:drawableRight="@drawable/ic_family_permisson_check"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:text="@string/family_publish_join_permission_review"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mActFamilyNeedJoinLineView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            app:layout_constraintTop_toBottomOf="@+id/mActFamilyNeedJoinTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:background="@color/color_f2f3f6"
+            />
+
+        <!-- 管理员任意发帖及评论 -->
+        <TextView
+            android:id="@+id/mActFamilyManagerTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/mActFamilyNeedJoinLineView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="@dimen/offset_30px"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:text="@string/family_publish_manager_permission_review"
+            />
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mActFamilyManagerLineView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            app:layout_constraintTop_toBottomOf="@+id/mActFamilyManagerTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:background="@color/color_f2f3f6"
+            />
+
+
+        <!-- 所有成员任意发帖及评论 -->
+        <TextView
+            android:id="@+id/mActFamilyNoPermissionTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/mActFamilyManagerLineView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="@dimen/offset_30px"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:text="@string/family_publish_no_permission_review"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

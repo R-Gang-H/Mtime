@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.message.ui.movieRemind.binder.ItemMovieRemindBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_chat_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_162dp"
+        android:layout_marginBottom="@dimen/offset_20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_notify_tips"
+            viewRadius="@{8}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_38dp"
+            android:layout_marginStart="@dimen/offset_16dp"
+            android:layout_marginTop="@dimen/offset_8dp"
+            android:layout_marginEnd="@dimen/offset_14dp"
+            android:background="@color/color_fef7e9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.kotlin.android.message.widget.NotifyView
+                android:id="@+id/view_notify"
+                android:layout_width="@dimen/offset_20dp"
+                android:layout_height="@dimen/offset_20dp"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:visibility="@{data.bean.isUnread() ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_5dp"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:ellipsize="middle"
+                android:maxLines="1"
+                android:text="@{data.bean.notifyTips}"
+                android:textColor="@color/color_feb12a"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_notify_date"
+                app:layout_constraintStart_toEndOf="@id/view_notify"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="想看的电影《扬名立万》开始院线售票了！" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_notify_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_10dp"
+                android:text="@{data.bean.notifyDate}"
+                android:textColor="@color/color_feb12a"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12-10" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> data.jumpToMovieDetail(data.bean.movieId)}"
+            app:layout_constraintTop_toBottomOf="@id/cl_notify_tips">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_movie"
+                load_image="@{data.bean.movieImg}"
+                load_image_height="@{81}"
+                load_image_roundedRadius="@{9}"
+                load_image_default_img="@{@drawable/icon_film_list_bg_v}"
+                load_image_width="@{61}"
+                android:layout_width="@dimen/offset_61dp"
+                android:layout_height="@dimen/offset_81dp"
+                android:layout_marginStart="@dimen/offset_16dp"
+                android:layout_marginTop="@dimen/offset_15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_movie_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_10dp"
+                android:layout_marginEnd="@dimen/offset_20dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.bean.movieName}"
+                android:textColor="@color/color_1d2736"
+                android:textSize="@dimen/offset_14sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_buy_ticket"
+                app:layout_constraintStart_toEndOf="@id/iv_movie"
+                app:layout_constraintTop_toTopOf="@id/iv_movie"
+                tools:text="扬名立万" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_10dp"
+                android:layout_marginEnd="@dimen/offset_12dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.bean.movieYear}"
+                android:textColor="@color/color_1d2736"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_buy_ticket"
+                app:layout_constraintStart_toEndOf="@id/iv_movie"
+                app:layout_constraintTop_toBottomOf="@id/tv_movie_name"
+                tools:text="(2021)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_movie_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_14dp"
+                android:text="@{data.bean.movieRate}"
+                android:textColor="@color/color_1cacde"
+                android:textSize="@dimen/offset_14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_movie_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_movie_name"
+                tools:text="7.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_movie_country"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_10dp"
+                android:layout_marginEnd="@dimen/offset_12dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.bean.movieCountry}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_movie"
+                app:layout_constraintEnd_toStartOf="@id/tv_buy_ticket"
+                app:layout_constraintStart_toEndOf="@id/iv_movie"
+                tools:text="中国大陆" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_12dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.bean.movieType}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintBottom_toTopOf="@id/tv_movie_country"
+                app:layout_constraintEnd_toStartOf="@id/tv_buy_ticket"
+                app:layout_constraintStart_toStartOf="@id/tv_movie_country"
+                tools:text="剧情 / 喜剧 / 悬疑" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_buy_ticket"
+                android:layout_width="@dimen/offset_72dp"
+                android:layout_height="@dimen/offset_30dp"
+                android:layout_marginEnd="@dimen/offset_14dp"
+                android:layout_marginBottom="@dimen/offset_3dp"
+                android:background="@drawable/message_bg_button"
+                android:gravity="center"
+                android:onClick="@{() -> data.jumpToBuyTicket()}"
+                android:text="@string/message_buy_ticket"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

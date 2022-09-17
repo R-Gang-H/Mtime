@@ -1,0 +1,26 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.publish.component">
+
+    <application>
+
+        <activity
+            android:name=".ui.PublishActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.family.FamilyListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.video.VideoPublishActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.editor.EditorActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.video.PreviewVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+    </application>
+</manifest>

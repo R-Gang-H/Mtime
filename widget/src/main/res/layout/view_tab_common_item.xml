@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    >
+
+    <!-- 适用于占比不是平均分配的tab -->
+    <TextView
+        android:id="@+id/mTabTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/offset_14px"
+        android:layout_marginLeft="@dimen/offset_38px"
+        android:layout_marginRight="@dimen/offset_38px"
+        android:gravity="center"
+        android:textSize="@dimen/offset_15sp"
+        android:textColor="@drawable/selector_tab_text_color"
+        tools:text="推荐"
+        />
+
+</FrameLayout>

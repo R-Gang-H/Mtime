@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="debug.main.VideoDebugActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/videoContainer"
+        android:background="@color/color_000000"
+        android:layout_height="@dimen/offset_400px"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:id="@+id/videoDetailBtn"
+        android:text="视频详情页"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

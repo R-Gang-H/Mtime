@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingEnd="0dp">
+
+    <TextView
+        android:id="@+id/labelView"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:background="@color/color_91d959"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/get_reward"
+        android:textColor="@color/color_ffffff"
+        android:textSize="13sp" />
+
+    <com.kotlin.android.card.monopoly.widget.card.image.CardImageView
+        android:id="@+id/cardImageView"
+        android:layout_width="67dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/countView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cardImageView"
+        android:layout_alignBottom="@+id/cardImageView"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/cardImageView"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:maxLength="4"
+        android:textColor="@color/color_feb12a"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        tools:text="x1" />
+
+    <TextView
+        android:id="@+id/linkView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cardImageView"
+        android:layout_alignBottom="@+id/cardImageView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/add_mark"
+        android:textColor="@color/color_20a0da"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cardImageView"
+        android:layout_alignBottom="@+id/cardImageView"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/linkView"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/coinLabelView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_coin_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/goldLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="6"
+                android:text="@string/actual_gold_coins"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp" />
+            <!--            color_ff5a36-->
+            <TextView
+                android:id="@+id/coinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="6"
+                android:textColor="@color/color_feb12a"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="6666" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divideView"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@drawable/shape_dash_line_a3a3a3" />
+
+        <TextView
+            android:id="@+id/descView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_8798af"
+            android:textSize="10sp"
+            android:visibility="visible"
+            tools:text="奖励金币10000，额外奖励金币 10000（财神卡效果）" />
+    </LinearLayout>
+
+</RelativeLayout>

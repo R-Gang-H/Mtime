@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_ffffff">
+    
+    <View
+        android:id="@+id/mDialogArticleDislikeTopView"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/mDialogArticleDislikeTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mDialogArticleDislikeTopView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:textColor="@color/color_1d2736"
+        android:textStyle="bold"
+        android:text="@string/home_dislike_dialog_title"
+        />
+
+    <TextView
+        android:id="@+id/mDialogArticleDislikeSubtitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mDialogArticleDislikeTitleTv"
+        app:layout_constraintLeft_toLeftOf="@id/mDialogArticleDislikeTitleTv"
+        android:layout_marginTop="3dp"
+        android:textSize="14sp"
+        android:textColor="@color/color_8798af"
+        android:text="@string/home_dislike_dialog_subtitle"
+        />
+
+    <!-- 用户选项 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mDialogArticleDislikeUserImgCardView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0px"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/mDialogArticleDislikeSubtitleTv"
+        app:layout_constraintLeft_toLeftOf="@id/mDialogArticleDislikeTitleTv"
+        android:layout_marginTop="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/mDialogArticleDislikeUserImgIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/mDialogArticleDislikeUserBtnFl"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        app:layout_constraintTop_toTopOf="@id/mDialogArticleDislikeUserImgCardView"
+        app:layout_constraintBottom_toBottomOf="@id/mDialogArticleDislikeUserImgCardView"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="15dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        >
+
+        <TextView
+            android:id="@+id/mDialogArticleDislikeUserBtnTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="不喜欢该用户"
+            />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/mDialogArticleDislikeUserNameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/mDialogArticleDislikeUserImgCardView"
+        app:layout_constraintLeft_toRightOf="@id/mDialogArticleDislikeUserImgCardView"
+        app:layout_constraintRight_toLeftOf="@id/mDialogArticleDislikeUserBtnFl"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="17sp"
+        android:textColor="@color/color_303a47"
+        android:textStyle="bold"
+        tools:text="柳飘飘了吗"
+        />
+
+    <TextView
+        android:id="@+id/mDialogArticleDislikeUserTypeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mDialogArticleDislikeUserNameTv"
+        app:layout_constraintLeft_toLeftOf="@id/mDialogArticleDislikeUserNameTv"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:textColor="@color/color_8798af"
+        tools:text="用户/家族"
+        />
+
+    <!-- 内容选项 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mDialogArticleDislikeContentImgCardView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0px"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/mDialogArticleDislikeUserImgCardView"
+        app:layout_constraintLeft_toLeftOf="@id/mDialogArticleDislikeUserImgCardView"
+        android:layout_marginTop="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/mDialogArticleDislikeContentImgIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/mDialogArticleDislikeContentBtnFl"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        app:layout_constraintTop_toTopOf="@id/mDialogArticleDislikeContentImgCardView"
+        app:layout_constraintBottom_toBottomOf="@id/mDialogArticleDislikeContentImgCardView"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="15dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        >
+
+        <TextView
+            android:id="@+id/mDialogArticleDislikeContentBtnTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="@string/home_dislike_dialog_content_btn"
+            />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/mDialogArticleDislikeContentNameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/mDialogArticleDislikeContentImgCardView"
+        app:layout_constraintLeft_toRightOf="@id/mDialogArticleDislikeContentImgCardView"
+        app:layout_constraintRight_toLeftOf="@id/mDialogArticleDislikeContentBtnFl"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="17sp"
+        android:textColor="@color/color_303a47"
+        android:textStyle="bold"
+        android:text="@string/home_dislike_dialog_content_title"
+        />
+
+    <TextView
+        android:id="@+id/mDialogArticleDislikeContentTitleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mDialogArticleDislikeContentNameTv"
+        app:layout_constraintLeft_toLeftOf="@id/mDialogArticleDislikeContentNameTv"
+        app:layout_constraintRight_toRightOf="@id/mDialogArticleDislikeContentNameTv"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:textColor="@color/color_8798af"
+        tools:text="用户/家族"
+        />
+
+    <!-- 底部按钮 -->
+    <TextView
+        android:id="@+id/mDialogArticleDislikeCancelBtnTv"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/mDialogArticleDislikeContentImgCardView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/mDialogArticleDislikeConfirmBtnTv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="22dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="@color/color_20a0da"
+        android:textStyle="bold"
+        android:text="取消"
+        />
+
+    <TextView
+        android:id="@+id/mDialogArticleDislikeConfirmBtnTv"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="@id/mDialogArticleDislikeCancelBtnTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/mDialogArticleDislikeCancelBtnTv"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="@color/color_ffffff"
+        android:textStyle="bold"
+        android:text="确定"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

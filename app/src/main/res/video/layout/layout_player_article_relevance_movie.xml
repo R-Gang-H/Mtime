@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_player_article_movie_root_rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.mtime.mtmovie.widgets.PosterFilterView
+            android:id="@+id/layout_player_article_relevance_cover_iv"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/offset_60dp"
+            android:scaleType="centerCrop"
+            app:poster_img="@drawable/shield_poster"
+            app:text_color="@color/color_bbbbbb"
+            app:text_size="12sp"
+            app:text_txt="@string/movie_cover_filter" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/layout_player_article_relevance_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp"
+                tools:text="大鱼海棠" />
+
+            <TextView
+                android:id="@+id/layout_player_article_relevance_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_player_article_relevance_name_tv"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:layout_marginTop="@dimen/offset_3dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                tools:text="大鱼海棠" />
+
+            <TextView
+                android:id="@+id/layout_player_article_relevance_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_player_article_relevance_type_tv"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                tools:text="大鱼海棠" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/layout_player_article_relevance_play_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/icon_online_play"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="@string/st_movie_buttom_online_play"
+            android:textColor="@color/color_f15353"
+            android:textSize="@dimen/font_size_12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/layout_player_article_relevance_sale_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_92c224"
+            android:paddingBottom="@dimen/offset_5dp"
+            android:paddingLeft="@dimen/offset_15dp"
+            android:paddingRight="@dimen/offset_15dp"
+            android:paddingTop="@dimen/offset_5dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_12sp"
+            tools:text="预售" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_f2f2f2" />
+</RelativeLayout>

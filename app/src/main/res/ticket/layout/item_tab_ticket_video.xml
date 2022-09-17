@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/WrapWrap"
+    >
+
+    <!-- 封面图 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/videoImgCard"
+        android:layout_width="@dimen/offset_312px"
+        android:layout_height="@dimen/offset_176px"
+        app:cardCornerRadius="@dimen/offset_8px"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <!-- 封面图 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/videoIv"
+            style="@style/MatchMatch"
+            android:src="@drawable/default_image"
+            android:contentDescription="@string/app_name"
+            />
+
+        <!-- 播放Icon -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/videoPlayIv"
+            android:layout_width="@dimen/offset_40px"
+            android:layout_height="@dimen/offset_50px"
+            android:layout_marginTop="@dimen/offset_52px"
+            android:src="@drawable/ic_search_video_play"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 标题 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/videoTitleTv"
+        android:layout_width="@dimen/offset_0px"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="@dimen/offset_12sp"
+        android:textColor="@color/color_ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/videoTitleSmallTv"
+        app:layout_constraintLeft_toLeftOf="@+id/videoTitleSmallTv"
+        app:layout_constraintRight_toRightOf="@+id/videoTitleSmallTv"
+        tools:text="题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+        />
+
+    <!-- 副标题 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/videoTitleSmallTv"
+        android:layout_width="@dimen/offset_0px"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_15px"
+        android:layout_marginEnd="@dimen/offset_22px"
+        android:layout_marginBottom="@dimen/offset_9px"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="@dimen/offset_10sp"
+        android:textColor="@color/color_ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="副标题副标题副标题副标题副标题副标题副标题副标题"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

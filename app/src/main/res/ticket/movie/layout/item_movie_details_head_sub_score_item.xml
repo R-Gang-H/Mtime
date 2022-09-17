@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingTop="@dimen/offset_5px"
+    android:paddingBottom="@dimen/offset_5px"
+    >
+
+    <TextView
+        android:id="@+id/item_movie_details_head_sub_score_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#4E5E73"
+        android:text="音乐"
+        />
+
+    <com.kotlin.android.widget.textview.SpacingTextView
+        android:id="@+id/item_movie_details_head_sub_score_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#20a0da"
+        android:textStyle="bold|italic"
+        android:text="4.5"
+        android:layout_marginLeft="@dimen/offset_12px"
+        />
+
+</LinearLayout>

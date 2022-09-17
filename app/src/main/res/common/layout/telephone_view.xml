@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/telephone_view_tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_2dp"
+        android:textSize="@dimen/font_size_pxtosp_26"
+        android:text="@string/st_service_hot_line"
+        android:textColor="@color/color_movie_main_0075C4" />
+
+    <TextView
+        android:id="@+id/telephone_view_btn_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/offset_6dp"
+        android:background="@drawable/btn_phone_call" />
+
+</LinearLayout>

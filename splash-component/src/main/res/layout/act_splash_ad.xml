@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <!--<data>
+        <import type="android.view.View"/>
+        <variable
+            name="ad"
+            type="com.kotlin.android.splash.bean.SplashAd" />
+    </data>-->
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/splashAdImgIv"
+            android:layout_width="match_parent"
+            android:layout_height="3000dp"
+            android:scaleType="fitStart"
+            />
+
+        <TextView
+            android:id="@+id/splashAdJumpTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/offset_80px"
+            android:layout_marginRight="@dimen/offset_40px"
+            android:padding="@dimen/offset_16px"
+            android:gravity="center"
+            android:textSize="@dimen/offset_16sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="跳过" />
+
+    </FrameLayout>
+
+</layout>

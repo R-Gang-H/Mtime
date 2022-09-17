@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kotlin.android.mine.ui.content.fragment.ContentsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/selectionLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/offset_15dp"
+            android:paddingTop="@dimen/offset_24px"
+            android:paddingBottom="@dimen/offset_6dp">
+
+            <LinearLayout
+                android:id="@+id/allContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/offset_28px"
+                android:paddingTop="@dimen/offset_4dp"
+                android:paddingRight="@dimen/offset_28px"
+                android:paddingBottom="@dimen/offset_4dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/mine_content_all"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="13sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/allIma"
+                    android:layout_width="@dimen/offset_36px"
+                    android:layout_height="@dimen/offset_36px"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/offset_5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_solid_arrow_down" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/createTimeContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_28px"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/offset_28px"
+                android:paddingTop="@dimen/offset_4dp"
+                android:paddingRight="@dimen/offset_28px"
+                android:paddingBottom="@dimen/offset_4dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="@string/mine_content_create_time"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="13sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/createTimeIma"
+                    android:layout_width="@dimen/offset_36px"
+                    android:layout_height="@dimen/offset_36px"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/offset_5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_solid_arrow_down" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.kotlin.android.widget.multistate.MultiStateView
+                android:id="@+id/stateView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                        android:id="@+id/refreshLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/contentRv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/item_contents" />
+
+                    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+                </RelativeLayout>
+
+            </com.kotlin.android.widget.multistate.MultiStateView>
+
+            <LinearLayout
+                android:id="@+id/stateLl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_50000000"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_f2f3f6"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/allStateTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/mine_content_all_num"
+                        android:textColor="@color/color_20a0da"
+                        android:textSize="13sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/passedStateTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/mine_content_state_passed"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="13sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/reviewedStateTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/mine_content_state_reviewed"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="13sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/failStateTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/mine_content_state_fail"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/createTimeLl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_50000000"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_f2f3f6"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/positiveSequence"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/mine_create_time_positive_sequence"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="13sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/invertedOrder"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:text="@string/mine_create_time_inverted_order"
+                        android:textColor="@color/color_20a0da"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>

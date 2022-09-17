@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/coupon_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_fff8e6"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/offset_pxtodx_15"
+        android:paddingTop="@dimen/offset_pxtodx_20"
+        android:textColor="@color/color_9f4400"
+        android:textSize="@dimen/font_size_pxtosp_28"
+        />
+    <LinearLayout
+        android:id="@+id/ad_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/offset_27px"
+        android:paddingRight="@dimen/offset_27px"
+        android:clickable="true"
+        android:layout_below="@id/coupon_num"
+        android:background="@color/color_f6f6f6"
+        >
+        <TextView
+            android:id="@+id/ad_icon_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/font_size_pxtosp_20"
+            android:textColor="@color/color_f47239"
+            android:paddingLeft="@dimen/offset_7px"
+            android:paddingRight="@dimen/offset_7px"
+            android:paddingTop="@dimen/offset_1px"
+            android:paddingBottom="@dimen/offset_1px"
+            android:maxLines="1"
+            android:background="@drawable/bg_stroke_f47239" />
+        <TextView
+            android:id="@+id/ad_txt_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/offset_pxtodx_22"
+            android:paddingTop="@dimen/offset_pxtodx_22"
+            android:paddingLeft="@dimen/offset_10px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_pxtosp_26"/>
+    </LinearLayout>
+
+    <com.aspsine.irecyclerview.IRecyclerView
+        android:id="@+id/list_movie_hot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ad_linear"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"
+        />
+
+    <include
+        android:id="@+id/loading_failed_layout1"
+        layout="@layout/loading_failed_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

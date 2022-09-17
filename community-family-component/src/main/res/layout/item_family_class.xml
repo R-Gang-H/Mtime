@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.family.component.ui.clazz.bean.FamilyClassItem" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@{data.selected ? @color/color_ffffff : @color/color_00ffffff}"
+        >
+
+        <TextView
+            android:id="@+id/mFamilyClassNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="5dp"
+            android:textColor="@{data.selected ? @color/color_1d2736 : @color/color_8798af}"
+            tools:text="追剧"
+            android:text="@{data.name}"
+            />
+
+        <View
+            android:id="@+id/mFamilyClassSelectedTagView"
+            android:layout_width="32dp"
+            android:layout_height="2dp"
+            app:layout_constraintTop_toBottomOf="@id/mFamilyClassNameTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="4dp"
+            android:background="@color/color_47505c"
+            android:visibility="@{data.selected ? View.VISIBLE : View.GONE}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

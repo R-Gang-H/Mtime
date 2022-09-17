@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.filmlist.MovieFormalVideo" />
+    </data>
+
+
+    <ImageView
+        android:layout_marginStart="@dimen/offset_3dp"
+        android:id="@+id/mIcon"
+        load_image_width="@{16}"
+        load_image_height="@{16}"
+        load_image="@{bean.iconUrl}"
+        load_image_default_img="@{@drawable/default_user_head}"
+        android:layout_width="@dimen/offset_16dp"
+        android:layout_height="@dimen/offset_16dp" />
+</layout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/itemView1"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center"
+            android:text="@string/publish_component_permission_allow_all"
+            android:textColor="@color/color_20a0da"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_e5e5e5" />
+
+        <TextView
+            android:id="@+id/itemView2"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center"
+            android:text="@string/publish_component_permission_forbid_all"
+            android:textColor="@color/color_20a0da"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cancelView"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/color_20a0da"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</FrameLayout>

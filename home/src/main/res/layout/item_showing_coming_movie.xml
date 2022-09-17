@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.recommend.adapter.ShowingComingMovieItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:onClick="@{() -> data.mTicketProvider.startMovieDetailsActivity(data.movieItem.id)}">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mMovieImgCardView"
+            android:layout_width="81dp"
+            android:layout_height="108dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/mMoviePosterIv"
+                load_image="@{data.movieItem.pic}"
+                load_image_width="@{81}"
+                load_image_height="@{108}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            
+            <LinearLayout
+                android:id="@+id/mMovieTagsLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="3dp"
+                android:orientation="vertical"
+                />
+
+            <TextView
+                android:id="@+id/mMovieMtimeScoreTv"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                color="@{@color/color_00000000}"
+                endColor="@{@color/color_80000000}"
+                android:visibility="@{data.movieItem.showScoreOrWantSee() ? View.VISIBLE : View.GONE}"
+                android:text="@{data.movieItem.formatScoreOrWantSee}"
+                android:textColor="@color/color_ffffff"
+                android:textSize="10sp"
+                android:paddingBottom="4dp"
+                android:paddingStart="6dp"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/mMovieNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{data.movieItem.name}"
+            android:textColor="@color/color_303a47"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/mMovieImgCardView"
+            app:layout_constraintRight_toRightOf="@id/mMovieImgCardView"
+            app:layout_constraintTop_toBottomOf="@id/mMovieImgCardView"
+            tools:text="流浪地球" />
+        
+        <TextView
+            android:id="@+id/mMovieTimeTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mMovieNameTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/mMovieImgCardView"
+            android:layout_marginTop="2dp"
+            android:lines="1"
+            android:textColor="@color/color_8798af"
+            android:textSize="10sp"
+            tools:text="12月10日上映"
+            android:text="@{data.movieItem.releaseDateOrWantSee}"
+            />
+
+        <FrameLayout
+            android:id="@+id/mMovieBtnFl"
+            android:layout_width="58dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="6dp"
+            android:movie_btn_bg_state="@{data.movieItem.btnState}"
+            app:layout_constraintLeft_toLeftOf="@id/mMovieImgCardView"
+            app:layout_constraintTop_toBottomOf="@id/mMovieTimeTv"
+            android:onClick="@{view -> data.onClick(view)}"
+            >
+
+            <TextView
+                android:id="@+id/mMovieBtnTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_checkb"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:movie_btn_text_state="@{data.movieItem.btnState}"
+                android:textColor="@color/color_feb12a"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="想看" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

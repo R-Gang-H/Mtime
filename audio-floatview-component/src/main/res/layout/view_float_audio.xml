@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_gravity="right"
+        android:id="@+id/audioCl"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_100px">
+
+        <FrameLayout
+            android:id="@+id/audioFL"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="@dimen/offset_100px"
+            android:layout_height="@dimen/offset_100px">
+            <com.kotlin.android.audio.floatview.component.aduiofloat.CircleSeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/offset_100px"
+                app:cardElevation="0dp"
+                android:layout_margin="@dimen/offset_6px"
+                android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/audioIv"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </FrameLayout>
+        <!--            文本信息    -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/font_size_sp_13"
+            tools:text = "毛不易最新单曲即将发布 最多展示2行…"
+            app:layout_constraintLeft_toRightOf="@id/audioFL"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="@dimen/offset_18px"
+            android:maxLines="2"
+            android:visibility="gone"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/offset_234px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+<!--        播放按钮-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/playBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/titleTv"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_8px"
+            app:layout_constraintRight_toLeftOf="@id/closeBtn"
+            android:src="@drawable/ic_selector_audio_play_state"
+            android:layout_width="@dimen/offset_44px"
+            android:layout_height="@dimen/offset_44px"/>
+
+
+<!--        关闭按钮-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/playBtn"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/offset_8px"
+            app:layout_goneMarginRight="@dimen/offset_8px"
+            android:src="@drawable/ic_audio_close"
+            android:layout_width="@dimen/offset_44px"
+            android:layout_height="@dimen/offset_44px"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

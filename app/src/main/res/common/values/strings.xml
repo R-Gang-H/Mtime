@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mtime">时光网</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="well">好的</string>
+    <string name="agree_add_ticket_to_huawei_wallet">是否同意后续自动添加到华为钱包？</string>
+    <string name="movie_title_cinema">影院</string>
+    <string name="movie_title_coming">正在热映</string>
+    <string name="movie_title_upcoming">即将上映</string>
+    <string name="movie_buybtn_all">全部</string>
+    <string name="nearest">离我最近</string>
+    <string name="lowest_price">价格最低</string>
+    <string name="whole_city">全城</string>
+    <string name="hall_effects">影厅特效</string>
+    <string name="btn_payment">确认付款</string>
+    <string name="share_micromessage">微信朋友圈</string>
+    <string name="share_weibosina">微博</string>
+    <string name="share_qq">QQ好友</string>
+    <string name="share_wechatfriend">微信</string>
+    <string name="btn_signin">登录</string>
+    <string name="str_loading">正在加载,请稍候&#8230;</string>
+    <string name="str_load_error">加载数据出现错误，请稍候重试&#8230;</string>
+    <string name="str_error">错误</string>
+    <string name="str_profile">个人资料</string>
+    <string name="str_my_comment">我的影评</string>
+    <string name="str_red_packet_rule">使用规则</string>
+    <string name="str_feedback">意见反馈</string>
+    <string name="str_ticket_help">购票帮助中心</string>
+    <string name="str_version">版本更新</string>
+    <string name="str_notice_manage">通知管理</string>
+    <string name="str_user_score">评分</string>
+    <string name="str_no_connection">没有网络，请打开网络&#8230;</string>
+    <string name="str_settings">设置</string>
+    <string name="mtime_url">www.mtime.com</string>
+    <string name="copyright">Copyright © 2006</string>
+    <string name="str_movie_info">查影讯</string>
+    <string name="str_buy_ticket">购票</string>
+    <string name="str_movie_producer">制作公司</string>
+    <string name="str_movie_distributor">发行公司</string>
+    <!-- 在线选座模块 -->
+    <string name="prompt">提示：</string>
+    <string name="afreshTicket">重新选座</string>
+    <string name="ticketCommitFail">锁定座位失败，请重新选择座位</string>
+    <string name="orderCancelSuccess">订单取消成功</string>
+    <string name="orderCancelError">订单取消失败</string>
+    <string name="orderCancelOk">订单已经取消</string>
+    <string name="cancelOrder">正在取消订单，请稍候&#8230;</string>
+
+    <!-- 支付模块 -->
+    <string name="payOrderCancel">您已取消订单，请勿支付</string>
+    <string name="loginExprie">登录过期，请重新登录</string>
+    <string name="payOrder">支付成功</string>
+    <string name="str_share">分享</string>
+    <string name="str_share_mtime">发给时光好友&#8230;</string>
+    <string name="str_nick">昵称</string>
+    <string name="str_logout_success">成功退出登录!</string>
+    <string name="str_timer">剩余时间:</string>
+    <string name="str_money">￥</string>
+    <string name="str_total_sales">总价：</string>
+    <string name="ticketpayInfo">正在支付，请稍候&#8230;</string>
+    <string name="str_pay_text">立即付款</string>
+    <string name="str_minutes"> 分</string>
+    <string name="str_second"> 秒</string>
+    <string name="str_order_number">订单号：</string>
+    <string name="str_total_price">总价：</string>
+    <string name="str_excharge">(含服务费￥5元/张)</string>
+    <string name="str_cancel_order">取消订单</string>
+    <string name="str_order_detail">订单详情</string>
+    <!-- 银联支付模块 -->
+    <string name="app_name">手机POS</string>
+    <string name="upomp_bypay_editinfo">更改手机号码</string>
+    <string name="upomp_pay_huawei">Huawei Pay</string>
+    <!-- 银联支付模块字符串结束 -->
+    <string name="str_save_to_pic">保存到我的相册</string>
+    <string name="str_save_to_huawei">添加到华为钱包</string>
+    <string name="str_go_huawei_check">请到华为钱包查看</string>
+    <string name="str_new_version">发现新版本</string>
+    <string name="str_update">立即更新</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_update_version">版本更新提醒</string>
+    <string name="str_push_set">消息通知</string>
+    <string name="str_city_change_set">城市切换提醒</string>
+    <string name="str_personality_recommend_set">个性化推荐</string>
+    <string name="str_system_notice">系统通知</string>
+    <string name="str_notice_remind">通知管理</string>
+    <string name="str_notdisturb_time">免打扰时间</string>
+    <string name="str_clear_cache">清除缓存</string>
+    <string name="str_moviecover_shield">海报屏蔽</string>
+    <string name="str_moviecover_shield_tip">（从此告别吓人海报）</string>
+    <string name="str_logout_account">注销账户</string>
+    
+    
+
+    <string name="feedback_feedFail">意见反馈提交失败</string>
+    <string name="feedback_cancelmessage">您输入的内容尚未发布，确定退出？</string>
+    <string name="register_phone_validatemobileempty">请填写手机号码</string>
+    <string name="register_phone_validatecodeempty">请填写验证码</string>
+    <string name="register_phone_validatemobile">请填写正确的11位手机号</string>
+    <string name="str_logout_confrim">确定要退出登录?</string>
+    <string name="str_chinese_space">\u3000</string>
+    <string name="str_download_tips">正在为您下载应用，下载完成之后会提示您安装，谢谢下载。</string>
+    <string name="confrim_order">确认订单</string>
+
+    <!-- buy_numbers -->
+    <string name="str_last_concessions">最新优惠</string>
+    <string name="str_no_new_ver">没有最新版本</string>
+
+    <!-- 极速切换提醒 -->
+
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+
+    <string name="str_head">头像</string>
+    <string name="str_sex">性别</string>
+    <string name="profile_sign">签名</string>
+    <string name="str_bind_phone">绑定手机</string>
+    <string name="birthday">生日</string>
+    <string name="location">居住地</string>
+    <string name="location_select_title">地区</string>
+    <string name="str_change_passwd">修改密码</string>
+    <string name="profile_default">请设置</string>
+    <string name="location_select_auto_label">定位到的位置</string>
+    <string name="location_select_auto_fail">无法获取您的位置信息</string>
+    <string name="location_select_set_tip">定位失败，您可以在设置 - 隐私 - 定位服务中开启定位</string>
+    <string name="location_select_all">全部</string>
+    <string name="my_read_history_title">阅读历史</string>
+    <string name="my_read_history_edit">编辑</string>
+    <string name="my_read_history_cancel">取消</string>
+    <string name="my_read_history_del">删除</string>
+    <string name="my_read_history_select_del">删除 (%s)</string>
+    <string name="my_read_history_select_all">全选</string>
+    <string name="my_read_history_unselect_all">取消全选</string>
+    <string name="my_read_history_empty">您没有观看历史，快去逛逛吧</string>
+    <string name="str_use_detail">使用详情</string>
+    <string name="str_nodata">抱歉，没有相关数据。</string>
+    <string name="st_now_use">最近使用</string>
+    <string name="st_beijing">北京</string>
+    <string name="st_A">A</string>
+    <string name="st_input_city_name">输入城市名</string>
+    <string name="st_ping">评</string>
+    <string name="st_input_coupon">请输入优惠码/兑换券</string>
+    <string name="st_please_input_capcha">请输入验证码</string>
+    <string name="st_with_card_put_account">将卡信息添加到我的账户</string>
+    <string name="st_210">210</string>
+    <string name="st_my_message">我的留言</string>
+    <string name="st_mtime_reply">时光网客服回复：</string>
+    <string name="st_0">0</string>
+    <string name="st_awards_record">获奖记录：</string>
+    <string name="st_buy">购票</string>
+    <string name="st_director">导演：</string>
+    <string name="st_leading">主演：</string>
+    <string name="st_see_movie_showtime">查影讯</string>
+    <string name="st_reply">回复</string>
+    <string name="st_exchange">兑换码:</string>
+    <string name="st_order_info_sink_phone">订单信息接收手机号：</string>
+    <string name="st_discount_package">小卖：</string>
+    <string name="st_discount_name">优惠券名</string>
+    <string name="st_search_path">查询路线</string>
+    <string name="st_seat_change">更换场次</string>
+    <string name="st_screen">银幕</string>
+    <string name="st_please_input_security_code">请输入手机接收到的验证码</string>
+    <string name="st_rmb">￥</string>
+    <string name="st_service_hot_line">客服热线： 4006059500</string>
+    <string name="st_service">请联系客服：4006059500</string>
+    <string name="st_tel_hot_line">客服热线：4006059500</string>
+    <string name="st_show_time">上映时间：</string>
+    <string name="s_actor">"饰演： "</string>
+    <string name="s_unkonw">不详</string>
+    <string name="s_rmb">￥</string>
+    <string name="s_all">全部</string>
+    <string name="s_hot_city">热门城市</string>
+    <string name="s_male">男</string>
+    <string name="s_female">女</string>
+    <string name="s_error_retry_later">详情地址错误，请稍后重试！</string>
+    <string name="s_pay_overtime_retry">付款已超时，请您重新选座</string>
+    <string name="str_reselect_seats">重新选座</string>
+    <string name="s_back_to_main">返回首页</string>
+    <string name="s_back_to_cancel_order">返回上一步将取消订单</string>
+    <string name="s_load_data_err">请求数据失败，请稍后重试！</string>
+    <string name="str_unbind">尚未绑定</string>
+    <string name="str_about_for_movielovers">让电影遇见生活</string>
+    <string name="str_credit">信用卡</string>
+    <string name="str_debit">借记卡</string>
+    <string name="str_get_identifying">获取验证码</string>
+    <string name="str_next">下一步</string>
+    <string name="str_sorry">很抱歉</string>
+    <string name="str_mistaken_reason">错误原因</string>
+    <string name="str_submit">提 交</string>
+    <string name="str_input_feedback_suggestion">输入你的反馈&#8230;</string>
+    <string name="str_email">Email地址</string>
+    <string name="str_phone">手机号码（选填）</string>
+    <string name="str_findback_password">找回密码</string>
+    <string name="str_order_confirm_tip">请核对订单信息，电影票及优惠套餐售出后，因票务系统限制将无法进行退换操作。</string>
+    <string name="str_order_confirm_receive_phone">订单信息接收手机号：</string>
+    <string name="str_pay_by_cinema_vip_card">使用影院会员卡付款</string>
+    <string name="str_repeat_choose_the_seat">重新选座</string>
+    <string name="str_pay_money">付款</string>
+    <string name="str_use_account_left">使用余额支付</string>
+    <string name="str_order_pay_balance">-￥0</string>
+    <string name="str_use_coupon">使用优惠券</string>
+    <string name="str_use_mtimecard">使用时光礼品卡</string>
+    <string name="str_add_coupon">添加优惠券/礼品卡</string>
+    <string name="str_add_mtimecard">添加礼品卡</string>
+    <string name="str_need_money">还需要支付:</string>
+    <string name="str_add_vouchercode">添加兑换码或优惠券</string>
+    <string name="str_add_moviecard">添加时光礼品卡</string>
+    <string name="str_edit_name">修改昵称</string>
+    <string name="str_save">保存</string>
+    <string name="str_edit_sex">修改性别</string>
+    <string name="str_male">男</string>
+    <string name="str_female">女</string>
+    <string name="str_set_password_hint">6-20位字符、字母或数字</string>
+    <string name="str_set_password_verfy_hint">请确认密码</string>
+    <string name="str_register_phone_tip1_2">时光网服务条款</string>
+    <string name="str_register_phone_tip2_2">隐私政策</string>
+    <string name="str_smallpay_title">限时特惠</string>
+    <string name="str_smallpay_tip">未选择套餐，可点“下一步”跳过</string>
+    <string name="str_smallpay_total">套餐共计：</string>
+    <string name="str_smallpay_headtip">所购买的如下商品持兑换码到影院现场兑换</string>
+    <string name="str_special_facilities">特色设施</string>
+    <string name="str_weixin_no_support">您的微信版本不支持支付或未安装微信</string>
+    <string name="str_add">添加</string>
+    <string name="str_dlg_sex_title">请完善资料，选择一下性别吧</string>
+    <string name="str_dlg_sex_nochoose">不用了，谢谢</string>
+    <string name="str_movie_more_info_name">更多中文名</string>
+    <string name="str_movie_more_info_length">片长</string>
+    <string name="str_movie_more_info_costs">制作成本</string>
+    <string name="str_movie_more_info_date">拍摄日期</string>
+    <string name="str_movie_more_info_language">对白语言</string>
+    <string name="str_movie_more_info_web">官方网站</string>
+    <string name="str_back">返回</string>
+
+    <!-- v2 -->
+    <string name="str_tabname_home">首页</string>
+    <string name="str_tabname_payticket">购票/影院</string>
+    <string name="str_tabname_publish">发布</string>
+    <string name="str_tabname_community">社区</string>
+    <string name="str_tabname_user">个人</string>
+    <string name="str_filmactivity_button_pay">查影讯/购票</string>
+    <string name="str_rate_music">音乐</string>
+    <string name="str_rate_general">画面</string>
+    <string name="str_rate_director">导演</string>
+    <string name="str_rate_story">故事</string>
+    <string name="str_rate_perform">表演</string>
+    <string name="str_rate_impressions">印象</string>
+    <string name="st_rate_result_29">很差，完全是浪费时间</string>
+    <string name="st_rate_result_59">平庸之作，不看也罢</string>
+    <string name="st_rate_result_75">一般，不妨一看</string>
+    <string name="st_rate_result_89">很好，公认的佳作 </string>
+    <string name="st_rate_result_100">很完美，绝对不容错过</string>
+    <string name="st_rate_deploy_subitem">分项评分</string>
+    <string name="st_rate_deploy_subitem_close">关闭分项</string>
+    <string name="st_rate_share">确定并分享</string>
+    <string name="str_home_presell">预售</string>
+    <string name="str_home_mall_before_end">距结束</string>
+    <string name="str_movie_cover_filter">海报已过滤</string>
+    <string name="movie_cover_filter">恐怖海报已屏蔽</string>
+    <string name="st_movie_buttom_presell">预售</string>
+    <string name="st_movie_buttom_online_play">在线播放</string>
+    <!-- title home/movings/cinemas -->
+    <string name="str_title_home_movie_label">电影</string>
+
+    <!-- title bar of search -->
+    <string name="str_title_search_hint_content">找影片/影院/影人</string>
+    <string name="title_search_hint">搜索电影/影院/影人/文章</string>
+    <string name="str_title_search_hint_cinemacontent">输入影院名称 </string>
+    <!-- search -->
+    <string name="str_searchactivity_history_clear">清除搜索记录</string>
+
+    <!-- bottom bar of movie comments send label -->
+    <string name="str_bottom_bar_movie_comments_send_label">发送</string>
+
+    <!-- remind order -->
+    <string name="post">提交</string>
+    <!-- tips -->
+    <string name="toast_send_order_send">兑换码已经发送</string>
+    <string name="toast_get_order_failed">获取兑换码错误!</string>
+    <string name="toast_send_order_reach_limiation">已达到最大发送次数!</string>
+    <string name="toast_order_not_existed">订单不存在!</string>
+    <string name="toast_sms_module_not_existed">短信模板不存在!</string>
+    <string name="toast_order_send_only_once">兑换码只能发送一次!</string>
+    <string name="toast_order_send_confirm">兑换码只可重发一次，确定重发？</string>
+
+    <!-- actor detail -->
+    <string name="actor_detail_hot_play_label">正在热映</string>
+    <string name="actor_detail_buy_ticket">选座购票</string>
+    <string name="actor_detail_movies_label">主要作品</string>
+    <string name="actor_detail_gallery_label">影人图集</string>
+    <string name="actor_detail_news_label">影人新闻</string>
+    <string name="actor_detail_resume_label">演艺经历</string>
+    <string name="actor_detail_relationship_label">人物关系</string>
+    <string name="actor_detail_message_label">用户留言(%d)</string>
+    <string name="actor_detail_hot_playing_act">饰：%s</string>
+    <string name="actor_detail_hot_playing_mark">￥</string>
+    <string name="actor_detail_hot_playing_postfix">起</string>
+    <!--  -->
+    <string name="actor_detail_map_label"> 到这去</string>
+    <string name="actor_detail_license_label">营业执照</string>
+    <string name="actor_detail_license_content">以下工商登记信息，是根据国家工商局《网络交易管理办法》的要求对入驻商家工商登记信息进行公示。</string>
+
+    <!-- 我的 -->
+    <string name="mine_logout">退出登录</string>
+    <string name="actor_detail_guide_skip_label">跳过</string>
+    <string name="my_comment_and_reply_year">%1$d年%2$d月</string>
+    <string name="my_comment_and_reply_month">%d月</string>
+    <string name="cinema_detail_halls_label">个影厅</string>
+    <string name="st_comments_tips">留下我想说的&#8230;</string>
+
+    <!-- login -->
+    <string name="login_wx_install_tip">请先安装微信客户端</string>
+    <!--  -->
+    <string name="retrieve_password_with_phone">通过手机号找回密码</string>
+    <string name="retrieve_password_with_email">通过邮箱找回密码</string>
+    <string name="retrieve_email_hint">请输入绑定邮箱</string>
+    <string name="bind_label">为了您的账户安全，请绑定手机后再进行对应操作</string>
+    <!-- about -->
+    <string name="st_version">当前版本 %s</string>
+    <!-- FeedBack -->
+    <string name="feedback_list">留言记录</string>
+    <string name="unbind_label">您已成功绑定</string>
+    <!--  -->
+    <string name="st_hot">最热</string>
+    <string name="st_order_by_year_assec">年代</string>
+    <!-- 前导页 -->
+    <string name="sofa">沙发很寂寞</string>
+    <string name="search_history">搜索历史</string>
+
+    <!-- mall -->
+    <string name="str_mall_pay_overtime_retry">付款已超时，请您重新购买</string>
+    <string name="str_mall_buy_retry">重新购买</string>
+    <string name="st_movie_info_sku">电影周边(%d)</string>
+
+
+    <string name="st_long_comment_title">精选影评</string>
+    <string name="st_movie_info_total_festival">共获奖%1$d次，提名%2$d次</string>
+    <string name="st_actor_info_comment">回复</string>
+    <string name="st_actor_info_999">999+</string>
+    <string name="st_actor_info_support">赞</string>
+    <string name="st_actor_info_input_commentcontent">请输入评论内容</string>
+    <string name="st_actor_info_format">(%s)</string>
+    <string name="st_actor_info_format_birthday">%02d</string>
+    <string name="st_actor_info_format_introduction">简介：%s</string>
+
+    <string name="common_collect_success">已添加到我的收藏</string>
+    <string name="common_collect_failed">收藏失败</string>
+    <string name="common_cancel_collect_success">已取消收藏</string>
+    <string name="common_cancel_collect_failed">取消收藏失败</string>
+
+    <string name="st_actor_info_data_loaded">已经加载完全部数据</string>
+    <string name="st_actor_info_support_failed">赞失败</string>
+    <string name="st_actor_info_support_success">赞成功</string>
+    <string name="st_coupon_tag">惠</string>
+    <string name="st_coupon_tag_new">特惠</string>
+    <string name="st_feedback_success_login">感谢您对时光网的支持，您的问题会在一个工作日内回复到您的留言记录。</string>
+    <string name="st_feedback_success_nologin">感谢您对时光网的支持，您的问题会在一个工作日内回复到您的邮箱。</string>
+    <string name="st_feedback_norecoder">无留言记录</string>
+    <string name="st_feedback_recoder_failed">留言记录获取失败</string>
+    <string name="st_feedback_input_content">请填写您的意见</string>
+    <string name="st_feedback_input_email_address">请填写邮件地址</string>
+    <string name="st_feedback_input_right_telphone">请正确填写手机号码</string>
+    <string name="st_setting_nolimit">不限</string>
+    <string name="st_setting_set_failed">设置失败</string>
+    <string name="st_setting_clear_success">清除成功</string>
+    <string name="st_setting_down_tips">正在为您下载应用，下载完成之后会提示您安装，谢谢下载。</string>
+    <string name="st_setting_version_tips">您的版本已是最新</string>
+    <string name="st_click_view">点击查看></string>
+    <!-- video playing view -->
+    <string name="st_picture_selection_ok">确定</string>
+    <string name="st_picture_selection_title">选择图片</string>
+    <string name="picture_select_tips">最多只能选择%d张图片</string>
+    <string name="st_upload_comment_photo_failed">图片上传失败</string>
+    <string name="st_mall_license">营业执照</string>
+    <!-- 删除-->
+    <string name="st_delete">删除</string>
+
+    <!-- -->
+    <string name="st_quiz_game_start">马上去玩 </string>
+    <string name="st_quiz_game_guess">猜</string>
+
+    <string name="str_cinmea_showtime_nodata">暂无场次,敬请期待!</string>
+    <string name="st_notvip_tip">您采用非会员购票，无法在App内查看电影兑换码及订单，建议将订单保存到相册。</string>
+    <string name="movie_buybtn_coupons">特惠</string>
+    <string name="st_media">媒体评论</string>
+
+    <string name="st_movie_actor">演职员</string>
+    <string name="st_related_movie">关联电影</string>
+    <string name="st_movie_event">幕后揭秘</string>
+
+    <string name="str_worktime">工作时间:8:30-17:30</string>
+
+    <!--订单状态-->
+    <string name="order_status_wait_pay">待付款</string>
+    <string name="order_status_success">交易成功</string>
+    <string name="order_status_refunding">退款中</string>
+    <string name="order_status_refunded">已退款</string>
+    <string name="order_status_fail">出票失败</string>
+    <!--座位图-->
+    <string name="seat_selected_byself">已选</string>
+    <string name="seat_selected_byother">已售</string>
+    <string name="seat_can_select">可选</string>
+    <string name="seat_couple">情侣座</string>
+
+    <string name="comment_type_hot">最热短评</string>
+    <string name="comment_type_default">最新短评</string>
+
+    <string name="footer_loading">正在加载…</string>
+    <string name="footer_end">貌似没有更多了 &#62;.&#60;</string>
+    <string name="st_order_pay_success_price">现价: ¥%s</string>
+    <string name="st_order_pay_success_marketprice">原价: ¥%s</string>
+
+    <string name="st_choosemovie_tip">影片分类筛选</string>
+    <string name="st_iknow">我知道了</string>
+
+    <string name="str_comment_hit_tips">写评论&#8230;</string>
+    <string name="str_no_comments">暂无留言</string>
+    <string name="set_password_label">设置成功后，您可以使用该账号密码在时光网或万达电影登录</string>
+
+    <string name="str_reget_password_with_email_tip">使用邮箱找回时，需要在您的邮箱查收验证码</string>
+
+    <string name="str_sex_protected">保密</string>
+
+    <string name="st_next_picture">换一张</string>
+    <string name="st_share_screenshot_tip">搜索关注“时光网“官方帐号，只为爱电影的你</string>
+    <string name="st_share">分享</string>
+
+    <string name="str_give_good_comment">您的好评是对我们最大的鼓励，给一个好评吧!</string>
+    <string name="str_reject">残忍滴拒绝</string>
+    <string name="str_go_and_comment">去给好评</string>
+
+    <string name="remind_ticket_count_unit">%d张</string>
+    <string name="mtime_coin_exchange">时光币兑换</string>
+    <string name="time_str">时间：</string>
+    <string name="seat_str">座位：</string>
+    <string name="price_str">价格：</string>
+    <string name="phone_str">客服电话：</string>
+    <string name="recent_msg">重发短信</string>
+    <string name="tel_phone_num">手机号：</string>
+    <string name="contact_us">联系客服</string>
+    <string name="discount_package">优惠套餐</string>
+    <string name="exchange_smallpay_str">请持兑换码到影院兑换</string>
+    <string name="ticketing_str">正在为您出票…</string>
+    <string name="exchange_imediate_str">立即兑换</string>
+    <string name="exchange_empty">已兑完</string>
+    <string name="exchange_coin_num">%d时光币兑换</string>
+
+    <!--时光币兑换 dialog-->
+    <string name="exchange_fail">兑换失败，请重试！</string>
+    <string name="exchange_success">已兑换成功，快去使用吧！</string>
+    <string name="exchange_confirm">您确定使用%d时光币兑换该优惠券?</string>
+    <string name="close">关闭</string>
+    <string name="check_coupon">查看优惠券</string>
+    <string name="dismantle_gift">拆礼物</string>
+    <string name="gift_content">礼包内容</string>
+    <string name="member_right">会员特权</string>
+    <string name="goto_member_club">逛逛会员俱乐部</string>
+    <!-- 影院列表页 -->
+    <string name="cinema_list_location_fail">位置获取失败，请开启定位功能</string>
+    <string name="cinema_list_location_bar_fail">位置获取失败，请点击此处刷新</string>
+    <string name="cinema_list_location_bar_locating">正在重新定位中...</string>
+    <string name="cinema_list_price_unit">元起</string>
+    <string name="cinema_list_been">上次去的</string>
+    <string name="cinema_list_coupon_count">%d项优惠</string>
+    <string name="cinema_list_district_count">(%d)</string>
+    <string name="cinema_list_empty">抱歉，没有满足条件的影院</string>
+    <string name="cinema_list_direct_sale">影院直销</string>
+    <!-- 短评 -->
+    <string name="twitter_title">&lt;&lt;%s&gt;&gt; - 短评</string>
+
+    <string name="exit_app_hint">再次点击退出时光网</string>
+
+    <string name="activities_instruction_txt">活动说明</string>
+    <string name="click_to_reload">点击屏幕，重新加载</string>
+    <string name="personal_live_id_please">直播答题，请输入liveId</string>
+    <string name="personal_game_id_please">排位赛，请输入liveId</string>
+
+    <string name="search_channel_movie">电影</string>
+    <string name="search_channel_tv">电视剧</string>
+    <string name="search_online_free">在线免费</string>
+    <string name="search_online_pay">在线付费</string>
+    <string name="search_online_all_baidu">全部数据源</string>
+    <string name="movie_empty_tips">信息跑丢了，再试一下吧~</string>
+    <string name="choose_movie_source">选择片源</string>
+
+    <string name="choose_city">请选择一个城市</string>
+    <string name="city_change_title">选择城市</string>
+    <string name="city_change_location_fail_tip">定位失败，请重试</string>
+    <string name="city_change_search_empty">未找到匹配结果</string>
+    <string name="delete_image_confirm">是否删除图片</string>
+
+    <string name="group_square_bottom_hint">创建群组有机会被推荐哦</string>
+
+</resources>

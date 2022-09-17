@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    用于存放项目中相关的key，禁止在代码里直接写敏感信息，否则会被漏洞扫描工具扫出来，导致审核被拒-->
+
+    <string name="key_mtime_api_client">"1B295AF8C7F14469ADEBF5E87D7408B4"</string>
+
+    <!--    Wechat appId-->
+    <string name="key_wechat_app_id">"wx839739a08ff78016"</string>
+    <!--    Wechat appSecret-->
+    <string name="key_wechat_app_secret">"d26bf53be1cae30a469920407c78f329"</string>
+    <!--    Wechat appName-->
+    <string name="key_wechat_app_name">"gh_afb25ac019c9"</string>
+    <!--    Wechat path-->
+    <string name="key_wechat_app_path">"pages/index/index.html?id=1"</string>
+
+    <!--    QQ appId-->
+    <string name="key_qq_app_id">"100838835"</string>
+    <!--    QQ appSecret-->
+    <string name="key_qq_app_secret">"4482cf02941a988160cdd199d54c28fc"</string>
+
+    <!--    SinaWeibo appKey-->
+    <string name="key_sina_weibo_app_key">"1100590649"</string>
+    <!--    SinaWeibo appSecret-->
+    <string name="key_sina_weibo_app_secret">"4482cf02941a988160cdd199d54c28fc"</string>
+    <!--    SinaWeibo callbackUri-->
+    <string name="key_sina_weibo_callbackUri">"http://www.mtime.com"</string>
+
+    <!--    umeng app key-->
+    <string name="key_umeng_app_key">"4bfba6211d41c8548c0001bc"</string>
+
+    <!--    百度 app key-->
+    <string name="key_baidu_app_key">"33c0e59558"</string>
+    <string name="key_baidu_mtj_app_key">"mtj33c0e59558"</string>
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.CollectionPersonBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/personRootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:onClick="@{view->data.onClick(view)}">
+        <View
+            android:id="@+id/dividerView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            android:background="@color/color_f3f3f4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        影人海报-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/personPicCV"
+            android:layout_width="@dimen/offset_120px"
+            android:layout_height="@dimen/offset_160px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:elevation="0dp"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                load_image="@{data.bean.imageUrl}"
+                load_image_height="@{80}"
+                load_image_width="@{60}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <!--        影人中文名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameTv"
+            style="@style/PersonCollectionContentTv"
+            android:layout_marginTop="@dimen/offset_25px"
+            android:text="@{data.bean.name}"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/personPicCV"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="大卫林奇" />
+        <!--        影人英文名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_en"
+            style="@style/PersonCollectionContentTv"
+            android:layout_marginTop="@dimen/offset_3px"
+            android:text="@{data.bean.nameEn}"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_11sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/personPicCV"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameTv"
+            tools:text="David Lynch" />
+
+        <!--        职业-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/professionTv"
+            style="@style/PersonCollectionContentTv"
+            android:layout_marginTop="@dimen/offset_13px"
+            android:text="@{data.bean.profession}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            app:layout_constraintLeft_toRightOf="@id/personPicCV"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_en"
+            tools:text="职业: 演员 / 制片人 / 配音" />
+
+        <!-- 代表作-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/personInfoTv"
+            android:layout_marginLeft="@dimen/offset_24px"
+            android:layout_marginRight="@dimen/line_width_1px"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{data.bean.personInfo}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            android:lineSpacingExtra="0dp"
+            app:layout_constraintLeft_toRightOf="@id/personPicCV"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/professionTv"
+            tools:text="1946-01-20 （美国,蒙大拿州,苏拉）\nsss" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

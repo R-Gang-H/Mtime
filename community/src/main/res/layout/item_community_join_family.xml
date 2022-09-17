@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.home.adapter.JoinFamilyItemBinder" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/mJoinFamilyLayout"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:background="@drawable/shape_community_shadow_bg"
+        android:onClick="@{view -> data.mFamilyProvider.startFamilyClassList()}"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_community_join_family"
+            android:textSize="12sp"
+            android:textColor="@color/color_8798af"
+            android:text="@string/community_join_family"
+            />
+
+    </FrameLayout>
+
+</layout>

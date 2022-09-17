@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+    <string name="app_name">搜索组件</string>
+
+    <string name="search_newcomponent_search_history_title">搜索记录</string>
+    <string name="search_newcomponent_search_hot_search_title">热门搜索</string>
+    <string name="search_newcomponent_search_cancel">取消</string>
+    <string name="search_newcomponent_search_hot_film_tile">热门电影</string>
+    <string name="search_newcomponent_search_hot_people_tile">热门人物</string>
+    <string name="search_newcomponent_search_hot_family_tile">热门家族</string>
+    <string name="search_newcomponent_search_hint_empty">找不到想要的内容，换个关键词试试吧！</string>
+
+    <string name="add_movie">添加电影</string>
+    <string name="search_movie">搜索电影</string>
+
+    <string name="publish_search_movie_title">添加影片</string>
+    <string name="publish_search_movie_hint">请输入影片名称</string>
+    <string name="publish_search_person_title">添加影人</string>
+    <string name="publish_search_person_hint">请输入影人名称</string>
+
+    <!--  搜索结果页  -->
+    <string name="search_type_all">全部</string>
+    <string name="search_type_movie_and_tv">影视</string>
+    <string name="search_type_movie">影片</string>
+    <string name="search_type_cinema">影院</string>
+    <string name="search_type_person">影人</string>
+    <string name="search_type_content">内容</string>
+    <string name="search_type_article">文章</string>
+    <string name="search_type_user">用户</string>
+    <string name="search_type_film_comment">影评</string>
+    <string name="search_type_post">帖子</string>
+    <string name="search_type_log">日志</string>
+    <string name="search_type_family">家族</string>
+    <string name="search_type_video">视频</string>
+    <string name="search_type_audio">播客</string>
+    <string name="search_type_film_list">片单</string>
+    <!--  搜索结果页_全部  -->
+    <string name="search_type_movie_total_count">查看全部%d部影片</string>
+    <string name="search_type_cinema_total_count">查看全部%d家影院</string>
+    <string name="search_type_person_total_count">查看全部%d位影人</string>
+    <string name="search_type_article_total_count">查看全部%d篇文章</string>
+    <string name="search_type_user_total_count">查看全部%d位用户</string>
+    <string name="search_type_film_comment_total_count">查看全部%d篇影评</string>
+    <string name="search_type_post_total_count">查看全部%d篇帖子</string>
+    <string name="search_type_log_total_count">查看全部%d篇日志</string>
+    <string name="search_type_family_total_count">查看全部%d个家族</string>
+    <string name="search_type_film_list_total_count">查看全部%d部片单</string>
+    <string name="search_type_video_total_count">查看全部%d部视频</string>
+    <string name="search_type_audio_total_count">查看全部%d个播客</string>
+    <!--  搜索结果页_电影  -->
+    <string name="search_result_movie_year">（%1$s）</string>
+    <string name="search_result_movie_hot_show">正在热映</string>
+    <string name="search_result_movie_ticket">购票</string>
+    <string name="search_result_movie_presell">预售</string>
+    <!--  搜索结果页_影人  -->
+    <string name="search_result_person_movies">代表作%1$s</string>
+    <string name="search_result_person_movie">《%1$s》</string>
+    <string name="search_result_person_like_tip">喜爱度</string>
+    <!--  搜索结果页_用户  -->
+    <string name="search_result_user_fans_count">粉丝 %1$s</string>
+    <string name="search_result_user_follow">关注</string>
+    <string name="search_result_user_cancel_follow_hint">是否取消关注</string>
+    <!--  搜索结果页_家族  -->
+    <string name="search_result_family_member_count">%1$s成员</string>
+    <string name="search_result_family_join">加入</string>
+    <string name="search_result_family_joining">加入中</string>
+    <string name="search_result_family_joining_hint">已加入 等待管理员审核</string>
+    <string name="search_result_family_exit_hint">是否要退出家族？</string>
+    <!--  搜索结果页_片单  -->
+    <string name="search_result_film_list_collect_count">&#160;收藏</string>
+    <!--  搜索结果页_空提示  -->
+    <string name="search_result_empty_tip">找不到想要的内容，换个关键词试试吧！</string>
+    <!--  搜索结果页_排序  -->
+    <string name="search_result_sort_comprehensive">综合排序</string>
+    <string name="search_result_sort_time">时间倒序</string>
+
+</resources>

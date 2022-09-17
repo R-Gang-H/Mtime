@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.MemberGoodsBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/offset_216px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_20px"
+        android:layout_marginRight="@dimen/offset_10px">
+
+        <!--        商品图片-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/goodsImgCV"
+            android:layout_width="@dimen/offset_216px"
+            android:layout_height="@dimen/offset_216px"
+            app:cardCornerRadius="@dimen/offset_10px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                load_image="@{data.bean.pic}"
+                load_image_height="@{108}"
+                load_image_width="@{108}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <!--        兑换商品需要M豆-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mNeedNumTv"
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:autoSizeMaxTextSize="@dimen/offset_14sp"
+            android:autoSizeMinTextSize="@dimen/offset_10sp"
+            android:autoSizeTextType="uniform"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goodsImgCV"
+            tools:text="300M豆" />
+
+        <!--商品名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodsNameTv"
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/offset_2px"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@{data.bean.name}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mNeedNumTv"
+            tools:text="生日专属生日专属生日专属" />
+
+        <!--        商品描述-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodsDesTv"
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/offset_2px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{data.bean.des}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            android:gravity="center"
+            tools:text="兑换有效期兑换有效期"
+            android:visibility="@{data.bean.hiddenDes?View.GONE:View.VISIBLE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goodsNameTv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/exchangeTv"
+            android:layout_width="@dimen/offset_116px"
+            android:layout_height="@dimen/offset_50px"
+            android:layout_marginTop="@dimen/offset_4px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_exchange"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            tools:text="兑换"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goodsDesTv"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/backView"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/ic_title_bar_back_dark" />
+
+    <TextView
+        android:id="@+id/titleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:text="@string/current_issued"
+        android:textColor="@color/color_ffffff"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="68dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="600dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp">
+
+                <TextView
+                    android:id="@+id/limitLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_issue_title_limit_suit"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:id="@+id/limitLayout"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@mipmap/ic_new_suit_halo">
+
+                    <com.kotlin.android.card.monopoly.widget.card.image.SuitImageView
+                        android:id="@+id/suitImageView"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginBottom="10dp" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/commonLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_issue_title_cycle_suit"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <com.kotlin.android.card.monopoly.widget.card.view.IssueSuitsView
+                    android:id="@+id/issueSuitsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="30dp" />
+
+                <ImageView
+                    android:id="@+id/closeView"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/card_monopoly"
+                    android:src="@drawable/ic_dialog_close" />
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

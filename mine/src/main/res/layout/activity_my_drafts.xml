@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.content.MyContentsActivity">
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_88px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:stl_customTabTextLayoutId="@layout/view_content_tab_item"
+            app:stl_customTabTextViewId="@id/mTabTextView"
+            app:stl_defaultTabTextAllCaps="false"
+            app:stl_distributeEvenly="true"
+            app:stl_dividerThickness="0dp"
+            app:stl_indicatorColor="@color/color_20a0da"
+            app:stl_indicatorCornerRadius="@dimen/offset_2dp"
+            app:stl_indicatorInterpolation="smart"
+            app:stl_indicatorThickness="@dimen/offset_4dp"
+            app:stl_indicatorWidth="@dimen/offset_16dp"
+            app:stl_indicatorWithoutPadding="true"
+            app:stl_titleOffset="auto_center"
+            app:stl_underlineThickness="0dp" />
+
+        <View
+            android:id="@+id/dividerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_line_height_1px"
+            android:background="@color/color_f3f3f4"
+            app:layout_constraintTop_toBottomOf="@id/tableLayout" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tableLayout"
+            app:layout_constraintVertical_weight="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

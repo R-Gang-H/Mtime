@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/ivCard"
+        android:layout_width="@dimen/offset_46px"
+        android:layout_height="@dimen/offset_46px"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_auc_card_selected" />
+
+    <ImageView
+        android:id="@+id/ivSuit"
+        android:layout_width="@dimen/offset_46px"
+        android:layout_height="@dimen/offset_46px"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_auc_suit_selected"
+        tools:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ivTools"
+        android:layout_width="@dimen/offset_46px"
+        android:layout_height="@dimen/offset_46px"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_auc_tools_selected"/>
+
+</RelativeLayout>

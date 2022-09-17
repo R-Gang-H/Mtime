@@ -1,0 +1,88 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kotlin.android.share">
+
+    <!-- QQ: -->
+    <!--    <uses-permission android:name="android.permission.INTERNET" />-->
+    <!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+
+    <!-- WX:添加必要的权限支持（其中网络权限如果没有使用扫码登录功能非必要；后三个权限，如果没有使用 mta，也非必要，即使有使用 mta，去掉也不影响功能）： -->
+    <!--    <uses-permission android:name="android.permission.INTERNET" />-->
+    <!-- for mta statistics, not necessary -->
+    <!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+    <!--    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
+
+    <!-- WB -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 用于调用 JNI -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!--https://open.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11600155960jI9EY&version=&lang=zh_CN&token=-->
+    <queries>
+        <package android:name="com.tencent.mm" />
+    </queries>
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="q">
+
+        <!-- 支持全面屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <!-- android:requestLegacyExternalStorage="true" target Q 默认
+        false:为Filtered View。App可以直接访问App-specific目录,不能直接访问App-specific外的文件。
+             访问公共目录或其他APP的App-specific目录，只能通过MediaStore、SAF、或者其他APP提供的ContentProvider、FileProvider等访问
+        true:Legacy View。兼容模式，与Android Q以前一样，申请权限后App可访问外部存储-->
+
+        <!-- QQ:在项目中用到了 Apache HTTP client 的相关类，就会抛出找不到这些类的错误，解决方案：加入下面这句 -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100838835" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.mtime.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.mtime"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:resource" />
+        </provider>
+
+    </application>
+</manifest>

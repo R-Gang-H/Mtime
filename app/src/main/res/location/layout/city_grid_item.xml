@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listview_item_bg_selector"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_9px"
+        android:paddingBottom="@dimen/offset_9px"
+        android:gravity="center"
+        android:background="@drawable/shape_city_change_hot_bg"
+        android:textSize="@dimen/offset_15sp"
+        android:textColor="@color/color_4e5e73"
+        tools:text="神农架林区"
+        />
+
+</LinearLayout>

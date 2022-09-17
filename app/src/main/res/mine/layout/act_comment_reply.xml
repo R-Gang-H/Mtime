@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:loadMoreEnabled="true"
+            app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+            app:refreshEnabled="true"
+            app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
+
+        <com.mtime.bussiness.common.widget.MoveLayout
+            android:id="@+id/move_board"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_20dp"
+            android:background="@color/color_f6f6f6"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/offset_10dp">
+
+            <TextView
+                android:id="@+id/move_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/font_size_11sp" />
+        </com.mtime.bussiness.common.widget.MoveLayout>
+    </RelativeLayout>
+</LinearLayout>

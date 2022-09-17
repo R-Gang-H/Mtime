@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchSubTabTv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/offset_10px"
+    android:paddingBottom="@dimen/offset_10px"
+    android:paddingLeft="@dimen/offset_30px"
+    android:paddingRight="@dimen/offset_30px"
+    android:gravity="center_horizontal"
+    android:textColor="@drawable/selector_search_result_sub_tab"
+    android:textSize="@dimen/offset_15sp"
+    tools:text="电影"
+    tools:ignore="ResourceName"
+    />

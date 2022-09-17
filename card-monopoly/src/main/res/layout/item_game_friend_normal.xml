@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.card.monopoly.adapter.deal.FriendNormalBinder" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:background="@color/color_f2f3f6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:orientation="horizontal">
+
+            <com.kotlin.android.card.monopoly.widget.CircleImageView
+                android:id="@+id/civAvatar"
+                android:layout_width="@dimen/offset_70px"
+                android:layout_height="@dimen/offset_70px"
+                android:layout_marginStart="@dimen/offset_26px"
+                android:src="@drawable/default_user_head"
+                app:civ_border_color="@color/color_e3e5ed"
+                app:civ_border_width="@dimen/offset_2px" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_10px"
+                android:layout_marginEnd="@dimen/offset_10px"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/offset_70px" />
+
+            <RelativeLayout
+                android:id="@+id/rlClose"
+                android:layout_width="@dimen/offset_30px"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/offset_26px"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/offset_30px"
+                    android:layout_height="@dimen/offset_30px"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_game_close" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_96px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:layout_marginEnd="@dimen/offset_78px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintTop_toBottomOf="@id/tvState"
+            tools:text="时间爱上了士大夫" />
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_96px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:layout_marginEnd="@dimen/offset_78px"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_15sp"
+            app:layout_constraintTop_toBottomOf="@id/tvState"
+            tools:text="时间爱上了士大夫" />
+        <LinearLayout
+            android:id="@+id/llIconMessage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_50px"
+            android:layout_marginStart="@dimen/offset_96px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/offset_50px"
+                android:layout_height="@dimen/offset_50px"
+                android:src="@drawable/ic_coin_icon"/>
+            <TextView
+                android:id="@+id/tvIconMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/offset_10px"
+                android:textColor="@color/color_12c7e9"
+                tools:text="2999"/>
+
+        </LinearLayout>
+
+        <com.kotlin.android.card.monopoly.widget.card.image.CardImageView
+            android:id="@+id/cardImageView"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_96px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_marginEnd="@dimen/offset_78px"
+            android:layout_marginBottom="@dimen/offset_20px"
+           />
+
+    </LinearLayout>
+
+</layout>

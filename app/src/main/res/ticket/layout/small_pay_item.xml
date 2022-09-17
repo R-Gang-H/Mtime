@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/offset_34px"
+        android:paddingLeft="@dimen/offset_34px"
+        android:paddingRight="@dimen/offset_34px"
+        android:paddingTop="@dimen/offset_34px" >
+
+        <TextView
+            android:id="@+id/smallpay_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/offset_8dp"
+            android:background="@color/white"
+            android:text="小卖套餐:"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_small_more" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" >
+
+            <ImageView
+                android:id="@+id/small_pay_img"
+                android:layout_width="@dimen/offset_107dp"
+                android:layout_height="@dimen/offset_107dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/small_pay_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/small_pay_img"
+                android:layout_marginLeft="@dimen/offset_34px"
+                android:layout_toRightOf="@id/small_pay_img"
+                android:textColor="@color/black_normal"
+                android:textSize="@dimen/font_size_normal_high_more" />
+
+            <TextView
+                android:id="@+id/small_pay_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/small_pay_name"
+                android:layout_marginLeft="@dimen/offset_34px"
+                android:layout_toRightOf="@id/small_pay_img"
+                android:maxLines="2"
+                android:textColor="@color/gray_normal"
+                android:textSize="@dimen/font_size_small_more" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/small_pay_img"
+                android:layout_marginLeft="@dimen/offset_34px"
+                android:layout_toRightOf="@id/small_pay_img"
+                android:gravity="bottom"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/st_rmb"
+                            android:textColor="@color/orange_color"
+                            android:textSize="@dimen/font_size_xlarge" />
+
+                        <TextView
+                            android:id="@+id/small_pay_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/orange_color"
+                            android:textSize="@dimen/font_size_xlarge" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/small_pay_retailPrice_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:visibility="invisible" >
+
+                        <TextView
+                            android:id="@+id/small_pay_retailPrice_rmb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/st_rmb"
+                            android:textColor="@color/color_999999"
+                            android:textSize="@dimen/font_size_small_more" />
+
+                        <TextView
+                            android:id="@+id/small_pay_retailPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/small_pay_retailPrice_rmb"
+                            android:textColor="@color/color_999999"
+                            android:textSize="@dimen/font_size_small_more" />
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/offset_1px"
+                            android:layout_alignLeft="@id/small_pay_retailPrice_rmb"
+                            android:layout_alignRight="@id/small_pay_retailPrice"
+                            android:layout_centerInParent="true"
+                            android:background="@color/color_999999" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/small_pay_btn_reduce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_minus" />
+
+                    <TextView
+                        android:id="@+id/small_pay_tv_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_10dp"
+                        android:layout_marginRight="@dimen/offset_10dp"
+                        android:text="@string/st_0"
+                        android:textColor="@color/black_normal"
+                        android:textSize="@dimen/font_size_normal_high" />
+
+                    <TextView
+                        android:id="@+id/small_pay_btn_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_add_temp_selector" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/offset_34px"
+        android:background="@color/color_d8d8d8" >
+    </View>
+
+</LinearLayout>

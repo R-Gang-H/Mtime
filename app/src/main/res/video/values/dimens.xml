@@ -1,0 +1,18 @@
+<resources>
+    <!-- 字号 -->
+    <dimen name="player_text_size_big">15sp</dimen>
+    <dimen name="player_text_size_middle">13sp</dimen>
+    <dimen name="player_text_size_small">10sp</dimen>
+    <dimen name="font_size_pxtosp_24">12sp</dimen>
+
+
+    <dimen name="player_padding_10">5dip</dimen>
+    <dimen name="player_padding_6">3dip</dimen>
+    <dimen name="player_padding_20">10dip</dimen>
+    <dimen name="player_padding_30">15dip</dimen>
+    <dimen name="player_padding_60">30dip</dimen>
+
+    <dimen name="player_icon_width">15dip</dimen>
+
+
+</resources>

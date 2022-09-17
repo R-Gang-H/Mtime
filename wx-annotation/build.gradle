@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+//apply from: '../nexus.gradle'
+
+//version = rootProject.ext.wxAnnotationVer
+
+android {
+    compileSdkVersion rootProject.ext.compileSdk
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+}

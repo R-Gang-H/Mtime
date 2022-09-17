@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.kotlin.android.community.post.component.item.ui.detail.PostDetailViewModel" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".item.ui.detail.ArticleDetailActivity">
+
+        <com.kotlin.android.ugc.detail.component.ui.widget.UgcTitleView
+            android:layout_width="match_parent"
+            android:id="@+id/titleView"
+            ugcTitleBarData="@{viewModel.titleBar}"
+            android:visibility="@{viewModel.titleBar.albumTitle?View.GONE:View.VISIBLE}"
+            android:layout_height="@dimen/offset_88px"/>
+
+
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            style="@style/MatchMatch"
+            android:layout_below="@id/titleView"
+            android:layout_marginBottom="@dimen/offset_122px"
+            android:id="@+id/stateView"
+            >
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:layout_width="match_parent"
+                android:id="@+id/smartRefreshLayout"
+                android:layout_height="match_parent">
+                <com.kotlin.android.widget.recycler.ScrollRecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/articleRv"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_height="match_parent"/>
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+        <com.kotlin.android.comment.component.widget.PublishCommentView
+            android:id="@+id/barButton"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
+
+        <!--        显示要上传的图片-->
+        <com.kotlin.android.comment.component.widget.CommentImageLayout
+            android:layout_width="@dimen/offset_248px"
+            android:id="@+id/commentImgLayout"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/barButton"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_188px"/>
+
+
+
+        <!--        UGC详情图集标题-->
+        <com.kotlin.android.ugc.detail.component.ui.widget.UgcTitleView
+            android:id="@+id/albumTitleView"
+            ugcTitleBarData="@{viewModel.titleBar}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_88px"
+            android:visibility="@{viewModel.titleBar.albumTitle?View.VISIBLE:View.GONE}"
+            />
+
+        <com.kk.taurus.playerbase.widget.BaseVideoView
+            android:id="@+id/videoView"
+            android:background="@color/color_000000"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_420px"/>
+
+        <ImageView
+            android:id="@+id/closeIv"
+            android:layout_width="@dimen/offset_60px"
+            android:layout_height="@dimen/offset_60px"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/offset_40px"
+            android:background="@color/color_3300000000"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_loading_ad_close"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

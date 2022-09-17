@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/scroll_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 提示信息 商城-->
+            <LinearLayout
+                android:id="@+id/order_pay_tip_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_fff8e8"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/offset_34px"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/order_pay_tip_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textColor="@color/color_9f4400"
+                    android:textSize="@dimen/font_size_normal_more" />
+
+                <ImageView
+                    android:id="@+id/order_pay_tip_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/app_name"
+                    android:paddingLeft="@dimen/offset_34px"
+                    android:paddingTop="@dimen/offset_28px"
+                    android:paddingRight="@dimen/offset_34px"
+                    android:paddingBottom="@dimen/offset_28px"
+                    android:src="@drawable/mall_tag_close" />
+            </LinearLayout>
+
+            <!-- 提示信息 购票-->
+            <LinearLayout
+                android:id="@+id/order_pay_online_tip_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_fff7d3"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_30px"
+                android:paddingBottom="@dimen/offset_24px"
+                android:visibility="gone"></LinearLayout>
+
+            <!-- 总价：68（含服务费2元） -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/offset_34px"
+                android:paddingTop="@dimen/offset_22px"
+                android:paddingBottom="@dimen/offset_27px">
+
+                <TextView
+                    android:id="@+id/order_pay_tv_total_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:text="@string/str_total_sales"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/font_size_normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:text="@string/str_money"
+                    android:textColor="@color/color_ff8600"
+                    android:textSize="@dimen/font_size_normal" />
+
+                <TextView
+                    android:id="@+id/order_pay_tv_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:textColor="@color/color_ff8600"
+                    android:textSize="@dimen/font_size_normal" />
+
+                <TextView
+                    android:id="@+id/order_pay_tv_service_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/font_size_normal" />
+            </LinearLayout>
+
+            <!-- 上半部分 非会员不显示这部分 -->
+            <LinearLayout
+                android:id="@+id/order_toppay_lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 选择优惠活动  (-3.0)-->
+                <LinearLayout
+                    android:id="@+id/order_pay_coupon_activity_container_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/offset_34px"
+                    android:paddingTop="@dimen/offset_22px"
+                    android:paddingBottom="@dimen/offset_22px"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="选择优惠活动"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/font_size_normal" />
+
+                    <TextView
+                        android:id="@+id/order_pay_reduce_price_coupon_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_10px"
+                        android:text="@string/str_order_pay_balance"
+                        android:textColor="@color/color_ff8600"
+                        android:textSize="@dimen/font_size_normal"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/order_pay_coupon_activity_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical" />
+
+                <!-- 中国银行 去支付10元 -->
+                <LinearLayout
+                    android:id="@+id/order_pay_bc_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/order_pay_bc_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/offset_30px"
+                        android:paddingTop="@dimen/offset_20px"
+                        android:paddingRight="@dimen/offset_30px"
+                        android:paddingBottom="@dimen/offset_0dp"
+                        android:text="注：使用中国银行银联信用卡优惠购票，不可使用优惠券/礼品卡"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/font_size_pxtosp_26" />
+
+                    <TextView
+                        android:id="@+id/order_pay_bc_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/offset_40px"
+                        android:background="@drawable/bt_solid_orange_w660_h80"
+                        android:gravity="center"
+                        android:text="去支付 "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_size_pxtosp_34" />
+
+                </LinearLayout>
+
+                <!-- 使用优惠券  (-3.0) -->
+                <LinearLayout
+                    android:id="@+id/order_preferential"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/offset_34px"
+                    android:paddingBottom="@dimen/offset_22px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_use_coupon"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/font_size_normal" />
+
+                    <TextView
+                        android:id="@+id/order_pay_reduce_price_preferential"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_10px"
+                        android:text="@string/str_order_pay_balance"
+                        android:textColor="@color/color_ff8600"
+                        android:textSize="@dimen/font_size_normal"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- 多条带checkbox的条目 -->
+                <LinearLayout
+                    android:id="@+id/order_pay_preferential_checkbox_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical" />
+
+                <!-- 添加优惠 -->
+                <RelativeLayout
+                    android:id="@+id/movie_pay_ticket_btn_activate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/listview_item_bg_selector"
+                    android:paddingLeft="@dimen/offset_34px"
+                    android:paddingTop="@dimen/offset_34px"
+                    android:paddingRight="@dimen/offset_34px"
+                    android:paddingBottom="@dimen/offset_34px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/str_add_coupon"
+                        android:textColor="@color/color_333333"
+                        android:textSize="@dimen/font_size_normal_high" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/icon_arrow_r" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_6px"
+                    android:background="@drawable/line_bottom" />
+
+
+                <LinearLayout
+                    android:id="@+id/orderpay_layout_mtimecard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- 使用时光礼品卡(后产品)  (-3.0) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/offset_34px"
+                        android:paddingTop="@dimen/offset_22px"
+                        android:paddingBottom="@dimen/offset_22px">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_use_mtimecard"
+                            android:textColor="@color/color_999999"
+                            android:textSize="@dimen/font_size_normal" />
+
+                        <TextView
+                            android:id="@+id/orderpay_mtimecard_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/offset_10px"
+                            android:text="@string/str_order_pay_balance"
+                            android:textColor="@color/color_ff8600"
+                            android:textSize="@dimen/font_size_normal"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <!-- 添加礼品卡 -->
+                    <RelativeLayout
+                        android:id="@+id/orderpay_add_mtimecard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/listview_item_bg_selector"
+                        android:paddingLeft="@dimen/offset_34px"
+                        android:paddingTop="@dimen/offset_34px"
+                        android:paddingRight="@dimen/offset_34px"
+                        android:paddingBottom="@dimen/offset_34px">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/str_add_mtimecard"
+                            android:textColor="@color/color_333333"
+                            android:textSize="@dimen/font_size_normal_high" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/icon_arrow_r" />
+                    </RelativeLayout>
+
+                    <include
+                        layout="@layout/order_pay_mtimecard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!-- 使用余额支付 -->
+                <LinearLayout
+                    android:id="@+id/order_pay_balance_layout_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/offset_34px"
+                    android:paddingTop="@dimen/offset_27px"
+                    android:paddingBottom="@dimen/offset_22px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_use_account_left"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/font_size_normal" />
+
+                    <!-- 不再显示实际余额支付金额 -->
+                    <TextView
+                        android:id="@+id/order_pay_reduce_price_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_10px"
+                        android:text="@string/str_order_pay_balance"
+                        android:textColor="@color/color_ff8600"
+                        android:textSize="@dimen/font_size_normal"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- 可用余额89元 充值按钮 -->
+                <LinearLayout
+                    android:id="@+id/order_pay_balance_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_item_bg_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/offset_34px"
+                    android:paddingTop="@dimen/offset_22px"
+                    android:paddingRight="@dimen/offset_34px"
+                    android:paddingBottom="@dimen/offset_22px"
+                    >
+
+                    <CheckBox
+                        android:id="@+id/order_pay_cbox_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:button="@drawable/pay_checkbox_false"
+                        android:layout_marginRight="@dimen/offset_10dp"
+                        android:checked="false"
+                        android:clickable="false"
+                        />
+
+                    <!-- 可用余额 -->
+                    <TextView
+                        android:id="@+id/order_pay_tv_available_balance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#C8C8C8"
+                        android:textSize="@dimen/font_size_15sp"
+                        tools:text="可用余额：￥"
+                        />
+
+                    <!-- 余额不可用提示 -->
+                    <TextView
+                        android:id="@+id/act_order_pay_balance_reason_tip_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_888888"
+                        android:textSize="@dimen/font_size_13sp"
+                        android:text="@string/pay_balance_false_reason_tip"
+                        />
+
+                </LinearLayout>
+
+                <!-- 余额不可用原因 -->
+                <LinearLayout
+                    android:id="@+id/act_order_pay_balance_reason_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/offset_17dp"
+                    android:paddingBottom="@dimen/offset_10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    >
+
+                    <!-- 余额不可用分隔线 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/offset_0_5dp"
+                        android:background="@color/color_d8d8d8"
+                        />
+
+                    <!-- 余额不可用原因 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_10dp"
+                        android:layout_marginRight="17dp"
+                        android:textColor="@color/color_888888"
+                        android:textSize="@dimen/font_size_13sp"
+                        android:text="@string/pay_balance_false_reason"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_20dp"
+                        android:layout_marginRight="17dp"
+                        android:textColor="@color/color_888888"
+                        android:textSize="@dimen/font_size_13sp"
+                        android:text="@string/pay_balance_false_reason_service"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_6px"
+                    android:background="@drawable/line_bottom" />
+
+            </LinearLayout>
+
+            <!-- 第三方支付部分 -->
+            <LinearLayout
+                android:id="@+id/order_third_pay_lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 还需要支付： 36 -->
+                <LinearLayout
+                    android:id="@+id/order_need_pay_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/offset_34px"
+                    android:paddingTop="@dimen/offset_27px"
+                    android:paddingBottom="@dimen/offset_22px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_need_money"
+                        android:textColor="@color/color_333333"
+                        android:textSize="@dimen/font_size_normal_high" />
+
+                    <TextView
+                        android:id="@+id/order_pay_tv_need_pay_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/offset_10px"
+                        android:text="@string/str_order_pay_balance"
+                        android:textColor="@color/color_ff8600"
+                        android:textSize="@dimen/font_size_xlarge" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/paytype_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"></LinearLayout>
+                <!-- 非会员使用礼品卡 -->
+                <!-- 使用微信付款 -->
+                <!-- 使用支付宝付款 -->
+                <!-- 使用银行卡 -->
+                <!-- 使用银联在线付款 -->
+                <!-- 使用影院会员卡付款 -->
+
+            </LinearLayout>
+
+            <!-- 需求要这么做 2019年1月17日  删掉票务付款页面底部的客服电话和工作时间-->
+            <!-- 需求要这么做 2019年1月17日  删掉票务付款页面底部的客服电话和工作时间-->
+            <!-- 客服热线电话 -->
+            <com.mtime.mtmovie.widgets.HotlinePhoneView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_26px"
+                android:layout_marginBottom="@dimen/offset_30px"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                app:action="ACTION_CALL"
+                app:phoneNumber="4006059500"
+                app:showDialog="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/offset_40px"
+                android:gravity="center"
+                android:text="@string/str_worktime"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_size_small_more"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/guide_view"
+        layout="@layout/giveup_pay_collection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</LinearLayout>

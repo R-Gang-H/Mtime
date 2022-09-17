@@ -1,0 +1,25 @@
+package {PACKAGE_NAME};
+
+import android.util.Log;
+import android.widget.GridView;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.robotium.solo.Solo;
+
+import java.util.ArrayList;
+
+public class {CLASS_NAME} extends BaseTest{
+
+    public {CLASS_NAME} throws ClassNotFoundException {
+        super(Class.forName("com.mtime.bussiness.SplashActivity"));
+    }
+
+    public void testCase() throws Throwable {
+       {BODY}
+    }
+}

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="kotlin.text.StringsKt" />
+
+        <import type="com.kotlin.android.mtime.ktx.KtxMtimeKt" />
+
+        <variable
+            name="longClick"
+            type="android.view.View.OnLongClickListener" />
+
+        <variable
+            name="mainContent"
+            type="com.kotlin.android.message.widget.MainContentView.MainContentViewProperty" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_out"
+        color="@{@color/color_f2f3f6}"
+        cornerRadius="@{9}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/offset_10dp"
+        android:background="@color/color_f2f3f6"
+        android:onClick="@{(view) -> mainContent.clickContent(view)}"
+        android:onLongClickListener="@{longClick}"
+        android:paddingBottom="@dimen/offset_8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_up_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_reply_img"
+                load_image="@{mainContent.img}"
+                load_image_default_img="@{@drawable/message_comment_pic_default}"
+                load_image_height="@{30}"
+                load_image_roundedRadius="@{9}"
+                load_image_width="@{30}"
+                android:layout_width="@dimen/offset_30dp"
+                android:layout_height="@dimen/offset_30dp"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:layout_marginEnd="@dimen/offset_20dp"
+                android:src="@drawable/message_comment_pic_default"
+                android:visibility="@{mainContent.contentImgVisible()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_12dp"
+                android:layout_marginTop="@dimen/offset_6dp"
+                android:layout_marginEnd="@dimen/offset_10dp"
+                android:ellipsize="end"
+                android:maxLines="@{mainContent.contentMaxLines()}"
+                android:text="@{mainContent.content}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintEnd_toStartOf="@id/iv_reply_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginEnd="@dimen/offset_16dp"
+                tools:text="雄狮少年有星爷和黄飞鸿电影的味道雄狮少年有星爷和黄飞鸿电影的味道，融合广东元素，画面唯美，音乐震撼，故事情节合理，不人…" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_in"
+            color="@{@color/color_ffffff}"
+            cornerRadius="@{9}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_8dp"
+            android:layout_marginEnd="@dimen/offset_10dp"
+            android:background="@color/color_ffffff"
+            android:onClick="@{(view) -> mainContent.clickInsideContent(view)}"
+            android:onLongClickListener="@{longClick}"
+            android:visibility="@{mainContent.insideContent == null ? View.GONE : View.VISIBLE }"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_up_view">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_content_in"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_10dp"
+                android:layout_marginTop="@dimen/offset_6dp"
+                android:layout_marginEnd="@dimen/offset_7dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{mainContent.insideContent.content}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_reply_img_in"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginEnd="@dimen/offset_10dp"
+                tools:text="这应该是霆锋演过最好的电影了 甄子丹谢霆锋搭档全部佳作: 十月围城，龙虎门，怒火。期..." />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_reply_img_in"
+                load_image="@{mainContent.insideContent.img}"
+                load_image_default_img="@{@drawable/message_comment_pic_default}"
+                load_image_height="@{30}"
+                load_image_roundedRadius="@{9}"
+                load_image_width="@{30}"
+                android:layout_width="@dimen/offset_30dp"
+                android:layout_height="@dimen/offset_30dp"
+                android:layout_marginTop="@dimen/offset_8dp"
+                android:layout_marginEnd="@dimen/offset_10dp"
+                android:src="@drawable/message_comment_pic_default"
+                android:visibility="@{mainContent.insideContent.img == null ? View.GONE : View.VISIBLE }"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_comment_in"
+                android:layout_width="@dimen/offset_14dp"
+                android:layout_height="@dimen/offset_14dp"
+                android:layout_marginStart="@dimen/offset_12dp"
+                android:layout_marginTop="@dimen/offset_8dp"
+                android:layout_marginBottom="@dimen/offset_8dp"
+                android:src="@drawable/ic_comment_reply"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_content_in" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_comment_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_4dp"
+                android:text="@{KtxMtimeKt.formatCount(mainContent.insideContent.commentCount,true)}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_comment_in"
+                app:layout_constraintStart_toEndOf="@id/iv_comment_in"
+                app:layout_constraintTop_toTopOf="@id/iv_comment_in"
+                tools:text="9999" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_praise_in"
+                android:layout_width="@dimen/offset_14dp"
+                android:layout_height="@dimen/offset_12dp"
+                android:layout_marginStart="@dimen/offset_12dp"
+                android:layout_marginTop="@dimen/offset_8dp"
+                android:layout_marginBottom="@dimen/offset_8dp"
+                android:src="@drawable/ic_like"
+                app:layout_constraintBottom_toBottomOf="@id/iv_comment_in"
+                app:layout_constraintStart_toEndOf="@id/tv_comment_in"
+                app:layout_constraintTop_toTopOf="@id/iv_comment_in" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_praise_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_5dp"
+                android:text="@{KtxMtimeKt.formatCount(mainContent.insideContent.praiseCount,true)}"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_praise_in"
+                app:layout_constraintStart_toEndOf="@id/iv_praise_in"
+                app:layout_constraintTop_toTopOf="@id/iv_praise_in"
+                tools:text="9999" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="@dimen/offset_14dp"
+            android:layout_height="@dimen/offset_14dp"
+            android:layout_marginStart="@dimen/offset_12dp"
+            android:layout_marginTop="@dimen/offset_8dp"
+            android:src="@drawable/ic_comment_reply"
+            android:visibility="@{mainContent.commentVisible()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_in" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_4dp"
+            android:text="@{KtxMtimeKt.formatCount(mainContent.commentCount,true)}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:visibility="@{mainContent.commentVisible()}"
+            app:layout_constraintBottom_toBottomOf="@id/iv_comment"
+            app:layout_constraintStart_toEndOf="@id/iv_comment"
+            app:layout_constraintTop_toTopOf="@id/iv_comment"
+            tools:text="9999" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_praise"
+            android:layout_width="@dimen/offset_14dp"
+            android:layout_height="@dimen/offset_12dp"
+            android:layout_marginStart="@dimen/offset_12dp"
+            android:layout_marginTop="@dimen/offset_8dp"
+            android:layout_marginBottom="@dimen/offset_8dp"
+            android:src="@drawable/ic_like"
+            android:visibility="@{mainContent.insideContent == null ? View.VISIBLE : View.GONE }"
+            app:layout_constraintStart_toEndOf="@id/tv_comment"
+            app:layout_constraintTop_toBottomOf="@id/cl_in" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_5dp"
+            android:text="@{KtxMtimeKt.formatCount(mainContent.praiseCount,true)}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:visibility="@{mainContent.insideContent == null ? View.VISIBLE : View.GONE }"
+            app:layout_constraintBottom_toBottomOf="@id/iv_praise"
+            app:layout_constraintStart_toEndOf="@id/iv_praise"
+            app:layout_constraintTop_toTopOf="@id/iv_praise"
+            tools:text="9999" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

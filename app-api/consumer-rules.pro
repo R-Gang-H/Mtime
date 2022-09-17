@@ -1,0 +1,2 @@
+-keep class com.kotlin.android.app.api.upload.** { *;}
+-keep class com.tencent.qcloud.quic.** { *;}

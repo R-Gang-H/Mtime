@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mContributeResultLay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/offset_41px"
+    android:paddingTop="@dimen/offset_68px"
+    android:paddingEnd="@dimen/offset_41px"
+    android:paddingBottom="@dimen/offset_52px"
+    tools:ignore="ResourceName">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mContributeSuccessIv"
+        android:layout_width="@dimen/offset_112px"
+        android:layout_height="@dimen/offset_112px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_film_list_success_bg" />
+
+    <TextView
+        android:id="@+id/mContributeSuccessTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_26px"
+        android:textColor="@color/color_404c57"
+        android:textSize="@dimen/offset_18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mContributeSuccessIv"
+        tools:text="投稿成功" />
+
+    <TextView
+        android:id="@+id/mContributeContentTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_26px"
+        android:gravity="center"
+        android:textColor="@color/color_8798af"
+        android:textSize="@dimen/offset_14sp"
+        app:layout_constraintBottom_toTopOf="@id/mResultBottomLay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mContributeSuccessTv"
+        tools:text="感谢您的参与，请耐心等待运营人员对您的投稿内容进行审核，如被采纳推荐， 将通过站内消息通知您 !" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mResultBottomLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_35px"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/mContributeContentTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/mBackBtn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_80px"
+            android:layout_marginEnd="@dimen/offset_7px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tablet_film_list_back_film_list"
+            android:textColor="@color/color_3d4955"
+            android:textSize="@dimen/offset_16sp" />
+
+        <Button
+            android:id="@+id/mGoOnBtn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_80px"
+            android:layout_marginStart="@dimen/offset_7px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tablet_film_list_go_on_contribute"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_16sp" />
+
+        <Button
+            android:id="@+id/mRepeatBtn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_80px"
+            android:layout_marginStart="@dimen/offset_7px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tablet_film_list_repeat_select"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_16sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

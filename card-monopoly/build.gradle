@@ -1,0 +1,128 @@
+if (isBuildModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    /**
+     * 资源同名问题处理
+     * 每个子模块给资源名添加前缀，具体做法是在每个子模块的build.gradle文件的android块内添加一行代码：resourcePrefix “资源名前缀”：
+     */
+    resourcePrefix "card_monopoly_"
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.kotlin.android.card.monopoly"
+        }
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro',
+                    '../js-sdk/proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
+    kapt {
+        useBuildCache = true
+        javacOptions {
+            option("-Xmaxerrs", 500)
+        }
+    }
+
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+        javaMaxHeapSize "4g"
+        /**
+         * DSL element 'DexOptions.incremental' is obsolete.
+         * It will be removed in version 5.0 of the Android Gradle plugin
+         */
+        //incremental true
+    }
+
+    sourceSets {
+        main {
+            if (isBuildModule.toBoolean()) {
+                manifest.srcFile 'src/main/java/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //release模式下排查debug文件夹中的所有文件
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs '../app/libs'
+        }
+    }
+
+}
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation Support.junit
+    androidTestImplementation Support.junit_ext
+    androidTestImplementation Support.espresso_core
+
+    // add lib
+    implementation project(path: ':mtime-ktx')
+    implementation project(path: ':core')
+    implementation project(path: ':app-api')
+    implementation project(path: ':resource')
+    implementation project(path: ':share')
+    implementation project(path: ':app-router')
+    implementation project(path: ':image-component')
+    implementation project(path: ':comment-component')
+    implementation project(path: ':widget')
+    implementation project(path: ':user')
+    implementation project(path: ':bonus_scene_component')
+    implementation project(path: ':comment-component')
+    implementation project(path: ':ugc-detail-component')
+    implementation(name: 'photoview-debug', ext: 'aar')
+    //组件中依赖阿里路由编译框架
+    kapt Dependencies.arouter_compiler
+    implementation 'com.airbnb.android:lottie:4.0.0'//Dependencies.lottie
+
+}

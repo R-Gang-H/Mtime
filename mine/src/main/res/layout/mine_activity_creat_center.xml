@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="creatorModel"
+            type="com.kotlin.android.mine.ui.creatcenter.CreatCenterViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        tools:context=".ui.creatcenter.CreatCenterActivity">
+
+        <RelativeLayout
+            android:id="@+id/rlNested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/offset_32px">
+
+            <!--创作等级-->
+            <include
+                android:id="@+id/levelCard"
+                layout="@layout/mine_creat_level_card"
+                bind:levelInfo="@{creatorModel.creatorCenterBean.levelInfo}" />
+
+            <!--任务中心-->
+            <include
+                android:id="@+id/taskCard"
+                layout="@layout/mine_creat_item_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/levelCard" />
+
+            <!--数据中心-->
+            <include
+                android:id="@+id/dataCard"
+                layout="@layout/mine_creat_item_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/taskCard" />
+
+            <!--我的内容-->
+            <include
+                android:id="@+id/myConCard"
+                layout="@layout/mine_creat_item_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dataCard" />
+
+            <!--我的勋章-->
+            <RelativeLayout
+                android:id="@+id/rlMyMedal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/myConCard"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_marginTop="@dimen/offset_24px"
+                android:layout_marginEnd="@dimen/offset_20px"
+                android:background="@drawable/ic_my_medal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMyMedal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_50px"
+                    android:layout_marginTop="@dimen/offset_40px"
+                    android:text="@string/mine_title_medal"
+                    android:textColor="@color/color_20a0da"
+                    android:textSize="@dimen/offset_20sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvMyMedal"
+                    android:layout_marginStart="@dimen/offset_50px"
+                    android:layout_marginTop="@dimen/offset_12px"
+                    android:layout_marginBottom="@dimen/offset_36px"
+                    android:text='@{"累计获得"+creatorModel.creatorCenterBean.medalCount+"个"}'
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_12sp"
+                    tools:text="累计获得15个" />
+
+                <LinearLayout
+                    android:id="@+id/llMedalIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/offset_28px"
+                    android:layout_marginEnd="@dimen/offset_40px"
+                    android:layout_toEndOf="@id/tvMyMedal"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/medalIcon"
+                        load_image_height="@{56}"
+                        load_image_width="@{56}"
+                        android:layout_width="@dimen/offset_112px"
+                        android:layout_height="@dimen/offset_112px"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/offset_20px"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        tools:src="@mipmap/ic_medal_awarded_default"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNoMedal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/offset_50px"
+                        android:text="@string/mine_no_medal"
+                        android:textColor="@color/color_cbd0d7"
+                        android:textSize="@dimen/offset_20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--帮助中心-->
+            <RelativeLayout
+                android:id="@+id/rlHelp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_98px"
+                android:layout_below="@id/rlMyMedal"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:layout_marginTop="@dimen/offset_30px"
+                android:layout_marginEnd="@dimen/offset_20px">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/mine_help_center"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_18sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_creator_arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dimView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_50000000"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

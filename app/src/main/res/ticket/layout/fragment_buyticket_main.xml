@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ticketRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/ticket_buyticket_title_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/title_bar_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/navigationbar"
+            layout="@layout/title_bar_home_movie_cinema"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- 影院搜索组件 -->
+        <include
+            android:id="@+id/search_title"
+            layout="@layout/title_bar_search_new"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ticket_buyticket_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ticket_buyticket_title_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

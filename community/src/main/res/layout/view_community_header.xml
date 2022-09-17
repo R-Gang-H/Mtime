@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--  title背景  -->
+        <View
+            android:id="@+id/mCommunityHeaderTopBgView"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:bg_gradient_end_color="@{@color/color_ffffff}"
+            android:bg_gradient_start_color="@{@color/color_f2f3f6}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--  右边的游戏模块  -->
+        <ImageView
+            android:id="@+id/mCommunityHeaderGameImgIv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_community_game"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityHeaderTopBgView" />
+
+        <TextView
+            android:id="@+id/mCommunityHeaderGameTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/community_header_game"
+            android:textColor="@color/color_1d2736"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/mCommunityHeaderTopBgView"
+            app:layout_constraintLeft_toLeftOf="@id/mCommunityHeaderGameImgIv" />
+
+        <TextView
+            android:id="@+id/mCommunityHeaderGameNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40dp"
+            android:text="@string/community_header_game_name"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/mCommunityHeaderGameImgIv"
+            app:layout_constraintRight_toRightOf="@id/mCommunityHeaderGameImgIv"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityHeaderGameImgIv"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!--  左边的我的家族模块  -->
+        <TextView
+            android:id="@+id/mCommunityHeaderFamilyTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/community_header_my_family"
+            android:textColor="@color/color_1d2736"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/mCommunityHeaderTopBgView"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/mCommunityHeaderFamilyMoreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:drawableEnd="@drawable/ic_right_arrows"
+            android:drawablePadding="4dp"
+            android:text="@string/all"
+            android:textColor="@color/color_8798af"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/mCommunityHeaderFamilyTitleTv"
+            app:layout_constraintRight_toLeftOf="@id/mCommunityHeaderGameTitleTv"
+            app:layout_constraintTop_toTopOf="@id/mCommunityHeaderFamilyTitleTv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mCommunityHeaderFamilyRv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/mCommunityHeaderFamilyMoreTv"
+            app:layout_constraintTop_toTopOf="@id/mCommunityHeaderGameImgIv"
+            tools:listitem="@layout/item_community_my_family" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

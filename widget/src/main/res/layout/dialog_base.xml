@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/offset_540px"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialogBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--		android:background="@drawable/bg_dialog"-->
+        <TextView
+            android:id="@+id/mTitle"
+            style="@style/WrapWrap"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingLeft="@dimen/offset_40px"
+            android:paddingTop="@dimen/offset_40px"
+            android:paddingRight="@dimen/offset_40px"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="标题" />
+
+        <TextView
+            android:id="@+id/mContent"
+            style="@style/WrapWrap"
+            android:gravity="center"
+            android:paddingLeft="@dimen/offset_40px"
+            android:paddingTop="@dimen/offset_50px"
+            android:paddingRight="@dimen/offset_40px"
+            android:paddingBottom="@dimen/offset_50px"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_17sp"
+            android:scrollbars="vertical"
+            android:maxLines="14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTitle"
+            tools:text="文字文字内容文字文字内容文字文字内容文字文字内容文字文字内容" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/mContent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <View
+                android:id="@+id/hor_line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_1px"
+                android:background="@color/color_e5e5e5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_90px"
+                android:gravity="center"
+                android:text="@string/widget_cancel"
+                android:textColor="@color/color_666c7b"
+                android:textSize="@dimen/offset_17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/line" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="@dimen/offset_1px"
+                android:layout_height="@dimen/offset_90px"
+                android:background="@color/color_e5e5e5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/mCancel"
+                app:layout_constraintRight_toLeftOf="@id/mSure"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mSure"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_90px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/widget_sure"
+                android:textStyle="bold"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/line"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

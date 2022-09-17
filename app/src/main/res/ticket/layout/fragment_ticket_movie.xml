@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/ticket_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        app:stl_defaultTabTextAllCaps="false"
+        app:stl_indicatorWidth="32dp"
+        app:stl_indicatorColor="#47505c"
+        app:stl_indicatorThickness="2dp"
+        app:stl_indicatorCornerRadius="0dp"
+        app:stl_indicatorInterpolation="smart"
+        app:stl_indicatorWithoutPadding="true"
+        app:stl_titleOffset="auto_center"
+        app:stl_underlineThickness="0dp"
+        app:stl_dividerThickness="0dp"
+        app:layout_collapseMode="pin"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ticket_movie_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"/>
+
+    <include
+        android:id="@+id/loading_failed_layout"
+        layout="@layout/loading_failed_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</LinearLayout>

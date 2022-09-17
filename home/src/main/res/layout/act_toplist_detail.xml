@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="com.kotlin.android.app.data.entity.toplist.TopListInfo" />
+        <variable
+            name="topListDetailViewModel"
+            type="com.kotlin.android.home.ui.toplist.TopListDetailViewModel" />
+    </data>
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/MatchMatch"
+            >
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                style="@style/MatchMatch"
+                android:layout_marginBottom="@dimen/offset_122px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <!-- 榜单详情页通用 标题 头部信息 -->
+                <include
+                    style="@style/MatchWrap"
+                    app:data="@{topListDetailViewModel.topListUiStateSuccess}"
+                    layout="@layout/layout_toplist_detail_head"
+                    />
+
+                <!-- 刷新组件 -->
+                <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                    android:id="@+id/mRefreshLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srlEnableFooterFollowWhenNoMoreData="false"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    >
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+                            <!-- 影片/影人列表 -->
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/mToplistDetailRv"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:listitem="@layout/item_toplist_detail_movie"
+                                android:visibility="visible"
+                                tools:itemCount="2"
+                                />
+
+                            <!--渐变浮层-->
+                            <FrameLayout
+                                android:id="@+id/mToplistDetailMoreGradientLayout"
+                                android:layout_width="@dimen/offset_0px"
+                                android:layout_height="@dimen/offset_280px"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintBottom_toBottomOf="@+id/mToplistDetailRv"
+                                android:visibility="visible"
+                                />
+
+                            <!-- 查看更多 -->
+                            <TextView
+                                android:id="@+id/mToplistDetailMoreTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/offset_50px"
+                                android:textSize="@dimen/offset_12sp"
+                                android:textColor="@color/color_8798af"
+                                android:text="@string/see_more"
+                                app:layout_constraintTop_toBottomOf="@+id/mToplistDetailRv"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:visibility="visible"
+                                />
+
+                            <!-- 相关榜单title 一期不做 -->
+        <!--                    <TextView-->
+        <!--                        android:id="@+id/mToplistDetailRelatedTv"-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:layout_marginTop="@dimen/offset_57px"-->
+        <!--                        android:layout_marginStart="@dimen/offset_30px"-->
+        <!--                        android:textSize="@dimen/offset_17sp"-->
+        <!--                        android:textColor="@color/color_1d2736"-->
+        <!--                        android:textStyle="bold"-->
+        <!--                        android:text="@string/toplist_related"-->
+        <!--                        app:layout_constraintTop_toBottomOf="@+id/mToplistDetailMoreTv"-->
+        <!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--                        android:visibility="gone"-->
+        <!--                        />-->
+
+                            <!-- 相关榜单列表 一期不做 -->
+        <!--                    <androidx.recyclerview.widget.RecyclerView-->
+        <!--                        android:id="@+id/mToplistDetailRelatedRv"-->
+        <!--                        android:layout_width="0dp"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:layout_marginTop="@dimen/offset_20px"-->
+        <!--                        app:layout_constraintTop_toBottomOf="@+id/mToplistDetailRelatedTv"-->
+        <!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--                        app:layout_constraintRight_toRightOf="parent"-->
+        <!--                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--                        tools:listitem="@layout/item_toplist_detail_related"-->
+        <!--                        tools:itemCount="1"-->
+        <!--                        android:visibility="gone"-->
+        <!--                        />-->
+
+                            <!-- 评论列表 -->
+                            <com.kotlin.android.widget.recycler.ScrollRecyclerView
+                                android:id="@+id/mToplistDetailCommentRv"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/offset_140px"
+                                app:layout_constraintTop_toBottomOf="@+id/mToplistDetailRv"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <!--  评论控件-->
+            <com.kotlin.android.comment.component.widget.PublishCommentView
+                android:id="@+id/publishCommentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <!--  显示要上传的图片-->
+            <com.kotlin.android.comment.component.widget.CommentImageLayout
+                android:id="@+id/commentImgLayout"
+                android:layout_width="@dimen/offset_248px"
+                android:layout_height="@dimen/offset_188px"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/publishCommentView"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

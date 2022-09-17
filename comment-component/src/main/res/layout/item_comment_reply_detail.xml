@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.comment.component.binder.CommentReplyDetailBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/commentRootCL"
+        style="@style/MatchWrap"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_25px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:onClick="@{(view)->data.onClick(view)}">
+
+        <!--        用户头像-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userPicIv"
+            load_image="@{data.bean.userPic}"
+            load_image_circle_crop="@{true}"
+            load_image_default_img="@{@drawable/default_user_head}"
+            load_image_height="@{24}"
+            load_image_width="@{24}"
+            android:layout_width="@dimen/offset_48px"
+            android:layout_height="@dimen/offset_48px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    认证图片-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/authIv"
+            android:layout_width="@dimen/offset_24px"
+            android:layout_height="@dimen/offset_24px"
+            android:src="@{data.bean.institutionAuthUser ? @drawable/ic_jigourenzheng : @drawable/ic_yingrenrenzheng}"
+            android:visibility="@{data.bean.authUser ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/userPicIv"
+            app:layout_constraintCircle="@id/userPicIv"
+            app:layout_constraintCircleAngle="120"
+            app:layout_constraintCircleRadius="@dimen/offset_24px"
+            app:layout_constraintRight_toRightOf="@id/userPicIv" />
+
+        <!--        用户名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userNameTv"
+            style="@style/WrapWrap"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/offset_500px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:singleLine="true"
+            android:text="@{data.bean.userName}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/font_size_sp_14"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/userPicIv"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toRightOf="@id/userPicIv"
+            app:layout_constraintRight_toLeftOf="@id/publishDateTv"
+            app:layout_constraintTop_toTopOf="@id/userPicIv" />
+        <!--发布时间-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/publishDateTv"
+            style="@style/WrapWrap"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{data.bean.publishDate}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/userNameTv"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@id/userNameTv"
+            app:layout_constraintRight_toRightOf="parent" />
+
+<!--        &lt;!&ndash;        评论内容&ndash;&gt;-->
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/contentTv"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/offset_58px"-->
+<!--            android:layout_marginTop="@dimen/offset_20px"-->
+<!--            android:textColor="@color/color_4e5e73"-->
+<!--            android:textSize="@dimen/font_size_sp_14"-->
+<!--            app:layout_constraintHorizontal_weight="1"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/userPicIv"-->
+<!--            tools:text="片尾旁白的时候，我不禁想到国内有个叫张小北的影评人很久前在影评节目里说，“只有中国人拍的电影才能触动身为中国人最深的内心”，我认为流浪…" />-->
+
+        <com.kotlin.android.ugc.web.widgets.UgcWebView
+            android:id="@+id/webView"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_20px"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userPicIv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/commentIvCV"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_356px"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:visibility="@{TextUtils.isEmpty(data.bean.commentPic)?View.GONE:View.VISIBLE}"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/webView">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/commentIv"
+                style="@style/MatchMatch"
+                load_image="@{data.bean.commentPic}"
+                load_image_height="@{178}"
+                load_image_width="@{360}"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!--        android:drawableTint="@{data.bean.like?@color/color_20a0da:@color/color_8798af}"-->
+        <!--        回复按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/replyBtn"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_46px"
+            android:drawablePadding="@dimen/offset_10px"
+            android:text="@{data.bean.replyCountStr}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:drawableTint="@color/color_8798af"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentIvCV"
+            tools:text="100" />
+
+        <!--        点赞按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/likeTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_46px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:drawableLeft="@drawable/ic_like"
+            android:drawablePadding="@dimen/offset_10px"
+            android:onClick="@{(view)->data.onClick(view)}"
+            android:text="@{data.bean.likeCountStr}"
+            android:textColor="@{data.bean.like?@color/color_20a0da:@color/color_8798af}"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintRight_toLeftOf="@id/replyBtn"
+            app:layout_constraintTop_toBottomOf="@id/commentIvCV"
+            tools:text="10" />
+
+
+        <!--        删除按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deleteTv"
+            style="@style/WrapWrap"
+            android:layout_marginLeft="@dimen/offset_58px"
+            android:layout_marginTop="@dimen/offset_46px"
+            android:onClick="@{(view)->data.onClick(view)}"
+            android:text="@string/comment_delete"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/font_size_sp_12"
+            android:visibility="@{data.bean.myComment?View.VISIBLE:View.GONE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentIvCV" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/trangleIv"
+            android:layout_width="@dimen/offset_24px"
+            android:layout_height="@dimen/offset_15px"
+            android:layout_marginTop="@dimen/offset_17px"
+            android:layout_marginRight="@dimen/offset_45px"
+            android:src="@drawable/ic_triangle_up"
+            android:tint="@color/color_f2f3f6"
+            android:visibility="@{data.bean.showTriangle?View.VISIBLE:View.GONE}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/replyBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

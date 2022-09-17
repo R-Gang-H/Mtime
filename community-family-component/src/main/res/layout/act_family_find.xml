@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFamily"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_f9f9fb"/>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

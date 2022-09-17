@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actor_detail_listview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/view_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- bottom input view -->
+        <com.mtime.bussiness.ticket.movie.widget.AppraiseOfPerson
+            android:id="@+id/comments_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_alignParentBottom="true"/>
+
+        <com.aspsine.irecyclerview.IRecyclerView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/root_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/comments_view"
+            android:background="@color/white"
+            app:loadMoreEnabled="true"
+            app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+            app:refreshEnabled="false"
+            app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"/>
+
+        <!-- navigationbar -->
+
+        <include
+            android:id="@+id/navigation"
+            layout="@layout/title_bar_normal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_alignParentTop="true"/>
+
+        <ImageView
+            android:id="@+id/scale_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_99000000"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:visibility="invisible"/>
+
+        <!-- show whole name -->
+        <include
+            android:id="@+id/whole_name"
+            layout="@layout/show_whole_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"/>
+
+        <!-- comments input view -->
+        <com.mtime.bussiness.ticket.widget.CommentsInputView
+            android:id="@+id/comments_input_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/preload_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
+
+    <include
+        android:id="@+id/loading_failed_layout"
+        layout="@layout/loading_failed_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</RelativeLayout>

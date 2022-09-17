@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">imageloader</string>
+
+    <declare-styleable name="LogoDrawable">
+
+        <attr name="android:color" />
+        <attr name="android:drawable" />
+
+        <attr name="android:radius" />
+        <attr name="android:topRightRadius" />
+        <attr name="android:topLeftRadius" />
+        <attr name="android:bottomRightRadius" />
+        <attr name="android:bottomLeftRadius" />
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeRootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 背景图 -->
+        <View
+            android:id="@+id/headBgView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_540px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            color="@{@color/color_fbffea}"
+            endColor="@{@color/color_ffffff}"
+            />
+        
+        <com.kotlin.android.widget.titlebar.TitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/stateView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/titleBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.ogaclejapan.smarttablayout.SmartTabLayout
+                    android:id="@+id/mHomeTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="11dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:clipToPadding="false"
+                    app:stl_defaultTabTextAllCaps="false"
+                    app:stl_distributeEvenly="false"
+                    app:stl_dividerThickness="0dp"
+                    app:stl_indicatorColor="@color/color_20a0da"
+                    app:stl_indicatorCornerRadius="2dp"
+                    app:stl_indicatorInterpolation="smart"
+                    app:stl_indicatorThickness="4dp"
+                    app:stl_indicatorWidth="16dp"
+                    app:stl_indicatorWithoutPadding="true"
+                    app:stl_titleOffset="auto_center"
+                    app:stl_underlineThickness="0dp" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/mHomeViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                     />
+
+            </LinearLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

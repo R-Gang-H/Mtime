@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.kotlin.tablet.ui.success.FilmListCreateSuccessViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/MatchMatch">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mFilmListCoverBgIv"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_352px"
+            android:layout_marginTop="@dimen/offset_50px"
+            app:layout_constraintEnd_toEndOf="@id/mFilmListRightGuide"
+            app:layout_constraintStart_toStartOf="@id/mFilmListLeftGuide"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mCoverTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_20sp"
+            android:text="@{vm.MDataLd.title}"
+            app:layout_constraintBottom_toBottomOf="@id/mFilmListCoverBgIv"
+            app:layout_constraintEnd_toEndOf="@id/mFilmListRightGuide"
+            app:layout_constraintStart_toStartOf="@id/mFilmListLeftGuide"
+            app:layout_constraintTop_toTopOf="@id/mFilmListCoverBgIv"
+            tools:text="漫威进阶影片推荐描述描述描述" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_12sp"
+            android:text="@{vm.MDataLd.synopsis}"
+            android:layout_marginTop="@dimen/offset_13px"
+            android:layout_marginEnd="@dimen/offset_28px"
+            android:layout_marginStart="@dimen/offset_28px"
+            app:layout_constraintLeft_toLeftOf="@id/mFilmListLeftGuide"
+            app:layout_constraintRight_toRightOf="@id/mFilmListRightGuide"
+            app:layout_constraintTop_toBottomOf="@id/mCoverTitleTv"
+            tools:text="精心挑选的近期热门漫威高分科幻电影，一共精心挑选的近期热门漫威高分科幻电影，一共" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mCreateSuccessIv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_85px"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:src="@drawable/ic_film_list_success_bg"
+            app:layout_constraintEnd_toEndOf="@id/mFilmListRightGuide"
+            app:layout_constraintStart_toStartOf="@id/mFilmListLeftGuide"
+            app:layout_constraintTop_toBottomOf="@id/mFilmListCoverBgIv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mCreateOverTextTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_24px"
+            android:gravity="center"
+            android:textColor="@color/color_30333b"
+            android:textSize="@dimen/offset_18sp"
+            android:text="@string/tablet_film_list_create_over"
+            app:layout_constraintStart_toStartOf="@id/mFilmListLeftGuide"
+            app:layout_constraintEnd_toEndOf="@id/mFilmListRightGuide"
+            app:layout_constraintTop_toBottomOf="@id/mCreateSuccessIv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mCreateOverContentTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/offset_24px"
+            android:gravity="center"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_14sp"
+            android:text="@string/tablet_film_list_create_over_content"
+            app:layout_constraintStart_toStartOf="@id/mFilmListLeftGuide"
+            app:layout_constraintEnd_toEndOf="@id/mFilmListRightGuide"
+            app:layout_constraintTop_toBottomOf="@id/mCreateOverTextTv"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_140px"
+            android:paddingLeft="@dimen/offset_30px"
+            android:paddingRight="@dimen/offset_30px"
+            android:background="@drawable/laylist_bottom_shadow_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/mAfterAddBtn"
+                strokeColor="@{@color/color_d8d8d8}"
+                strokeWidth="@{1}"
+                cornerRadius="@{18}"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_80px"
+                android:text="@string/tablet_film_list_after_add"
+                android:textColor="@color/color_3d4955"
+                android:textSize="@dimen/offset_16sp"
+                android:layout_marginEnd="@dimen/offset_16px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/mNowAddBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mNowAddBtn"
+                color="@{@color/color_1cacde}"
+                cornerRadius="@{18}"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_80px"
+                android:text="@string/tablet_film_list_now_add"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/mAfterAddBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mFilmListRightGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/offset_30px" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/mFilmListLeftGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/offset_30px" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

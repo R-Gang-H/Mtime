@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.binder.MovieBinder" />
+    </data>
+    <!-- 影片 -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movieRootCl"
+        style="@style/MatchWrap"
+        movieBackground="@{data.movieBean.ugcType}"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:elevation="@dimen/card_elevation"
+        android:onClick="@{view -> data.onClick(view)}">
+        <!--影片卡片-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movieImgCardView"
+            android:layout_width="@dimen/offset_100px"
+            android:layout_height="@dimen/offset_150px"
+            android:layout_margin="@dimen/offset_20px"
+            app:cardCornerRadius="@dimen/offset_6px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/movieImgIv"
+                load_image="@{data.movieBean.picUrl}"
+                load_image_width="@{50}"
+                load_image_height="@{75}"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!--影片名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieNameTv"
+            ugcMovieInfoTextColor="@{data.movieBean.ugcType}"
+            android:layout_width="0dp"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{data.movieBean.nameCn}"
+            android:textSize="@dimen/font_size_sp_14"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/movieImgCardView"
+            app:layout_constraintTop_toTopOf="@id/movieImgCardView"
+            tools:text="少年的你" />
+
+        <!--        时光评分-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieMtimeScoreTitleTv"
+            ugcMovieScoreTextColor="@{data.movieBean.ugcType}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_2px"
+            android:text="@string/ugc_mtime_score"
+            android:visibility="@{data.movieBean.showScore?View.VISIBLE:View.GONE}"
+            android:textSize="@dimen/font_size_sp_12"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/movieNameTv"
+            app:layout_constraintTop_toBottomOf="@id/movieNameTv" />
+
+        <!--        评分内容-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mCommunityPostMovieMtimeScoreTv"
+            ugcMovieScoreTextColor="@{data.movieBean.ugcType}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:visibility="@{data.movieBean.showScore?View.VISIBLE:View.GONE}"
+            android:text="@{data.movieBean.mTimeScore}"
+            android:textSize="@dimen/font_size_sp_15"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@id/movieMtimeScoreTitleTv"
+            app:layout_constraintLeft_toRightOf="@id/movieMtimeScoreTitleTv"
+            app:layout_constraintTop_toTopOf="@id/movieMtimeScoreTitleTv"
+            tools:text="8.8" />
+
+        <!--        想看按钮-->
+        <FrameLayout
+            android:id="@+id/movieBtnFl"
+            ugcType="@{data.movieBean.ugcType}"
+            ugcMovieType = "@{data.movieBean.movieStatus}"
+            android:layout_width="@dimen/offset_116px"
+            android:layout_height="@dimen/offset_50px"
+            android:layout_marginEnd="@dimen/offset_20px"
+            android:visibility="@{data.movieBean.movieStatus==0L?View.GONE:View.VISIBLE}"
+            android:layout_marginBottom="@dimen/offset_14px"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <!--1是影评、蓝色字体，其他白色字体-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mCommunityPostMovieBtnTv"
+                movieBtnDrawable="@{data.movieBean.ugcType}"
+                moviehasWanna = "@{data.movieBean.movieStatus}"
+                movieBtnText="@{data.movieBean.movieStatus}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_checkb"
+                android:drawablePadding="@dimen/offset_6px"
+                android:gravity="center"
+                android:textSize="@dimen/font_size_sp_14"
+                android:textStyle="bold"
+                tools:text="想看" />
+            <!--            android:movie_btn_text_state="@{data.movieBean.movieStatus}"-->
+        </FrameLayout>
+
+        <!--        发型日期-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieReleaseDataTv"
+            ugcMovieInfoTextColor="@{data.movieBean.ugcType}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:layout_marginBottom="@dimen/offset_12px"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.movieBean.releaseDate}"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/movieNameTv"
+            app:layout_constraintRight_toLeftOf="@id/movieBtnFl"
+            tools:text="2019年4月24日中国上映" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieTypeTv"
+            ugcMovieInfoTextColor="@{data.movieBean.ugcType}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.movieBean.durationAndMovieType}"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintBottom_toTopOf="@id/movieReleaseDataTv"
+            app:layout_constraintLeft_toLeftOf="@id/movieNameTv"
+            app:layout_constraintRight_toLeftOf="@id/movieBtnFl"
+            tools:text="181分钟-动作/冒险/奇幻/家庭/" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

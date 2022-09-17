@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchMatch"
+        >
+
+        <!-- Tab -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/subTabCl"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_25px"
+            android:layout_marginBottom="@dimen/offset_20px"
+            android:layout_marginEnd="@dimen/offset_26px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/sortBtnCl"
+            >
+
+            <!-- Tab -->
+            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                android:id="@+id/subTabLayout"
+                style="@style/WrapWrap"
+                android:layout_marginStart="@dimen/offset_10px"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:stl_customTabTextLayoutId="@layout/item_search_result_sub_tab"
+                app:stl_customTabTextViewId="@id/searchSubTabTv"
+                app:stl_defaultTabTextAllCaps="false"
+                app:stl_distributeEvenly="true"
+                app:stl_dividerThickness="@dimen/offset_2px"
+                app:stl_dividerColor="#dfdfdf"
+                app:stl_indicatorColor="@color/color_00000000"
+                app:stl_indicatorCornerRadius="0dp"
+                app:stl_indicatorInterpolation="smart"
+                app:stl_indicatorThickness="0dp"
+                app:stl_indicatorWidth="0dp"
+                app:stl_indicatorWithoutPadding="true"
+                app:stl_titleOffset="auto_center"
+                app:stl_underlineThickness="0dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- ViewPager -->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/subViewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/subTabCl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <!-- 排序 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sortBtnCl"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_44px"
+            android:background="@color/color_f3f3f4"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:paddingStart="@dimen/offset_20px"
+            android:paddingEnd="@dimen/offset_10px"
+            app:layout_constraintTop_toTopOf="@+id/subTabCl"
+            app:layout_constraintBottom_toBottomOf="@+id/subTabCl"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sortBtnTv"
+                style="@style/WrapWrap"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                android:text="@string/search_result_sort_comprehensive"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/sortBtnIv"
+                android:layout_width="@dimen/offset_30px"
+                android:layout_height="@dimen/offset_30px"
+                android:src="@drawable/ic_search_sort_down"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/sortBtnTv"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 排序展开 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sortCard"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_126px"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/offset_4px"
+            app:cardElevation="@dimen/offset_3px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/subTabCl"
+            app:layout_constraintLeft_toLeftOf="@+id/sortBtnCl"
+            app:layout_constraintRight_toRightOf="@+id/sortBtnCl"
+            tools:visibility="visible"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/MatchMatch"
+                >
+
+                <!-- 分隔线 -->
+                <View
+                    android:id="@+id/sortLineView"
+                    android:layout_width="@dimen/offset_0px"
+                    android:layout_height="@dimen/offset_2px"
+                    android:background="@color/color_f3f3f4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <!-- 综合排序 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sortComprehensiveTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_20a0da"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/search_result_sort_comprehensive"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/sortLineView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <!-- 时间倒序 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sortTimeTv"
+                    style="@style/WrapWrap"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/search_result_sort_time"
+                    app:layout_constraintTop_toBottomOf="@+id/sortLineView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

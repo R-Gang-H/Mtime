@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- start zxing -->
+    <!-- Messages IDs -->
+    <item name="auto_focus" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="launch_product_query" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+    <!-- end zxing -->
+
+    <item type="id" name="expandable_text"/>
+    <item type="id" name="expand_collapse"/>
+    <item type="id" name="expand_footer"/>
+
+    <item type="id" name="adapter_item_type_render" />
+    <item type="id" name="img_item_holder" />
+
+    <!--item图片tag-->
+    <item type="id" name="tag_glide" />
+</resources>

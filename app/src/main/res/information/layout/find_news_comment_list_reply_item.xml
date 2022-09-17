@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_f6f6f6"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_f6f6f6"
+        android:clickable="true"
+        android:orientation="horizontal" >
+
+        <!-- 头像 -->
+
+        <com.mtime.mtmovie.widgets.CircleImageView
+            android:id="@+id/comment_photo"
+            android:layout_width="@dimen/offset_90px"
+            android:layout_height="@dimen/offset_90px"
+            android:layout_marginLeft="@dimen/offset_80px"
+            android:layout_marginTop="@dimen/offset_34px"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_default_head_h90"
+            app:border_color="@color/circle_image_boder"
+            app:border_width="@dimen/offset_1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_26px"
+            android:layout_marginTop="@dimen/offset_34px"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/offset_34px"
+                android:layout_marginRight="@dimen/offset_34px"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <!-- 名字 -->
+
+                    <TextView
+                        android:id="@+id/comment_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/font_size_small_more" />
+                    <!-- 时间 -->
+
+                    <TextView
+                        android:id="@+id/comment_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/font_size_small_more" />
+                </LinearLayout>
+                <!-- 内容 -->
+
+                <TextView
+                    android:id="@+id/comment_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_28px"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/font_size_normal_more" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/offset_80px"
+        android:background="@color/color_d8d8d8" />
+
+    <View
+        android:id="@+id/list_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1dp"
+        android:background="@color/color_d8d8d8"
+        android:visibility="gone" />
+
+</LinearLayout>

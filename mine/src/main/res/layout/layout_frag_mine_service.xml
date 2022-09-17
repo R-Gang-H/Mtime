@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        shadowRadius="@{5}"
+        shadowWidth="@{5}"
+        shadowAlphaSpacing="@{0.05f}"
+        shadowColor="@{@color/color_f3f4f6}"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:cardCornerRadius="@dimen/offset_10px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/MatchWrap"
+                android:paddingTop="@dimen/offset_34px"
+                android:paddingLeft="@dimen/offset_34px"
+                android:paddingRight="@dimen/offset_34px"
+                android:paddingBottom="@dimen/offset_22px"
+                >
+
+                <!-- 会员中心 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceMemberCenterTv"
+                    style="@style/WrapWrap"
+                    android:drawableTop="@drawable/ic_mine_member_center"
+                    android:drawablePadding="@dimen/offset_3px"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_member_center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/serviceMBeanTv"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    />
+
+                <!-- M豆抽奖 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceMBeanTv"
+                    style="@style/WrapWrap"
+                    android:drawableTop="@drawable/ic_mine_bean"
+                    android:drawablePadding="@dimen/offset_3px"
+                    android:text="@string/mine_service_bean_lottery"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintLeft_toRightOf="@+id/serviceMemberCenterTv"
+                    app:layout_constraintRight_toLeftOf="@+id/serviceIdentifyTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- 身份认证 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceIdentifyTv"
+                    style="@style/WrapWrap"
+                    android:drawableTop="@drawable/ic_mine_identify"
+                    android:drawablePadding="@dimen/offset_3px"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_authen_title"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/serviceMBeanTv"
+                    app:layout_constraintRight_toLeftOf="@+id/serviceTopListTv"
+                    />
+
+                <!-- 我的片单 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceTopListTv"
+                    style="@style/WrapWrap"
+                    android:drawableTop="@drawable/ic_mine_toplist"
+                    android:drawablePadding="@dimen/offset_3px"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_service_toplist"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/serviceIdentifyTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <!-- 第二行 -->
+
+                <!-- 意见反馈 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceFeedbackTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginTop="@dimen/offset_20px"
+                    android:drawableTop="@drawable/ic_mine_feed_back"
+                    android:drawablePadding="@dimen/offset_3px"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_feed_back"
+                    app:layout_constraintTop_toBottomOf="@+id/serviceMemberCenterTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/serviceLicenseTv"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    />
+
+                <!-- 证照信息 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceLicenseTv"
+                    style="@style/WrapWrap"
+                    android:drawableTop="@drawable/ic_mine_license"
+                    android:drawablePadding="@dimen/offset_3px"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_license"
+                    app:layout_constraintTop_toTopOf="@id/serviceFeedbackTv"
+                    app:layout_constraintLeft_toRightOf="@+id/serviceFeedbackTv"
+                    app:layout_constraintRight_toLeftOf="@+id/serviceAboutUsTv"
+                    />
+
+                <!-- 关于我们 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceAboutUsTv"
+                    style="@style/WrapWrap"
+                    android:drawableTop="@drawable/ic_mine_about_us"
+                    android:drawablePadding="@dimen/offset_3px"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_about_us"
+                    app:layout_constraintTop_toTopOf="@id/serviceFeedbackTv"
+                    app:layout_constraintLeft_toRightOf="@+id/serviceLicenseTv"
+                    app:layout_constraintRight_toLeftOf="@+id/serviceBlankView"
+                    />
+
+                <!-- 占位 -->
+                <View
+                    android:id="@+id/serviceBlankView"
+                    android:layout_width="@dimen/offset_100px"
+                    android:layout_height="@dimen/offset_96px"
+                    app:layout_constraintTop_toTopOf="@id/serviceFeedbackTv"
+                    app:layout_constraintLeft_toRightOf="@+id/serviceAboutUsTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <!-- 第二行组 -->
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/serviceSecondLineGroup"
+                    style="@style/WrapWrap"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="serviceFeedbackTv,serviceLicenseTv,serviceAboutUsTv,serviceBlankView"
+                    tools:visibility="visible"
+                    />
+
+                <!-- 展开 收起 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/serviceExpandTv"
+                    style="@style/WrapWrap"
+                    android:layout_marginTop="@dimen/offset_26px"
+                    android:paddingRight="@dimen/offset_5px"
+                    android:textColor="@color/color_cbd0d7"
+                    android:textSize="@dimen/offset_12sp"
+                    android:text="@string/mine_service_expand"
+                    app:layout_constraintTop_toBottomOf="@+id/serviceFeedbackTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/serviceExpandIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_mine_service_expand"
+                    app:layout_constraintTop_toTopOf="@+id/serviceExpandTv"
+                    app:layout_constraintBottom_toBottomOf="@+id/serviceExpandTv"
+                    app:layout_constraintLeft_toRightOf="@+id/serviceExpandTv"
+                    />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/serviceExpandGroup"
+                    style="@style/WrapWrap"
+                    app:constraint_referenced_ids="serviceExpandTv,serviceExpandIv"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

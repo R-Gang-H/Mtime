@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.ticket.order.component.binder.TicketOrderBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/orderCL"
+        android:onClick="@{view->data.onClick(view)}"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_24px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:layout_marginBottom="@dimen/offset_48px">
+        <!--        影院名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cinemaTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_6px"
+            android:text="@{data.bean.cinemaName}"
+            android:textColor="@color/color_8798af"
+            android:onClick="@{view->data.onClick(view)}"
+            android:textSize="@dimen/offset_12sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="万达电影院（万达CBD店）" />
+
+        <!--        订单状态-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderStatusTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.bean.orderStatusContent}"
+            android:textColor="@{data.bean.noPay?@color/color_feb12a:@color/color_8798af}"
+            android:textSize="@dimen/offset_12sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="已完成" />
+
+        <View
+            android:id="@+id/upLine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginTop="@dimen/offset_11px"
+            android:background="@color/color_f3f3f4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cinemaTv" />
+        <!--        影片海报-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movieCV"
+            android:layout_width="@dimen/offset_130px"
+            android:layout_height="@dimen/offset_194px"
+            android:layout_marginLeft="@dimen/offset_6px"
+            android:layout_marginTop="@dimen/offset_20px"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/upLine">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                load_image="@{data.bean.moviePic}"
+                load_image_width="@{65}"
+                load_image_height="@{97}"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <!--        评分按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/gotoRatingTv"
+            android:layout_width="@dimen/offset_116px"
+            android:layout_height="@dimen/offset_50px"
+            android:layout_marginTop="@dimen/offset_92px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/ticket_order_goto_rate"
+            android:textStyle="bold"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"
+            android:visibility="@{data.bean.showGotoRatingBtn?View.VISIBLE:View.GONE}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upLine" />
+
+        <!--        电影名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:text="@{data.bean.movieName}"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            app:layout_constraintLeft_toRightOf="@id/movieCV"
+            app:layout_constraintTop_toBottomOf="@id/upLine"
+            tools:text="血战钢锯岭" />
+
+        <!--        评分-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ratingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:text="@{data.bean.ratingFormat}"
+            android:textColor="@color/color_20a0da"
+            android:textSize="@dimen/offset_15sp"
+            app:layout_constraintLeft_toRightOf="@id/movieCV"
+            app:layout_constraintTop_toBottomOf="@id/movieNameTv" />
+
+        <!--        开场时间-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/showTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_45px"
+            android:text="@{data.bean.showTime}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintBottom_toBottomOf="@id/movieCV"
+            app:layout_constraintLeft_toRightOf="@id/movieCV"
+            tools:text="08月26日 18：00" />
+        <!--        影厅和座位信息-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/seatTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_8px"
+            android:text="@{data.bean.seatContent}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/movieCV"
+            app:layout_constraintTop_toBottomOf="@id/showTimeTv"
+            tools:text="2号厅  6排03座 | 2号厅  6排04座 |\n2号厅  6排05座 | 2号厅  6排03座 |" />
+
+        <!--座位号下方分割线-->
+        <View
+            android:id="@+id/downLine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_2px"
+            android:background="@color/color_f3f3f4"
+            android:layout_marginTop="@dimen/offset_20px"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seatTv" />
+
+        <!--        订单价格-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_25px"
+            android:textColor="@color/color_8798af"
+            android:text="@{data.bean.totalPriceFormat}"
+            tools:text="总价：28.9元"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/downLine" />
+
+<!--        付款按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/offset_115px"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/downLine"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:visibility="@{data.bean.noPay?View.VISIBLE:View.GONE}"
+            android:text="@string/ticket_order_to_pay"
+            android:onClick="@{view->data.onClick(view)}"
+            android:id="@+id/payBtn"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_ffffff"
+            android:gravity="center"
+            android:layout_height="@dimen/offset_50px"/>
+
+<!--        支付剩余时间倒计时-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/downLine"
+            app:layout_constraintRight_toLeftOf="@id/payBtn"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:layout_marginTop="@dimen/offset_25px"
+            android:textColor="@color/color_8798af"
+            android:id="@+id/remainTimeTv"
+            android:textSize="@dimen/offset_14sp"
+            tools:text="剩余时间：10分49秒"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

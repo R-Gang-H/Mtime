@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.bussiness.ticket.movie.widget.ActorRelationsView xmlns:android="http://schemas.android.com/apk/res/android"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+    >
+    <!-- seperate regin with gray -->
+    <LinearLayout
+        android:id="@+id/actor_relations_seperate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+
+    <!-- relationship -->
+        <TextView
+            android:id="@+id/relationship_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/actor_relations_seperate"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_12dp"
+            android:text="@string/actor_detail_relationship_label"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp" />
+
+        <!-- horizonal view -->
+
+        <HorizontalScrollView
+            android:id="@+id/relationship_people_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relationship_title"
+            android:fadeScrollbars="false"
+            android:layout_marginTop="@dimen/offset_12dp"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:scrollbarFadeDuration="0"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/relationship_people_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/offset_pxtodx_100"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_12dp"
+            android:layout_below="@id/relationship_people_scrollview"
+            android:background="#00000000"
+            android:contentDescription="@string/app_name" />
+
+</com.mtime.bussiness.ticket.movie.widget.ActorRelationsView>

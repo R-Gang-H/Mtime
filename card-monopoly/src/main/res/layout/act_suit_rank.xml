@@ -1,0 +1,204 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.kotlin.android.widget.titlebar.TitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="68dp" />
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:background="@color/color_ffffff">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.kotlin.android.card.monopoly.widget.card.image.SuitImageView
+                            android:id="@+id/suitImageView"
+                            android:layout_width="@dimen/offset_140px"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/offset_30px"
+                            android:layout_marginTop="@dimen/offset_30px"
+                            android:layout_marginBottom="@dimen/offset_10px"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/offset_20px"
+                            android:layout_marginTop="@dimen/offset_68px"
+                            android:textColor="@color/color_4e5e73"
+                            android:textSize="@dimen/font_size_sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@+id/suitImageView"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="我没事sadf" />
+
+                        <TextView
+                            android:id="@+id/tvDesption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/offset_20px"
+                            android:layout_marginTop="@dimen/offset_20px"
+                            android:textColor="@color/color_8798af"
+                            android:textSize="@dimen/font_size_sp_14"
+                            app:layout_constraintLeft_toRightOf="@+id/suitImageView"
+                            app:layout_constraintTop_toBottomOf="@+id/tvName"
+                            tools:text="我是描述ADSL饭就阿斯蒂芬" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/topOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/offset_140px"
+                        android:layout_marginStart="@dimen/offset_30px"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:layout_marginEnd="@dimen/offset_30px">
+
+                        <com.kotlin.android.card.monopoly.widget.CircleImageView
+                            android:id="@+id/civTopOneAvatar"
+                            android:layout_width="@dimen/offset_90px"
+                            android:layout_height="@dimen/offset_90px"
+                            android:layout_marginStart="@dimen/offset_40px"
+                            app:civ_border_color="@color/color_feb12a"
+                            app:civ_border_width="@dimen/offset_4px"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:src="@color/color_8798af" />
+
+                        <TextView
+                            android:id="@+id/tvTopOneName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/offset_160px"
+                            android:layout_marginTop="@dimen/offset_28px"
+                            android:layout_marginEnd="@dimen/offset_120px"
+                            android:textColor="@color/color_feb12a"
+                            android:textSize="@dimen/offset_15sp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            app:layout_constraintLeft_toRightOf="@+id/civTopOneAvatar"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="hahasdf" />
+
+                        <TextView
+                            android:id="@+id/tvTopOneCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/offset_30px"
+                            android:layout_marginTop="@dimen/offset_10px"
+                            app:layout_constraintLeft_toRightOf="@+id/civTopOneAvatar"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTopOneName"
+                            tools:text="最早合成" />
+
+                        <ImageView
+                            android:layout_width="@dimen/offset_108px"
+                            android:layout_height="@dimen/offset_108px"
+                            android:contentDescription="@string/card_monopoly"
+                            android:src="@drawable/ic_mostest"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/topTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/offset_140px"
+                        android:layout_marginStart="@dimen/offset_30px"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:layout_marginEnd="@dimen/offset_30px">
+
+                        <com.kotlin.android.card.monopoly.widget.CircleImageView
+                            android:id="@+id/civTopTwoAvatar"
+                            android:layout_width="@dimen/offset_90px"
+                            android:layout_height="@dimen/offset_90px"
+                            android:layout_marginStart="@dimen/offset_40px"
+                            app:civ_border_color="@color/color_1fc4ca"
+                            app:civ_border_width="@dimen/offset_4px"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:src="@color/color_8798af" />
+
+                        <TextView
+                            android:id="@+id/tvTopTwoName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/offset_160px"
+                            android:layout_marginTop="@dimen/offset_28px"
+                            android:layout_marginEnd="@dimen/offset_120px"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/color_1fc4ca"
+                            android:textSize="@dimen/offset_15sp"
+                            app:layout_constraintLeft_toRightOf="@+id/civTopTwoAvatar"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="hahasdf" />
+
+                        <TextView
+                            android:id="@+id/tvTowOneCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/offset_30px"
+                            android:layout_marginTop="@dimen/offset_10px"
+                            android:text="@string/have_suit_early"
+                            app:layout_constraintLeft_toRightOf="@+id/civTopTwoAvatar"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTopTwoName"
+                            tools:text="最早合成" />
+
+                        <ImageView
+                            android:layout_width="@dimen/offset_108px"
+                            android:layout_height="@dimen/offset_108px"
+                            android:contentDescription="@string/card_monopoly"
+                            android:src="@drawable/ic_earliest"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvRank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/offset_30px"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:layout_marginEnd="@dimen/offset_30px"
+                        android:layout_marginBottom="@dimen/offset_20px"
+                        android:overScrollMode="never" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+    </LinearLayout>
+</layout>

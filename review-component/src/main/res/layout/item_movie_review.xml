@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="com.kotlin.android.mtime.ktx.KtxMtimeKt" />
+        <variable
+            name="data"
+            type="com.kotlin.android.review.component.item.ui.movie.adapter.MovieReviewItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingTop="@dimen/offset_30px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        >
+
+        <!-- 用户信息 -->
+        <include
+            android:id="@+id/mItemMovieReviewUserInc"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:data="@{data}"
+            layout="@layout/item_movie_review_user"
+            />
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewTitleTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_14px"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.1"
+            android:textSize="@dimen/offset_17sp"
+            android:textColor="@color/color_1d2736"
+            android:text="@{data.bean.title}"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewUserInc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+            />
+
+        <!-- 内容 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewContentTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2"
+            android:textSize="@dimen/offset_15sp"
+            android:textColor="@color/color_4e5e73"
+            android:text="@{data.bean.content}"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+            />
+
+        <!-- 长影评_踩 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewPraiseDownTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:drawableStart="@{data.bean.isPraiseDown() ? @drawable/ic_dislikey : @drawable/ic_dislike}"
+            android:drawablePadding="@dimen/offset_10px"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_aab7c7"
+            android:text="@{KtxMtimeKt.formatCount(data.bean.praiseDownCount, true)}"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewContentTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:drawableStart="@drawable/ic_dislike"
+            tools:text="290"
+            />
+
+        <!-- 长影评_赞 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewPraiseTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginEnd="@dimen/offset_28px"
+            android:drawableStart="@{data.bean.isPraise() ? @drawable/ic_likeb : @drawable/ic_like}"
+            android:drawablePadding="@dimen/offset_10px"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_aab7c7"
+            android:text="@{KtxMtimeKt.formatCount(data.bean.praiseCount, true)}"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewContentTv"
+            app:layout_constraintRight_toLeftOf="@+id/mItemMovieReviewPraiseDownTv"
+            tools:drawableStart="@drawable/ic_like"
+            tools:text="290"
+            />
+
+        <!-- 长影评_回复Icon -->
+        <ImageView
+            android:id="@+id/mItemMovieReviewCommentIv"
+            android:layout_width="@dimen/offset_36px"
+            android:layout_height="@dimen/offset_36px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:src="@drawable/ic_comment_reply"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewContentTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <!-- 长影评_回复数 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewCommentCountTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:paddingLeft="@dimen/offset_10px"
+            android:paddingRight="@dimen/offset_10px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:text="@{KtxMtimeKt.formatCount(data.bean.commentCount, true)}"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewContentTv"
+            app:layout_constraintLeft_toRightOf="@+id/mItemMovieReviewCommentIv"
+            tools:text="290"
+            />
+
+        <!-- 长影评_操作组 -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/mItemMovieReviewActionGroup"
+            style="@style/WrapWrap"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="mItemMovieReviewCommentIv,mItemMovieReviewCommentCountTv, mItemMovieReviewPraiseTv,mItemMovieReviewPraiseDownTv"
+            />
+
+        <!-- 短影评_赞 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewShortPraiseTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:drawableStart="@{data.bean.isPraise() ? @drawable/ic_likeb : @drawable/ic_like}"
+            android:drawablePadding="@dimen/offset_10px"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_aab7c7"
+            android:text="@{KtxMtimeKt.formatCount(data.bean.praiseCount, true)}"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewContentTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:drawableStart="@drawable/ic_like"
+            tools:text="500"
+            />
+
+        <!-- 短影评_回复Icon -->
+        <ImageView
+            android:id="@+id/mItemMovieReviewShortCommentIv"
+            android:layout_width="@dimen/offset_36px"
+            android:layout_height="@dimen/offset_36px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:src="@drawable/ic_comment_reply"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewContentTv"
+            app:layout_constraintLeft_toRightOf="@+id/mItemMovieReviewShortPraiseTv"
+            />
+
+        <!-- 短影评_回复数 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewShortCommentCountTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:paddingLeft="@dimen/offset_10px"
+            android:paddingRight="@dimen/offset_10px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:text="@{KtxMtimeKt.formatCount(data.bean.commentCount, true)}"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewContentTv"
+            app:layout_constraintLeft_toRightOf="@+id/mItemMovieReviewShortCommentIv"
+            tools:text="500"
+            />
+
+        <!-- 短影评_操作组 -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/mItemMovieReviewShortActionGroup"
+            style="@style/WrapWrap"
+            android:visibility="visible"
+            app:constraint_referenced_ids="mItemMovieReviewShortPraiseTv,mItemMovieReviewShortCommentIv, mItemMovieReviewShortCommentCountTv"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mItemMovieReviewLineView"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:background="@color/color_0f303a47"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewCommentIv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

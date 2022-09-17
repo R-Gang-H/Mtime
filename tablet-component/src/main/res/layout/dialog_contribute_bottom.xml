@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mBottomLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mBottomRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_14px"
+            android:background="@color/color_f3f3f4" />
+
+        <TextView
+            android:id="@+id/mCancelTv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_105px"
+            android:gravity="center"
+            android:text="@string/tablet_film_list_cancel"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_15sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

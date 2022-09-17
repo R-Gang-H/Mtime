@@ -1,0 +1,47 @@
+<resources>
+    <string name="live_component_live_end">直播已结束</string>
+    <string name="live_component_live_end_tips">精彩回放敬请期待...</string>
+    <string name="live_component_live_appoint_right_now">立即预约</string>
+    <string name="live_component_live_appoint_done">已预约</string>
+    <string name="live_component_live_appoint">预约</string>
+    <string name="live_component_live_appoint_num_format">已有%1$s人预约</string>
+    <string name="live_component_live_tag_living">直播中</string>
+    <string name="live_component_live_tag_replay">回看</string>
+    <string name="live_component_live_list_title">直播</string>
+
+    <string name="live_component_live_list_title_living">正在直播</string>
+    <string name="live_component_live_list_title_preview">重磅预约</string>
+    <string name="live_component_live_list_title_end">精彩回顾</string>
+    <string name="live_component_live_list_time_format">%1$s 直播</string>
+    <string name="live_component_live_list_living_num_format">%1$s人正在观看</string>
+    <string name="live_component_live_list_appoint_num_format">%1$s人已预约</string>
+    <string name="live_component_live_list_end_num_format">%1$s人已观看</string>
+    <string name="live_component_qr_tip">扫码看直播</string>
+    <string name="live_component_save_local">保存本地</string>
+
+    <!-- 详情页 -->
+    <string name="live_component_live_detail_video">相关视频（%d）</string>
+    <string name="live_component_live_detail_start_time">直播开始时间：%1$s</string>
+    <string name="live_component_live_detail_related_movie">关联电影</string>
+    <string name="live_component_live_detail_movie_rating">时光评分</string>
+    <string name="live_component_live_detail_movie_want_see_count">人想看</string>
+    <string name="live_component_live_detail_movie_ticket">购票</string>
+    <string name="live_component_live_detail_movie_presell">预售</string>
+    <string name="live_component_live_detail_movie_release">%1$s上映</string>
+    <string name="live_component_live_detail_news">相关资讯</string>
+    <!-- 评论页 -->
+    <string name="live_component_live_comment_publish_net_error">没有网络了，发送失败。</string>
+
+    <string name="live_component_live_start_time_format">直播时间：%1$s</string>
+    <string name="live_component_change_camera_stand">切换机位</string>
+    <string name="live_component_on_line_person_num_format">%1$s人</string>
+    <string name="live_component_full_screen_chat">说点什么吧</string>
+
+    <string name="live_component_chat_msg"><![CDATA[<font color="#4E5E73"><strong>%1$s</strong></font><font color="#4E5E73">  %2$s</font>]]></string>
+    <string name="live_component_chat_join"><![CDATA[<font color="#4E5E73"><strong>%1$s</strong></font><font color="#FEB12A">  %2$s</font>]]></string>
+
+    <string name="live_component_send_empty">内容不能为空</string>
+    <string name="live_component_expand_change_camera_stand_list">点击收起切换机位</string>
+    <string name="live_component_chat_send_message_net_error">聊天服务器重在连接中...请稍后再试</string>
+    <string name="live_component_out_20">超过20个字不能发送</string>
+</resources>

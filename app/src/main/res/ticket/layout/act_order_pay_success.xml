@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2f2"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/paysuccess_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/offset_6px"
+        android:layout_marginRight="@dimen/offset_6px"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_f97d3f"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/offset_36px"
+            android:paddingBottom="@dimen/offset_36px"
+            android:text="@string/str_save_to_pic"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+
+        <View
+            android:id="@+id/save_line_huawei"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/add_huawei"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/offset_36px"
+            android:paddingBottom="@dimen/offset_36px"
+            android:text="@string/str_save_to_huawei"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_30"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

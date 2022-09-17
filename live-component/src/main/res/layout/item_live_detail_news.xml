@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.kotlin.android.live.component.ui.adapter.LiveDetailNewsItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingTop="@dimen/offset_16px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:onClick="@{view -> data.onClick(view)}"
+        >
+
+        <!-- 名称 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mItemLiveDetailNewsTitleTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:textColor="@color/color_303a47"
+            android:textSize="@dimen/offset_17sp"
+            android:textStyle="bold"
+            android:text='@{TextUtils.isEmpty(data.bean.title) ? "" : data.bean.title}'
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="资讯标题资讯标题资讯标题资讯标题资讯标题资讯标题资讯标题资讯标题资讯标题"
+            />
+
+        <!-- 图片 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemLiveDetailNewsImgCv"
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:layout_marginTop="@dimen/offset_20px"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/mItemLiveDetailNewsTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintDimensionRatio="w,390:690"
+            >
+
+            <ImageView
+                android:id="@+id/mItemLiveDetailNewsImgIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.bean.img}"
+                load_image_width="@{345}"
+                load_image_height="@{195}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- tag -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mItemLiveDetailNewsTagTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:text='@{TextUtils.isEmpty(data.bean.tag) ? "" : data.bean.tag}'
+            app:layout_constraintTop_toBottomOf="@+id/mItemLiveDetailNewsImgCv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="标签"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

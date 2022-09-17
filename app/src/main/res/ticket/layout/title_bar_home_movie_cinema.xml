@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white"
+        android:contentDescription="@string/app_name"/>
+
+    <!-- city selection part -->
+
+    <TextView
+        android:id="@+id/city_select"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_bar_home_city_height"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:drawablePadding="@dimen/title_bar_home_city_drawable_padding"
+        android:drawableRight="@drawable/common_icon_down_arrow"
+        android:gravity="center"
+        android:paddingLeft="@dimen/offset_16dp"
+        android:paddingRight="@dimen/title_bar_home_city_padding_right"
+        android:text="@string/st_beijing"
+        android:textColor="#8798af"
+        android:textSize="15sp"/>
+
+    <!-- logo part -->
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/pic_logo_mtime"
+        android:visibility="invisible"/>
+
+    <!-- movings and cinemas switched part -->
+    <!-- new movings/cinema switched controller -->
+    <LinearLayout
+        android:id="@+id/move_cinema_switched_view"
+        android:layout_width="@dimen/offset_360px"
+        android:layout_height="@dimen/offset_60px"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_ticket_tab_bg"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/movie_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/str_title_home_movie_label"
+            android:background="@drawable/bg_common_switch_item_shape"
+            android:textColor="@color/color_ffffff"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/cinema_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/movie_title_cinema"
+            android:textColor="@color/color_8798af"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <!-- search part -->
+
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="@dimen/offset_pxtodx_30"
+        android:background="@drawable/ic_home_search"
+        android:contentDescription="@string/app_name"/>
+
+</RelativeLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MTimeHome组件</string>
+
+    <string-array name="home_original_titles">
+        <item>精选</item>
+        <item>时光快讯</item>
+        <item>超级英雄</item>
+        <item>时光策划</item>
+        <item>吐槽大会</item>
+        <item>时光对话</item>
+        <item>全球拾趣</item>
+        <item>时光大赏</item>
+    </string-array>
+    <string-array name="home_original_title_tags">
+        <item>13</item>
+        <item>9</item>
+        <item>10</item>
+        <item>8</item>
+        <item>11</item>
+        <item>7</item>
+        <item>6</item>
+        <item>12</item>
+    </string-array>
+
+    <string name="home_ball_find_film">找电影</string>
+    <string name="home_ball_find_family">找家族</string>
+    <string name="home_ball_game">卡片大富翁</string>
+    <string name="home_ball_live">直播</string>
+    <string name="home_ball_zaowushe">造物社</string>
+    <string name="home_mtime_score"><![CDATA[时光评分 <strong>%1$s</strong>]]></string>
+    <string name="home_movie_wantsee_count"><![CDATA[<strong>%1$s</strong>人想看]]></string>
+    <string name="home_hot_family_title">一周热门家族</string>
+    <string name="home_hot_family_join_number">%1$s成员加入</string>
+    <string name="home_hot_family_post_number">%1$s更新</string>
+    <string name="home_find_more">查找更多</string>
+    <string name="home_playing">视频播放中</string>
+    <string name="home_trailer_title">每日佳片</string>
+    <string name="home_trailer_hot">热播</string>
+    <string name="home_trailer_new">最新</string>
+    <string name="home_search_bar_default_hint">找影片/影院/影人/文章/用户/影评/帖子/日志/影评</string>
+    <string name="home_showing_title">正在热映</string>
+    <string name="home_coming_title">待映推荐</string>
+    <string name="home_recommend_title">推荐内容</string>
+    <string name="home_ticket_btn_text">购票</string>
+    <string name="home_want_see_btn_text">想看</string>
+    <string name="home_wanted_see_btn_text">已想看</string>
+    <string name="home_presell_btn_text">预售</string>
+    <string name="home_dislike_dialog_title">优化你的首页</string>
+    <string name="home_dislike_dialog_subtitle">该内容来自于：</string>
+    <string name="home_dislike_dialog_content_title">本篇内容</string>
+    <string name="home_dislike_dialog_content_btn">不喜欢此内容</string>
+    <string name="home_dislike_dialog_user_btn">不喜欢该%1$s</string>
+    <string name="home_toplist_title">榜单</string>
+    <string name="toplist_movie_ticketbox_title">实时票房</string>
+    <string name="toplist_movie_year_title">年度榜单</string>
+    <string name="toplist_movie_mtime_movie">时光电影</string>
+    <string name="home_toplist_select_title">精选榜单</string>
+    <string name="home_toplist_select_score_tip">时光评分</string>
+    <string name="home_toplist_select_no_score_tip">暂无评分</string>
+    <string name="home_toplist_select_like_tip">喜爱度</string>
+    <string name="toplist_select_like">%d%</string>
+    <string name="toplist_related">相关榜单</string>
+    <string name="toplist_director">导演：%s</string>
+    <string name="toplist_actor">主演：%s</string>
+    <string name="toplist_release_date">上映日期：%s</string>
+    <string name="toplist_des">评语：%s</string>
+    <string name="home_toplist_related_movie">代表作《%s》</string>
+    <string name="all">全部</string>
+    <string name="see_more">查看更多</string>
+    <string name="home_game_top_list_order_num">%d.</string>
+    <string name="home_game_top_list_title">游戏榜单</string>
+    <string name="home_rcmd_follow_user_title">推荐关注</string>
+    <string name="home_ta_shuo_title">精选TA说</string>
+    <string name="home_rcmd_trailer_list_title">推荐历史</string>
+    <string name="home_find_movie">找电影</string>
+    <string name="home_total">共%s部</string>
+    <string name="home_film_list_tip">时光甄选片单</string>
+    <string name="home_time_list_tip">榜单电影</string>
+    <string name="home_content_all">全部</string>
+    <string name="home_mtime_score_tip">时光评分</string>
+    <string name="home_mtime_score_tip_no">暂无评分</string>
+    <string name="home_film_collect_tip">%s人收藏</string>
+    <string-array name="home_filter_titles">
+        <item>类型</item>
+        <item>地区</item>
+        <item>排序</item>
+        <item>年代</item>
+    </string-array>
+    <string name="home_time_no">No.%d</string>
+    <string name="home_movie_result_details_no_score">暂无评分</string>
+
+</resources>

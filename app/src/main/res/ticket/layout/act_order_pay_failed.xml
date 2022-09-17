@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb" >
+
+    <!-- 标题 -->
+
+    <include
+        android:id="@+id/navigationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar_normal" />
+
+    <LinearLayout
+        android:id="@+id/layout_failed_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/navigationbar"
+        android:layout_marginLeft="@dimen/offset_56px"
+        android:layout_marginRight="@dimen/offset_56px"
+        android:layout_marginTop="@dimen/offset_70px"
+        android:background="@drawable/orderpay_dialog_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/offset_80px"
+        android:paddingRight="@dimen/offset_80px" >
+
+        <TextView
+            android:id="@+id/order_pay_failed_tv_error_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/str_sorry"
+            android:textColor="@color/color_ff8600"
+            android:textSize="@dimen/font_size_large_high" />
+
+        <TextView
+            android:id="@+id/order_pay_failed_tv_error_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/offset_40px"
+            android:gravity="bottom|center_horizontal"
+            android:lineSpacingMultiplier="1.3"
+            android:text="@string/str_mistaken_reason"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_normal_more" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/order_pay_failed_btn_reselect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_failed_msg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/offset_56px"
+        android:layout_marginRight="@dimen/offset_56px"
+        android:layout_marginTop="@dimen/offset_44px"
+        android:background="@drawable/btn_solid_orange_h90"
+        android:text="@string/str_repeat_choose_the_seat"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_large_high" />
+
+    <TextView
+        android:id="@+id/order_pay_failed_btn_cancel_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_pay_failed_btn_reselect"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/offset_56px"
+        android:layout_marginRight="@dimen/offset_56px"
+        android:layout_marginTop="@dimen/offset_32px"
+        android:background="@drawable/btn_line_gray_h90"
+        android:text="@string/str_cancel_order"
+        android:textColor="@color/color_777777"
+        android:textSize="@dimen/font_size_large_high"
+        android:visibility="gone" />
+
+    <!-- 客服热线电话 -->
+
+    <com.mtime.mtmovie.widgets.HotlinePhoneView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_26px"
+        android:gravity="center_horizontal"
+        app:action="ACTION_CALL"
+        app:phoneNumber="4006059500"
+        app:showDialog="true" />
+
+</RelativeLayout>

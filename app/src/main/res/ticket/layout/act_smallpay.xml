@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/navigationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar_normal" />
+
+    <LinearLayout
+        android:id="@+id/bottom_lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_0_5dp"
+            android:background="@color/color_bbbbbb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_60dp"
+            android:background="@color/gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/offset_17dp"
+            android:paddingRight="@dimen/offset_17dp" >
+
+            <TextView
+                android:id="@+id/tv_limit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/str_smallpay_tip"
+                android:textColor="@color/black_normal"
+                android:textSize="@dimen/font_size_small_more" />
+
+            <!-- 总价 -->
+
+            <LinearLayout
+                android:id="@+id/lin_total_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_smallpay_total"
+                    android:textColor="@color/black_normal"
+                    android:textSize="@dimen/font_size_small_more" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_money"
+                    android:textColor="@color/orange_color"
+                    android:textSize="@dimen/font_size_xlarge" />
+
+                <TextView
+                    android:id="@+id/tv_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/orange_color"
+                    android:textSize="@dimen/font_size_xlarge" />
+            </LinearLayout>
+            <!-- 下一步 -->
+
+            <TextView
+                android:id="@+id/btn_next_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_solid_orange_h76"
+                android:text="@string/str_next"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_large" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_lin"
+        android:layout_below="@id/navigationbar"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <!--<TextView-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_fff8e7"
+            android:paddingBottom="@dimen/offset_8dp"
+            android:paddingLeft="@dimen/offset_17dp"
+            android:paddingRight="@dimen/offset_17dp"
+            android:paddingTop="@dimen/offset_8dp"
+            android:orientation="vertical">
+            <com.mtime.bussiness.ticket.movie.widget.CYTextView
+                android:id="@+id/small_pay_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_smallpay_headtip"
+                android:textColor="@color/color_9f4400"
+                android:textSize="@dimen/font_size_normal_more" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_0_5dp"
+            android:background="@color/color_ffecce" />
+
+        <ListView
+            android:id="@+id/small_pay_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@color/transparent"
+            android:dividerHeight="@dimen/offset_0dp" />
+    </LinearLayout>
+
+</RelativeLayout>

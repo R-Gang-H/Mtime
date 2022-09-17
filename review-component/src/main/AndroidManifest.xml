@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.review.component">
+
+    <application>
+        <activity android:name=".item.ui.share.ReviewShareActivity"
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".item.ui.detail.ReviewDetailActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".item.ui.movie.MovieReviewListActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".item.ui.movie.MovieShortCommentListActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".item.ui.rating.RatingDetailActivity"
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

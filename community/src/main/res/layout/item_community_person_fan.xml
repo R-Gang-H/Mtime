@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.person.binder.CommunityPersonFriendBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/familyRootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_30px"
+        android:onClick="@{view->data.onClick(view)}">
+
+        <com.kotlin.android.widget.views.CircleImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/offset_90px"
+            android:layout_height="@dimen/offset_90px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            load_image="@{data.bean.avatarUrl}"
+            load_image_width="@{45}"
+            load_image_height="@{45}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:text="@{data.bean.nikeName}"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="@color/color_3d4955"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_icon" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_8798af"
+            android:layout_marginTop="@dimen/offset_5px"
+            android:paddingRight="@dimen/offset_160px"
+            android:textSize="@dimen/offset_12sp"
+            android:text="@{data.bean.sign}"
+            app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_attend"
+            android:layout_width="@dimen/offset_144px"
+            android:layout_height="@dimen/offset_60px"
+            app:color="@{@color/color_20a0da}"
+            app:cornerRadius="@{15}"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/attend"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:background="@color/color_f3f4f5"
+            app:layout_constraintTop_toBottomOf="@+id/iv_icon"
+             />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

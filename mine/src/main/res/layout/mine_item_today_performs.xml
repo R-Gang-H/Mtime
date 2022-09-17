@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="todayData"
+            type="com.kotlin.android.mine.binder.TodayPerformsBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_100px"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"
+                android:gravity="center"
+                android:text="@{todayData.data.date}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_13sp"
+                tools:text="日期" />
+
+            <TextView
+                android:id="@+id/tvPlayback"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{todayData.data.playback}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_13sp"
+                tools:text="播放量" />
+
+            <TextView
+                android:id="@+id/tvReading"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{todayData.data.reading}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_13sp"
+                android:visibility='@{todayData.data.reading=="" ? View.GONE : View.VISIBLE}'
+                tools:text="阅读量" />
+
+            <TextView
+                android:id="@+id/tvPraise"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tvAmount"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{todayData.data.praise}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_13sp"
+                tools:text="点赞量" />
+
+            <TextView
+                android:id="@+id/tvComment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{todayData.data.comment}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_13sp"
+                tools:text="评论量" />
+
+            <TextView
+                android:id="@+id/tvCollect"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{todayData.data.collect}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_13sp"
+                tools:text="收藏量" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="@dimen/offset_24px"
+            android:layout_marginEnd="@dimen/offset_24px"
+            android:background="@color/color_f3f3f4"
+            app:layout_constraintTop_toBottomOf="@id/llTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- title -->
+    <include 
+        android:id="@+id/city_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        layout="@layout/title_bar_normal"
+        />
+    
+    <!-- 搜索 -->
+<!--    <include-->
+<!--        android:id="@+id/city_search"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/title_bar_height"-->
+<!--        layout="@layout/title_bar_search_only"-->
+<!--        />-->
+    <include
+        android:id="@+id/city_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_88px"
+        layout="@layout/title_bar_search_new"
+        />
+    
+    <ListView
+        android:id="@+id/city_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@color/transparent"
+         >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/search_body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <ListView
+            android:id="@+id/search_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/offset_30px"
+            android:paddingRight="@dimen/offset_30px"
+            android:background="@color/transparent"
+            android:listSelector="@color/transparent"
+            android:divider="@null"
+            >
+        </ListView>
+
+        <TextView
+            android:id="@+id/no_info_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_27px"
+            android:gravity="center"
+            android:textSize="@dimen/offset_17sp"
+            android:textColor="@color/color_1d2736"
+            android:text="@string/city_change_search_empty"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userInfoCL"
+    style="@style/MatchWrap"
+    tools:ignore="ResourceName"
+    >
+
+    <!-- 头像 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/userHeadCard"
+        android:layout_width="@dimen/offset_140px"
+        android:layout_height="@dimen/offset_140px"
+        app:cardElevation="0px"
+        app:cardUseCompatPadding="false"
+        app:cardCornerRadius="@dimen/offset_70px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userHeadIv"
+            style="@style/MatchMatch"
+            android:src="@drawable/default_user_head"
+            android:scaleType="centerCrop"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 认证类型 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/userAuthTypeIv"
+        android:layout_width="@dimen/offset_40px"
+        android:layout_height="@dimen/offset_40px"
+        app:layout_constraintRight_toRightOf="@+id/userHeadCard"
+        app:layout_constraintBottom_toBottomOf="@+id/userHeadCard"
+        tools:src="@drawable/ic_jigourenzheng"
+        />
+
+    <!-- 注册-登录 or 用户昵称 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nickNameTv"
+        android:layout_width="@dimen/offset_0px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginLeft="@dimen/offset_18px"
+        android:layout_marginEnd="@dimen/offset_10px"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/color_1d2736"
+        android:textSize="@dimen/offset_17sp"
+        android:textStyle="bold"
+        android:text="@string/mine_login_sign"
+        app:layout_constraintLeft_toRightOf="@id/userHeadCard"
+        app:layout_constraintRight_toLeftOf="@+id/personHomePageTv"
+        app:layout_constraintTop_toTopOf="@id/userHeadCard"
+        />
+
+    <!-- 用户等级 认证角色 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/levelRoleCl"
+        style="@style/WrapWrap"
+        android:layout_marginTop="@dimen/offset_8px"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/nickNameTv"
+        app:layout_constraintLeft_toLeftOf="@id/nickNameTv"
+        tools:visibility="visible"
+        >
+
+        <!-- 用户等级 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/levelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_40px"
+            android:paddingStart="@dimen/offset_52px"
+            android:paddingRight="@dimen/offset_18px"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="@dimen/offset_10sp"
+            android:textColor="@color/color_ffffff"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="入门影迷"
+            tools:background="@color/color_2ab5e1"
+            tools:visibility="visible"
+            />
+
+        <!-- 用户等级Icon -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/levelIv"
+            android:layout_width="@dimen/offset_40px"
+            android:layout_height="@dimen/offset_40px"
+            app:layout_constraintTop_toTopOf="@+id/levelTv"
+            app:layout_constraintLeft_toLeftOf="@+id/levelTv"
+            tools:src="@mipmap/ic_user_vip_rumen"
+            />
+
+        <!-- 认证角色 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/authRoleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_40px"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:paddingStart="@dimen/offset_15px"
+            android:paddingEnd="@dimen/offset_15px"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_2ab5e1"
+            android:textSize="@dimen/offset_10sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/levelTv"
+            tools:text="导演"
+            tools:background="@color/color_36c096_alpha_10"
+            tools:visibility="visible"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 关注数 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/followTv"
+        style="@style/WrapWrap"
+        android:layout_marginTop="@dimen/offset_16px"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_12sp"
+        app:layout_constraintTop_toBottomOf="@id/levelRoleCl"
+        app:layout_constraintLeft_toLeftOf="@id/nickNameTv"
+        tools:text="关注 0"
+        />
+
+    <!-- 竖线 -->
+    <View
+        android:id="@+id/fansLineView"
+        android:layout_width="@dimen/offset_1px"
+        android:layout_height="@dimen/offset_0px"
+        android:layout_marginTop="@dimen/offset_4px"
+        android:layout_marginBottom="@dimen/offset_4px"
+        android:background="@color/color_cad0d8"
+        app:layout_constraintTop_toTopOf="@id/followTv"
+        app:layout_constraintBottom_toBottomOf="@id/followTv"
+        app:layout_constraintLeft_toRightOf="@id/followTv"
+        app:layout_constraintRight_toLeftOf="@id/fansTv"
+        />
+
+    <!-- 粉丝数 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fansTv"
+        style="@style/WrapWrap"
+        android:layout_marginStart="@dimen/offset_40px"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_12sp"
+        app:layout_constraintLeft_toRightOf="@id/followTv"
+        app:layout_constraintBaseline_toBaselineOf="@id/followTv"
+        tools:text="粉丝 0"
+        />
+
+    <!-- 个人主页 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/personHomePageTv"
+        style="@style/WrapWrap"
+        android:paddingTop="@dimen/offset_6px"
+        android:paddingBottom="@dimen/offset_5px"
+        android:paddingStart="@dimen/offset_15px"
+        android:paddingRight="@dimen/offset_15px"
+        android:background="@color/color_0091ff_alpha_10"
+        android:textColor="@color/color_4e5e73"
+        android:textSize="@dimen/offset_12sp"
+        android:textStyle="bold"
+        android:text="@string/mine_personal_home_page"
+        app:layout_constraintTop_toTopOf="@id/userHeadCard"
+        app:layout_constraintBottom_toBottomOf="@id/userHeadCard"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

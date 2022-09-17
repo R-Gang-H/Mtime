@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="com.kotlin.android.ktx.ext.core.Direction" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.findmovie.adapter.FilmListBinder.FilmListItemBinder" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mCardView"
+        android:layout_width="@dimen/offset_390px"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_5dp"
+        android:layout_marginEnd="@dimen/offset_5dp"
+        android:layout_marginBottom="@dimen/offset_10dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/offset_8dp"
+        app:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                load_image="@{data.bean.coverUrl}"
+                load_image_height="@{100}"
+                load_image_width="@{195}"
+                android:layout_width="@dimen/offset_390px"
+                android:layout_height="@dimen/offset_200px"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--                direction="@{Direction.LEFT_TOP|Direction.RIGHT_TOP}" -->
+            <View
+                color="@{@color/color_b3000000}"
+                endColor="@{@color/color_00000000}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_80dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_headPortrait"
+                load_image="@{data.bean.userAvatarUrl}"
+                load_image_circle_crop="@{true}"
+                load_image_height="@{24}"
+                load_image_width="@{24}"
+                android:layout_width="@dimen/offset_24dp"
+                android:layout_height="@dimen/offset_24dp"
+                android:layout_marginStart="@dimen/offset_10dp"
+                android:layout_marginTop="@dimen/offset_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.bean.userNickName}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/offset_11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/iv_headPortrait"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/iv_headPortrait"
+                app:layout_constraintTop_toTopOf="@id/iv_headPortrait"
+                tools:text="sssssssssss"
+                tools:textColor="@color/color_f44a5d"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_film_list_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_10dp"
+                android:layout_marginTop="@dimen/offset_10dp"
+                android:layout_marginEnd="@dimen/offset_26px"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.bean.title}"
+                android:textColor="@color/color_1d2736"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_bg"
+                tools:text="片单名称" />
+
+            <!--            android:visibility="@{data.bean.numMovie == 0L ? View.GONE : View.VISIBLE}"-->
+            <TextView
+                android:id="@+id/tv_film_list_look"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_10dp"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:layout_marginBottom="@dimen/offset_10dp"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_film_list_name"
+                tools:ignore="InvalidId"
+                tools:text="共9部" />
+<!--                android:visibility="@{data.bean.numFavorites == 0L ? View.GONE : View.VISIBLE}"
+-->
+            <View
+                android:id="@+id/space"
+                android:layout_width="@dimen/line_width_1px"
+                android:layout_height="@dimen/offset_12dp"
+                android:layout_marginLeft="@dimen/offset_6dp"
+                android:background="@color/color_8798af"
+                app:layout_constraintBottom_toTopOf="@+id/tv_film_list_look"
+                app:layout_constraintLeft_toRightOf="@+id/tv_film_list_look"
+                app:layout_constraintTop_toBottomOf="@id/tv_film_list_look" />
+<!--                android:visibility="@{data.bean.numFavorites == 0L ? View.GONE : View.VISIBLE}"
+-->
+            <TextView
+                android:id="@+id/tv_film_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_6dp"
+                android:layout_marginTop="@dimen/offset_5dp"
+                android:layout_marginEnd="@dimen/offset_5dp"
+                android:gravity="end"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintLeft_toRightOf="@+id/space"
+                app:layout_constraintTop_toBottomOf="@id/tv_film_list_name"
+                tools:ignore="InvalidId"
+                tools:text="999人收藏" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

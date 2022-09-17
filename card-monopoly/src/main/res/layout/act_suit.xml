@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.kotlin.android.widget.titlebar.TitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="68dp" />
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/multiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/titleBar"
+            android:layout_marginTop="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/firstTipsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_vertical"
+                    tools:text="普卡已合成166 还有35套未合成"
+                    android:textColor="@color/color_098fac"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/secondTipsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_vertical"
+                    tools:text="限量卡已合成166 还有35套未合成"
+                    android:textColor="@color/color_098fac"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/suitDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/view_suit_detail_"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/suitLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <HorizontalScrollView
+                        android:id="@+id/centerLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:scrollbars="none"
+                        android:visibility="visible">
+
+                        <com.kotlin.android.card.monopoly.widget.CenterBarView
+                            android:id="@+id/centerBarView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center" />
+
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp">
+
+                        <TextView
+                            android:id="@+id/searchInputView"
+                            android:layout_width="0dp"
+                            android:layout_height="32dp"
+                            android:layout_weight="1"
+                            android:background="@color/color_f4f6f8"
+                            android:gravity="center_vertical"
+                            android:hint="@string/hint_please_input_suit_name"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/color_8798af"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/searchCancelView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:gravity="center"
+                            android:text="@string/cancel"
+                            android:textColor="@color/color_4e5e73"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp">
+
+                        <FrameLayout
+                            android:id="@+id/suitsLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                                android:id="@+id/refreshLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:srlEnableRefresh="false">
+
+                                <com.kotlin.android.card.monopoly.widget.card.view.SuitsView
+                                    android:id="@+id/suitsView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+                        </FrameLayout>
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/suitDetailView"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_alignBottom="@+id/suitsLayout"-->
+                        <!--                            android:layout_centerHorizontal="true"-->
+                        <!--                            android:layout_marginTop="10dp"-->
+                        <!--                            android:layout_marginBottom="10dp"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:paddingStart="5dp"-->
+                        <!--                            android:paddingEnd="5dp"-->
+                        <!--                            android:text="@string/suit_detail_"-->
+                        <!--                            android:textColor="@color/color_20a0da"-->
+                        <!--                            android:textSize="15sp"-->
+                        <!--                            android:textStyle="bold" />-->
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+    </RelativeLayout>
+</layout>

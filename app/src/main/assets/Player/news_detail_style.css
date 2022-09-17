@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+html{color: #333;}
+fieldset { margin: 0; font-size: 100%; line-height: 1; }
+
+body{font:12px/1.5 font-family: "Helvetica Neue", "微软雅黑"; color: #333;}
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset,legend,input,textarea,th,tr,td{margin:0;padding:0;}
+img{display:block; border:none;}
+ul,ol,li{list-style:none;}
+h3{font-size:1.7em;line-height:2;text-align:left;color:#777;font-weight: normal;}
+
+body{font-size:10px;}
+.article{padding: 1.0em;margin:0 auto border:0px solid #ddd}
+.article .title h1{ font-size: 2.2em; line-height: 1.2; font-weight:normal; margin-top:0.6em}
+.article .title p { margin: 1em 0 0; }
+.article .content{padding-top:5px; font-size: 1.7em; line-height: 1.6; color: #333;}
+.article .content br{ display: none;}
+.article .content div,.article .content p{ margin-top:.5rem;}
+
+.img_boxs{position:relative;margin:1em 1.5em;text-align: center;}
+.img_boxs img{height:auto; width: 100%; display: block;}
+.img_boxs .em{width:2em;height:2em;display:block; position:absolute;bottom:0em;right:0em;background:url(zoom.png) no-repeat; background-size:cover; cursor:pointer;}
+
+.video_boxs{ position:relative;margin:1em 0 0;display:block;width:100%;height:auto;border:1px solid #ccc;background-color:#000;}
+.video_boxs video{max-width:90%;height:auto;visibility: hidden;}
+.video_boxs img{width:100%;height:auto;}
+.video_boxs_play{width:3.8em;height:3.8em; position:absolute;left:50%;top:50%;margin-left:-1.9em;margin-top:-1.9em;background:url(article_video_play.png) no-repeat; background-size:cover; cursor:pointer;}
+
+
+/**弹性布局 Begin**/
+table{ width: 100%; border-collapse: collapse;table-layout: fixed;empty-cells: show;}
+table tr{ width: 100%; display: -webkit-box; display: -moz-box; display: box; }
+td{ -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; display: block; margin: 0; padding: 0;word-wrap: break-word; width: 12.5%;}
+td p{  border: none;}
+table tr td:frist-child{margin-left:0;}
+td img{max-width:100%;}
+td .img_boxs{margin:0;}
+/**弹性布局 End**/

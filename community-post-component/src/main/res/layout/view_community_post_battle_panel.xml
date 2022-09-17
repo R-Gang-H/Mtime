@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.post.component.item.adapter.CommunityPostBinder" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:visibility="@{data.post.pkType ? View.VISIBLE : View.GONE}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mCommunityPostPkBtnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/mCommunityPostPkPositiveBtn"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:bg_gradient_start_color="@{@color/color_36c096}"
+                android:bg_gradient_end_color="@{@color/color_52c884}"
+                android:bg_gradient_corner="@{15}"
+                android:gravity="center"
+                android:textColor="@color/color_ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/mCommunityPostPkNegativeBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="值得"
+                android:onClick="@{view -> data.onClick(view)}"/>
+
+            <TextView
+                android:id="@+id/mCommunityPostPkNegativeBtn"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="10dp"
+                android:bg_gradient_start_color="@{@color/color_fec52c}"
+                android:bg_gradient_end_color="@{@color/color_feb12a}"
+                android:bg_gradient_corner="@{15}"
+                android:gravity="center"
+                android:textColor="@color/color_ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/mCommunityPostPkPositiveBtn"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="不值得"
+                android:onClick="@{view -> data.onClick(view)}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mCommunityPostPkPercentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.kotlin.android.community.post.component.item.widget.BattlePercentView
+                android:id="@+id/mCommunityPostPkBattlePercentView"
+                android:layout_width="0dp"
+                android:layout_height="6dp"
+                android:radius="3dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:negative_color="@color/color_feb12a"
+                app:positive_color="@color/color_36c096" />
+
+            <TextView
+                android:id="@+id/mCommunityPostPkPositivePercentTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_36c096"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/mCommunityPostPkPositiveOpinionTv"
+                app:layout_constraintLeft_toLeftOf="@id/mCommunityPostPkBattlePercentView"
+                app:layout_constraintTop_toTopOf="@id/mCommunityPostPkPositiveOpinionTv"
+                tools:drawableLeft="@drawable/ic_community_positive_check"
+                tools:text="33%" />
+
+            <TextView
+                android:id="@+id/mCommunityPostPkPositiveOpinionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/color_303a47"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/mCommunityPostPkPositivePercentTv"
+                app:layout_constraintTop_toBottomOf="@id/mCommunityPostPkBattlePercentView"
+                tools:text="是" />
+
+            <TextView
+                android:id="@+id/mCommunityPostPkNegativePercentTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_feb12a"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/mCommunityPostPkNegativeOpinionTv"
+                app:layout_constraintRight_toRightOf="@id/mCommunityPostPkBattlePercentView"
+                app:layout_constraintTop_toTopOf="@id/mCommunityPostPkNegativeOpinionTv"
+                tools:drawableRight="@drawable/ic_community_negative_check"
+                tools:text="67%" />
+
+            <TextView
+                android:id="@+id/mCommunityPostPkNegativeOpinionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/color_303a47"
+                android:textSize="12sp"
+                app:layout_constraintRight_toLeftOf="@id/mCommunityPostPkNegativePercentTv"
+                app:layout_constraintTop_toBottomOf="@id/mCommunityPostPkBattlePercentView"
+                tools:text="不是" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/mCommunityPostPkVoteNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="43dp"
+            android:textSize="12sp"
+            android:textColor="@color/color_8798af"
+            tools:text="22,288人 参与投票"
+            />
+
+    </FrameLayout>
+
+</layout>

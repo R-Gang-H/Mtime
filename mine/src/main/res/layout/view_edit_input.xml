@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f3f6"
+    tools:ignore="ResourceName">
+
+    <RelativeLayout
+        android:id="@+id/inputRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginTop="@dimen/offset_30dp"
+        android:layout_marginRight="@dimen/offset_10dp"
+        tools:background="@color/color_ffffff">
+
+        <EditText
+            android:id="@+id/inputEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="top"
+            tools:hint="@string/mine_input_nickname"
+            android:minHeight="@dimen/offset_200px"
+            android:paddingLeft="@dimen/offset_10dp"
+            android:paddingTop="@dimen/offset_11dp"
+            android:paddingRight="@dimen/offset_10dp"
+            android:paddingBottom="@dimen/offset_11dp"
+            android:maxLength="150"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_bbbbbb"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/countTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputRl"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/offset_13px"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:includeFontPadding="false"
+        android:text="0/150"
+        android:textColor="@color/color_8798af"
+        android:textSize="12sp" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="say_something">说点什么吧</string>
+    <string name="you_are_muted">你已被禁言</string>
+    <string name="content_cant_be_empty">内容不能为空</string>
+    <string name="maximum_word_limit_exceeded">超过20个字不能发送</string>
+    <string name="chat_room_is_loading">聊天室正在加载，请稍候！</string>
+
+    <string name="invalid_video">超出最大限制20M，请选择其他视频</string>
+    <string name="invalid_image">超出最大限制10M，请选择其他图片</string>
+</resources>

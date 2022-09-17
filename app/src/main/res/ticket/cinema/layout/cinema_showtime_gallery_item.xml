@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_cinema_movies"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:paddingLeft="@dimen/offset_15px"
+    android:paddingRight="@dimen/offset_15px"
+    android:paddingBottom="@dimen/offset_pxtodx_2">
+
+    <!--<View-->
+    <!--android:id="@+id/cinema_showtime_gallery_item_iv_border"-->
+    <!--android:layout_width="@dimen/offset_144px"-->
+    <!--android:layout_height="@dimen/offset_214px"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_marginTop="@dimen/offset_5dp"-->
+    <!--android:background="@drawable/image_border_cinemashowtime" />-->
+
+    <!--<ImageView-->
+    <com.kotlin.android.widget.image.RoundImageView
+        android:id="@+id/cinema_showtime_gallery_item_iv"
+        android:layout_width="@dimen/offset_140px"
+        android:layout_height="@dimen/offset_210px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        app:corner_radius="@dimen/offset_10px"
+        app:border_width="@dimen/offset_0px"
+        app:inner_border_width="@dimen/offset_0px"
+        />
+
+    <!-- 屏蔽海报高斯模糊 -->
+    <com.kotlin.android.widget.image.RoundImageView
+        android:id="@+id/v_filter_photo"
+        android:layout_width="@dimen/offset_140px"
+        android:layout_height="@dimen/offset_210px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:corner_radius="@dimen/offset_10px"
+        app:border_width="@dimen/offset_0px"
+        app:inner_border_width="@dimen/offset_0px"
+        />
+
+    <!-- 海报过滤Icon和文字 -->
+    <LinearLayout
+        android:id="@+id/ll_filter_cover"
+        android:layout_width="@dimen/offset_44dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        tools:visibility="visible"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shield_poster"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_bbbbbb"
+            android:textSize="@dimen/font_size_pxtosp_22"
+            android:text="@string/movie_cover_filter"
+            />
+
+    </LinearLayout>
+
+    <com.mtime.mtmovie.widgets.ScoreView
+        android:id="@+id/cinema_showtime_gallery_item_score"
+        android:layout_width="@dimen/offset_22_5dp"
+        android:layout_height="@dimen/offset_20dp"
+        android:layout_alignBottom="@id/cinema_showtime_gallery_item_iv"
+        android:layout_alignRight="@id/cinema_showtime_gallery_item_iv"
+        android:background="@color/score_color"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_12sp" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/cinema_showtime_gallery_item_name"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignLeft="@id/cinema_showtime_gallery_item_iv"-->
+    <!--android:layout_alignRight="@id/cinema_showtime_gallery_item_iv"-->
+    <!--android:layout_below="@id/cinema_showtime_gallery_item_iv"-->
+    <!--android:background="@color/transparent"-->
+    <!--android:ellipsize="end"-->
+    <!--android:gravity="center"-->
+    <!--android:paddingBottom="@dimen/offset_6px"-->
+    <!--android:paddingTop="@dimen/offset_6px"-->
+    <!--android:singleLine="true"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/font_size_small" />-->
+
+    <!--<View-->
+    <!--android:id="@+id/cinema_showtime_gallery_item_cover"-->
+    <!--android:layout_width="@dimen/offset_160px"-->
+    <!--android:layout_height="@dimen/offset_240px"-->
+    <!--android:layout_alignLeft="@id/cinema_showtime_gallery_item_iv"-->
+    <!--android:layout_alignTop="@id/cinema_showtime_gallery_item_iv"-->
+    <!--android:background="#66000000"-->
+    <!--android:contentDescription="@string/app_name"-->
+    <!--android:padding="@dimen/offset_4px"-->
+    <!--android:visibility="visible" />-->
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.card.component.item.adapter.CommunityCardShortReviewBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mCommunityCardRoot"
+        android:onClick="@{view -> data.onClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_community_card_shadow_bg"
+        android:layout_margin="2dp"
+        android:padding="7dp">
+
+        <TextView
+            android:id="@+id/mCommunityCardContentTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="11sp"
+            android:textColor="@color/color_8798af"
+            tools:text="无论是在口碑还是票房上创造了日影史上难得的观碑。无论是在口碑还是票房上创造了日影史上难得的观碑。无论是在口碑还是票房上创造了日影史上难得的观碑。"
+            />
+
+        <include
+            android:id="@+id/mCommunityCardCommonBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityCardContentTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="7dp"
+            layout="@layout/view_community_card_common_bottom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

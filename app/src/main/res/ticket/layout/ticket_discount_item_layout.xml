@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:paddingTop="@dimen/offset_8dp"
+    android:paddingBottom="@dimen/offset_8dp">
+<ImageView
+    android:id="@+id/smallpay_imv"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/smallpay_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/font_size_13sp"
+            android:textColor="@color/color_777777"
+            />
+        <TextView
+            android:id="@+id/smallpay_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/offset_5dp"
+            android:textSize="@dimen/font_size_13sp"
+            android:textColor="@color/color_777777"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/offset_5dp"
+            android:textSize="@dimen/font_size_13sp"
+            android:textColor="@color/color_333333"
+            android:text="@string/exchange_smallpay_str"/>
+    </LinearLayout>
+
+</LinearLayout>

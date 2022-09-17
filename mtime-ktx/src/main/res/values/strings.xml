@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="comm_movie_btn_presell">预售</string>
+    <string name="comm_movie_btn_ticket">购票</string>
+    <string name="comm_movie_btn_want_see">想看</string>
+
+    <string name="rumen">入门影迷</string>
+    <string name="zhongji">中级影迷</string>
+    <string name="gaoji">高级影迷</string>
+    <string name="zishen">资深影迷</string>
+    <string name="diantang">殿堂影迷</string>
+
+    <string name="publish_score_level_0_2">很差，完全是浪费时间</string>
+    <string name="publish_score_level_3_5">平庸之作，不看也罢</string>
+    <string name="publish_score_level_6_7">一般，不妨一看</string>
+    <string name="publish_score_level_8">很好，公认佳作</string>
+    <string name="publish_score_level_9_10">很完美，绝对不容错过</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_center_app_name">消息中心</string>
+
+    <string name="message_center">消息中心</string>
+    <string name="message_success">成功</string>
+    <string name="message_fans">粉丝</string>
+    <string name="message_launch_private_chat">发起私信</string>
+    <string name="message_comment_or_reply">评论/回复</string>
+    <string name="message_praise">点赞</string>
+    <string name="message_movie_remind">观影通知</string>
+    <string name="message_chat_list">聊天列表</string>
+    <string name="message_black_list">黑名单</string>
+    <string name="message_movie_remind_more">查看更多</string>
+    <string name="message_clear_message">清空消息</string>
+    <string name="message_make_sure_clear_all_message">确定清空所有未读消息提示吗？</string>
+    <string name="message_focus_on">+关注</string>
+    <string name="message_has_focused">已关注</string>
+    <string name="message_remove">移除</string>
+    <string name="message_buy_ticket">购票</string>
+    <string name="message_no_movie_notify">暂无观影通知哦～快去收藏想看的电影吧～</string>
+    <string name="message_movie_notify">想看的电影《%1$s》开始院线售票了！</string>
+    <string name="message_more_than_99">99+</string>
+    <string name="message_no_chat_record">没有聊天记录呢～</string>
+    <string name="message_visit_personal_home_page">查看个人主页</string>
+    <string name="message_add_to_blacklist">加入黑名单</string>
+    <string name="message_remove_from_blacklist">移除黑名单</string>
+    <string name="message_remove_success">移除成功</string>
+    <string name="message_confirm_delete_conversation">删除会话？</string>
+    <string name="message_confirm_delete_conversation_error">删除会话失败</string>
+    <string name="message_confirm_delete_comment">删除评论？</string>
+    <string name="message_comment_pack_up">收起</string>
+    <string name="message_comment_expand">展开</string>
+    <string name="message_confirm_unfollow_user">是否取消关注</string>
+
+</resources>

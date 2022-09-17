@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/offset_34px"
+              android:paddingRight="@dimen/offset_34px"
+              android:paddingTop="@dimen/offset_34px">
+
+
+    <!-- 优惠信息以及倒计时 -->
+    <LinearLayout
+        android:id="@+id/old_exchange_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_shop_after_buyticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="周边特惠"
+            android:textColor="@color/color_f15353"
+            android:textSize="13sp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <!-- 倒计时 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_pxtodx_20"
+            android:orientation="horizontal"
+            >
+
+            <!-- 文字提示 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="距结束"
+                android:textColor="@color/color_555555"
+                android:textSize="13sp"
+                />
+
+            <!-- 计时器 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_2dp"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/bt_hour"
+                    android:layout_width="@dimen/offset_pxtodx_40"
+                    android:layout_height="@dimen/offset_pxtodx_40"
+                    android:background="@color/color_555555"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_pxtosp_26"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/offset_pxtodx_4"
+                    android:layout_marginRight="@dimen/offset_pxtodx_4"
+                    android:text=":"
+                    android:textColor="@color/color_777777"
+                    android:textStyle="bold"
+                    />
+
+                <Button
+                    android:id="@+id/bt_minute"
+                    android:layout_width="@dimen/offset_pxtodx_40"
+                    android:layout_height="@dimen/offset_pxtodx_40"
+                    android:background="@color/color_555555"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_pxtosp_26"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/offset_pxtodx_4"
+                    android:layout_marginRight="@dimen/offset_pxtodx_4"
+                    android:text=":"
+                    android:textColor="@color/color_777777"
+                    android:textStyle="bold"
+                    />
+
+                <Button
+                    android:id="@+id/bt_sec"
+                    android:layout_width="@dimen/offset_pxtodx_40"
+                    android:layout_height="@dimen/offset_pxtodx_40"
+                    android:background="@color/color_555555"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_pxtosp_26"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 商品列表 -->
+    <com.mtime.bussiness.ticket.movie.widget.HorizontalListView
+        android:id="@+id/skus_layout_list"
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:layout_marginBottom="@dimen/offset_pxtodx_18"
+        android:layout_marginTop="@dimen/offset_20px"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_20px"
+        android:layout_marginTop="@dimen/offset_34px"
+        android:background="@color/color_f2f2f2"/>
+
+</LinearLayout>

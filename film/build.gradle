@@ -1,0 +1,114 @@
+if (isBuildModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.kotlin.android.film"
+        }
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding true
+    }
+
+    kapt {
+        useBuildCache = true
+        javacOptions {
+            option("-Xmaxerrs", 500)
+        }
+    }
+
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
+
+    sourceSets {
+        main {
+            if (isBuildModule.toBoolean()) {
+                manifest.srcFile 'src/main/java/debug/AndroidManifest.xml'
+                java {
+                    java.srcDirs += 'src/main/kotlin'
+                }
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //release模式下排查debug文件夹中的所有文件
+                java {
+                    java.srcDirs += 'src/main/kotlin'
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Support.kotlin_stdlib_jdk8
+    testImplementation Support.junit
+    androidTestImplementation Support.junit_ext
+    androidTestImplementation Support.espresso_core
+    //组件中依赖阿里路由编译框架
+    kapt Dependencies.arouter_compiler
+
+    // add lib
+    implementation project(path: ':app-data')
+    implementation project(path: ':mtime-ktx')
+    implementation project(path: ':core')
+    implementation project(path: ':app-router')
+    implementation project(path: ':app-api')
+    implementation project(path: ':image')
+    implementation project(path: ':user')
+    implementation project(path: ':widget')
+
+    implementation Support.gridlayout
+}

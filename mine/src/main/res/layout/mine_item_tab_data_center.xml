@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/color_ffffff"
+    android:paddingBottom="@dimen/offset_6px"
+    android:paddingTop="@dimen/offset_6px"
+    tools:layout_height="@dimen/offset_154px"
+    tools:layout_width="@dimen/offset_132px">
+
+    <RelativeLayout
+        android:id="@+id/tabBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/color_20a0da"
+        tools:layout_height="@dimen/offset_128px"
+        tools:layout_width="@dimen/offset_120px">
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/offset_11dp"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_12sp"
+            tools:text="阅读量" />
+
+        <TextView
+            android:id="@+id/tvNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAmount"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/offset_4dp"
+            android:layout_marginBottom="@dimen/offset_4dp"
+            android:lineHeight="@dimen/offset_56px"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_16sp"
+            tools:text="136" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/offset_20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        tools:background="@color/color_f2f3f6" />
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.base.widget.banner.BannerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_buy_ticket_success_ad_banner_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/offset_88dp"
+    android:layout_marginTop="@dimen/offset_10dp"
+    android:visibility="gone"
+    android:clipToPadding="false">
+
+</com.mtime.base.widget.banner.BannerView>

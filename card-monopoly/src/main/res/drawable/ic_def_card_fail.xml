@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/ic_card_none_bg" />
+    <!--    <item-->
+    <!--        android:bottom="24dp"-->
+    <!--        android:drawable="@color/color_31bd84"-->
+    <!--        android:end="4dp"-->
+    <!--        android:start="4dp"-->
+    <!--        android:top="7dp">-->
+
+    <!--    </item>-->
+    <item
+        android:width="53dp"
+        android:height="53dp"
+        android:bottom="24dp"
+        android:drawable="@drawable/ic_card_none"
+        android:end="4dp"
+        android:gravity="center"
+        android:start="4dp"
+        android:top="7dp">
+
+    </item>
+<!--    <item-->
+<!--        android:bottom="24dp"-->
+<!--        android:end="4dp"-->
+<!--        android:start="4dp"-->
+<!--        android:top="7dp">-->
+
+<!--        <shape android:shape="rectangle">-->
+<!--&lt;!&ndash;            <solid android:color="#2203A9F4" />&ndash;&gt;-->
+<!--            <stroke-->
+<!--                android:width="0.5dp"-->
+<!--                android:color="#AADDDDDD" />-->
+<!--            <corners android:radius="3dp" />-->
+<!--            <gradient-->
+<!--                android:angle="135"-->
+<!--                android:centerColor="#22FF9800"-->
+<!--                android:endColor="#03A9F4"-->
+<!--                android:startColor="#8BC34A" />-->
+<!--        </shape>-->
+<!--    </item>-->
+
+</layer-list>

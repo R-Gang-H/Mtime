@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/moreView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:alpha="0.2"
+        android:background="#303A47" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/moreViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp" />
+
+    <FrameLayout
+        android:id="@+id/indicator_more"
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+
+        <com.kotlin.android.share.ui.widget.IndicatorView
+            android:id="@+id/moreIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+</LinearLayout>

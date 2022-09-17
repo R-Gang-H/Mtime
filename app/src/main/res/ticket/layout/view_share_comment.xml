@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+    <ImageView
+        android:id="@+id/iv_blur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@color/color_33000000" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_33000000"
+        />
+    <!--title-->
+    <RelativeLayout
+        android:id="@+id/rl_tilte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_pxtodx_40"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/offset_pxtodx_40">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_close_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/st_share"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_32" />
+    </RelativeLayout>
+    <!--影片图片，影片中英文，评论人头像-->
+    <RelativeLayout
+        android:id="@+id/rl_content_image"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:layout_below="@id/rl_tilte"
+        android:layout_marginLeft="@dimen/offset_pxtodx_50"
+        android:layout_marginRight="@dimen/offset_pxtodx_38"
+        android:layout_marginTop="@dimen/offset_pxtodx_30">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_pxtodx_100"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            />
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_pxtodx_500"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_image" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_image"
+            android:background="@drawable/blur_bmp"
+            android:gravity="bottom"
+            android:paddingBottom="@dimen/offset_pxtodx_30"
+            android:paddingLeft="@dimen/offset_pxtodx_30"
+            >
+
+            <TextView
+                android:id="@+id/tv_name_cn"
+                android:layout_width="@dimen/offset_pxtodx_220"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_name_en"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_pxtosp_34" />
+
+            <TextView
+                android:id="@+id/tv_name_en"
+                android:layout_width="@dimen/offset_pxtodx_220"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/font_size_pxtosp_26" />
+
+            <TextView
+                android:id="@+id/bt_next_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingTop="@dimen/offset_pxtodx_13"
+                android:paddingBottom="@dimen/offset_pxtodx_13"
+                android:paddingLeft="@dimen/offset_pxtodx_24"
+                android:paddingRight="@dimen/offset_pxtodx_24"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/offset_pxtodx_37"
+                android:textSize="@dimen/font_size_pxtosp_24"
+                android:textColor="@color/white"
+                android:text="@string/st_next_picture"
+                android:background="@drawable/next_pic" />
+        </RelativeLayout>
+
+        <com.mtime.mtmovie.widgets.CircleImageView
+            android:id="@+id/iv_head"
+            android:layout_width="@dimen/offset_pxtodx_100"
+            android:layout_height="@dimen/offset_pxtodx_100"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/my_home_logout_head"
+            app:border_color="@color/white"
+            app:border_width="@dimen/offset_pxtodx_3"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+    <!--影片评分区域-->
+    <LinearLayout
+        android:id="@+id/ll_content_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/rl_content_image"
+        android:layout_alignRight="@id/rl_content_image"
+        android:layout_below="@id/rl_content_image"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/offset_pxtodx_15">
+
+        <RatingBar
+            android:id="@+id/rb_score"
+            style="@style/ShareCommentRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:numStars="5"
+            android:stepSize="0.5"></RatingBar>
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name_cn"
+            android:paddingLeft="@dimen/offset_pxtodx_10"
+            android:textColor="@color/color_659d0e"
+            android:textSize="@dimen/font_size_pxtosp_26" />
+    </LinearLayout>
+    <!--影片评论区域-->
+    <LinearLayout
+        android:id="@+id/ll_content_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/rl_content_image"
+        android:layout_alignRight="@id/rl_content_image"
+        android:layout_below="@id/ll_content_score"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/offset_pxtodx_33"
+        android:paddingLeft="@dimen/offset_pxtodx_33"
+        android:paddingRight="@dimen/offset_pxtodx_40"
+        android:paddingTop="@dimen/offset_pxtodx_50">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_pxtodx_14"
+            android:layout_marginTop="@dimen/offset_pxtodx_8"
+            android:src="@drawable/icon_quotes" />
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/offset_pxtodx_10"
+            android:maxLines="3"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_pxtosp_28" />
+    </LinearLayout>
+    <!--分割线（左右半圆中间虚线）-->
+    <LinearLayout
+        android:id="@+id/ll_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_pxtodx_34"
+        android:layout_alignLeft="@id/rl_content_image"
+        android:layout_alignRight="@id/rl_content_image"
+        android:layout_below="@id/ll_content_comment"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/half_circle_left" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY"
+                android:src="@drawable/dotted_line" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/half_circle_right" />
+    </LinearLayout>
+    <!--Mtime Icon-->
+    <RelativeLayout
+        android:id="@+id/rl_mtime_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_line"
+        android:layout_marginLeft="@dimen/offset_pxtodx_50"
+        android:layout_marginRight="@dimen/offset_pxtodx_38"
+        android:background="@drawable/roundcorner_bottom">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/offset_pxtodx_30"
+            android:layout_marginTop="@dimen/offset_pxtodx_30"
+            android:src="@drawable/icon_mtime" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_bottom_txt"
+        android:layout_below="@id/rl_mtime_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/st_share_screenshot_tip"
+        android:paddingRight="@dimen/offset_pxtodx_40"
+        android:paddingLeft="@dimen/offset_pxtodx_40"
+        android:layout_marginTop="@dimen/offset_pxtodx_50"
+        android:lineSpacingExtra="@dimen/offset_pxtodx_10"
+        android:textColor="@color/color_d8d8d8"
+        android:textSize="@dimen/font_size_pxtosp_24" />
+
+    <!--share view-->
+    <LinearLayout
+        android:id="@+id/ll_share_part"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_pxtodx_260"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/share_bg"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="4" >
+
+        <!-- weixin friend -->
+
+        <TextView
+            android:id="@+id/share_weixin_friend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawablePadding="@dimen/offset_pxtodx_12"
+            android:drawableTop="@drawable/icon_share_wechat_friend_small"
+            android:gravity="center"
+            android:text="@string/share_wechatfriend"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_pxtosp_24" />
+
+        <!-- weixin friend world -->
+
+        <TextView
+            android:id="@+id/share_weichat_world"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawablePadding="@dimen/offset_pxtodx_12"
+            android:drawableTop="@drawable/icon_share_wechat_small"
+            android:gravity="center"
+            android:text="@string/share_micromessage"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_pxtosp_24" />
+
+        <!-- weibo of sina -->
+
+        <TextView
+            android:id="@+id/share_weibo_sina"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawablePadding="@dimen/offset_pxtodx_12"
+            android:drawableTop="@drawable/icon_share_sina_small"
+            android:gravity="center"
+            android:text="@string/share_weibosina"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_pxtosp_24" />
+
+        <!-- qq friends -->
+
+        <TextView
+            android:id="@+id/share_qq_friend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawablePadding="@dimen/offset_pxtodx_12"
+            android:drawableTop="@drawable/icon_share_qq_small"
+            android:gravity="center"
+            android:text="@string/share_qq"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_pxtosp_24" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:textSize="@dimen/font_size_pxtosp_32"
+    android:paddingTop="@dimen/offset_pxtodx_17"
+    android:paddingBottom="@dimen/offset_pxtodx_20"
+    android:textColor="@color/color_333333"
+    tools:text="制作" />

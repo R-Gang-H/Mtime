@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.comment.component.binder.CommentListTitleBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginBottom="@dimen/offset_6px">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/allCommentTv"
+            style="@style/WrapWrap"
+            android:text="@string/comment_all_list"
+            android:textColor="@color/color_525e75"
+            android:textSize="@dimen/font_size_sp_15"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        评论数量-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/commentCountTv"
+            style="@style/WrapWrap"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:text="@{data.bean.totalCountStr}"
+            android:textColor="@color/color_8b98b2"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintBottom_toBottomOf="@id/allCommentTv"
+            app:layout_constraintLeft_toRightOf="@id/allCommentTv"
+            app:layout_constraintTop_toTopOf="@id/allCommentTv"
+            tools:text="205" />
+
+
+        <!--        更多按钮-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/moreIV"
+            android:layout_width="@dimen/offset_24px"
+            android:layout_height="@dimen/offset_24px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:onClick="@{(view)->data.onClick(view)}"
+            android:src="@drawable/ic_down"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--        最新按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/newTv"
+            android:textColor="@{data.bean.new?@color/color_505e74:@color/color_8798af}"
+            android:textSize="@dimen/offset_15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/moreIV"
+            app:layout_goneMarginRight="@dimen/offset_31px"
+            android:layout_marginRight="@dimen/offset_15px"
+            android:onClick="@{(view)->data.onClick(view)}"
+            android:text="@string/comment_newest"
+            style="@style/WrapWrap" />
+
+
+        <!--        最热按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hotTv"
+            android:textColor="@{data.bean.new?@color/color_8798af:@color/color_505e74}"
+            android:textSize="@dimen/offset_15sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/newTv"
+            android:layout_marginRight="@dimen/offset_10px"
+            android:onClick="@{(view)->data.onClick(view)}"
+            android:text="@string/comment_hot"
+            style="@style/WrapWrap" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

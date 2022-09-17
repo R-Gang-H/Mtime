@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.bussiness.ticket.movie.widget.QuizGameView xmlns:android="http://schemas.android.com/apk/res/android"
+                                         xmlns:app="http://schemas.android.com/apk/res-auto"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:paddingBottom="@dimen/offset_pxtodx_34">
+
+    <LinearLayout
+        android:id="@+id/seperated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/offset_pxtodx_33"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/offset_10dp"
+        android:src="@drawable/icon_arrow_r" />
+
+    <!-- icon 的字体大小需要再次确定下，-->
+    <TextView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seperated"
+        android:layout_marginLeft="@dimen/offset_pxtodx_34"
+        android:layout_marginRight="@dimen/offset_pxtodx_20"
+        android:background="@drawable/icon_quizgame"
+        android:gravity="center"
+        android:text="@string/st_quiz_game_guess"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_pxtosp_42" />
+
+    <TextView
+        android:id="@+id/game_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seperated"
+        android:layout_toLeftOf="@id/arrow"
+        android:layout_toRightOf="@id/icon"
+        android:singleLine="true"
+        android:textColor="@color/color_777777"
+        android:textSize="@dimen/font_size_pxtosp_30" />
+
+    <TextView
+        android:id="@+id/game_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_name"
+        android:layout_marginTop="@dimen/offset_pxtodx_10"
+        android:layout_toLeftOf="@id/arrow"
+        android:layout_toRightOf="@id/icon"
+        android:singleLine="true"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/font_size_pxtosp_34" />
+
+    <TextView
+        android:id="@+id/top_users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_num"
+        android:layout_marginTop="@dimen/offset_pxtodx_17"
+        android:layout_toRightOf="@id/icon"
+        android:textColor="@color/color_f3ac2d"
+        android:textSize="@dimen/font_size_pxtosp_30" />
+
+    <RelativeLayout
+        android:id="@+id/users_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_users"
+        android:layout_marginTop="@dimen/offset_pxtodx_14"
+        android:layout_toRightOf="@id/icon">
+
+        <RelativeLayout
+            android:id="@+id/first"
+            android:layout_width="@dimen/offset_pxtodx_110"
+            android:layout_height="@dimen/offset_pxtodx_110">
+
+            <com.mtime.mtmovie.widgets.CircleImageView
+                android:id="@+id/first_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_default_head_h90"
+                app:border_color="@color/circle_image_boder"
+                app:border_width="1px" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/oval_orange" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_first" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/icon_no_first" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/second"
+            android:layout_width="@dimen/offset_pxtodx_110"
+            android:layout_height="@dimen/offset_pxtodx_110"
+            android:layout_marginLeft="@dimen/offset_pxtodx_20"
+            android:layout_toRightOf="@id/first">
+
+            <com.mtime.mtmovie.widgets.CircleImageView
+                android:id="@+id/second_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_default_head_h90"
+                app:border_color="@color/circle_image_boder"
+                app:border_width="1px" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/oval_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_second" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/icon_no_second" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/third"
+            android:layout_width="@dimen/offset_pxtodx_110"
+            android:layout_height="@dimen/offset_pxtodx_110"
+            android:layout_marginLeft="@dimen/offset_pxtodx_20"
+            android:layout_toRightOf="@id/second">
+
+            <com.mtime.mtmovie.widgets.CircleImageView
+                android:id="@+id/third_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_default_head_h90"
+                app:border_color="@color/circle_image_boder"
+                app:border_width="1px" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/oval_red" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_third" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/icon_no_third" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/offset_pxtodx_33"
+            android:drawableRight="@drawable/icon_arrow_r"
+            android:text="@string/st_quiz_game_start"
+            android:textColor="@color/color_f3ac2d"
+            android:textSize="@dimen/font_size_pxtosp_34" />
+
+    </RelativeLayout>
+
+</com.mtime.bussiness.ticket.movie.widget.QuizGameView>

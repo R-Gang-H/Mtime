@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_dialog_film_source_choice_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        >
+
+        <TextView
+            android:id="@+id/dialog_film_choice_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/common_list_left_or_right_margin"
+            android:text="@string/choose_movie_source"
+            android:textStyle="bold"
+            android:textColor="#1D2736"
+            android:textSize="17sp" />
+
+
+        <ImageView
+            android:id="@+id/dialog_film_choice_close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:padding="10dp"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/common_icon_close" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="224dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dialog_film_choice_resource_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/common_list_left_or_right_margin"
+            android:paddingRight="@dimen/common_list_left_or_right_margin"
+            android:paddingBottom="@dimen/common_list_left_or_right_margin"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            tools:listitem="@layout/layout_film_resource" />
+
+        <com.mtime.base.views.MDataErrorView
+            android:id="@+id/dialog_film_choice_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="mineSettingTextView">
+        <item name="android:layout_marginTop">@dimen/offset_28px</item>
+        <item name="android:textColor">@color/color_1d2736</item>
+        <item name="android:textSize">@dimen/offset_12sp</item>
+        <item name="android:drawablePadding">@dimen/offset_20px</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--身份认证 输入内容标题-->
+    <style name="AuthenInputTitleTextView">
+        <item name="android:textColor">@color/color_4e5e73</item>
+        <item name="android:textSize">@dimen/offset_16sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--    身份认证 输入内容是否必填-->
+    <style name="AuthenMustFillInTips">
+        <item name="android:textColor">@color/color_ff5a36</item>
+        <item name="android:textSize">@dimen/offset_16sp</item>
+        <item name="android:layout_marginLeft">@dimen/offset_4px</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--    身份认证 输入内容-->
+    <style name="AuthenInputValueTextView">
+        <item name="layout_constraintRight_toRightOf">parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+        <item name="hintTextColor">@color/color_cbd0d7</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">@color/color_4e5e73</item>
+        <item name="android:textSize">@dimen/offset_14sp</item>
+
+    </style>
+
+    <style name="PersonCollectionContentTv">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/offset_24px</item>
+        <item name="android:layout_marginRight">@dimen/offset_1px</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+    </style>
+
+    <!-- 证照信息文字 -->
+    <style name="LicenseTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/offset_30px</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/offset_17sp</item>
+        <item name="android:textColor">@color/color_1d2736</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 证照信息右箭头 -->
+    <style name="LicenseArrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/offset_29px</item>
+        <item name="android:layout_marginEnd">@dimen/offset_30px</item>
+        <item name="android:src">@drawable/ic_mine_more_right</item>
+        <item name="drawableTint">@color/color_1d2736</item>
+    </style>
+
+    <!-- 证照信息分隔线 -->
+    <style name="LicenseLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/offset_2px</item>
+        <item name="android:paddingLeft">@dimen/offset_30px</item>
+        <item name="android:paddingRight">@dimen/offset_30px</item>
+        <item name="android:background">@color/color_f3f3f4</item>
+    </style>
+
+    <!-- 数据概览时间选择动画 -->
+    <style name="RightTop2PopAnim" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/right_top_in_2</item>
+        <item name="android:windowExitAnimation">@anim/right_top_out_2</item>
+    </style>
+
+</resources>

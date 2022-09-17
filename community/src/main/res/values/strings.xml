@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mtime社区</string>
+    <string name="community_title">社区</string>
+    <string name="community_header_game">游戏</string>
+    <string name="community_header_game_name">卡片大富翁</string>
+    <string name="community_header_my_family">我的家族</string>
+    <string name="community_header_my_family_post_number">%1$s更新</string>
+    <string name="community_tab_follow">关注</string>
+    <string name="community_tab_selection">精选</string>
+    <string name="community_tab_family">家族</string>
+    <string name="community_join_family">加入家族</string>
+    <string name="community_fan">%1$s</string>
+    <string name="community_attention">%1$s</string>
+    <string name="community_day_des">时光龄%1$s</string>
+    <string name="community_edit">编辑个人资料</string>
+    <string name="community_content">文章 %1$s</string>
+    <string name="community_film_coment">影评 %1$s</string>
+    <string name="community_post">帖子 %1$s</string>
+    <string name="community_video">视频 %1$s</string>
+    <string name="community_group">家族 %1$s</string>
+    <string name="community_film_menu">片单 %1$s</string>
+    <string name="community_diary">日志 %1$s</string>
+    <string name="community_photo">相册 %1$s</string>
+    <string name="community_brodcast">播客 %1$s</string>
+    <string name="community_film">电影</string>
+    <string name="community_filmer">影人</string>
+    <string name="community_cinema">影院</string>
+    <string name="community_family_member_count_format">成员数：%1$s</string>
+    <string name="community_create_photo">创建相册</string>
+    <string name="ok">确定</string>
+    <string name="album_name">相册名</string>
+    <string name="attend">+关注</string>
+    <string name="title_attend">我的关注</string>
+    <string name="title_fan">我的粉丝</string>
+    <string name="attended">已关注</string>
+    <string name="wantsee">想看</string>
+    <string name="wantseed">看过</string>
+    <string name="wantseed_two">已看</string>
+    <string name="fan">粉丝</string>
+    <string name="friend">我的好友</string>
+    <string name="favourite_movie_num">共 %1d 部影视</string>
+    <string name="score">评分</string>
+    <string name="director">导演：</string>
+    <string name="actor">主演：</string>
+    <string name="realtime">上映日期：</string>
+    <string name="filmer_auth">电影人认证</string>
+    <string name="filmer_auth_post">影评人认证</string>
+    <string name="construction_auth">机构认证</string>
+    <string name="attend_tip">是否取消关注</string>
+    <string name="photo_tip">%1$d张照片</string>
+    <string name="community_time_zone">观影时间轴</string>
+    <string name="community_attend">关注</string>
+    <string name="community_fans">粉丝</string>
+    <string name="community_auth">认证 %1$s</string>
+    <string name="community_cir_person">影评人</string>
+    <string name="community_jigou">机构</string>
+    <string name="community_long_comment">写了影评《%1$s》</string>
+    <string name="community_create_get">创作成就</string>
+    <string name="community_person_collection">我的收藏</string>
+    <string name="person_collection_movies">代表作：%1$s</string>
+    <string name="person_collection_profession">职业：%1$s</string>
+    <string name="collection_movie_date_pattern">yyyy-MM-dd(%1$s)</string>
+
+    <string name="collection_movie_director">导演：%1$s</string>
+    <string name="collection_movie_actor">主演：%1$s</string>
+    <string name="collection_movie_realtime">上映日期：%1$s</string>
+    <string name="friend_fan_total">总粉丝 %1$s 人</string>
+    <string name="friend_attend_total">共关注 %1$s 人</string>
+    <string name="time_line">观影时间轴</string>
+    <string name="community_mark">标为</string>
+    <string name="community_buy_ticket">购票观看</string>
+    <string name="community_im">发起私信</string>
+
+
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:background="@drawable/dialog_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dlg_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Mtime服务条款与隐私政策"
+            android:textColor="#1d2736"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1">
+
+            <View android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/shape_common_scroll_bottom_bar"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/dlg_small_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    tools:text="感谢您对时光网产品/服务的信任，您已经进入时光网用户的注册流程，当您完成所有注册程序后，您即可以享受我们专门为注册用户提供的产品/服务内容，在此使用过程中，可能会对您应履行的义务有所要求或对您的权利有所限制。因此，为了更好地保障您的个人权益，请务必审慎阅读《Mtime时光网服务条款》与《隐私政策》内的所有条款，并在您同意以上协议全部内容后点击“同意”并进入下一步注册流程。 如果您不同意以上协议（包括不同意协议的任一内容），请您停止注册，您停止注册的行为不影响您可以使用/继续使用我们提供的部分产品/服务，但您将无法享受我们专门为我们的注册用户提供的完整的产品/服务。您点击“同意”的行为即表示您已阅读完毕并同意以上协议的全部内容，包括您同意我们对您的个人信息的收集/保存/使用/对外提供/保护等规则条款，以及您的用户权利等条款；约定我们的限制责任、免责条款；其他以颜色或加粗进行标识的重要条款；以及协议内的其他所有条款。 如您对以上协议有任何疑问，可通过客服电话4006059500与我们联系。"
+                    android:lineSpacingMultiplier="1.2"
+                    android:textColor="#4e5e73"
+                    android:textSize="16sp" />
+
+            </ScrollView>
+
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialog_register_pricacy_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mtime服务条款"
+                android:textColor="#20a0da"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 和 "
+                android:textColor="#4e5e73"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/dialog_register_pricacy_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="隐私政策"
+                android:textColor="#20a0da"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialog_privacy_btn1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textColor="#20A0DA"
+                android:layout_weight="1"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/shape_common_btn_bg2"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:lines="1"
+                android:text="拒绝并退出"
+                />
+
+            <TextView
+                android:id="@+id/dialog_privacy_btn2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:background="@drawable/shape_common_btn_bg"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="同意"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <!-- 广告（仅影院列表页） -->
+    <com.mtime.mtmovie.widgets.ADWebView
+        android:id="@+id/layout_cinema_list_header_ad_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <!-- 广告分隔线（仅影院列表页） -->
+    <ImageView
+        android:id="@+id/layout_cinema_list_header_ad_split_iv"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@drawable/ticket_cinemas_favorite_dash"
+        android:contentDescription="@string/app_name" />
+
+    <!-- 位置获取失败（影院列表页，影片排片页） -->
+    <LinearLayout
+        android:id="@+id/layout_cinema_list_header_location_fail_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_cinema_list_location_fail"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_15dp"
+            android:layout_marginBottom="@dimen/offset_40dp"
+            android:textSize="@dimen/font_size_15sp"
+            android:textColor="@color/color_999999"
+            android:text="@string/cinema_list_location_fail"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/layout_cinema_list_header_location_fail_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_d8d8d8"
+            android:contentDescription="@string/app_name"
+            />
+
+        <!-- 分隔条 -->
+        <View
+            android:id="@+id/layout_cinema_list_header_location_fail_split_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_10dp"
+            android:background="@drawable/cinema_list_location_line"
+            />
+
+    </LinearLayout>
+
+    <!-- 非自营提示 -->
+    <TextView
+        android:id="@+id/layout_cinema_list_header_not_own_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_25dp"
+        android:background="@color/color_f6f6f6"
+        android:gravity="center"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/font_size_11sp"
+        tools:text="以下影城均为时光网自营"
+        />
+
+</LinearLayout>

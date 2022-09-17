@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BattlePercentView">
+        <!-- 左边分数条颜色 -->
+        <attr name="positive_color" format="color|reference" />
+        <!-- 右边分数条颜色 -->
+        <attr name="negative_color" format="color|reference" />
+        <attr name="android:radius" />
+    </declare-styleable>
+
+</resources>

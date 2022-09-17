@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.kotlin.android.widget.autohintlayout.AutoHintLayout
+            android:id="@+id/autoHintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_32px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_15px"
+            android:orientation="horizontal">
+
+            <com.kotlin.android.widget.search.SearchEditText
+                android:id="@+id/mSearchView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_64px"
+                android:hint="请输入搜索内容"
+                android:layout_weight="1"
+                android:maxLength="10" />
+
+            <TextView
+                android:id="@+id/searchCancelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="@dimen/offset_12px"
+                android:text="@string/search_newcomponent_search_cancel"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_17sp" />
+
+        </com.kotlin.android.widget.autohintlayout.AutoHintLayout>
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+    </LinearLayout>
+</layout>

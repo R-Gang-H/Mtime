@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="earthModel"
+            type="com.kotlin.android.mine.ui.datacenter.fragment.EarthViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescContent"
+            viewRadius="@{8}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_15dp"
+            android:elevation="2dp"
+            android:shadowColor="@color/color_1f000000"
+            android:outlineProvider="background"
+            android:gravity="center"
+            android:padding="@dimen/offset_10dp"
+            android:text="@{earthModel.expressContent}"
+            android:textColor="@color/color_404c57"
+            android:textSize="@dimen/offset_20px"
+            android:background="@color/color_ffffff"
+            tools:text="包括了日志、长影评、文章、帖子、视频、音频六类内容的数据" />
+
+        <ImageView
+            android:id="@+id/vArrow"
+            android:layout_width="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_20px"
+            android:layout_below="@id/tvDescContent"
+            android:layout_marginStart="@dimen/offset_178px"
+            android:elevation="2dp"
+            android:outlineProvider="bounds"
+            tools:background="@color/color_ffffff" />
+
+    </RelativeLayout>
+
+</layout>

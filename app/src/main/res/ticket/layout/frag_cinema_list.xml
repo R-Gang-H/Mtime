@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <!-- 广告+定位失败+影院列表+空提示+排序和筛选 -->
+    <include
+        layout="@layout/layout_cinema_list_main"
+        />
+
+    <!-- 底部定位条 -->
+    <include
+        layout="@layout/layout_cinema_list_location_bar"
+        />
+
+    <!-- 搜索结果 -->
+    <include
+        layout="@layout/layout_cinema_list_search"
+        />
+
+</RelativeLayout>

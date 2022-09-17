@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/bottom_lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_0_5dp"
+            android:background="@color/color_bbbbbb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/offset_17dp">
+
+            <!-- 总价 -->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="总价 "
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/font_size_12sp" />
+
+                <TextView
+                    android:id="@+id/confirm_oder_tv_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_total_price"
+                    android:textColor="@color/color_f97d3f"
+                    android:textSize="@dimen/font_size_21sp"
+                    tools:text="60"
+                    />
+
+                <TextView
+                    android:id="@+id/confirm_oder_tv_service_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/confirm_oder_tv_total_price"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/font_size_12sp"
+                    tools:text="服务费"
+                    />
+            </RelativeLayout>
+            <!-- 下一步 -->
+
+            <TextView
+                android:id="@+id/confirm_oder_btn_next_step"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/color_f97d3f"
+                android:gravity="center"
+                android:paddingLeft="34dp"
+                android:paddingRight="34dp"
+                android:text="@string/str_next"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_large" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_lin"
+        android:layout_below="@id/navigationbar"
+        android:background="@color/color_ffdddddd"
+        android:paddingLeft="@dimen/offset_11dp"
+        android:paddingRight="@dimen/offset_11dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:orientation="vertical">
+
+            <!-- 上部分 开始 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_15dp"
+                android:paddingTop="@dimen/offset_20dp"
+                android:paddingRight="@dimen/offset_16dp"
+                android:paddingBottom="@dimen/offset_18dp">
+
+                <!-- 影片: -->
+                <TextView
+                    android:id="@+id/confirm_oder_tv_movie_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/offset_7dp"
+                    android:textColor="@color/black_normal"
+                    android:textSize="@dimen/font_size_large_high" />
+
+                <!-- 影院 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/offset_7dp"
+                    android:paddingBottom="@dimen/offset_7dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/offset_15dp"
+                        android:text="影院:"
+                        android:textColor="@color/gray_normal"
+                        android:textSize="@dimen/font_size_15sp" />
+
+                    <TextView
+                        android:id="@+id/confirm_oder_tv_cinema_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black_normal"
+                        android:textSize="@dimen/font_size_15sp" />
+                </LinearLayout>
+
+                <!-- 场次 时间 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/offset_7dp"
+                    android:paddingBottom="@dimen/offset_7dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/offset_15dp"
+                        android:text="场次:"
+                        android:textColor="@color/gray_normal"
+                        android:textSize="@dimen/font_size_15sp" />
+
+                    <TextView
+                        android:id="@+id/confirm_oder_tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange_color"
+                        android:textSize="@dimen/font_size_15sp" />
+                </LinearLayout>
+
+                <!-- 座位信息 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="@dimen/offset_7dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/offset_15dp"
+                        android:text="座位:"
+                        android:textColor="@color/gray_normal"
+                        android:textSize="@dimen/font_size_15sp" />
+
+                    <TextView
+                        android:id="@+id/confirm_oder_tv_seat_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black_normal"
+                        android:textSize="@dimen/font_size_15sp" />
+                </LinearLayout>
+                <!-- 小卖信息 -->
+
+                <LinearLayout
+                    android:id="@+id/small_pay_info_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="@dimen/offset_7dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/offset_15dp"
+                        android:text="小卖:"
+                        android:textColor="@color/gray_normal"
+                        android:textSize="@dimen/font_size_15sp" />
+
+                    <TextView
+                        android:id="@+id/small_pay_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black_normal"
+                        android:textSize="@dimen/font_size_15sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 上部分 结束 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_confirm_mid_bg" />
+            <!-- 中部分 开始 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/offset_16dp"
+                android:paddingRight="@dimen/offset_16dp">
+
+                <!-- 非会员部分 开始 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- 电话 -->
+
+                    <LinearLayout
+                        android:id="@+id/notvip_show_lin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_25dp"
+                        android:layout_marginBottom="@dimen/offset_22dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_order_confirm_receive_phone"
+                            android:textColor="@color/gray_normal"
+                            android:textSize="@dimen/font_size_small_more" />
+
+                        <TextView
+                            android:id="@+id/notvip_telephone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black_normal"
+                            android:textSize="@dimen/font_size_xlarge" />
+                    </LinearLayout>
+
+                    <!-- 验证码 -->
+
+                    <LinearLayout
+                        android:id="@+id/capcha_lin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_0dp"
+                        android:layout_marginBottom="@dimen/offset_22dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/capcha_edit"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/offset_39dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/order_confirm_capcha"
+                            android:hint="请输入验证码..."
+                            android:textSize="@dimen/font_size_normal_high" />
+
+                        <ImageView
+                            android:id="@+id/capcha_img"
+                            android:layout_width="@dimen/offset_85_5dp"
+                            android:layout_height="@dimen/offset_39dp"
+                            android:layout_marginLeft="@dimen/offset_16dp"
+                            app:srcCompat="@drawable/default_image"
+                            android:scaleType="fitCenter" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- 非会员部分 结束 -->
+                <!-- 会员部分电话 -->
+
+                <LinearLayout
+                    android:id="@+id/vip_show_phone_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/offset_25dp"
+                    android:paddingBottom="@dimen/offset_10dp">
+
+                    <EditText
+                        android:id="@+id/confirm_oder_edt_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/order_confirm_edit_bg"
+                        android:ems="10"
+                        android:hint="请输入接收短信的手机号"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/color_333333"
+                        android:textColorHint="@color/color_999999"
+                        android:textSize="@dimen/font_size_15sp" />
+                </LinearLayout>
+                <!-- 请认真核对... -->
+
+                <TextView
+                    android:id="@+id/confirm_oder_edt_refound_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/offset_23dp"
+                    android:text="@string/str_order_confirm_tip"
+                    android:textColor="@color/color_f97d3f"
+                    android:textSize="@dimen/font_size_13sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <!-- 中部分 结束 -->
+
+            <!--  需求需要 2019年1月16日  删掉确认订单中的客服电话和工作时间-->
+            <!--  需求需要 2019年1月16日  删掉确认订单中的客服电话和工作时间-->
+            <!--  需求需要 2019年1月16日  删掉确认订单中的客服电话和工作时间-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_confirm_mid_bg"
+                android:visibility="gone" />
+            <!-- 客服热线电话 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/offset_30px"
+                android:paddingTop="@dimen/offset_24px"
+                android:paddingRight="@dimen/offset_30px"
+                android:paddingBottom="@dimen/offset_24px"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_str"
+                        android:textColor="@color/color_777777"
+                        android:textSize="@dimen/font_size_normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_4px"
+                        android:text="@string/str_worktime"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/font_size_13sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/hot_tel_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4006059500"
+                    android:textColor="@color/color_f97d3f"
+                    android:textSize="@dimen/font_size_15sp" />
+            </LinearLayout>
+            <!--  需求需要 2019年1月16日  删掉确认订单中的客服电话和工作时间-->
+            <!--  需求需要 2019年1月16日  删掉确认订单中的客服电话和工作时间-->
+
+            <LinearLayout
+                android:id="@+id/explains_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/offset_4dp"
+                android:paddingBottom="@dimen/offset_12dp">
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 分割线 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- 使用影院会员卡付款 线上一直没上线， 与产品张明商量后新版决定先不用 -->
+
+        <TextView
+            android:id="@+id/confirm_oder_btn_mtime_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/offset_12dp"
+            android:background="@drawable/btn_orange_selector"
+            android:gravity="center"
+            android:text="@string/str_pay_by_cinema_vip_card"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/guide_view"
+        layout="@layout/giveup_pay_collection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</RelativeLayout>

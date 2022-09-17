@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/offset_30dp"
+    android:paddingRight="@dimen/offset_30dp"
+    >
+
+    <!-- 账号密码登录标题 -->
+    <TextView
+        android:id="@+id/fragment_login_account_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_title_cl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/color_1D2736"
+        android:textSize="22sp"
+        android:text="@string/login_account_title"
+        />
+
+    <!-- 手机号/邮箱 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_login_account_account_cl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_login_account_title_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_30dp"
+        >
+
+        <!-- 账号输入框 login_account_input -->
+        <AutoCompleteTextView
+            android:id="@+id/fragment_login_account_account_tv"
+            android:layout_width="@dimen/offset_250dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/transparent"
+            android:gravity="left"
+            android:hint="@string/login_account_hint"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:textColor="@color/color_4E5E73"
+            android:textColorHint="@color/color_AAB7C7"
+            android:textSize="16sp"
+            />
+
+        <!-- 取消x login_account_cancel -->
+        <ImageView
+            android:id="@+id/fragment_login_account_account_cancel_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/login_input_cancel_new_icon"
+            android:visibility="visible"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 密码 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_login_account_password_cl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_login_account_account_cl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_30dp"
+        >
+
+        <!-- 密码输入框 login_password_input -->
+        <EditText
+            android:id="@+id/fragment_login_account_password_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/fragment_login_account_password_cancel_iv"
+            android:layout_marginRight="5dp"
+            android:background="@color/transparent"
+            android:hint="@string/login_password_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/color_4E5E73"
+            android:textColorHint="@color/color_AAB7C7"
+            android:textSize="16sp"
+            />
+
+        <!-- 取消x login_password_cancel -->
+        <ImageView
+            android:id="@+id/fragment_login_account_password_cancel_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/fragment_login_account_password_show_line_view"
+            android:paddingRight="@dimen/offset_10dp"
+            android:paddingLeft="@dimen/offset_5dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/login_input_cancel_new_icon"
+            android:visibility="visible"
+            />
+
+        <!-- 分隔线 invisible -->
+        <View
+            android:id="@+id/fragment_login_account_password_show_line_view"
+            android:layout_width="@dimen/offset_1dp"
+            android:layout_height="0dp"
+            app:layout_constraintRight_toLeftOf="@+id/fragment_login_account_password_show_iv"
+            app:layout_constraintTop_toTopOf="@+id/fragment_login_account_password_show_iv"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_login_account_password_show_iv"
+            android:layout_marginRight="@dimen/offset_10dp"
+            android:background="@color/color_F3F3F4"
+            android:visibility="visible"
+            />
+
+        <!-- 显示/隐藏密码btn -->
+        <ImageView
+            android:id="@+id/fragment_login_account_password_show_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/login_switch_off"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 登录按钮 login_btn -->
+    <TextView
+        android:id="@+id/fragment_login_account_login_tv"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_login_account_password_cl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_40dp"
+        android:background="@drawable/shape_common_btn_bg"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:text="@string/btn_signin"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

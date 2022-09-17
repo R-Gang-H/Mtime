@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.community.post.component">
+
+    <application>
+        <activity android:name=".item.ui.detail.PostDetailActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            android:hardwareAccelerated="true"
+            />
+    </application>
+
+</manifest>

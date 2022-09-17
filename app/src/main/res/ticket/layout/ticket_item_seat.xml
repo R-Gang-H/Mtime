@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="2.5dp"
+    android:paddingRight="2.5dp">
+
+    <TextView
+        android:id="@+id/ticket_seat_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/seat_bg"
+        android:gravity="center"
+        android:textSize="13sp"
+        android:textColor="@color/ticket_light_dark"
+        android:text="7排10座"/>
+
+</RelativeLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.publish.adapter.PublishSearchMovieItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingTop="@dimen/offset_20px"
+        android:paddingStart="@dimen/offset_30px"
+        android:onClick="@{(view)->data.onClick(view)}"
+        >
+
+        <!-- 封面图 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imgCard"
+            style="@style/WrapWrap"
+            app:cardCornerRadius="@dimen/offset_12px"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/offset_112px"
+                android:layout_height="@dimen/offset_150px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.viewBean.img}"
+                load_image_width="@{56}"
+                load_image_height="@{75}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 中文名 年代 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nameYearCl"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:layout_marginStart="@dimen/offset_24px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/imgCard"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+            <!-- 中文名 -->
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/offset_500px"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/yearTv"
+                tools:text="老友记老友记老友记老友记老友记老友记老友记老友记老友记老友记老友记老友记"
+                />
+
+            <!-- 年代 -->
+            <TextView
+                android:id="@+id/yearTv"
+                android:layout_width="@dimen/offset_0px"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/nameTv"
+                tools:text="(2020)"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 英文名 -->
+        <TextView
+            android:id="@+id/nameEnTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintTop_toBottomOf="@+id/nameYearCl"
+            app:layout_constraintLeft_toLeftOf="@+id/nameYearCl"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="english name english name english name english name english name"
+            />
+
+        <!-- 类型 -->
+        <TextView
+            android:id="@+id/typeTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_4px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintTop_toBottomOf="@+id/nameEnTv"
+            app:layout_constraintLeft_toLeftOf="@+id/nameYearCl"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="动作/剧情/悬疑/动作/剧情/悬疑动作/剧情/悬疑动作/剧情/悬疑,中国"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:background="@color/color_f3f3f4"
+            app:layout_constraintTop_toBottomOf="@id/imgCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

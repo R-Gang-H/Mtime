@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultFilmListItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:onClick="@{(view)->data.onClick(view)}"
+        >
+
+        <!-- 封面图 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/filmListCoverCard"
+            android:layout_width="@dimen/offset_136px"
+            android:layout_height="@dimen/offset_180px"
+            app:cardCornerRadius="@dimen/offset_12px"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/filmListCoverIv"
+                style="@style/MatchMatch"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.viewBean.cover}"
+                load_image_width="@{68}"
+                load_image_height="@{90}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 封面图背景 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/filmListCoverBgIv"
+            android:layout_width="@dimen/offset_24px"
+            android:layout_height="@dimen/offset_158px"
+            android:src="@drawable/ic_search_film_list_cover_bg"
+            app:layout_constraintTop_toTopOf="@+id/filmListCoverCard"
+            app:layout_constraintBottom_toBottomOf="@+id/filmListCoverCard"
+            app:layout_constraintLeft_toRightOf="@+id/filmListCoverCard"
+            />
+
+        <!-- 标题 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/filmListTitleTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_26px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_14sp"
+            android:textColor="@color/color_3d4955"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/filmListCoverBgIv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="片单标题片单标题片单标题片单标题片单标题片单标题片单标题片单标题片单标题"
+            />
+
+        <!-- 电影列表 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/filmListMoviesTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:text="@{data.viewBean.films}"
+            app:layout_constraintTop_toBottomOf="@+id/filmListTitleTv"
+            app:layout_constraintLeft_toLeftOf="@+id/filmListTitleTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="电影/电影/电影/电影/电影/电影/电影/电影/电影/电影/电影"
+            />
+
+        <!-- 收藏数 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/filmListCollectCountTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_3px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            app:layout_constraintTop_toBottomOf="@+id/filmListMoviesTv"
+            app:layout_constraintLeft_toLeftOf="@+id/filmListTitleTv"
+            tools:text="9999 收藏"
+            />
+
+        <!-- 用户头像 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/filmListAuthorImgCard"
+            android:layout_width="@dimen/offset_40px"
+            android:layout_height="@dimen/offset_40px"
+            android:layout_marginTop="@dimen/offset_26px"
+            app:cardCornerRadius="@dimen/offset_20px"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/filmListCollectCountTv"
+            app:layout_constraintLeft_toLeftOf="@+id/filmListTitleTv"
+            >
+
+            <!-- 用户头像 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/filmListAuthorImgIv"
+                style="@style/MatchMatch"
+                android:src="@drawable/default_user_head"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.viewBean.authorImg}"
+                load_image_default_img="@{@drawable/default_user_head}"
+                load_image_width="@{20}"
+                load_image_height="@{20}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 用户认证类型 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/filmListAuthorAuthTypeIv"
+            android:layout_width="@dimen/offset_17px"
+            android:layout_height="@dimen/offset_17px"
+            android:layout_marginTop="@dimen/offset_25px"
+            android:layout_marginStart="@dimen/offset_28px"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintLeft_toLeftOf="@+id/filmListAuthorImgCard"
+            app:layout_constraintTop_toTopOf="@+id/filmListAuthorImgCard"
+            tools:src="@drawable/ic_jigourenzheng"
+            />
+
+        <!-- 用户昵称 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/filmListAuthorNameTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_8798af"
+            android:textStyle="bold"
+            android:text="@{data.viewBean.authorName}"
+            app:layout_constraintTop_toTopOf="@+id/filmListAuthorImgCard"
+            app:layout_constraintBottom_toBottomOf="@+id/filmListAuthorImgCard"
+            app:layout_constraintLeft_toRightOf="@+id/filmListAuthorImgCard"
+            tools:text="我是一只小老虎我是一只小老虎我是一只小老虎我是一只小老虎我是一只小老虎"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

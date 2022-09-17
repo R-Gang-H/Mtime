@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_cinema_list_search_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    >
+
+    <!-- 搜索结果_影院列表 -->
+    <com.aspsine.irecyclerview.IRecyclerView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout_cinema_list_search_irecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:loadMoreEnabled="false"
+        app:refreshEnabled="false"
+        />
+
+    <!-- 空提示 -->
+    <include
+        layout="@layout/layout_cinema_list_search_empty"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/offset_335dp"
+    android:layout_height="@dimen/offset_465dp"
+    >
+
+    <!-- 标题区 -->
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_175dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/dialog_member_center_gift_content_title_bg"
+        >
+
+        <!-- 生日Icon/等级Icon -->
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_title"
+            android:layout_marginBottom="@dimen/offset_19dp"
+            tools:src="@drawable/dialog_member_center_gift_content_level"
+            />
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/offset_14dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_32"
+            tools:text="XX会员等级礼包已领取成功"
+            />
+
+    </RelativeLayout>
+
+    <!-- 内容区和按钮 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title"
+        android:background="@drawable/dialog_member_center_gift_content_white_bg"
+        >
+
+        <!-- 礼包内容label -->
+        <LinearLayout
+            android:id="@+id/ll_content_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/offset_20dp"
+            >
+
+            <View
+                android:layout_width="@dimen/offset_40dp"
+                android:layout_height="@dimen/offset_0_5dp"
+                android:background="@color/color_d8d8d8"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_5dp"
+                android:src="@drawable/dialog_member_center_gift_content_diamond"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_9dp"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/font_size_pxtosp_24"
+                android:text="@string/gift_content"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_9dp"
+                android:src="@drawable/dialog_member_center_gift_content_diamond"
+                />
+
+            <View
+                android:layout_width="@dimen/offset_40dp"
+                android:layout_height="@dimen/offset_0_5dp"
+                android:layout_marginLeft="@dimen/offset_5dp"
+                android:background="@color/color_d8d8d8"
+                />
+
+        </LinearLayout>
+
+        <!-- 列表(最大高3个半行）-->
+        <com.aspsine.irecyclerview.IRecyclerView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/dialog_member_center_gift_content_rv_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_content_label"
+            android:paddingLeft="@dimen/offset_80dp"
+            android:paddingRight="@dimen/offset_25dp"
+            app:loadMoreEnabled="false"
+            app:refreshEnabled="false"
+            />
+
+        <!-- 提示信息 -->
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_member_center_gift_content_rv_list"
+            android:layout_marginTop="@dimen/offset_20dp"
+            android:layout_marginLeft="@dimen/offset_20dp"
+            android:layout_marginRight="@dimen/offset_20dp"
+            android:gravity="center"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_pxtosp_24"
+            tools:text="购物/购票券已自动发放到您的账号中，记得使用哦！"
+            />
+
+        <!-- 按钮 -->
+        <TextView
+            android:id="@+id/tv_goto_coupon_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/offset_16dp"
+            android:layout_marginRight="@dimen/offset_16dp"
+            android:layout_marginBottom="@dimen/offset_20dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_pxtosp_36"
+            android:background="@drawable/dialog_member_center_gift_content_btn"
+            android:text="@string/check_coupon"
+            />
+
+    </RelativeLayout>
+
+    <!-- 关闭图片 -->
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rl_title"
+        android:layout_alignRight="@+id/rl_title"
+        android:padding="@dimen/offset_20dp"
+        android:src="@drawable/dialog_member_center_close"
+        />
+
+</RelativeLayout>

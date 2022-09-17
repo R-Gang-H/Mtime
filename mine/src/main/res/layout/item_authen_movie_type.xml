@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.AuthMovieTypeBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/offset_24px"
+        android:layout_marginRight="@dimen/offset_20px"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:text="@{data.bean.tag}"
+            android:onClick="@{view->data.onClick(view)}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:paddingLeft="@dimen/offset_10px"
+            android:paddingRight="@dimen/offset_10px"
+            android:id="@+id/tagTv"
+            android:textSize="@dimen/offset_11sp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

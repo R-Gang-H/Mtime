@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="multipleHeader"
+            type="com.kotlin.android.message.widget.MultiplePraiseHeaderView.MultiplePraiseHeader" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/offset_50dp"
+        android:layout_height="@dimen/offset_50dp">
+
+        <com.kotlin.android.message.widget.AuthHeaderView
+            android:id="@+id/iv_fans_head1"
+            authHeader="@{multipleHeader.authHeader1}"
+            headerWidth="@{30}"
+            multiple="@{true}"
+            android:layout_width="@dimen/offset_29dp"
+            android:layout_height="@dimen/offset_29dp"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@drawable/default_user_head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.message.widget.AuthHeaderView
+            android:id="@+id/iv_fans_head2"
+            authHeader="@{multipleHeader.authHeader2}"
+            headerWidth="@{30}"
+            multiple="@{true}"
+            android:layout_width="@dimen/offset_29dp"
+            android:layout_height="@dimen/offset_29dp"
+            android:layout_marginBottom="@dimen/offset_5dp"
+            android:background="@drawable/default_user_head"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/offset_8dp"
+            android:layout_height="@dimen/offset_8dp"
+            android:layout_marginBottom="@dimen/offset_26dp"
+            android:src="@drawable/message_ic_red_point"
+            android:visibility="@{multipleHeader.unread ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

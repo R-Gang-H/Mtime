@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f3f6"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:ignore="ResourceName">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/personalDataRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_personal_data"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/offset_16dp"
+                android:layout_height="@dimen/offset_16dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_label_12_arrow_right"
+                app:tint="@color/color_283748" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f6" />
+
+        <RelativeLayout
+            android:id="@+id/accountSettingRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_account_setting"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/offset_16dp"
+                android:layout_height="@dimen/offset_16dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_label_12_arrow_right"
+                app:tint="@color/color_283748" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pushSettingRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_push_setting"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/offset_16dp"
+                android:layout_height="@dimen/offset_16dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_label_12_arrow_right"
+                app:tint="@color/color_283748" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f6" />
+
+        <RelativeLayout
+            android:id="@+id/shieldingSettingRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_shielding_setting"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/offset_16dp"
+                android:layout_height="@dimen/offset_16dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_label_12_arrow_right"
+                app:tint="@color/color_283748" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/likeUsToScoreRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_like_us_to_score"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/offset_16dp"
+                android:layout_height="@dimen/offset_16dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_label_12_arrow_right"
+                app:tint="@color/color_283748" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f6"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/cancelAccountRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@color/color_ffffff"
+            android:padding="@dimen/offset_15dp">
+
+            <TextView
+                android:id="@+id/cancelAccountTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/mine_cancel_account"
+                android:textColor="@color/color_1d2736"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/cancelAccountTv"
+                android:includeFontPadding="false"
+                android:text="@string/mine_please_contact_customer_service"
+                android:textColor="@color/color_cbd0d7"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:includeFontPadding="false"
+                android:text="400-059-506"
+                android:textColor="@color/color_20a0da"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/exitTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:paddingTop="@dimen/offset_15dp"
+            android:paddingBottom="@dimen/offset_15dp"
+            android:text="@string/mine_logout"
+            android:textColor="@color/color_8798af"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</ScrollView>

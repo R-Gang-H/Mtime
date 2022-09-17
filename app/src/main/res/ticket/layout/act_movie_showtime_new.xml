@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <!-- 搜索title -->
+    <include
+        android:id="@+id/act_movie_showtime_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        layout="@layout/title_movie_showtime"
+        />
+
+    <include
+        android:id="@+id/act_movie_showtime_search_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        layout="@layout/title_bar_search_new"
+        android:visibility="invisible"
+        />
+
+    <!-- 日期滑动列表 -->
+    <HorizontalScrollView
+        android:id="@+id/act_movie_showtime_date_sv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_40dp"
+        android:layout_below="@+id/act_movie_showtime_title"
+        android:background="@color/color_ffffff"
+        android:fadeScrollbars="false"
+        android:scrollbarFadeDuration="0"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/act_movie_showtime_date_list_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            />
+
+    </HorizontalScrollView>
+
+    <!-- 定位失败+影院列表+空提示+排序和筛选 -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/act_movie_showtime_date_sv"
+        layout="@layout/layout_cinema_list_main"
+        />
+
+    <!-- 底部定位条 -->
+    <include
+        layout="@layout/layout_cinema_list_location_bar"
+        />
+
+    <!-- 搜索结果 -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/act_movie_showtime_search_title"
+        layout="@layout/layout_cinema_list_search"
+        />
+
+</RelativeLayout>

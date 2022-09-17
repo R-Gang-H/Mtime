@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/mFamilyDetailAppBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:elevation="0dp">
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:contentScrim="@android:color/transparent"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                        <!-- 头部信息 -->
+                        <include
+                            android:id="@+id/mFamilyDetailHeadLayout"
+                            layout="@layout/layout_family_detail_head"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <!-- title -->
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/mFamilyDetailToolBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="69dp"
+                            app:contentInsetEnd="0dp"
+                            app:contentInsetStart="0dp"
+                            app:layout_collapseMode="pin">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/mFamilyDetailTitleLayoutCl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="25dp">
+
+                                <!-- 返回按钮 -->
+                                <ImageView
+                                    android:id="@+id/mFamilyDetailTitleBackIv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="44dp"
+                                    android:paddingLeft="6dp"
+                                    android:paddingRight="10dp"
+                                    android:src="@drawable/ic_title_bar_36_back"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <!-- 加入按钮 -->
+                                <FrameLayout
+                                    android:id="@+id/mFamilyDetailTitleJoinFl"
+                                    android:layout_width="58dp"
+                                    android:layout_height="25dp"
+                                    app:layout_constraintBottom_toBottomOf="@id/mFamilyDetailTitleBackIv"
+                                    app:layout_constraintRight_toLeftOf="@+id/mFamilyDetailTitleSearchIv"
+                                    app:layout_constraintTop_toTopOf="@id/mFamilyDetailTitleBackIv">
+
+                                    <com.kotlin.android.community.family.component.ui.manage.widget.JoinBtnView
+                                        android:id="@+id/mFamilyDetailTitleJoinTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="@string/community_join_btn"
+                                        android:textColor="@color/color_ffffff"
+                                        android:textSize="14sp" />
+
+                                </FrameLayout>
+                                <!-- 搜索按钮 -->
+                                <ImageView
+                                    android:id="@+id/mFamilyDetailTitleSearchIv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:paddingLeft="15dp"
+                                    android:paddingRight="10dp"
+                                    android:src="@drawable/ic_title_bar_search"
+                                    app:layout_constraintBottom_toBottomOf="@id/mFamilyDetailTitleBackIv"
+                                    app:layout_constraintRight_toLeftOf="@+id/mFamilyDetailTitleMoreIv"
+                                    app:layout_constraintTop_toTopOf="@id/mFamilyDetailTitleBackIv" />
+                                <!-- 更多按钮 -->
+                                <ImageView
+                                    android:id="@+id/mFamilyDetailTitleMoreIv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="15dp"
+                                    android:src="@drawable/ic_title_bar_share_2"
+                                    app:layout_constraintBottom_toBottomOf="@id/mFamilyDetailTitleBackIv"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/mFamilyDetailTitleBackIv" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.appcompat.widget.Toolbar>
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ctlContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_ffffff"
+                        android:elevation="0dp"
+                        android:orientation="vertical"
+                        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+
+                        <LinearLayout
+                            android:id="@+id/llContainerTab"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/offset_44dp"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                                android:id="@+id/tabLayout"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/offset_44dp"
+                                android:layout_weight="1"
+                                android:background="@color/color_ffffff"
+                                app:stl_customTabTextLayoutId="@layout/view_tab_item"
+                                app:stl_customTabTextViewId="@id/mTabTextView"
+                                app:stl_defaultTabTextAllCaps="false"
+                                app:stl_distributeEvenly="false"
+                                app:stl_dividerThickness="0dp"
+                                app:stl_indicatorColor="@color/color_20a0da"
+                                app:stl_indicatorCornerRadius="2dp"
+                                app:stl_indicatorInterpolation="smart"
+                                app:stl_indicatorThickness="4dp"
+                                app:stl_indicatorWidth="16dp"
+                                app:stl_indicatorWithoutPadding="true"
+                                app:stl_titleOffset="auto_center"
+                                app:stl_underlineThickness="0dp"
+                                tools:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/ivAddSection"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="end|center_vertical"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:src="@drawable/ic_add_section"
+                                android:visibility="gone"
+                                tools:visibility="visible" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/color_f3f3f4"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="@dimen/offset_8dp"/>
+
+                        <com.kotlin.android.community.family.component.ui.manage.widget.FamilyFilterView
+                            android:id="@+id/filterView"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/offset_30dp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/mViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+                <!-- 发布按钮 -->
+                <ImageView
+                    android:id="@+id/mFamilyDetailPublishBtnIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="30dp"
+                    android:src="@drawable/ic_community_publish" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <!-- 返回按钮2,在数据为空时使用 -->
+        <ImageView
+            android:id="@+id/mFamilyDetailTitleBackIv2"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/ic_title_bar_back"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</layout>

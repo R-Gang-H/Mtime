@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f3f6"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <RelativeLayout
+        android:id="@+id/manageBlacklistsRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:padding="@dimen/offset_15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/mine_manage_blacklists"
+            android:textColor="@color/color_1d2736"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/offset_16dp"
+            android:layout_height="@dimen/offset_16dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_label_12_arrow_right"
+            app:tint="@color/color_283748" />
+
+    </RelativeLayout>
+
+</LinearLayout>

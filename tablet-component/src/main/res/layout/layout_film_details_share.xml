@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.filmlist.FilmListShareEntity" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mShareLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/mNestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/offset_15dp"
+                android:paddingEnd="@dimen/offset_15dp">
+
+                <ImageView
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/iv_coverUrl"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_360px"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_userAvatarUrl"
+                    load_image="@{bean.userAvatarUrl}"
+                    load_image_circle_crop="@{true}"
+                    load_image_default_img="@{@drawable/default_user_head}"
+                    load_image_height="@{19}"
+                    load_image_width="@{19}"
+                    android:layout_width="@dimen/offset_38px"
+                    android:layout_height="@dimen/offset_38px"
+                    android:layout_marginStart="@dimen/offset_28px"
+                    android:layout_marginTop="@dimen/offset_12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_userNickName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_5dp"
+                    android:layout_marginTop="@dimen/offset_26px"
+                    android:text="@{bean.userNickName}"
+                    app:layout_constraintStart_toEndOf="@id/iv_userAvatarUrl"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/close"
+                    android:layout_width="@dimen/offset_16dp"
+                    android:layout_height="@dimen/offset_16dp"
+                    android:layout_marginTop="@dimen/offset_10dp"
+                    android:layout_marginEnd="@dimen/offset_10dp"
+                    android:background="@drawable/ic_title_bar_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_140px"
+                    android:text="@{bean.title}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/offset_22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="漫威进阶影片推荐" />
+
+                <TextView
+                    android:id="@+id/tv_synopsis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_28px"
+                    android:layout_marginTop="@dimen/offset_6dp"
+                    android:layout_marginEnd="@dimen/offset_28px"
+                    android:gravity="center"
+                    android:text="@{bean.synopsis}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"
+                    tools:text="精心挑选的近期热门漫威高分科幻电影，一共" />
+
+                <View
+                    android:id="@+id/view_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/offset_10dp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_coverUrl"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_ffffff"
+                    android:paddingBottom="@dimen/offset_20dp"
+                    app:layout_constraintBottom_toTopOf="@id/tvText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_top">
+
+<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/offset_15dp"-->
+<!--                        android:layout_marginTop="@dimen/offset_20dp"-->
+<!--                        android:layout_marginEnd="@dimen/offset_15dp"-->
+<!--                        android:visibility="@{bean.shareMovies.size() == 0 ? View.VISIBLE : View.GONE}"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="@dimen/offset_15dp"-->
+<!--                            android:layout_height="@dimen/offset_14dp"-->
+<!--                            android:background="@drawable/ic_icon_label_number"-->
+<!--                            android:gravity="center|top"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:textSize="@dimen/offset_8sp"-->
+<!--                            app:layout_constraintStart_toStartOf="@id/iv_imageUrl"-->
+<!--                            app:layout_constraintTop_toTopOf="@id/iv_imageUrl"-->
+<!--                            tools:text="1" />-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/iv_imageUrl"-->
+<!--                            android:layout_width="@dimen/offset_190px"-->
+<!--                            android:layout_height="@dimen/offset_252px"-->
+<!--                            android:background="@drawable/icon_film_list_bg_v"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:ellipsize="end"-->
+<!--                            android:gravity="center"-->
+<!--                            android:lines="1"-->
+<!--                            android:text="速度与激情"-->
+<!--                            android:textColor="@color/color_030303"-->
+<!--                            android:textSize="@dimen/offset_14sp"-->
+<!--                            app:layout_constraintEnd_toEndOf="@id/iv_imageUrl"-->
+<!--                            app:layout_constraintStart_toStartOf="@id/iv_imageUrl"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/iv_imageUrl"-->
+<!--                            tools:text="钢铁侠" />-->
+<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mRecycleView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/offset_15dp"
+                        android:layout_marginTop="@dimen/offset_20dp"
+                        android:layout_marginEnd="@dimen/offset_15dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:spanCount="3"
+                        tools:listitem="@layout/item_film_details_share_layout" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_ffffff"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/offset_10dp"
+                    android:text="@string/tablet_film_details_msg"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/mConstraintLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_list" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvText">
+
+                    <ImageView
+                        android:id="@+id/iv_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/offset_15dp"
+                        android:layout_marginTop="@dimen/offset_54px"
+                        android:background="@drawable/icon_label_share"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/offset_20dp"
+                        android:text="@string/tablet_film_details_mtime"
+                        android:textColor="@color/color_8798af"
+                        android:textSize="@dimen/offset_16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/iv_label"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_label" />
+
+                    <ImageView
+                        android:id="@+id/iv_share_code"
+                        android:layout_width="@dimen/offset_61dp"
+                        android:layout_height="@dimen/offset_61dp"
+                        android:layout_marginTop="@dimen/offset_28px"
+                        android:layout_marginEnd="@dimen/offset_28px"
+                        android:layout_marginBottom="@dimen/offset_10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_260px"
+            android:layout_marginTop="@dimen/offset_30dp"
+            android:background="@color/color_f2f3f6">
+
+            <TextView
+                android:id="@+id/share_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_26px"
+                android:text="@string/tablet_film_details_share"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_20dp"
+                android:layout_marginTop="@dimen/offset_17dp"
+                android:layout_marginEnd="@dimen/offset_20dp"
+                android:layout_marginBottom="@dimen/offset_16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/share_title">
+
+                <LinearLayout
+                    android:id="@+id/mWechat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_wechat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_6dp"
+                        android:text="@string/tablet_film_share_wechat"
+                        android:textColor="@color/color_303a47"
+                        android:textSize="@dimen/offset_12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mWechatTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_wechat_time" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_6dp"
+                        android:text="@string/tablet_film_share_wechat_time"
+                        android:textColor="@color/color_303a47"
+                        android:textSize="@dimen/offset_12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mQQ"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_qq" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_6dp"
+                        android:text="@string/tablet_film_share_qq"
+                        android:textColor="@color/color_303a47"
+                        android:textSize="@dimen/offset_12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mWeiBo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_sina" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_6dp"
+                        android:text="@string/tablet_film_share_sing"
+                        android:textColor="@color/color_303a47"
+                        android:textSize="@dimen/offset_12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

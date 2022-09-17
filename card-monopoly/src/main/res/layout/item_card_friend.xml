@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.card.monopoly.adapter.CardFriendItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_188px">
+
+        <com.kotlin.android.card.monopoly.widget.CircleImageView
+            android:id="@+id/civAvatar"
+            android:layout_width="@dimen/offset_110px"
+            android:layout_height="@dimen/offset_110px"
+            android:src="@drawable/default_user_head"
+            app:civ_border_color="@color/color_e3e5ed"
+            app:civ_border_width="@dimen/offset_2px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.card.monopoly.widget.nickname.NickNameView
+            android:id="@+id/tvName"
+            style="@style/WrapAuto"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:layout_marginTop="@dimen/offset_34px"
+            android:text="@{data.cardBean.nickName}"
+            android:textColor="@color/color_4e5e73"
+            android:lines="1"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/offset_230px"
+            android:textSize="@dimen/font_size_sp_16"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/civAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="跌势的泡沫" />
+
+        <LinearLayout
+            android:id="@+id/llSuit"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_40px"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:layout_marginTop="@dimen/offset_16px"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/civAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/tvName">
+
+            <ImageView
+                android:layout_width="@dimen/offset_28px"
+                android:layout_height="@dimen/offset_28px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/offset_6px"
+                android:src="@drawable/ic_suit_" />
+
+            <TextView
+                android:id="@+id/tvSuit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/offset_4px"
+                android:gravity="center_vertical"
+                android:paddingEnd="@dimen/offset_6px"
+                android:text="@{String.valueOf(data.cardBean.suitCount)}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="9999999套" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_40px"
+            android:layout_marginStart="@dimen/offset_22px"
+            android:layout_marginTop="@dimen/offset_16px"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/llSuit"
+            app:layout_constraintTop_toBottomOf="@+id/tvName">
+
+            <ImageView
+                android:layout_width="@dimen/offset_28px"
+                android:layout_height="@dimen/offset_28px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/offset_6px"
+                android:src="@drawable/ic_coin_icon" />
+
+            <TextView
+                android:id="@+id/tvIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/offset_4px"
+                android:gravity="center_vertical"
+                android:paddingEnd="@dimen/offset_6px"
+                android:text="@{String.valueOf(data.cardBean.cardGold)}"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="9999999套" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSeat"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/offset_60px"
+            android:layout_marginTop="@dimen/offset_34px"
+            android:orientation="horizontal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/card_empty_seat"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_11sp" />
+
+            <com.kotlin.android.card.monopoly.widget.CardSeatProgressView
+                android:id="@+id/cardProgerss"
+                android:layout_width="@dimen/offset_110px"
+                android:layout_height="@dimen/offset_26px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/offset_8px"
+                android:layout_marginEnd="@dimen/offset_8px"
+                app:cpv_border_padding="@dimen/offset_1px"
+                app:cpv_border_radius="@dimen/offset_2px"
+                app:cpv_border_width="@dimen/offset_2px" />
+
+            <TextView
+                android:id="@+id/tvSeatProgress"
+                android:layout_width="@dimen/offset_60px"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_11sp"
+                tools:text="56565/20" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

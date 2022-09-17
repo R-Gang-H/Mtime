@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/offset_24px"
+    android:paddingEnd="@dimen/offset_28px">
+
+    <TextView
+        android:id="@+id/tvTag"
+        android:layout_width="@dimen/offset_108px"
+        android:layout_height="@dimen/offset_52px"
+        android:background="@color/color_f2f3f6"
+        android:gravity="center"
+        android:textColor="@color/color_8798af"
+        android:textSize="@dimen/offset_13sp"
+        tools:text="全部" />
+
+</RelativeLayout>

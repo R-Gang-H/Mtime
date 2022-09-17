@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffff"
+        android:paddingTop="@dimen/offset_30px"
+        tools:context=".ui.datacenter.fragment.EarthFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tagRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_15dp"
+                android:layout_marginEnd="@dimen/offset_15dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/mine_item_tag_data_center" />
+
+            <include
+                android:id="@+id/commonPer"
+                layout="@layout/mine_common_performs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tagRv"
+                android:layout_marginBottom="@dimen/offset_48px" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

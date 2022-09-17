@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp">
+
+    <TextView
+        android:id="@+id/item_movie_details_event_num_tv"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="21sp"
+        android:textColor="#36c096"
+        android:textStyle="bold|italic"
+        android:text="1."
+        />
+
+    <TextView
+        android:id="@+id/item_movie_details_event_content_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/item_movie_details_event_num_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:lineSpacingMultiplier="1.2"
+        android:paddingTop="3dp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        android:textColor="#4e5e73"
+        tools:text="“哥斯拉”是影史最著名的怪兽形象之一，也是日本战后流行文化的标志性符号之一，并对日本、欧美等诸多怪兽作品影响深远。"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

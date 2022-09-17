@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/offset_20px"
+    android:paddingBottom="@dimen/offset_20px">
+
+    <!-- 请到影院现场用时光网取票机取票 -->
+    <TextView
+        android:paddingLeft="@dimen/offset_10px"
+        android:paddingRight="@dimen/offset_10px"
+        android:id="@+id/exchange_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ticket_top_bg"
+        android:gravity="center_horizontal"
+        android:text="请到影院现场用时光网取票机取票"
+        android:textColor="@color/color_777777"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_marginLeft="@dimen/offset_5dp"
+        android:layout_marginRight="@dimen/offset_5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@drawable/ticket_code_line" />
+    <!-- 兑换码：xxx -->
+    <LinearLayout
+        android:paddingLeft="@dimen/offset_10px"
+        android:paddingRight="@dimen/offset_10px"
+        android:id="@+id/old_exchange_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ticket_code_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/st_exchange"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_xlarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_xlarge"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="@dimen/offset_10px"
+        android:paddingRight="@dimen/offset_10px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ticket_code_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/offset_28px"
+        android:paddingBottom="@dimen/offset_36px">
+
+        <com.mtime.bussiness.ticket.movie.widget.MyListView
+            android:id="@+id/exchange_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:visibility="gone"></com.mtime.bussiness.ticket.movie.widget.MyListView>
+
+        <LinearLayout
+            android:id="@+id/only_one_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ticket_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_15sp" />
+
+            <TextView
+                android:id="@+id/ticket_code_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/offset_4dp"
+                android:paddingBottom="@dimen/offset_8dp"
+                android:textColor="@color/color_f97d3f"
+                android:textSize="@dimen/font_size_25sp" />
+
+            <TextView
+                android:id="@+id/tel_phone_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_15sp" />
+
+            <ImageView
+                android:id="@+id/layout_ticket_direct_sale_order_top_state_success_qr_code_iv"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:visibility="gone"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_marginRight="@dimen/offset_5dp"
+        android:layout_marginLeft="@dimen/offset_5dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_0_5dp"
+        android:background="@drawable/ticket_code_line" />
+
+    <!-- 重发短信 -->
+    <TextView
+        android:paddingLeft="@dimen/offset_10px"
+        android:paddingRight="@dimen/offset_10px"
+        android:id="@+id/sent_exchangeCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ticket_bottom_bg"
+        android:gravity="center_horizontal"
+        android:text="@string/recent_msg"
+        android:textColor="@color/color_f97d3f"
+        android:textSize="@dimen/font_size_15sp"
+        android:visibility="gone"
+        />
+
+    <include layout="@layout/item_buy_ticket_success_ad_banner"
+        />
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/offset_1px"-->
+    <!--android:layout_marginTop="@dimen/offset_34px"-->
+    <!--android:background="@color/color_d8d8d8" />-->
+
+</LinearLayout>

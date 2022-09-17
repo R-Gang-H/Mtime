@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.ContributeShortlistBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/mNumTv"
+            android:layout_width="@dimen/offset_46px"
+            android:layout_height="@dimen/offset_54px"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:gravity="center"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="4" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mUserPicIv"
+            load_image="@{data.data.userAvatarUrl}"
+            load_image_circle_crop="@{true}"
+            load_image_height="@{62}"
+            load_image_width="@{62}"
+            load_image_default_img="@{@drawable/default_circle_image}"
+            android:layout_width="@dimen/offset_125px"
+            android:layout_height="@dimen/offset_125px"
+            android:layout_margin="@dimen/offset_16px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mNumTv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/color_1d2736" />
+
+        <TextView
+            android:id="@+id/mUserNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_14px"
+            android:layout_marginTop="@dimen/offset_34px"
+            android:text="@{data.data.userNickName}"
+            android:textColor="@color/color_1d2736"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintStart_toEndOf="@id/mUserPicIv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mGoUserInfoIv"
+            tools:text="孤岛少年电影" />
+
+        <TextView
+            android:id="@+id/mNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_14px"
+            android:layout_marginTop="@dimen/offset_5px"
+            android:text="@{@string/tablet_film_list_num_finalists(String.valueOf(data.data.numFinalists))}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintStart_toEndOf="@id/mUserPicIv"
+            app:layout_constraintTop_toBottomOf="@id/mUserNameTv"
+            tools:text="20次入围" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mGoUserInfoIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:src="@drawable/ic_label_12_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

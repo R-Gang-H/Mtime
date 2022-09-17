@@ -1,0 +1,58 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="24dp"
+        android:height="24dp"
+        android:viewportWidth="24"
+        android:viewportHeight="24">
+<!--    <path-->
+<!--        android:pathData="M0,0 h24 v24 h-24"-->
+<!--        android:fillColor="#FF000000"/>-->
+
+    <path
+        android:pathData="M12,1 a11,11 0 1 0 0.0001 0"
+        android:strokeWidth="1.4"
+        android:strokeColor="#FFFFFF"
+        android:fillColor="#00000000"/>
+
+<!--    <path-->
+<!--        android:pathData="M6,6 h12 v12 h-12"-->
+<!--        android:fillColor="#A83838"/>-->
+
+<!--    <path-->
+<!--        android:pathData="M6,7.4 l4.6,4.6 l-4.6,4.6 a1,1 0 0 0 1.4,1.4 l4.6,-4.6 l4.6,4.6 a1,1 0 0 0 1.4,-1.4 l-4.6,-4.6 l4.6,-4.6 a1,1 0 0 0 -1.4,-1.4 l-4.6,4.6 l-4.6,-4.6 a1,1 0 0 0 -1.4,1.4"-->
+<!--        android:strokeWidth="2"-->
+<!--        android:fillColor="#FFFFFF"/>-->
+
+<!--    <path-->
+<!--        android:pathData="-->
+<!--        M6,7.6 l4.4,4.4 l-4.4,4.4-->
+<!--        l1.6,1.6 l4.4,-4.4 l4.4,4.4-->
+<!--        l1.6,-1.6 l-4.4,-4.4 l4.4,-4.4-->
+<!--        l-1.6,-1.6 l-4.4,4.4 l-4.4,-4.4-->
+<!--        l-1.6,1.6"-->
+<!--        android:fillColor="#7E1A1A"/>-->
+<!--    <path-->
+<!--        android:pathData="-->
+<!--        M6.4,8 l4,4 l-4,4-->
+<!--        a1,1 0 0 0 1.6,1.6 l4,-4 l4,4-->
+<!--        l1.6,-1.6 l-4,-4 l4,-4-->
+<!--        l-1.6,-1.6 l-4,4 l-4,-4-->
+<!--        l-1.6,1.6"-->
+<!--        android:fillColor="#3B69AE"/>-->
+<!--    <path-->
+<!--        android:pathData="-->
+<!--        M6.4,8 l4,4 l-4,4-->
+<!--        a1,1 0 0 0 1.6,1.6 l4,-4 l4,4-->
+<!--        a1,1 0 0 0 1.6,-1.6 l-4,-4 l4,-4-->
+<!--        a1,1 0 0 0 -1.6,-1.6 l-4,4 l-4,-4-->
+<!--        a1,1 0 0 0 -1.6,1.6"-->
+<!--        android:fillColor="#FFFFFF"/>-->
+
+    <path
+        android:pathData="
+        M7,8.6 l3.4,3.4 l-3.4,3.4
+        a1,1 0 0 0 1.6,1.6 l3.4,-3.4 l3.4,3.4
+        a1,1 0 0 0 1.6,-1.6 l-3.4,-3.4 l3.4,-3.4
+        a1,1 0 0 0 -1.6,-1.6 l-3.4,3.4 l-3.4,-3.4
+        a1,1 0 0 0 -1.6,1.6"
+        android:fillColor="#FFFFFF"/>
+</vector>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layout_cinema_list_filter_root_rl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <!-- 遮盖层 -->
+    <ImageView
+        android:id="@+id/layout_cinema_list_filter_cover_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_66000000"
+        android:visibility="gone"
+        />
+
+    <!-- 排序层 -->
+    <RelativeLayout
+        android:id="@+id/layout_cinema_list_filter_sort_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_40dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/layout_cinema_list_filter_sort_distance_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_40dp"
+            android:paddingLeft="@dimen/offset_30dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/font_size_15sp"
+            android:textColor="@color/color_f97d3f"
+            android:text="@string/nearest"
+            />
+
+        <View
+            android:id="@+id/layout_cinema_list_filter_sort_split_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_0_5dp"
+            android:layout_below="@+id/layout_cinema_list_filter_sort_distance_tv"
+            android:layout_centerVertical="true"
+            android:background="@color/color_d8d8d8"
+            />
+
+        <TextView
+            android:id="@+id/layout_cinema_list_filter_sort_price_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_40dp"
+            android:layout_below="@+id/layout_cinema_list_filter_sort_split_view"
+            android:paddingLeft="@dimen/offset_30dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/font_size_15sp"
+            android:textColor="@color/color_777777"
+            android:text="@string/lowest_price"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_0_5dp"
+            android:layout_below="@+id/layout_cinema_list_filter_sort_price_tv"
+            android:layout_centerVertical="true"
+            android:background="@color/color_d8d8d8"
+            />
+
+    </RelativeLayout>
+
+    <!-- 全城_商圈|地铁层 -->
+    <LinearLayout
+        android:id="@+id/layout_cinema_list_filter_district_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_340dp"
+        android:layout_marginTop="@dimen/offset_40dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <!-- 商圈|地铁_tab -->
+        <com.kekstudio.dachshundtablayout.DachshundTabLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/layout_cinema_list_filter_district_subway_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_40dp"
+            app:tabMinWidth="@dimen/offset_340dp"
+            custom:ddIndicatorHeight="@dimen/offset_2dp"
+            app:tabIndicatorColor="@color/color_777777"
+            app:tabSelectedTextColor="@color/color_f97d3f"
+            app:tabTextColor="@color/color_777777"
+            app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+            custom:ddAnimatedIndicator="dachshund"
+            android:background="@color/white"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_0_5dp"
+            android:background="@color/color_d8d8d8"
+            />
+
+        <!-- ViewPager -->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/layout_cinema_list_filter_district_subway_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            />
+
+    </LinearLayout>
+
+    <!-- 影厅特效 -->
+    <RelativeLayout
+        android:id="@+id/layout_cinema_list_filter_effect_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_40dp"
+        android:paddingTop="@dimen/offset_20dp"
+        android:paddingBottom="@dimen/offset_20dp"
+        android:paddingLeft="@dimen/offset_5dp"
+        android:paddingRight="@dimen/offset_5dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        >
+
+        <GridView
+            android:id="@+id/layout_cinema_list_filter_feature_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:numColumns="4"
+            android:horizontalSpacing="@dimen/offset_5dp"
+            android:verticalSpacing="@dimen/offset_10dp"
+            android:stretchMode="columnWidth"
+            />
+
+    </RelativeLayout>
+
+    <!-- 排序&筛选Tab -->
+    <LinearLayout
+        android:id="@+id/layout_cinema_list_filter_tab_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_40dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+
+        <!-- 排序 -->
+        <RelativeLayout
+            android:id="@+id/layout_cinema_list_filter_tab_sort_rl"
+            android:layout_width="@dimen/offset_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/layout_cinema_list_filter_tab_sort_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_777777"
+                    android:textSize="@dimen/font_size_13sp"
+                    android:text="@string/nearest"
+                    />
+
+                <ImageView
+                    android:id="@+id/layout_cinema_list_filter_tab_sort_arrow_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_4dp"
+                    android:src="@drawable/arrow_cinema_sort_down"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/offset_0_5dp"
+                android:layout_height="@dimen/offset_15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/color_d8d8d8" />
+
+        </RelativeLayout>
+
+        <!-- 全城_商圈|地铁 -->
+        <RelativeLayout
+            android:id="@+id/layout_cinema_list_filter_tab_district_rl"
+            android:layout_width="@dimen/offset_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/layout_cinema_list_filter_tab_district_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_777777"
+                    android:maxWidth="@dimen/offset_96dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/font_size_13sp"
+                    android:text="@string/whole_city"
+                    />
+
+                <ImageView
+                    android:id="@+id/layout_cinema_list_filter_tab_district_arrow_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_4dp"
+                    android:src="@drawable/arrow_cinema_sort_down"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/offset_0_5dp"
+                android:layout_height="@dimen/offset_15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/color_d8d8d8"
+                />
+
+        </RelativeLayout>
+
+        <!-- 特效 -->
+        <RelativeLayout
+            android:id="@+id/layout_cinema_list_filter_tab_effect_rl"
+            android:layout_width="@dimen/offset_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/layout_cinema_list_filter_tab_effect_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_777777"
+                    android:maxWidth="@dimen/offset_96dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/font_size_13sp"
+                    android:text="@string/hall_effects"
+                    />
+
+                <ImageView
+                    android:id="@+id/layout_cinema_list_filter_tab_effect_arrow_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/offset_4dp"
+                    android:src="@drawable/arrow_cinema_sort_down"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/offset_0_5dp"
+                android:layout_height="@dimen/offset_15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/color_d8d8d8"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_0_5dp"
+        android:layout_below="@+id/layout_cinema_list_filter_tab_ll"
+        android:background="@color/color_d8d8d8" />
+
+</RelativeLayout>

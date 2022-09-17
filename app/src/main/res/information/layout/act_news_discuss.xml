@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 标题 -->
+
+    <include
+        android:id="@+id/navigationbar"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <!-- 底部输入框 -->
+
+    <include
+        android:id="@+id/comment_bottom"
+        layout="@layout/bottom_bar_movie_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <!-- 中间ListView区域 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/comment_bottom"
+        android:layout_below="@id/navigationbar"
+        android:orientation="vertical">
+
+        <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            app:loadMoreEnabled="true"
+            app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+            app:refreshEnabled="true"
+            app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
+
+        <LinearLayout
+            android:id="@+id/no_info_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/img_sofa" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_30px"
+                android:text="@string/sofa"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/font_size_normal_high" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

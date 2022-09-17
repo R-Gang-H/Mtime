@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/offset_34px" >
+    
+    <TextView 
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_0075C4"
+        android:layout_marginTop="@dimen/margin_top_14_5dp"
+        android:layout_marginLeft="@dimen/margin_left_15_5dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        />
+    
+    <!--  -->
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/year"
+        android:layout_below="@id/year"
+        android:layout_marginTop="@dimen/margin_top_5"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        />
+
+    <TextView 
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/year"
+        android:layout_below="@id/header"
+        android:layout_marginTop="@dimen/margin_top_13_5"
+        android:textSize="16sp"
+        android:textColor="@color/color_333333"
+        />
+    
+    <TextView 
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/year"
+        android:lineSpacingExtra="5dp"
+        android:layout_below="@id/title"
+        android:layout_marginTop="@dimen/margin_top_3_5"
+        android:textSize="14sp"
+        android:textColor="@color/color_333333"
+        android:singleLine="false"
+        />
+    
+    <ImageView
+        android:layout_below="@id/content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_top_14_5dp"
+        android:background="#00000000"
+        android:contentDescription="@string/app_name"
+        />
+</RelativeLayout>

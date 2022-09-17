@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <!-- 白色背景 -->
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="@dimen/offset_0px"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!-- 搜索 -->
+    <TextView
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:textColor="@color/color_20a0da"
+        android:textStyle="bold"
+        android:textSize="@dimen/offset_17sp"
+        android:text="@string/search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
+        />
+
+    <!-- 取消 -->
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:textColor="@color/color_20a0da"
+        android:textStyle="bold"
+        android:textSize="@dimen/offset_17sp"
+        android:text="@string/cancel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="visible"
+        />
+
+    <!-- 搜索区域 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_region"
+        android:layout_width="@dimen/offset_0px"
+        android:layout_height="@dimen/offset_62px"
+        android:layout_marginStart="@dimen/offset_30px"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:background="@drawable/title_search_new_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/back"
+        >
+
+        <!-- 搜索文字区 -->
+        <EditText
+            android:id="@+id/search_content"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_62px"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginEnd="@dimen/offset_6px"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_home_search"
+            android:drawablePadding="@dimen/offset_10px"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:gravity="left|center_vertical"
+            android:imeOptions="actionSearch"
+            android:textColorHint="@color/color_cbd0d7"
+            android:hint="@string/title_search_hint"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/cancel"
+            />
+
+        <!-- 清空按钮 gone -->
+        <ImageButton
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_20px"
+            android:background="@drawable/common_icon_delete"
+            android:contentDescription="@string/app_name"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/offset_12dp"
+        android:paddingLeft="@dimen/offset_12dp"
+        android:paddingRight="@dimen/offset_12dp"
+        android:paddingTop="@dimen/offset_12dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pull_to_refresh_ad_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:singleLine="true"
+                android:textColor="#777777"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/pull_to_refresh_ad_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/pull_34px"
+                android:layout_marginTop="@dimen/pull_34px"
+                android:drawableLeft="@drawable/pulltorefresh_ad_mark"
+                android:drawablePadding="5dp"
+                android:gravity="top"
+                android:singleLine="true"
+                android:textColor="#777777"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/default_ptr_flip" />
+
+                    <ProgressBar
+                        android:id="@+id/progressbar"
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pull_30px"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvRefresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="#bbbbbb"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!--<ImageView-->
+    <!--android:id="@+id/ivArrow"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginRight="48dp"-->
+    <!--android:layout_toLeftOf="@+id/tvRefresh"-->
+    <!--android:background="@drawable/default_ptr_flip" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/ivSuccess"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="48dp"-->
+        <!--android:layout_toLeftOf="@+id/tvRefresh"-->
+        <!--android:background="@drawable/check_on" />-->
+
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progressbar"-->
+        <!--style="?android:attr/progressBarStyleSmallInverse"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="48dp"-->
+        <!--android:layout_toLeftOf="@+id/tvRefresh" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvRefresh"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:gravity="center" />-->
+
+</merge>

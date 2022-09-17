@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dlg_two_button_bg"
+        android:paddingTop="30dp">
+
+        <TextView
+            android:id="@+id/dlg_content_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:textColor="@color/color_3A4A5E"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/h_divider_v"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/color_f2f3f6"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dlg_content_tv" />
+
+        <TextView
+            android:id="@+id/negative_button_tv"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:textColor="@color/color_4E5E73"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/v_divider_v"
+            app:layout_constraintTop_toBottomOf="@id/h_divider_v" />
+
+        <View
+            android:id="@+id/v_divider_v"
+            android:layout_width="1dp"
+            android:layout_height="42dp"
+            android:background="@color/color_f2f3f6"
+            app:layout_constraintLeft_toRightOf="@id/negative_button_tv"
+            app:layout_constraintRight_toLeftOf="@id/positive_button_tv"
+            app:layout_constraintTop_toBottomOf="@id/h_divider_v" />
+
+        <TextView
+            android:id="@+id/positive_button_tv"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:textColor="@color/color_20A0DA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/v_divider_v"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/h_divider_v" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

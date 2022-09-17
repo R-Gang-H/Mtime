@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:elevation="0dp">
+                
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mBannerViewCl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll">
+
+                    <com.kotlin.android.widget.banner.Banner
+                        android:id="@+id/mBannerView"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintDimensionRatio="h,1:0.406"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+                    
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.ogaclejapan.smarttablayout.SmartTabLayout
+                    android:id="@+id/mTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingStart="7dp"
+                    android:paddingEnd="7dp"
+                    android:clipToPadding="false"
+                    app:stl_customTabTextLayoutId="@layout/view_zhong_cao_sub_tab_item"
+                    app:stl_customTabTextViewId="@id/mTabTextView"
+                    app:stl_defaultTabTextAllCaps="false"
+                    app:stl_distributeEvenly="false"
+                    app:stl_dividerThickness="0dp"
+                    app:stl_indicatorColor="@color/color_20a0da"
+                    app:stl_indicatorCornerRadius="2dp"
+                    app:stl_indicatorInterpolation="smart"
+                    app:stl_indicatorThickness="4dp"
+                    app:stl_indicatorWidth="16dp"
+                    app:stl_indicatorWithoutPadding="true"
+                    app:stl_titleOffset="auto_center"
+                    app:stl_underlineThickness="0dp" />
+                
+            </com.google.android.material.appbar.AppBarLayout>
+            
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/mViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

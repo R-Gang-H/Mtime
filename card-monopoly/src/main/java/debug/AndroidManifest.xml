@@ -1,0 +1,70 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.card.monopoly">
+
+    <application
+        android:name="com.kotlin.android.core.CoreApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_module"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_module_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.CardMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.robot.CardRobotActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.suit.SuitActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.suit.detail.SuitDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.prop.PropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.store.StoreActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.wish.WishingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.auction.AuctionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.deal.DealRecordsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <!--卡片大富翁-我的卡友-->
+        <activity
+            android:name=".ui.friend.CardFriendActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <!--限量套装排行-->
+        <activity
+            android:name=".ui.suit.detail.SuitRankingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+        <activity
+            android:name=".ui.guide.GameGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImmersiveTheme" />
+    </application>
+</manifest>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_24px">
+
+        <View
+            android:id="@+id/vRoundDot"
+            viewRadius="@{6}"
+            android:layout_width="@dimen/offset_12px"
+            android:layout_height="@dimen/offset_12px"
+            android:layout_marginTop="@dimen/offset_12px"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rankTitle"
+            tools:background="@color/color_feb12a" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rankTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_16px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintStart_toEndOf="@id/vRoundDot"
+            app:layout_constraintTop_toTopOf="@id/vRoundDot"
+            tools:text="什么是等级？" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rankContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_10px"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/offset_28px"
+            app:layout_constraintStart_toStartOf="@id/rankTitle"
+            app:layout_constraintTop_toBottomOf="@id/rankTitle"
+            tools:text="@string/rank_problem_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

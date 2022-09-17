@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp">
+    
+    <TextView
+        android:id="@+id/findFilmTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/color_303a47"
+        android:text="@string/home_ball_find_film"
+        android:gravity="center"
+        android:drawablePadding="2dp"
+        app:drawableTopCompat="@drawable/ic_home_ball_find_film" />
+    
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/findFamilyTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/color_303a47"
+        android:text="@string/home_ball_find_family"
+        android:gravity="center"
+        android:drawablePadding="2dp"
+        app:drawableTopCompat="@drawable/ic_home_ball_find_family"
+        />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/gameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/color_303a47"
+        android:text="@string/home_ball_game"
+        android:gravity="center"
+        android:drawablePadding="2dp"
+        app:drawableTopCompat="@drawable/ic_home_ball_game"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/liveTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/color_303a47"
+        android:text="@string/home_ball_live"
+        android:gravity="center"
+        android:drawablePadding="2dp"
+        app:drawableTopCompat="@drawable/ic_home_ball_live" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/zaoWuSheTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/color_303a47"
+        android:text="@string/home_ball_zaowushe"
+        android:gravity="center"
+        android:drawablePadding="2dp"
+        app:drawableTopCompat="@drawable/ic_home_ball_zaowushe" />
+
+</LinearLayout>
+</layout>

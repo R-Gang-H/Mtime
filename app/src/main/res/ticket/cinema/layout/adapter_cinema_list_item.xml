@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <!-- 收藏Icon -->
+    <ImageView
+        android:id="@+id/adapter_cinema_list_item_fav_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_cinema_list_fav"
+        />
+
+    <!-- 影院名+去过Icon+价格 -->
+    <RelativeLayout
+        android:id="@+id/adapter_cinema_list_item_name_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_15dp"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        >
+
+        <!-- 影院名 -->
+        <TextView
+            android:id="@+id/adapter_cinema_list_item_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:maxWidth="@dimen/offset_225dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_normal_high"
+            tools:text="影院名影院名影院名影院名影院名影院名影院名影院名影院名影院名"
+            />
+
+        <!-- 影院直销Icon -->
+        <TextView
+            android:id="@+id/adapter_cinema_list_item_direct_sale_tv"
+            android:layout_width="@dimen/offset_44dp"
+            android:layout_height="@dimen/offset_15dp"
+            android:layout_marginLeft="@dimen/offset_5dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/adapter_cinema_list_item_name_tv"
+            android:background="@drawable/ticket_direct_sale_bg"
+            android:textSize="@dimen/font_size_9sp"
+            android:textColor="@color/white"
+            android:text="@string/cinema_list_direct_sale"
+            />
+
+        <!-- 价格 -->
+        <TextView
+            android:id="@+id/adapter_cinema_list_item_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/adapter_cinema_list_item_price_unit_tv"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/font_size_large"
+            android:textColor="@color/color_ff8600"
+            tools:text="100"
+            />
+
+        <!-- 价格单位 -->
+        <TextView
+            android:id="@+id/adapter_cinema_list_item_price_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/font_size_13sp"
+            android:textColor="@color/color_ff8600"
+            android:text="@string/cinema_list_price_unit"
+            />
+
+    </RelativeLayout>
+
+    <!-- 地址 -->
+    <TextView
+        android:id="@+id/adapter_cinema_list_item_address_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adapter_cinema_list_item_name_rl"
+        android:layout_marginTop="@dimen/offset_7dp"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:maxWidth="@dimen/offset_250dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="@dimen/font_size_13sp"
+        android:textColor="@color/color_777777"
+        tools:text="影院地址影院地址影院地址影院地址影院地址影院地址"
+        />
+
+    <!-- 距离 -->
+    <TextView
+        android:id="@+id/adapter_cinema_list_item_distance_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adapter_cinema_list_item_name_rl"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/offset_7dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        android:maxWidth="310dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="@dimen/font_size_13sp"
+        android:textColor="@color/color_999999"
+        tools:text="离地铁>20.5km"
+        />
+
+    <!-- 特效列表 -->
+    <include
+        layout="@layout/layout_cinema_list_item_feature"
+        />
+
+    <!-- 优惠活动列表 -->
+    <com.aspsine.irecyclerview.IRecyclerView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adapter_cinema_list_item_coupon_irecyclerview"
+        android:layout_width="@dimen/offset_300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_cinema_list_item_feature_ll"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        android:background="@color/white"
+        app:loadMoreEnabled="false"
+        app:refreshEnabled="false"
+        />
+
+    <!-- 优惠活动数 -->
+    <RelativeLayout
+        android:id="@+id/adapter_cinema_list_item_coupon_count_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_30dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/layout_cinema_list_item_feature_ll"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:layout_marginRight="@dimen/offset_15dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            >
+
+            <!-- 数 -->
+            <TextView
+                android:id="@+id/adapter_cinema_list_item_coupon_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/offset_3dp"
+                android:textSize="@dimen/font_size_12sp"
+                android:textColor="@color/color_777777"
+                tools:text="5项优惠"
+                />
+
+            <!-- 箭头 -->
+            <ImageView
+                android:id="@+id/adapter_cinema_list_item_coupon_arrow_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_cinema_list_coupon_down"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- 收藏和去过影院_排片信息 -->
+    <androidx.recyclerview.widget.RecyclerView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adapter_cinema_list_item_showtime_irecyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_60dp"
+        android:layout_marginTop="@dimen/offset_10dp"
+        android:layout_below="@+id/adapter_cinema_list_item_coupon_irecyclerview"
+        android:background="@color/white"
+        />
+
+    <!-- 分隔线 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_15dp"
+        android:layout_below="@+id/adapter_cinema_list_item_showtime_irecyclerview"
+        android:layout_marginLeft="@dimen/offset_10dp"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_0_5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_d8d8d8"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

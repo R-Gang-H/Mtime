@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <!--    用户名-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userNameTitleTv"
+        style="@style/AuthenInputTitleTextView"
+        android:layout_marginTop="@dimen/offset_25px"
+        android:text="@string/mine_authen_user_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    用户名称-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userNameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/userNameTitleTv"
+        android:layout_marginLeft="@dimen/offset_10px"
+        android:gravity="right"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/offset_25px"
+        android:textColor="@color/color_8798af"
+        android:textSize="@dimen/offset_14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="离人心上秋" />
+
+    <View
+        android:id="@+id/userNameLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_1px"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintTop_toBottomOf="@id/userNameTitleTv" />
+
+    <!--    真实姓名-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/realNameTitleTv"
+        style="@style/AuthenInputTitleTextView"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_real_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userNameLine" />
+
+    <!--真实姓名必选提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/realNameTipsTv"
+        style="@style/AuthenMustFillInTips"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="*"
+        app:layout_constraintLeft_toRightOf="@id/realNameTitleTv"
+        app:layout_constraintTop_toBottomOf="@id/userNameLine" />
+
+<!--    真实姓名输入框-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/realNameET"
+        app:layout_constraintTop_toBottomOf="@id/userNameLine"
+        android:hint="@string/mine_authen_please_input_real_name"
+        android:layout_marginTop="@dimen/offset_38px"
+        android:singleLine="true"
+        android:inputType="textPersonName"
+        android:background="@null"
+        app:layout_constraintLeft_toRightOf="@id/realNameTipsTv"
+        style="@style/AuthenInputValueTextView" />
+
+    <View
+        android:id="@+id/realNameLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_1px"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@color/color_f3f3f4"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintTop_toBottomOf="@id/realNameTitleTv" />
+
+<!--    身份证号-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/idCardTitleTv"
+        style="@style/AuthenInputTitleTextView"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_id_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/realNameLine" />
+
+    <!--身份证号必选提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/idCardTipsTv"
+        style="@style/AuthenMustFillInTips"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="*"
+        app:layout_constraintLeft_toRightOf="@id/idCardTitleTv"
+        app:layout_constraintTop_toBottomOf="@id/realNameLine" />
+
+    <!--    身份证号输入框-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/idCardET"
+        app:layout_constraintTop_toBottomOf="@id/realNameLine"
+        android:hint="@string/mine_authen_please_input_id_card"
+        android:layout_marginTop="@dimen/offset_38px"
+        android:singleLine="true"
+        android:background="@null"
+        android:maxEms="18"
+        android:digits="@string/mine_authen_id_digits"
+        app:layout_constraintLeft_toRightOf="@id/idCardTipsTv"
+        style="@style/AuthenInputValueTextView" />
+
+    <View
+        android:id="@+id/idCardLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_1px"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@color/color_f3f3f4"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintTop_toBottomOf="@id/idCardTitleTv" />
+
+<!--    手机号-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneNumTitleTv"
+        style="@style/AuthenInputTitleTextView"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_phone_num"
+        android:maxEms="11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idCardLine" />
+
+    <!--手机号必选提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneNumTipsTv"
+        style="@style/AuthenMustFillInTips"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="*"
+        app:layout_constraintLeft_toRightOf="@id/phoneNumTitleTv"
+        app:layout_constraintTop_toBottomOf="@id/idCardLine" />
+
+<!--    手机号输入提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneNumTips"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumTitleTv"
+        android:layout_marginTop="@dimen/offset_5px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/color_8798af"
+        android:textSize="@dimen/offset_10sp"
+        android:text="@string/mine_authen_input_phone_tips"
+        style="@style/WrapWrap"/>
+
+    <!--    手机号输入框-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/phoneNumET"
+        app:layout_constraintTop_toBottomOf="@id/idCardLine"
+        android:hint="@string/mine_authen_please_input_phone_num"
+        android:layout_marginTop="@dimen/offset_50px"
+        android:singleLine="true"
+        android:inputType="phone"
+        android:background="@null"
+        app:layout_constraintLeft_toRightOf="@id/idCardTipsTv"
+        style="@style/AuthenInputValueTextView" />
+
+    <View
+        android:layout_width="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        android:background="@color/color_f3f3f4"
+        android:id="@+id/phoneNumLine"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumTips"
+        android:layout_marginTop="@dimen/offset_40px"
+        android:layout_height="@dimen/offset_1px"/>
+
+
+    <!--    邮箱-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/postBoxTitleTv"
+        style="@style/AuthenInputTitleTextView"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="@string/mine_authen_post"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumLine" />
+
+    <!--邮箱必选提示-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/postBoxTipsTv"
+        style="@style/AuthenMustFillInTips"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:text="*"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/postBoxTitleTv"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumLine" />
+
+    <!--    邮箱输入框-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/postBoxET"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumLine"
+        android:hint="@string/mine_authen_please_input_post_box"
+        android:layout_marginTop="@dimen/offset_38px"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:background="@null"
+        app:layout_constraintLeft_toRightOf="@id/postBoxTipsTv"
+        style="@style/AuthenInputValueTextView" />
+
+    <View
+        android:id="@+id/postBoxLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/offset_1px"
+        android:background="@color/color_f3f3f4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/offset_30px"
+        app:layout_constraintTop_toBottomOf="@id/postBoxTitleTv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

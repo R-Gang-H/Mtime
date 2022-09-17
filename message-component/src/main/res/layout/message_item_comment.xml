@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.message.ui.comment.binder.ItemCommentBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_chat_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onLongClick="@{() -> data.deleteComment(data.bean.messageId)}">
+
+        <com.kotlin.android.message.widget.AuthHeaderView
+            android:id="@+id/iv_praise_head"
+            authHeader="@{data.bean.authHeader}"
+            android:layout_width="@dimen/offset_50dp"
+            android:layout_height="@dimen/offset_50dp"
+            android:layout_marginStart="@dimen/offset_9dp"
+            android:layout_marginTop="@dimen/offset_11dp"
+            android:onClick="@{() -> data.jumpToUserHome()}"
+            android:onLongClick="@{() -> data.deleteComment(data.bean.messageId)}"
+            android:src="@drawable/default_user_head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_praise_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_11dp"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:onClick="@{() -> data.jumpToUserHome()}"
+            android:onLongClick="@{() -> data.deleteComment(data.bean.messageId)}"
+            android:text="@{data.bean.name}"
+            android:textColor="@color/color_3d4955"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_praise_head"
+            app:layout_constraintTop_toTopOf="@id/iv_praise_head"
+            tools:text="噗噗爸爸" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_praise_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_1dp"
+            android:onLongClick="@{() -> data.deleteComment(data.bean.messageId)}"
+            android:text="@{data.bean.time}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_10sp"
+            app:layout_constraintStart_toStartOf="@id/tv_praise_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_praise_name"
+            tools:text="25秒前" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_8dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:onClick="@{() -> data.jumpToCommentDetail()}"
+            android:onLongClick="@{() -> data.deleteComment(data.bean.messageId)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_praise_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_praise_name">
+
+            <com.kotlin.android.message.widget.CommentTextView
+                android:id="@+id/tv_comment"
+                commentPre="@{data.bean.commentDesc}"
+                commentText="@{data.bean.commentString}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_11dp"
+                android:layout_marginEnd="@dimen/offset_10dp"
+                android:ellipsize="end"
+                android:textSize="@dimen/offset_11sp"
+                app:layout_constraintEnd_toStartOf="@id/iv_comment_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="评论了你的卡片的大3423424234234242342富翁：论了你的卡片的大3423424234234242342富翁：论了你的卡片的大3423424234234242342富翁：w22222222222222222222222222ow " />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> data.expend()}"
+                android:onLongClick="@{() -> data.deleteComment(data.bean.messageId)}"
+                android:text="@string/message_comment_expand"
+                android:textColor="@color/color_20a0da"
+                android:textSize="@dimen/offset_11sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/tv_comment"
+                app:layout_constraintTop_toBottomOf="@id/tv_comment"
+                tools:text="展开" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_comment_img"
+                load_image="@{data.bean.commentPic}"
+                load_image_default_img="@{@drawable/message_comment_pic_default}"
+                load_image_height="@{30}"
+                load_image_roundedRadius="@{9}"
+                load_image_width="@{30}"
+                android:layout_width="@dimen/offset_30dp"
+                android:layout_height="@dimen/offset_30dp"
+                android:layout_marginEnd="@dimen/offset_20dp"
+                android:src="@drawable/message_comment_pic_default"
+                android:visibility="@{data.bean.hasCommentPic() ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@id/tv_comment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_comment" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.kotlin.android.message.widget.MainContentView
+            android:id="@+id/view_main_content"
+            longClick="@{() -> data.deleteComment(data.bean.messageId)}"
+            property="@{data.bean.mainContent}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_10dp"
+            android:layout_marginEnd="@dimen/offset_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cl_comment"
+            app:layout_constraintTop_toBottomOf="@id/cl_comment" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_width_1px"
+            android:layout_marginStart="@dimen/offset_16dp"
+            android:layout_marginTop="@dimen/offset_15dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:background="@color/color_1f9dafb4"
+            app:layout_constraintTop_toBottomOf="@id/view_main_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

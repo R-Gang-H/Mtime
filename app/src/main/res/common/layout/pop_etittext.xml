@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_f6f6f6"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/offset_10dp">
+
+    <EditText
+        android:id="@+id/etittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_180px"
+        android:layout_margin="@dimen/offset_10dp"
+        android:background="@drawable/bg_common_etittext"
+        android:gravity="left|top"
+        android:padding="@dimen/offset_5dp"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_bbbbbb"
+        android:textSize="@dimen/font_size_normal_more" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="@dimen/offset_pxtodx_110"
+        android:layout_height="@dimen/offset_29dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/offset_10dp"
+        android:background="@drawable/btn_send_gray"
+        android:text="发表"
+        android:textColor="@color/color_bbbbbb"
+        android:textSize="@dimen/font_size_small_high" />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cofferTabView" type="id" />
+    <item name="labelView" type="id" />
+    <item name="iconView" type="id" />
+    <item name="lockView" type="id" />
+    <item name="indicatorView" type="id" />
+    <item name="openNowView" type="id" />
+
+    <item name="cardTransferView" type="id" />
+
+    <item name="cardTransferCardView0" type="id" />
+    <item name="cardTransferCardView1" type="id" />
+    <item name="cardTransferCardView2" type="id" />
+    <item name="cardTransferCardView3" type="id" />
+    <item name="cardTransferCardView4" type="id" />
+
+    <item name="cardTransferActionView0" type="id" />
+    <item name="cardTransferActionView1" type="id" />
+    <item name="cardTransferActionView2" type="id" />
+    <item name="cardTransferActionView3" type="id" />
+    <item name="cardTransferActionView4" type="id" />
+
+    <item name="menuView" type="id" />
+    <item name="menuItem0" type="id" />
+    <item name="menuItem1" type="id" />
+    <item name="menuItem2" type="id" />
+    <item name="menuItem3" type="id" />
+    <item name="menuItem4" type="id" />
+    <item name="menuItem5" type="id" />
+
+    <item name="cardSuitItemView" type="id" />
+    <item name="cardSuitItemCardView" type="id" />
+    <item name="cardImageView" type="id" />
+    <item name="suitImageView" type="id" />
+</resources>

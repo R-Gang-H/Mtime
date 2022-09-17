@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listview_item_bg_selector"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/offset_30px">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_d8d8d8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/offset_17px"
+        android:paddingRight="@dimen/offset_30px"
+        android:paddingTop="@dimen/offset_17px">
+
+        <TextView
+            android:id="@+id/couponactivity_listitem_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bk_cinmea_showtime_redborder"
+            android:gravity="center"
+            android:minHeight="@dimen/offset_15dp"
+            android:text="@string/st_coupon_tag_new"
+            android:textColor="@color/color_f15353"
+            android:textSize="@dimen/font_size_9sp" />
+
+        <TextView
+            android:id="@+id/couponactivity_listitem_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/font_size_small_high" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_showtime_arrow_gray" />
+    </LinearLayout>
+
+
+</LinearLayout>

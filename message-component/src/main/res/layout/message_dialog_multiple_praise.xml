@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_gravity="bottom"
+        android:background="@color/color_ffffff">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_praise_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_13dp"
+            android:layout_marginTop="@dimen/offset_14dp"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="9人赞了你的文章" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/offset_17dp"
+            android:layout_height="@dimen/offset_17dp"
+            android:layout_marginTop="@dimen/offset_15dp"
+            android:layout_marginEnd="@dimen/offset_13dp"
+            android:padding="@dimen/offset_5dp"
+            android:src="@drawable/message_ic_praise_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/offset_10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_praise_count">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_multiple_praise"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager" />
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

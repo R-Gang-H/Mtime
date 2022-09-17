@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.kotlin.android.widget.titlebar.TitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:translationZ="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/stateView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_22px"
+            android:layout_marginRight="@dimen/offset_30px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleBar"
+            app:layout_constraintVertical_weight="1">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_ffffff">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!--视频预览-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/videoCV"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/offset_370px"
+                        app:cardCornerRadius="@dimen/offset_24px"
+                        app:cardElevation="0dp"
+                        app:cardUseCompatPadding="false"
+                        android:layout_marginTop="@dimen/offset_22px"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!--                        视频容器-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:background="@color/color_000000"
+                            android:id="@+id/videoCoverIv"
+                            android:scaleType="fitCenter"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+<!--                        视频上传过程中前景-->
+                        <com.kotlin.android.publish.component.widget.VideoUploadStateView
+                            android:id="@+id/videoStateView"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                        <!--编辑封面按钮-->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/editCoverTv"
+                            color="@{@color/color_ccffffff}"
+                            cornerRadius="@{8}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|bottom"
+                            android:visibility="gone"
+                            android:layout_margin="@dimen/offset_12px"
+                            android:paddingLeft="@dimen/offset_16px"
+                            android:paddingTop="@dimen/offset_6px"
+                            android:paddingRight="@dimen/offset_16px"
+                            android:paddingBottom="@dimen/offset_6px"
+                            android:text="@string/publish_component_edit_cover"
+                            android:textColor="@color/color_1d2736"
+                            android:textSize="@dimen/offset_12sp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!--                    视频标题-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/videoTitleCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_40px"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/videoCV">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/titleEt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="left"
+                            android:hint="@string/publish_component_video_title_hint"
+                            android:textColor="@color/color_303a47"
+                            android:maxLength="50"
+                            android:textColorHint="@color/color_cbd0d7"
+                            android:textSize="@dimen/offset_18sp"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/titleLengthTv"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/titleLengthTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/50"
+                            android:textColor="@color/color_cbd0d7"
+                            android:textSize="@dimen/offset_12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/titleLine"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/divider_line_height"
+                        android:layout_marginTop="@dimen/offset_28px"
+                        android:background="@color/color_f3f3f4"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/videoTitleCL" />
+
+                    <!--                    视频介绍-->
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/videoDesEt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|top"
+                        android:hint="@string/publish_component_video_des_hint"
+                        android:minHeight="@dimen/offset_120px"
+                        android:background="@null"
+                        android:maxLength="200"
+                        android:layout_marginTop="@dimen/offset_36px"
+                        android:textColor="@color/color_303a47"
+                        android:textColorHint="@color/color_cbd0d7"
+                        android:textSize="@dimen/offset_15sp"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/titleLine" />
+
+                    <!--                    视频描述文字数字显示-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/desLengthTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_20px"
+                        android:text="0/200"
+                        android:textColor="@color/color_cbd0d7"
+                        android:textSize="@dimen/offset_12sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/videoDesEt" />
+
+                    <View
+                        android:id="@+id/desLine"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/divider_line_height"
+                        android:layout_marginTop="@dimen/offset_40px"
+                        android:background="@color/color_f3f3f4"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/desLengthTv" />
+
+                    <!--                    相关电影-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movieRelateTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_50px"
+                        android:textColor="@color/color_404c57"
+                        android:textSize="@dimen/offset_15sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/desLine"
+                        tools:text="相关电影(选填)" />
+
+                    <!--                    选择电影按钮-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/selectMovieIv"
+                        android:layout_width="@dimen/offset_36px"
+                        android:layout_height="@dimen/offset_36px"
+                        android:layout_marginTop="@dimen/offset_52px"
+                        android:src="@drawable/ic_publish_menu_add"
+                        android:tint="@color/color_8a9199"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/desLine" />
+                    <!--选中的相关电影列表-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_24px"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:id="@+id/movieRelateRv"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/movieRelateTv" />
+
+                    <View
+                        android:id="@+id/relatedMovieLine"
+                        android:layout_width="0dp"
+                        android:background="@color/color_f3f3f4"
+                        android:layout_height="@dimen/divider_line_height"
+                        android:layout_marginTop="@dimen/offset_40px"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/movieRelateRv" />
+
+<!--                    选择分类-->
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/classSelectOptionTitleTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset_40px"
+                        android:textColor="@color/color_404c57"
+                        android:textSize="@dimen/offset_15sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/relatedMovieLine"
+                        tools:text="选择分类" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/movieClassRv"
+                        android:layout_width="0dp"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintTop_toBottomOf="@id/classSelectOptionTitleTv"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:paddingBottom="@dimen/offset_40px"
+                        android:layout_marginTop="@dimen/offset_24px"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

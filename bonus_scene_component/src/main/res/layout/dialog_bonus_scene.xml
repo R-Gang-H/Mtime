@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--    关闭按钮-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/closeBtn"
+        android:layout_width="@dimen/offset_80px"
+        android:layout_height="@dimen/offset_80px"
+        android:layout_marginRight="@dimen/offset_90px"
+        android:src="@mipmap/icon_close"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--开彩蛋布局-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/boxIv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_box"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeBtn" />
+
+
+
+
+
+
+    <!--    中奖内容布局-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bigCL"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_212px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:minHeight="@dimen/offset_450px"
+        app:layout_constraintTop_toBottomOf="@id/closeBtn">
+
+<!--        奖品查看提示-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tipsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_50px"
+            android:layout_marginRight="@dimen/offset_50px"
+            android:layout_marginBottom="@dimen/offset_30px"
+            android:text="@string/bonus_scene_bag_tips"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+<!--        关闭按钮-->
+
+        <FrameLayout
+            android:id="@+id/closeBtnFl"
+            app:layout_constraintBottom_toTopOf="@id/tipsTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="@dimen/offset_48px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:src="@mipmap/icon_closebtn"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:shadowDy="1"
+                android:shadowColor="@color/color_80fb2121"
+                android:shadowRadius="1"
+                android:layout_marginTop="-4dp"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_21sp"
+                android:text="@string/bonus_scene_close_btn"
+                android:textStyle="bold"
+
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+<!--        奖品内容或未中奖文案-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bagContentTv"
+            android:layout_marginBottom="@dimen/offset_50px"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/offset_38px"
+            android:layout_marginRight="@dimen/offset_38px"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center_horizontal"
+            tools:text="您与大奖擦肩而过，多来社区逛逛，没准下一个中奖的就是你呢～"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    彩蛋打开后布局-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/lotteryIv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/offset_58px"
+        android:src="@mipmap/icon_titlebg"
+        app:layout_constraintTop_toBottomOf="@id/closeBtn" />
+    <!--    是否中奖标题-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/lotteryTitleTv"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_140px"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/offset_21sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeBtn"
+        tools:text="宇宙无敌幸运包" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

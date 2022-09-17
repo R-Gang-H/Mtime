@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="authHeader"
+            type="com.kotlin.android.message.widget.AuthHeaderView.AuthHeader" />
+
+        <variable
+            name="headerWidth"
+            type="java.lang.Integer" />
+
+        <variable
+            name="multiple"
+            type="java.lang.Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.kotlin.android.widget.views.CircleImageView
+            android:id="@+id/iv_fans_head"
+            load_image="@{authHeader.headImg}"
+            load_image_default_img="@{@drawable/default_user_head}"
+            load_image_height="@{headerWidth == null ? 44 : headerWidth}"
+            load_image_width="@{headerWidth == null ? 44 : headerWidth}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/default_user_head"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/offset_8dp"
+            android:layout_height="@dimen/offset_8dp"
+            android:layout_marginTop="@dimen/offset_3dp"
+            android:layout_marginEnd="@dimen/offset_3dp"
+            android:src="@drawable/message_ic_red_point"
+            android:visibility="@{authHeader.unread ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:layout_width="@dimen/offset_18dp"
+            android:layout_height="@dimen/offset_18dp"
+            android:visibility="@{multiple ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_normal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@{authHeader.authTypeIcon()}"
+                android:visibility="@{authHeader.hasAuthType() ? View.VISIBLE : View.GONE}"
+                tools:src="@mipmap/ic_auth_yingren_60" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="@dimen/offset_12dp"
+            android:layout_height="@dimen/offset_12dp"
+            android:visibility="@{multiple ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_multiple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@{authHeader.authTypeIcon()}"
+                android:visibility="@{authHeader.hasAuthType() ? View.VISIBLE : View.GONE}"
+                tools:src="@mipmap/ic_auth_yingren_60" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

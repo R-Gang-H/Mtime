@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.ContributeShortlistParentBinder" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/offset_27px">
+        <include
+            app:data ="@{data}"
+            android:id="@+id/mShortlistTitle"
+            layout="@layout/item_contribute_shortlisted_title"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            shadowRadius="@{8}"
+            shadowWidth="@{8}"
+            shadowAlphaSpacing="@{0.01f}"
+            shadowColor="@{@color/color_ebedf2}"
+            shadowSolidColor="@{@color/color_ffffff}"
+            app:layout_constraintTop_toBottomOf="@id/mShortlistTitle"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mShortListRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

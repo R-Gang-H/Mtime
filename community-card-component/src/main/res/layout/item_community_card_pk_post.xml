@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.card.component.item.adapter.CommunityCardPkPostBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mCommunityCardRoot"
+        android:onClick="@{view -> data.onClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mCommunityCardImgCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintDimensionRatio="h,1:1.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/mCommunityCardImgIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                load_image="@{data.item.pic}"
+                load_image_width="@{165}"
+                load_image_height="@{248}"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_754e5e73"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/mCommunityCardTitleIconIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mCommunityCardTitleTv"
+            app:layout_constraintRight_toLeftOf="@id/mCommunityCardTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_community_topic"
+            />
+
+        <TextView
+            android:id="@+id/mCommunityCardTitleTv"
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/mCommunityCardTitleIconIv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="10dp"
+            android:textSize="17sp"
+            android:textColor="@color/color_ffffff"
+            android:textStyle="bold"
+            android:maxLines="4"
+            android:ellipsize="end"
+            tools:text="这个五一假期你想安利给身边人哪些影片？"
+            android:text="@{TextUtils.isEmpty(data.item.title) ? data.item.content : data.item.title}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

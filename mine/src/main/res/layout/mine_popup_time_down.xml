@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="earthModel"
+            type="com.kotlin.android.mine.ui.datacenter.fragment.EarthViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            shadowColor="@{@color/color_0d000000}"
+            shadowRadius="@{8}"
+            shadowWidth="@{4}"
+            android:layout_width="@dimen/offset_144px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:background="@color/color_ffffff"
+            android:divider="@color/color_f3f3f4"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/tvJqt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_60px"
+                android:gravity="center"
+                android:text="近7天"
+                android:textColor="@drawable/selector_express_time_filter_text_color"
+                android:textSize="@dimen/offset_12sp" />
+
+            <TextView
+                android:id="@+id/tvJbn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_60px"
+                android:gravity="center"
+                android:text="近半年"
+                android:textColor="@drawable/selector_express_time_filter_text_color"
+                android:textSize="@dimen/offset_12sp" />
+
+            <TextView
+                android:id="@+id/tvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_60px"
+                android:gravity="center"
+                android:text="历史累计"
+                android:textColor="@drawable/selector_express_time_filter_text_color"
+                android:textSize="@dimen/offset_12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

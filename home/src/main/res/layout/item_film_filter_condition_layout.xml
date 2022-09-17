@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="com.kotlin.android.ktx.ext.core.Direction" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.findmovie.view.ItemFilmFilterConditionBinder" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:onClick="@{view -> data.onClick(view)}"
+        android:layout_margin="@dimen/offset_5dp"
+        android:id="@+id/mCardView"
+        android:layout_width="@dimen/offset_150px"
+        android:layout_height="@dimen/offset_54px"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/offset_4dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false">
+        <TextView
+            android:background="@color/color_f2f2f2"
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{data.bean.name}"
+            android:textColor="@color/color_3d4955"
+            android:textSize="@dimen/offset_13sp"
+            android:gravity="center"
+            tools:text="用户姓名" />
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listview_item_bg_selector"
+    android:orientation="vertical"
+    >
+
+    <!-- 内容 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/offset_17dp"
+        >
+
+        <!-- 图标 -->
+        <ImageView
+            android:id="@+id/paytype_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            tools:src="@drawable/icon_pay_upomp"
+            />
+
+        <!-- 文字 -->
+        <TextView
+            android:id="@+id/paytype_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/orderpay_paddingleft"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_size_normal_high"
+            tools:text="银联在线支付"
+            />
+
+        <!-- 推荐语 -->
+        <TextView
+            android:id="@+id/paytype_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/paytype_text"
+            android:layout_marginLeft="@dimen/offset_5dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textSize="@dimen/font_size_10sp"
+            android:textColor="@color/white"
+            android:background="@drawable/icon_pay_recommend"
+            android:contentDescription="@string/app_name"
+            tools:text="一二三四五六七八九十一二三四五六七八九十"
+            />
+
+        <!-- 右箭头 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/icon_arrow_r"
+            />
+
+    </RelativeLayout>
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/offset_34px"
+        android:background="@color/color_d8d8d8"
+        />
+
+</LinearLayout>

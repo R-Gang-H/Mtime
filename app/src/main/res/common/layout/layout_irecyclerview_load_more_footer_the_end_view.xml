@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_footerview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/offset_15dp"
+    android:paddingLeft="@dimen/offset_25dp"
+    android:paddingRight="@dimen/offset_25dp"
+    android:paddingTop="@dimen/offset_15dp"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/tvTheEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="我可是有底线的哦！"
+        android:textColor="@color/color_bbbbbb"
+        android:textSize="@dimen/font_size_12sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/offset_14px"
+        android:layout_toLeftOf="@id/tvTheEnd"
+        android:src="@drawable/icon_footer_right" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/offset_14px"
+        android:layout_toRightOf="@id/tvTheEnd"
+        android:src="@drawable/icon_footer_left" />
+</RelativeLayout>

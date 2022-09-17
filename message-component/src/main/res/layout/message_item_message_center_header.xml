@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.message.ui.center.binder.MessageCenterHeaderItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_comment"
+            color="@{@color/color_f3f5f9}"
+            cornerRadius="@{8}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_81dp"
+            android:layout_marginStart="@dimen/offset_14dp"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:layout_marginEnd="@dimen/offset_4dp"
+            android:background="@color/color_f3f5f9"
+            app:layout_constraintEnd_toStartOf="@id/cl_praise"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_comment"
+                android:layout_width="@dimen/offset_50dp"
+                android:layout_height="@dimen/offset_50dp"
+                android:layout_marginTop="5dp"
+                android:onClick="@{() -> data.jumpToCommentActivity()}"
+                android:src="@drawable/message_ic_icon_comment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> data.jumpToCommentActivity()}"
+                android:text="@string/message_comment_or_reply"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_comment"
+                app:layout_constraintStart_toStartOf="@id/iv_comment"
+                app:layout_constraintTop_toBottomOf="@id/iv_comment" />
+
+            <com.kotlin.android.message.widget.NotifyView
+                notify="@{data.bean.commentCount}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_30dp"
+                android:layout_marginTop="@dimen/offset_5dp"
+                app:layout_constraintStart_toStartOf="@id/iv_comment"
+                app:layout_constraintTop_toTopOf="@id/iv_comment" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_praise"
+            color="@{@color/color_f3f5f9}"
+            cornerRadius="@{8}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset_81dp"
+            android:layout_marginStart="@dimen/offset_4dp"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cl_comment"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_like"
+                android:layout_width="@dimen/offset_50dp"
+                android:layout_height="@dimen/offset_50dp"
+                android:layout_marginTop="5dp"
+                android:onClick="@{() -> data.jumpToPraiseActivity()}"
+                android:src="@drawable/message_ic_icon_like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> data.jumpToPraiseActivity()}"
+                android:text="@string/message_praise"
+                android:textColor="@color/color_303a47"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_like"
+                app:layout_constraintStart_toStartOf="@id/iv_like"
+                app:layout_constraintTop_toBottomOf="@id/iv_like" />
+
+            <com.kotlin.android.message.widget.NotifyView
+                notify="@{data.bean.likeCount}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_30dp"
+                android:layout_marginTop="@dimen/offset_5dp"
+                app:layout_constraintStart_toStartOf="@id/iv_like"
+                app:layout_constraintTop_toTopOf="@id/iv_like" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

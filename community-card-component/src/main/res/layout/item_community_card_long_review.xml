@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.card.component.item.adapter.CommunityCardLongReviewNoPicBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mCommunityCardRoot"
+        android:onClick="@{view -> data.onClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_community_card_shadow_bg"
+        android:layout_margin="2dp"
+        android:padding="7dp">
+
+        <TextView
+            android:id="@+id/mCommunityCardTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="13dp"
+            android:textSize="13sp"
+            android:textColor="@color/color_4e5e73"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="人类仍然找不"
+            android:text="@{data.item.title}"
+            />
+
+        <TextView
+            android:id="@+id/mCommunityCardContentTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityCardTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLines="10"
+            android:ellipsize="end"
+            android:textSize="11sp"
+            android:textColor="@color/color_8798af"
+            tools:text="无论是在口碑还是票房上创造了日影史上难得的观碑。"
+            android:text="@{data.item.content}"
+            />
+
+        <TextView
+            android:id="@+id/mCommunityCardMovieNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityCardContentTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            color="@{@color/color_91363636}"
+            cornerRadius="@{15}"
+            android:drawableStart="@drawable/ic_community_movie"
+            android:drawablePadding="2dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="9sp"
+            android:textColor="@color/color_ffffff"
+            android:gravity="center_vertical"
+            tools:text="花木兰"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxWidth="100dp"
+            android:text="@{data.item.movieName}"
+            android:visibility="@{TextUtils.isEmpty(data.item.movieName) ? View.GONE : View.VISIBLE}"
+            android:onClick="@{view -> data.onClick(view)}"/>
+
+        <include
+            android:id="@+id/mCommunityCardCommonBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mCommunityCardMovieNameTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="4.5dp"
+            layout="@layout/view_community_card_common_bottom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

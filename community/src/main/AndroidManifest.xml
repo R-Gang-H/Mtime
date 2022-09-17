@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kotlin.android.community">
+
+    <application
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
+        <activity
+            android:name=".ui.person.center.CommunityPersonActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.person.myfriend.CommunityMyFriendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.person.wantsee.WantSeeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.person.collect.CommunityPersonCollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.person.wantsee.MyWantSeeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.person.timeline.CommunityTimeLineActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

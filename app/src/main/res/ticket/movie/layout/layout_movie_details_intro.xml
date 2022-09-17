@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.bussiness.ticket.movie.details.widget.MovieDetailsExpandableTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_movie_details_intro_expandable_tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/common_list_left_or_right_margin"
+    android:paddingRight="@dimen/common_list_left_or_right_margin"
+    android:paddingTop="15dp"
+    android:paddingBottom="30dp">
+
+</com.mtime.bussiness.ticket.movie.details.widget.MovieDetailsExpandableTextView>

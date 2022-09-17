@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.kotlin.android.mtime.ktx.KtxMtimeKt" />
+        <variable
+            name="data"
+            type="com.kotlin.android.review.component.item.ui.movie.adapter.MovieReviewItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mItemMovieReviewUserCl"
+        style="@style/MatchWrap"
+        >
+
+        <!-- 头像 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemMovieReviewUserHeadCardView"
+            style="@style/WrapWrap"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:cardCornerRadius="@dimen/offset_29px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            >
+
+            <ImageView
+                android:id="@+id/mItemMovieReviewUserHeadIv"
+                android:layout_width="@dimen/offset_58px"
+                android:layout_height="@dimen/offset_58px"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                load_image="@{data.bean.userImage}"
+                load_image_height="@{29}"
+                load_image_width="@{29}"
+                load_image_circle_crop="@{true}"
+                load_image_default_img="@{@drawable/default_user_head}"
+                tools:src="@drawable/default_user_head"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 认证类型 -->
+        <ImageView
+            android:id="@+id/mItemMovieReviewUserAuthTypeIv"
+            android:layout_width="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_30px"
+            app:layout_constraintRight_toRightOf="@+id/mItemMovieReviewUserHeadCardView"
+            app:layout_constraintBottom_toBottomOf="@+id/mItemMovieReviewUserHeadCardView"
+            tools:src="@drawable/ic_yingrenrenzheng"
+            />
+
+        <!-- 昵称 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewUserNicknameTv"
+            style="@style/WrapWrap"
+            android:layout_marginStart="@dimen/offset_12px"
+            android:paddingRight="@dimen/offset_8px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/offset_350px"
+            android:textStyle="bold"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_4e5e73"
+            android:text="@{data.bean.nickname}"
+            app:layout_constraintLeft_toRightOf="@+id/mItemMovieReviewUserHeadCardView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="昵称昵称昵称昵称昵称昵称昵称昵称昵称昵称昵称昵称"
+            />
+
+        <!-- 发布时间 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewUserCommentTimeTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_1px"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_8798af"
+            android:text="@{KtxMtimeKt.formatPublishTime(data.bean.commentTime)}"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemMovieReviewUserNicknameTv"
+            app:layout_constraintTop_toBottomOf="@+id/mItemMovieReviewUserNicknameTv"
+            tools:text="1小时前"
+            />
+
+        <!-- 已购票 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewUserTicketTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_4px"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:paddingTop="@dimen/offset_2px"
+            android:paddingBottom="@dimen/offset_2px"
+            android:paddingLeft="@dimen/offset_7px"
+            android:paddingRight="@dimen/offset_7px"
+            android:textSize="@dimen/offset_9sp"
+            android:textColor="@color/color_20a0da"
+            android:text="@string/movie_review_user_ticket"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mItemMovieReviewUserNicknameTv"
+            tools:background="@color/color_20a0da_alpha_10"
+            />
+
+        <!-- 关系 -->
+        <TextView
+            android:id="@+id/mItemMovieReviewUseRelationTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_4px"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:paddingTop="@dimen/offset_2px"
+            android:paddingBottom="@dimen/offset_2px"
+            android:paddingLeft="@dimen/offset_7px"
+            android:paddingRight="@dimen/offset_7px"
+            android:textSize="@dimen/offset_9sp"
+            android:textColor="@color/color_20a0da"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mItemMovieReviewUserTicketTv"
+            tools:background="@color/color_20a0da_alpha_10"
+            tools:text="已关注"
+            />
+
+        <!-- 会员等级 -->
+        <ImageView
+            android:id="@+id/mItemMovieReviewUserLevelIv"
+            android:layout_width="@dimen/offset_40px"
+            android:layout_height="@dimen/offset_40px"
+            android:layout_marginStart="@dimen/offset_16px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mItemMovieReviewUseRelationTv"
+            tools:srcCompat="@drawable/ic_yingrenrenzheng"
+            />
+
+        <!-- 评分 -->
+        <com.kotlin.android.widget.textview.SpacingTextView
+            android:id="@+id/mItemMovieReviewUserRatingTv"
+            style="@style/WrapWrap"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:textStyle="bold|italic"
+            android:textSize="@dimen/offset_21sp"
+            android:textColor="@color/color_20a0da"
+            android:onClick="@{view -> data.onClick(view)}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="7.0"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/layout_ticket_direct_sale_order_top_state_error_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/offset_18sp"
+        android:textColor="@color/ticket_dark_red"
+        android:text=""/>
+    <TextView
+        android:id="@+id/layout_ticket_direct_sale_order_top_state_error_tip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textSize="@dimen/offset_13sp"
+        android:textColor="@color/ticket_light_gray"
+        android:text=""
+        android:layout_below="@id/layout_ticket_direct_sale_order_top_state_error_title_tv"/>
+    <TextView
+        android:id="@+id/layout_ticket_direct_sale_order_top_state_error_hot_line_telephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textSize="@dimen/font_size_15sp"
+        android:textColor="@color/ticket_dark_red"
+        android:text=""
+        android:layout_below="@id/layout_ticket_direct_sale_order_top_state_error_tip_tv"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_1dp"
+        android:layout_below="@id/layout_ticket_direct_sale_order_top_state_error_hot_line_telephone"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ticket_code_line"/>
+
+</RelativeLayout>

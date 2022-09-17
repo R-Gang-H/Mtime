@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">时光网</string>
+
+    <string name="title_share">分享</string>
+    <string name="title_share_more">更多操作</string>
+
+    <string name="we_chat">微信</string>
+    <string name="we_chat_timeline">朋友圈</string>
+    <string name="wei_bo">微博</string>
+    <string name="qq">QQ好友</string>
+    <string name="q_zone">QZone</string>
+
+    <string name="top">置顶</string>
+    <string name="top_cancel">取消置顶</string>
+    <string name="fine">加精</string>
+    <string name="fine_cancel">取消加精</string>
+    <string name="add_points">加分</string>
+    <string name="delete">删除</string>
+    <string name="report">投诉</string>
+    <string name="copy_link">复制链接</string>
+    <string name="generate_poster">生成海报</string>
+    <string name="edit">编辑</string>
+
+    <string name="share_success">分享成功</string>
+    <string name="share_fail">分享失败</string>
+    <string name="share_cancel">取消分享</string>
+
+    <string name="auth_success">授权成功</string>
+    <string name="auth_fail">授权失败</string>
+    <string name="auth_cancel">取消授权</string>
+    <string name="auth_denied">拒绝授权</string>
+
+    <string name="we_chat_is_not_install">请先安装微信客户端</string>
+    <string name="wei_bo_is_not_install">请先安装微博客户端</string>
+    <string name="qq_is_not_install">请先安装QQ客户端</string>
+
+    <string name="share_not_register">%1$s分享未注册</string>
+    <string name="service_not_impl">%1$s服务未实现</string>
+    <string name="share_not_data">没有分享数据</string>
+
+    <string name="weibosdk_demo_token_has_existed">Token 仍在有效期内，无需再次登录。</string>
+    <string name="share_copy_link_success">已复制到粘贴板</string>
+    <string name="mine_content_delete_dialog_content">确定要删除这个内容吗？</string>
+    <string name="mine_content_revoke_dialog_title">撤销</string>
+    <string name="mine_content_revoke_dialog_content">确定将内容撤回草稿箱吗？</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/MatchMatch"
+        >
+
+        <!-- 输入框 -->
+        <EditText
+            android:id="@+id/mActFamilyEditInfoEt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/offset_40px"
+            android:layout_marginBottom="@dimen/offset_40px"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:background="@color/color_00000000"
+            android:gravity="left|top"
+            android:scrollbars="none"
+            android:lineSpacingMultiplier="1.2"
+            android:textColorHint="@color/color_8798af"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:hint="@string/family_create_des_tip"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

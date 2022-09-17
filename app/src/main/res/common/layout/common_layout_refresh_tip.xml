@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingLeft="@dimen/common_list_left_or_right_margin"
+    android:paddingRight="@dimen/common_list_left_or_right_margin"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/common_layout_refresh_tip_tv"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:textColor="#20a0da"
+        android:background="@drawable/common_shape_refresh_tip_bg"
+        android:textSize="12sp"
+        tools:text="列表已刷新8条数据"
+        android:visibility="visible"
+        />
+
+</FrameLayout>

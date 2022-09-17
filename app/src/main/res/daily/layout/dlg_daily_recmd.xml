@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/con_daily_recmd_panel_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/con_daily_recmd_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/offset_5dp"
+                android:paddingTop="@dimen/offset_5dp"
+                android:paddingRight="@dimen/offset_5dp"
+                android:paddingBottom="@dimen/offset_15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/iv_dlg_daily_poster_card_view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0px"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintDimensionRatio="H,310:385"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_dlg_daily_poster"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:scaleType="centerCrop"
+                        tools:src="@drawable/default_image" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/dlg_recmd_share_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:ellipsize="end"
+                    android:maxWidth="290dp"
+                    android:maxLines="2"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_dlg_daily_poster_card_view"
+                    tools:text="人生美妙的关键，就在于你能迷上什么东西。" />
+
+                <TextView
+                    android:id="@+id/dlg_recmd_share_subtitle_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:drawablePadding="@dimen/offset_5dp"
+                    android:ellipsize="end"
+                    android:maxWidth="290dp"
+                    android:maxLines="1"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/offset_13sp"
+                    app:layout_constraintStart_toStartOf="@id/dlg_recmd_share_title_tv"
+                    app:layout_constraintTop_toBottomOf="@id/dlg_recmd_share_title_tv"
+                    tools:drawableRight="@drawable/icon_recmd_can_play"
+                    tools:text="《银翼杀手2049》2018.04.30 中国上映" />
+
+                <TextView
+                    android:id="@+id/dlg_daily_recmd_dlg_sign_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/offset_13sp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/dlg_recmd_share_title_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_daily_recmd_dlg_share"
+                    tools:text="今日已签到" />
+
+                <ImageView
+                    android:id="@+id/iv_daily_recmd_dlg_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/offset_15dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_daily_share_no_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dlg_recmd_share_subtitle_tv" />
+
+                <ImageView
+                    android:id="@+id/iv_daily_recmd_dlg_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/offset_35dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_daily_calendar_no_bg"
+                    app:layout_constraintEnd_toStartOf="@id/iv_daily_recmd_dlg_share"
+                    app:layout_constraintTop_toBottomOf="@id/dlg_recmd_share_subtitle_tv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_dialy_recmd_close"
+            android:layout_width="@dimen/offset_50dp"
+            android:layout_height="@dimen/offset_50dp"
+            android:layout_marginTop="@dimen/offset_20dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_daily_close_day"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/con_daily_recmd_panel_card_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

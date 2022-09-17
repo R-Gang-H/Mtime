@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.binder.UgcTitleBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/MatchWrap">
+        <!--        标题-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_40px"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:text="@{data.titleBean.title}"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/font_size_sp_19"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="欠你一场迈过盛夏的同行欠你一场迈过盛夏的同行欠你一场迈过盛夏的同行z" />
+
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:alpha="0.06"
+            android:background="@color/color_303a47"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTv" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

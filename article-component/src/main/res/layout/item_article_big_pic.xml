@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.article.component.item.adapter.ArticleBigPicItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mNewsRoot"
+        android:onClick="@{(view) -> data.onClick(view)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="17.5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        >
+
+        <TextView
+            android:id="@+id/mNewsTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="14sp"
+            android:textColor="@color/color_3d4955"
+            android:textStyle="bold"
+            tools:text="沙赞 新预告来袭！Eminem老歌作BGM"
+            android:text="@{data.articleItem.title}"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mNewsImgCardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintDimensionRatio="h,1:0.43"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mNewsTitleTv"
+            android:layout_marginTop="11dp">
+
+            <ImageView
+                android:id="@+id/mNewsImgIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                load_image="@{data.articleItem.getPic(0)}"
+                load_image_width="@{345}"
+                load_image_height="@{195}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/mNewsVideoTagIv"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_article_plays"
+            app:layout_constraintTop_toTopOf="@id/mNewsImgCardView"
+            app:layout_constraintBottom_toBottomOf="@id/mNewsImgCardView"
+            app:layout_constraintLeft_toLeftOf="@id/mNewsImgCardView"
+            app:layout_constraintRight_toRightOf="@id/mNewsImgCardView"
+            android:visibility="@{data.articleItem.video ? View.VISIBLE : View.GONE}"
+            />
+
+        <include
+            android:id="@+id/mNewsBottom"
+            layout="@layout/view_item_article_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mNewsImgCardView"
+            android:layout_marginTop="12.5dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.tablet">
+
+    <application>
+        <activity
+            android:name=".ui.listsearch.FilmListSearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.create.FilmListCreateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.success.FilmListCreateSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.list.TabletMainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.details.FilmListDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.add.FilmSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.contribute.ContributeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.history.ContributeHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mycreate.MyCreateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.FilmListMineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.add.FilmSelectedActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

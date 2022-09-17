@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="detail"
+            type="com.kotlin.android.community.family.component.ui.details.bean.FamilyDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+        <!-- 头部的封面图模糊背景 -->
+        <ImageView
+            android:id="@+id/mFamilyDetailHeadPosterBgIv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/mFamilyDetailHeadImgAndInfoCl"
+            android:foreground_gradient_start_color="@{@color/color_ccffffff}"
+            android:foreground_gradient_end_color="@{@color/color_ffffff}"
+            android:scaleType="centerCrop"
+            load_image="@{detail.pic}"
+            load_image_width="@{120}"
+            load_image_height="@{120}"
+            />
+
+        <!-- 群组封面图+信息 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mFamilyDetailHeadImgAndInfoCl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="79dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            >
+
+            <!-- 群组封面图 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mFamilyDetailHeadImgCardView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/mFamilyDetailHeadImgIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    load_image="@{detail.pic}"
+                    load_image_width="@{120}"
+                    load_image_height="@{120}"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 群组信息 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mFamilyDetailHeadInfoCl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mFamilyDetailHeadImgCardView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="15dp"
+                android:minHeight="120dp"
+                >
+
+                <!-- 群组名称 -->
+                <TextView
+                    android:id="@+id/mFamilyDetailHeadFamilyNameTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:maxLines="2"
+                    android:lineSpacingMultiplier="1.12"
+                    android:ellipsize="end"
+                    android:textSize="19sp"
+                    android:textColor="@color/color_1d2736"
+                    android:textStyle="bold"
+                    tools:text="组名称组组名称组组名称组组名称组组名称组组名称组组名称组组名称组组名称组组名称组组名称组组名称组组名称组"
+                    android:text="@{detail.name}"
+                    />
+
+                <!-- 创建人昵称 -->
+                <TextView
+                    android:id="@+id/mFamilyDetailHeadFamilyCreatorNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mFamilyDetailHeadFamilyNameTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:maxLines="1"
+                    android:maxEms="6"
+                    android:ellipsize="end"
+                    android:lineSpacingMultiplier="1.12"
+                    android:textColor="@color/color_4e5e73"
+                    tools:text="群主 用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称 创建"
+                    android:visibility="@{detail.creator.name == null ? View.GONE:View.VISIBLE}"
+                    android:text="@{@string/community_detail_creator(detail.creator.name)}"
+                    />
+
+                <!-- 帖子总数 -->
+                <TextView
+                    android:id="@+id/mFamilyDetailHeadFamilyPostNumberTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/mFamilyDetailHeadFamilyCreatorNameTv"
+                    app:layout_constraintLeft_toRightOf="@id/mFamilyDetailHeadFamilyCreatorNameTv"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="帖子数12341"
+                    android:visibility="@{detail.getPostNumberStr()==null ? View.GONE:View.VISIBLE}"
+                    android:text="@{@string/community_detail_post_number(detail.getPostNumberStr())}"
+                    />
+
+                <!-- 群组简介 -->
+                <TextView
+                    android:id="@+id/mFamilyDetailHeadFamilyDesTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:drawableRight="@drawable/ic_right_arrows"
+                    android:drawablePadding="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="13sp"
+                    android:lineSpacingMultiplier="1.12"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mFamilyDetailHeadFamilyCreatorNameTv"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:text="群组简介群组简介群组简介群组简介群组简介群组简介群组简介群组简介群组简介群组简介群组简介"
+                    binding_family_detail_des="@{detail.des}"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 群组成员模块 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mFamilyDetailHeadFamilyUserNumberCl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/mFamilyDetailHeadImgAndInfoCl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:visibility="@{detail.memberList.empty ? View.GONE : View.VISIBLE}"
+            >
+
+            <!-- 群组成员数 -->
+            <TextView
+                android:id="@+id/mFamilyDetailHeadFamilyUserNumberTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/mFamilyDetailHeadFamilyUserNumberAllTv"
+                android:layout_marginStart="15dp"
+                android:textSize="17sp"
+                android:textColor="@color/color_1d2736"
+                android:textStyle="bold"
+                android:lines="1"
+                android:ellipsize="end"
+                tools:text="共XXX名成员"
+                android:visibility="@{detail.getMemberNumberStr == null ? View.INVISIBLE:View.VISIBLE}"
+                android:text="@{@string/community_detail_member_number(detail.getMemberNumberStr(), detail.name)}"
+                />
+
+            <!-- 全部 -->
+            <TextView
+                android:id="@+id/mFamilyDetailHeadFamilyUserNumberAllTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/mFamilyDetailHeadFamilyUserNumberTv"
+                app:layout_constraintBottom_toBottomOf="@id/mFamilyDetailHeadFamilyUserNumberTv"
+                app:layout_constraintRight_toRightOf="parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:drawableEnd="@drawable/ic_right_arrows"
+                android:drawablePadding="5dp"
+                android:textColor="@color/color_8798af"
+                android:textSize="14sp"
+                android:text="@string/all"
+                />
+
+            <!-- 群组成员列表 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mFamilyDetailHeadFamilyUserMemberRv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mFamilyDetailHeadFamilyUserNumberTv"
+                android:layout_marginTop="20dp"
+                android:paddingEnd="15dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:visibility="visible"
+                tools:listitem="@layout/item_family_detail_member"
+                binding_family_detail_members="@{detail.memberList}"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

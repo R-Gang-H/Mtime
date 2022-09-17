@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.adapter.binder.SearchHistoryBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/mSearchHistoryTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/offset_47px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            android:text="@string/search_newcomponent_search_history_title"
+            />
+
+        <ImageView
+            android:id="@+id/mSearchHistoryDelIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_del"
+            app:layout_constraintTop_toTopOf="@id/mSearchHistoryTitleTv"
+            app:layout_constraintBottom_toBottomOf="@id/mSearchHistoryTitleTv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingStart="@dimen/offset_10px"
+            android:paddingEnd="@dimen/offset_10px"
+            android:layout_marginEnd="@dimen/offset_20px"
+            android:onClick="@{view -> data.onClick(view)}"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mSearchHistoryListRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mSearchHistoryTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginLeft="@dimen/offset_21px"
+            android:layout_marginRight="@dimen/offset_21px"
+            android:layout_marginBottom="@dimen/offset_12px"
+            tools:listitem="@layout/item_search_history_item"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

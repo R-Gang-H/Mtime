@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <import type="com.kotlin.android.mtime.ktx.KtxMtimeKt" />
+
+
+        <variable
+            name="data"
+            type="com.kotlin.android.community.post.component.item.adapter.CommunityCenterAudioBinder" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mCommunityPostRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:onClick="@{view -> data.onClick(view)}"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="@dimen/offset_10dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{data.post.title}"
+                android:textColor="@color/color_3d4955"
+                android:textSize="@dimen/offset_14sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/mCommunityPostImgCardView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Takisoy\nsss\nsss" />
+
+            <!-- 图片区域 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mCommunityPostImgCardView"
+                android:layout_width="@dimen/offset_146px"
+                android:layout_height="@dimen/offset_146px"
+                app:cardCornerRadius="@dimen/offset_3dp"
+                app:cardElevation="0px"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/userInfoNameCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/offset_10dp"
+                android:layout_marginLeft="@dimen/offset_12dp"
+                android:layout_marginBottom="@dimen/offset_2dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mCommunityPostImgCardView"
+                app:layout_constraintBottom_toTopOf="@+id/mCommunityPostFamilyTagTv"
+                android:visibility="@{data.post.binderType==2?View.VISIBLE:View.GONE}"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/mCommunityPostUserProfileIv"
+                    load_image="@{data.post.userPic}"
+                    load_image_circle_crop="@{true}"
+                    load_image_default_img="@{@drawable/default_user_head}"
+                    load_image_height="@{15}"
+                    load_image_width="@{15}"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:onClick="@{view -> data.onClick(view)}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/default_user_head" />
+
+                <Space
+                    android:id="@+id/userTagSpace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    app:layout_constraintBottom_toBottomOf="@id/mCommunityPostUserProfileIv"
+                    app:layout_constraintLeft_toRightOf="@id/mCommunityPostUserProfileIv" />
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:src="@{data.post.institutionAuthUser ? @drawable/ic_jigourenzheng : @drawable/ic_yingrenrenzheng}"
+                    android:visibility="@{data.post.authUser ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@id/userTagSpace"
+                    app:layout_constraintRight_toRightOf="@id/userTagSpace" />
+
+                <Space
+                    android:id="@+id/textSpace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/mCommunityPostUserProfileIv"
+                    app:layout_constraintLeft_toRightOf="@id/mCommunityPostUserProfileIv"
+                    app:layout_constraintTop_toTopOf="@id/mCommunityPostUserProfileIv" />
+
+                <TextView
+                    android:id="@+id/mCommunityPostUserNameTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:onClick="@{view -> data.onClick(view)}"
+                    android:text="@{data.post.userName}"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/mCommunityPostUserProfileIv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="电影日记人电影日sssssssssssssssssssssssssssssssssssssss" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/mCommunityPostFamilyTagTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/offset_12dp"
+                android:text="@{KtxMtimeKt.formatPublishTime(data.post.timeMillis)}"
+                android:textColor="@color/color_cbd0d7"
+                android:textSize="12sp"
+                android:visibility="@{data.post.timeMillis > 0 ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mCommunityPostImgCardView"
+                app:layout_goneMarginTop="15dp" />
+            <TextView
+                android:id="@+id/mCommunityPostLikeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@{data.post.like ? @drawable/ic_likeb : @drawable/ic_like}"
+                android:drawablePadding="@dimen/offset_4dp"
+                android:gravity="center_vertical"
+                android:onClick="@{view -> data.onClick(view)}"
+                android:paddingTop="@dimen/offset_10dp"
+                android:textColor="@color/color_8798af"
+                android:textSize="12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="290" />
+
+            <TextView
+                android:id="@+id/mCommunityPostCommentCountTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/offset_12dp"
+                android:drawableStart="@drawable/ic_community_comment"
+                android:drawablePadding="@dimen/offset_4dp"
+                android:gravity="center_vertical"
+                android:onClick="@{view -> data.onClick(view)}"
+                android:paddingTop="@dimen/offset_10dp"
+                android:textColor="@color/color_8798af"
+                android:textSize="12sp"
+                app:layout_constraintRight_toLeftOf="@+id/mCommunityPostLikeTv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="290" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_line_height_1px"
+            android:layout_gravity="top"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:background="@color/color_f3f5f6"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mCommunityPostImgCardView" />
+    </FrameLayout>
+
+</layout>

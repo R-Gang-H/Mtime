@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StatusBarHeightLayout">
+        <attr name="sbhl_use_type" format="integer">
+            <!-- 只有状态栏的高度，用来占位 -->
+            <enum name="sbhl_use_height" value="0" />
+            <!-- 和系统默认行为一致 -->
+            <enum name="sbhl_use_padding" value="1" />
+            <!-- 除了状态栏到顶，其余和系统行为一致 -->
+            <enum name="sbhl_use_padding_exclude_top" value="2" />
+            <!-- 除了状态栏到顶，其余和系统行为一致, 但是会绘制状态栏的颜色值 -->
+            <enum name="sbhl_use_type_padding_exclude_top_draw_status_bar" value="3" />
+        </attr>
+        <attr name="sbhl_status_bar_color" format="color|reference"/>
+    </declare-styleable>
+
+</resources>

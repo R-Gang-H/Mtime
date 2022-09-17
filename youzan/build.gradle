@@ -1,0 +1,83 @@
+if (isBuildModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion Android.compileSdkVersion
+    buildToolsVersion Android.buildToolsVersion
+
+    defaultConfig {
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.kotlin.android.card.monopoly"
+        }
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+        versionCode Android.versionCode
+        versionName Android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true  //压缩优化
+
+            consumerProguardFiles 'proguard-rules.pro',
+                    '../js-sdk/proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
+    kapt {
+        useBuildCache = true
+        javacOptions {
+            option("-Xmaxerrs", 500)
+        }
+    }
+}
+
+dependencies {
+    testImplementation Support.junit
+    androidTestImplementation Support.junit_ext
+    androidTestImplementation Support.espresso_core
+    implementation project(path: ':app-router')
+    implementation project(path: ':core')
+    implementation Dependencies.x5_webview
+    implementation Support.material
+    implementation Support.appcompat
+    api Dependencies.youzanyun, {
+        exclude module: 'x5official'
+    }
+    //组件中依赖阿里路由编译框架
+    kapt Dependencies.arouter_compiler
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}

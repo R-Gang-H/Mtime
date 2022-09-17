@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--文章-->
+    <include
+        android:id="@+id/editorOrigin"
+        layout="@layout/merge_editor_origin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View style="@style/EditorDivide" />
+
+    <com.kotlin.android.publish.component.widget.article.label.AddCoverView
+        android:id="@+id/addCoverView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:viewBindingType="com.kotlin.android.publish.component.widget.article.label.AddCoverView" />
+
+    <com.kotlin.android.publish.component.widget.article.label.AddImagesView
+        android:id="@+id/addImagesView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        tools:viewBindingType="com.kotlin.android.publish.component.widget.article.label.AddImagesView" />
+
+    <View
+        style="@style/EditorDivide"
+        android:layout_marginBottom="10dp" />
+
+    <com.kotlin.android.publish.component.widget.article.label.EditorOptionView
+        android:id="@+id/optionMovieView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.kotlin.android.publish.component.widget.article.label.EditorOptionView
+        android:id="@+id/optionActorView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.kotlin.android.publish.component.widget.article.label.EditorOptionView
+        android:id="@+id/optionArticleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.kotlin.android.publish.component.widget.article.label.EditorOptionView
+        android:id="@+id/optionLabelView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/permissionView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableEnd="@drawable/ic_editor_20_arrow_right"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/publish_component_title_input_permission"
+            android:textColor="@color/color_404c57"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/permissionDescView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:gravity="center_vertical"
+            android:paddingStart="0dp"
+            android:paddingEnd="37dp"
+            android:text="@string/publish_component_allow_all"
+            android:textColor="@color/color_20a0da"
+            android:textSize="15sp" />
+
+    </FrameLayout>
+
+    <View
+        style="@style/EditorDivide"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/publish_component_declare"
+            android:textColor="@color/color_404c57"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/copyrightView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="15dp"
+            android:drawableStart="@drawable/ic_editor_16_check_box_normal"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="@string/publish_component_copyright"
+            android:textColor="@color/color_8798af"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/disclaimerView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="30dp"
+            android:drawableStart="@drawable/ic_editor_16_check_box_selected"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="@string/publish_component_disclaimer"
+            android:textColor="@color/color_8798af"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</LinearLayout>

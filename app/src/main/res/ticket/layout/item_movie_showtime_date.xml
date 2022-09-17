@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/offset_40dp"
+    android:paddingTop="@dimen/offset_2dp"
+    android:paddingBottom="@dimen/offset_2dp"
+    android:paddingLeft="@dimen/offset_15dp"
+    android:paddingRight="@dimen/offset_15dp"
+    android:orientation="vertical"
+    android:background="@color/color_ffffff"
+    >
+
+    <TextView
+        android:id="@+id/item_movie_showtime_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/color_bbbbbb"
+        android:textSize="@dimen/font_size_13sp"
+        tools:text="今天11月30日"
+        />
+
+    <View
+        android:id="@+id/item_movie_showtime_date_line_view"
+        android:layout_width="@dimen/offset_30dp"
+        android:layout_height="@dimen/offset_2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_movie_showtime_date_line"
+        />
+
+</RelativeLayout>

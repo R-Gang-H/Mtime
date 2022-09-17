@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- title -->
+
+    <include
+        android:id="@+id/graph_title"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <!-- filter par -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cinema_list_filter_bg"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/hot_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:background="@color/color_1c2635"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/hot_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/hot_label_line"
+                android:gravity="center"
+                android:text="@string/st_hot"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/font_size_pxtosp_33" />
+
+            <ImageView
+                android:id="@id/hot_label_line"
+                android:layout_width="@dimen/offset_pxtodx_1"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@id/hot_label"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/hot_label"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/app_name"
+                android:src="@color/color_movie_main_BBBBBB" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/order_year_des_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:background="@color/color_1c2635"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/year_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/st_order_by_year_assec"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/font_size_pxtosp_33" />
+
+            <ImageView
+                android:id="@+id/order_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/ticket_price_icon_margin_left"
+                android:layout_toRightOf="@id/year_des"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/price_sort_default" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/movies_year_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:loadMoreEnabled="true"
+            app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+            app:refreshEnabled="false"
+            app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
+
+        <!-- normal list view -->
+
+        <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/movies_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:loadMoreEnabled="true"
+            app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+            app:refreshEnabled="false"
+            app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_shadow"
+            android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+
+</LinearLayout>

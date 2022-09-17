@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:minHeight="48dp"
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/mArrowView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_widget_default_ptr_flip" />
+
+    <ImageView
+        android:id="@+id/mProgressView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/mHeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="#bbbbbb"
+        android:textSize="12sp"
+        tools:text="下拉刷新" />
+</LinearLayout>

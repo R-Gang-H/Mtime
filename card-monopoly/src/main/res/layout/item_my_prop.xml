@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.card.monopoly.adapter.MyPropItemBinder" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp">
+
+            <com.kotlin.android.card.monopoly.widget.card.image.CardImageView
+                android:id="@+id/cardImageView"
+                android:layout_width="67dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/cardImageView"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.data.toolName}"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/font_size_sp_19"
+                app:layout_constraintLeft_toRightOf="@+id/cardImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="熊猫山西熊猫山西熊猫山西熊猫山西熊猫山西熊猫山西熊猫山西" />
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cardImageView"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toEndOf="@+id/cardImageView"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_14sp"
+                app:layout_constraintLeft_toRightOf="@+id/cardImageView"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
+                tools:text="今天出手苏打绿发" />
+
+            <TextView
+                android:id="@+id/tvUse"
+                android:layout_width="@dimen/offset_160px"
+                android:layout_height="@dimen/offset_60px"
+                android:layout_alignBottom="@+id/cardImageView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="@string/str_use"
+                android:textColor="@color/color_ffffff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="购买" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvDesption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:text="@{data.data.description}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_14sp"
+            tools:text="阿斯兰加快递费杀上路机房的阿萨德浪父控件啊啥都大楼附近啊第三方拉伸拉倒手机开发大方两节课" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1dp"
+            android:background="@color/color_e1e1e1" />
+
+    </LinearLayout>
+</layout>

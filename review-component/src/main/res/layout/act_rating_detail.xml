@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/mRatingDetailPicIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_440px"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:scaleType="centerCrop"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/mRatingDetailPicIv"
+                    app:layout_constraintBottom_toBottomOf="@id/mRatingDetailPicIv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:bg_gradient_start_color="@{@color/color_30ffffff}"
+                    android:bg_gradient_end_color="@{@color/color_ffffff}"
+                    />
+
+                <ImageView
+                    android:id="@+id/mRatingDetailBackIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:paddingLeft="@dimen/offset_30px"
+                    android:paddingTop="@dimen/offset_24px"
+                    android:paddingRight="@dimen/offset_20px"
+                    android:paddingBottom="@dimen/offset_20px"
+                    android:src="@drawable/ic_back_dark"
+                    />
+
+                <TextView
+                    android:id="@+id/mRatingDetailScoreTitleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="@dimen/offset_162px"
+                    android:textSize="@dimen/offset_12sp"
+                    android:textColor="@color/color_4E5E73"
+                    android:text="@string/film_review_share_score"
+                    />
+
+                <com.kotlin.android.widget.textview.SpacingTextView
+                    android:id="@+id/mRatingDetailScoreTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mRatingDetailScoreTitleTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textSize="50sp"
+                    android:textColor="@color/color_4E5E73"
+                    android:textStyle="bold|italic"
+                    tools:text="7.9"
+                    />
+
+                <TextView
+                    android:id="@+id/mRatingDetailScoreCountTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/mRatingDetailPicIv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:drawableStart="@drawable/ic_star"
+                    android:drawablePadding="2dp"
+                    android:textSize="@dimen/offset_12sp"
+                    android:textColor="@color/color_1d2736"
+                    tools:text="234人评分"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRatingDetailRatingRatiosRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mRatingDetailScoreCountTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="@dimen/offset_30px"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_rating_detail_rating_ratios_item"
+                    />
+
+                <TextView
+                    android:id="@+id/mRatingDetailSubScoreTitleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/offset_17sp"
+                    android:textColor="@color/color_8798af"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/mRatingDetailRatingRatiosRv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="@dimen/offset_110px"
+                    android:text="分项评分"
+                    />
+
+                <TextView
+                    android:id="@+id/mRatingDetailSubScoreCountTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mRatingDetailSubScoreTitleTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="@dimen/offset_6px"
+                    android:drawableStart="@drawable/ic_star"
+                    android:drawablePadding="2dp"
+                    android:textSize="@dimen/offset_12sp"
+                    android:textColor="@color/color_1d2736"
+                    tools:text="234人评分"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRatingDetailSubScoreRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mRatingDetailSubScoreCountTv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="@dimen/offset_26px"
+                    android:layout_marginStart="@dimen/offset_30px"
+                    android:layout_marginEnd="@dimen/offset_30px"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rating_detail_sub_rating"
+                    tools:itemCount="5"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mRatingDetailSubScoreRv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="@dimen/offset_154px"
+                    android:layout_marginBottom="@dimen/offset_88px"
+                    android:drawableStart="@drawable/ic_gray_mtime_logo"
+                    android:drawablePadding="@dimen/offset_10px"
+                    android:gravity="bottom"
+                    android:textSize="@dimen/offset_12sp"
+                    android:textColor="@color/color_cbd0d7"
+                    android:text="@string/film_review_share_score"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+</layout>

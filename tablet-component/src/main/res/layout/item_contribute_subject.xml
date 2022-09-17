@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.tablet.adapter.ContributeSubjectBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mSubjectHostLay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_192px"
+        android:layout_marginStart="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_30px"
+        android:layout_marginEnd="@dimen/offset_30px"
+        android:onClick="@{(view) -> data.onClick(view)}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mSubjectCoverIv"
+            style="@style/MatchMatch"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/color_1d2736" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mSubjectTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_23px"
+            android:layout_marginTop="@dimen/offset_50px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{data.bean.title}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/offset_18sp"
+            app:layout_constraintEnd_toStartOf="@id/mContributeTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="未来家园系列描述描述描述..." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mPeopleCountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{@string/tablet_film_list_people_count(String.valueOf(data.bean.deliveryManuscriptsPersonTime))}"
+            android:textColor="@color/color_66ffffff"
+            android:textSize="@dimen/offset_12sp"
+            android:visibility="@{data.bean.deliveryManuscriptsPersonTime > 0?View.VISIBLE:View.GONE}"
+            app:layout_constraintStart_toStartOf="@+id/mSubjectTitleTv"
+            app:layout_constraintTop_toBottomOf="@+id/mSubjectTitleTv"
+            tools:text="100人参与" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mTimeTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5px"
+            app:layout_goneMarginStart="0dp"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_66ffffff"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintTop_toBottomOf="@+id/mSubjectTitleTv"
+            app:layout_constraintEnd_toStartOf="@id/mContributeTv"
+            app:layout_constraintStart_toEndOf="@+id/mPeopleCountTv"
+            tools:text="2021/10/12 - 2021/12/31" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mContributeTv"
+            color="@{@color/color_20a0da}"
+            cornerRadius="@{12}"
+            android:layout_width="@dimen/offset_104px"
+            android:layout_height="@dimen/offset_46px"
+            android:layout_marginEnd="@dimen/offset_28px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/tablet_main_right_title"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_13sp"
+            android:visibility="@{data.bean.history? View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="toplistInfo"
+            type="com.kotlin.android.app.data.entity.toplist.TopListInfo" />
+    </data>
+
+    <com.kotlin.android.widget.multistate.MultiStateView
+        android:id="@+id/mMultiStateView"
+        style="@style/MatchMatch"
+        >
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            style="@style/MatchMatch"
+            >
+
+            <!-- 榜单详情页通用 标题 头部信息 -->
+            <include
+                style="@style/MatchWrap"
+                app:data="@{toplistInfo}"
+                layout="@layout/layout_toplist_detail_head"
+                />
+
+
+            <!-- 用户排名列表 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mToplistGameDetailRv"
+                style="@style/MatchMatch"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:listitem="@layout/item_toplist_game_detail"
+                />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.kotlin.android.widget.multistate.MultiStateView>
+
+</layout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.ui.person.center.CommunityPersonViewModel" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/person_app_bar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:elevation="0dp">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:contentScrim="@color/color_ffffff"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:scrimAnimationDuration="200"
+                    app:scrimVisibleHeightTrigger="100dp"
+                    app:statusBarScrim="@color/color_00000000">
+
+                    <!--背景-->
+                    <ImageView
+                        android:id="@+id/iv_default_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        app:layout_collapseMode="parallax"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        />
+                    <!-- 渐变蒙层 -->
+                    <View
+                        android:visibility="visible"
+                        android:id="@+id/bg_gradient1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/offset_190px"
+                        android:bg_gradient_start_color="@{@color/color_66000000}"
+                        android:bg_gradient_end_color="@{@color/color_00000000}"
+                        />
+                    <!--                    44 24dpstasbar-->
+
+                    <include
+                        android:id="@+id/header"
+                        app:data="@{data.uiState.success}"
+                        layout="@layout/view_community_person_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_collapseMode="parallax"
+                        android:layout_marginTop="@dimen/offset_136px" />
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/offset_88px"
+                        android:background="@color/transparent"
+                        android:layout_marginTop="@dimen/offset_24dp"
+                        app:layout_collapseMode="pin"
+                        app:contentInsetEnd="0dp"
+                        app:contentInsetLeft="0dp"
+                        app:contentInsetRight="0dp"
+                        app:contentInsetStart="0dp"
+                        >
+
+                        <!--标题栏-->
+                        <include
+                            android:id="@+id/title"
+                            layout="@layout/view_community_person_title"
+                            app:data="@{data.uiState.success}" />
+                    </androidx.appcompat.widget.Toolbar>
+
+
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <com.ogaclejapan.smarttablayout.SmartTabLayout
+                    android:id="@+id/mTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_88px"
+                    android:background="@color/color_ffffff"
+                    app:stl_customTabTextLayoutId="@layout/view_tab_item_community_person"
+                    app:stl_customTabTextViewId="@id/mTabTextView"
+                    app:stl_defaultTabTextAllCaps="false"
+                    app:stl_distributeEvenly="true"
+                    app:stl_dividerThickness="0dp"
+                    app:stl_indicatorColor="@color/color_20a0da"
+                    app:stl_indicatorCornerRadius="15dp"
+                    app:stl_indicatorInterpolation="smart"
+                    app:stl_indicatorThickness="4dp"
+                    app:stl_indicatorWidth="16dp"
+                    app:stl_indicatorWithoutPadding="true"
+                    app:stl_titleOffset="auto_center"
+                    app:stl_underlineThickness="0dp" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/mViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_ffffff"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+    </FrameLayout>
+
+</layout>

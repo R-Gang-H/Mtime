@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_40px"
+        android:layout_marginBottom="@dimen/offset_30px"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/citylist_head_location_iv"
+            android:layout_width="@dimen/offset_40px"
+            android:layout_height="@dimen/offset_40px"
+            android:src="@drawable/ic_city_change_locate_success"
+            />
+
+        <TextView
+            android:id="@+id/current_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_17sp"
+            android:textStyle="bold"
+            android:text="@string/st_beijing"
+            />
+
+        <TextView
+            android:id="@+id/location_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            tools:text="GPS定位"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_2px"
+        android:layout_below="@id/title_view"
+        android:background="@color/color_f3f3f4"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:layout_marginBottom="@dimen/offset_17px"
+        />
+</RelativeLayout>

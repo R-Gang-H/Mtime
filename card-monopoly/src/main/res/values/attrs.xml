@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DrawableTextView">
+        <attr name="leftDrawable" format="reference|color" />
+        <attr name="rightDrawable" format="reference|color" />
+        <attr name="topDrawable" format="reference|color" />
+        <attr name="bottomDrawable" format="reference|color" />
+
+        <attr name="leftDrawableWidth" format="reference|dimension" />
+        <attr name="rightDrawableWidth" format="reference|dimension" />
+        <attr name="topDrawableWidth" format="reference|dimension" />
+        <attr name="bottomDrawableWidth" format="reference|dimension" />
+
+        <attr name="leftDrawableHeight" format="reference|dimension" />
+        <attr name="rightDrawableHeight" format="reference|dimension" />
+        <attr name="topDrawableHeight" format="reference|dimension" />
+        <attr name="bottomDrawableHeight" format="reference|dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CardSeatProgressView">
+        <attr name="cpv_border_width" format="dimension"/>
+        <attr name="cpv_border_radius" format="dimension"/>
+        <attr name="cpv_border_color" format="color"/>
+        <attr name="cpv_border_padding" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="GIFView">
+        <attr name="view_gif_loop" format="boolean" />
+        <attr name="view_gif_source" format="reference" />
+    </declare-styleable>
+</resources>

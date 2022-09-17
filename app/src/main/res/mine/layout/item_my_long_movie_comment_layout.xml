@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/month_tv"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@color/color_f2f3f6"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/color_8798AF"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/color_F3F3F4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/month_tv"
+        app:layout_goneMarginTop="1dp">
+
+        <com.mtime.mtmovie.widgets.RoundAngleImageView
+            android:id="@+id/comment_img"
+            android:layout_width="65dp"
+            android:layout_height="97dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundHeight="4dp"
+            app:roundWidth="4dp"
+            tools:background="@color/color_C9CEDC" />
+
+        <ImageView
+            android:id="@+id/item_more_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_common_more_dark"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/movie_name" />
+
+        <View
+            android:id="@+id/item_more_holder"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/item_more_iv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/item_more_iv" />
+
+        <TextView
+            android:id="@+id/movie_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_303A47"
+            android:textSize="17sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/comment_img"
+            app:layout_constraintRight_toLeftOf="@id/item_more_holder"
+            app:layout_constraintTop_toTopOf="@id/comment_img"
+            tools:text="哥斯拉2：怪兽之王" />
+
+        <com.mtime.mtmovie.widgets.ScoreView
+            android:id="@+id/score_view_sv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:textColor="#20a0da"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@id/my_comment_score_tv"
+            app:layout_constraintLeft_toRightOf="@id/my_comment_score_tv"
+            app:layout_constraintTop_toTopOf="@id/my_comment_score_tv"
+            tools:text="7.9" />
+
+        <TextView
+            android:id="@+id/my_comment_score_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="6dp"
+            android:textColor="#20a0da"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/comment_img"
+            app:layout_constraintTop_toBottomOf="@id/movie_name"
+            tools:text="我评" />
+
+        <TextView
+            android:id="@+id/comment_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="afdafdafafa"
+            android:textColor="@color/color_4E5E73"
+            android:textSize="15sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/comment"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/comment_img"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/my_comment_score_tv"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="afdafdafafa"
+            android:textColor="@color/color_8798AF"
+            android:textSize="14sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/comment_img"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/comment_img"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/comment_title_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/item_more_btn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/month_tv"
+        app:layout_goneMarginTop="15dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

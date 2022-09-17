@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.filmlist.FilmListEntity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.tablet.ui.TabletMainActivity">
+
+        <LinearLayout
+            android:id="@+id/ll_earch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.kotlin.android.widget.search.SearchEditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/offset_30dp"
+                    android:layout_marginStart="@dimen/offset_15dp"
+                    android:layout_marginTop="@dimen/offset_10dp"
+                    android:layout_marginBottom="@dimen/offset_10dp"
+                    android:layout_weight="5"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/tablet_main_search"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/tv_select"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/offset_18dp"
+                    android:layout_marginStart="@dimen/offset_26px"
+                    android:layout_marginEnd="@dimen/offset_20px"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="@string/tablet_film_list_label"
+                    android:textSize="@dimen/offset_13sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_16dp"
+                android:background="@drawable/ic_label_arrow_down" />
+        </LinearLayout>
+
+        <!--        <RelativeLayout-->
+        <!--            android:id="@+id/rl_title"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/ll_earch">-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="@dimen/offset_15dp"-->
+        <!--                android:layout_marginTop="@dimen/offset_15dp"-->
+        <!--                android:layout_marginBottom="@dimen/offset_15dp"-->
+        <!--                android:text="@{bean.currCategoryName}"-->
+        <!--                android:textSize="@dimen/offset_18sp"-->
+        <!--                android:textStyle="bold" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/tv_collection"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_alignParentEnd="true"-->
+        <!--                android:layout_centerVertical="true"-->
+        <!--                android:layout_marginEnd="@dimen/offset_15dp"-->
+        <!--                android:background="@drawable/corner_f3f3f4_10_bg"-->
+        <!--                android:drawableEnd="@drawable/ic_label_16_arrow_right"-->
+        <!--                android:paddingStart="10dp"-->
+        <!--                android:paddingTop="@dimen/offset_3dp"-->
+        <!--                android:paddingBottom="@dimen/offset_3dp"-->
+        <!--                android:text="@string/tablet_main_mine" />-->
+        <!--        </RelativeLayout>-->
+
+        <com.kotlin.android.widget.multistate.MultiStateView
+            android:id="@+id/mMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_earch"
+            android:layout_marginTop="@dimen/offset_10dp">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/mRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srlEnableFooterFollowWhenNoMoreData="false">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mTabletRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_film_list_layout" />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </com.kotlin.android.widget.multistate.MultiStateView>
+
+        <RelativeLayout
+            android:id="@+id/expand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_earch"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mFilmListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+                tools:listitem="@layout/item_film_label_layout" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/mFilmListView"
+                android:background="#55000000" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mEmptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_earch"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/mFragSearchResultTypeEmptyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_search_result_empty"
+                android:drawablePadding="@dimen/offset_24px"
+                android:text="@string/search_result_empty_tip"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

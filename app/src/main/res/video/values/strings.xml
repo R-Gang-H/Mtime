@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="video_loading_hint">即将播放</string>
+    <string name="video_loading_hint_new">正在加载,  请稍后...</string>
+</resources>

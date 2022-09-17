@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.kotlin.android.widget.image.RoundImageView
+        android:id="@+id/ivFirst"
+        android:layout_width="@dimen/offset_140px"
+        android:layout_height="@dimen/offset_140px"
+        app:corner_radius="@dimen/offset_10px"
+        android:layout_marginEnd="@dimen/offset_10px"
+        android:visibility="gone"/>
+    <com.kotlin.android.widget.image.RoundImageView
+        android:id="@+id/ivSecond"
+        android:layout_width="@dimen/offset_140px"
+        android:layout_height="@dimen/offset_140px"
+        app:corner_radius="@dimen/offset_10px"
+        android:layout_marginEnd="@dimen/offset_10px"
+        android:visibility="gone"/>
+    <com.kotlin.android.widget.image.RoundImageView
+        android:id="@+id/ivThird"
+        android:layout_width="@dimen/offset_140px"
+        android:layout_height="@dimen/offset_140px"
+        app:corner_radius="@dimen/offset_10px"
+        android:layout_marginEnd="@dimen/offset_10px"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:id="@+id/rlFourth"
+        android:layout_width="@dimen/offset_140px"
+        android:layout_height="@dimen/offset_140px"
+        android:visibility="gone">
+        <com.kotlin.android.widget.image.RoundImageView
+            android:id="@+id/ivFourth"
+            android:layout_width="@dimen/offset_140px"
+            android:layout_height="@dimen/offset_140px"
+            app:corner_radius="@dimen/offset_10px"/>
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="@dimen/offset_40px"
+            android:layout_height="@dimen/offset_40px"
+            android:layout_centerInParent="true"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_14sp"/>
+    </RelativeLayout>
+
+</LinearLayout>

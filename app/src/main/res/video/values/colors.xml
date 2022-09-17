@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 文字颜色 -->
+
+
+    <color name="player_sdk_white">#ffffff</color>
+
+    <color name="player_sdk_grey_400">#9d9e9e</color>
+
+
+    <color name="player_sdk_black_transparent_30">#30000000</color>
+    <!--买票-->
+
+    <!--广告-->
+
+
+    <color name="player_progress_color">#FF8600</color><!--主题色-->
+
+
+</resources>

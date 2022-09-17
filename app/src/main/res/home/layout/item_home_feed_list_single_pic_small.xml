@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.base.widget.layout.VisibilityStateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingLeft="@dimen/common_list_left_or_right_margin"
+    android:paddingRight="@dimen/common_list_left_or_right_margin"
+    android:paddingTop="15dp">
+
+    <com.mtime.mtmovie.widgets.RoundAngleImageView
+        android:id="@+id/item_home_feed_list_single_pic_small_pic_iv"
+        android:layout_width="112dp"
+        android:layout_height="75dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:foregroundGravity="center"
+        android:scaleType="centerCrop"
+        app:roundWidth="4dp"
+        app:roundHeight="4dp"
+        app:srcCompat="@drawable/default_image" />
+
+    <TextView
+        android:id="@+id/item_home_feed_list_single_pic_small_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@id/item_home_feed_list_single_pic_small_pic_iv"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.28"
+        android:lines="3"
+        android:textColor="#303a47"
+        android:textSize="17sp"
+        tools:text="让你了解泰国电影的10部作品不容错过！" />
+
+    <LinearLayout
+        android:id="@+id/item_home_feed_list_single_pic_bottom_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/item_home_feed_list_single_pic_small_title_tv"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_home_feed_list_single_pic_small_ad_tag_tv"
+            android:text="@string/home_feed_item_ad_text"
+            android:layout_marginRight="10dp"
+            style="@style/HomeFeedTagAdTextStyle" />
+
+        <TextView
+            android:id="@+id/item_home_feed_list_single_pic_small_stick_tag_tv"
+            android:text="@string/home_feed_item_stick_text"
+            android:layout_marginRight="10dp"
+            style="@style/HomeFeedTagStickTextStyle" />
+
+        <TextView
+            android:id="@+id/item_home_feed_list_single_pic_small_author_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="80dp"
+            android:textColor="#8798af"
+            android:textSize="12sp"
+            tools:text="时光号" />
+
+        <!--2019-2&3月版本去掉浏览量-->
+        <TextView
+            android:id="@+id/item_home_feed_list_single_pic_small_pv_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="#777777"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="3,296万浏览" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/item_home_feed_list_single_pic_small_close_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_home_feed_list_single_pic_small_title_tv"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="2dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/common_icon_delete" />
+
+    <View
+        style="@style/HomeFeedItemDivider"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/item_home_feed_list_single_pic_bottom_layout"/>
+
+</com.mtime.base.widget.layout.VisibilityStateLayout>

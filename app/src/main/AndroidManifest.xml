@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mtime">
+
+    <!-- 富媒体需要声明的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <!-- 其他权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <!-- 正常权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 危险权限，需要在运行时请求权限 -->
+    <!-- 电话 toolsutils.java   initTelephoneInfo -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- CalendarApi -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <!-- MediaRecorder -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- SD卡 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 特殊权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <!-- 麦克风权限 聊天室发送语音-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.nfc.hce" />
+
+    <!-- set required property, so the devices which not have camera can find me -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <!-- 银联所需要的权限-->
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+
+    <!--    百度统计权限  官网上要求配置蓝牙-->
+    <!--    https://mtj.baidu.com/static/userguide/book/android/sdk/gradle.html-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!--    百度统计权限-->
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:xlargeScreens="true" />
+
+    <!--由于银联认为配置此项后不安全，调不起银联支付-->
+    <!--android:networkSecurityConfig="@xml/network_security_config"-->
+    <application
+        android:name=".frame.App"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/mtime"
+        android:largeHeap="true"
+        android:maxAspectRatio="2.1"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label"
+        tools:targetApi="o">
+
+        <!--配置：支持的最大屏幕比例-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.2" />
+
+        <!--百度统计-->
+        <!-- 您从百度网站获取的APP KEY -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="@string/key_baidu_app_key"
+            tools:replace="android:value" />
+        <!-- 渠道商编号 -->
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="mtime"
+            tools:replace="android:value" />
+        <!-- 是否开启错误日志统计，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="false"
+            tools:replace="android:value" />
+        <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
+        <meta-data
+            android:name="BaiduMobAd_SEND_STRATEGY"
+            android:value="APP_START"
+            tools:replace="android:value" />
+        <!-- 日志仅在wifi网络下发送，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="false"
+            tools:replace="android:value" />
+        <!-- 是否获取基站位置信息 ,默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true"
+            tools:replace="android:value" />
+        <!-- 是否获取GPS位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true"
+            tools:replace="android:value" />
+        <!-- 是否获取WIFI位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true"
+            tools:replace="android:value" />
+
+        <!--<meta-data-->
+        <!--android:name="MAPBAR_APIKEY"-->
+        <!--android:value="DbGfFnNlBeIpLjJdFlBgPkFaAlGpLnGaPfOoKcHdOoOcBiDkIkJeIdJaIpDcMpOn" />-->
+
+
+        <!-- 银联start -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.unionpay.UPPayWapActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 银联end -->
+
+
+        <!-- MTime part -->
+        <!--  -->
+        <activity
+            android:name=".bussiness.splash.SplashNewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppStartLoad">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!--按如下格式添加整个intent-filter块，其中data字段只能有一个，其内容是mtj拼接上您的appkey-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/key_baidu_mtj_app_key"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".bussiness.main.MainTabActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoFitsSystemWindows"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="scheme"
+                    android:scheme="mtime" />
+            </intent-filter>
+
+            <!--            神策-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:scheme="saa42c09ff" />
+            </intent-filter>
+        </activity>
+        <!--yes 代表 title_bar_normal-->
+        <!--没标的或者 no title 代表没有-->
+        <!--其他 的是 具体的 title 布局-->
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.TwitterActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--影片长影片列表-->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieLongCommentListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--演职员-->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieActorListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.ProducerListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.MovieMoreInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--影片时光原创列表-->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieOriginalListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.mine.activity.CommentAndReplyActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!-- act_movie_showtime_title act_movie_showtime_search_title -->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.MovieShowtimeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- 注册登录页 -->
+        <activity
+            android:name=".bussiness.mine.login.activity.LoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--<activity
+            android:name=".mtmovie.ScoreActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenDialog" />-->
+        <!--yes-->
+        <activity
+            android:name=".bussiness.location.CityChangeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!-- 专门给登录绑定使用的, 因为绑定的接口太多了,没有办法 -->
+        <!--手机绑定-->
+        <activity
+            android:name=".bussiness.mine.login.activity.BindPhoneWithLoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--title_bar_login-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.BindPhoneActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--title_bar_switchview-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.BankCardListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--身份验证页-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.SecuritycodeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.ActorViewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+
+            android:windowSoftInputMode="adjustResize" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.ActorFilmographyActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.cinema.activity.CinemaViewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+
+            android:windowSoftInputMode="adjustResize" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.cinema.activity.NewCinemaShowtimeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.SeatSelectActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!--购票订单确认页-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.OrderConfirmActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.OrderPayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.OrderPayFailedActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.OrderPayActivateActivty"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--<activity
+            android:name=".mtmovie.WaitTicketActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />-->
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.cinema.bean.CinemaPreferentialActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.location.MapViewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--影片全球票房榜-->
+        <activity
+            android:name=".bussiness.ticket.movie.boxoffice.MovieGlobalBoxOfficeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yse-->
+        <activity
+            android:name=".bussiness.information.NewsCommentListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yse-->
+        <activity
+            android:name=".bussiness.mine.activity.CompanyDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--title_bar_photodetail-->
+        <activity android:name=".bussiness.information.NewsPhotoDetailActivity" />
+        <!--yse-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.ProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!--title_bar_login-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.ChangeMobileBindingActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--修改密码页_短信验证码-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.ChangePasswordActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--（账号密码登录）密码修改页-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.ChangePasswordLoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--设置密码-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.SetPasswordActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--title_bar_login-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.ChangeNickNameActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--编辑信息页-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.EditInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--title_bar_login-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.ChangeSexActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.mine.activity.SettingActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.mine.activity.AboutActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--title_bar_login-->
+        <activity
+            android:name=".bussiness.mine.activity.PersonalLiveSettingActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.common.FeedBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.mine.activity.FeedBackListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.OrderDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.OrderPaySuccessActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--幕后揭秘-->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieEventActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--no title-->
+        <activity
+            android:name=".bussiness.main.GuideViewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoFitsSystemWindows"/>
+        <!--act_category_video-->
+        <activity
+            android:name=".bussiness.video.activity.CategoryVideoListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.cinema.activity.TwitterCinemaActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".payment.WapPayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--影片媒体评论-->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieMediaReviewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.SmallPayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".payment.MemberCardListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.ActorExperienceActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.ActorHonorsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.cinema.activity.CinemaShopsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--找回密码页-->
+        <activity
+            android:name=".bussiness.mine.login.activity.RetrievePasswordActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.mine.activity.SettingNoticeManageActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.common.PictureSelectActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".bussiness.common.PictureActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!--电影获奖页-->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieHonorListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".bussiness.ticket.movie.activity.CommentImageDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.MovieShortCommentsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 关联电影 -->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieRelatedMovieActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!-- 微信登录 -->
+        <!--<activity-->
+        <!--android:name=".wxapi.WXEntryActivity"-->
+        <!--android:configChanges="keyboardHidden|orientation"-->
+        <!--android:exported="true"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:theme="@style/Theme.Transparent" />-->
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.OrderPayCheckBankCardActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--yes-->
+        <activity
+            android:name=".bussiness.common.MovieCommentViewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!--yes-->
+        <activity
+            android:name=".bussiness.mine.profile.activity.LocationSelectActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!--yes-->
+        <activity
+            android:name=".bussiness.mine.activity.MtimeCoinListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <!--NormalTitleBarContainer-->
+        <activity
+            android:name=".bussiness.mine.history.ReadHistoryActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/my_read_history_title"
+            android:screenOrientation="portrait" />
+
+        <!--NormalTitleBarContainer-->
+        <activity
+            android:name=".bussiness.daily.recommend.HistoryRecommendActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/history_recommend_title"
+            android:screenOrientation="portrait" />
+
+        <!--NormalTitleBarContainer-->
+        <activity
+            android:name=".bussiness.ticket.movie.activity.TicketDirectSaleOrderDetailActivity"
+            android:label="@string/str_order_detail"
+            android:screenOrientation="portrait" />
+
+        <!-- 活动说明 -->
+        <!--NormalTitleBarContainer-->
+        <activity
+            android:name=".bussiness.ticket.cinema.activity.ActivitiesInstructionsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 公共的webview -->
+        <!--act_base_web_view_title_bar-->
+        <activity
+            android:name=".bussiness.common.CommonWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <!--yes-->
+        <activity
+            android:name=".bussiness.ticket.cinema.activity.LicenseActivity"
+            android:screenOrientation="portrait" />
+
+
+        <!-- 每日推荐 -->
+        <activity
+            android:name=".bussiness.daily.recommend.RecommendActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- 影评分享页面-->
+        <!--<activity
+            android:name=".bussiness.ticket.movie.comment.share.MovieCommentShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />-->
+
+        <!-- 影片剧照 -->
+        <activity
+            android:name=".bussiness.ticket.stills.MovieStillsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 影片大图剧照 -->
+        <activity
+            android:name=".bussiness.ticket.stills.MovieStillsDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 影片详情 -->
+        <activity
+            android:name=".bussiness.ticket.movie.details.MovieDetailsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoFitsSystemWindows" />
+
+        <!-- 我的影评 -->
+        <activity
+            android:name=".bussiness.mine.comments.movie.MyMovieCommentsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+      <!--  <provider
+            android:name="com.huawei.hms.device.provider.CheckHmsProvider"
+            android:authorities="com.mtime.huawei.hms.device.validate.spoofprovider"
+            android:exported="false"
+            tools:replace="android:authorities"
+            android:grantUriPermissions="false" />
+-->
+    </application>
+
+</manifest>

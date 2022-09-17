@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.MemberInfoBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--用户头像-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userHeadIv"
+            load_image="@{data.bean.userPic}"
+            load_image_circle_crop="@{true}"
+            load_image_default_img="@{@drawable/default_user_head}"
+            load_image_height="@{29}"
+            load_image_width="@{29}"
+            android:layout_width="@dimen/offset_58px"
+            android:layout_height="@dimen/offset_58px"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_26px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        昵称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_17px"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{data.bean.userName}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/font_size_sp_12"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/userHeadIv"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/userHeadIv"
+            app:layout_constraintRight_toLeftOf="@id/howToUpdateTv"
+            app:layout_constraintTop_toTopOf="@id/userHeadIv"
+            tools:text="棉古生润二久" />
+
+        <!--        如何升级-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/howToUpdateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_how_to_update"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/font_size_sp_11"
+            app:layout_constraintBottom_toBottomOf="@id/userHeadIv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/userHeadIv" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vipLeveIv"
+            android:layout_width="@dimen/offset_100px"
+            android:layout_height="@dimen/offset_100px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:src="@{data.bean.vipLevelDrawable}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userHeadIv" />
+        <!--        会员中心等级图片-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/vipTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_5px"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@{data.bean.vipLevelContent}"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vipLeveIv" />
+
+        <!--        特权布局-->
+        <!--        等级礼包-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/levelPackageTv"
+            mineServiceDrawableTop="@{@drawable/ic_vip_level_privilege}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_100px"
+            android:drawablePadding="@dimen/offset_20px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_level_package_privilege"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/birthdayPrivilegeTv"
+            app:layout_constraintTop_toBottomOf="@id/vipTv" />
+
+        <!--        生日特权-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/birthdayPrivilegeTv"
+            mineServiceDrawableTop="@{@drawable/ic_vip_birthday_privilege}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_100px"
+            android:drawablePadding="@dimen/offset_20px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_birthday_privilege"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/levelPackageTv"
+            app:layout_constraintRight_toLeftOf="@id/movieCoinPrivilegeTv"
+            app:layout_constraintTop_toBottomOf="@id/vipTv" />
+
+        <!--        游戏金币-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieCoinPrivilegeTv"
+            mineServiceDrawableTop="@{@drawable/ic_vip_coin_privilege}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_100px"
+            android:drawablePadding="@dimen/offset_20px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_game_coin_privilege"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/birthdayPrivilegeTv"
+            app:layout_constraintRight_toLeftOf="@id/movieGoodsPrivilegeTv"
+            app:layout_constraintTop_toBottomOf="@id/vipTv" />
+
+        <!--        电影周边-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieGoodsPrivilegeTv"
+            mineServiceDrawableTop="@{@drawable/ic_vip_goods_privilege}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_100px"
+            android:drawablePadding="@dimen/offset_20px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_movie_privilege"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/movieCoinPrivilegeTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vipTv" />
+
+
+        <!--        第二行，客服特权-->
+        <!--        客服特权-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerServicePrivilegeTv"
+            mineServiceDrawableTop="@{@drawable/ic_vip_service_privilege}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:drawablePadding="@dimen/offset_20px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@string/mine_member_customer_service_privilege"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/font_size_sp_12"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/privilegeView"
+            app:layout_constraintTop_toBottomOf="@id/levelPackageTv" />
+
+        <!--        仅做占位-->
+        <View
+            android:id="@+id/privilegeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintLeft_toRightOf="@id/customerServicePrivilegeTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/levelPackageTv" />
+
+        <!--        M豆相关布局-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mBeanCV"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_104px"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            app:cardCornerRadius="@dimen/offset_20px"
+            app:layout_constraintTop_toBottomOf="@id/customerServicePrivilegeTv">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/bg_member_mbean" />
+
+            <!--            M豆-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mBeanTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/offset_56px"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp"
+                android:textStyle="bold"
+                tools:text="8,821M豆" />
+
+
+            <!--            什么是M豆-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/whatsMBeanTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="@dimen/offset_30px"
+                android:drawableRight="@drawable/ic_right_arrows"
+                android:drawablePadding="@dimen/offset_6px"
+                android:drawableTint="@color/color_ffffff"
+                android:onClick="@{view->data.onClick(view)}"
+                android:text="@string/mine_member_what_is_m_bean"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+<!--        M豆兑换-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/exchangeTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_50px"
+            android:text="@string/mine_member_exchange_m_bean"
+            android:textColor="@color/color_1d2736"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:textSize="@dimen/offset_17sp"
+            android:visibility="@{data.showExchangeView?View.VISIBLE:View.GONE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mBeanCV" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/goodsRv"
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/offset_10px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_height="wrap_content"
+            android:visibility="@{data.showExchangeView?View.VISIBLE:View.GONE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exchangeTv" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

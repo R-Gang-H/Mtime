@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.kotlin.android.qrcode.component.journeyapps.barcodescanner.BarcodeView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/zxing_barcode_surface"/>
+
+    <com.kotlin.android.qrcode.component.journeyapps.barcodescanner.ViewfinderView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/zxing_viewfinder_view"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/scan_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="120dp"
+            android:gravity="center_horizontal"
+            android:src="@mipmap/scan_btn"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/scan_tip"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/qrcode_component_scan_tips"
+            android:textColor="@color/color_d8d8d8"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</FrameLayout>

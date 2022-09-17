@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:background="@drawable/dialog_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20dp">
+            <!-- 标题 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/dialog_real_name_titile"
+                android:textColor="@color/color_1D2736"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/dialog_ticket_close_iv"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/ic_close" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1">
+
+            <!-- 阴影条 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/shape_common_scroll_bottom_bar" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- 内容 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:paddingLeft="@dimen/offset_15dp"
+                    android:paddingRight="@dimen/offset_15dp"
+                    android:paddingBottom="@dimen/offset_10dp"
+                    android:text="@string/dialog_real_name_content"
+                    android:textColor="@color/color_4E5E73"
+                    android:textSize="16sp" />
+
+            </ScrollView>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <!-- 服务条款 -->
+            <TextView
+                android:id="@+id/dialog_ticket_real_name_service_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_real_name_service"
+                android:textColor="@color/color_20A0DA"
+                android:textSize="@dimen/font_size_12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_real_name_and"
+                android:textColor="@color/color_4E5E73"
+                android:textSize="@dimen/font_size_12sp" />
+
+            <!-- 隐私条款 -->
+            <TextView
+                android:id="@+id/dialog_ticket_real_name_privacy_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_real_name_privacy"
+                android:textColor="@color/color_20A0DA"
+                android:textSize="@dimen/font_size_12sp" />
+
+        </LinearLayout>
+
+        <!-- btn -->
+        <TextView
+            android:id="@+id/dialog_ticket_real_name_ok_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_30dp"
+            android:layout_marginLeft="@dimen/offset_15dp"
+            android:layout_marginTop="@dimen/offset_15dp"
+            android:layout_marginRight="@dimen/offset_15dp"
+            android:layout_marginBottom="@dimen/offset_10dp"
+            android:background="@drawable/shape_common_btn_bg"
+            android:gravity="center"
+            android:text="@string/dialog_real_name_btn_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="54dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="15dp"
+        android:contentDescription="@string/publish"
+        android:src="@drawable/icon_publish_content_movie" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="75dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/color_303a47"
+        android:textSize="17sp"
+        tools:text="七月安生七月安生七月安生七月安生七月安生七月安生七月安生" />
+
+    <com.kotlin.android.publish.component.widget.ActionLinkView
+        android:id="@+id/actionLink"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="49dp"
+        android:contentDescription="@string/publish"
+        android:src="@drawable/icon_publish_content_movie_link" />
+
+    <com.kotlin.android.publish.component.widget.ActionMoveView
+        android:id="@+id/actionMove"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="15dp"
+        android:contentDescription="@string/publish"
+        android:src="@drawable/icon_publish_content_move" />
+
+</FrameLayout>

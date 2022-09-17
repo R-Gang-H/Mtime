@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+    <TextView
+        android:id="@+id/textColorLabelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/publish_component_menu_text_color"
+        android:textColor="@color/color_8798af"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/colorView0"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="3dp"
+        android:src="@color/color_303a47"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/colorView1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textColorLabelView"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/colorView1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/colorView2"
+        app:layout_constraintStart_toEndOf="@+id/colorView0"
+        app:layout_constraintTop_toBottomOf="@+id/textColorLabelView"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/colorView2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/colorView3"
+        app:layout_constraintStart_toEndOf="@+id/colorView1"
+        app:layout_constraintTop_toBottomOf="@+id/textColorLabelView"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/colorView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/colorView4"
+        app:layout_constraintStart_toEndOf="@+id/colorView2"
+        app:layout_constraintTop_toBottomOf="@+id/textColorLabelView"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/colorView4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/colorView5"
+        app:layout_constraintStart_toEndOf="@+id/colorView3"
+        app:layout_constraintTop_toBottomOf="@+id/textColorLabelView"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/colorView5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/colorView6"
+        app:layout_constraintStart_toEndOf="@+id/colorView4"
+        app:layout_constraintTop_toBottomOf="@+id/textColorLabelView"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/colorView6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="3dp"
+        android:src="@color/color_20a0da"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/colorView5"
+        app:layout_constraintTop_toBottomOf="@+id/textColorLabelView"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultPersonItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingTop="@dimen/offset_30px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        android:onClick="@{() -> data.mMainProvider.startActorViewActivity(data.bean.personId, (TextUtils.isEmpty(data.bean.name) ? data.bean.nameEn : data.bean.name))}"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mItemSearchResultPersonLayout"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+
+        <!-- 封面图 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemSearchResultPersonCard"
+            android:layout_width="@dimen/offset_130px"
+            android:layout_height="@dimen/offset_194px"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <!-- 封面图 -->
+            <ImageView
+                android:id="@+id/mItemSearchResultPersonImgIv"
+                style="@style/MatchMatch"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.bean.img}"
+                load_image_width="@{65}"
+                load_image_height="@{97}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 中文名 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPersonNameCnTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_17sp"
+            android:textColor="@color/color_303a47"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mItemSearchResultPersonCard"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="英格丽·褒曼英格丽·褒曼英格丽·褒曼英格丽·褒曼英格丽·褒曼"
+            />
+
+        <!-- 英文名 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPersonNameEnTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultPersonNameCnTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemSearchResultPersonNameCnTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="Ingrid Bergman Ingrid Bergman Ingrid Bergman Ingrid Bergman Ingrid Bergman"
+            />
+
+        <!-- 职业 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPersonTypeTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_3px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_4e5e73"
+            android:text="@{data.bean.profession}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultPersonNameEnTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemSearchResultPersonNameEnTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="剧情/动作/玄幻/动作/玄幻/动作/玄幻/动作/玄幻/动作/玄幻/动作/玄幻"
+            />
+
+        <!-- 代表作 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPersonMovieTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_4e5e73"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultPersonTypeTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemSearchResultPersonNameEnTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="代表作《大侦探对大明星》《秋日奏鸣曲-XXXXXX》《东方快车谋杀案》"
+            />
+
+        <!-- 喜爱度提示 -->
+        <TextView
+            android:id="@+id/mItemSearchResultPersonLikeTipTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_search_result_person_like"
+            android:drawablePadding="@dimen/offset_10px"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_feb12a"
+            android:textStyle="bold"
+            android:text="@string/search_result_person_like_tip"
+            android:visibility="@{data.bean.loveDeep > 0 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultPersonMovieTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemSearchResultPersonNameEnTv"
+            />
+
+        <!-- 喜爱度 -->
+        <com.kotlin.android.widget.textview.SpacingTextView
+            android:id="@+id/mItemSearchResultPersonLikeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_feb12a"
+            android:textStyle="bold|italic"
+            android:visibility="@{data.bean.loveDeep > 0 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/mItemSearchResultPersonLikeTipTv"
+            app:layout_constraintLeft_toRightOf="@+id/mItemSearchResultPersonLikeTipTv"
+            tools:text="89%"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mItemSearchResultPersonLineView"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:background="@color/color_0f303a47"
+            android:visibility="@{data.isResult() ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultPersonLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

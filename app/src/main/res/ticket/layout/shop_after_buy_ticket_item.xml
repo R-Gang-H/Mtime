@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/offset_pxtodx_200"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_pxtodx_200"
+        android:layout_marginRight="@dimen/offset_pxtodx_18">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- 商品图片 -->
+        <ImageView
+            android:id="@+id/sku_img_after_buy_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/image_border"
+            android:cropToPadding="true"
+            android:padding="@dimen/offset_1px"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/prompt_after_buy_ticket"
+            android:layout_width="@dimen/offset_45dp"
+            android:layout_height="@dimen/offset_15dp"
+            android:text="优惠100元"
+            android:textColor="@color/white"
+            android:paddingLeft="@dimen/offset_2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textSize="11sp"
+            android:background="@color/color_f15353"/>
+
+        </RelativeLayout>
+
+        <!-- 查看全部 -->
+        <LinearLayout
+            android:id="@+id/sku_all_after_buy_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/image_border"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/offset_1px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  .   .   .  "
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_pxtosp_28" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MORE"
+                android:textColor="@color/color_777777"
+                android:textSize="@dimen/font_size_pxtosp_28" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- 商品名称 -->
+    <TextView
+        android:id="@+id/sku_name_after_buy_ticket"
+        android:layout_width="@dimen/offset_pxtodx_200"
+        android:layout_height="@dimen/offset_pxtodx_64"
+        android:layout_marginRight="@dimen/offset_pxtodx_18"
+        android:layout_marginTop="@dimen/offset_pxtodx_14"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/font_size_pxtosp_24" />
+
+    <!-- 价格 -->
+    <TextView
+        android:id="@+id/sku_price_after_buy_ticket"
+        android:layout_width="@dimen/offset_pxtodx_200"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/offset_pxtodx_18"
+        android:textColor="@color/color_ff8600"
+        android:textSize="@dimen/font_size_pxtosp_28" />
+
+</LinearLayout>

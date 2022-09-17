@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/offset_15dp"
+    android:paddingLeft="@dimen/offset_15dp"
+    android:paddingRight="@dimen/offset_15dp"
+    >
+
+    <TextView
+        android:id="@+id/item_ticket_real_name_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/font_size_15sp"
+        android:textColor="@color/color_333333"
+        tools:text="张XX"
+        />
+
+    <TextView
+        android:id="@+id/item_ticket_real_name_id_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_4dp"
+        app:layout_constraintTop_toBottomOf="@+id/item_ticket_real_name_name_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/font_size_15sp"
+        android:textColor="@color/color_333333"
+        tools:text="身份证"
+        />
+
+    <TextView
+        android:id="@+id/item_ticket_real_name_id_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_15dp"
+        app:layout_constraintLeft_toRightOf="@+id/item_ticket_real_name_id_type_tv"
+        app:layout_constraintBaseline_toBaselineOf="@+id/item_ticket_real_name_id_type_tv"
+        android:textSize="@dimen/font_size_15sp"
+        android:textColor="@color/color_333333"
+        tools:text="130xxxxxxxx"
+        />
+
+    <View
+        android:id="@+id/item_ticket_real_name_bottom_line_view"
+        android:layout_width="@dimen/offset_0dp"
+        android:layout_height="@dimen/offset_0_5dp"
+        android:layout_marginTop="@dimen/offset_15dp"
+        android:background="@drawable/ticket_code_line"
+        app:layout_constraintTop_toBottomOf="@+id/item_ticket_real_name_id_type_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

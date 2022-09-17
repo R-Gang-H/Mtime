@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/layout_ticket_direct_sale_order_top_state_third_indicator_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/layout_ticket_direct_sale_order_top_state_third_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/layout_ticket_direct_sale_order_top_state_third_indicator_iv"
+            android:gravity="center"
+            android:textSize="@dimen/offset_15sp"
+            android:textColor="@color/ticket_light_dark"
+            android:text=""
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

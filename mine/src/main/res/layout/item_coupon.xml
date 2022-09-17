@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.mine.binder.CouponBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginRight="@dimen/offset_30px"
+        android:bg_shape_color="@{@color/color_f2f3f6}"
+        android:bg_shape_corner="@{10}">
+
+        <!-- 有效期 -->
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_22px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_20a0da"
+            android:textSize="@dimen/offset_15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{data.bean.timeDes}"
+            tools:text="有效期至：2020-05-22" />
+
+        <!-- 使用状态 -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_22px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_16px"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_4e5e73"
+            android:textSize="@dimen/offset_15sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{data.bean.status}"
+            tools:text="已使用" />
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_width_1px"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_16px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/color_cbd0d7"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+        <!-- 名称 -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_26px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_8px"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_1d2736"
+            android:textSize="@dimen/offset_15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            android:text="@{data.bean.name}"
+            tools:text="白银会员生日专属5元观影券" />
+        <!-- 描述 -->
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_22px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:paddingBottom="@dimen/offset_30px"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            android:text="@{data.bean.description}"
+            tools:text="白银会员生日专属，仅限于通过时光官网和手机客户端在线选座购买影票时使用过，一个订单仅限用一张。" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

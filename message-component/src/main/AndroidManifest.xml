@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotlin.android.message">
+
+    <application>
+        <activity
+            android:name="com.kotlin.android.message.ui.center.MessageCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.fans.FansActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.movieRemind.MovieRemindActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.comment.CommentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.praise.PraiseActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.privateChat.PrivateChatActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.kotlin.android.message.ui.blackList.BlackListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.chat.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+    </application>
+</manifest>

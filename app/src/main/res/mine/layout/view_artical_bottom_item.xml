@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_home_reply"
+            android:drawablePadding="@dimen/offset_6dp"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_12sp"
+            tools:text="99+" />
+
+        <TextView
+            android:id="@+id/tv_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_20dp"
+            android:drawableLeft="@drawable/icon_home_praise"
+            android:drawablePadding="@dimen/offset_6dp"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_size_12sp"
+            android:visibility="gone"
+            tools:text="99+" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="@dimen/offset_0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+
+    <RelativeLayout
+        android:id="@+id/img_menu"
+        android:layout_width="@dimen/offset_30dp"
+        android:layout_height="@dimen/offset_30dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/offset_18dp"
+            android:layout_height="@dimen/offset_4dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_home_bottom_menu" />
+    </RelativeLayout>
+</LinearLayout>

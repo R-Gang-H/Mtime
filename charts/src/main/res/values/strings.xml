@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Charts</string>
+
+    <string name="rank_problem">等级相关说明</string>
+    <string name="rank_problem_content">等级是根据用户在站内的正向行为（主要是发动态、职言等）、内容质量、职场影响力等维度计算出来的，代表了用户在站内的成长情况。</string>
+    <string name="string_got_it">知道了</string>
+
+</resources>

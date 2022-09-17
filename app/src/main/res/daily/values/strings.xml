@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="daily_recommend_pic_saved">图片已经保存到相册</string>
+    <string name="daily_recommend_pic_save_failed">保存图片失败</string>
+    <string name="str_history_recommend_no_has_more">您没有观看历史,快去逛逛吧</string>
+    <string name="history_recommend_title">历史推荐</string>
+
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.card.monopoly.adapter.SuitRankItemBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_112px">
+
+        <com.kotlin.android.card.monopoly.widget.CircleImageView
+            android:id="@+id/civRank"
+            android:layout_width="@dimen/offset_70px"
+            android:layout_height="@dimen/offset_70px"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:src="@drawable/default_user_head"
+            app:civ_border_color="@color/color_e3e5ed"
+            app:civ_border_width="@dimen/offset_2px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_100px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.data.nickName}"
+            app:layout_constraintLeft_toRightOf="@+id/civRank"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_10px"
+            android:layout_marginTop="@dimen/offset_8px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintLeft_toRightOf="@+id/civRank"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

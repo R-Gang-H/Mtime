@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/buffView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/color_ffffff"
+        android:padding="10dp"
+        android:text="受到的保护：\n反弹卡保护\n防盗卡保护 XX分钟内30%几率抵抗打劫\n隐身卡保护 XX分钟失效"
+        android:textColor="@color/color_36c096"
+        android:textSize="12sp" />
+
+</FrameLayout>

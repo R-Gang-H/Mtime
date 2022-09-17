@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 可参考https://www.jianshu.com/p/105885c44e49  -->
+    <item android:drawable="@drawable/splash_bg"/>
+
+    <item android:bottom="50dp">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/splash_logo"/>
+    </item>
+
+</layer-list>

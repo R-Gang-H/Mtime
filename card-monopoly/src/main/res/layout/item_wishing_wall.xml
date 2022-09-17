@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/offset_232px"
+    android:paddingLeft="@dimen/offset_30px"
+    android:paddingRight="@dimen/offset_30px">
+
+    <com.kotlin.android.card.monopoly.widget.card.image.CardImageView
+        android:id="@+id/cardImage"
+        android:layout_width="67dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.kotlin.android.card.monopoly.widget.CircleImageView
+        android:id="@+id/avatarView"
+        android:layout_width="@dimen/offset_40px"
+        android:layout_height="@dimen/offset_40px"
+        android:layout_marginStart="@dimen/offset_25px"
+        android:layout_marginTop="@dimen/offset_16px"
+        app:layout_constraintLeft_toRightOf="@+id/cardImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.kotlin.android.card.monopoly.widget.DrawableTextView
+        android:id="@+id/fullWishBtn"
+        android:layout_width="@dimen/offset_184px"
+        android:layout_height="@dimen/offset_60px"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:gravity="center"
+        android:text="帮他实现"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/offset_12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/offset_42px"
+        android:layout_marginStart="@dimen/offset_202px"
+        android:layout_marginTop="@dimen/offset_16px"
+        android:layout_marginEnd="@dimen/offset_184px"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxWidth="@dimen/offset_180px"
+        android:textSize="@dimen/offset_14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="我是洒家搭的安家了较大据了" />
+
+    <TextView
+        android:id="@+id/tvDesption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_164px"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:ellipsize="end"
+        android:maxLines="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullWishBtn"
+        tools:text="我是洒家搭的安家了较大据了就阿双方建立卡戴珊荆防颗粒爱迪生发硕大的六房间卡三大路口发阿萨德了房间爱上大联发科四大就法拉第三方就就爱斯达克冷风机达萨罗开发机阿萨德家乐福" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

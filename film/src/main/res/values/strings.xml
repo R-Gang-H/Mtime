@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tips_label_select_seat">选择观影人数</string>
+    <string name="tips_label_selected_seat">已选座位</string>
+    <string name="tips_label_select_seat_max">一次最多选择4个座位</string>
+    <string name="confirm_place_select_seat">请先选座</string>
+    <string name="confirm_selected_seat">%1$s 确认选座</string>
+</resources>

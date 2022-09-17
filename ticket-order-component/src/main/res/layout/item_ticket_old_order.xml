@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.ticket.order.component.binder.TicketOrderOldBinder" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{view->data.onClick(view)}"
+        android:id="@+id/orderRootView"
+        android:background="@color/color_ffffff"
+        android:layout_marginBottom="@dimen/offset_20px">
+
+        <!--    营销平台logo-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dsPlatFormatIv"
+            android:layout_width="@dimen/offset_44px"
+            android:layout_height="@dimen/offset_44px"
+            android:layout_margin="@dimen/offset_23px"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:src="@mipmap/icon_ticket_order_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--        营销平台名称-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dsPlatFormatTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:text="@string/ticket_order_logo_name"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintBottom_toBottomOf="@id/dsPlatFormatIv"
+            app:layout_constraintLeft_toRightOf="@id/dsPlatFormatIv"
+            app:layout_constraintTop_toTopOf="@id/dsPlatFormatIv"
+            tools:text="时光网" />
+
+        <!--        订单状态-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderStatusTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:text="@{data.bean.orderStatusContent}"
+            android:textColor="@{data.bean.orderStatusColor}"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintBottom_toBottomOf="@id/dsPlatFormatIv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dsPlatFormatIv"
+            tools:text="交易成功" />
+
+        <View
+            android:id="@+id/upLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_line_height"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_23px"
+            android:background="@color/color_d8d8d8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dsPlatFormatIv" />
+
+        <!--        订单名称描述-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:singleLine="true"
+            android:text="@{data.bean.orderTitle}"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/offset_15sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upLine"
+            tools:text="阿丽塔" />
+
+        <!--        订单场次日期信息-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderDesTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:text="@{data.bean.orderTimeInfo}"
+            android:textColor="@color/color_828282"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/orderTitleTv"
+            tools:text="2018-05-20（周五）20:56 " />
+        <!--        订单电影票数量-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ticketNumTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:text="@{data.bean.totalTicketNum}"
+            android:textColor="@color/color_828282"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/orderDesTv"
+            tools:text="数量：2张" />
+
+        <!--是否包含卖品-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/containsGoodsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_10px"
+            android:layout_marginTop="@dimen/offset_14px"
+            android:text="@string/ticket_contains_goods"
+            android:textColor="@color/color_f97d3f"
+            android:textSize="@dimen/offset_9sp"
+            android:visibility="@{data.bean.dsWithGoods?View.VISIBLE:View.GONE}"
+            app:layout_constraintLeft_toRightOf="@id/ticketNumTv"
+            app:layout_constraintTop_toBottomOf="@id/orderDesTv" />
+
+        <View
+            android:id="@+id/downLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_line_height"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:background="@color/color_d8d8d8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ticketNumTv" />
+
+
+        <!--        总价-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:paddingBottom="@dimen/offset_26px"
+            android:layout_marginTop="@dimen/offset_26px"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/offset_13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/downLine"
+            tools:text="总价：100元" />
+
+        <!--        付款按钮-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/payBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/offset_44px"
+            android:paddingRight="@dimen/offset_44px"
+            android:paddingTop="@dimen/offset_10px"
+            android:paddingBottom="@dimen/offset_10px"
+            android:layout_marginTop="@dimen/offset_16px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:gravity="center"
+            android:onClick="@{view->data.onClick(view)}"
+            android:text="@{data.bean.payBtnContent}"
+            android:textColor="@color/color_ffffff"
+            android:visibility="@{data.bean.notPay()?View.VISIBLE:View.GONE}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/downLine" />
+
+        <!--        倒计时-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remainTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_27px"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:textColor="@color/color_777777"
+            android:textSize="@dimen/offset_13sp"
+            android:visibility="@{data.bean.notPay?View.VISIBLE:View.GONE}"
+            app:layout_constraintRight_toLeftOf="@id/payBtn"
+            app:layout_constraintTop_toBottomOf="@id/downLine"
+            tools:text="剩余时间：2分 55 秒" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

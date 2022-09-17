@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListGameUserItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        >
+
+        <!-- 头像 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mItemToplistGameUserHeadCardView"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_5px"
+            app:cardCornerRadius="@dimen/offset_29px"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/mItemToplistGameUserHeadIv"
+                android:layout_width="@dimen/offset_58px"
+                android:layout_height="@dimen/offset_58px"
+                android:contentDescription="@string/loading"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                load_image='@{(data.bean.userInfo == null || TextUtils.isEmpty(data.bean.userInfo.avatarUrl)) ? "": data.bean.userInfo.avatarUrl}'
+                load_image_width="@{29}"
+                load_image_height="@{29}"
+                load_image_circle_crop="@{true}"
+                load_image_default_img="@{@drawable/default_user_head}"
+                tools:src="@drawable/default_user_head"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 名次 -->
+        <com.kotlin.android.widget.textview.SpacingTextView
+            android:id="@+id/mItemToplistGameUserOrderIv"
+            android:layout_width="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_30px"
+            android:layout_marginStart="@dimen/offset_43px"
+            android:gravity="center"
+            android:background="@color/color_36c096"
+            android:textSize="@dimen/offset_10sp"
+            android:textColor="@color/color_ffffff"
+            android:textStyle="bold|italic"
+            android:text='@{data.bean.orderNumber == null ? "" : String.valueOf(data.bean.orderNumber)}'
+            tools:text="2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <!-- 昵称 -->
+        <TextView
+            android:id="@+id/mItemToplistGameUserNicknameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_5px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/offset_125px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_4e5e73"
+            android:textStyle="bold"
+            android:text='@{(data.bean.userInfo == null || TextUtils.isEmpty(data.bean.userInfo.nickName)) ? "": data.bean.userInfo.nickName}'
+            tools:text="夜的第七章夜的第七章"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mItemToplistGameUserOrderIv"
+            />
+
+        <!-- 介绍 -->
+        <TextView
+            android:id="@+id/mItemToplistGameUserIntroTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/offset_125px"
+            android:textSize="@dimen/offset_11sp"
+            android:textColor="@color/color_8798af"
+            android:text='@{TextUtils.isEmpty(data.bean.reasonDesc) ? "": data.bean.reasonDesc}'
+            tools:text="承受攻击200000"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistGameUserNicknameTv"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemToplistGameUserNicknameTv"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

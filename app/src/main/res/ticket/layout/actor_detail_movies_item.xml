@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="@dimen/offset_100dp"
+        android:layout_height="@dimen/offset_150dp"
+        android:background="@color/color_d8d8d8"
+        android:contentDescription="@string/app_name"
+        android:padding="1px"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/header"
+        android:layout_alignRight="@id/header"
+        android:layout_below="@id/header"
+        android:layout_marginTop="@dimen/actor_detail_movies_item_name_margin_top"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/color_333333"
+        android:textSize="13sp"
+        tools:text="中文名中文名中文名中文名中文名"
+        />
+
+    <TextView
+        android:id="@+id/nameEn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/header"
+        android:layout_alignRight="@id/header"
+        android:layout_below="@id/name"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/color_333333"
+        android:textSize="13sp"
+        tools:text="英文名英文名英文名英文名"
+        />
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_alignRight="@id/name"
+        android:layout_below="@id/nameEn"
+        android:layout_marginTop="@dimen/offset_6px"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/color_movie_main_999999"
+        android:textSize="12sp"
+        tools:text="年代年代年代年代年代"
+        />
+
+</RelativeLayout>

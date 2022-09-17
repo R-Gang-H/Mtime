@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.card.monopoly.adapter.SuitDetailItemBinder" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_226px"
+            android:layout_marginTop="@dimen/offset_30px">
+
+
+            <com.kotlin.android.card.monopoly.widget.card.image.SuitImageView
+                android:id="@+id/suitImageView"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_30px"
+                android:layout_marginTop="@dimen/offset_10px"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_190px"
+                android:layout_marginTop="@dimen/offset_28px"
+                android:layout_marginEnd="@dimen/offset_180px"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.suit.suitName}"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/suitImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="哪吒之魔童降世adsfasdfsadfadsfdsafadsfa" />
+
+            <TextView
+                android:id="@+id/tvComment"
+                android:layout_width="@dimen/offset_138px"
+                android:layout_height="@dimen/offset_42px"
+                android:layout_marginTop="@dimen/offset_32px"
+                android:layout_marginEnd="@dimen/offset_30px"
+                android:gravity="center"
+                android:text="@string/suit_comment"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/earlyUserInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_190px"
+                android:layout_marginTop="@dimen/offset_20px"
+                app:layout_constraintLeft_toRightOf="@id/suitImageView"
+                app:layout_constraintTop_toBottomOf="@id/tvName">
+
+                <com.kotlin.android.card.monopoly.widget.CircleImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="@dimen/offset_50px"
+                    android:layout_height="@dimen/offset_50px"
+                    android:src="@drawable/default_user_head"
+                    app:civ_border_color="@color/color_e3e5ed"
+                    app:civ_border_width="@dimen/offset_2px"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/offset_50px"
+                    android:layout_marginStart="@dimen/offset_58px"
+                    android:layout_marginEnd="@dimen/offset_90px"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@{data.suit.earliestMixUser.nickName}"
+                    android:textColor="@color/color_4e5e73"
+                    android:textSize="@dimen/offset_14sp"
+                    app:layout_constraintLeft_toRightOf="@+id/ivAvatar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="MM掌门人asdfdsafdsafdasfdsafdsafadsfasdfasdfasdfasd" />
+
+                <ImageView
+                    android:id="@+id/ivCollectionFlag"
+                    android:layout_width="@dimen/offset_83px"
+                    android:layout_height="@dimen/offset_75px"
+                    android:src="@mipmap/ic_collection"
+                    android:visibility="gone"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rlFlagContain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/offset_34px"
+                    android:layout_marginTop="@dimen/offset_10px"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivAvatar">
+
+                    <TextView
+                        android:id="@+id/tvEarlyFlag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/offset_30px"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/offset_8px"
+                        android:layout_marginEnd="@dimen/offset_8px"
+                        android:gravity="center_vertical"
+                        android:text="@{data.suit.earliestMixUser.title}"
+                        android:textColor="@color/color_4e5e73"
+                        android:textSize="@dimen/offset_10sp"
+                        tools:text="最早合成套装" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tvSeeSuitMember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:gravity="right"
+            android:text="@string/see_suit_member"
+            android:textColor="@color/color_12c7e9"
+            android:textSize="@dimen/offset_14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSuitDetailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:text="@{data.suit.description}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_14sp"
+            tools:text="加拉克是打打扫房间啦水电费拉三等奖弗兰克斯大家发撒旦法大师范类的撒发两节课的撒联发科就的撒冷风机阿开始懂了" />
+
+        <com.kotlin.android.card.monopoly.widget.card.view.SuitCardView
+            android:id="@+id/suitCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:layout_marginEnd="@dimen/offset_30px" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_16px"
+            android:gravity="right"
+            android:paddingEnd="@dimen/offset_30px"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            tools:text="Mtime·2020年09月10日发行 共5张" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1dp"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:background="@color/color_f2f3f6" />
+
+    </LinearLayout>
+</layout>

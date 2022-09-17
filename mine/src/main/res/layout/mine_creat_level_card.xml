@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="levelInfo"
+            type="com.kotlin.android.app.data.entity.mine.LevelInfo" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlLevelBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_30px"
+        android:layout_marginTop="@dimen/offset_20px"
+        android:layout_marginEnd="@dimen/offset_30px"
+        tools:background="@drawable/ic_creatcenter_level1_bg">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreateLv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_40px"
+            android:text="@string/mine_creat_level"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_20sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLvNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvCreateLv"
+            android:layout_marginStart="@dimen/offset_16px"
+            android:layout_toEndOf="@id/tvCreateLv"
+            android:text='@{"Lv"+levelInfo.levelName.substring(1)}'
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_15sp"
+            tools:text="Lv1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRightsDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCreateLv"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_12px"
+            android:drawableEnd="@drawable/ic_white_arrow_12_right"
+            android:drawablePadding="@dimen/offset_2px"
+            android:paddingStart="@dimen/offset_22px"
+            android:paddingTop="@dimen/offset_6px"
+            android:paddingEnd="@dimen/offset_16px"
+            android:paddingBottom="@dimen/offset_6px"
+            android:text="@string/mine_rights_desc"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_12sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreatNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRightsDesc"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_15sp"
+            android:textStyle="bold"
+            tools:text="100" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLvCreatNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvCreatNum"
+            android:layout_toEndOf="@id/tvCreatNum"
+            android:text="@string/mine_lv_creat_num"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_10sp"
+            tools:text="/1000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvCreatNum"
+            android:layout_marginStart="@dimen/offset_8px"
+            android:layout_toEndOf="@id/tvLvCreatNum"
+            android:text="@string/mine_creat_num"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/offset_9sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_8px"
+            android:layout_below="@id/tvLvCreatNum"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_14px"
+            android:layout_marginEnd="@dimen/offset_230px"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="@dimen/offset_8px"
+            app:cardElevation="0dp">
+
+            <ProgressBar
+                android:id="@+id/lvProgressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_8px"
+                android:max="100"
+                android:progressBackgroundTint="@color/color_30ffffff"
+                android:progressTint="@color/color_ffffff"
+                tools:progress="60" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCreatLv"
+            load_image="@{levelInfo.appLogoUrl}"
+            load_image_default_img="@{@drawable/ic_creat_lv}"
+            load_image_height="@{80}"
+            load_image_width="@{80}"
+            android:layout_width="@dimen/offset_160px"
+            android:layout_height="@dimen/offset_160px"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/offset_34px"
+            android:layout_marginEnd="@dimen/offset_36px"
+            tools:src="@drawable/ic_creat_lv" />
+
+    </RelativeLayout>
+</layout>

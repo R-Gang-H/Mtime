@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultCinemaItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingTop="@dimen/offset_30px"
+        android:onClick="@{() -> data.mTicketProvider.startCinemaShowTimeActivity(data.bean.cinemaId, ``, ``)}"
+        >
+
+        <!-- 名称 -->
+        <TextView
+            android:id="@+id/mItemSearchResultCinemaNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/offset_30px"
+            android:paddingRight="@dimen/offset_30px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_16sp"
+            android:textColor="@color/color_4e5e73"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="北京万达CBD店北京万达CBD店北京万达CBD店北京万达CBD店北京万达CBD店"
+            />
+
+        <!-- 地址 -->
+        <TextView
+            android:id="@+id/mItemSearchResultCinemaAddressTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_2px"
+            android:layout_marginEnd="@dimen/offset_30px"
+            android:paddingLeft="@dimen/offset_30px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_14sp"
+            android:textColor="@color/color_8798af"
+            android:text="@{data.bean.address}"
+            android:visibility="@{TextUtils.isEmpty(data.bean.address) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultCinemaNameTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/mItemSearchResultCinemaDistanceTv"
+            tools:text="建外大街万达CBD建外大街万达CBD建外大街万达CBD建外大街万达CBD建外大街万达CBD"
+            tools:visibility="visible"
+            />
+
+        <!-- 距离 -->
+        <TextView
+            android:id="@+id/mItemSearchResultCinemaDistanceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_2px"
+            android:paddingRight="@dimen/offset_30px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_14sp"
+            android:textColor="@color/color_cbd0d7"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultCinemaNameTv"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="500米"
+            tools:visibility="visible"
+            />
+
+        <!-- 特色设施 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mItemSearchResultCinemaFeatureRv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_10px"
+            android:paddingLeft="@dimen/offset_20px"
+            android:paddingRight="@dimen/offset_20px"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultCinemaAddressTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_search_result_cinema_feature"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/mItemSearchResultCinemaLineView"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_2px"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:background="@color/color_0f303a47"
+            app:layout_constraintTop_toBottomOf="@+id/mItemSearchResultCinemaFeatureRv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

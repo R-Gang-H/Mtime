@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.kotlin.android.message.ui.center.binder.ItemChatListBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_chat_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/offset_74dp"
+        android:onClick="@{() -> data.jumpToChatFragment(data.bean.conversationId)}"
+        android:onLongClick="@{() -> data.deleteConversation(data.bean.conversationId)}">
+
+        <com.kotlin.android.message.widget.AuthHeaderView
+            android:id="@+id/iv_fans_head"
+            authHeader="@{data.bean.authHeader}"
+            android:layout_width="@dimen/offset_50dp"
+            android:layout_height="@dimen/offset_50dp"
+            android:layout_marginStart="@dimen/offset_9dp"
+            android:src="@drawable/default_user_head"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_chat_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_11dp"
+            android:layout_marginTop="@dimen/offset_17dp"
+            android:layout_marginEnd="@dimen/offset_10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.bean.name}"
+            android:textColor="@color/color_3d4049"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_time"
+            app:layout_constraintStart_toEndOf="@id/iv_fans_head"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="霸波奔和蹦波霸" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_chat_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_2dp"
+            android:layout_marginEnd="@dimen/offset_10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.bean.recentMessage}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_time"
+            app:layout_constraintStart_toStartOf="@id/tv_chat_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_chat_name"
+            tools:text="哈喽" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:text="@{data.bean.lastChatTime}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_11sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_chat_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_chat_name"
+            tools:text="1小时" />
+
+        <com.kotlin.android.message.widget.NotifyView
+            notify="@{data.bean.messageNotify}"
+            android:layout_width="@dimen/offset_25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_4dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_time"
+            app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_width_1px"
+            android:layout_marginStart="@dimen/offset_16dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:background="@color/color_1f9dafb4"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

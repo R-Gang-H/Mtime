@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isOfficial"
+            type="Boolean" />
+
+        <variable
+            name="isInBlackList"
+            type="Boolean" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_dialog_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/color_f3f3f4"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/offset_20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_visit_home_page"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_50dp"
+                android:background="@color/color_ffffff"
+                android:gravity="center"
+                android:text="@string/message_visit_personal_home_page"
+                android:textColor="@color/color_404c57"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_e5e5e5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_add_to_blacklist"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_50dp"
+                android:background="@color/color_ffffff"
+                android:gravity="center"
+                android:text="@{isInBlackList ? @string/message_remove_from_blacklist : @string/message_add_to_blacklist}"
+                android:textColor="@color/color_404c57"
+                android:textSize="16sp"
+                android:visibility="@{isOfficial ? View.GONE : View.VISIBLE}"
+                tools:text="@string/message_add_to_blacklist" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cancelView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset_50dp"
+                android:layout_marginTop="@dimen/offset_6dp"
+                android:background="@color/color_ffffff"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_16sp" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>

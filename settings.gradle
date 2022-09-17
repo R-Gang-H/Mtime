@@ -1,0 +1,37 @@
+/**==========================业务Module之间不要做横向依赖========================================*/
+//主工程入口（运行全工程时需要设置isBuildModule=false）新组件不要依赖旧组件
+include ':app'
+/**==========================================================================================*/
+//业务层: 卡片大富翁，社区，个人中心，...这些可以当成独立app运行（需要设置isBuildModule=true）
+include ':home', ':film', ':community', ':mine', ':card-monopoly'
+/**==========================================================================================*/
+//业务组件（更强的业务相关性）: 发布组件，评论组件，图片组件，视频组件，社区帖子组件, 社区家族组件,UGC详情...
+include ':publish-component', ':comment-component', ':image-component', ':video-component',
+        ':community-post-component', ':community-family-component', ':article-component',
+        ':review-component', ':community-card-component', ':ugc-detail-component',
+        ':ticket-order-component', ':search-new-component', ':qrcode_component', ':splash-component', ':ugc-web-component', ':bonus_scene_component', ':live-component',
+        ':chat-component',//聊天
+        ':tablet-component',//片单
+        ':charts',// 图表
+        ':message-component',//新版消息中心
+        ':audio-player',//音频播放器
+        ':audio-floatview-component',
+        ':youzan'
+/**==========================================================================================*/
+//业务功能层与业务有关
+include ':app-data', ':mtime-ktx', ':app-router', ':app-api'
+
+//功能层
+include ':widget', ':router', ':api', ':image', ':js-sdk', ':player', ':user', ':share', ':push',
+        ':bind'/*, ':db', ':location'*/
+
+/**==========================================================================================*/
+//基础层
+include ':ktx', ':core', ':resource', ':retrofit', ':data-class', ':statistics', ':weibosdk'
+/**==========================================================================================*/
+
+//老框架，不再更新，仅维持现有的老业务，如需修改，请在新框架下重构该业务
+/**==========================================================================================*/
+include ':network', ':utils', ':views', ':location2',
+        ':jssdk', ':imageloader', ':ijkplayer', ":common-cache", ':networkretrofit'
+/**==========================================================================================*/

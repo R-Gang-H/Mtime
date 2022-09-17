@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/offset_660px"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:paddingStart="@dimen/offset_40px"
+        android:paddingEnd="@dimen/offset_40px">
+
+        <TextView
+            android:id="@+id/mTitle"
+            style="@style/MatchWrap"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingTop="@dimen/offset_30px"
+            android:textColor="@color/color_30333b"
+            android:textSize="@dimen/offset_17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/contentNs"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:paddingTop="@dimen/offset_30px"
+            android:paddingBottom="@dimen/offset_30px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTitle">
+
+            <TextView
+                android:id="@+id/mContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/color_4e5e73"
+                android:textSize="@dimen/offset_16sp" />
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/urlLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/contentNs">
+
+            <TextView
+                android:id="@+id/userAgreementTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mtime时光网服务条款"
+                android:textColor="#20a0da"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:text=" 和 "
+                android:textColor="#4e5e73"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/privacyPolicyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="隐私政策"
+                android:textColor="#20a0da"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_30px"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/offset_30px"
+            app:layout_constraintTop_toBottomOf="@+id/urlLl">
+
+            <TextView
+                android:id="@+id/mCancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_60px"
+                android:layout_marginEnd="@dimen/offset_20px"
+                android:layout_weight="1"
+                android:background="@drawable/shape_common_btn_bg2"
+                android:gravity="center"
+                android:lines="1"
+                android:text="拒绝并退出"
+                android:textColor="#20A0DA"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/mSure"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mSure"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_60px"
+                android:layout_marginStart="@dimen/offset_20px"
+                android:layout_weight="1"
+                android:background="@drawable/shape_common_btn_bg"
+                android:gravity="center"
+                android:text="同意"
+                android:textColor="@color/color_ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/mCancel"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName"
+    >
+
+    <data>
+        <import type="com.kotlin.android.mtime.ktx.KtxMtimeKt" />
+        <variable
+            name="data"
+            type="com.kotlin.android.search.newcomponent.ui.result.adapter.SearchResultAudioItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingStart="@dimen/offset_30px"
+        android:paddingEnd="@dimen/offset_30px"
+        android:onClick="@{(view)->data.onClick(view)}"
+        >
+
+        <!-- 封面图 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/audioCoverCard"
+            android:layout_width="@dimen/offset_146px"
+            android:layout_height="@dimen/offset_146px"
+            android:layout_marginTop="@dimen/offset_22px"
+            app:cardCornerRadius="@dimen/offset_6px"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <!-- 图片 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/audioCoverIv"
+                style="@style/MatchMatch"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_image"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.viewBean.cover}"
+                load_image_width="@{73}"
+                load_image_height="@{73}"
+                />
+
+            <!-- 播放Icon -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/videoPlayIv"
+                android:layout_width="@dimen/offset_40px"
+                android:layout_height="@dimen/offset_50px"
+                android:src="@drawable/ic_search_video_play"
+                android:layout_gravity="center"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 标题 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/audioTitleTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_18px"
+            android:layout_marginStart="@dimen/offset_24px"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_14sp"
+            android:textColor="@color/color_3d4955"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/audioCoverCard"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="标题"
+            />
+
+        <!-- 用户头像 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/audioAuthorImgCard"
+            android:layout_width="@dimen/offset_30px"
+            android:layout_height="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_6px"
+            app:cardCornerRadius="@dimen/offset_15px"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/audioTitleTv"
+            app:layout_constraintLeft_toLeftOf="@+id/audioTitleTv"
+            >
+
+            <!-- 用户头像 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/audioAuthorImgIv"
+                style="@style/MatchMatch"
+                android:src="@drawable/default_user_head"
+                android:contentDescription="@string/app_name"
+                load_image="@{data.viewBean.authorImg}"
+                load_image_default_img="@{@drawable/default_user_head}"
+                load_image_width="@{15}"
+                load_image_height="@{15}"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 用户认证类型 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/audioAuthorAuthTypeIv"
+            android:layout_width="@dimen/offset_15px"
+            android:layout_height="@dimen/offset_15px"
+            android:layout_marginTop="@dimen/offset_18px"
+            android:layout_marginStart="@dimen/offset_20px"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintLeft_toLeftOf="@+id/audioAuthorImgCard"
+            app:layout_constraintTop_toTopOf="@+id/audioAuthorImgCard"
+            tools:src="@drawable/ic_jigourenzheng"
+            />
+
+        <!-- 用户昵称 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/audioAuthorNameTv"
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_5px"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/offset_10sp"
+            android:textColor="@color/color_8798af"
+            android:textStyle="bold"
+            android:text="@{data.viewBean.authorName}"
+            app:layout_constraintTop_toTopOf="@+id/audioAuthorImgCard"
+            app:layout_constraintBottom_toBottomOf="@+id/audioAuthorImgCard"
+            app:layout_constraintLeft_toRightOf="@+id/audioAuthorImgCard"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="我是一只小老虎我是一只小老虎我是一只小老虎我是一只小老虎我是一只小老虎"
+            />
+
+        <!-- 发布时间 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/audioCreateTimeTv"
+            style="@style/WrapWrap"
+            android:textSize="@dimen/offset_10sp"
+            android:textColor="@color/color_cbd0d7"
+            android:text="@{KtxMtimeKt.formatPublishTime(data.viewBean.createTime)}"
+            app:layout_constraintBottom_toBottomOf="@+id/audioCoverCard"
+            app:layout_constraintLeft_toLeftOf="@+id/audioTitleTv"
+            tools:text="2022-1-1"
+            />
+
+        <!-- 赞 -->
+        <TextView
+            android:id="@+id/audioLikeTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_4px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:drawableStart="@{data.viewBean.isLikeUp ? @drawable/ic_likeb : @drawable/ic_like}"
+            android:drawablePadding="@dimen/offset_10px"
+            android:text="@{KtxMtimeKt.formatCount(data.viewBean.likeNum, false)}"
+            app:layout_constraintBottom_toBottomOf="@+id/audioCoverCard"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="999+"
+            />
+
+        <!-- 评论 -->
+        <TextView
+            android:id="@+id/videoCommentTv"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/offset_4px"
+            android:layout_marginEnd="@dimen/offset_24px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:drawableStart="@drawable/ic_comment"
+            android:drawablePadding="@dimen/offset_8px"
+            android:text="@{KtxMtimeKt.formatCount(data.viewBean.commentNum, false)}"
+            app:layout_constraintBottom_toBottomOf="@id/audioCoverCard"
+            app:layout_constraintRight_toLeftOf="@id/audioLikeTv"
+            tools:text="999+"
+            />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="@dimen/offset_0px"
+            android:layout_height="@dimen/offset_1px"
+            android:layout_marginTop="@dimen/offset_29px"
+            android:background="@color/color_9dafb4_alpha_12"
+            app:layout_constraintTop_toBottomOf="@id/audioCoverCard"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

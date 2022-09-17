@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.kotlin.android.message.ui.praise.binder.ItemPraiseBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_chat_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/fl_praise_header"
+            android:layout_width="@dimen/offset_50dp"
+            android:layout_height="@dimen/offset_50dp"
+            android:layout_marginStart="@dimen/offset_12dp"
+            android:layout_marginTop="@dimen/offset_14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.kotlin.android.message.widget.AuthHeaderView
+                authHeader="@{data.bean.authHeader}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="@{() -> data.clickUser()}"
+                android:src="@drawable/default_user_head"
+                android:visibility="@{data.bean.isMultiplePraise ? View.GONE : View.VISIBLE}" />
+
+            <com.kotlin.android.message.widget.MultiplePraiseHeaderView
+                multiple_praise_header="@{data.bean.multiplePraiseHeader}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="@{() -> data.clickUser()}"
+                android:visibility="@{data.bean.isMultiplePraise ? View.VISIBLE : View.GONE}" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:layout_marginStart="@dimen/offset_11dp"
+            android:layout_marginTop="@dimen/offset_3dp"
+            app:layout_constraintStart_toEndOf="@id/fl_praise_header"
+            app:layout_constraintTop_toTopOf="@id/fl_praise_header">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_praise_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> data.clickUser()}"
+                android:text="@{data.bean.praiseName}"
+                android:textColor="@color/color_3d4955"
+                android:textSize="@dimen/offset_14sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:maxWidth="@dimen/offset_142dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="噗噗爸爸噗噗噗爸爸噗噗噗爸爸噗" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_praise_name_supplement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.bean.nameSupplement}"
+                android:textColor="@color/color_3d4955"
+                android:textSize="@dimen/offset_14sp"
+                android:visibility="@{data.bean.hasSupplement() ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toEndOf="@id/tv_praise_name"
+                app:layout_constraintTop_toTopOf="@id/tv_praise_name"
+                tools:text="等8人" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_6dp"
+                android:text="@{data.bean.praiseContentType}"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:maxLines="1"
+                android:textColor="@color/color_8798af"
+                android:textSize="@dimen/offset_14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_praise_name_supplement"
+                app:layout_constraintTop_toTopOf="@id/tv_praise_name_supplement"
+                tools:text="赞了你的日志" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_praise_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_1dp"
+            android:text="@{data.bean.time}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_10sp"
+            app:layout_constraintStart_toStartOf="@id/cl_name"
+            app:layout_constraintTop_toBottomOf="@id/cl_name"
+            tools:text="25秒前" />
+
+        <com.kotlin.android.message.widget.MainContentView
+            android:id="@+id/view_main_content"
+            property="@{data.bean.mainContent}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_8dp"
+            android:layout_marginEnd="@dimen/offset_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_praise_time"
+            app:layout_constraintTop_toBottomOf="@id/tv_praise_time" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_width_1px"
+            android:layout_marginStart="@dimen/offset_16dp"
+            android:layout_marginTop="@dimen/offset_15dp"
+            android:layout_marginEnd="@dimen/offset_15dp"
+            android:background="@color/color_1f9dafb4"
+            app:layout_constraintTop_toBottomOf="@id/view_main_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // 最主要就是这句 windowIsFloating = false
+    <style name="DialogFullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    //注：style中
+    <style name="BottomDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_up</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_down</item>
+    </style>
+
+    <style name="TopDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_top_down</item>
+        <item name="android:windowExitAnimation">@anim/dialog_top_up</item>
+    </style>
+
+    <style name="NoAnimationDialog">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+</resources>

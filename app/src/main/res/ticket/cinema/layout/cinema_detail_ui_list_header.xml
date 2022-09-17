@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <!-- basic info -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <!-- zoom in the header to set background -->
+
+        <!-- 顶部背景图 -->
+        <ImageView
+            android:id="@+id/poster_background"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_120dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/cinema_post_header_background"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitStart" />
+
+        <!-- 顶部背景蒙层 -->
+        <ImageView
+            android:id="@+id/poster_cover_iv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_120dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/color_78000000"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitStart" />
+
+
+        <!-- 封面图 -->
+<!--        <ImageView-->
+<!--            android:id="@+id/poster_header"-->
+<!--            android:layout_width="@dimen/offset_110dp"-->
+<!--            android:layout_height="@dimen/offset_110dp"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginLeft="@dimen/offset_10dp"-->
+<!--            android:layout_marginTop="@dimen/offset_71dp"-->
+<!--            android:background="@drawable/image_border"-->
+<!--            android:padding="@dimen/offset_1px"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:contentDescription="@string/app_name"-->
+<!--            />-->
+
+        <!-- 中文名 -->
+        <TextView
+            android:id="@+id/name_china"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/halls"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:layout_marginBottom="@dimen/offset_2px"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:gravity="left|bottom"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:text="影院名称影院名称"
+            />
+
+        <!-- 影厅数 -->
+        <TextView
+            android:id="@+id/halls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/poster_cover_iv"
+            android:layout_marginBottom="@dimen/offset_10px"
+            android:layout_marginLeft="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_20px"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            tools:text="x个影厅"
+            />
+
+<!--        <TextView-->
+<!--            android:id="@+id/halls_effect_label1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/halls"-->
+<!--            android:layout_alignLeft="@id/name_china"-->
+<!--            android:layout_marginTop="@dimen/offset_15dp"-->
+<!--            android:gravity="left"-->
+<!--            android:text="@string/halls_watch_effect_label"-->
+<!--            android:textColor="@color/color_333333"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/halls_effect"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@id/halls_effect_label1"-->
+<!--            android:layout_toRightOf="@id/halls_effect_label1"-->
+<!--            android:gravity="left"-->
+<!--            android:textColor="@color/color_f66b65"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/halls_effect_label2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@id/halls_effect"-->
+<!--            android:layout_marginLeft="@dimen/offset_10dp"-->
+<!--            android:layout_toRightOf="@id/halls_effect"-->
+<!--            android:gravity="left"-->
+<!--            android:text="@string/halls_service_effect_label"-->
+<!--            android:textColor="@color/color_333333"-->
+<!--            android:textSize="13sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/halls_effect2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@id/halls_effect_label2"-->
+<!--            android:layout_toRightOf="@id/halls_effect_label2"-->
+<!--            android:gravity="left"-->
+<!--            android:textColor="@color/color_f66b65"-->
+<!--            android:textSize="13sp" />-->
+
+        <!-- 喜爱度 -->
+        <TextView
+            android:id="@+id/like_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poster_cover_iv"
+            android:layout_alignLeft="@id/name_china"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:gravity="center"
+            android:drawableLeft="@drawable/actor_detail_red_heart"
+            android:drawablePadding="@dimen/offset_2dp"
+            android:textColor="@color/color_f15353"
+            android:textSize="13sp"
+            tools:text="喜爱度 xx%"
+            />
+
+        <!-- 地址地图 -->
+        <include
+            android:id="@+id/cinema_detail_address_map_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_48dp"
+            android:layout_alignLeft="@id/name_china"
+            android:layout_below="@id/like_rate"
+            android:layout_marginTop="@dimen/cinema_detail_map_region_margin_top"
+            layout="@layout/cinema_map"
+            />
+
+        <!-- 电话 -->
+        <include
+            android:id="@+id/in_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_48dp"
+            android:layout_alignLeft="@id/name_china"
+            android:layout_below="@id/cinema_detail_address_map_layout"
+            android:layout_marginTop="@dimen/offset_5dp"
+            layout="@layout/cinema_phone"
+            />
+
+        <!-- 营业执照  -->
+        <LinearLayout
+            android:id="@+id/license_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_48dp"
+            android:layout_alignLeft="@id/name_china"
+            android:layout_below="@id/in_phone"
+            android:layout_marginTop="@dimen/offset_5dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            >
+
+            <ImageView
+                android:id="@+id/license_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/icon_license"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/license_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/actor_detail_like_btn_margin_left"
+                android:layout_toRightOf="@id/license_icon"
+                android:gravity="left|center_vertical"
+                android:textColor="@color/color_333333"
+                android:text="@string/actor_detail_license_label"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- 广告分隔条 -->
+    <LinearLayout
+        android:id="@+id/ad1_seperate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+
+    <!-- 广告 -->
+    <com.mtime.mtmovie.widgets.ADWebView
+        android:id="@+id/ad1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:visibility="gone" />
+
+    <!-- 灰色分隔条 -->
+    <include layout="@layout/cinema_special_layout"/>
+
+    <!-- 特色设施 -->
+    <include layout="@layout/special_part_layout"/>
+
+    <!-- 影院信息分隔条 -->
+<!--    <include layout="@layout/cinema_info_seperate_layout"/>-->
+
+    <!-- 影院信息 -->
+<!--    <include layout="@layout/cinema_info_layout"/>-->
+
+    <!-- 广告2分隔条 -->
+    <LinearLayout
+        android:id="@+id/ad2_seperate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_1px"
+            android:background="@color/color_d8d8d8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_24px"
+            android:background="@color/color_f2f2f2" />
+    </LinearLayout>
+
+    <!-- 广告2 -->
+    <com.mtime.mtmovie.widgets.ADWebView
+        android:id="@+id/ad2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:visibility="gone" />
+
+    <!-- 分隔条 -->
+    <include layout="@layout/cinema_message_seperate_layout"/>
+
+    <!-- 用户留言标题 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/offset_10dp"
+            android:layout_marginTop="@dimen/offset_12dp"
+            android:text="@string/actor_detail_message_label"
+            android:textColor="@color/color_333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/no_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/offset_12dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/offset_12dp"
+            android:text="@string/str_no_comments"
+            android:textColor="@color/color_999999"
+            android:visibility="gone"
+            android:clickable="true"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+</LinearLayout>

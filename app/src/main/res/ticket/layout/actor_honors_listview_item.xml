@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_f6f6f6" >
+
+    <RelativeLayout
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actor_honors_listview_item_info_height"
+        android:background="@drawable/actor_honors_collpase_background" 
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/header"
+            android:layout_width="@dimen/actor_honors_listview_item_header_width"
+            android:layout_height="@dimen/actor_honors_listview_item_header_height"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="@dimen/actor_honors_listview_item_header_margin_left"
+            android:layout_marginTop="@dimen/actor_honors_listview_item_header_margin_top"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/name_cn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/actor_honors_listview_item_name_margin_left"
+            android:layout_marginTop="@dimen/actor_honors_listview_item_namecn_margin_top"
+            android:layout_toRightOf="@id/header"
+            android:textColor="@color/color_333333"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/name_en"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/name_cn"
+            android:layout_below="@id/name_cn"
+            android:layout_marginTop="@dimen/actor_honors_listview_item_nameen_margin_top"
+            android:textColor="@color/color_bbbbbb"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/name_cn"
+            android:layout_below="@id/name_en"
+            android:layout_marginTop="@dimen/actor_honors_listview_item_summary_margin_top"
+            android:textColor="@color/color_333333"
+            android:textSize="15.5sp" />
+        
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/actor_honors_listview_item_arrow_margin_right"
+            android:layout_centerVertical="true"
+            android:background="@drawable/movie_honor_up"
+            android:contentDescription="@string/app_name"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <com.mtime.widgets.ScrollListView
+            android:id="@+id/list_honors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/actor_honors_sublist_header_margin_left"
+            android:cacheColorHint="#00000000"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000"
+            android:visibility="gone" />
+        
+		<ImageView
+		    android:id="@+id/honor_nomate_seperate"
+		    android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/actor_honors_sublist_header_margin_left"
+            android:background="@color/color_bbbbbb"
+            android:contentDescription="@string/app_name"
+            android:visibility="gone"
+		    />
+        <com.mtime.widgets.ScrollListView
+            android:id="@+id/list_nomate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/actor_honors_sublist_header_margin_left"
+            android:cacheColorHint="#00000000"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000" 
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</LinearLayout>

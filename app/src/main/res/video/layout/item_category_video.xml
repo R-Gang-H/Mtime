@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mtime.bussiness.video.view.VisibilityStateLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stateLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/offset_10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <!-- 播放器 -->
+    <FrameLayout
+        android:id="@+id/item_category_video_top_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <include
+            android:id="@+id/item_category_video_album_cover"
+            layout="@layout/layout_video_album_image_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <FrameLayout
+            android:id="@+id/item_category_video_player_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+    <!-- 标题和数字区 -->
+    <RelativeLayout
+        android:id="@+id/item_category_video_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp"
+        >
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/item_category_video_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/color_303A47"
+            android:textSize="17sp"
+            tools:text="绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑绝杀慕尼黑"
+            />
+
+        <!-- 数字功能条 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_17dp"
+            android:layout_marginTop="@dimen/offset_10dp"
+            android:gravity="center_vertical"
+            android:layout_below="@id/item_category_video_title_tv"
+            >
+
+            <!-- 播放数 -->
+            <TextView
+                android:id="@+id/item_category_video_play_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_8798AF"
+                android:textSize="@dimen/font_size_12sp"
+                tools:text="9,999"
+                />
+
+            <!-- 赞|评论数|分享 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                >
+
+                <!-- 赞 -->
+                <TextView
+                    android:id="@+id/item_category_video_praise_info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/offset_15dp"
+                    android:drawableLeft="@drawable/common_icon_thumb_up"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/color_8798AF"
+                    android:textSize="12sp"
+                    android:text="0"
+                    />
+
+                <!-- 评论 -->
+                <TextView
+                    android:id="@+id/item_category_video_comment_info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/offset_15dp"
+                    android:drawableLeft="@drawable/common_icon_reply"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/color_8798AF"
+                    android:textSize="@dimen/font_size_12sp"
+                    android:text="0"
+                    />
+
+                <!-- 分享 -->
+                <ImageView
+                    android:id="@+id/item_category_video_share_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/offset_15dp"
+                    android:src="@drawable/movie_category_video_share"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.mtime.bussiness.video.view.VisibilityStateLinearLayout>

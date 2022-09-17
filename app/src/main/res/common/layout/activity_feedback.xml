@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ebebeb"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/navigationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar_normal" />
+
+    <LinearLayout
+        android:id="@+id/feedback_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/navigationbar"
+        android:layout_marginTop="@dimen/font_size_pxtosp_28"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/font_size_pxtosp_33" >
+
+        <EditText
+            android:id="@+id/txt_feedcontent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_pxtodx_246"
+            android:background="@color/transparent"
+            android:gravity="left|top"
+            android:hint="@string/str_input_feedback_suggestion"
+            android:paddingTop="@dimen/offset_pxtodx_25"
+            android:textSize="@dimen/font_size_pxtosp_30" >
+        </EditText>
+
+        <ImageView
+            android:id="@+id/email_seperate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_pxtodx_2"
+            android:layout_marginTop="@dimen/offset_pxtodx_20"
+            android:contentDescription="@string/app_name"
+            android:src="@color/color_e8e8e8"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_pxtodx_100"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/str_email"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textSize="@dimen/font_size_pxtosp_30"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_pxtodx_2"
+            android:layout_marginTop="@dimen/offset_pxtodx_20"
+            android:contentDescription="@string/app_name"
+            android:src="@color/color_e8e8e8" />
+
+        <EditText
+            android:id="@+id/txt_contanct"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/offset_pxtodx_100"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/str_phone"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:textSize="@dimen/font_size_pxtosp_30" />
+    </LinearLayout>
+
+    <!--间距-->
+    <ImageView
+        android:id="@+id/seperated"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feedback_view"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/order_remind_seperated_region_background" />
+
+    <!--提交按钮-->
+    <TextView
+        android:id="@+id/btn_savefeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seperated"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/offset_pxtodx_34"
+        android:layout_marginRight="@dimen/offset_pxtodx_34"
+        android:background="@drawable/btn_solid_blue_h90"
+        android:gravity="center"
+        android:text="@string/str_submit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_pxtosp_40" />
+
+    <!--有奖反馈描述-->
+    <TextView
+        android:id="@+id/feedback_awarddesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_savefeedback"
+        android:layout_marginTop="@dimen/offset_pxtodx_40"
+        android:layout_marginLeft="@dimen/offset_pxtodx_34"
+        android:layout_marginRight="@dimen/offset_pxtodx_34"
+        android:textColor="@color/color_777777"
+        android:textSize="@dimen/font_size_normal_high_more"
+        android:visibility="gone" />
+
+    <!-- 客服热线电话 -->
+    <com.mtime.mtmovie.widgets.HotlinePhoneView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/offset_pxtodx_66"
+        android:gravity="center_horizontal"
+        app:action="ACTION_CALL"
+        app:phoneNumber="4006059500"
+        app:showDialog="true" />
+
+</RelativeLayout>

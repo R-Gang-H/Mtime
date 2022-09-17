@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FullScreenTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+</resources>

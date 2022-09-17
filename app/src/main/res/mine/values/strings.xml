@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_sms_title">短信验证码登录</string>
+    <string name="login_account_title">账号密码登录</string>
+    <string name="login_account_hint">请输入手机号/邮箱</string>
+    <string name="login_password_hint">请输入密码</string>
+
+    <string name="edit_nick_name_tip">昵称长度为4-20个字符，不能全为数字及含有非法字符，支持中英文、数字、下划线和减号。</string>
+    <string name="edit_sign_title">编辑签名</string>
+    <string name="edit_sign_hint">请编辑签名内容</string>
+    <string name="edit_sign_bottom_tip">支持中英文和数字，最多150个字符</string>
+</resources>

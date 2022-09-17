@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lineData"
+            type="com.kotlin.android.chart.LineChart" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/vLArrow"
+            android:layout_width="6dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center_vertical"
+            tools:background="@color/color_20a0da" />
+
+        <RelativeLayout
+            android:id="@+id/rlBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/offset_15px"
+            android:paddingTop="@dimen/offset_15px"
+            android:paddingEnd="@dimen/offset_28px"
+            android:paddingBottom="@dimen/offset_15px"
+            tools:background="@color/color_20a0da">
+
+            <TextView
+                android:id="@+id/tvXData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{lineData.xData}"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="12.10" />
+
+            <TextView
+                android:id="@+id/tvYData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvXData"
+                android:gravity="center"
+                android:text='@{lineData.descName+"："+lineData.yData}'
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/offset_12sp"
+                tools:text="播放量：70" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/vRArrow"
+            android:layout_width="6dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            tools:background="@color/color_20a0da" />
+
+    </LinearLayout>
+
+</layout>

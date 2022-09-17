@@ -1,0 +1,336 @@
+package com.kotlin.android.review.component.item.ui.movie
+
+import android.os.Bundle
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.jeremyliao.liveeventbus.LiveEventBus
+import com.kotlin.android.core.BaseVMFragment
+import com.kotlin.android.app.data.constant.CommConstant
+import com.kotlin.android.app.data.entity.common.CommBizCodeResult
+import com.kotlin.android.app.data.entity.review.MovieReview
+import com.kotlin.android.app.data.entity.review.MovieReviewList
+import com.kotlin.android.mtime.ktx.ext.progressdialog.dismissProgressDialog
+import com.kotlin.android.mtime.ktx.ext.progressdialog.showOrHideProgressDialog
+import com.kotlin.android.mtime.ktx.ext.progressdialog.showProgressDialog
+import com.kotlin.android.mtime.ktx.ext.showToast
+import com.kotlin.android.review.component.databinding.FragMovieShortCommentListBinding
+import com.kotlin.android.review.component.databinding.ItemMovieReviewBinding
+import com.kotlin.android.review.component.item.ui.movie.adapter.MovieReviewItemBinder
+import com.kotlin.android.review.component.item.ui.movie.constant.MovieReviewConstant
+import com.kotlin.android.router.liveevent.LOGIN_STATE
+import com.kotlin.android.widget.adapter.multitype.MultiTypeAdapter
+import com.kotlin.android.widget.adapter.multitype.adapter.binder.MultiTypeBinder
+import com.kotlin.android.widget.adapter.multitype.createMultiTypeAdapter
+import com.kotlin.android.widget.multistate.MultiStateView
+import com.scwang.smart.refresh.layout.api.RefreshLayout
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener
+import kotlinx.android.synthetic.main.act_movie_review_list.mMultiStateView
+import kotlinx.android.synthetic.main.act_movie_review_list.mRefreshLayout
+import kotlinx.android.synthetic.main.frag_movie_short_comment_list.*
+
+/**
+ * @author vivian.wei
+ * @date 2021/1/4
+ * @desc 影片短影评列表页-最热/最新Fragment
+ */
+class MovieShortCommentListFragment: BaseVMFragment<MovieReviewListViewModel, FragMovieShortCommentListBinding>(),
+        MultiStateView.MultiStateListener, OnLoadMoreListener, OnRefreshListener,
+        MovieReviewItemBinder.IMovieReviewActionCallBack {
+
+    // 排序类型
+    private var mOrderType: Long = MovieReviewConstant.SHORT_COMMENT_ORDER_TYPE_HOT
+    private var mMovieId: String = ""
+    private var mPageIndex = 1
+    private var mListData: ArrayList<MultiTypeBinder<ItemMovieReviewBinding>> = ArrayList()
+    private lateinit var mAdapter: MultiTypeAdapter
+    private var mIsFirst = true
+    private var totalCount = 0L
+    // 点赞操作
+    private var mPosition = -1
+    private var mAction = CommConstant.PRAISE_ACTION_SUPPORT
+    private var mReview: MovieReview ?= null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            mMovieId = it.getString(MovieReviewConstant.KEY_MOVIE_ID) ?: ""
+            mOrderType = it.getLong(MovieReviewConstant.KEY_ORDER_TYPE, MovieReviewConstant.SHORT_COMMENT_ORDER_TYPE_HOT)
+        }
+    }
+
+    override fun initVM(): MovieReviewListViewModel = viewModels<MovieReviewListViewModel>().value
+
+    override fun initView() {
+        mAdapter = createMultiTypeAdapter(mMovieShortCommentListRv, LinearLayoutManager(mContext))
+        // 事件
+        initEvent()
+    }
+
+    private fun initEvent() {
+        mRefreshLayout.setOnRefreshListener(this)
+        mRefreshLayout.setOnLoadMoreListener(this)
+        mMultiStateView.setMultiStateListener(this)
+    }
+
+    override fun initData() {
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        //首次加载
+        if (mIsFirst && mMovieId.isNotEmpty()) {
+            if(mPageIndex == 1) {
+                showProgressDialog()
+            }
+            // 获取影片短影评列表
+            mViewModel?.getShortCommentList(mMovieId, mPageIndex, mOrderType)
+            mIsFirst = false
+        }
+    }
+
+    override fun startObserve() {
+        // observe短影评列表
+        observeShortCommentList()
+        // observe赞/取消赞
+        observePraiseUp()
+        // 登录成功后回来刷新页面
+        observeLoginEvent()
+    }
+
+    /**
+     * observe短影评列表
+     */
+    private fun observeShortCommentList() {
+        mViewModel?.mShortCommentListUiState?.observe(this) {
+            it.apply {
+                dismissProgressDialog()
+
+                if(mRefreshLayout.isRefreshing) {
+                    mRefreshLayout.finishRefresh(true)
+                }
+
+                success?.apply {
+                    showShortCommentList(this)
+                    mRefreshLayout.finishLoadMore()
+                    if(this.hasMore == true) {
+                        mPageIndex++
+                    } else {
+                        /*
+                         * mRefreshLayout.finishLoadMoreWithNoMoreData()
+                         * 没有拖动item时，页脚的提示语会悬浮在item上面
+                         */
+                        mRefreshLayout.setNoMoreData(true)
+                    }
+                }
+
+                if(isEmpty) {
+                    queryError(MultiStateView.VIEW_STATE_EMPTY)
+                }
+
+                error?.apply {
+                    queryError(MultiStateView.VIEW_STATE_ERROR)
+                }
+
+                netError?.apply {
+                    queryError(MultiStateView.VIEW_STATE_NO_NET)
+                }
+            }
+        }
+    }
+
+    /**
+     * observe赞/取消赞
+     */
+    private fun observePraiseUp() {
+        mViewModel?.mPraiseUpUiState?.observe(this) {
+            it.apply {
+                showOrHideProgressDialog(showLoading)
+
+                success?.apply {
+                    updatePraiseState(this)
+                }
+
+                error?.apply {
+
+                }
+
+                netError?.apply {
+
+                }
+            }
+        }
+    }
+
+    /**
+     * 登录成功后回来刷新页面
+     */
+    private fun observeLoginEvent() {
+        LiveEventBus.get(LOGIN_STATE, com.kotlin.android.app.router.liveevent.event.LoginState::class.java).observe(this) {
+            if (it?.isLogin == true) {
+                //登录成功
+                mRefreshLayout.autoRefresh()
+            }
+        }
+    }
+
+    /**
+     * 接口错误处理
+     */
+    private fun queryError(viewState: Int) {
+        mRefreshLayout.finishLoadMore()
+        if(mPageIndex == 1) {
+            mMultiStateView.setViewState(viewState)
+        }
+    }
+
+    /**
+     * 点击页面错误状态"图标/按钮"后处理事件
+     */
+    override fun onMultiStateChanged(viewState: Int) {
+        when (viewState) {
+            MultiStateView.VIEW_STATE_EMPTY,
+            MultiStateView.VIEW_STATE_ERROR,
+            MultiStateView.VIEW_STATE_NO_NET -> {
+                refreshData(true)
+            }
+        }
+    }
+
+    /**
+     * 下拉刷新
+     */
+    override fun onRefresh(refreshLayout: RefreshLayout) {
+        refreshData(false)
+    }
+
+    /**
+     * 刷新页面数据
+     */
+    private fun refreshData(showLoading: Boolean) {
+        mPageIndex = 1
+        mListData.clear()
+        mAdapter.notifyAdapterClear()
+        if (mMovieId.isNotEmpty()) {
+            if(showLoading) {
+                showProgressDialog()
+            }
+            // 获取影片长影评列表
+            mViewModel?.getShortCommentList(mMovieId, mPageIndex, mOrderType)
+        }
+    }
+
+    /**
+     * 加载更多
+     */
+    override fun onLoadMore(refreshLayout: RefreshLayout) {
+        // 获取精选片单列表
+        mViewModel?.getShortCommentList(mMovieId, mPageIndex, mOrderType)
+    }
+
+    override fun destroyView() {
+
+    }
+
+    /**
+     * 显示长影评列表
+     */
+    private fun showShortCommentList(reviewList: MovieReviewList) {
+        reviewList?.let {
+            var list = ArrayList<MovieReview>()
+            if(mPageIndex == 1) {
+                mListData.clear()
+                mAdapter.notifyAdapterClear()
+                totalCount = it.count ?: 0
+
+                // 最热列表：待审核长影评放最前面(只显示1条）
+                if(mOrderType == MovieReviewConstant.SHORT_COMMENT_ORDER_TYPE_HOT) {
+                    var auditReview = getFirstAuditReview(it.auditingList)
+                    auditReview?.let { auditReview ->
+                        auditReview.isAudit = true
+                        list.add(auditReview)
+                        totalCount += 1
+                    }
+                }
+            }
+            it.list?.let { reviews ->
+                list.addAll(reviews)
+            }
+            list?.map{ review ->
+                var binder = MovieReviewItemBinder(review, false, totalCount)
+                binder.mIMovieReviewActionCallBack = this
+                mListData.add(binder)
+            }
+            if(mListData.isNotEmpty()) {
+                mAdapter.notifyAdapterAdded(mListData)
+            } else {
+                mMultiStateView.setViewState(MultiStateView.VIEW_STATE_EMPTY)
+            }
+        }
+
+    }
+
+    /**
+     * 第1条待审核长影评
+     */
+    private fun getFirstAuditReview(auditingList: List<MovieReview>?): MovieReview? {
+        auditingList?.let {
+            it?.let { auditingList ->
+                return auditingList.firstOrNull()
+            }
+        }
+        return null
+    }
+
+    /**
+     * 赞/取消赞(踩/取消踩)
+     */
+    override fun praiseCallBack(bean: MovieReview, position: Int, isPraiseUp: Boolean) {
+        bean.commentId?.let {
+            mReview = bean
+            mPosition = position
+            if(isPraiseUp) {
+                // 短影评只有赞操作，没有踩
+                mAction = if (bean.isPraise == true) CommConstant.PRAISE_ACTION_CANCEL
+                else CommConstant.PRAISE_ACTION_SUPPORT
+                mViewModel?.praiseUp(
+                        mAction,
+                        CommConstant.PRAISE_OBJ_TYPE_FILM_COMMENT,
+                        it
+                )
+            }
+        }
+    }
+
+    /**
+     * 更新赞/踩状态和数
+     */
+    private fun updatePraiseState(result: CommBizCodeResult) {
+        if(result.isSuccess()) {
+            mReview?.let {
+                if (mAction == CommConstant.PRAISE_ACTION_SUPPORT) {
+                    // 赞
+                    it.praiseCount += 1L
+                    it.isPraise = true
+
+                } else if(mAction == CommConstant.PRAISE_ACTION_CANCEL) {
+                    // 取消赞
+                    it.praiseCount -= 1L
+                    if(it.praiseCount < 0L) {
+                        it.praiseCount = 0L
+                    }
+                    it.isPraise = false
+                }
+                var binder = MovieReviewItemBinder(it, false, totalCount)
+                binder.mIMovieReviewActionCallBack = this
+                mListData[mPosition] = binder
+                mAdapter.notifyItemChanged(mPosition)
+            }
+        } else {
+            showToast(result.bizMsg)
+        }
+    }
+
+}

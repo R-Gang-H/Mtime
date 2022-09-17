@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.filmlist.ShareMovy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_8dp">
+
+        <!--        <TextView-->
+        <!--            android:layout_width="@dimen/offset_15dp"-->
+        <!--            android:layout_height="@dimen/offset_14dp"-->
+        <!--            android:background="@drawable/ic_icon_label_number"-->
+        <!--            android:gravity="center|top"-->
+        <!--            android:text="@{bean.serialNumber}"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="@dimen/offset_8sp"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/iv_imageUrl"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/iv_imageUrl"-->
+        <!--            tools:text="1" />-->
+
+        <ImageView
+            android:id="@+id/iv_imageUrl"
+            load_image_roundedRadius="@{8}"
+            load_image="@{bean.imageUrl}"
+            load_image_default_img="@{@drawable/icon_film_list_bg_v}"
+            load_image_height="@{126}"
+            load_image_width="@{95}"
+            android:layout_width="@dimen/offset_190px"
+            android:layout_height="@dimen/offset_252px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/color_030303"
+            android:textSize="@dimen/offset_14sp"
+            app:layout_constraintEnd_toEndOf="@id/iv_imageUrl"
+            app:layout_constraintStart_toStartOf="@id/iv_imageUrl"
+            app:layout_constraintTop_toBottomOf="@id/iv_imageUrl"
+            tools:text="钢铁侠" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

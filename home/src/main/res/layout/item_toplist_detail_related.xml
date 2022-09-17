@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.home.ui.toplist.adapter.TopListDetailRelateItemBinder"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/MatchWrap"
+        android:paddingBottom="@dimen/offset_60px"
+        android:paddingLeft="@dimen/offset_30px"
+        android:paddingRight="@dimen/offset_30px"
+        >
+
+        <TextView
+            android:id="@+id/mItemToplistMovieDetailRelatedTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxWidth="@dimen/offset_412px"
+            android:textSize="@dimen/offset_17sp"
+            android:textColor="@color/color_303a47"
+            android:textStyle="bold"
+            android:text="@{data.bean.title}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            tools:text="榜单标题榜单标题榜单标题榜单标题榜单标题榜单标题榜单标题榜单标题"
+            />
+
+        <TextView
+            android:id="@+id/mItemToplistMovieDetailRelatedViewCountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_28px"
+            android:textSize="@dimen/offset_12sp"
+            android:textColor="@color/color_8798af"
+            android:text="浏览数"
+            app:layout_constraintTop_toBottomOf="@+id/mItemToplistMovieDetailRelatedTitleTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="XXX人浏览"
+            />
+
+        <ImageView
+            android:id="@+id/mItemToplistMovieDetailRelatedImgIv"
+            android:layout_width="@dimen/offset_218px"
+            android:layout_height="@dimen/offset_140px"
+            android:layout_marginStart="@dimen/offset_30px"
+            android:src="@drawable/default_image"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            load_image="@{data.bean.coverImg}"
+            load_image_width="@{109}"
+            load_image_height="@{70}"
+            android:bg_shape_corner="@{4}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

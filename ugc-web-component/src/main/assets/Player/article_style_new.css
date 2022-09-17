@@ -1,0 +1,516 @@
+/**public**/
+/**让iphone不具有缩放文字大小的功能**/
+/* html {
+    overflow-y: scroll;
+    background: #fff;
+    -webkit-text-size-adjust: none;
+
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+body,html{
+    font-family: "PingFangSC-Regular" !important;
+}
+/**clear float**/
+
+.fix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+.fix {
+    display: inline-block;
+}
+
+.fix {
+    display: block;
+}
+
+/**HTML5**/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu,
+div {
+    display: block;
+}
+
+em,
+i {
+    font-style: oblique;
+}
+
+/**修复iPhone上submit按钮bug **/
+input[type="search"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    -webkit-appearance: none;
+}
+
+pre {
+    white-space: pre;
+    /* CSS 2.0 */
+    white-space: pre-wrap;
+    /* CSS 2.1 */
+    white-space: pre-line;
+    /* CSS 3.0 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    white-space: -moz-pre-wrap !important;
+    /* Mozilla */
+    white-space: -hp-pre-wrap;
+    /* HP Printers */
+    word-wrap: break-word;
+    /* IE 5+ */
+}
+
+.img_box {
+    border: 1px solid #ddd;
+}
+
+/**public end**/
+
+/**盒模型宽度包括padding,border(老数据)**/
+
+.i_block {
+    display: inline-block;
+    vertical-align: middle;
+}
+/**弹性布局 Begin**/
+.table,
+.table_v,
+.table_v_c,
+.table_h_c,
+.table_vh_c {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+}
+.td {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+.table_v {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+}
+/**纵向布局**/
+.table_v_c {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+}
+/**垂直上下居中**/
+
+.table_h_c {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+}
+/**水平左右居中**/
+.table_vh_c {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+}
+
+
+table {
+    width: 100%;
+}
+
+/**弹性布局 End**/
+
+.txt_elli {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* video*/
+.video_boxs {
+    position: relative;
+    margin: 0.28rem 0 0.28rem;
+    border-radius: 0.08rem;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+/*设置gif图和视频播放的首帧宽度*/
+
+.video_boxs>img {
+    width: 100% !important;
+    height: auto;
+    margin: initial !important;
+    border-radius: 0.08rem !important;
+}
+.gif_wrap>img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*设置gif图包装*/
+
+.gif_wrap {
+    position: relative;
+    margin: 0.28rem 0 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+/*设置gif图播放按钮样式*/
+.gif_play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 0.3em;
+    background: #000;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    margin-left: -1.3em;
+    margin-top: -1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.4;
+    color: rgb(211, 211, 211);
+    cursor: pointer;
+}
+
+/** 播放按钮*/
+.video_boxs_play {
+    display: block;
+    width: 42px !important;
+    height: 42px !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -21px;
+    margin-top: -21px;
+    background: url(article_video_play.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+/*设置h2标题样式*/
+
+.movietxt .toptitle h2 {
+    font-size: 0.32rem;
+    line-height: 0.5rem;
+    color: #000018;
+}
+
+/*设置h3标题样式*/
+.movietxt .toptitle h3 {
+    font-size: 0.32rem;
+    line-height: 0.5rem;
+    color: #000018;
+}
+/*设置h2标题样式*/
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 0.32rem !important;
+    line-height: 0.5rem !important;
+    /* width: 6.9rem !important; */
+    width: initial !important;
+    color: #000018;
+}
+.m_bg_white, .movietxt {
+    width: 100%;
+    padding: 0.1rem 0.3rem;
+    width: 7.5rem;
+}
+.m_bg_white .movietxt .txtmid {
+    width: 100%;
+    background: #ffffff;
+}
+
+.txtmid {
+    width: 100%;
+    font-size: 0.32rem;
+    display: flex;
+    flex-direction: column;
+}
+.txtmid p,div {
+    width: initial !important;
+    font-size: 0.32rem !important;
+    line-height: 0.5rem !important;
+    color: #000018;
+    text-align: justify;
+    vertical-align: middle;
+}
+.txtmid p span,div span {
+    font-size: 0.32rem !important;
+    line-height: 0.5rem !important;
+    font-family: "PingFangSC-Regular" !important;
+    text-align: justify;
+    vertical-align: middle;
+}
+.txtmid span,strong,font {
+    font-size: 0.32rem !important;
+    line-height: 0.5rem !important;
+}
+/* 小 */
+.txtmid p .mini_,div .mini_{
+    font-size: 0.26rem !important;
+}
+.txtmid p .mini_ strong,div .mini_ strong{
+    font-size: 0.26rem !important;
+}
+/* 标准 */
+.txtmid p .standard_, div .standard_ {
+    font-size: 0.32rem !important;
+}
+.txtmid p .standard_ strong, div .standard_ strong{
+    font-size: 0.32rem !important;
+}
+/* 大 */
+.txtmid p .medium_,div .medium_ {
+    font-size: 0.34rem !important;
+}
+
+.txtmid p .medium_ strong,div .medium_ strong{
+    font-size: 0.34rem !important;
+}
+/* 超大 */
+.txtmid p .large_,div .large_{
+    font-size: 0.36rem !important;
+}
+.txtmid p .large_ strong,div .large_ strong{
+    font-size: 0.36rem !important;
+}
+img {
+    max-width: 100% !important;
+    width: initial !important;
+    height: auto !important;
+    margin: 0.28rem auto;
+    border-radius: 0.08rem;
+    display: block;
+}
+a {
+    color: #20A0DA !important;
+}
+
+a:hover {
+    text-decoration: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+/*
+* 清除浮动
+*/
+.clearfix:after, .fix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+/* br{
+    height:0;
+    display:none;
+    overflow:hidden;
+} */
+/*
+* 本地上传的图片
+*/
+.txtmid .image {
+    width: 6.9rem;
+    text-align: center;
+    display:table-cell;
+}
+
+.image> img {
+    max-width: 100% !important;
+    width: initial !important;
+    height: auto !important;
+    margin: 0.28rem auto;
+    display: block;
+}
+.image>figcaption {
+    height: 0.55rem;
+    /* background-color: red; */
+    text-align: center;
+    margin-top: -0.1rem;
+    margin-bottom: 0.1rem;
+}
+.image>figcaption>p{
+    text-align: center;
+    font-size: 0.28rem !important;;
+    height: 0.55rem;
+    line-height: 0.55rem;
+    color: #8798AF;
+}
+/**
+    卡片的样式
+*/
+.movieCard {
+   width: 6.9rem;
+   height: 1.9rem;
+   border-radius: 0.08rem;
+   margin: 0.28rem 0;
+}
+.DRE-subject-wrapper {
+    background-color: #ffffff;
+    box-shadow: 0 0 30px 0 #EBEDF2;
+}
+.DRE-subject-wrapper .DRE-subject-item {
+    display: flex;
+    padding: 0.2rem;
+}
+.DRE-subject-item .DRE-subject-cover{
+    width: 1rem !important;
+    height: 1.5rem !important;
+    border-radius: 0.06rem !important;
+    margin-right: 0.2rem !important;
+}
+
+.DRE-subject-item .DRE-subject-cover>img{
+    width: 1rem !important;
+    height: 1.5rem !important;
+    border-radius: 0.06rem !important;
+    margin: 0 !important;
+}
+
+.DRE-subject-item  .DRE-subject-info {
+    display: flex;
+    width: 5.2rem !important;
+    height: 1.55rem !important;
+    flex-direction: column;
+    /* background-color: red; */
+    justify-content: flex-start;
+}
+
+.DRE-subject-info .DRE-subject-title {
+    font-family: "PingFangSC-Medium";
+    font-size: 0.28rem !important;
+    color: #303A47;
+    height: 0.4rem !important;
+    line-height: 0.4rem !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.DRE-subject-info .DRE-subject-rating {
+   color: #20A0DA;
+   font-size: 0 !important;
+   /* height: 0.3rem  !important; */
+   line-height: initial !important;
+   /* background-color: red; */
+}
+.DRE-subject-rating span{
+    font-size: 0.24rem !important;
+    color: #20A0DA !important;
+}
+.DRE-subject-rating .DRE-rating-score{
+   font-size: 0.30rem !important;
+   margin-left: 0.1rem !important;
+   font-style:oblique;
+   font-weight:800 !important;
+}
+.DRE-subject-info  .DRE-subject-desc {
+    display: flex;
+    flex-direction: column;
+}
+.DRE-subject-info  .DRE-subject-desc span {
+    line-height: 0.35rem !important;
+    font-size: 0.24rem !important;
+    color: #8798AF !important;
+    font-family: "PingFangSC-Regular";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+/*
+* 图片和图片相邻
+*/
+.image + .image>img {
+    margin-top: 0;
+}
+/*
+* 卡片和卡片相邻
+*/
+.movieCard + .movieCard {
+    margin-top: 0;
+}
+/*
+* 卡片和图片相邻
+*/
+.movieCard + .image>img {
+    margin-top: 0;
+}
+/*
+* 图片和卡片
+*/
+.image + .movieCard {
+    margin-top: 0;
+}
+/*
+* 视频和卡片
+*/
+.video_boxs + .movieCard {
+    margin-top: 0;
+}
+
+/*
+* 卡片和视频
+*/
+.movieCard + .video_boxs {
+    margin-top: 0;
+}
+
+/*
+* 视频和图片
+*/
+.video_boxs + .image>img {
+    margin-top: 0;
+}
+
+/*
+* 图片和视频
+*/
+.image + .video_boxs {
+    margin-top: 0;
+}

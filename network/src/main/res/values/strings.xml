@@ -1,0 +1,3 @@
+<resources>
+    <string name="TX_ERROR_CODE_NETWORK_FAIL">网络请求失败</string>
+</resources>

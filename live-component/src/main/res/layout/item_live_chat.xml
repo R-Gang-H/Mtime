@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.live.component.ui.fragment.chat.adapter.LiveChatBinder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mItemLiveChatRoot"
+        android:layout_marginTop="@dimen/offset_10px"
+        android:layout_marginBottom="@dimen/offset_10px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/offset_11px"
+        android:paddingBottom="@dimen/offset_11px"
+        android:paddingLeft="@dimen/offset_13px"
+        android:paddingRight="@dimen/offset_13px"
+        android:bg_shape_color="@{@color/color_1a8798af}"
+        android:bg_shape_corner="@{20}"
+        >
+
+        <ImageView
+            android:id="@+id/mItemLiveChatUserHeadIv"
+            android:layout_width="@dimen/offset_48px"
+            android:layout_height="@dimen/offset_48px"
+            android:src="@drawable/default_user_head"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            load_image="@{data.itemData.headIcon}"
+            load_image_circle_crop="@{true}"
+            load_image_default_img="@{@drawable/default_user_head}"
+            load_image_width="@{24}"
+            load_image_height="@{24}"
+            />
+
+        <TextView
+            android:id="@+id/mItemLiveChatMsgTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/mItemLiveChatUserHeadIv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/offset_11px"
+            android:text="@{data.itemData.msg}"
+            android:lineSpacingMultiplier="1.2"
+            android:textSize="@dimen/offset_16sp"
+            tools:text="2111111111111111122222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

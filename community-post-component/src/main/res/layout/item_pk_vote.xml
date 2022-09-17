@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.kotlin.android.community.post.component.item.adapter.PkVoteDetailBinder" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--支持或反对-->
+
+        <LinearLayout
+            android:id="@+id/selectionLL"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_30px"
+            android:layout_marginTop="@dimen/offset_20px"
+            android:layout_marginRight="@dimen/offset_30px"
+            android:layout_marginBottom="@dimen/offset_40px"
+            android:visibility="@{data.bean.hasPk?View.GONE:View.VISIBLE}">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/positiveTv"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/offset_60px"
+                android:onClick="@{view->data.onClick(view)}"
+                android:layout_marginRight="@dimen/offset_15px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{data.bean.positiveDes}"
+                android:textColor="@color/color_36c096"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/navigationTv"
+                android:layout_width="0dp"
+                android:onClick="@{view->data.onClick(view)}"
+                android:layout_height="@dimen/offset_60px"
+                android:layout_marginLeft="@dimen/offset_15px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{data.bean.nagivationDes}"
+                android:textColor="@color/color_feb12a"
+                android:textSize="@dimen/offset_15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--                支持反对百分比-->
+        <LinearLayout
+            android:id="@+id/postPkLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/offset_60px"
+            android:layout_marginTop="@dimen/offset_60px"
+            android:layout_marginRight="@dimen/offset_60px"
+            android:orientation="vertical"
+            android:visibility="@{data.bean.hasPk?View.VISIBLE:View.GONE}">
+
+            <com.kotlin.android.community.post.component.item.widget.BattlePercentView
+                android:id="@+id/pkPercentView"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:radius="3dp"
+                app:negative_color="@color/color_feb12a"
+                app:positive_color="@color/color_36c096" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_16px"
+                android:layout_marginBottom="@dimen/offset_10px">
+                <!--支持方-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/positivePercentTv"
+                    style="@style/WrapWrap"
+                    android:onClick="@{view->data.onClick(view)}"
+                    android:drawableLeft="@drawable/ic_community_positive_check"
+                    android:drawablePadding="@dimen/offset_9px"
+                    android:text="@{data.bean.positionPercent}"
+                    android:textColor="@color/color_36c096"
+                    android:textSize="@dimen/offset_15sp"
+                    tools:text="50%" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/positivePercentDesTv"
+                    style="@style/WrapWrap"
+                    android:onClick="@{view->data.onClick(view)}"
+                    android:layout_marginLeft="@dimen/offset_8px"
+                    android:layout_toRightOf="@id/positivePercentTv"
+                    android:text="@{data.bean.positiveDes}"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_15sp" />
+
+
+                <!--反对方-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/navigationPercentTv"
+                    android:onClick="@{view->data.onClick(view)}"
+                    style="@style/WrapWrap"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/ic_community_negative_check"
+                    android:drawablePadding="@dimen/offset_9px"
+                    android:text="@{data.bean.nagivationPercent}"
+                    android:textColor="@color/color_feb12a"
+                    android:textSize="@dimen/offset_15sp"
+                    tools:text="50%" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/WrapWrap"
+                    android:id="@+id/navigationPercentDesTv"
+                    android:onClick="@{view->data.onClick(view)}"
+                    android:layout_marginRight="@dimen/offset_8px"
+                    android:layout_toLeftOf="@id/navigationPercentTv"
+                    android:text="@{data.bean.nagivationDes}"
+                    android:textColor="@color/color_303a47"
+                    android:textSize="@dimen/offset_15sp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!--                    参加人数-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/joinCountTv"
+            style="@style/MatchWrap"
+            android:layout_gravity="center"
+            android:background="@color/color_fdfdfd"
+            android:gravity="center"
+            android:paddingTop="@dimen/offset_28px"
+            android:text="@{@string/community_join_count_format(data.bean.joinCount)}"
+            android:textColor="@color/color_8798af"
+            android:textSize="@dimen/offset_12sp"
+            tools:text="10人参加" />
+
+
+    </LinearLayout>
+</layout>

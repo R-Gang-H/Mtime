@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/offset_140px"
+    tools:ignore="ResourceName">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mSelectedTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/offset_30px"
+        tools:text="@string/tablet_film_list_selected" />
+
+    <Button
+        android:id="@+id/mSureBtn"
+        android:layout_width="@dimen/offset_320px"
+        android:layout_height="@dimen/offset_80px"
+        android:layout_marginLeft="@dimen/offset_14px"
+        android:layout_marginRight="@dimen/offset_14px"
+        android:padding="@dimen/offset_16px"
+        android:text="@string/tablet_film_list_sure"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/offset_16sp"
+        android:layout_marginEnd="@dimen/offset_30px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

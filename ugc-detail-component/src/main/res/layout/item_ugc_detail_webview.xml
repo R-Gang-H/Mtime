@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="data"
+            type="com.kotlin.android.ugc.detail.component.binder.UgcWebViewBinder" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_height="wrap_content">
+        <com.kotlin.android.ugc.web.widgets.UgcWebView
+            android:id="@+id/webView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/offset_50px"
+            style="@style/MatchWrap"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

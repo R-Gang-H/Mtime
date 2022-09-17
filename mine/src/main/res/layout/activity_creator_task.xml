@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bean"
+            type="com.kotlin.android.app.data.entity.mine.CreatorTaskEntity" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.creator.CreatorTaskActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{bean.activityTaskInfos.size()==0 ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:id="@+id/tv_task_infos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_15dp"
+                    android:layout_marginTop="@dimen/offset_36px"
+                    android:text="@string/mine_creator_taskinfos"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_10dp"
+                    android:background="@drawable/ic_label_creator"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_task_infos"
+                    app:layout_constraintEnd_toEndOf="@id/tv_task_infos"
+                    app:layout_constraintStart_toEndOf="@id/tv_task_infos" />
+
+                <TextView
+                    android:id="@+id/tv_info_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_4dp"
+                    android:text="@string/mine_creator_infomsg"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_task_infos"
+                    app:layout_constraintTop_toBottomOf="@id/tv_task_infos" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_info_msg"
+                    tools:listitem="@layout/item_creator_task_layout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{bean.dailyTaskInfos.size()==0 ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:id="@+id/tv_dailyTaskInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_15dp"
+                    android:layout_marginTop="@dimen/offset_36px"
+                    android:text="@string/mine_creator_dailyTaskInfos"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_10dp"
+                    android:background="@drawable/ic_label_creator"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_dailyTaskInfo"
+                    app:layout_constraintEnd_toEndOf="@id/tv_dailyTaskInfo"
+                    app:layout_constraintStart_toEndOf="@id/tv_dailyTaskInfo" />
+
+                <TextView
+                    android:id="@+id/tv_daily_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_4dp"
+                    android:text="@string/mine_creator_daily_msg"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_dailyTaskInfo"
+                    app:layout_constraintTop_toBottomOf="@id/tv_dailyTaskInfo" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mDailyRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_daily_msg" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/offset_8dp"
+                android:visibility="@{bean.noviceTaskInfos.size()==0 ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:id="@+id/tv_noviceTaskInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_15dp"
+                    android:layout_marginTop="@dimen/offset_36px"
+                    android:text="@string/mine_creator_noviceTaskInfos"
+                    android:textColor="@color/color_1d2736"
+                    android:textSize="@dimen/offset_18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_10dp"
+                    android:background="@drawable/ic_label_creator"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_noviceTaskInfo"
+                    app:layout_constraintEnd_toEndOf="@id/tv_noviceTaskInfo"
+                    app:layout_constraintStart_toEndOf="@id/tv_noviceTaskInfo" />
+
+                <TextView
+                    android:id="@+id/tv_novice_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_4dp"
+                    android:text="@string/mine_creator_novice_msg"
+                    android:textColor="@color/color_8798af"
+                    android:textSize="@dimen/offset_12sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_noviceTaskInfo"
+                    app:layout_constraintTop_toBottomOf="@id/tv_noviceTaskInfo" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mNoviceRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_5dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_novice_msg" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

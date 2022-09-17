@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mTabTextView"
+    android:textSize="14sp"
+    android:textColor="@drawable/selector_tab_text_color"
+    android:gravity="center"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:lines="1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+</TextView>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">文章组件</string>
+    <string name="article_is_checking">文章正在审核中</string>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include
+        android:id="@+id/navigation"
+        layout="@layout/title_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <com.aspsine.irecyclerview.IRecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/navigation"
+        android:layout_above="@+id/movie_comment"
+        android:background="@color/white"
+        app:loadMoreEnabled="true"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        app:refreshEnabled="false"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
+
+    <include
+        android:id="@+id/movie_comment"
+        layout="@layout/bottom_bar_movie_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <!--评分浮层 -->
+    <!--<include-->
+        <!--android:id="@+id/movie_rate"-->
+        <!--layout="@layout/movie_rate_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="invisible" />-->
+    <com.mtime.bussiness.ticket.movie.widget.ShareCommentView
+        android:id="@+id/share_comment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+</RelativeLayout>

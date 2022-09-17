@@ -1,0 +1,20 @@
+package com.mtime.bussiness.ticket.movie.comment.bean;
+
+import com.mtime.base.bean.MBaseBean;
+import com.helen.obfuscator.IObfuscateKeepAll;
+
+import java.util.List;
+
+/**
+ * Created by <a href="mailto:wangkunlin1992@gmail.com">Wang kunlin</a>
+ * <p>
+ * On 2019-10-10
+ */
+public class MineLongMovieCommentsBean extends MBaseBean implements IObfuscateKeepAll {
+
+    public int count;
+
+    public int pageCount; // 总页数
+
+    public List<MineLongMovieCommentBean> userCommtentList;
+}

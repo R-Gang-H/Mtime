@@ -1,0 +1,603 @@
+/**public**/
+
+html {
+    overflow-y: scroll;
+    background: #fff;
+    -webkit-text-size-adjust: none;
+    /**让iphone不具有缩放文字大小的功能**/
+}
+
+body,
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    font-size: 12px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+dl,
+dd,
+p,
+input,
+form,
+textarea,
+pre,
+fieldset {
+    margin: 0;
+    font-size: 100%;
+    line-height: 1;
+}
+
+ul,
+ol,
+form,
+textarea,
+fieldset,
+legend {
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    /**解决IE6-7图片缩放失真**/
+    height: auto;
+    margin-top: 5px;
+}
+
+
+/**图片也要能跟随你的显屏大小成比例的缩放**/
+
+embed,
+object,
+iframe {
+    width: 100%;
+    height: auto;
+}
+
+select,
+input {}
+
+textarea {
+    overflow-y: auto;
+    resize: none;
+}
+
+:focus {
+    outline: 0 none;
+}
+
+fieldset,
+select,
+input,
+textarea,
+img {
+    border: none;
+}
+
+a {
+    color: #333;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+video,
+canvas {
+    max-width: 100%;
+    position: relative;
+    z-index: 50;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td {
+    overflow: hidden;
+    word-wrap: break-word;
+}
+br{
+    height:0;
+    display:none;
+    overflow:hidden;
+}
+
+/**clear float**/
+
+.fix:after {
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+.fix {
+    display: inline-block;
+}
+
+.fix {
+    display: block;
+}
+
+
+/**HTML5**/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu,
+div {
+    display: block;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+
+/**修复iPhone上submit按钮bug **/
+
+input[type="search"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    -webkit-appearance: none;
+}
+
+pre {
+    white-space: pre;
+    /* CSS 2.0 */
+    white-space: pre-wrap;
+    /* CSS 2.1 */
+    white-space: pre-line;
+    /* CSS 3.0 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    white-space: -moz-pre-wrap !important;
+    /* Mozilla */
+    white-space: -hp-pre-wrap;
+    /* HP Printers */
+    word-wrap: break-word;
+    /* IE 5+ */
+}
+
+body {
+    font-size: 100%;
+    font-family: "Helvetica Neue", "微软雅黑";
+    /* color: #333; */
+    color: #1D2736;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: none;
+    overflow-x: hidden;
+}
+
+.img_box {
+    border: 1px solid #ddd;
+}
+
+
+/**public end**/
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/**盒模型宽度包括padding,border**/
+
+.i_block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/**弹性布局 Begin**/
+
+.table,
+.table_v,
+.table_v_c,
+.table_h_c,
+.table_vh_c {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+}
+
+.td {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+
+.table_v {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+}
+
+
+/**纵向布局**/
+
+.table_v_c {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+}
+
+
+/**垂直上下居中**/
+
+.table_h_c {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+}
+
+
+/**水平左右居中**/
+
+.table_vh_c {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+}
+
+
+/*table tr{ width: 100%; display: -webkit-box; display: -moz-box; display: box; }*/
+
+
+/*td{ -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; display:block;margin:0 0.5rem;}*/
+
+
+/*table tr td:frist-child{margin-left:0;}*/
+
+table {
+    width: 100%;
+}
+
+
+/**弹性布局 End**/
+
+.txt_elli {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+/**文字新闻**/
+
+.movietxt {
+    padding: 1.0em;
+    padding-top: 0;
+}
+
+.movietxt .toptitle {
+    padding-bottom: 1.5em;
+}
+
+
+/*设置h2标题样式*/
+
+.movietxt .toptitle h2 {
+    font-size: 2.1em;
+    line-height: 1.5;
+}
+
+
+/*设置h3标题样式*/
+
+.movietxt .toptitle h3 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    text-align: left;
+    color: #777;
+}
+
+
+/*设置p的边距*/
+
+.movietxt .toptitle p {
+    margin: 1.5em 0 0;
+}
+
+.movietxt .toptitle p time,
+.movietxt .toptitle span a {
+    font-size: 1.2em;
+}
+
+.movietxt .toptitle p time {
+    color: #999;
+}
+
+.movietxt .toptitle p span {
+    float: right;
+}
+
+.movietxt .toptitle p span a {
+    color: #0075c4;
+    margin-left: 1em;
+}
+
+
+/*设置文章的字体大小和行高*/
+
+.movietxt .txtmid {
+    font-size: 1.5em;
+    line-height: 1.7;
+}
+
+
+/*设置img元素和video元素的样式*/
+
+.movietxt .txtmid img,
+.movietxt .txtmid video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.movietxt .txtmid video {
+    position: relative;
+    z-index: 0;
+}
+
+.movietxt .txtmid p ,
+.movietxt .txtmid div{
+    margin: 0.8em 0 0;
+    line-height: 1.7;
+}
+
+.movietxt .news_tool {
+    margin: 1em -1.5em -1.5em;
+}
+
+.movietxt .adurl {
+    margin-left: -1em;
+    margin-right: -1em;
+    margin-top: 1em;
+}
+
+.movietxt .news_recommend_url {
+    margin-left: -1em;
+    margin-right: -1em;
+}
+
+.movietxt .news_recommend_url img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movietxt .news_recommend_url em {
+    display: none;
+}
+
+.zoom {}
+
+.pr {
+    position: relative;
+}
+
+
+/*设置图片包装元素的边距*/
+
+.img_boxs {
+    position: relative;
+    margin: 1em 1.5em;
+}
+
+.img_boxs img,
+td img {
+    width: 100%;
+    height: auto;
+}
+
+.img_boxs .em {
+    width: 2em;
+    height: 2em;
+    display: block;
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    background: url(zoom.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+
+/*设置视频包装元素的样式*/
+
+.video_boxs {
+    position: relative;
+    margin: 1em 0 1em;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/*设置gif图和视频播放的首帧宽度*/
+
+.video_boxs img,
+.gif_wrap img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*设置gif图包装*/
+
+.gif_wrap {
+    position: relative;
+    margin: 1em 0 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/*设置a链接颜色*/
+
+.movietxt .txtmid a {
+    color: #6d8297;
+}
+
+
+/*设置gif图播放按钮样式*/
+
+.gif_play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 0.3em;
+    background: #000;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    margin-left: -1.3em;
+    margin-top: -1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.4;
+    color: rgb(211, 211, 211);
+    cursor: pointer;
+}
+
+
+/*设置图注文字居中及颜色*/
+
+.movietxt .txtmid .gif_wrap+p,
+.movietxt .txtmid img+p,
+.videoTitle, .imageTitle{
+    text-align: center;
+    color: #8798AF;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+
+/*设置视频播放按钮的样式*/
+
+.video_boxs_play {
+    display: block;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -21px;
+    margin-top: -21px;
+    background: url(article_video_play.png) no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.news_recommend_url .img_boxs {
+    margin: 0;
+    margin-top: 1em;
+}
+
+.movietxt .txtmid a {
+    font-size: 1em !important;
+    color: #20A0DA !important;
+    text-decoration: underline;
+    padding: .08rem .2rem !important;
+    font-weight: bold !important;
+}
+
+.movietxt .txtmid h2,
+.movietxt .txtmid h3,
+.movietxt .txtmid h4,
+.movietxt .txtmid h5 {
+    line-height: 1.4;
+    margin: 0 0 .8334em;
+    color: #4E5E73 !important;
+    font-size: 1em;
+}
+
+.movietxt .txtmid ul,
+.movietxt .txtmid ol{
+    font-size: 1.0666em;
+    margin: 0 0 1.3333em;
+    text-align: justify;
+    color: #1D2736 !important;
+}
+
+.movietxt .txtmid h1 {
+    color: #1D2736 !important;
+    font-size: 1.2em;
+    margin: .4em 0 1.4em;
+}
+
+.movietxt .txtmid p,
+.movietxt .txtmid div{
+    /* font-size: 1.0666em; */
+    margin: 0 0 1.3333em;
+    text-align: justify;
+    color: #1D2736 !important;
+}
+
+.movietxt .txtmid li {
+    font-size: 1.0666em;
+    margin: 0 0 0.2em;
+    color: #1D2736;
+}
+
+.movietxt .txtmid b {
+    font-weight: bold;
+}
+
+.movietxt .txtmid blockquote {
+    margin: 0 0 0.2em;
+    font-size: 1em;
+    padding: 1em;
+    color: #4E5E73;
+    text-align: justify;
+    background: #F2F3F6;
+}

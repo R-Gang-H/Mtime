@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- start zxing -->
+    <color name="color_black_alpha_2">#05000000</color>
+    <color name="color_f15353_alpha_40">#66f15353</color>
+    <!-- end zxing -->
+
+
+    <color name="white">#ffffffff</color>
+    <color name="black_80_alpha">#CC000000</color>
+    <color name="black_58_alpha">#94000000</color>
+    <color name="light_green">#ffbdff32</color>
+    <color name="dark_gray">#ff7e7e7e</color>
+    <color name="orange">#fff06d00</color>
+    <color name="transparent">#00000000</color>
+    <color name="line_blue">#ff0f4d70</color>
+    <color name="select_back_color">#ff303030</color>
+    <color name="red">#ffff0000</color>
+    <color name="black_color">#ff000000</color>
+    <color name="gray_line">#ffd7d7d7</color>
+    <color name="selector_gray">#ffd1cdcd</color>
+    <color name="gray">#fff6f6f6</color>
+    <color name="text_gray">#ff999999</color>
+    <color name="text_blue">#ff0075c4</color>
+    <color name="circle_image_boder">#dddddd</color>
+
+    <!-- v2 -->
+    <color name="black_normal">#ff333333</color>
+    <color name="score_color">#ff659d0e</color>
+    <color name="orange_color">#ffff8600</color>
+    <color name="search_rating_color">#fff15252</color>
+    <color name="search_result_nocinema_text_normal_color">#ff777777</color>
+    <color name="color_ffdddddd">#ffdddddd</color>
+    <color name="gray_normal">#ff777777</color>
+    <color name="color_bbbbbb">#ffbbbbbb</color>
+    <color name="color_ffd8d8d8">#ffd8d8d8</color>
+    <color name="color_bb858585">#bb858585</color>
+    <color name="color_707070">#707070</color>
+    <color name="color_ebebeb">#ebebeb</color>
+
+    <!-- find -->
+    <color name="color_fff7d3">#fff7d3</color>
+    <color name="color_fff8e7">#fff8e7</color>
+    <color name="color_fff8e8">#fff8e8</color>
+    <color name="color_ffecce">#ffecce</color>
+    <!-- title used color -->
+    <color name="color_333333">#333333</color>
+
+    <!-- my order remind ui color -->
+    <color name="color_9f4400">#9f4400</color>
+    <color name="color_ff8600">#ff8600</color>
+    <color name="color_f47239">#f47239</color>
+    <color name="color_777777">#777777</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_6f9d0e">#6f9d0e</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_d8d8d8">#d8d8d8</color>
+    <color name="color_888888">#888888</color>
+
+    <color name="color_movie_info_org">#568BAF</color>
+    <color name="color_movie_main_0075C4">#0075C4</color>
+    <color name="color_movie_main_333333">#333333</color>
+    <color name="color_movie_main_999999">#999999</color>
+    <color name="color_movie_main_BBBBBB">#BBBBBB</color>
+    <color name="color_movie_main_777777">#777777</color>
+    <color name="color_movie_main_F6F6F6">#F6F6F6</color>
+    <color name="color_movie_main_c3c3c3">#C3C3C3</color>
+
+    <color name="color_d7d7d7">#d7d7d7</color>
+    <color name="color_f13900">#f13900</color>
+    <color name="color_0075C4">#0075c4</color>
+    <color name="color_568CB0">#568CB0</color>
+    <color name="color_f6f6f6">#f6f6f6</color>
+    <color name="color_e8e8e8">#e8e8e8</color>
+    <color name="color_fff8e6">#fff8e6</color>
+    <color name="color_669e0e">#669E0E</color>
+    <color name="color_0075c4">#0075c4</color>
+    <color name="color_669d08">#669D08</color>
+    <color name="color_ffa800">#ffa800</color>
+
+    <color name="color_dddddd">#dddddd</color>
+    <color name="color_33000000">#33000000</color>
+    <color name="color_99000000">#99000000</color>
+    <color name="color_659d0e">#659d0e</color>
+    <color name="color_92C224">#92C224</color>
+    <color name="color_78000000">#78000000</color>
+
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_f2f3f6">#f2f3f6</color>
+
+    <color name="color_f0f0f0">#f0f0f0</color>
+    <color name="color_555555">#555555</color>
+    <color name="color_f15153">#f15153</color>
+    <color name="color_fffbf4">#fffbf4</color>
+    <color name="color_f15353">#F15353</color>
+
+    <color name="color_f3ac2d">#f3ac2d</color>
+    <color name="color_fe6767">#FE6767</color>
+
+    <color name="color_f06293">#F06293</color>
+    <color name="color_1e67bd">#1E67BD</color>
+    <color name="color_FF8600">#FF8600</color>
+    <!--系统栏背景颜色相关-->
+    <color name="color_ff670b">#FF670B</color>
+
+    <color name="color_979797">#979797</color>
+    <color name="color_e1ffffff">#e1ffffff</color>
+    <color name="color_cce3f3">#cce3f3</color>
+    <color name="color_005d98">#005D98</color>
+    <color name="color_66acdc">#66ACDC</color>
+    <color name="color_6D8297">#6D8297</color>
+    <color name="color_1c2635">#1C2635</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_dbdbdb">#dbdbdb</color>
+    <color name="color_f97d3f">#F97D3F</color>
+    <color name="color_f8f8f8">#F8F8F8</color>
+    <color name="color_66000000">#66000000</color>
+    <color name="color_ff5040">#FF5040</color>
+    <color name="color_ff5040_10_alpha">#1aFF5040</color>
+    <color name="color_ff5043">#FF5043</color>
+    <color name="color_d5b885">#D5B885</color>
+    <color name="color_a0aab4">#A0AAB4</color>
+    <color name="color_c6d2de">#C6D2DE</color>
+    <color name="color_30333b">#30333B</color>
+    <color name="color_ff783d">#FF783D</color>
+    <color name="color_f9f9f9">#F9F9F9</color>
+    <color name="color_f9f9fb">#F9F9Fb</color>
+
+    <color name="color_888482">#888482</color>
+    <color name="color_F97D3F">#F97D3F</color>
+
+    <color name="color_score">#20a0da</color>
+    <color name="color_3A4A5E">#3A4A5E</color>
+    <color name="color_20A0DA">#20A0DA</color>
+    <color name="color_1D2736">#1D2736</color>
+    <color name="color_4E5E73">#4E5E73</color>
+    <color name="color_8798AF">#8798AF</color>
+    <color name="color_8798AF_10_alpha">#1a8798AF</color>
+    <color name="color_303A47">#303A47</color>
+    <color name="color_36C096">#36C096</color>
+    <color name="color_feb12a">#FEB12A</color>
+    <color name="color_C9CEDC">#C9CEDC</color>
+</resources>
